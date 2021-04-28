@@ -1,0 +1,53 @@
+\documentclass[manuscript,blind]{geophysics}
+\usepackage{amsmath,amssymb}
+\usepackage[english,ruled]{algorithm2e}
+
+% An example of defining macros
+\newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
+\newcommand{\rr}[1]{\mbox{\rm #1}}
+
+\begin{document}
+\title{On the existence of planar dipole layers}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+
+%\ms{GEO-2019XXXX} % manuscript number
+
+\address{
+\footnotemark[2] Observat\'orio Nacional, Rio de Janeiro, Brazil\\
+\footnotemark[3] Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil\\
+\footnotemark[1] Corresponding author: vanderlei@on.br}
+\author{Vanderlei C. Oliveira Jr.\footnotemark[2] \footnotemark[1], Val\'eria C. F. Barbosa\footnotemark[2] and Andr\'e L. A. Reis \footnotemark[3]}
+
+%\footer{Example}
+\lefthead{Oliveira Jr, V. C. \& Barbosa, V. C. F. \& Reis, A. L. A.}
+\righthead{Planar dipole layers}
+
+\maketitle
+
+% Main body
+%\include{abstract}
+%\include{introduction}
+\include{theory}
+%\include{synthetic_data}
+%\include{field_data}
+%\include{conclusions}
+%\include{aknowledgements}
+
+% Appendices
+%\appendix
+%\include{matrix_C}
+%\include{DFT_computations}
+%\include{eigenvalues_C}
+
+\newpage
+
+\bibliographystyle{seg}  % style file is seg.bst
+\bibliography{references}
+
+\clearpage
+
+% Tables and figures
+%\include{figures}
+
+\end{document}
