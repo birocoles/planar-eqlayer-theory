@@ -1,6 +1,8 @@
 \section{Theory}
 \label{sec:theory}
 
+\subsection{Magnetic scalar potential produced by arbitrarily magnetized sources}
+
 Consider a set of magnetic sources enclosed by a volume $v$ in the subsurface.
 Besides, consider that these sources can be represented by the superposition
 of an arbitrary set of $L$ sources with uniform magnetization directions
@@ -15,21 +17,27 @@ where $h_{\ell}(x',y',z')$ (in A/m) is the positive magnetization intensity
 of the $\ell$th magnetization component with 
 constant magnetization direction defined by the unit vector
 \begin{equation}
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) =
+\hat{\mathbf{u}}(I, D) =
 \begin{bmatrix}
-u_{x}(I_{\ell}, D_{\ell}) \\
-u_{y}(I_{\ell}, D_{\ell}) \\
-u_{z}(I_{\ell}, D_{\ell})
+\hat{u}_{x}(I, D) \\
+\hat{u}_{y}(I, D) \\
+\hat{u}_{z}(I, D)
 \end{bmatrix} =
 \begin{bmatrix}
-\cos(I_{\ell}) \: \cos(D_{\ell}) \\ 
-\cos(I_{\ell}) \: \sin(D_{\ell}) \\
-\sin(I_{\ell})
-\end{bmatrix} \quad .
+\cos(I) \: \cos(D) \\ 
+\cos(I) \: \sin(D) \\
+\sin(I)
+\end{bmatrix} \quad ,
 \label{eq:u-unit-vector}
 \end{equation}
+for the particular case in which the inclination and declination are $I = I_{\ell}$
+and $D = D_{\ell}$.
+This representation of magnetic sources as the superposition of magnetization
+distributions with uniform direction is in perfect agreement with the commonly
+used superposition principle for magnetic fields \cite[e.g., ][ p. 95]{blakely1996}.
 In this case, the magnetic scalar potential produced by the sources at an
-observation point $(x,y,z)$ located above them, outside $v$, is given by:
+observation point $(x,y,z)$ located above them, outside $v$, is given by
+\cite[e.g., ][ p. 195]{jackson1975}:
 \begin{equation}
 V(x, y, z) = c_{m} \iiint\limits_{v}
 \mathbf{h}(x',y',z')^{\top} \nabla' \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -170,8 +178,10 @@ and
 \frac{\mathbf{v}(x'',y'',z_{c})}{\| \mathbf{v}(x'',y'',z_{c}) \|} \quad .
 \label{eq:v-unit-vector}
 \end{equation}
-Finally, the resultant magnetic induction field $\mathbf{B}(x,y,z)$ produced 
-by the sources at the observation point $(x,y,z)$ is given by
+By computing the negative gradient of $V(x,y,z)$ 
+(equation \ref{eq:V-superposition-layers}), we obtain the resultant magnetic
+induction field $\mathbf{B}(x,y,z)$ produced by the sources at the observation 
+point $(x,y,z)$:
 \begin{equation}
 \mathbf{B}(x,y,z) = -\nabla V(x,y,z) \quad ,
 \label{eq:B-vector}
@@ -180,9 +190,38 @@ with $\alpha$-component, $\alpha = x, y, z$, defined by
 \begin{equation}
 B_{\alpha}(x,y,z) = \frac{1}{2\pi} 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\| \mathbf{v}(x'',y'', z_{c}) \|
+\| \mathbf{v}(x'',y'', z_{c}) \| \: 
 \partial_{\alpha} \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
 \hat{\mathbf{v}}(x'',y'', z_{c}) \: 
-dx''dy'' \: , \quad z < z_{c} \: .
+dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-superposition-layers}
 \end{equation}
+Finally, we can define the component $B_{t}(x,y,z)$ of the magnetic induction 
+field along an arbitrary direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation
+\ref{eq:u-unit-vector}), with inclination $I = I_{t}$ and declination $D = D_{t}$,
+as the negative directional derivative of $V(x,y,z)$ 
+(equation \ref{eq:V-superposition-layers}):
+\begin{equation}
+B_{t}(x,y,z) = -\nabla V(x,y,z)^{\top} \hat{\mathbf{u}}(I_{t}, D_{t}) \quad .
+\label{eq:B-t}
+\end{equation}
+This equation is commonly used in applied geophysics to approximate the total-field
+anomaly produced by magnetized sources, where $\hat{\mathbf{u}}(I_{t}, D_{t})$
+defines the constant direction of the main geomagnetic field in the study area
+\cite[][ p. 176]{blakely1996}.
+
+Equations \ref{eq:V-superposition-layers} and \ref{eq:B-superposition-layers} show 
+that the same magnetic-moment distribution $\| \mathbf{v}(x'',y'', z_{c}) \|$
+(equation \ref{eq:magnitude-v-vector})  
+exactly reproduces the resultant magnetic scalar potential $V(x,y,z)$ 
+(equations \ref{eq:V-volume-integral}, \ref{eq:V-summation} and 
+\ref{eq:V-superposition-layers}) and also any component of the resultant 
+magnetic induction field $\mathbf{B}(x,y,z)$ (equation \ref{eq:B-vector}) produced
+by arbitrarily magnetized sources. We also stress that 
+$\| \mathbf{v}(x'',y'', z_{c}) \|$ (equation \ref{eq:magnitude-v-vector}) is 
+strictly positive at all points $(x'',y'', z_{c})$ on the equivalent layer 
+because it is defined as the Euclidean norm of $\mathbf{v}(x'',y'', z_{c})$ 
+(equation \ref{eq:v-vector}). 
+These equations generalize, in the space domain, the all-positive magnetic-moment
+distribution presented by \cite{reis_etal2020} to the case in which the sources 
+are arbitrarily magnetized with heterogeneous magnetization intensity and direction.
