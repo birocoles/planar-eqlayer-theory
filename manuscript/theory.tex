@@ -1,7 +1,5 @@
-\section{Theory}
-\label{sec:theory}
-
-\subsection{Magnetic scalar potential produced by arbitrarily magnetized sources}
+\section{Theoretical background}
+\label{sec:background}
 
 Consider a set of magnetic sources enclosed by a volume $v$ in the subsurface.
 Besides, consider that these sources can be represented by the superposition
@@ -9,11 +7,14 @@ of an arbitrary set of $L$ sources with uniform magnetization directions
 (magnetization components), so that the total-magnetization vector
 at any point $(x', y', z')$ within $v$ is given by:
 \begin{equation}
-\mathbf{h}(x',y',z') = \sum\limits_{\ell = 1}^{L} 
-h_{\ell}(x',y',z') \: \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
+\mathbf{h}(\mathbf{r}') = \sum\limits_{\ell = 1}^{L} 
+h_{\ell}(\mathbf{r}') \: \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
 \label{eq:h-vector-total}
 \end{equation}
-where $h_{\ell}(x',y',z')$ (in A/m) is the positive magnetization intensity
+where $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$ is the position vector 
+defining a point $(x', y', z')$ inside $v$, 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ is the inverse distance function and
+$h_{\ell}(\mathbf{r}')$ (in A/m) is the positive magnetization intensity
 of the $\ell$th magnetization component with 
 constant magnetization direction defined by the unit vector
 \begin{equation}
@@ -37,191 +38,346 @@ distributions with uniform direction is in perfect agreement with the commonly
 used superposition principle for magnetic fields \cite[e.g., ][ p. 95]{blakely1996}.
 In this case, the magnetic scalar potential produced by the sources at an
 observation point $(x,y,z)$ located above them, outside $v$, is given by
-\cite[e.g., ][ p. 195]{jackson1975}:
+\cite[e.g., ][ p. 196]{jackson1999}:
 \begin{equation}
-V(x, y, z) = c_{m} \iiint\limits_{v}
-\mathbf{h}(x',y',z')^{\top} \nabla' \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-dx'dy'dz' \quad ,
+V(\mathbf{r}) = c_{m} \iiint\limits_{v}
+\mathbf{h}(\mathbf{r}')^{\top} \nabla' \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
+\: dx'dy'dz' \quad ,
 \label{eq:V-volume-integral}
 \end{equation}
-where $c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (H/m), $\mu_{0}$ is the
-magnetic permeability at vacuum, $\| \cdot \|$ denotes the Euclidean norm, 
-$\mathbf{r} = \left[x \:\: y \:\: z \right]^{\top}$ is the position vector
+where $\mathbf{r} = \left[x \:\: y \:\: z \right]^{\top}$ is the position vector
 defining an observation point $(x, y, z)$ located outside $v$, 
-$\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$ is the position vector 
-defining a point $(x', y', z')$ located inside $v$ and $\nabla'$ is the gradient
+$c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (H/m), $\mu_{0}$ is the
+magnetic permeability at vacuum, $\| \cdot \|$ denotes the Euclidean norm and $\nabla'$ is the gradient
 operator with respect to the coordinates of $(x', y', z')$.
-The resultant magnetic scalar potential $V(x, y, z)$ 
+The resultant magnetic scalar potential $V(\mathbf{r})$ 
 (equation \ref{eq:V-volume-integral}) can be rewritten in terms of the
-magnetic scalar potentials $V_{\ell}(x,y,z)$ produced by each magnetization 
+magnetic scalar potentials $V_{\ell}(\mathbf{r})$ produced by each magnetization 
 component as follows:
 \begin{equation}
-V(x,y,z) = \sum\limits_{\ell = 1}^{L}
-V_{\ell}(x,y,z) \quad ,
+V(\mathbf{r}) = \sum\limits_{\ell = 1}^{L}
+V_{\ell}(\mathbf{r}) \quad ,
 \label{eq:V-summation}
 \end{equation}
 where
 \begin{equation}
-V_{\ell}(x,y,z) = -\nabla \Theta_{\ell}(x,y,z)^{\top} 
+V_{\ell}(\mathbf{r}) = -\nabla \Theta_{\ell}(\mathbf{r})^{\top} 
 \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
 \label{eq:V-l}
 \end{equation}
 $\nabla$ is the gradient operator with respect to the coordinates of $(x,y,z)$ and
-$\Theta_{\ell}(x,y,z)$ is an harmonic function given by
+$\Theta_{\ell}(\mathbf{r})$ is an harmonic function given by
 \begin{equation}
-\Theta_{\ell}(x,y,z) = c_{m} \iiint\limits_{v_{\ell}}
-h(x',y',z') \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-dx'dy'dz' \quad .
+\Theta_{\ell}(\mathbf{r}) = c_{m} \iiint\limits_{v_{\ell}}
+h_{\ell}(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
+\: dx'dy'dz' \quad .
 \label{eq:Theta-l}
 \end{equation}
-Note that the magnetic scalar potential $V_{\ell}(x,y,z)$ (equation \ref{eq:V-l}) 
-is the negative directional derivative of the harmonic function $\Theta_{\ell}(x,y,z)$
+Note that the magnetic scalar potential $V_{\ell}(\mathbf{r})$ (equation \ref{eq:V-l}) 
+is the negative directional derivative of the harmonic function $\Theta_{\ell}(\mathbf{r})$
 (equation \ref{eq:Theta-l}) along the uniform magnetization direction
 $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$ (equation \ref{eq:u-unit-vector})
 of the $\ell$th magnetization component. 
 
-\subsection{Equivalent layers with true magnetization direction in space domain}
+By computing the negative gradient of $V(\mathbf{r})$ 
+(equation \ref{eq:V-volume-integral}), we obtain the resultant 
+magnetic induction field $\mathbf{B}(\mathbf{r})$ produced by the 
+sources at the observation point $(x,y,z)$:
+\begin{equation}
+\mathbf{B}(\mathbf{r}) = -\nabla V(\mathbf{r}) = \sum\limits_{\ell = 1}^{L}
+\mathbf{B}_{\ell}(\mathbf{r}) \quad ,
+\label{eq:B-summation}
+\end{equation}
+where 
+\begin{equation}
+\mathbf{B}_{\ell}(\mathbf{r}) = \mathbf{H}_{\ell}(\mathbf{r}) 
+\: \hat{\mathbf{u}}(I_{\ell}, D_{\ell})
+\label{eq:B-l}
+\end{equation}
+is the magnetic induction field produced by the $\ell$th magnetization component
+and 
+\begin{equation}
+\mathbf{H}_{\ell}(\mathbf{r}) = 
+\begin{bmatrix}
+\partial_{xx} \Theta_{\ell}(\mathbf{r}) & \partial_{xy} \Theta_{\ell}(\mathbf{r}) & \partial_{xz} \Theta_{\ell}(\mathbf{r}) \\
+\partial_{xy} \Theta_{\ell}(\mathbf{r}) & \partial_{yy} \Theta_{\ell}(\mathbf{r}) & \partial_{yz} \Theta_{\ell}(\mathbf{r}) \\
+\partial_{xz} \Theta_{\ell}(\mathbf{r}) & \partial_{yz} \Theta_{\ell}(\mathbf{r}) & \partial_{zz} \Theta_{\ell}(\mathbf{r})
+\end{bmatrix}
+\label{eq:H-l}
+\end{equation}
+is the Hessian matrix of $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}), 
+with $\partial_{\alpha\beta} \Theta_{\ell}(\mathbf{r}) \equiv 
+\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Theta_{\ell}(\mathbf{r})$,
+$\alpha = x, y, z$, $\beta = x, y, z$.
 
-The harmonic function $\Theta_{\ell}(x,y,z)$ (equation \ref{eq:Theta-l}) can be
+Finally, we can define the component $B_{t}(\mathbf{r})$ of the magnetic induction 
+field along an arbitrary direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation
+\ref{eq:u-unit-vector}), with inclination $I = I_{t}$ and declination $D = D_{t}$,
+as follows:
+\begin{equation}
+B_{t}(\mathbf{r}) = \mathbf{B}(\mathbf{r})^{\top} \hat{\mathbf{u}}(I_{t}, D_{t}) \quad ,
+\label{eq:B-t}
+\end{equation}
+where $\mathbf{B}(\mathbf{r})$ is the resultant magnetic induction field 
+(equation \ref{eq:B-summation}).
+Equation \ref{eq:B-t} is a harmonic function commonly used in applied geophysics 
+to approximate the total-field anomaly produced by magnetized sources, where 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the constant direction of the main geomagnetic 
+field in the study area \cite[][ p. 176]{blakely1996}.
+
+\section{Theoretical developments}
+\label{sec:developments}
+
+
+\subsection{Planar equivalent layer of dipoles in space domain}
+\label{subsec:equivalent_layer}
+
+
+The harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) can be
 alternatively defined in terms of its vertical 
 derivative on a plane $z = z_{c}$ located between the observation points and the 
 magnetic sources as follows \cite[e.g.,][]{roy1962, reis_etal2020}:
 \begin{equation}
-\Theta_{\ell}(x,y,z) = \frac{1}{2\pi} 
+\Theta_{\ell}(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta_{\ell}(x'',y'',z_{c}) \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
-dx''dy'' \: , \quad z < z_{c} \: ,
+\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\: dx''dy'' \: , \quad z < z_{c} \: ,
 \label{eq:Theta-l-Neumann}
 \end{equation}
-where 
-$\partial_{z} \Theta_{\ell}(x'',y'',z_{c}) \equiv 
-\frac{\partial}{\partial z} \Theta_{\ell}(x'',y'',z_{c})$ denotes the partial
-derivative, evaluated at $(x'',y'',z_{c})$, of the harmonic function
-$\Theta_{\ell}(x,y,z)$ (equation \ref{eq:Theta-l}) with respect to the coordinate 
-$z$ and 
-$\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
+where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
 position vector defining a point $(x'', y'', z_{c})$ located on the plane 
-$z = z_{c}$. This integral represents the solution of the 
+$z = z_{c}$, $\partial_{z} \Theta_{\ell}(\mathbf{r}'') \equiv 
+\frac{\partial}{\partial z} \Theta_{\ell}(\mathbf{r}'')$ denotes the partial
+derivative, evaluated at $(x'',y'',z_{c})$, of the harmonic function
+$\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with respect to the coordinate 
+$z$. 
+Equation \ref{eq:Theta-l-Neumann} represents the solution of the 
 \textit{Neumann’s problem} or the \textit{second boundary value problem of potential
 theory} \cite[][ p. 246]{kellogg1967} on a plane.
-By computing the directional derivative of $\Theta_{\ell}(x,y,z)$ 
+By computing the directional derivative of $\Theta_{\ell}(\mathbf{r})$ 
 (equation \ref{eq:Theta-l-Neumann}) along 
-$\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$ (equation \ref{eq:u-unit-vector}) we obtain:
+$\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$ (equation \ref{eq:u-unit-vector}), we obtain 
+the following alternative expression for the magnetic scalar potential $V_{\ell}(\mathbf{r})$ 
+(equation \ref{eq:V-l}):
 \begin{equation}
-V_{\ell}(x,y,z) = -\frac{1}{2\pi} 
+V_{\ell}(\mathbf{r}) = -
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta_{\ell}(x'',y'',z_{c}) 
+\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
 \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
 \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: 
 dx''dy'' \: , \quad z < z_{c} \: .
 \label{eq:V-l-Neumann}
 \end{equation}
-This equation shows that the magnetic scalar potential $V_{\ell}(x,y,z)$ 
+This equation shows that the magnetic scalar potential $V_{\ell}(\mathbf{r})$ 
 (equation \ref{eq:V-l}) produced by the $\ell$th magnetization component 
 with uniform magnetization direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
 can be exactly reproduced by a continuous layer of dipoles 
 (\textit{equivalent layer})
-having this same magnetization direction and a magnetic-moment
-distribution $\partial_{z} \Theta_{\ell}(x'',y'',z_{c})$. Note that this
-magnetic-moment distribution is strictly positive at all points $(x'',y'',z_{c})$
-located on the equivalent layer and is proportional to the pseudogravity anomaly
+having this same magnetization direction and a positive magnetic-moment
+distribution $\tfrac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$. 
+Equation \ref{eq:V-l-Neumann} is significant in at least three major aspects
+because it shows that:
+(i) the planar equivalent layer of dipoles is not a purely 
+mathematical expression for magnetic-data processing, but a solution of a
+boundary value problem of potential theory that is intrinsically related to
+the magnetic field produced by sources with uniform magnetization direction;
+(ii) the uniform magnetization direction of the planar equivalent layer is 
+equal to that of the $\ell$th magnetization component, regardless of whether 
+this direction is normal to the planar layer or not;
+(iii) the magnetic-moment distribution on the planar layer is strictly positive 
+at all points $(x'',y'',z_{c})$ and is proportional to the pseudogravity anomaly
 produced by the $\ell$th magnetization component. 
 \citet{reis_etal2020} have followed a similar approach to deduce this 
-all-positive magnetic-moment distribution on an equivalent layer that reproduces
-total-field anomaly data produced by magnetic sources with uniform magnetization
-direction. 
+all-positive magnetic-moment distribution on a planar layer of dipoles that 
+fits total-field anomaly data. 
 
 By combining equations \ref{eq:V-summation} and \ref{eq:V-l-Neumann}, we obtain
-that the resultant magnetic scalar potential $V(x,y,z)$ can be represented by
-the following equivalent layer:
+that the resultant magnetic scalar potential $V(\mathbf{r})$ can be represented by
+the superposition of equivalent layers associated with all magnetization components:
 \begin{equation}
-V(x,y,z) = -\frac{1}{2\pi} 
+V(\mathbf{r}) = -
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\| \mathbf{v}(x'',y'', z_{c}) \|
+\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \:
 \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{v}}(x'',y'', z_{c}) \: 
+\hat{\mathbf{v}}(\mathbf{r}'') \: 
 dx''dy'' \: , \quad z < z_{c} \: ,
 \label{eq:V-superposition-layers}
 \end{equation}
 where
 \begin{equation}
-\mathbf{v}(x'',y'',z_{c}) = 
+\mathbf{v}(\mathbf{r}'') = 
 \begin{bmatrix}
-v_{x}(x'',y'',z_{c}) \\ v_{y}(x'',y'',z_{c}) \\ v_{z}(x'',y'',z_{c})
+v_{x}(\mathbf{r}'') \\ v_{y}(\mathbf{r}'') \\ v_{z}(\mathbf{r}'')
 \end{bmatrix} =
 \sum\limits_{\ell = 1}^{L}
-\partial_{z} \Theta_{\ell}(x'',y'',z_{c}) \:
+\partial_{z} \Theta_{\ell}(\mathbf{r}'') \:
 \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
 \label{eq:v-vector}
 \end{equation}
-\begin{equation}
-\begin{split}
-\| \mathbf{v}(x'',y'',z_{c}) \| 
-&= \left[ 
-\sum\limits_{\ell = 1}^{L} \partial_{z} \Theta_{\ell}^{2}(x'',y'',z_{c}) \:
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell})^{\top}\hat{\mathbf{u}}(I_{\ell}, D_{\ell})
-\right]^{\frac{1}{2}} \\
-&= \left[ 
-\sum\limits_{\ell = 1}^{L} \partial_{z} \Theta_{\ell}^{2}(x'',y'',z_{c})
-\right]^{\frac{1}{2}}
-\end{split}
-\label{eq:magnitude-v-vector}
-\end{equation}
 and
 \begin{equation}
-\hat{\mathbf{v}}(x'',y'',z_{c}) = 
+\hat{\mathbf{v}}(\mathbf{r}'') = 
 \begin{bmatrix}
-\hat{v}_{x}(x'',y'',z_{c}) \\ 
-\hat{v}_{y}(x'',y'',z_{c}) \\ 
-\hat{v}_{z}(x'',y'',z_{c})
+\hat{v}_{x}(\mathbf{r}'') \\ 
+\hat{v}_{y}(\mathbf{r}'') \\ 
+\hat{v}_{z}(\mathbf{r}'')
 \end{bmatrix} =
-\frac{\mathbf{v}(x'',y'',z_{c})}{\| \mathbf{v}(x'',y'',z_{c}) \|} \quad .
+\frac{\mathbf{v}(\mathbf{r}'')}{\| \mathbf{v}(\mathbf{r}'') \|} \quad .
 \label{eq:v-unit-vector}
 \end{equation}
-By computing the negative gradient of $V(x,y,z)$ 
-(equation \ref{eq:V-superposition-layers}), we obtain the resultant magnetic
-induction field $\mathbf{B}(x,y,z)$ produced by the sources at the observation 
-point $(x,y,z)$:
+Note that the equivalent layer representing the resultant magnetic scalar potential 
+$V(\mathbf{r})$ (equation \ref{eq:V-superposition-layers}) does not have a uniform
+magnetization direction. Rather it has a spatially varying direction 
+$\hat{\mathbf{v}}(\mathbf{r}'')$ (equations \ref{eq:v-vector} and \ref{eq:v-unit-vector})
+that combines the individual uniform directions $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
+of all magnetization components.
+
+By computing the negative gradient of $V(\mathbf{r})$ 
+(equation \ref{eq:V-superposition-layers}), we obtain the planar equivalent layer 
+of dipoles associated with the resultant magnetic induction field $\mathbf{B}(\mathbf{r})$ 
+(equation \ref{eq:B-summation}) produced by the sources at the observation point $(x,y,z)$:
 \begin{equation}
-\mathbf{B}(x,y,z) = -\nabla V(x,y,z) \quad ,
-\label{eq:B-vector}
-\end{equation}
-with $\alpha$-component, $\alpha = x, y, z$, defined by
-\begin{equation}
-B_{\alpha}(x,y,z) = \frac{1}{2\pi} 
+\mathbf{B}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\| \mathbf{v}(x'',y'', z_{c}) \| \: 
-\partial_{\alpha} \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{v}}(x'',y'', z_{c}) \: 
-dx''dy'' \: , \:\: z < z_{c} \: .
+\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
+dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-superposition-layers}
 \end{equation}
-Finally, we can define the component $B_{t}(x,y,z)$ of the magnetic induction 
-field along an arbitrary direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation
-\ref{eq:u-unit-vector}), with inclination $I = I_{t}$ and declination $D = D_{t}$,
-as the negative directional derivative of $V(x,y,z)$ 
-(equation \ref{eq:V-superposition-layers}):
+where
 \begin{equation}
-B_{t}(x,y,z) = -\nabla V(x,y,z)^{\top} \hat{\mathbf{u}}(I_{t}, D_{t}) \quad .
-\label{eq:B-t}
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') = 
+\begin{bmatrix}
+\partial_{xx} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
+\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
+\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{zz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\end{bmatrix}
+\label{eq:H-tilde}
 \end{equation}
-This equation is commonly used in applied geophysics to approximate the total-field
-anomaly produced by magnetized sources, where $\hat{\mathbf{u}}(I_{t}, D_{t})$
-defines the constant direction of the main geomagnetic field in the study area
-\cite[][ p. 176]{blakely1996}.
+is a matrix composed of second derivatives 
+$\partial_{\alpha\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \equiv 
+\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$,
+$\alpha = x, y, z$, $\beta = x, y, z$, of the inverse distance function 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ with respect to the coordinates of
+the observation points. It is relatively easy to verify from equations 
+\ref{eq:B-t} and \ref{eq:B-superposition-layers} that the component $B_{t}(\mathbf{r})$ 
+of the resultant magnetic induction field can be defined in terms of the 
+planar equivalent layer given below:
+\begin{equation}
+B_{t}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
+dx''dy'' \: , \:\: z < z_{c} \: .
+\label{eq:B-t-superposition-layers}
+\end{equation}
 
-Equations \ref{eq:V-superposition-layers} and \ref{eq:B-superposition-layers} show 
-that the same magnetic-moment distribution $\| \mathbf{v}(x'',y'', z_{c}) \|$
-(equation \ref{eq:magnitude-v-vector})  
-exactly reproduces the resultant magnetic scalar potential $V(x,y,z)$ 
-(equations \ref{eq:V-volume-integral}, \ref{eq:V-summation} and 
-\ref{eq:V-superposition-layers}) and also any component of the resultant 
-magnetic induction field $\mathbf{B}(x,y,z)$ (equation \ref{eq:B-vector}) produced
-by arbitrarily magnetized sources. We also stress that 
-$\| \mathbf{v}(x'',y'', z_{c}) \|$ (equation \ref{eq:magnitude-v-vector}) is 
-strictly positive at all points $(x'',y'', z_{c})$ on the equivalent layer 
-because it is defined as the Euclidean norm of $\mathbf{v}(x'',y'', z_{c})$ 
-(equation \ref{eq:v-vector}). 
+Equations \ref{eq:V-superposition-layers} and \ref{eq:B-t-superposition-layers} show 
+that the same magnetic-moment distribution $\tfrac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi}$
+exactly reproduces the resultant magnetic scalar potential $V(\mathbf{r})$ 
+(equations \ref{eq:V-volume-integral} and \ref{eq:V-summation}) and also any component 
+of the resultant magnetic induction field $\mathbf{B}(\mathbf{r})$ 
+(equation \ref{eq:B-summation}) caused by arbitrarily magnetized sources. 
+We also stress that 
+$\tfrac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi}$ is strictly positive at all points 
+$(x'',y'',z_{c})$ on the equivalent layer because it is defined as the ratio of the
+Euclidean norm of $\mathbf{v}(\mathbf{r}'')$ (equation \ref{eq:v-vector}) and the positive
+constant $2\pi$. 
 These equations generalize, in the space domain, the all-positive magnetic-moment
 distribution presented by \cite{reis_etal2020} to the case in which the sources 
 are arbitrarily magnetized with heterogeneous magnetization intensity and direction.
+
+
+\subsection{Reduction to the pole (RTP) in space domain}
+\label{subsec:RTP}
+
+
+Total-field anomalies \cite[e.g.,][ p. 178--179]{blakely1996} oscillate
+from negative to positive values, so that their maxima are not usually placed 
+right above the magnetic sources.
+Because of this ``skewed'' pattern, total-field anomalies cannot be 
+directly used by the interpreter to locate the sources.
+To overcome this problem, \citet{baranov1957} proposed a method called
+\textit{reduction to the pole} (RTP). This method transforms a generic total-field 
+anomaly produced by sources with uniform magnetization direction into a simpler one 
+(conveniently called here \textit{RTP anomaly}) that is 
+predominantly positive right above the sources and decays to zero towards the sources 
+boundaries.
+The RTP anomaly represents the particular total-field anomaly that would be
+produced by the sources if they had a purely induced and vertical
+magnetization.
+By considering that the ``skewed'' total-field anomaly can be satisfactorily
+approximated by the harmonic function $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
+for the particular case in which the sources have a single magnetization component with
+uniform direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$, 
+then the RTP anomaly is given by:
+\begin{equation}
+B^{RTP}_{\ell}(\mathbf{r}) = \partial_{zz} \Theta_{\ell}(\mathbf{r}) \quad ,
+\label{eq:B-rtp-single-component}
+\end{equation}
+where $\partial_{zz} \Theta_{\ell}(\mathbf{r})$ is the second derivative of the
+harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with
+respect to the coordinate $z$ of the observation point.
+
+PAREI AQUI
+
+Equation \ref{eq:B-rtp} is obtained from equations \ref{eq:u-unit-vector} and 
+\ref{eq:B-summation}--\ref{eq:B-t} by considering 
+$I_{\ell} = I_{t} = 90^{\circ}$, $\ell = 1, \dots, L$.
+In this case, it can be shown from equations \ref{eq:v-vector}--\ref{eq:B-t-superposition-layers} 
+that the RTP anomaly $B_{RTP}(\mathbf{r})$ (equation \ref{eq:B-rtp}) can be
+represented by the equivalent layer
+\begin{equation}
+B_{RTP}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\frac{\| \mathbf{v}_{RTP}(\mathbf{r}'') \|}{2\pi} \: 
+\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: 
+dx''dy'' \: , \:\: z < z_{c} \: ,
+\label{eq:B-rtp-superposition-layers}
+\end{equation}
+where
+\begin{equation}
+\| \mathbf{v}_{RTP}(\mathbf{r}'') \| = 
+\sum\limits_{\ell = 1}^{L}
+\partial_{z} \Theta_{\ell}(\mathbf{r}'') \quad .
+\label{eq:v-unit-vector-rtp}
+\end{equation}
+
+
+
+
+
+1) começar com direção de magnetização uniforme
+
+2) citar o Baranov e o João
+
+3) usar as eqs pra explicar por que a camada precisa ter a mesma direção das fontes
+
+4) apresentar a expressão generalizada para fontes com magnetização arbitrária
+
+5) ressaltar a importância/ineditismo desta expressão
+
+
+\subsection{Relationships between the equivalent layer and the true sources}
+\label{subsec:relationships_true_sources}
+
+
+Note that $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) 
+and $\partial_{z} \Theta_{\ell}(\mathbf{r}'')$ 
+(equations \ref{eq:Theta-l-Neumann} and \ref{eq:V-l-Neumann} and \ref{eq:v-vector}) 
+are analogous to the gravitational potential and 
+vertical component of the gravitational attraction (gravity disturbance) that 
+would be produced by the $\ell$th magnetization component at the observation point
+$\mathbf{r}$ and at the point $\mathbf{r}''$ on the equivalent layer plane $z_{c}$,
+respectively. 
+It is also important noting that these two functions are strictly positive because
+they are defined in terms of the positive total-magnetization intensity distribution 
+$h_{\ell}(\mathbf{r}')$ (equation \ref{eq:h-vector-total}) of the $\ell$th magnetization 
+component.
