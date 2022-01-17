@@ -1,4 +1,4 @@
-\section{Magnetic induction field}
+\section{Magnetic induction field for arbitrarily magnetized sources}
 \label{sec:background}
 
 Consider a set of magnetic sources enclosed by a volume $v$ in the subsurface.
@@ -135,12 +135,12 @@ respectively, where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the constant direct
 field in the study area \cite[][ p. 179]{blakely1996}.
 
 
-\section{Planar equivalent layer of dipoles in space domain}
-\label{sec:equivalent_layer}
+\section{Planar equivalent layer of dipoles for sources with uniform magnetization direction}
+\label{sec:eqlayer_uniform}
 
 
-\subsection{Sources with uniform magnetization direction}
-\label{subsec:eqlayer_uniform}
+\subsection{Integral equations obtained by solving the Neumann’s problem}
+\label{subsec:eqlayer_uniform_deduction}
 
 
 The harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) can be
@@ -237,7 +237,7 @@ can be exactly reproduced by a continuous layer of dipoles (\textit{equivalent l
 having this same magnetization direction and a positive magnetic-moment
 distribution $\tfrac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$. 
 These equations are significant in at least three major aspects
-because it shows that:
+because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
 boundary value problem of potential theory that is intrinsically related to
@@ -249,11 +249,88 @@ this direction is normal to the planar layer or not;
 at all points $(x'',y'',z_{c})$ and is proportional to the pseudogravity anomaly
 produced by the $\ell$th magnetization component. 
 \citet{reis_etal2020} have followed a similar approach to deduce this 
-all-positive magnetic-moment distribution.
+all-positive magnetic-moment distribution for interpreting 
+total-field anomaly data.
  
 
-\subsection{Sources with nonuniform magnetization direction}
-\label{subsec:eqlayer_nonuniform}
+\subsection{Reduction to the pole (RTP) in space domain}
+\label{subsec:RTP_space_domain_uniform}
+
+
+Total-field anomalies \cite[e.g.,][ p. 178]{blakely1996} oscillate
+from negative to positive values, so that their maxima are not usually placed 
+right above the magnetic sources.
+Because of this ``skewed'' pattern, total-field anomalies cannot be 
+directly used by the interpreter to locate the sources.
+To overcome this problem, \citet{baranov1957} proposed a method called
+\textit{reduction to the pole} (RTP). This method transforms a generic total-field 
+anomaly produced by sources with uniform magnetization direction into a simpler one 
+(conveniently called here \textit{RTP anomaly}) that is 
+predominantly positive right above the sources and decays to zero towards the sources 
+boundaries.
+The RTP anomaly represents the particular magnetic induction field that would be
+produced by the sources if they had a purely induced and vertical
+magnetization.
+
+Consider that the ``skewed'' total-field anomaly can be satisfactorily
+approximated by the harmonic function $\Delta\tilde{T}_{\ell}(\mathbf{r})$ 
+(equation \ref{eq:Delta-T-l})
+for the particular case in which the sources have a single magnetization component with
+uniform direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$. In this case, 
+the RTP anomaly is given by:
+\begin{equation}
+B^{r}_{\ell}(\mathbf{r}) = \partial_{zz} \Theta_{\ell}(\mathbf{r}) \quad ,
+\label{eq:B-rtp-l}
+\end{equation}
+where $\partial_{zz} \Theta_{\ell}(\mathbf{r})$ is the second derivative of the
+harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with
+respect to the coordinate $z$ of the observation point.
+Note that the RTP anomaly $B^{r}_{\ell}(\mathbf{r})$ (equation 
+\ref{eq:B-rtp-l}) can be represented in terms of the 
+true magnetic sources, as a volume integral obtained by computing the 
+second derivative of the harmonic function $\Theta_{\ell}(\mathbf{r})$
+(equation \ref{eq:Theta-l}) with respect to the coordinate $z$ of the
+observation point. Alternatively, it can be defined by computing the 
+second derivative of the equivalent-layer representation of 
+$\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l-Neumann}) with 
+respect to the coordinate $z$:
+\begin{equation}
+B^{r}_{\ell}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
+\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: 
+dx''dy'' \: , \:\: z < z_{c} \: .
+\label{eq:B-rtp-l-Neumann}
+\end{equation}
+
+The integral defined by equation \ref{eq:B-rtp-l-Neumann} represents the 
+theoretical basis for computing the RTP in space domain via equivalent-layer technique.
+This is a two-step approach the consists in 
+first estimating the positive physical property distribution
+$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ by solving the 
+integral equation \ref{eq:Delta-T-l-Neumann} by considering that the observed 
+total-field anomaly data can be satisfactorily represented by 
+$\Delta\tilde{T}_{\ell}(\mathbf{r})$. Then, the estimated 
+$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ is used in 
+equation \ref{eq:B-rtp-l-Neumann} to compute the RTP anomaly 
+$B^{r}_{\ell}(\mathbf{r})$. ISSO QUE O JOÃO FEZ E NÃO EXPLICOU
+
+PAREI AQUI
+
+
+1) começar com direção de magnetização uniforme
+
+2) citar o Baranov e o João
+
+3) usar as eqs pra explicar por que a camada precisa ter a mesma direção das fontes
+
+4) apresentar a expressão generalizada para fontes com magnetização arbitrária
+
+5) ressaltar a importância/ineditismo desta expressão
+
+
+\section{Sources with nonuniform magnetization direction}
+\label{sec:eqlayer_nonuniform}
 
 
 By combining equations \ref{eq:V-summation} and \ref{eq:V-l-Neumann}, we obtain
@@ -295,7 +372,7 @@ Similarly, equations \ref{eq:B-summation}, \ref{eq:Delta-T}, \ref{eq:B-l-Neumann
 \ref{eq:Delta-T-l-Neumann} can be used to show that the 
 resultant magnetic induction field $\mathbf{B}(\mathbf{r})$ and
 approximated total-field anomaly $\Delta\tilde{T}(\mathbf{r})$ also have the 
-following equivalent layer representations:
+following equivalent-layer representations:
 \begin{equation}
 \mathbf{B}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -332,81 +409,6 @@ Equations \ref{eq:V-superposition-layers}--\ref{eq:Delta-T-superposition-layers}
 in the space domain, the all-positive 
 magnetic-moment distribution presented by \cite{reis_etal2020} to the case in which the sources 
 are arbitrarily magnetized with heterogeneous magnetization intensity and direction.
-
-
-\section{Reduction to the pole (RTP) in space domain}
-\label{sec:RTP}
-
-
-\subsection{Sources with uniform magnetization direction}
-\label{subsec:RTP_uniform}
-
-
-Total-field anomalies \cite[e.g.,][ p. 178]{blakely1996} oscillate
-from negative to positive values, so that their maxima are not usually placed 
-right above the magnetic sources.
-Because of this ``skewed'' pattern, total-field anomalies cannot be 
-directly used by the interpreter to locate the sources.
-To overcome this problem, \citet{baranov1957} proposed a method called
-\textit{reduction to the pole} (RTP). This method transforms a generic total-field 
-anomaly produced by sources with uniform magnetization direction into a simpler one 
-(conveniently called here \textit{RTP anomaly}) that is 
-predominantly positive right above the sources and decays to zero towards the sources 
-boundaries.
-The RTP anomaly represents the particular magnetic induction field that would be
-produced by the sources if they had a purely induced and vertical
-magnetization.
-By considering that the ``skewed'' total-field anomaly can be satisfactorily
-approximated by the harmonic function $\Delta\tilde{T}_{\ell}(\mathbf{r})$ 
-(equation \ref{eq:Delta-T-l})
-for the particular case in which the sources have a single magnetization component with
-uniform direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$, 
-the RTP anomaly is given by:
-\begin{equation}
-B^{r}_{\ell}(\mathbf{r}) = \partial_{zz} \Theta_{\ell}(\mathbf{r}) \quad ,
-\label{eq:B-rtp-single-component}
-\end{equation}
-where $\partial_{zz} \Theta_{\ell}(\mathbf{r})$ is the second derivative of the
-harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with
-respect to the coordinate $z$ of the observation point.
-
-PAREI AQUI
-
-Equation \ref{eq:B-rtp} is obtained from equations \ref{eq:u-unit-vector} and 
-\ref{eq:B-summation}--\ref{eq:B-t} by considering 
-$I_{\ell} = I_{t} = 90^{\circ}$, $\ell = 1, \dots, L$.
-In this case, it can be shown from equations \ref{eq:v-vector}--\ref{eq:B-t-superposition-layers} 
-that the RTP anomaly $B_{RTP}(\mathbf{r})$ (equation \ref{eq:B-rtp}) can be
-represented by the equivalent layer
-\begin{equation}
-B_{RTP}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\| \mathbf{v}_{RTP}(\mathbf{r}'') \|}{2\pi} \: 
-\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:B-rtp-superposition-layers}
-\end{equation}
-where
-\begin{equation}
-\| \mathbf{v}_{RTP}(\mathbf{r}'') \| = 
-\sum\limits_{\ell = 1}^{L}
-\partial_{z} \Theta_{\ell}(\mathbf{r}'') \quad .
-\label{eq:v-unit-vector-rtp}
-\end{equation}
-
-
-
-
-
-1) começar com direção de magnetização uniforme
-
-2) citar o Baranov e o João
-
-3) usar as eqs pra explicar por que a camada precisa ter a mesma direção das fontes
-
-4) apresentar a expressão generalizada para fontes com magnetização arbitrária
-
-5) ressaltar a importância/ineditismo desta expressão
 
 
 \subsection{Relationships between the equivalent layer and the true sources}
