@@ -303,127 +303,310 @@ dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-rtp-l-Neumann}
 \end{equation}
 
-The integral defined by equation \ref{eq:B-rtp-l-Neumann} represents the 
-theoretical basis for computing the RTP in space domain via equivalent-layer technique.
-This is a two-step approach the consists in 
-first estimating the positive physical property distribution
-$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ by solving the 
-integral equation \ref{eq:Delta-T-l-Neumann} by considering that the observed 
+The surface integrals for $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
+\ref{eq:Delta-T-l-Neumann}) and $B^{r}_{\ell}(\mathbf{r})$ (equation 
+\ref{eq:B-rtp-l-Neumann}) represent the 
+theoretical basis for computing the RTP in space domain, from total-field
+anomaly data, via equivalent-layer technique.
+This is a two-step approach that consists in first considering that the observed 
 total-field anomaly data can be satisfactorily represented by 
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$. Then, the estimated 
+$\Delta\tilde{T}_{\ell}(\mathbf{r})$ and then solving the discrete version of 
+integral equation \ref{eq:Delta-T-l-Neumann} to obtain the positive physical 
+property distribution $\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$. 
+In the second step, the estimated 
 $\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ is used in 
-equation \ref{eq:B-rtp-l-Neumann} to compute the RTP anomaly 
-$B^{r}_{\ell}(\mathbf{r})$. ISSO QUE O JOÃO FEZ E NÃO EXPLICOU
-
-PAREI AQUI
-
-
-1) começar com direção de magnetização uniforme
-
-2) citar o Baranov e o João
-
-3) usar as eqs pra explicar por que a camada precisa ter a mesma direção das fontes
-
-4) apresentar a expressão generalizada para fontes com magnetização arbitrária
-
-5) ressaltar a importância/ineditismo desta expressão
-
-
-\section{Sources with nonuniform magnetization direction}
-\label{sec:eqlayer_nonuniform}
+a discrete version of equation \ref{eq:B-rtp-l-Neumann} to compute the RTP anomaly 
+$B^{r}_{\ell}(\mathbf{r})$. It is important noting that equations \ref{eq:Delta-T-l-Neumann}
+and \ref{eq:B-rtp-l-Neumann} show, for the first time, the main 
+theoretical assumptions supporting the space-domain RTP: 
+(i) There exists a planar equivalent layer of dipoles that is located at a coordinate 
+$z = z_{c}$ above the sources, has the same uniform magnetization direction of the sources,
+has a positive magnetic-moment distribution 
+$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ and exactly reproduces the 
+observed total-field anomaly at observation points with vertical coordinates $z < z_{c}$;
+(ii) The same planar equivalent layer of dipoles reproducing the observed total-field
+anomaly data is able to reproduce the RTP anomaly $B^{r}_{\ell}(\mathbf{r})$.
+These two theoretical assumptions have being implicitly used, but not clearly stated 
+neither in the pioneer method proposed by \cite{silva_1986}, nor in the succeeding 
+methods \cite[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis_etal2020}
+proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
 
-By combining equations \ref{eq:V-summation} and \ref{eq:V-l-Neumann}, we obtain
-that the resultant magnetic scalar potential $V(\mathbf{r})$ 
-(equation \ref{eq:V-volume-integral}) can be represented by
-the superposition of equivalent layers associated with all magnetization components:
+\subsection{RTP in Fourier domain}
+\label{subsec:RTP_Fourier_domain_uniform}
+
+
+The RTP can also be computed in the Fourier domain by using Fast Fourier Transform (FFT)
+algorithms for the particular case in which the observed total-field anomaly data rely on a
+planar and regular grid at constant $z = z_{0}$. 
+The common approach to deduce the RTP in the Fourier domain 
+consists in computing the Fourier transform of the approximated total-field anomaly
+$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l}) with respect to the
+horizontal coordinates $x$ and $y$ of the observation points, according to 
+\citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
+It is important to stress that equation 
+\ref{eq:Delta-T-l} is defined in terms of volume integrals that depend on the position,
+shape and total-magnetization distribution of the true sources. 
+What follows shows that the common expression for computing the RTP in Fourier domain
+can also be deduced from the equivalent-layer representation of the approximated
+total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
+\ref{eq:Delta-T-l-Neumann}) presented here. To do this, we follow the same approach
+presented by \citet[][ ch. 11]{blakely1996}.
+
+
+Let us first rewrite the approximated total-field anomaly
+$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l-Neumann}) 
+as a 2D convolution evaluated at observation points 
+$\mathbf{r}_{0} = \left[x \:\: y \:\: z_{0} \right]^{\top}$ located on a 
+horizontal plane with constant vertical coordinate $z = z_{0}$:
 \begin{equation}
-V(\mathbf{r}) = -
+\Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \:
-\nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{v}}(\mathbf{r}'') \: 
-dx''dy'' \: , \quad z < z_{c} \: ,
-\label{eq:V-superposition-layers}
+\partial_{z} \Theta_{\ell}(\mathbf{r}'') \: 
+\Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+dx''dy'' \: , \:\: z_{0} < z_{c} \: ,
+\label{eq:Delta-T-l-convolution}
 \end{equation}
 where
 \begin{equation}
-\mathbf{v}(\mathbf{r}'') = 
-\begin{bmatrix}
-v_{x}(\mathbf{r}'') \\ v_{y}(\mathbf{r}'') \\ v_{z}(\mathbf{r}'')
-\end{bmatrix} =
-\sum\limits_{\ell = 1}^{L}
-\partial_{z} \Theta_{\ell}(\mathbf{r}'') \:
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
-\label{eq:v-vector}
-\end{equation}
-and
-\begin{equation}
-\hat{\mathbf{v}}(\mathbf{r}'') = 
-\begin{bmatrix}
-\hat{v}_{x}(\mathbf{r}'') \\ 
-\hat{v}_{y}(\mathbf{r}'') \\ 
-\hat{v}_{z}(\mathbf{r}'')
-\end{bmatrix} =
-\frac{\mathbf{v}(\mathbf{r}'')}{\| \mathbf{v}(\mathbf{r}'') \|} \quad .
-\label{eq:v-unit-vector}
-\end{equation}
-Similarly, equations \ref{eq:B-summation}, \ref{eq:Delta-T}, \ref{eq:B-l-Neumann} and
-\ref{eq:Delta-T-l-Neumann} can be used to show that the 
-resultant magnetic induction field $\mathbf{B}(\mathbf{r})$ and
-approximated total-field anomaly $\Delta\tilde{T}(\mathbf{r})$ also have the 
-following equivalent-layer representations:
-\begin{equation}
-\mathbf{B}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:B-superposition-layers}
-\end{equation}
-and
-\begin{equation}
-\Delta\tilde{T}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
+\Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
 \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
-dx''dy'' \: , \:\: z < z_{c} \: .
-\label{eq:Delta-T-superposition-layers}
+\mathbf{G}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: .
+\label{eq:Psi-l}
+\end{equation}
+Similarly, let us also rewrite 
+$B^{r}_{\ell}(\mathbf{r})$ (equation \ref{eq:B-rtp-l-Neumann}) as a 2D convolution 
+evaluated at the plane $z = z_{0}$:
+\begin{equation}
+B^{r}_{\ell}(\mathbf{r}_{0}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Theta_{\ell}(\mathbf{r}'') \: 
+\Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+dx''dy'' \: , \:\: z_{0} < z_{c} \: ,
+\label{eq:B-rtp-l-convolution}
+\end{equation}
+where
+\begin{equation}
+\Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
+\partial_{zz} \frac{1}{\| \mathbf{r}_{0} - \mathbf{r}'' \|} \: .
+\label{eq:Psi-rtp-l}
 \end{equation}
 
-Note that the equivalent layer representing the resultant magnetic scalar potential 
-$V(\mathbf{r})$ (equation \ref{eq:V-superposition-layers}),
-magnetic induction field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-superposition-layers})
-and approximated total-field anomaly $\Delta\tilde{T}(\mathbf{r})$
-(equation \ref{eq:Delta-T-superposition-layers}) does not have a uniform
-magnetization direction. Rather it has a spatially varying direction 
-$\hat{\mathbf{v}}(\mathbf{r}'')$ (equations \ref{eq:v-vector} and \ref{eq:v-unit-vector})
-that combines the individual uniform directions $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
-of all $L$ magnetization components. 
-Besides, this layer has a strictly positive magnetic-moment distribution 
-$\tfrac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi}$ defined as the ratio of the
-Euclidean norm of $\mathbf{v}(\mathbf{r}'')$ (equation \ref{eq:v-vector}) and the positive
-constant $2\pi$. 
-Equations \ref{eq:V-superposition-layers}--\ref{eq:Delta-T-superposition-layers} generalize, 
-in the space domain, the all-positive 
-magnetic-moment distribution presented by \cite{reis_etal2020} to the case in which the sources 
-are arbitrarily magnetized with heterogeneous magnetization intensity and direction.
+Then, we use the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996} to obtain:
+\begin{equation}
+\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]
+\label{eq:Fourier-Delta-T-l}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\label{eq:Fourier-B-rtp-l}
+\end{equation}
+where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
+with respect to the horizontal coordinates $x$ and $y$ of the observation points.
+The 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
+along the $x$ and $y$ directions, respectively. The wavenumbers have units of 
+inverse distance. The dependence of the 2DFT's 
+on $k_{x}$ and $k_{y}$ is conveniently omitted to simplify the notation.
+
+To define the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right]$ 
+on the right side of equations \ref{eq:Fourier-Delta-T-l} and \ref{eq:Fourier-B-rtp-l}, 
+where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
+position vector defining a point $(x'', y'', z_{c})$ on the equivalent layer, 
+we can first compute the derivative of $\Theta_{\ell}(\mathbf{r})$ (equation
+\ref{eq:Theta-l}) with respect to $z$ and then use \citet[][ p. 297]{blakely1996} 
+to obtain:
+\begin{equation}
+\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] 
+= 2\pi \, c_{m} \, e^{|k| \, z_{c}} 
+\int\limits_{z_{c}}^{\infty} 
+\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right] e^{-|k| \, z'} \:
+dz' \: , \:\: z_{c} < z' \: ,
+\label{eq:Fourier-Dz-Theta-l}
+\end{equation}
+where $|k| = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and 
+$\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right]$ represents the 
+2DFT of the magnetization intensity distribution on one horizontal slice
+through the magnetic sources at $z = z'$.
+In equation \ref{eq:Fourier-Dz-Theta-l}, we assume that 
+$h_{\ell}(\mathbf{r}')$ is zero outside the volume $v_{\ell}$ of the sources
+and, consequently, at $z < z_{0} < z_{c}$.
+By using \citet[][ p. 278]{blakely1996}, we define the 2DFT's 
+$\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Delta-T-l}) and 
+$\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-rtp-l}) as follows:
+\begin{equation}
+\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{t} \: \mathcal{U}_{\ell} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\: , \:\: z_{0} < z_{c} \: ,
+\label{eq:Fourier-Psi-l}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] 
+= |k| \, e^{|k| \, (z_{0} - z_{c})} \: ,
+\:\: z_{0} < z_{c} \: ,
+\label{eq:Fourier-Psi-rtp-l}
+\end{equation}
+where
+\begin{equation}
+\mathcal{U}_{t} = \hat{u}_{z}(I_{t}, D_{t}) + 
+\mathrm{i} \: \frac{ \hat{u}_{x}(I_{t}, D_{t}) \: k_{x} + \hat{u}_{y}(I_{t}, D_{t}) \: k_{y} }{|k|}
+\label{eq:U-t}
+\end{equation}
+and
+\begin{equation}
+\mathcal{U}_{\ell} = \hat{u}_{z}(I_{\ell}, D_{\ell}) + 
+\mathrm{i} \: \frac{ \hat{u}_{x}(I_{\ell}, D_{\ell}) \: k_{x} + \hat{u}_{y}(I_{\ell}, D_{\ell}) \: k_{y} }{|k|}
+\label{eq:U-ell}
+\end{equation}
+are defined in terms of the Cartesian components of the unit vectors 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
+(equation \ref{eq:u-unit-vector}) and the imaginary unity $\mathrm{i} = \sqrt{-1}$.
+Now, by substituting the 2DFT's 
+$\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dz-Theta-l}) and 
+$\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Psi-l}) into that defining
+$\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-Delta-T-l}), we obtain:
+\begin{equation}
+\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] = 
+2\pi \, c_{m} \, 
+\mathcal{U}_{t} \: \mathcal{U}_{\ell} \: |k| \, e^{|k| \, z_{0}} 
+\int\limits_{z_{0}}^{\infty} 
+\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right] e^{-|k| \, z'} \:
+dz' \: , \:\: z_{0} < z' \: ,
+\label{eq:Fourier-Delta-T-l-final}
+\end{equation}
+with $\mathcal{U}_{t}$ and $\mathcal{U}_{\ell}$ given by equations 
+\ref{eq:U-t} and \ref{eq:U-ell}, respectively. 
+
+Regardless of notation differences, 
+equation \ref{eq:Fourier-Delta-T-l-final} defining the 2DFT
+of the approximated total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r}_{0})$
+(equation \ref{eq:Delta-T-l-convolution}) at the horizontal plane $z = z_{0}$ 
+is exactly the same found in 
+\citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example.
+Finally, it can be verified from equations 
+\ref{eq:Fourier-Dz-Theta-l}, \ref{eq:Fourier-Psi-rtp-l} and 
+\ref{eq:Fourier-Delta-T-l-final} that the 2DFT 
+$\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right]$ (equation 
+\ref{eq:Fourier-B-rtp-l}) can be rewritten as follows:
+\begin{equation}
+\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right]
+= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}_{\ell}} \, 
+\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] \: ,
+\label{eq:Fourier-B-rtp-l-final}
+\end{equation}
+which represents the common expression defining the RTP in Fourier domain
+\cite[e.g.,][ p. 331]{blakely1996}.
 
 
-\subsection{Relationships between the equivalent layer and the true sources}
-\label{subsec:relationships_true_sources}
 
+PAREI AQUI
 
-Note that $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) 
-and $\partial_{z} \Theta_{\ell}(\mathbf{r}'')$ 
-(equations \ref{eq:Theta-l-Neumann} and \ref{eq:V-l-Neumann} and \ref{eq:v-vector}) 
-are analogous to the gravitational potential and 
-vertical component of the gravitational attraction (gravity disturbance) that 
-would be produced by the $\ell$th magnetization component at the observation point
-$\mathbf{r}$ and at the point $\mathbf{r}''$ on the equivalent layer plane $z_{c}$,
-respectively. 
-It is also important noting that these two functions are strictly positive because
-they are defined in terms of the positive total-magnetization intensity distribution 
-$h_{\ell}(\mathbf{r}')$ (equation \ref{eq:h-vector-total}) of the $\ell$th magnetization 
-component.
+%\section{Sources with nonuniform magnetization direction}
+%\label{sec:eqlayer_nonuniform}
+%
+%
+%By combining equations \ref{eq:V-summation} and \ref{eq:V-l-Neumann}, we obtain
+%that the resultant magnetic scalar potential $V(\mathbf{r})$ 
+%(equation \ref{eq:V-volume-integral}) can be represented by
+%the superposition of equivalent layers associated with all magnetization components:
+%\begin{equation}
+%V(\mathbf{r}) = -
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \:
+%\nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
+%\hat{\mathbf{v}}(\mathbf{r}'') \: 
+%dx''dy'' \: , \quad z < z_{c} \: ,
+%\label{eq:V-superposition-layers}
+%\end{equation}
+%where
+%\begin{equation}
+%\mathbf{v}(\mathbf{r}'') = 
+%\begin{bmatrix}
+%v_{x}(\mathbf{r}'') \\ v_{y}(\mathbf{r}'') \\ v_{z}(\mathbf{r}'')
+%\end{bmatrix} =
+%\sum\limits_{\ell = 1}^{L}
+%\partial_{z} \Theta_{\ell}(\mathbf{r}'') \:
+%\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
+%\label{eq:v-vector}
+%\end{equation}
+%and
+%\begin{equation}
+%\hat{\mathbf{v}}(\mathbf{r}'') = 
+%\begin{bmatrix}
+%\hat{v}_{x}(\mathbf{r}'') \\ 
+%\hat{v}_{y}(\mathbf{r}'') \\ 
+%\hat{v}_{z}(\mathbf{r}'')
+%\end{bmatrix} =
+%\frac{\mathbf{v}(\mathbf{r}'')}{\| \mathbf{v}(\mathbf{r}'') \|} \quad .
+%\label{eq:v-unit-vector}
+%\end{equation}
+%Similarly, equations \ref{eq:B-summation}, \ref{eq:Delta-T}, \ref{eq:B-l-Neumann} and
+%\ref{eq:Delta-T-l-Neumann} can be used to show that the 
+%resultant magnetic induction field $\mathbf{B}(\mathbf{r})$ and
+%approximated total-field anomaly $\Delta\tilde{T}(\mathbf{r})$ also have the 
+%following equivalent-layer representations:
+%\begin{equation}
+%\mathbf{B}(\mathbf{r}) = 
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
+%\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
+%dx''dy'' \: , \:\: z < z_{c} \: ,
+%\label{eq:B-superposition-layers}
+%\end{equation}
+%and
+%\begin{equation}
+%\Delta\tilde{T}(\mathbf{r}) = 
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\frac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi} \: 
+%\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+%\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: \hat{\mathbf{v}}(\mathbf{r}'') \: 
+%dx''dy'' \: , \:\: z < z_{c} \: .
+%\label{eq:Delta-T-superposition-layers}
+%\end{equation}
+%
+%Note that the equivalent layer representing the resultant magnetic scalar potential 
+%$V(\mathbf{r})$ (equation \ref{eq:V-superposition-layers}),
+%magnetic induction field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-superposition-layers})
+%and approximated total-field anomaly $\Delta\tilde{T}(\mathbf{r})$
+%(equation \ref{eq:Delta-T-superposition-layers}) does not have a uniform
+%magnetization direction. Rather it has a spatially varying direction 
+%$\hat{\mathbf{v}}(\mathbf{r}'')$ (equations \ref{eq:v-vector} and \ref{eq:v-unit-vector})
+%that combines the individual uniform directions $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
+%of all $L$ magnetization components. 
+%Besides, this layer has a strictly positive magnetic-moment distribution 
+%$\tfrac{\| \mathbf{v}(\mathbf{r}'') \|}{2\pi}$ defined as the ratio of the
+%Euclidean norm of $\mathbf{v}(\mathbf{r}'')$ (equation \ref{eq:v-vector}) and the positive
+%constant $2\pi$. 
+%Equations \ref{eq:V-superposition-layers}--\ref{eq:Delta-T-superposition-layers} generalize, 
+%in the space domain, the all-positive 
+%magnetic-moment distribution presented by \cite{reis_etal2020} to the case in which the sources 
+%are arbitrarily magnetized with heterogeneous magnetization intensity and direction.
+%
+%
+%\subsection{Relationships between the equivalent layer and the true sources}
+%\label{subsec:relationships_true_sources}
+%
+%
+%Note that $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) 
+%and $\partial_{z} \Theta_{\ell}(\mathbf{r}'')$ 
+%(equations \ref{eq:Theta-l-Neumann} and \ref{eq:V-l-Neumann} and \ref{eq:v-vector}) 
+%are analogous to the gravitational potential and 
+%vertical component of the gravitational attraction (gravity disturbance) that 
+%would be produced by the $\ell$th magnetization component at the observation point
+%$\mathbf{r}$ and at the point $\mathbf{r}''$ on the equivalent layer plane $z_{c}$,
+%respectively. 
+%It is also important noting that these two functions are strictly positive because
+%they are defined in terms of the positive total-magnetization intensity distribution 
+%$h_{\ell}(\mathbf{r}')$ (equation \ref{eq:h-vector-total}) of the $\ell$th magnetization 
+%component.
