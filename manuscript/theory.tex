@@ -150,7 +150,8 @@ $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$, is given by:
 \end{equation}
 where $h(\mathbf{r}')$ is a positive scalar function representing a spatially-varying 
 total-magnetization intensity (in A/m) and $\hat{\mathbf{u}}(I', D')$ 
-is a constant unit vector defined by 
+is a unit vector defining a uniform total-magnetization direction according to
+the vector function
 \begin{equation}
 \hat{\mathbf{u}}(I, D) =
 \begin{bmatrix}
@@ -165,7 +166,7 @@ is a constant unit vector defined by
 \end{bmatrix} \quad ,
 \label{eq:u-unit-vector}
 \end{equation}
-with constant inclination $I = I'$ and declination $D = D'$.
+with constant inclination $I = I'$ and declination $D = D'$ values.
 In this case, the magnetic scalar potential produced by the set of sources at an
 observation point $(x,y,z)$ located above them, outside $v$, is given by
 \cite[e.g., ][ p. 196]{jackson1999}:
@@ -174,25 +175,31 @@ V(\mathbf{r}) = -\nabla \Theta(\mathbf{r})^{\top}
 \hat{\mathbf{u}}(I', D') \quad ,
 \label{eq:scalar-potential-V}
 \end{equation}
-which represents the negative directional derivative of the harmonic function
+which represents a negative directional derivative of the harmonic function
 \begin{equation}
 \Theta(\mathbf{r}) = c_{m} \iiint\limits_{v}
 h(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
 \: dx'dy'dz' \quad ,
 \label{eq:scalar-potential-Theta}
 \end{equation}
-where the superscript $^{\top}$ stands for transposition, 
+where the superscript $^{\top}$ stands for transposition; 
 $\mathbf{r} = \left[x \:\: y \:\: z \right]^{\top}$ is the position vector 
 associated with the observation point $(x, y, z)$; 
 $\nabla$ is the gradient operator with respect to the coordinates of $\mathbf{r}$;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ is the inverse distance function; 
 $\| \cdot \|$ denotes the Euclidean norm; $c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (in H/m);
 and $\mu_{0}$ is the magnetic permeability at vacuum. 
+It is important noting that, the harmonic function $\Theta(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-Theta}) represents the gravitational potential that would be
+produced by the sources if they had a positive density distribution proportional
+to the total-magnetization intensity $h(\mathbf{r}')$. Because of that,
+$\Theta(\mathbf{r})$ is strictly positive at all observation points 
+$\mathbf{r}$ located outside the volume $v$ of the sources.
 
 The magnetic induction field $\mathbf{B}(\mathbf{r})$ (in nT) produced by the 
 sources at the observation point $\mathbf{r}$ is defined by the 
 negative gradient of the scalar potential $V(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-V}), as follows:
+(equation \ref{eq:scalar-potential-V}) as follows:
 \begin{equation}
 \mathbf{B}(\mathbf{r}) 
 = -\nabla V(\mathbf{r}) 
@@ -237,64 +244,73 @@ where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the presumed constant direction o
 geomagnetic field at the study area \cite[][ p. 179]{blakely1996}.
 
 
-PAREI AQUI
+\section{Planar equivalent layer of dipoles}
+\label{sec:eqlayer}
 
 
-\section{Planar equivalent layer of dipoles for sources with uniform magnetization direction}
-\label{sec:eqlayer_uniform}
+\subsection{Analytical expressions in space domain}
+\label{subsec:eqlayer_space_domain}
 
 
-\subsection{Integral equations obtained by solving the Neumann’s problem}
-\label{subsec:eqlayer_uniform_deduction}
-
-
-The harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) can be
-alternatively defined in terms of its vertical 
+The harmonic function $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) 
+can be alternatively defined in terms of its vertical 
 derivative on a plane $z = z_{c}$ located between the observation points and the 
 magnetic sources as follows \cite[e.g.,][]{roy1962, reis_etal2020}:
 \begin{equation}
-\Theta_{\ell}(\mathbf{r}) =  
+\Theta(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
 \: dx''dy'' \: , \quad z < z_{c} \: ,
-\label{eq:Theta-l-Neumann}
+\label{eq:Theta-Neumann}
 \end{equation}
 where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
 position vector defining a point $(x'', y'', z_{c})$ located on the plane 
-$z = z_{c}$, $\partial_{z} \Theta_{\ell}(\mathbf{r}'') \equiv 
-\frac{\partial}{\partial z} \Theta_{\ell}(\mathbf{r}'')$ denotes the partial
+$z = z_{c}$, $\partial_{z} \Theta(\mathbf{r}'') \equiv 
+\frac{\partial}{\partial z} \Theta(\mathbf{r}'')$ denotes the partial
 derivative, evaluated at $(x'',y'',z_{c})$, of the harmonic function
-$\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with respect to the coordinate 
-$z$. 
-Equation \ref{eq:Theta-l-Neumann} represents the solution of the 
+$\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) with respect 
+to the coordinate $z$. 
+Equation \ref{eq:Theta-Neumann} represents the solution of the 
 \textit{Neumann’s problem} or the \textit{second boundary value problem of potential
 theory} \cite[][ p. 246]{kellogg1967} on a plane.
-By computing the directional derivative of $\Theta_{\ell}(\mathbf{r})$ 
-(equation \ref{eq:Theta-l-Neumann}) along 
-$\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$ (equation \ref{eq:u-unit-vector}), we obtain 
-the following alternative expression for the magnetic scalar potential $V_{\ell}(\mathbf{r})$ 
-(equation \ref{eq:V-l}):
+
+By computing the directional derivative of $\Theta(\mathbf{r})$ 
+(equation \ref{eq:Theta-Neumann}) along the uniform magnetization direction
+$\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the sources, 
+we obtain the following alternative expression for the magnetic scalar potential
+$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}):
 \begin{equation}
-V_{\ell}(\mathbf{r}) = -
+V(\mathbf{r}) = -
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
+\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: 
 \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: 
+\hat{\mathbf{u}}(I', D') \: 
 dx''dy'' \: , \quad z < z_{c} \: .
-\label{eq:V-l-Neumann}
+\label{eq:V-Neumann}
 \end{equation}
-The planar layer associated with the magnetic induction field $\mathbf{B}_{\ell}(\mathbf{r})$ 
-(equation \ref{eq:B-l}) produced by the $\ell$th magnetization component at the 
-observation point $(x,y,z)$ can also be obtained in straightforward approach by computing 
-the negative gradient of $V_{\ell}(\mathbf{r})$ (equation \ref{eq:V-l-Neumann}):
+From the physical point of view, equation \ref{eq:V-Neumann} is a planar layer
+of dipoles having the same uniform total-magnetization direction 
+$\hat{\mathbf{u}}(I', D')$ of the sources (equation \ref{eq:total-magnetization-vector}) 
+and a positive magnetic-moment intensity distribution 
+$\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$, which is proportional to the 
+pseudogravity anomaly produced by the sources at the plane $z = z_{c}$. 
+\citet{reis_etal2020} have followed a similar approach to deduce this 
+all-positive magnetic-moment distribution for interpreting 
+total-field anomaly data.
+Note that the planar layer of dipoles exactly reproduces the magnetic scalar potential
+$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}) yielded by the true sources at 
+all observation points $\mathbf{r}$ with $z < z_{c}$. 
+By computing the negative gradient of the magnetic scalar potential $V(\mathbf{r})$ 
+(equation \ref{eq:V-Neumann}), we can also show that the planar layer of dipoles 
+yields the magnetic induction field:
 \begin{equation}
-\mathbf{B}_{\ell}(\mathbf{r}) = 
+\mathbf{B}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
+\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: 
 \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: 
+\hat{\mathbf{u}}(I', D') \: 
 dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:B-l-Neumann}
+\label{eq:B-Neumann}
 \end{equation}
 where
 \begin{equation}
@@ -310,53 +326,124 @@ where
 \partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
 \partial_{zz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
 \end{bmatrix}
-\label{eq:H-tilde}
+\label{eq:G-matrix}
 \end{equation}
 is a matrix composed of second derivatives 
 $\partial_{\alpha\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \equiv 
 \frac{\partial^{2}}{\partial\alpha \, \partial\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$,
 $\alpha = x, y, z$, $\beta = x, y, z$, of the inverse distance function 
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ with respect to the coordinates of
-the observation points. It is relatively easy to verify from equations 
-\ref{eq:Delta-T-l} and \ref{eq:B-l-Neumann} that the approximated total-field anomaly
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$ can be defined in terms of the 
-planar equivalent layer given below:
+the observation points. It is also relatively easy to verify from equations 
+\ref{eq:B-t} and \ref{eq:B-Neumann} that the magnetic induction field component 
+produced by the planar layer of dipoles along the direction 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ is given by:
 \begin{equation}
-\Delta\tilde{T}_{\ell}(\mathbf{r}) = 
+B_{t}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
+\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: 
 \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
 \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: 
+\hat{\mathbf{u}}(I', D') \: 
 dx''dy'' \: , \:\: z < z_{c} \: .
-\label{eq:Delta-T-l-Neumann}
+\label{eq:B-t-Neumann}
 \end{equation}
 
-Equations \ref{eq:V-l-Neumann}, \ref{eq:B-l-Neumann} and \ref{eq:Delta-T-l-Neumann} 
-show that the magnetic scalar potential $V_{\ell}(\mathbf{r})$ (equation \ref{eq:V-l}),
-magnetic induction field $\mathbf{B}_{\ell}(\mathbf{r})$ (equation \ref{eq:B-l}) and
-approximated total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r})$
-(equation \ref{eq:Delta-T-l}) produced by the $\ell$th magnetization component 
-with uniform magnetization direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
-can be exactly reproduced by a continuous layer of dipoles (\textit{equivalent layer})
-having this same magnetization direction and a positive magnetic-moment
-distribution $\tfrac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$. 
-These equations are significant in at least three major aspects
+Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and \ref{eq:B-t-Neumann} 
+show that not only the magnetic scalar potential $V(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-V}), but also the magnetic induction field 
+$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and magnetic induction component
+$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) yielded by the true sources are
+exactly reproduced by the same planar layer of dipoles located above the sources, 
+at $z = z_{c}$, with uniform magnetization direction $\hat{\mathbf{u}}(I', D')$ and 
+positive magnetic-moment intensity distribution 
+$\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$. 
+According to \citet{reis_etal2020}, 
+the equivalence between the magnetic fields produced by the true sources and
+the planar layer of dipoles is the apparent reason by which the last has been 
+denominated by the term \textit{equivalent layer} in the literature.
+The integrals defined by equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and 
+\ref{eq:B-t-Neumann} are significant in at least three major aspects
 because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
 boundary value problem of potential theory that is intrinsically related to
 the magnetic field produced by sources with uniform magnetization direction;
 (ii) the uniform magnetization direction of the planar equivalent layer is 
-equal to that of the $\ell$th magnetization component, regardless of whether 
+equal to that of the true sources, regardless of whether 
 this direction is normal to the planar layer or not;
-(iii) the magnetic-moment distribution on the planar layer is strictly positive 
-at all points $(x'',y'',z_{c})$ and is proportional to the pseudogravity anomaly
-produced by the $\ell$th magnetization component. 
-\citet{reis_etal2020} have followed a similar approach to deduce this 
-all-positive magnetic-moment distribution for interpreting 
-total-field anomaly data.
- 
+(iii) the magnetic-moment distribution on the planar layer has an analytical solution 
+which is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
+pseudogravity anomaly produced by the sources. 
+
+It is important to stress that 
+methods based on equivalent layer for magnetic-data processing have been traditionally
+developed in space domain by numerically solving the integral equation 
+\begin{equation}
+B_{t}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+p(\mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{p}, D_{p}) \: 
+dx''dy'' \: , \:\: z < z_{c} \: ,
+\label{eq:generic-dipole-layer}
+\end{equation}
+for the unknown physical property distribution $p(\mathbf{r}'')$, with predefined 
+constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$ of the dipoles
+magnetization. Note that the integral defined by equation \ref{eq:B-t-Neumann} represents
+the analytical solution of the generic planar dipole layer defined by equation 
+\ref{eq:generic-dipole-layer} for the particular case in which the dipoles have
+the same uniform magnetization direction of the true sources.
+
+
+\subsection{Analytical expressions in Fourier domain}
+\label{subsec:eqlayer_Fourier_domain}
+
+
+Several methods for magnetic-data processing have been developed in the Fourier domain 
+for the particular case in which the magnetic data rely on a
+planar and regular grid at constant $z = z_{0}$. In this case, the methods
+can take advantage of the well-known computational efficiency of 
+Fast Fourier Transform (FFT) algorithms.
+
+Methods based on equivalent layer, on the other hand, have been traditionally developed
+in space domain by numerically solving the integral equation \ref{eq:B-t-Neumann}
+for an unknown physical property distribution $p(\mathbf{r}'')$, with predefined 
+constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$ of the dipoles
+magnetization.
+Compared to those in Fourier domain, the space-domain methods based on equivalent layer 
+can be applied to irregularly spaced data relying on undulating surfaces and usually have
+a worse computational efficiency because they require solving large-scale linear systems.
+
+There are methods developed in Fourier and space domain (via equivalent layer)
+that perform the same magnetic-data processing, such as the upward/downward continuation
+or reduction to the pole (RTP). 
+The connection between methods for computing the upward/downward continuation of 
+potential fields in Fourier and space domains is fully understood in literature. 
+Most of the space-domain methods based on equivalent layer rely on the numerical solution
+of the \textit{upward continuation integral} 
+\citep{skeels1947, henderson-zietz1949, henderson1960, roy1962, bhattacharyya1967, 
+henderson1970}, which is the solution of the \textit{Dirichlet’s problem} (or the
+\textit{first boundary value problem of potential theory}) \cite[][ p. 236]{kellogg1967} 
+on a plane and represents an equivalent layer of monopoles (or points of mass).
+Most of the Fourier-domain methods for computing the potential-field 
+continuation between planar surfaces, on the other hand, are based on the two 
+dimensional Fourier Transform (2DFT) of the upward continuation integral with respect 
+to the horizontal coordinates $x$ and $y$ of the observation points, as we can see in 
+\citet{gunn1975}, \citet{bhattacharyya1967} or \citet[][ p. 298]{blakely1996}, for example.
+
+Differently from those methods for computing the continuation of potential fields, 
+there is a theoretical gap between the methods for computing the RTP in
+Fourier and space domain (via equivalent layer).
+The equivalent-layer expressions defined by equations 
+
+
+
+for the particular case in which the observed total-field anomaly data 
+The common approach to deduce the RTP in the Fourier domain 
+consists in computing the Fourier transform of the approximated total-field anomaly
+$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l})  
+
 
 \subsection{Reduction to the pole (RTP) in space domain}
 \label{subsec:RTP_space_domain_uniform}
@@ -452,6 +539,7 @@ horizontal coordinates $x$ and $y$ of the observation points, according to
 It is important to stress that equation 
 \ref{eq:Delta-T-l} is defined in terms of volume integrals that depend on the position,
 shape and total-magnetization distribution of the true sources. 
+
 What follows shows that the common expression for computing the RTP in Fourier domain
 can also be deduced from the equivalent-layer representation of the approximated
 total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
