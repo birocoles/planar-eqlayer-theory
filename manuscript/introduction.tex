@@ -1,0 +1,95 @@
+\section{introduction}
+
+%The seminal paper presented by Sim\'{e}on Denis Poisson to the French Academy of Sciences 
+%in 1824 contains the first ideas about the equivalent-layer technique.
+%In his work, Poisson showed that the magnetic intensity produced outside a given magnetic
+%body is the same as would be produced by a combination of two fictitious magnetization
+%distributions, one defined over the surface and another defined throughout the volume
+%of the magnetic body. These fictitious magnetization distributions are generally known as
+%Poisson's equivalent surface- and volume-distributions of magnetism 
+%\citep[][ p. 64]{whittaker1910}.
+%Some years later, the Poisson's investigations were generalized and extended by George Green
+%in his ground-breaking paper ``\textit{An essay on the application of mathematical analysis 
+%to the theories of electricity and magnetism}'', presented in Nottingham, UK, 1828.
+%Green, who was the first to use the term ``potential",
+%followed a mathematical approach already used by Lagrange, Laplace, and 
+%Poisson to present a formula generalizing Poisson's result on the equivalent surface- 
+%and volume-distributions of magnetism. 
+%Using his formula, which is now commonly called Green's theorem 
+%\citep[][ p. 104]{macmillan1958} or Green's first identity \citep[][ p. 212]{kellogg1967},
+%George Green deduced many results of remarkable beauty and interest in potential theory
+%\citep[][ p. 66]{whittaker1910}.
+
+
+The equivalent layer technique was introduced during the 1960s and has 
+become a versatile tool for processing ans interpreting potential-field data on an 
+exploration scale (mining and oil exploration). 
+The technique can be used to accomplish various data processing steps, such as interpolation 
+\citep[e.g.,][]{cordell_1992,mendonca-silva_1994, barnes2012, soler-uieda2021}, 
+upward (or downward) continuation 
+\citep[e.g.,][]{henderson-zietz1949, emilia1973, bhattacharyya-chan1977,
+hansen-miyazaki_1984, li-oldenburg_2010, siqueira_etal_2017, takahashi-etal2020},
+processing of gradient data 
+\citep[e.g.,][]{barnes-lumley_2011, barnes2014, martinez_li_2016}, 
+merging multiple datasets \citep[e.g.,][]{boggs-dransfield2004, lane2004}, 
+estimating density models from gravity data \cite[e.g.,][]{mendonca-2020}, 
+computing the amplitude of the anomalous magnetic field 
+\citep[e.g.,][]{li_li_2014, sun_etal-2019, melo-etal2021, hidalgo-gato-etal2021}, 
+transforming total-field anomalies into field components \citep[e.g.,][]{li-etal2021}, 
+as well as estimating the magnetizzation direction and computing the reduction to the pole
+of magnetic data \citep[e.g.,][]{emilia1973, silva_1986, leao-silva_1989, 
+guspi-novara_2009, oliveirajr-etal_2013, li_etal_2014, ribeiro_filho_etal2020,
+reis_etal2020}.
+
+Methods for gravity data processing/interpretation via equivalent-layer technique 
+\citep[e.g.,][]{roy1962, dampney1969} usually rely on the numerical solution of the 
+\textit{upward continuation integral} \citep{skeels1947, henderson-zietz1949,
+henderson1960, roy1962, bhattacharyya1967, henderson1970}, which is the solution of the
+\textit{Dirichlet’s problem} or the \textit{first boundary value problem of potential
+theory} \cite[][ p. 236]{kellogg1967} on a plane. 
+This numerical solution represents the density (or mass) distribution on a discrete layer 
+of monopoles (points of mass) that are placed on a plane above the sources and 
+reproduces a discrete set of observed gravity data.
+This layer is usually called \textit{equivalent layer} and the monopoles (or points of mass)
+\textit{equivalent sources}.
+By using the estimated physical property (density or mass) distribution of the 
+equivalent sources, the interpreter may compute, for example, the upward/downward
+continuation or interpolation of gravity data.
+
+Note that, in the context of gravity data applications, the equivalent layer is grounded
+on a solid theoretical background and represents the solution of a boundary value problem
+of potential theory.
+This theoretical background guarantees the existence of an equivalent layer of
+monopoles for processing/interpreting not only gravity data, but also any potential field 
+that satisfies the Laplace's equation. Besides, it establishes that the estimated 
+physical property distribution represents a scaled version of the potential field on
+the plane of the equivalent layer \citep{roy1962, siqueira_etal_2017, mendonca-2020}.
+The equivalent-layer technique commonly applied to magnetic data, on the other hand, 
+does not have the same well-established theoretical background.
+In the geophysical literature, it has long been assumed by principle that the magnetic
+induction field produced by 3D sources can be reproduced by a fictitious and 
+purely mathematical planar layer of dipoles \cite[e.g.,][]{emilia1973, silva_1986,
+oliveirajr-etal_2013, li_etal_2014} that does not represent the solution of any 
+boundary value problem of potential theory.
+\citet{reis_etal2020} were the first to present a theoretical relationship between a planar
+layer of dipoles and a boundary value problem, but their approach is restricted to 
+total-field anomaly data.
+
+The present paper aims at extending the work of \citet{reis_etal2020} and presenting the
+theoretical basis connecting the planar layer of dipoles to the solution of a boundary
+value problem of potential theory. We limit ourselves to the case in which the magnetic
+sources have a uniform total-magnetization direction, but spatially-variable intensity.
+We present analytical expressions for the planar equivalent layer of dipoles reproducing
+the magnetic scalar potential and magnetic induction field components, 
+in space and Fourier domains, for the case in which the equivalent layer has the same
+uniform magnetization direction of the true sources. Besides, we present analytical 
+expressions in Fourier domain for the case in which the uniform magnetization direction
+on the layer is different from that of the true sources.
+Our results show, for example, the theoretical connection between the reduction to the pole
+(RTP) in space and Fourier domains, as well as some relationships between the moments of 
+the true sources and of the magnetic-moment intensity distribution on the equivalent layer.
+The theoretical developments presented here open the door for future investigations about,
+for example, the instability of RTP in space domain and also the generalization of RTP 
+to the case in which the sources have a nonuniform total-magnetization direction.
+
+
