@@ -228,11 +228,11 @@ $\partial_{\alpha\beta} \Theta(\mathbf{r}) \equiv
 \frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Theta(\mathbf{r})$,
 $\alpha = x, y, z$, $\beta = x, y, z$.
 
-Finally, the component of the magnetic induction field $\mathbf{B}(\mathbf{r})$
+Finally, there are two important quantities for geophysical applications.
+The first is the component of the magnetic induction field $\mathbf{B}(\mathbf{r})$
 (equation \ref{eq:B-field}) along an arbitrary direction 
-$\hat{\mathbf{u}}(I_{t}, D_{t})$ 
-(equation \ref{eq:u-unit-vector}) with constant inclination $I = I_{t}$ and 
-declination $D = D_{t}$ is given by:
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation \ref{eq:u-unit-vector}) with constant 
+inclination $I = I_{t}$ and declination $D = D_{t}$:
 \begin{equation}
 B_{t}(\mathbf{r}) 
 = \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} \mathbf{B}(\mathbf{r}) \quad ,
@@ -241,7 +241,30 @@ B_{t}(\mathbf{r})
 which is a harmonic function commonly used in applied geophysics to approximate the
 total-field anomaly produced by magnetized sources having uniform magnetization direction,
 where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the presumed constant direction of the main
-geomagnetic field at the study area \cite[][ p. 179]{blakely1996}.
+geomagnetic field at the study area \cite[][ p. 179]{blakely1996}. Because of that,
+we conveniently call $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
+\textit{approximated total-field anomaly}.
+The second important quantity is the vertical component of the magnetic induction
+field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) produced by the sources
+for the particular case in which they have a vertical magnetization direction:
+\begin{equation}
+B_{r}(\mathbf{r}) = \partial_{zz} \Theta(\mathbf{r}) \quad ,
+\label{eq:B-r}
+\end{equation}
+where $\partial_{zz} \Theta(\mathbf{r})$ is the second derivative of the
+harmonic function $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) with
+respect to the coordinate $z$ of the observation point.
+This equation is commonly used to represent the magnetic induction field 
+that would be produced by the sources if they had a purely induced and vertical
+magnetization. Differently from generic total-field anomalies 
+\cite[e.g.,][ p. 178]{blakely1996}, which have a ``skewed'' pattern 
+oscillating from negative to positive values and do not have their maxima placed right 
+above the magnetic sources, equation \ref{eq:B-r} defines a simpler anomaly that is
+better for interpretation because it is predominantly positive right above the sources and
+decays to zero towards their boundaries. \citet{baranov1957} was the first
+to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
+total-field anomalies into that defined by equation \ref{eq:B-r},
+conveniently called here \textit{RTP anomaly}.
 
 
 \section{Generic planar equivalent layer of dipoles}
@@ -268,7 +291,7 @@ dx''dy'' \: , \quad z < z_{c} \: ,
 \end{equation}
 where $p(\mathbf{r}'')$ is a scalar function representing the magnetic moment distribution
 on the planar layer.
-A similar integral equation can be obtained for the magnetic induction field component
+A similar integral equation can be obtained for the approximated total-field anomaly
 $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) by computing the negative directional derivative
 of $V(\mathbf{r})$ (equation \ref{eq:V-generic-layer}) along the direction 
 $\hat{\mathbf{u}}(I_{t}, D_{t})$ as follows:
@@ -320,9 +343,10 @@ $I_{t}$ and declination $D_{t}$.
 What follows aims at proving the existence of a planar equivalent layer of dipoles that is 
 located above the sources and exactly reproduces the magnetic scalar potential
 $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction field
-$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
-magnetic induction component $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
-caused by sources having uniform total-magnetization direction. 
+$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}), 
+approximated total-field anomaly $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
+and RTP anomaly $\mathbf{B}_{r}(\mathbf{r})$ (equation \ref{eq:B-r})
+yielded by sources with uniform total-magnetization direction. 
 To do this, we deduce analytical solutions for the integral
 equations \ref{eq:V-generic-layer} and \ref{eq:B-t-generic-layer} in space and Fourier 
 domains.
@@ -332,7 +356,7 @@ domains.
 \label{sec:eqlayer}
 
 
-\subsection{Analytical expressions in space domain}
+\subsection{Space-domain analytical solutions with true magnetization direction}
 \label{subsec:eqlayer_space_domain}
 
 
@@ -397,9 +421,8 @@ dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-Neumann}
 \end{equation}
 It is also relatively easy to verify from equations 
-\ref{eq:B-t} and \ref{eq:B-Neumann} that the magnetic induction field component 
-produced by the planar layer of dipoles along the direction 
-$\hat{\mathbf{u}}(I_{t}, D_{t})$ is given by:
+\ref{eq:B-t}, \ref{eq:B-r} and \ref{eq:B-Neumann} that the approximated total-field 
+and RTP anomalies produced by the planar layer of dipoles are given by:
 \begin{equation}
 B_{t}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -407,24 +430,39 @@ B_{t}(\mathbf{r}) =
 \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
 \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
 \hat{\mathbf{u}}(I', D') \: 
-dx''dy'' \: , \:\: z < z_{c} \: .
+dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-t-Neumann}
 \end{equation}
+and
+\begin{equation}
+B_{r}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: 
+\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: 
+dx''dy'' \: , \:\: z < z_{c} \: .
+\label{eq:B-r-Neumann}
+\end{equation}
 
-Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and \ref{eq:B-t-Neumann} 
-show that not only the magnetic scalar potential $V(\mathbf{r})$ (equation
-\ref{eq:scalar-potential-V}), but also the magnetic induction field 
-$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and magnetic induction component
-$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) yielded by the true sources are
-exactly reproduced by the same planar layer of dipoles located above the sources, 
-at $z = z_{c}$, with uniform magnetization direction $\hat{\mathbf{u}}(I', D')$ and 
-positive magnetic-moment intensity distribution 
+Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann}, \ref{eq:B-t-Neumann} and
+\ref{eq:B-r-Neumann} show that not only the magnetic scalar potential 
+$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), but also the magnetic induction
+field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}), 
+approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
+and RTP anomaly $B_{r}(\mathbf{r})$ (equation \ref{eq:B-r}) yielded by 
+the true sources are exactly reproduced by the same planar layer of dipoles located 
+above the sources, at $z = z_{c}$, with uniform magnetization direction
+$\hat{\mathbf{u}}(I', D')$ and positive magnetic-moment intensity distribution 
 $\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$. 
 They represent the analytical solutions of the integral equations \ref{eq:V-generic-layer}
 and \ref{eq:B-t-generic-layer}, where $I_{p} = I'$, $D_{p} = D'$ and 
 $p(\mathbf{r}'') = \tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
-These analytical solutions are significant in at least three major aspects
-because they show that:
+Note that these solution are valid for the case in which the equivalent layer
+has the same uniform magnetization direction $\hat{\mathbf{u}}(I', D')$
+(equation \ref{eq:total-magnetization-vector}) of the true sources.
+
+These analytical solutions defined by equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann}, 
+\ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} are significant in at least three major
+aspects because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
 boundary value problem of potential theory that is intrinsically related to
@@ -434,7 +472,7 @@ equal to that of the true sources, regardless of whether
 this direction is normal to the planar layer or not;
 (iii) the magnetic-moment distribution on the planar layer 
 is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
-pseudogravity anomaly produced by the sources. 
+pseudogravity anomaly produced by the sources.
 
 PAREI AQUI
 
@@ -491,34 +529,17 @@ $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l})
 \label{subsec:RTP_space_domain_uniform}
 
 
-Total-field anomalies \cite[e.g.,][ p. 178]{blakely1996} oscillate
-from negative to positive values, so that their maxima are not usually placed 
-right above the magnetic sources.
-Because of this ``skewed'' pattern, total-field anomalies cannot be 
-directly used by the interpreter to locate the sources.
-To overcome this problem, \citet{baranov1957} proposed a method called
-\textit{reduction to the pole} (RTP). This method transforms a generic total-field 
-anomaly produced by sources with uniform magnetization direction into a simpler one 
-(conveniently called here \textit{RTP anomaly}) that is 
-predominantly positive right above the sources and decays to zero towards the sources 
-boundaries.
-The RTP anomaly represents the particular magnetic induction field that would be
-produced by the sources if they had a purely induced and vertical
-magnetization.
+
 
 Consider that the ``skewed'' total-field anomaly can be satisfactorily
 approximated by the harmonic function $\Delta\tilde{T}_{\ell}(\mathbf{r})$ 
 (equation \ref{eq:Delta-T-l})
 for the particular case in which the sources have a single magnetization component with
 uniform direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$. In this case, 
-the RTP anomaly is given by:
-\begin{equation}
-B^{r}_{\ell}(\mathbf{r}) = \partial_{zz} \Theta_{\ell}(\mathbf{r}) \quad ,
-\label{eq:B-rtp-l}
-\end{equation}
-where $\partial_{zz} \Theta_{\ell}(\mathbf{r})$ is the second derivative of the
-harmonic function $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}) with
-respect to the coordinate $z$ of the observation point.
+the RTP anomaly is given by equation
+
+REMOVI A EQUAÇÃO DAQUI
+
 Note that the RTP anomaly $B^{r}_{\ell}(\mathbf{r})$ (equation 
 \ref{eq:B-rtp-l}) can be represented in terms of the 
 true magnetic sources, as a volume integral obtained by computing the 
@@ -528,14 +549,7 @@ observation point. Alternatively, it can be defined by computing the
 second derivative of the equivalent-layer representation of 
 $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l-Neumann}) with 
 respect to the coordinate $z$:
-\begin{equation}
-B^{r}_{\ell}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi} \: 
-\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: 
-dx''dy'' \: , \:\: z < z_{c} \: .
-\label{eq:B-rtp-l-Neumann}
-\end{equation}
+
 
 The surface integrals for $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
 \ref{eq:Delta-T-l-Neumann}) and $B^{r}_{\ell}(\mathbf{r})$ (equation 
