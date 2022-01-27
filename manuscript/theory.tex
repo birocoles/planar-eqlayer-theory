@@ -244,6 +244,90 @@ where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the presumed constant direction o
 geomagnetic field at the study area \cite[][ p. 179]{blakely1996}.
 
 
+\section{Generic planar equivalent layer of dipoles}
+\label{eq:generic_planar_layer_dipoles}
+
+
+Consider a generic planar layer of dipoles located above the magnetic sources, at 
+$z = z_{c}$,
+with uniform magnetization direction $\hat{\mathbf{u}}(I_{p}, D_{p})$ 
+(equation \ref{eq:u-unit-vector}) defined by the constant inclination $I_{p}$ and
+declination $D_{p}$.
+Now, consider that this planar layer exactly reproduces the magnetic scalar potential
+$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}) at observation points $\mathbf{r}$ 
+located above the layer, with $z < z_{c}$. In this case, we obtain the following 
+integral equation:
+\begin{equation}
+V(\mathbf{r}) = -
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+p(\mathbf{r}'') \: 
+\nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
+\hat{\mathbf{u}}(I_{p}, D_{p}) \: 
+dx''dy'' \: , \quad z < z_{c} \: ,
+\label{eq:V-generic-layer}
+\end{equation}
+where $p(\mathbf{r}'')$ is a scalar function representing the magnetic moment distribution
+on the planar layer.
+A similar integral equation can be obtained for the magnetic induction field component
+$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) by computing the negative directional derivative
+of $V(\mathbf{r})$ (equation \ref{eq:V-generic-layer}) along the direction 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ as follows:
+\begin{equation}
+B_{t}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+p(\mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{p}, D_{p}) \: 
+dx''dy'' \: , \:\: z < z_{c} \: ,
+\label{eq:B-t-generic-layer}
+\end{equation}
+where
+\begin{equation}
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') = 
+\begin{bmatrix}
+\partial_{xx} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
+\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
+\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
+\partial_{zz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\end{bmatrix}
+\label{eq:G-matrix}
+\end{equation}
+is a matrix composed of second derivatives 
+$\partial_{\alpha\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \equiv 
+\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$,
+$\alpha = x, y, z$, $\beta = x, y, z$, of the inverse distance function 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ with respect to the coordinates of
+the observation points.
+
+Methods based on equivalent layer for dealing with total-field anomaly data 
+have been traditionally developed in space domain 
+\cite[e.g.,][]{emilia1973, silva_1986, oliveirajr-etal_2013}
+by numerically solving the integral equation \ref{eq:B-t-generic-layer} 
+for the unknown physical property distribution $p(\mathbf{r}'')$, 
+with predefined constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$. 
+Those methods implicitly assume that the observed total-field anomaly data 
+can be satisfactorily approximated by the harmonic function $B_{t}(\mathbf{r})$
+(equation \ref{eq:B-t-generic-layer}), where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the
+direction of the main geomagnetic field at the study area, with constant inclination
+$I_{t}$ and declination $D_{t}$. 
+
+What follows aims at proving the existence of a planar equivalent layer of dipoles that is 
+located above the sources and exactly reproduces the magnetic scalar potential
+$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction field
+$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
+magnetic induction component $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
+caused by sources having uniform total-magnetization direction. 
+To do this, we deduce analytical solutions for the integral
+equations \ref{eq:V-generic-layer} and \ref{eq:B-t-generic-layer} in space and Fourier 
+domains.
+
+
 \section{Planar equivalent layer of dipoles}
 \label{sec:eqlayer}
 
@@ -309,31 +393,10 @@ yields the magnetic induction field:
 \frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi} \: 
 \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
 \hat{\mathbf{u}}(I', D') \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
+dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-Neumann}
 \end{equation}
-where
-\begin{equation}
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') = 
-\begin{bmatrix}
-\partial_{xx} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
-\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
-\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{zz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
-\end{bmatrix}
-\label{eq:G-matrix}
-\end{equation}
-is a matrix composed of second derivatives 
-$\partial_{\alpha\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \equiv 
-\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$,
-$\alpha = x, y, z$, $\beta = x, y, z$, of the inverse distance function 
-$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ with respect to the coordinates of
-the observation points. It is also relatively easy to verify from equations 
+It is also relatively easy to verify from equations 
 \ref{eq:B-t} and \ref{eq:B-Neumann} that the magnetic induction field component 
 produced by the planar layer of dipoles along the direction 
 $\hat{\mathbf{u}}(I_{t}, D_{t})$ is given by:
@@ -357,12 +420,10 @@ exactly reproduced by the same planar layer of dipoles located above the sources
 at $z = z_{c}$, with uniform magnetization direction $\hat{\mathbf{u}}(I', D')$ and 
 positive magnetic-moment intensity distribution 
 $\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$. 
-According to \citet{reis_etal2020}, 
-the equivalence between the magnetic fields produced by the true sources and
-the planar layer of dipoles is the apparent reason by which the last has been 
-denominated by the term \textit{equivalent layer} in the literature.
-The integrals defined by equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and 
-\ref{eq:B-t-Neumann} are significant in at least three major aspects
+They represent the analytical solutions of the integral equations \ref{eq:V-generic-layer}
+and \ref{eq:B-t-generic-layer}, where $I_{p} = I'$, $D_{p} = D'$ and 
+$p(\mathbf{r}'') = \tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
+These analytical solutions are significant in at least three major aspects
 because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
@@ -371,30 +432,11 @@ the magnetic field produced by sources with uniform magnetization direction;
 (ii) the uniform magnetization direction of the planar equivalent layer is 
 equal to that of the true sources, regardless of whether 
 this direction is normal to the planar layer or not;
-(iii) the magnetic-moment distribution on the planar layer has an analytical solution 
-which is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
+(iii) the magnetic-moment distribution on the planar layer 
+is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
 pseudogravity anomaly produced by the sources. 
 
-It is important to stress that 
-methods based on equivalent layer for magnetic-data processing have been traditionally
-developed in space domain by numerically solving the integral equation 
-\begin{equation}
-B_{t}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-p(\mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{p}, D_{p}) \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:generic-dipole-layer}
-\end{equation}
-for the unknown physical property distribution $p(\mathbf{r}'')$, with predefined 
-constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$ of the dipoles
-magnetization. Note that the integral defined by equation \ref{eq:B-t-Neumann} represents
-the analytical solution of the generic planar dipole layer defined by equation 
-\ref{eq:generic-dipole-layer} for the particular case in which the dipoles have
-the same uniform magnetization direction of the true sources.
-
+PAREI AQUI
 
 \subsection{Analytical expressions in Fourier domain}
 \label{subsec:eqlayer_Fourier_domain}
