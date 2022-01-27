@@ -21,7 +21,7 @@
 %\citep[][ p. 66]{whittaker1910}.
 
 
-The equivalent layer technique was introduced during the 1960s and has 
+The equivalent-layer technique was introduced during the 1960s and has 
 become a versatile tool for processing ans interpreting potential-field data on an 
 exploration scale (mining and oil exploration). 
 The technique can be used to accomplish various data processing steps, such as interpolation 
@@ -31,12 +31,12 @@ upward (or downward) continuation
 hansen-miyazaki_1984, li-oldenburg_2010, siqueira_etal_2017, takahashi-etal2020},
 processing of gradient data 
 \citep[e.g.,][]{barnes-lumley_2011, barnes2014, martinez_li_2016}, 
-merging multiple datasets \citep[e.g.,][]{boggs-dransfield2004, lane2004}, 
+merging multiple data sets \citep[e.g.,][]{boggs-dransfield2004, lane2004}, 
 estimating density models from gravity data \cite[e.g.,][]{mendonca-2020}, 
 computing the amplitude of the anomalous magnetic field 
 \citep[e.g.,][]{li_li_2014, sun_etal-2019, melo-etal2021, hidalgo-gato-etal2021}, 
 transforming total-field anomalies into field components \citep[e.g.,][]{li-etal2021}, 
-as well as estimating the magnetizzation direction and computing the reduction to the pole
+as well as estimating the magnetization direction and computing the reduction to the pole
 of magnetic data \citep[e.g.,][]{emilia1973, silva_1986, leao-silva_1989, 
 guspi-novara_2009, oliveirajr-etal_2013, li_etal_2014, ribeiro_filho_etal2020,
 reis_etal2020}.
@@ -66,14 +66,30 @@ physical property distribution represents a scaled version of the potential fiel
 the plane of the equivalent layer \citep{roy1962, siqueira_etal_2017, mendonca-2020}.
 The equivalent-layer technique commonly applied to magnetic data, on the other hand, 
 does not have the same well-established theoretical background.
+
 In the geophysical literature, it has long been assumed by principle that the magnetic
 induction field produced by 3D sources can be reproduced by a fictitious and 
 purely mathematical planar layer of dipoles \cite[e.g.,][]{emilia1973, silva_1986,
-oliveirajr-etal_2013, li_etal_2014} that does not represent the solution of any 
+oliveirajr-etal_2013} that does not represent the solution of any 
 boundary value problem of potential theory.
-\citet{reis_etal2020} were the first to present a theoretical relationship between a planar
-layer of dipoles and a boundary value problem, but their approach is restricted to 
-total-field anomaly data.
+Few works have investigated the theoretical aspects related to the existence of
+a planar equivalent layer of dipoles or its relationship with a boundary value
+problem of potential theory.
+By following different approaches in the wavenumber domain, 
+\citet{pedersen1991} and \citet{li_etal_2014} proved the existence of an all-positive
+magnetic moment distribution within a planar equivalent layer of dipoles that 
+exactly reproduces the approximated total-field anomaly caused by sources
+having a purely induced magnetization in the vertical direction.
+Their approach, however, is valid only for the case in which 
+the total-field anomaly data rely on a plane.
+\citet{reis_etal2020} generalized the works of \citet{pedersen1991} and \citet{li_etal_2014}
+to prove that the all-positive magnetic moment distribution on the planar equivalent layer
+exists for the case in which the dipoles have the same arbitrary uniform magnetization
+direction of the sources, regardless of whether the sources magnetization is purely 
+induced or not.
+\citet{reis_etal2020} also were the first to present a theoretical relationship between a
+planar equivalent layer of dipoles and a boundary value problem, but their approach is
+restricted to total-field anomaly data.
 
 The present paper aims at extending the work of \citet{reis_etal2020} and presenting the
 theoretical basis connecting the planar layer of dipoles to the solution of a boundary
