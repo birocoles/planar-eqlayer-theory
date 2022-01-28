@@ -421,7 +421,8 @@ dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-Neumann}
 \end{equation}
 It is also relatively easy to verify from equations 
-\ref{eq:B-t}, \ref{eq:B-r} and \ref{eq:B-Neumann} that the approximated total-field 
+\ref{eq:B-t}, \ref{eq:B-r}, \ref{eq:Theta-Neumann} and \ref{eq:B-Neumann} 
+that the approximated total-field 
 and RTP anomalies produced by the planar layer of dipoles are given by:
 \begin{equation}
 B_{t}(\mathbf{r}) = 
@@ -443,15 +444,14 @@ dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-r-Neumann}
 \end{equation}
 
-Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann}, \ref{eq:B-t-Neumann} and
-\ref{eq:B-r-Neumann} show that not only the magnetic scalar potential 
+Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and \ref{eq:B-t-Neumann} 
+show that not only the magnetic scalar potential 
 $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), but also the magnetic induction
-field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}), 
+field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
 approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
-and RTP anomaly $B_{r}(\mathbf{r})$ (equation \ref{eq:B-r}) yielded by 
-the true sources are exactly reproduced by the same planar layer of dipoles located 
-above the sources, at $z = z_{c}$, with uniform magnetization direction
-$\hat{\mathbf{u}}(I', D')$ and positive magnetic-moment intensity distribution 
+yielded by the true sources are exactly reproduced by the same planar layer 
+of dipoles located above the sources, at $z = z_{c}$, with uniform magnetization 
+direction $\hat{\mathbf{u}}(I', D')$ and positive magnetic-moment intensity distribution 
 $\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$. 
 They represent the analytical solutions of the integral equations \ref{eq:V-generic-layer}
 and \ref{eq:B-t-generic-layer}, where $I_{p} = I'$, $D_{p} = D'$ and 
@@ -459,7 +459,6 @@ $p(\mathbf{r}'') = \tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
 Note that these solution are valid for the case in which the equivalent layer
 has the same uniform magnetization direction $\hat{\mathbf{u}}(I', D')$
 (equation \ref{eq:total-magnetization-vector}) of the true sources.
-
 These analytical solutions defined by equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann}, 
 \ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} are significant in at least three major
 aspects because they show that:
@@ -473,6 +472,30 @@ this direction is normal to the planar layer or not;
 (iii) the magnetic-moment distribution on the planar layer 
 is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
 pseudogravity anomaly produced by the sources.
+
+Finally, equation \ref{eq:B-r-Neumann} represents the 
+theoretical basis for computing the RTP in space domain, from total-field
+anomaly data, via equivalent-layer technique.
+This is a two-step approach that consists in first considering that the observed 
+total-field anomaly data can be satisfactorily represented by 
+$B_{t}(\mathbf{r})$ and then solving the discrete version of 
+integral equation \ref{eq:B-t-Neumann} to obtain the positive physical 
+property distribution $\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
+In the second step, the estimated 
+$\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$ is used in 
+a discrete version of equation \ref{eq:B-r-Neumann} to compute the RTP anomaly 
+$B_{r}(\mathbf{r})$. It is important noting that equations \ref{eq:B-t-Neumann}
+and \ref{eq:B-r-Neumann} show, for the first time, the main 
+theoretical assumptions supporting the space-domain RTP: 
+(i) There exists a planar equivalent layer of dipoles that is located at a coordinate 
+$z = z_{c}$ above the sources, has the same uniform magnetization direction of the sources
+and approximates the observed total-field anomaly at observation points;
+(ii) The same planar equivalent layer of dipoles reproducing the observed total-field
+anomaly data is able to reproduce the RTP anomaly $B_{r}(\mathbf{r})$.
+These two theoretical assumptions have being implicitly used, but not clearly stated 
+neither in the pioneer method proposed by \cite{silva_1986}, nor in the succeeding 
+methods \cite[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis_etal2020}
+proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
 PAREI AQUI
 
@@ -554,30 +577,7 @@ respect to the coordinate $z$:
 The surface integrals for $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
 \ref{eq:Delta-T-l-Neumann}) and $B^{r}_{\ell}(\mathbf{r})$ (equation 
 \ref{eq:B-rtp-l-Neumann}) represent the 
-theoretical basis for computing the RTP in space domain, from total-field
-anomaly data, via equivalent-layer technique.
-This is a two-step approach that consists in first considering that the observed 
-total-field anomaly data can be satisfactorily represented by 
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$ and then solving the discrete version of 
-integral equation \ref{eq:Delta-T-l-Neumann} to obtain the positive physical 
-property distribution $\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$. 
-In the second step, the estimated 
-$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ is used in 
-a discrete version of equation \ref{eq:B-rtp-l-Neumann} to compute the RTP anomaly 
-$B^{r}_{\ell}(\mathbf{r})$. It is important noting that equations \ref{eq:Delta-T-l-Neumann}
-and \ref{eq:B-rtp-l-Neumann} show, for the first time, the main 
-theoretical assumptions supporting the space-domain RTP: 
-(i) There exists a planar equivalent layer of dipoles that is located at a coordinate 
-$z = z_{c}$ above the sources, has the same uniform magnetization direction of the sources,
-has a positive magnetic-moment distribution 
-$\frac{\partial_{z} \Theta_{\ell}(\mathbf{r}'')}{2\pi}$ and exactly reproduces the 
-observed total-field anomaly at observation points with vertical coordinates $z < z_{c}$;
-(ii) The same planar equivalent layer of dipoles reproducing the observed total-field
-anomaly data is able to reproduce the RTP anomaly $B^{r}_{\ell}(\mathbf{r})$.
-These two theoretical assumptions have being implicitly used, but not clearly stated 
-neither in the pioneer method proposed by \cite{silva_1986}, nor in the succeeding 
-methods \cite[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis_etal2020}
-proposed to compute the RTP in space-domain, via equivalent-layer technique.
+
 
 
 \subsection{RTP in Fourier domain}
