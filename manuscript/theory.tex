@@ -189,10 +189,11 @@ $\nabla$ is the gradient operator with respect to the coordinates of $\mathbf{r}
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ is the inverse distance function; 
 $\| \cdot \|$ denotes the Euclidean norm; $c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (in H/m);
 and $\mu_{0}$ is the magnetic permeability at vacuum. 
-It is important noting that, the harmonic function $\Theta(\mathbf{r})$ (equation
+It is important noting that the harmonic function $\Theta(\mathbf{r})$ (equation
 \ref{eq:scalar-potential-Theta}) represents the gravitational potential that would be
 produced by the sources if they had a positive density distribution proportional
-to the total-magnetization intensity $h(\mathbf{r}')$. Because of that,
+to the total-magnetization intensity $h(\mathbf{r}')$ 
+(equation \ref{eq:total-magnetization-vector}). Because of that,
 $\Theta(\mathbf{r})$ is strictly positive at all observation points 
 $\mathbf{r}$ located outside the volume $v$ of the sources.
 
@@ -382,7 +383,7 @@ Equation \ref{eq:Theta-Neumann} represents the solution of the
 \textit{Neumann’s problem} or the \textit{second boundary value problem of potential
 theory} \cite[][ p. 246]{kellogg1967} on a plane.
 
-By computing the directional derivative of $\Theta(\mathbf{r})$ 
+By computing the negative directional derivative of $\Theta(\mathbf{r})$ 
 (equation \ref{eq:Theta-Neumann}) along the uniform magnetization direction
 $\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the sources, 
 we obtain the following alternative expression for the magnetic scalar potential
@@ -444,7 +445,7 @@ dx''dy'' \: , \:\: z < z_{c} \: .
 \label{eq:B-r-Neumann}
 \end{equation}
 
-Equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann} and \ref{eq:B-t-Neumann} 
+Equations \ref{eq:V-Neumann}--\ref{eq:B-t-Neumann} 
 show that not only the magnetic scalar potential 
 $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), but also the magnetic induction
 field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
@@ -456,11 +457,11 @@ $\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
 They represent the analytical solutions of the integral equations \ref{eq:V-generic-layer}
 and \ref{eq:B-t-generic-layer}, where $I_{p} = I'$, $D_{p} = D'$ and 
 $p(\mathbf{r}'') = \tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
-Note that these solution are valid for the case in which the equivalent layer
+Note that these solutions are valid for the case in which the equivalent layer
 has the same uniform magnetization direction $\hat{\mathbf{u}}(I', D')$
 (equation \ref{eq:total-magnetization-vector}) of the true sources.
-These analytical solutions defined by equations \ref{eq:V-Neumann}, \ref{eq:B-Neumann}, 
-\ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} are significant in at least three major
+These analytical solutions defined by equations 
+\ref{eq:V-Neumann}--\ref{eq:B-t-Neumann} are significant in at least three major
 aspects because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
@@ -497,9 +498,8 @@ neither in the pioneer method proposed by \cite{silva_1986}, nor in the succeedi
 methods \cite[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis_etal2020}
 proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
-PAREI AQUI
 
-\subsection{Analytical expressions in Fourier domain}
+\subsection{Fourier-domain analytical solutions with true magnetization direction}
 \label{subsec:eqlayer_Fourier_domain}
 
 
@@ -507,101 +507,22 @@ Several methods for magnetic-data processing have been developed in the Fourier 
 for the particular case in which the magnetic data rely on a
 planar and regular grid at constant $z = z_{0}$. In this case, the methods
 can take advantage of the well-known computational efficiency of 
-Fast Fourier Transform (FFT) algorithms.
+Fast Fourier Transform (FFT) algorithms \citep[][ ch 11 and 12]{blakely1996}.
+Most of these methods are based on the computation of the two-dimensional Fourier transform
+(2DFT) of the approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
+with respect to the horizontal coordinates $x$ and $y$ of the observation points, according
+to \citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
+It is important to stress that equation \ref{eq:B-t} is defined in terms of volume 
+integrals that depend on the position, shape and total-magnetization distribution of the
+true sources. 
+The main goal of this subsection is presenting the 2DFT of equations
+\ref{eq:V-Neumann}--\ref{eq:B-r-Neumann} for the case in which the magnetic data
+are on the plane $z = z_{0}$ and show that they are equivalent to the 2DFT of 
+the corresponding equations defined by volume integral 
+(equations \ref{eq:scalar-potential-V}, \ref{eq:B-field}, \ref{eq:B-t} and \ref{eq:B-r}).
+To do this, we follow the same approach presented by \citet[][ ch. 11]{blakely1996}.
 
-Methods based on equivalent layer, on the other hand, have been traditionally developed
-in space domain by numerically solving the integral equation \ref{eq:B-t-Neumann}
-for an unknown physical property distribution $p(\mathbf{r}'')$, with predefined 
-constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$ of the dipoles
-magnetization.
-Compared to those in Fourier domain, the space-domain methods based on equivalent layer 
-can be applied to irregularly spaced data relying on undulating surfaces and usually have
-a worse computational efficiency because they require solving large-scale linear systems.
-
-There are methods developed in Fourier and space domain (via equivalent layer)
-that perform the same magnetic-data processing, such as the upward/downward continuation
-or reduction to the pole (RTP). 
-The connection between methods for computing the upward/downward continuation of 
-potential fields in Fourier and space domains is fully understood in literature. 
-Most of the space-domain methods based on equivalent layer rely on the numerical solution
-of the \textit{upward continuation integral} 
-\citep{skeels1947, henderson-zietz1949, henderson1960, roy1962, bhattacharyya1967, 
-henderson1970}, which is the solution of the \textit{Dirichlet’s problem} (or the
-\textit{first boundary value problem of potential theory}) \cite[][ p. 236]{kellogg1967} 
-on a plane and represents an equivalent layer of monopoles (or points of mass).
-Most of the Fourier-domain methods for computing the potential-field 
-continuation between planar surfaces, on the other hand, are based on the two 
-dimensional Fourier Transform (2DFT) of the upward continuation integral with respect 
-to the horizontal coordinates $x$ and $y$ of the observation points, as we can see in 
-\citet{gunn1975}, \citet{bhattacharyya1967} or \citet[][ p. 298]{blakely1996}, for example.
-
-Differently from those methods for computing the continuation of potential fields, 
-there is a theoretical gap between the methods for computing the RTP in
-Fourier and space domain (via equivalent layer).
-The equivalent-layer expressions defined by equations 
-
-
-
-for the particular case in which the observed total-field anomaly data 
-The common approach to deduce the RTP in the Fourier domain 
-consists in computing the Fourier transform of the approximated total-field anomaly
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l})  
-
-
-\subsection{Reduction to the pole (RTP) in space domain}
-\label{subsec:RTP_space_domain_uniform}
-
-
-
-
-Consider that the ``skewed'' total-field anomaly can be satisfactorily
-approximated by the harmonic function $\Delta\tilde{T}_{\ell}(\mathbf{r})$ 
-(equation \ref{eq:Delta-T-l})
-for the particular case in which the sources have a single magnetization component with
-uniform direction $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$. In this case, 
-the RTP anomaly is given by equation
-
-REMOVI A EQUAÇÃO DAQUI
-
-Note that the RTP anomaly $B^{r}_{\ell}(\mathbf{r})$ (equation 
-\ref{eq:B-rtp-l}) can be represented in terms of the 
-true magnetic sources, as a volume integral obtained by computing the 
-second derivative of the harmonic function $\Theta_{\ell}(\mathbf{r})$
-(equation \ref{eq:Theta-l}) with respect to the coordinate $z$ of the
-observation point. Alternatively, it can be defined by computing the 
-second derivative of the equivalent-layer representation of 
-$\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l-Neumann}) with 
-respect to the coordinate $z$:
-
-
-The surface integrals for $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
-\ref{eq:Delta-T-l-Neumann}) and $B^{r}_{\ell}(\mathbf{r})$ (equation 
-\ref{eq:B-rtp-l-Neumann}) represent the 
-
-
-
-\subsection{RTP in Fourier domain}
-\label{subsec:RTP_Fourier_domain_uniform}
-
-
-The RTP can also be computed in the Fourier domain by using Fast Fourier Transform (FFT)
-algorithms for the particular case in which the observed total-field anomaly data rely on a
-planar and regular grid at constant $z = z_{0}$. 
-The common approach to deduce the RTP in the Fourier domain 
-consists in computing the Fourier transform of the approximated total-field anomaly
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l}) with respect to the
-horizontal coordinates $x$ and $y$ of the observation points, according to 
-\citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
-It is important to stress that equation 
-\ref{eq:Delta-T-l} is defined in terms of volume integrals that depend on the position,
-shape and total-magnetization distribution of the true sources. 
-
-What follows shows that the common expression for computing the RTP in Fourier domain
-can also be deduced from the equivalent-layer representation of the approximated
-total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation 
-\ref{eq:Delta-T-l-Neumann}) presented here. To do this, we follow the same approach
-presented by \citet[][ ch. 11]{blakely1996}.
-
+PAREI AQUI
 
 Let us first rewrite the approximated total-field anomaly
 $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l-Neumann}) 
@@ -758,8 +679,6 @@ which represents the common expression defining the RTP in Fourier domain
 \cite[e.g.,][ p. 331]{blakely1996}.
 
 
-
-PAREI AQUI
 
 %\section{Sources with nonuniform magnetization direction}
 %\label{sec:eqlayer_nonuniform}
