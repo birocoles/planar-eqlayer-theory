@@ -340,6 +340,12 @@ can be satisfactorily approximated by the harmonic function $B_{t}(\mathbf{r})$
 (equation \ref{eq:B-t-generic-layer}), where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the
 direction of the main geomagnetic field at the study area, with constant inclination
 $I_{t}$ and declination $D_{t}$. 
+If the potential-field transformation to be made via equivalent layer does not
+cause phase changes in the magnetic data, such as the upward/downward continuation, 
+then the inclination $I_{p}$ and declination $D_{p}$ may be arbitrarily chosen. 
+Otherwise, the $I_{p}$ and $D_{p}$ must assume the same constant inclination and declination
+values defining the total-magnetization direction of the true sources. An example of 
+transformation that produce phase changes in the magnetic data is the RTP.
 
 What follows aims at proving the existence of a planar equivalent layer of dipoles that is 
 located above the sources and exactly reproduces the magnetic scalar potential
@@ -358,7 +364,7 @@ domains.
 
 
 \subsection{Space-domain analytical solutions with true magnetization direction}
-\label{subsec:eqlayer_space_domain}
+\label{subsec:space_domain_true_mag}
 
 
 The harmonic function $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) 
@@ -500,7 +506,7 @@ proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
 
 \subsection{Fourier-domain analytical solutions with true magnetization direction}
-\label{subsec:eqlayer_Fourier_domain}
+\label{subsec:Fourier_domain_true_mag}
 
 
 Several methods for magnetic-data processing have been developed in the Fourier domain 
@@ -508,7 +514,7 @@ for the particular case in which the magnetic data rely on a
 planar and regular grid at constant $z = z_{0}$. In this case, the methods
 can take advantage of the well-known computational efficiency of 
 Fast Fourier Transform (FFT) algorithms \citep[][ ch 11 and 12]{blakely1996}.
-Most of these methods are based on the computation of the two-dimensional Fourier transform
+Most of these methods is based on the computation of the two-dimensional Fourier transform
 (2DFT) of the approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
 with respect to the horizontal coordinates $x$ and $y$ of the observation points, according
 to \citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
@@ -516,113 +522,110 @@ It is important to stress that equation \ref{eq:B-t} is defined in terms of volu
 integrals that depend on the position, shape and total-magnetization distribution of the
 true sources. 
 The main goal of this subsection is presenting the 2DFT of equations
-\ref{eq:V-Neumann}--\ref{eq:B-r-Neumann} for the case in which the magnetic data
+\ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} for the case in which the magnetic data
 are on the plane $z = z_{0}$ and show that they are equivalent to the 2DFT of 
-the corresponding equations defined by volume integral 
-(equations \ref{eq:scalar-potential-V}, \ref{eq:B-field}, \ref{eq:B-t} and \ref{eq:B-r}).
+the corresponding equations defined by volume integral (equations \ref{eq:B-t} and
+\ref{eq:B-r}).
 To do this, we follow the same approach presented by \citet[][ ch. 11]{blakely1996}.
 
-PAREI AQUI
-
 Let us first rewrite the approximated total-field anomaly
-$\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l-Neumann}) 
-as a 2D convolution evaluated at observation points 
+$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t-Neumann}) and RTP anomaly
+$B_{r}(\mathbf{r})$ (equation \ref{eq:B-r-Neumann})
+as the following 2D convolutions evaluated at observation points 
 $\mathbf{r}_{0} = \left[x \:\: y \:\: z_{0} \right]^{\top}$ located on a 
 horizontal plane with constant vertical coordinate $z = z_{0}$:
 \begin{equation}
-\Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) = 
+B_{t}(\mathbf{r}_{0}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta_{\ell}(\mathbf{r}'') \: 
-\Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+\partial_{z} \Theta(\mathbf{r}'') \: 
+\Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \: 
 dx''dy'' \: , \:\: z_{0} < z_{c} \: ,
-\label{eq:Delta-T-l-convolution}
-\end{equation}
-where
-\begin{equation}
-\Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
-\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}_{0}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \: .
-\label{eq:Psi-l}
-\end{equation}
-Similarly, let us also rewrite 
-$B^{r}_{\ell}(\mathbf{r})$ (equation \ref{eq:B-rtp-l-Neumann}) as a 2D convolution 
-evaluated at the plane $z = z_{0}$:
-\begin{equation}
-B^{r}_{\ell}(\mathbf{r}_{0}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta_{\ell}(\mathbf{r}'') \: 
-\Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \: 
-dx''dy'' \: , \:\: z_{0} < z_{c} \: ,
-\label{eq:B-rtp-l-convolution}
-\end{equation}
-where
-\begin{equation}
-\Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
-\partial_{zz} \frac{1}{\| \mathbf{r}_{0} - \mathbf{r}'' \|} \: .
-\label{eq:Psi-rtp-l}
-\end{equation}
-
-Then, we use the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996} to obtain:
-\begin{equation}
-\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] = 
-\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]
-\label{eq:Fourier-Delta-T-l}
+\label{eq:B-t-convolution}
 \end{equation}
 and
 \begin{equation}
-\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right] = 
-\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
-\label{eq:Fourier-B-rtp-l}
+B_{r}(\mathbf{r}_{0}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Theta(\mathbf{r}'') \: 
+\Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+dx''dy'' \: , \:\: z_{0} < z_{c} \: ,
+\label{eq:B-r-convolution}
+\end{equation}
+where
+\begin{equation}
+\Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{G}(\mathbf{r}_{0}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I', D') \: ,
+\label{eq:Psi-t}
+\end{equation}
+and 
+\begin{equation}
+\Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') = \frac{1}{2\pi} \: 
+\partial_{zz} \frac{1}{\| \mathbf{r}_{0} - \mathbf{r}'' \|} \: .
+\label{eq:Psi-r}
+\end{equation}
+Then, we use the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996} to obtain:
+\begin{equation}
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]
+\label{eq:Fourier-B-t}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\label{eq:Fourier-B-r}
 \end{equation}
 where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
 with respect to the horizontal coordinates $x$ and $y$ of the observation points.
 The 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
 along the $x$ and $y$ directions, respectively. The wavenumbers have units of 
-inverse distance. The dependence of the 2DFT's 
-on $k_{x}$ and $k_{y}$ is conveniently omitted to simplify the notation.
+inverse distance. The dependence of the 2DFT's on $k_{x}$ and $k_{y}$ is conveniently
+omitted to simplify the notation.
 
-To define the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right]$ 
-on the right side of equations \ref{eq:Fourier-Delta-T-l} and \ref{eq:Fourier-B-rtp-l}, 
+To define the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+on the right side of equations \ref{eq:Fourier-B-t} and \ref{eq:Fourier-B-r}, 
 where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
 position vector defining a point $(x'', y'', z_{c})$ on the equivalent layer, 
-we can first compute the derivative of $\Theta_{\ell}(\mathbf{r})$ (equation
-\ref{eq:Theta-l}) with respect to $z$ and then use \citet[][ p. 297]{blakely1996} 
-to obtain:
+we can first compute the derivative of $\Theta(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-Theta}) with respect to $z$ and then use 
+\citet[][ p. 297]{blakely1996} to obtain:
 \begin{equation}
-\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right] 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] 
 = 2\pi \, c_{m} \, e^{|k| \, z_{c}} 
 \int\limits_{z_{c}}^{\infty} 
-\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right] e^{-|k| \, z'} \:
+\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
 dz' \: , \:\: z_{c} < z' \: ,
-\label{eq:Fourier-Dz-Theta-l}
+\label{eq:Fourier-Dz-Theta}
 \end{equation}
 where $|k| = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and 
-$\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right]$ represents the 
-2DFT of the magnetization intensity distribution on one horizontal slice
+$\mathcal{F}\left[ h(\mathbf{r}') \right]$ represents the 
+2DFT of the magnetization intensity distribution $h(\mathbf{r}')$
+(equation \ref{eq:total-magnetization-vector}) on one horizontal slice
 through the magnetic sources at $z = z'$.
-In equation \ref{eq:Fourier-Dz-Theta-l}, we assume that 
-$h_{\ell}(\mathbf{r}')$ is zero outside the volume $v_{\ell}$ of the sources
-and, consequently, at $z < z_{0} < z_{c}$.
-By using \citet[][ p. 278]{blakely1996}, we define the 2DFT's 
-$\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
-(equation \ref{eq:Fourier-Delta-T-l}) and 
-$\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
-(equation \ref{eq:Fourier-B-rtp-l}) as follows:
+In equation \ref{eq:Fourier-Dz-Theta}, we assume that 
+$h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
+and, consequently, at any coordinate $z < z_{0} < z_{c}$.
+According to \citet[][ p. 278]{blakely1996}, the 2DFT's 
+$\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-t}) and 
+$\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-r}) are given by:
 \begin{equation}
-\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
-\mathcal{U}_{t} \: \mathcal{U}_{\ell} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{t} \: \mathcal{U}' \: |k| \, e^{|k| \, (z_{0} - z_{c})}
 \: , \:\: z_{0} < z_{c} \: ,
-\label{eq:Fourier-Psi-l}
+\label{eq:Fourier-Psi-t}
 \end{equation}
 and
 \begin{equation}
-\mathcal{F}\left[ \Psi^{r}_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right] 
+\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right] 
 = |k| \, e^{|k| \, (z_{0} - z_{c})} \: ,
 \:\: z_{0} < z_{c} \: ,
-\label{eq:Fourier-Psi-rtp-l}
+\label{eq:Fourier-Psi-r}
 \end{equation}
 where
 \begin{equation}
@@ -632,52 +635,93 @@ where
 \end{equation}
 and
 \begin{equation}
-\mathcal{U}_{\ell} = \hat{u}_{z}(I_{\ell}, D_{\ell}) + 
-\mathrm{i} \: \frac{ \hat{u}_{x}(I_{\ell}, D_{\ell}) \: k_{x} + \hat{u}_{y}(I_{\ell}, D_{\ell}) \: k_{y} }{|k|}
-\label{eq:U-ell}
+\mathcal{U}' = \hat{u}_{z}(I', D') + 
+\mathrm{i} \: \frac{ \hat{u}_{x}(I', D') \: k_{x} + \hat{u}_{y}(I', D') \: k_{y} }{|k|}
+\: ,
+\label{eq:U-prime}
 \end{equation}
-are defined in terms of the Cartesian components of the unit vectors 
-$\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$
-(equation \ref{eq:u-unit-vector}) and the imaginary unity $\mathrm{i} = \sqrt{-1}$.
+are defined in terms of the imaginary unity $\mathrm{i} = \sqrt{-1}$
+and the Cartesian components of the unit vectors 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I', D')$
+(equation \ref{eq:u-unit-vector}).
 Now, by substituting the 2DFT's 
-$\mathcal{F}\left[ \partial_{z} \Theta_{\ell}(\mathbf{r}'') \right]$ 
-(equation \ref{eq:Fourier-Dz-Theta-l}) and 
-$\mathcal{F}\left[ \Psi_{\ell}(\mathbf{r}_{0}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Psi-l}) into that defining
-$\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right]$
-(equation \ref{eq:Fourier-Delta-T-l}), we obtain:
+$\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dz-Theta}) and 
+$\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Psi-t}) into that defining
+$\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-B-t}), we obtain:
 \begin{equation}
-\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 2\pi \, c_{m} \, 
-\mathcal{U}_{t} \: \mathcal{U}_{\ell} \: |k| \, e^{|k| \, z_{0}} 
+\mathcal{U}_{t} \: \mathcal{U}' \: |k| \, e^{|k| \, z_{0}} 
 \int\limits_{z_{0}}^{\infty} 
-\mathcal{F}\left[ h_{\ell}(\mathbf{r}') \right] e^{-|k| \, z'} \:
+\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
 dz' \: , \:\: z_{0} < z' \: ,
-\label{eq:Fourier-Delta-T-l-final}
+\label{eq:Fourier-B-t-final}
 \end{equation}
 with $\mathcal{U}_{t}$ and $\mathcal{U}_{\ell}$ given by equations 
-\ref{eq:U-t} and \ref{eq:U-ell}, respectively. 
+\ref{eq:U-t} and \ref{eq:U-prime}, respectively. Note that, in deducing 
+equation \ref{eq:Fourier-B-t-final}, we have replaced $z_{c}$ by
+$z_{0}$ in the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dz-Theta}). This change does not affect the result
+because we assume that $h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
+and, consequently, at any coordinate $z < z_{0} < z_{c}$.
 
 Regardless of notation differences, 
-equation \ref{eq:Fourier-Delta-T-l-final} defining the 2DFT
-of the approximated total-field anomaly $\Delta\tilde{T}_{\ell}(\mathbf{r}_{0})$
-(equation \ref{eq:Delta-T-l-convolution}) at the horizontal plane $z = z_{0}$ 
-is exactly the same found in 
-\citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example.
-Finally, it can be verified from equations 
-\ref{eq:Fourier-Dz-Theta-l}, \ref{eq:Fourier-Psi-rtp-l} and 
-\ref{eq:Fourier-Delta-T-l-final} that the 2DFT 
-$\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right]$ (equation 
-\ref{eq:Fourier-B-rtp-l}) can be rewritten as follows:
+equation \ref{eq:Fourier-B-t-final} defining the 2DFT
+of the approximated total-field anomaly $B_{t}(\mathbf{r}_{0})$
+(equation \ref{eq:B-t-convolution}) at the horizontal plane $z = z_{0}$ 
+is exactly the same found, for example, in \citet{gunn1975} or 
+\citet[][ p. 298]{blakely1996}, 
+and represents the 2DFT of the volume integral for 
+$B_{t}(\mathbf{r}_{0})$ (equation \ref{eq:B-t}). 
+It can also be verified from equations 
+\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-Psi-r} and 
+\ref{eq:Fourier-B-t-final} that $\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ 
+(equation \ref{eq:Fourier-B-r}) can be rewritten as follows:
 \begin{equation}
-\mathcal{F}\left[ B^{r}_{\ell}(\mathbf{r}_{0}) \right]
-= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}_{\ell}} \, 
-\mathcal{F}\left[ \Delta\tilde{T}_{\ell}(\mathbf{r}_{0}) \right] \: ,
-\label{eq:Fourier-B-rtp-l-final}
+\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
+= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}'} \, 
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] \: ,
+\label{eq:Fourier-B-r-final}
 \end{equation}
 which represents the common expression defining the RTP in Fourier domain
 \cite[e.g.,][ p. 331]{blakely1996}.
 
+Equations \ref{eq:Fourier-B-t-final} and \ref{eq:Fourier-B-r-final} establish,
+first time, the theoretical connection between the RTP in space and Fourier domains.
+We stress that these analytical expressions are valid for the particular case in which
+the equivalent layer of dipoles has the same uniform magnetization direction
+$\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the true
+sources.
+
+PAREI AQUI
+
+\subsection{Fourier-domain analytical solutions with arbitrary uniform magnetization direction}
+\label{subsec:Fourier_domain_arbitrary_mag}
+
+\section{Discrete form of analytical solutions}
+\label{sec:discrete_forms}
+
+1 - apresentar versões discretas das integrais \ref{eq:V-Neumann}, \ref{eq:B-Neumann},
+\ref{eq:B-t-Neumann} e \ref{eq:B-r-Neumann}
+
+2 - usar a formulação BTTB para definir estas versões discretas no domínio de Fourier
+
+3 - estabelecer que as expressões BTTB são as versões numéricas das equações 
+\ref{eq:Fourier-B-t} e \ref{eq:Fourier-B-r}. Mencionar que estas versões numéricas 
+no domínio de Fourier são ligeiramente diferentes das expressões analíticas porque
+estas últimas não incluem os efeitos de discretização e truncamento.
+
+\section{Numerical simulations}
+\label{sec:numerical_simulations}
+
+1 - gerar dz theta em um plano
+
+2 - usar o dz theta discreto para validar as eqs definidas no item 1 da sec anterior
+
+3 - calcular as 2DFT's discretas para validar as eqs definidas no ítem 2 da sec anterior
 
 
 %\section{Sources with nonuniform magnetization direction}
