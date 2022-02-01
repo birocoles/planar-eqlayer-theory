@@ -145,11 +145,11 @@ Consider also that the total-magnetization vector at each point $(x', y', z') \i
 within the sources, with an associated position vector 
 $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$, is given by:
 \begin{equation}
-\mathbf{h}(\mathbf{r}') = h(\mathbf{r}') \, \hat{\mathbf{u}}(I', D') \: ,
+\mathbf{h}(\mathbf{r}') = h(\mathbf{r}') \, \hat{\mathbf{h}} \: ,
 \label{eq:total-magnetization-vector}
 \end{equation}
 where $h(\mathbf{r}')$ is a positive scalar function representing a spatially-varying 
-total-magnetization intensity (in A/m) and $\hat{\mathbf{u}}(I', D')$ 
+total-magnetization intensity (in A/m) and $\hat{\mathbf{h}} \equiv \hat{\mathbf{u}}(I', D')$ 
 is a unit vector defining a uniform total-magnetization direction according to
 the vector function
 \begin{equation}
@@ -171,8 +171,10 @@ In this case, the magnetic scalar potential produced by the set of sources at an
 observation point $(x,y,z)$ located above them, outside $v$, is given by
 \cite[e.g., ][ p. 196]{jackson1999}:
 \begin{equation}
-V(\mathbf{r}) = -\nabla \Theta(\mathbf{r})^{\top} 
-\hat{\mathbf{u}}(I', D') \quad ,
+V(\mathbf{r}) 
+= -\frac{\partial \Theta(\mathbf{r})}{\partial \mathbf{h}}
+= -\nabla \Theta(\mathbf{r})^{\top} 
+\hat{\mathbf{h}} \quad ,
 \label{eq:scalar-potential-V}
 \end{equation}
 which represents a negative directional derivative of the harmonic function
@@ -336,16 +338,14 @@ Otherwise, the $I_{p}$ and $D_{p}$ must assume the same constant inclination and
 values defining the total-magnetization direction of the true sources. An example of 
 transformation that produces phase changes in the magnetic data is the RTP.
 
-What follows aims at proving the existence of a planar equivalent layer of dipoles that is 
-located above the sources and exactly reproduces the magnetic scalar potential
-$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction field
-$\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}), 
+What follows aims at deducing solutions for the integral equation \ref{eq:B-t-generic-layer}
+in space and Fourier domains and proving the existence of a planar equivalent 
+layer of dipoles that is located above the sources and exactly reproduces the magnetic 
+scalar potential $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction 
+field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}), 
 approximated total-field anomaly $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
 and RTP anomaly $\mathbf{B}_{r}(\mathbf{r})$ (equation \ref{eq:B-r})
 yielded by sources with uniform total-magnetization direction. 
-To do this, we deduce analytical solutions for the integral
-equations \ref{eq:V-generic-layer} and \ref{eq:B-t-generic-layer} in space and Fourier 
-domains.
 
 
 \section{Planar equivalent layer of dipoles}
@@ -385,9 +385,9 @@ Equation \ref{eq:Theta-Neumann} represents the solution of the
 \textit{Neumann’s problem} or the \textit{second boundary value problem of potential
 theory} \cite[][ p. 246]{kellogg1967} on a plane.
 It is also important noting that equation \ref{eq:Theta-Neumann} represents a
-two-dimensional convolution of the functions $\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$
+two-dimensional convolution of the functions $\partial_{z} \Theta(\mathbf{r}'')$
 and $\Psi_{\Theta}(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi-Theta}) on the
-plane $z_{c}$.
+plane $z = z_{c}$.
 
 By computing the negative directional derivative of $\Theta(\mathbf{r})$ 
 (equation \ref{eq:Theta-Neumann}) along the uniform magnetization direction
@@ -412,7 +412,7 @@ From the physical point of view, equations \ref{eq:V-Neumann} and \ref{eq:Psi-V}
 define a planar layer of dipoles having the same uniform total-magnetization direction 
 $\hat{\mathbf{u}}(I', D')$ of the true sources (equation \ref{eq:total-magnetization-vector}) 
 and a positive magnetic-moment intensity distribution 
-$\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$, which is proportional to the 
+$\partial_{z} \Theta(\mathbf{r}'')$, which is proportional to the 
 pseudogravity anomaly produced by the true sources at the plane $z = z_{c}$. 
 \citet{reis_etal2020} have followed a similar approach to deduce this 
 all-positive magnetic-moment distribution for interpreting 
@@ -427,12 +427,12 @@ yields the magnetic induction field:
 \mathbf{B}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 \partial_{z} \Theta(\mathbf{r}'') \: 
-\Psi_{B}(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \:\: z < z_{c} \: ,
+\boldsymbol{\Psi_{B}}(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-Neumann}
 \end{equation}
 where
 \begin{equation}
-\Psi_{B}(\mathbf{r}, \mathbf{r}'') = 
+\boldsymbol{\Psi_{B}}(\mathbf{r}, \mathbf{r}'') = 
 \frac{1}{2\pi} \: \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
 \hat{\mathbf{u}}(I', D') \: .
 \label{eq:Psi-B}
@@ -449,6 +449,14 @@ B_{t}(\mathbf{r}) =
 dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-t-Neumann}
 \end{equation}
+where
+\begin{equation}
+\Psi_{t}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I', D') \: ,
+\label{eq:Psi-t}
+\end{equation}
 and
 \begin{equation}
 B_{r}(\mathbf{r}) = 
@@ -458,35 +466,27 @@ B_{r}(\mathbf{r}) =
 dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-r-Neumann}
 \end{equation}
-where
-\begin{equation}
-\Psi_{t}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
-\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I', D') \: ,
-\label{eq:Psi-t}
-\end{equation}
-and 
+where 
 \begin{equation}
 \Psi_{r}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
 \partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: .
 \label{eq:Psi-r}
 \end{equation}
 
-Equations \ref{eq:V-Neumann}--\ref{eq:Psi-r} show that not only the magnetic scalar potential 
+Equations \ref{eq:V-Neumann}--\ref{eq:Psi-t} show that not only the magnetic scalar potential 
 $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), but also the magnetic induction
 field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
 approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
 yielded by the true sources are exactly reproduced by the same planar layer 
 of dipoles located above the sources, at $z = z_{c}$, with uniform magnetization 
 direction $\hat{\mathbf{u}}(I', D')$ and positive magnetic-moment intensity distribution 
-$\tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$. 
-Note that $p(\mathbf{r}'') = \tfrac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$ represents
+$\partial_{z} \Theta(\mathbf{r}'')$. 
+Note that $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$ represents
 the analytical solution of the integral equation \ref{eq:B-t-generic-layer} for
 the particular case in which the equivalent layer has the same uniform magnetization direction 
 $\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the true sources, 
 i.e., for the case in which $I_{p} = I'$ and $D_{p} = D'$. 
-Equations \ref{eq:V-Neumann}--\ref{eq:B-t-Neumann} are significant in at least three 
+Equations \ref{eq:V-Neumann}--\ref{eq:Psi-t} are significant in at least three 
 major aspects because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
@@ -499,16 +499,15 @@ this direction is normal to the planar layer or not;
 is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
 pseudogravity anomaly produced by the sources.
 
-Finally, equation \ref{eq:B-r-Neumann} represents the 
+Finally, equations \ref{eq:B-r-Neumann} and \ref{eq:Psi-r} represent the 
 theoretical basis for computing the RTP in space domain, from total-field
 anomaly data, via equivalent-layer technique.
 This is a two-step approach that consists in first considering that the observed 
 total-field anomaly data can be satisfactorily represented by 
 $B_{t}(\mathbf{r})$ and then solving the discrete version of 
 integral equation \ref{eq:B-t-Neumann} to obtain the positive physical 
-property distribution $\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$.
-In the second step, the estimated 
-$\frac{\partial_{z} \Theta(\mathbf{r}'')}{2\pi}$ is used in 
+property distribution $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$.
+In the second step, the estimated $p(\mathbf{r}'')$ is used in 
 a discrete version of equation \ref{eq:B-r-Neumann} to compute the RTP anomaly 
 $B_{r}(\mathbf{r})$. It is important noting that equations \ref{eq:B-t-Neumann}
 and \ref{eq:B-r-Neumann} show, for the first time, the main 
@@ -530,20 +529,21 @@ proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
 Several methods for magnetic-data processing have been developed in the Fourier domain 
 for the particular case in which the magnetic data rely on a
-planar and regular grid at constant $z = z_{0}$. In this case, the methods
+planar and regular grid at constant $z = z_{0}$ 
+\citep[][ ch 11 and 12]{blakely1996}. In this case, they 
 can take advantage of the well-known computational efficiency of 
-Fast Fourier Transform (FFT) algorithms \citep[][ ch 11 and 12]{blakely1996}.
-Most of these methods is based on the computation of the two-dimensional Fourier transform
+Fast Fourier Transform (FFT) algorithms.
+Most of these methods is based on computing the two-dimensional Fourier transform
 (2DFT) of the approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
 with respect to the horizontal coordinates $x$ and $y$ of the observation points, according
 to \citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
 It is important to stress that equation \ref{eq:B-t} is defined in terms of volume 
 integrals that depend on the position, shape and total-magnetization distribution of the
 true sources. 
-The main goal of this subsection is presenting the 2DFT of equations
+The main goal here is presenting the 2DFT of equations
 \ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} for the case in which the magnetic data
 are on the plane $z = z_{0}$ and show that they are equivalent to the 2DFT of 
-the corresponding equations defined by volume integral (equations \ref{eq:B-t} and
+the corresponding equations defined by volume integrals (equations \ref{eq:B-t} and
 \ref{eq:B-r}).
 To do this, we follow the same approach presented by \citet[][ ch. 11]{blakely1996}.
 
