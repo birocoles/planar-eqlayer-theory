@@ -173,14 +173,14 @@ observation point $(x,y,z)$ located above them, outside $v$, is given by
 \begin{equation}
 V(\mathbf{r}) 
 = -\nabla \Theta(\mathbf{r})^{\top} 
-\hat{\mathbf{u}}(I_{h}, D_{h}) \quad ,
+\hat{\mathbf{u}}(I_{h}, D_{h}) \: ,
 \label{eq:scalar-potential-V}
 \end{equation}
 which represents a negative directional derivative of the harmonic function
 \begin{equation}
 \Theta(\mathbf{r}) = c_{m} \iiint\limits_{v}
 h(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-\: dx'dy'dz' \quad ,
+\: dx'dy'dz' \: ,
 \label{eq:scalar-potential-Theta}
 \end{equation}
 where the superscript $^{\top}$ stands for transposition; 
@@ -205,12 +205,12 @@ negative gradient of the scalar potential $V(\mathbf{r})$
 \begin{equation}
 \mathbf{B}(\mathbf{r}) 
 = -\nabla V(\mathbf{r}) 
-= \mathbf{H}(\mathbf{r}) \: \hat{\mathbf{u}}(I_{h}, D_{h}) \quad ,
+= \mathbf{H}_{\Theta}(\mathbf{r}) \: \hat{\mathbf{u}}(I_{h}, D_{h}) \: ,
 \label{eq:B-field}
 \end{equation}
 where 
 \begin{equation}
-\mathbf{H}(\mathbf{r}) = 
+\mathbf{H}_{\Theta}(\mathbf{r}) = 
 \begin{bmatrix}
 \partial_{xx} \Theta(\mathbf{r}) & 
 \partial_{xy} \Theta(\mathbf{r}) & 
@@ -237,7 +237,7 @@ $\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation \ref{eq:u-unit-vector}) with constant
 inclination $I = I_{t}$ and declination $D = D_{t}$:
 \begin{equation}
 B_{t}(\mathbf{r}) 
-= \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} \mathbf{B}(\mathbf{r}) \quad ,
+= \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} \mathbf{B}(\mathbf{r}) \: ,
 \label{eq:B-t}
 \end{equation}
 which is a harmonic function commonly used in applied geophysics to approximate the
@@ -250,22 +250,25 @@ The second important quantity is the vertical component of the magnetic inductio
 field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) produced by the sources
 for the particular case in which they have a vertical magnetization direction:
 \begin{equation}
-B_{r}(\mathbf{r}) = \partial_{zz} \Theta(\mathbf{r}) \quad ,
+B_{r}(\mathbf{r}) = \partial_{zz} \Theta(\mathbf{r}) \: ,
 \label{eq:B-r}
 \end{equation}
 where $\partial_{zz} \Theta(\mathbf{r})$ is the second derivative of the
 harmonic function $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) with
 respect to the coordinate $z$ of the observation point.
-This equation is commonly used to represent the magnetic induction field 
+Equation \ref{eq:B-r} is deduced from equations \ref{eq:B-field} and 
+\ref{eq:B-t} for the particular case in which $I_{t} = I_{h} = 90^{\circ}$ and
+is commonly used to represent the magnetic induction field 
 that would be produced by the sources if they had a purely induced and vertical
-magnetization. Differently from generic total-field anomalies 
+magnetization. 
+Differently from generic total-field anomalies 
 \cite[e.g.,][ p. 178]{blakely1996}, which have a ``skewed'' pattern 
 oscillating from negative to positive values and do not have their maxima placed right 
 above the magnetic sources, equation \ref{eq:B-r} defines a simpler anomaly that is
 better for interpretation because it is predominantly positive right above the sources and
 decays to zero towards their boundaries. \citet{baranov1957} was the first
 to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
-total-field anomalies into that defined by equation \ref{eq:B-r},
+total-field anomalies into $B_{r}(\mathbf{r})$ (equation \ref{eq:B-r}),
 conveniently called here \textit{RTP anomaly}.
 
 
@@ -285,38 +288,53 @@ integral equation:
 \begin{equation}
 B_{t}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-p(\mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{p}, D_{p}) \: 
+p(\mathbf{r}'') \:\: 
+\partial_{tp} \Psi(\mathbf{r}, \mathbf{r}'') \: 
 dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-t-generic-layer}
 \end{equation}
-where $p(\mathbf{r}'')$ is an unknown scalar function representing the magnetic moment distribution
-on the planar layer, $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the presumed constant
-direction of the main geomagnetic field at the study area, with constant inclination
-$I_{t}$ and declination $D_{t}$, and
+where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
+position vector defining a point $(x'', y'', z_{c})$ located on the plane 
+$z = z_{c}$; $p(\mathbf{r}'')$ is an unknown scalar function representing the 
+magnetic moment distribution on the planar layer;
 \begin{equation}
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') = 
+\partial_{tp} \Psi(\mathbf{r}, \mathbf{r}'') \equiv
+\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
+\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{p}, D_{p}) 
+\label{eq:Dtp-Psi}
+\end{equation}
+denotes the second directional derivative of the inverse distance function
+\begin{equation}
+\Psi(\mathbf{r}, \mathbf{r}'') = 
+\frac{1}{2\pi} \: 
+\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\label{eq:Psi}
+\end{equation}
+along the uniform magnetization direction $\hat{\mathbf{u}}(I_{p}, D_{p})$ of the planar
+layer and the presumed constant direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ 
+of the main geomagnetic field at the study area; and
+\begin{equation}
+\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') = 
 \begin{bmatrix}
-\partial_{xx} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
-\partial_{xy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yy} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \\
-\partial_{xz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{yz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} & 
-\partial_{zz} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\partial_{xx} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') \\
+\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') \\
+\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{zz} \Psi(\mathbf{r}, \mathbf{r}'')
 \end{bmatrix}
 \label{eq:G-matrix}
 \end{equation}
-is a matrix composed of second derivatives 
-$\partial_{\alpha\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \equiv 
-\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$,
-$\alpha = x, y, z$, $\beta = x, y, z$, of the inverse distance function 
-$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ with respect to the coordinates of
-the observation points.
+is the Hessian matrix of the inverse distance function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}), with elements defined
+by second derivatives $\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \equiv 
+\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Psi(\mathbf{r}, \mathbf{r}'')$,
+$\alpha = x, y, z$, $\beta = x, y, z$, with respect to the coordinates of
+the observation point $\mathbf{r}$.
 
 Methods based on equivalent layer for dealing with total-field anomaly data 
 have been traditionally developed in space domain 
@@ -351,7 +369,7 @@ yielded by sources with uniform total-magnetization direction.
 \label{sec:eqlayer}
 
 
-\subsection{Space-domain analytical solutions with true magnetization direction}
+\subsection{Continuous analytical solutions in space domain}
 \label{subsec:space_domain_true_mag}
 
 
@@ -362,30 +380,22 @@ magnetic sources as follows \cite[e.g.,][]{roy1962, reis_etal2020}:
 \begin{equation}
 \Theta(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \: 
-\Psi_{\Theta}(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z_{c} \: ,
+\partial_{z} \Theta(\mathbf{r}'') \:\: 
+\Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z_{c} \: ,
 \label{eq:Theta-Neumann}
 \end{equation}
-where 
-\begin{equation}
-\Psi_{\Theta}(\mathbf{r}, \mathbf{r}'') = 
-\frac{1}{2\pi} \: 
-\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: ,
-\label{eq:Psi-Theta}
-\end{equation}
-$\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
-position vector defining a point $(x'', y'', z_{c})$ located on the plane 
-$z = z_{c}$, $\partial_{z} \Theta(\mathbf{r}'') \equiv 
+where $\partial_{z} \Theta(\mathbf{r}'') \equiv 
 \frac{\partial}{\partial z} \Theta(\mathbf{r}'')$ denotes the partial
 derivative, evaluated at $(x'',y'',z_{c})$, of the harmonic function
 $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) with respect 
-to the coordinate $z$. 
+to the coordinate $z$ and $\Psi(\mathbf{r}, \mathbf{r}'')$ is the inverse 
+distance function defined by equation \ref{eq:Psi}.
 Equation \ref{eq:Theta-Neumann} represents the solution of the 
 \textit{Neumann’s problem} or the \textit{second boundary value problem of potential
 theory} \cite[][ p. 246]{kellogg1967} on a plane.
 It is also important noting that equation \ref{eq:Theta-Neumann} represents a
 two-dimensional convolution of the functions $\partial_{z} \Theta(\mathbf{r}'')$
-and $\Psi_{\Theta}(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi-Theta}) on the
+and $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) on the
 plane $z = z_{c}$.
 
 By computing the negative directional derivative of $\Theta(\mathbf{r})$ 
@@ -394,20 +404,24 @@ $\hat{\mathbf{u}}(I_{h}, D_{h})$ (equation \ref{eq:total-magnetization-vector})
 of the sources, we obtain the following alternative expression for the magnetic 
 scalar potential $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}):
 \begin{equation}
-V(\mathbf{r}) =
+V(\mathbf{r}) = -
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \: 
-\Psi_{V}(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z_{c} \: ,
+\partial_{z} \Theta(\mathbf{r}'') \:\:
+\partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z_{c} \: ,
 \label{eq:V-Neumann}
 \end{equation}
 where
 \begin{equation}
-\Psi_{V}(\mathbf{r}, \mathbf{r}'') = 
-- \frac{1}{2\pi} \: \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{u}}(I_{h}, D_{h}) \: .
-\label{eq:Psi-V}
+\partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \equiv 
+\nabla \Psi(\mathbf{r}, \mathbf{r}'')^{\top}
+\hat{\mathbf{u}}(I_{h}, D_{h})
+\label{eq:Dh-Psi}
 \end{equation}
-From the physical point of view, equations \ref{eq:V-Neumann} and \ref{eq:Psi-V} 
+represents the directional derivative of the inverse distance function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) along the uniform
+total-magnetization direction $\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources
+(equation \ref{eq:total-magnetization-vector}).
+From the physical point of view, equations \ref{eq:V-Neumann} and \ref{eq:Dh-Psi} 
 define a planar layer of dipoles having the same uniform total-magnetization direction 
 $\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources (equation \ref{eq:total-magnetization-vector}) 
 and a positive magnetic-moment intensity distribution 
@@ -423,56 +437,45 @@ By computing the negative gradient of the magnetic scalar potential $V(\mathbf{r
 (equation \ref{eq:V-Neumann}), we can also show that the planar layer of dipoles 
 yields the magnetic induction field:
 \begin{equation}
-\mathbf{B}(\mathbf{r}) = 
+\mathbf{B}(\mathbf{r}) = -
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \: 
-\boldsymbol{\Psi_{B}}(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \:\: z < z_{c} \: ,
+\partial_{z} \Theta(\mathbf{r}'') \:\: 
+\nabla \partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-Neumann}
 \end{equation}
 where
 \begin{equation}
-\boldsymbol{\Psi_{B}}(\mathbf{r}, \mathbf{r}'') = 
-\frac{1}{2\pi} \: \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
+\nabla \partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \equiv
+\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \: 
 \hat{\mathbf{u}}(I_{h}, D_{h}) \: .
-\label{eq:Psi-B}
+\label{eq:nabla-Dh-Psi}
 \end{equation}
 It is also relatively easy to verify from equations 
-\ref{eq:B-t}, \ref{eq:B-r}, \ref{eq:Theta-Neumann} and \ref{eq:B-Neumann} 
-that the approximated total-field 
-and RTP anomalies produced by the planar layer of dipoles are given by:
+\ref{eq:B-t} and \ref{eq:B-Neumann} that the approximated total-field 
+anomaly produced by the planar layer of dipoles is given by:
 \begin{equation}
 B_{t}(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \: 
-\Psi_{t}(\mathbf{r}, \mathbf{r}'') \: 
+\partial_{z} \Theta(\mathbf{r}'') \:\: 
+\partial_{th} \Psi(\mathbf{r}, \mathbf{r}'') \: 
 dx''dy'' \: , \:\: z < z_{c} \: ,
 \label{eq:B-t-Neumann}
 \end{equation}
 where
 \begin{equation}
-\Psi_{t}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
+\partial_{th} \Psi(\mathbf{r}, \mathbf{r}'') \equiv
 \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{h}, D_{h}) \: ,
-\label{eq:Psi-t}
+\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \: 
+\hat{\mathbf{u}}(I_{h}, D_{h}) 
+\label{eq:Dth-Psi}
 \end{equation}
-and
-\begin{equation}
-B_{r}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \: 
-\Psi_{r}(\mathbf{r}, \mathbf{r}'') \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:B-r-Neumann}
-\end{equation}
-where 
-\begin{equation}
-\Psi_{r}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
-\partial_{zz} \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: .
-\label{eq:Psi-r}
-\end{equation}
+denotes the second directional derivative of the inverse distance function
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) 
+along the directions defined by $\hat{\mathbf{u}}(I_{h}, D_{h})$ 
+(equation \ref{eq:total-magnetization-vector}) and 
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ (equation \ref{eq:B-t}).
 
-Equations \ref{eq:V-Neumann}--\ref{eq:Psi-t} show that not only the magnetic scalar potential 
+Equations \ref{eq:V-Neumann}--\ref{eq:Dth-Psi} show that not only the magnetic scalar potential 
 $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), but also the magnetic induction
 field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and 
 approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
@@ -484,7 +487,7 @@ Note that $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$ represents
 the analytical solution of the integral equation \ref{eq:B-t-generic-layer} for
 the particular case in which the equivalent layer has the same uniform magnetization direction $\hat{\mathbf{u}}(I_{h}, D_{h})$ (equation \ref{eq:total-magnetization-vector}) 
 of the true sources, i.e., for the case in which $I_{p} = I_{h}$ and $D_{p} = D_{h}$. 
-Equations \ref{eq:V-Neumann}--\ref{eq:Psi-t} are significant in at least three 
+Equations \ref{eq:V-Neumann}--\ref{eq:Dth-Psi} are significant in at least three 
 major aspects because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
 mathematical expression for magnetic-data processing, but a solution of a
@@ -497,13 +500,23 @@ this direction is normal to the planar layer or not;
 is strictly positive at all points $(x'',y'',z_{c})$ and is proportional to the
 pseudogravity anomaly produced by the sources.
 
-Finally, equations \ref{eq:B-r-Neumann} and \ref{eq:Psi-r} represent the 
+Finally, we may also verify from equations \ref{eq:B-r} and \ref{eq:Theta-Neumann} 
+that the RTP anomaly produced by the planar equivalent layer is given by:
+\begin{equation}
+B_{r}(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Theta(\mathbf{r}'') \:\: 
+\partial_{zz} \Psi(\mathbf{r}, \mathbf{r}'') \: 
+dx''dy'' \: , \:\: z < z_{c} \: .
+\label{eq:B-r-Neumann}
+\end{equation}
+It is important to stress that equation \ref{eq:B-r-Neumann} represents the 
 theoretical basis for computing the RTP in space domain, from total-field
 anomaly data, via equivalent-layer technique.
 This is a two-step approach that consists in first considering that the observed 
 total-field anomaly data can be satisfactorily represented by 
-$B_{t}(\mathbf{r})$ and then solving the discrete version of 
-integral equation \ref{eq:B-t-Neumann} to obtain the positive physical 
+$B_{t}(\mathbf{r})$ and then numerically solving the integral 
+equation \ref{eq:B-t-Neumann} to obtain a discrete version of the positive physical 
 property distribution $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$.
 In the second step, the estimated $p(\mathbf{r}'')$ is used in 
 a discrete version of equation \ref{eq:B-r-Neumann} to compute the RTP anomaly 
@@ -521,7 +534,7 @@ methods \cite[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis
 proposed to compute the RTP in space-domain, via equivalent-layer technique.
 
 
-\subsection{Fourier-domain analytical solutions}
+\subsection{Continuous analytical solutions in Fourier domain}
 \label{subsec:Fourier_domain}
 
 
@@ -554,14 +567,14 @@ Then, we use the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996} to ob
 \begin{equation}
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 \mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]
+\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]
 \label{eq:Fourier-B-t}
 \end{equation}
 and
 \begin{equation}
 \mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right] = 
 \mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
 \label{eq:Fourier-B-r}
 \end{equation}
 where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
@@ -595,22 +608,22 @@ In equation \ref{eq:Fourier-Dz-Theta}, we assume that
 $h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
 and, consequently, at any coordinate $z < z_{0} < z_{c}$.
 According to \citet[][ p. 278]{blakely1996}, the 2DFT's 
-$\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+$\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-B-t}) and 
-$\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+$\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-B-r}) are given by:
 \begin{equation}
-\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
 \mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
 \: , \:\: z_{0} < z_{c} \: ,
-\label{eq:Fourier-Psi-t}
+\label{eq:Fourier-Dth-Psi}
 \end{equation}
 and
 \begin{equation}
-\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right] 
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] 
 = |k| \, e^{|k| \, (z_{0} - z_{c})} \: ,
 \:\: z_{0} < z_{c} \: ,
-\label{eq:Fourier-Psi-r}
+\label{eq:Fourier-Dzz-Psi}
 \end{equation}
 where $\mathcal{U}_{t} \equiv \mathcal{U}(I_{t}, D_{t})$ and
 $\mathcal{U}_{h} \equiv \mathcal{U}(I_{h}, D_{h})$ are defined by the complex function
@@ -627,8 +640,8 @@ $\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I_{h}, D_{h})$
 Now, by substituting the 2DFT's 
 $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-Dz-Theta}) and 
-$\mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Psi-t}) into that defining
+$\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Dth-Psi}) into that defining
 $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
 (equation \ref{eq:Fourier-B-t}), we obtain:
 \begin{equation}
@@ -653,7 +666,7 @@ is exactly the same found, for example, in \citet{gunn1975} or
 \citet[][ p. 298]{blakely1996}, and is equivalent to the 2DFT of the volume integral for 
 $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) at the horizontal plane $z = z_{0}$. 
 It can also be verified from equations 
-\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-Psi-r} and 
+\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-Dzz-Psi} and 
 \ref{eq:Fourier-B-t-final} that $\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ 
 (equation \ref{eq:Fourier-B-r}) can be rewritten as follows:
 \begin{equation}
@@ -674,12 +687,12 @@ $\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources
 We can also obtain alternative expressions in Fourier domain for the case in which the
 equivalent layer has an arbitrary uniform magnetization direction 
 $\hat{\mathbf{u}}(I_{p}, D_{p})$. These alternative expressions are obtained from the
-simple manipulation of equations \ref{eq:Fourier-Dz-Theta} and \ref{eq:Fourier-Psi-t},
+simple manipulation of equations \ref{eq:Fourier-Dz-Theta} and \ref{eq:Fourier-Dth-Psi},
 as follows:
 \begin{equation}
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 \mathcal{F}\left[ p(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \Psi_{p}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\mathcal{F}\left[ \partial_{tp} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
 \label{eq:Fourier-B-t-arbitrary}
 \end{equation}
 where
@@ -697,18 +710,51 @@ $\mathcal{U}_{p} \equiv \mathcal{U}(I_{p}, D_{p})$ (equation
 \: , \:\: z_{0} < z_{c} \: .
 \label{eq:Fourier-Psi-p}
 \end{equation}
-Finally, from equations \ref{eq:Fourier-B-r}, \ref{eq:Fourier-Psi-r} and 
-\ref{eq:Fourier-p}, it is easy to verify that:
+Note that, in this case, it is not possible to compute the 2DFT 
+$\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ of the RTP anomaly from the
+2DFT $\mathcal{F}\left[ p(\mathbf{r}'') \right]$ of the generic physical-property 
+distribution $p(\mathbf{r}'')$ because, according to equations \ref{eq:Fourier-B-r}, 
+\ref{eq:Fourier-Dzz-Psi} and \ref{eq:Fourier-p}:
 \begin{equation}
 \mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
 \ne \mathcal{F}\left[ p(\mathbf{r}'') \right] \, 
-\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: .
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: .
 \label{eq:Fourier-B-r-wrong}
 \end{equation}
 
 
-\section{Discrete form of analytical solutions}
-\label{sec:discrete_forms}
+\subsection{Analytical solutions in discrete form}
+\label{subsec:discrete_forms}
+
+$\mathbf{r}_{i} = \left[x_{i} \:\: y_{i} \:\: z_{i} \right]^{\top}$
+
+$\mathbf{r}''_{j} = \left[x''_{j} \:\: y''_{j} \:\: z_{c} \right]^{\top}$
+
+\begin{equation}
+V(\mathbf{r}_{i}) \approx - \sum_{j=1}^{M} p_{j} \:\: \partial_{h} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j}) \: ,
+\label{eq:V-Neumann-i}
+\end{equation}
+
+\begin{equation}
+B_{t}(\mathbf{r}_{i}) \approx \sum_{j=1}^{M} p_{j} \:\: \partial_{tp} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j}) \: ,
+\label{eq:B-t-Neumann-i}
+\end{equation}
+
+\begin{equation}
+B_{r}(\mathbf{r}_{i}) \approx \sum_{j=1}^{M} p_{j} \:\: \partial_{zz} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j}) \: ,
+\label{eq:B-r-Neumann-i}
+\end{equation}
+
+\begin{equation}
+p_{j} = \partial_{z} \Theta(\mathbf{r}''_{j}) \: \Delta s_{j}
+\label{eq:pj}
+\end{equation}
+
+\begin{equation}
+\mathbf{d} \approx \mathbf{A} \: \mathbf{p}
+\label{eq:discrete-space-domain}
+\end{equation}
+
 
 
 1 - apresentar versões discretas das integrais \ref{eq:V-Neumann}, \ref{eq:B-Neumann},
