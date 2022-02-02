@@ -145,11 +145,11 @@ Consider also that the total-magnetization vector at each point $(x', y', z') \i
 within the sources, with an associated position vector 
 $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$, is given by:
 \begin{equation}
-\mathbf{h}(\mathbf{r}') = h(\mathbf{r}') \, \hat{\mathbf{h}} \: ,
+\mathbf{h}(\mathbf{r}') = h(\mathbf{r}') \, \hat{\mathbf{u}}(I_{h}, D_{h}) \: ,
 \label{eq:total-magnetization-vector}
 \end{equation}
 where $h(\mathbf{r}')$ is a positive scalar function representing a spatially-varying 
-total-magnetization intensity (in A/m) and $\hat{\mathbf{h}} \equiv \hat{\mathbf{u}}(I', D')$ 
+total-magnetization intensity (in A/m) and $\hat{\mathbf{u}}(I_{h}, D_{h})$ 
 is a unit vector defining a uniform total-magnetization direction according to
 the vector function
 \begin{equation}
@@ -166,15 +166,14 @@ the vector function
 \end{bmatrix} \quad ,
 \label{eq:u-unit-vector}
 \end{equation}
-with constant inclination $I = I'$ and declination $D = D'$ values.
+with constant inclination $I = I_{h}$ and declination $D = D_{h}$ values.
 In this case, the magnetic scalar potential produced by the set of sources at an
 observation point $(x,y,z)$ located above them, outside $v$, is given by
 \cite[e.g., ][ p. 196]{jackson1999}:
 \begin{equation}
 V(\mathbf{r}) 
-= -\frac{\partial \Theta(\mathbf{r})}{\partial \mathbf{h}}
 = -\nabla \Theta(\mathbf{r})^{\top} 
-\hat{\mathbf{h}} \quad ,
+\hat{\mathbf{u}}(I_{h}, D_{h}) \quad ,
 \label{eq:scalar-potential-V}
 \end{equation}
 which represents a negative directional derivative of the harmonic function
@@ -206,7 +205,7 @@ negative gradient of the scalar potential $V(\mathbf{r})$
 \begin{equation}
 \mathbf{B}(\mathbf{r}) 
 = -\nabla V(\mathbf{r}) 
-= \mathbf{H}(\mathbf{r}) \: \hat{\mathbf{u}}(I', D') \quad ,
+= \mathbf{H}(\mathbf{r}) \: \hat{\mathbf{u}}(I_{h}, D_{h}) \quad ,
 \label{eq:B-field}
 \end{equation}
 where 
@@ -281,7 +280,7 @@ with uniform magnetization direction $\hat{\mathbf{u}}(I_{p}, D_{p})$
 declination $D_{p}$.
 Now, consider that this planar layer exactly reproduces the approximated total-field anomaly
 $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) at observation points $\mathbf{r}$ 
-located above the layer, with $z < z_{c}$. In this case, we obtain the following 
+located above the layer, with $z < z_{c}$. In this case, we may write the following 
 integral equation:
 \begin{equation}
 B_{t}(\mathbf{r}) = 
@@ -391,9 +390,9 @@ plane $z = z_{c}$.
 
 By computing the negative directional derivative of $\Theta(\mathbf{r})$ 
 (equation \ref{eq:Theta-Neumann}) along the uniform magnetization direction
-$\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the sources, 
-we obtain the following alternative expression for the magnetic scalar potential
-$V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}):
+$\hat{\mathbf{u}}(I_{h}, D_{h})$ (equation \ref{eq:total-magnetization-vector}) 
+of the sources, we obtain the following alternative expression for the magnetic 
+scalar potential $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}):
 \begin{equation}
 V(\mathbf{r}) =
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -405,12 +404,12 @@ where
 \begin{equation}
 \Psi_{V}(\mathbf{r}, \mathbf{r}'') = 
 - \frac{1}{2\pi} \: \nabla \frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}^{\top}
-\hat{\mathbf{u}}(I', D') \: .
+\hat{\mathbf{u}}(I_{h}, D_{h}) \: .
 \label{eq:Psi-V}
 \end{equation}
 From the physical point of view, equations \ref{eq:V-Neumann} and \ref{eq:Psi-V} 
 define a planar layer of dipoles having the same uniform total-magnetization direction 
-$\hat{\mathbf{u}}(I', D')$ of the true sources (equation \ref{eq:total-magnetization-vector}) 
+$\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources (equation \ref{eq:total-magnetization-vector}) 
 and a positive magnetic-moment intensity distribution 
 $\partial_{z} \Theta(\mathbf{r}'')$, which is proportional to the 
 pseudogravity anomaly produced by the true sources at the plane $z = z_{c}$. 
@@ -434,7 +433,7 @@ where
 \begin{equation}
 \boldsymbol{\Psi_{B}}(\mathbf{r}, \mathbf{r}'') = 
 \frac{1}{2\pi} \: \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I', D') \: .
+\hat{\mathbf{u}}(I_{h}, D_{h}) \: .
 \label{eq:Psi-B}
 \end{equation}
 It is also relatively easy to verify from equations 
@@ -454,7 +453,7 @@ where
 \Psi_{t}(\mathbf{r}, \mathbf{r}'') = \frac{1}{2\pi} \: 
 \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
 \mathbf{G}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I', D') \: ,
+\hat{\mathbf{u}}(I_{h}, D_{h}) \: ,
 \label{eq:Psi-t}
 \end{equation}
 and
@@ -479,13 +478,12 @@ field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}) and
 approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
 yielded by the true sources are exactly reproduced by the same planar layer 
 of dipoles located above the sources, at $z = z_{c}$, with uniform magnetization 
-direction $\hat{\mathbf{u}}(I', D')$ and positive magnetic-moment intensity distribution 
-$\partial_{z} \Theta(\mathbf{r}'')$. 
+direction $\hat{\mathbf{u}}(I_{h}, D_{h})$ and positive magnetic-moment intensity
+distribution $\partial_{z} \Theta(\mathbf{r}'')$. 
 Note that $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$ represents
 the analytical solution of the integral equation \ref{eq:B-t-generic-layer} for
-the particular case in which the equivalent layer has the same uniform magnetization direction 
-$\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the true sources, 
-i.e., for the case in which $I_{p} = I'$ and $D_{p} = D'$. 
+the particular case in which the equivalent layer has the same uniform magnetization direction $\hat{\mathbf{u}}(I_{h}, D_{h})$ (equation \ref{eq:total-magnetization-vector}) 
+of the true sources, i.e., for the case in which $I_{p} = I_{h}$ and $D_{p} = D_{h}$. 
 Equations \ref{eq:V-Neumann}--\ref{eq:Psi-t} are significant in at least three 
 major aspects because they show that:
 (i) the planar equivalent layer of dipoles is not a purely 
@@ -603,7 +601,7 @@ $\mathcal{F}\left[ \Psi_{r}(\mathbf{r}_{0}, \mathbf{r}'') \right]$
 (equation \ref{eq:Fourier-B-r}) are given by:
 \begin{equation}
 \mathcal{F}\left[ \Psi_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
-\mathcal{U}_{t} \: \mathcal{U}' \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
 \: , \:\: z_{0} < z_{c} \: ,
 \label{eq:Fourier-Psi-t}
 \end{equation}
@@ -614,22 +612,17 @@ and
 \:\: z_{0} < z_{c} \: ,
 \label{eq:Fourier-Psi-r}
 \end{equation}
-where
+where $\mathcal{U}_{t} \equiv \mathcal{U}(I_{t}, D_{t})$ and
+$\mathcal{U}_{h} \equiv \mathcal{U}(I_{h}, D_{h})$ are defined by the complex function
 \begin{equation}
-\mathcal{U}_{t} = \hat{u}_{z}(I_{t}, D_{t}) + 
-\mathrm{i} \: \frac{ \hat{u}_{x}(I_{t}, D_{t}) \: k_{x} + \hat{u}_{y}(I_{t}, D_{t}) \: k_{y} }{|k|}
-\label{eq:U-t}
+\mathcal{U}(I, D) = \hat{u}_{z}(I, D) + 
+\mathrm{i} \: \frac{ \hat{u}_{x}(I, D) \: k_{x} + 
+\hat{u}_{y}(I, D) \: k_{y} }{|k|} \: ,
+\label{eq:U-complex-function}
 \end{equation}
-and
-\begin{equation}
-\mathcal{U}' = \hat{u}_{z}(I', D') + 
-\mathrm{i} \: \frac{ \hat{u}_{x}(I', D') \: k_{x} + \hat{u}_{y}(I', D') \: k_{y} }{|k|}
-\: ,
-\label{eq:U-prime}
-\end{equation}
-are defined in terms of the imaginary unity $\mathrm{i} = \sqrt{-1}$
+in terms of the imaginary unity $\mathrm{i} = \sqrt{-1}$
 and the Cartesian components of the unit vectors 
-$\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I', D')$
+$\hat{\mathbf{u}}(I_{t}, D_{t})$ and $\hat{\mathbf{u}}(I_{h}, D_{h})$
 (equation \ref{eq:u-unit-vector}).
 Now, by substituting the 2DFT's 
 $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
@@ -641,14 +634,13 @@ $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
 \begin{equation}
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 2\pi \, c_{m} \, 
-\mathcal{U}_{t} \: \mathcal{U}' \: |k| \, e^{|k| \, z_{0}} 
+\mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, z_{0}} 
 \int\limits_{z_{0}}^{\infty} 
 \mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
-dz' \: , \:\: z_{0} < z' \: ,
+dz' \: , \:\: z_{0} < z' \: .
 \label{eq:Fourier-B-t-final}
 \end{equation}
-with $\mathcal{U}_{t}$ and $\mathcal{U}_{\ell}$ given by equations 
-\ref{eq:U-t} and \ref{eq:U-prime}, respectively. Note that, in deducing 
+Note that, in deducing 
 equation \ref{eq:Fourier-B-t-final}, we have replaced $z_{c}$ by
 $z_{0}$ in the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-Dz-Theta}). This change does not affect the result
@@ -666,7 +658,7 @@ It can also be verified from equations
 (equation \ref{eq:Fourier-B-r}) can be rewritten as follows:
 \begin{equation}
 \mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
-= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}'} \, 
+= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}_{h}} \, 
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] \: ,
 \label{eq:Fourier-B-r-final}
 \end{equation}
@@ -675,40 +667,41 @@ which represents the common expression defining the RTP in Fourier domain
 
 Equations \ref{eq:Fourier-B-t-final} and \ref{eq:Fourier-B-r-final} establish,
 for the first time, the theoretical connection between the RTP in space and Fourier domains.
-We stress that these analytical expressions are valid for the particular case in which
-the equivalent layer of dipoles has the same uniform magnetization direction
-$\hat{\mathbf{u}}(I', D')$ (equation \ref{eq:total-magnetization-vector}) of the true
-sources. 
-
-PAREI AQUI
-
+We stress that these equations are valid for the particular case in which the
+equivalent layer of dipoles has the same uniform magnetization direction
+$\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources 
+(equation \ref{eq:total-magnetization-vector}). 
+We can also obtain alternative expressions in Fourier domain for the case in which the
+equivalent layer has an arbitrary uniform magnetization direction 
+$\hat{\mathbf{u}}(I_{p}, D_{p})$. These alternative expressions are obtained from the
+simple manipulation of equations \ref{eq:Fourier-Dz-Theta} and \ref{eq:Fourier-Psi-t},
+as follows:
 \begin{equation}
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 \mathcal{F}\left[ p(\mathbf{r}'') \right] \: 
-\mathcal{F}\left[ \tilde{\Psi}_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\mathcal{F}\left[ \Psi_{p}(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
 \label{eq:Fourier-B-t-arbitrary}
 \end{equation}
 where
 \begin{equation}
 \mathcal{F}\left[ p(\mathbf{r}'') \right] 
-= 2\pi \, c_{m} \, 
-\frac{\mathcal{U}'}{\mathcal{U}_{p}} \, 
-e^{|k| \, z_{c}} 
-\int\limits_{z_{c}}^{\infty} 
-\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
-dz' \: , \:\: z_{c} < z' \: ,
+= \frac{\mathcal{U}_{h}}{\mathcal{U}_{p}} \, 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: ,
 \label{eq:Fourier-p}
 \end{equation}
-and
+$\mathcal{U}_{p} \equiv \mathcal{U}(I_{p}, D_{p})$ (equation 
+\ref{eq:U-complex-function}) and
 \begin{equation}
-\mathcal{F}\left[ \tilde{\Psi}_{t}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{F}\left[ \Psi_{p}(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
 \mathcal{U}_{t} \: \mathcal{U}_{p} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
 \: , \:\: z_{0} < z_{c} \: .
 \label{eq:Fourier-Psi-p}
 \end{equation}
 
+
 \section{Discrete form of analytical solutions}
 \label{sec:discrete_forms}
+
 
 1 - apresentar versões discretas das integrais \ref{eq:V-Neumann}, \ref{eq:B-Neumann},
 \ref{eq:B-t-Neumann} e \ref{eq:B-r-Neumann}
