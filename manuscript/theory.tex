@@ -1,146 +1,10 @@
-%\section{Magnetic induction field due arbitrarily magnetized sources}
-%\label{sec:induction_arbitrary}
-%
-%Consider a set of magnetic sources enclosed by a volume $v$ in the subsurface.
-%Besides, consider that these sources can be represented by the superposition
-%of an arbitrary set of $L$ sources with uniform magnetization directions
-%(magnetization components), so that the total-magnetization vector
-%at any point $(x', y', z')$ within $v$ is given by:
-%\begin{equation}
-%\mathbf{h}(\mathbf{r}') = \sum\limits_{\ell = 1}^{L} 
-%h_{\ell}(\mathbf{r}') \: \hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
-%\label{eq:h-vector-total}
-%\end{equation}
-%where $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$ is the position vector 
-%defining a point $(x', y', z')$ inside $v$ and
-%$h_{\ell}(\mathbf{r}')$ (in A/m) is the positive magnetization intensity
-%of the $\ell$th magnetization component with 
-%constant magnetization direction defined by the unit vector
-%\begin{equation}
-%\hat{\mathbf{u}}(I, D) =
-%\begin{bmatrix}
-%\hat{u}_{x}(I, D) \\
-%\hat{u}_{y}(I, D) \\
-%\hat{u}_{z}(I, D)
-%\end{bmatrix} =
-%\begin{bmatrix}
-%\cos(I) \: \cos(D) \\ 
-%\cos(I) \: \sin(D) \\
-%\sin(I)
-%\end{bmatrix} \quad ,
-%\label{eq:u-unit-vector}
-%\end{equation}
-%for the particular case in which the inclination and declination are $I = I_{\ell}$
-%and $D = D_{\ell}$.
-%This representation of magnetic sources as the superposition of magnetization
-%distributions with uniform direction is in perfect agreement with the commonly
-%used superposition principle for magnetic fields \cite[e.g., ][ p. 95]{blakely1996}.
-%In this case, the magnetic scalar potential produced by the sources at an
-%observation point $(x,y,z)$ located above them, outside $v$, is given by
-%\cite[e.g., ][ p. 196]{jackson1999}:
-%\begin{equation}
-%V(\mathbf{r}) = c_{m} \iiint\limits_{v}
-%\mathbf{h}(\mathbf{r}')^{\top} \nabla' \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-%\: dx'dy'dz' \quad ,
-%\label{eq:V-volume-integral}
-%\end{equation}
-%where $\mathbf{r} = \left[x \:\: y \:\: z \right]^{\top}$ is the position vector
-%defining an observation point $(x, y, z)$ located outside $v$, 
-%$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ is the inverse distance function, 
-%$c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (H/m), $\mu_{0}$ is the
-%magnetic permeability at vacuum, $\| \cdot \|$ denotes the Euclidean norm and $\nabla'$ is the gradient
-%operator with respect to the coordinates of $(x', y', z')$.
-%The resultant magnetic scalar potential $V(\mathbf{r})$ 
-%(equation \ref{eq:V-volume-integral}) can be rewritten in terms of the
-%magnetic scalar potentials $V_{\ell}(\mathbf{r})$ produced by each magnetization 
-%component as follows:
-%\begin{equation}
-%V(\mathbf{r}) = \sum\limits_{\ell = 1}^{L}
-%V_{\ell}(\mathbf{r}) \quad ,
-%\label{eq:V-summation}
-%\end{equation}
-%where
-%\begin{equation}
-%V_{\ell}(\mathbf{r}) = -\nabla \Theta_{\ell}(\mathbf{r})^{\top} 
-%\hat{\mathbf{u}}(I_{\ell}, D_{\ell}) \quad ,
-%\label{eq:V-l}
-%\end{equation}
-%$\nabla$ is the gradient operator with respect to the coordinates of $(x,y,z)$ and
-%$\Theta_{\ell}(\mathbf{r})$ is an harmonic function given by
-%\begin{equation}
-%\Theta_{\ell}(\mathbf{r}) = c_{m} \iiint\limits_{v_{\ell}}
-%h_{\ell}(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-%\: dx'dy'dz' \quad .
-%\label{eq:Theta-l}
-%\end{equation}
-%Note that the magnetic scalar potential $V_{\ell}(\mathbf{r})$ (equation \ref{eq:V-l}) 
-%is the negative directional derivative of the harmonic function $\Theta_{\ell}(\mathbf{r})$
-%(equation \ref{eq:Theta-l}) along the uniform magnetization direction
-%$\hat{\mathbf{u}}(I_{\ell}, D_{\ell})$ (equation \ref{eq:u-unit-vector})
-%of the $\ell$th magnetization component. 
-%
-%By computing the negative gradient of $V(\mathbf{r})$ 
-%(equation \ref{eq:V-volume-integral}), we obtain the resultant 
-%magnetic induction field $\mathbf{B}(\mathbf{r})$ produced by the 
-%sources at the observation point $(x,y,z)$:
-%\begin{equation}
-%\mathbf{B}(\mathbf{r}) = -\nabla V(\mathbf{r}) = \sum\limits_{\ell = 1}^{L}
-%\mathbf{B}_{\ell}(\mathbf{r}) \quad ,
-%\label{eq:B-summation}
-%\end{equation}
-%where 
-%\begin{equation}
-%\mathbf{B}_{\ell}(\mathbf{r}) = \mathbf{H}_{\ell}(\mathbf{r}) 
-%\: \hat{\mathbf{u}}(I_{\ell}, D_{\ell})
-%\label{eq:B-l}
-%\end{equation}
-%is the magnetic induction field produced by the $\ell$th magnetization component
-%and 
-%\begin{equation}
-%\mathbf{H}_{\ell}(\mathbf{r}) = 
-%\begin{bmatrix}
-%\partial_{xx} \Theta_{\ell}(\mathbf{r}) & \partial_{xy} \Theta_{\ell}(\mathbf{r}) & \partial_{xz} \Theta_{\ell}(\mathbf{r}) \\
-%\partial_{xy} \Theta_{\ell}(\mathbf{r}) & \partial_{yy} \Theta_{\ell}(\mathbf{r}) & \partial_{yz} \Theta_{\ell}(\mathbf{r}) \\
-%\partial_{xz} \Theta_{\ell}(\mathbf{r}) & \partial_{yz} \Theta_{\ell}(\mathbf{r}) & \partial_{zz} \Theta_{\ell}(\mathbf{r})
-%\end{bmatrix}
-%\label{eq:H-l}
-%\end{equation}
-%is the Hessian matrix of $\Theta_{\ell}(\mathbf{r})$ (equation \ref{eq:Theta-l}), 
-%with $\partial_{\alpha\beta} \Theta_{\ell}(\mathbf{r}) \equiv 
-%\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Theta_{\ell}(\mathbf{r})$,
-%$\alpha = x, y, z$, $\beta = x, y, z$.
-%
-%From equations \ref{eq:B-summation} and \ref{eq:B-l}, it is easy to show that
-%the component of the magnetic induction field along an arbitrary direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ 
-%(equation \ref{eq:u-unit-vector}) with constant inclination $I = I_{t}$ and 
-%declination $D = D_{t}$ is given by:
-%\begin{equation}
-%\Delta\tilde{T}_{\ell}(\mathbf{r}) 
-%= \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} \mathbf{B}_{\ell}(\mathbf{r}) \quad ,
-%\label{eq:Delta-T-l}
-%\end{equation}
-%if we consider only the field $\mathbf{B}_{\ell}(\mathbf{r})$ produced by the $\ell$th 
-%magnetization component, or
-%\begin{equation}
-%\Delta\tilde{T}(\mathbf{r}) 
-%= \hat{\mathbf{u}}(I_{t}, D_{t})^{\top} \mathbf{B}(\mathbf{r}) \quad ,
-%\label{eq:Delta-T}
-%\end{equation}
-%if we consider the resultant field $\mathbf{B}(\mathbf{r})$. 
-%The field components $\Delta\tilde{T}_{\ell}(\mathbf{r})$ (equation \ref{eq:Delta-T-l})
-%and $\Delta\tilde{T}(\mathbf{r})$ (equation \ref{eq:Delta-T})
-%are harmonic functions commonly used in applied geophysics to approximate the total-field anomaly 
-%produced by magnetized sources having uniform and nonuniform magnetization directions,
-%respectively, where $\hat{\mathbf{u}}(I_{t}, D_{t})$ defines the constant direction of the main geomagnetic 
-%field in the study area \cite[][ p. 179]{blakely1996}.
-
 \section{Magnetic induction field due sources with uniform magnetization direction}
 \label{sec:induction_uniform_direction}
 
 
 Consider a set of magnetic sources enclosed by a finite volume $v$ located 
 in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
-$x$, $y$, and $z$ pointing to North, East and down, respectively. 
+$x$, $y$, and $z$ pointing to north, east and down, respectively. 
 Consider also that the total-magnetization vector at each point $(x', y', z') \in v$ 
 within the sources, with an associated position vector 
 $\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$, is given by:
@@ -187,7 +51,7 @@ where the superscript $^{\top}$ stands for transposition;
 $\mathbf{r} = \left[x \:\: y \:\: z \right]^{\top}$ is the position vector 
 associated with the observation point $(x, y, z)$; 
 $\nabla$ is the gradient operator with respect to the coordinates of $\mathbf{r}$;
-$\tfrac{1}{\| \mathbf{r} - \mathbf{r}'' \|}$ is the inverse distance function; 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function; 
 $\| \cdot \|$ denotes the Euclidean norm; $c_{m} = 10^{9} \frac{\mu_{0}}{4\pi}$ (in H/m);
 and $\mu_{0}$ is the magnetic permeability at vacuum. 
 It is important noting that the harmonic function $\Theta(\mathbf{r})$ (equation
@@ -364,14 +228,19 @@ Otherwise, the $I_{p}$ and $D_{p}$ must assume the same constant inclination and
 values defining the total-magnetization direction of the true sources. An example of 
 transformation that produces phase changes in the magnetic data is the RTP.
 
-What follows aims at deducing solutions for the integral equation \ref{eq:B-t-generic-layer}
-in space and Fourier domains and proving the existence of a planar equivalent 
-layer of dipoles that is located above the sources and exactly reproduces the magnetic 
+What follows aims at deducing analytical solutions for the integral equation
+\ref{eq:B-t-generic-layer} in space and Fourier domains. 
+These solutions are planar equivalent layers of dipoles that are located above the sources
+and exactly reproduce the magnetic 
 scalar potential $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction 
 field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}),
 approximated total-field anomaly $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
 and RTP anomaly $\mathbf{B}_{r}(\mathbf{r})$ (equation \ref{eq:B-r})
-yielded by sources with uniform total-magnetization direction. 
+yielded by 3D sources with uniform total-magnetization direction. 
+To the authors knowledge, the existence of a planar equivalent layer of monopoles
+reproducing gravity data has been proven;
+however, the theoretical prove of the existence of a planar equivalent layer of dipoles 
+reproducing magnetic data has never been done before.
 
 
 \section{Planar equivalent layer of dipoles}
@@ -554,7 +423,8 @@ $B_{r}(\mathbf{r})$. It is important noting that equations \ref{eq:B-t-Neumann}
 and \ref{eq:B-r-Neumann} show, for the first time, the main 
 theoretical assumptions supporting the space-domain RTP: 
 (i) There exists a planar equivalent layer of dipoles that is located at a coordinate 
-$z = z_{c}$ above the sources, has the same uniform magnetization direction of the sources
+$z = z_{c}$ above the sources, has the same uniform magnetization direction of the 
+true sources
 and approximates the observed total-field anomaly at observation points;
 (ii) The same planar equivalent layer of dipoles reproducing the observed total-field
 anomaly data is able to reproduce the RTP anomaly $B_{r}(\mathbf{r})$.
@@ -568,27 +438,27 @@ proposed to compute the RTP in space-domain, via equivalent-layer technique.
 \label{subsec:Fourier_domain_true_mag}
 
 
-Several methods for magnetic-data processing have been developed in the Fourier domain 
-for the particular case in which the magnetic data rely on a
-planar and regular grid at constant $z = z_{0}$ 
-\citep[][ ch 11 and 12]{blakely1996}. In this case, they 
-can take advantage of the well-known computational efficiency of 
-Fast Fourier Transform (FFT) algorithms.
-Most of these methods is based on computing the two-dimensional Fourier transform
-(2DFT) of the approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
-with respect to the horizontal coordinates $x$ and $y$ of the observation points, according
-to \citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
-It is important to stress that equation \ref{eq:B-t} is defined in terms of volume 
-integrals that depend on the position, shape and total-magnetization distribution of the
-true sources. 
-The main goal here is presenting the 2DFT of equations \ref{eq:B-alpha-Neumann},
-\ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} for the case in which the magnetic data
-are on the plane $z = z_{0}$ and show that they are equivalent to the 2DFT of 
-the corresponding equations defined by volume integrals (equations 
-\ref{eq:B-alpha}--\ref{eq:B-r}).
-To do this, we follow the same approach presented by \citet[][ ch. 11]{blakely1996}.
+%Several methods for magnetic-data processing have been developed in the Fourier domain 
+%for the particular case in which the magnetic data rely on a
+%planar and regular grid at constant $z = z_{0}$ 
+%\citep[][ ch 11 and 12]{blakely1996}. In this case, they 
+%can take advantage of the well-known computational efficiency of 
+%Fast Fourier Transform (FFT) algorithms.
+%Most of these methods is based on computing the two-dimensional Fourier transform
+%(2DFT) of the approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t})
+%with respect to the horizontal coordinates $x$ and $y$ of the observation points, according
+%to \citet{gunn1975} or \citet[][ p. 298]{blakely1996}, for example. 
+%It is important to stress that equation \ref{eq:B-t} is defined in terms of volume 
+%integrals that depend on the position, shape and total-magnetization distribution of the
+%true sources. 
+%The main goal here is presenting the 2DFT of equations \ref{eq:B-alpha-Neumann},
+%\ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann} for the case in which the magnetic data
+%are on the plane $z = z_{0}$ and show that they are equivalent to the 2DFT of 
+%the corresponding equations defined by volume integrals (equations 
+%\ref{eq:B-alpha}--\ref{eq:B-r}).
+%To do this, we follow the same approach presented by \citet[][ ch. 11]{blakely1996}.
 
-Let us first consider that the 2D convolutions representing the 
+Consider now that the 2D convolutions representing the 
 $\alpha$-component $B_{\alpha}(\mathbf{r})$ (equation \ref{eq:B-alpha-Neumann}),
 approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t-Neumann}) 
 and RTP anomaly $B_{r}(\mathbf{r})$ (equation \ref{eq:B-r-Neumann}) are 
@@ -691,13 +561,17 @@ Now, by substituting the 2DFT's
 $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-Dz-Theta}),
 $\mathcal{F}\left[ \partial_{\alpha h} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Dalphah-Psi}) and 
+(equation \ref{eq:Fourier-Dalphah-Psi}), 
 $\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Dth-Psi}) into those defining
+(equation \ref{eq:Fourier-Dth-Psi}) and
+$\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dzz-Psi}) into those defining
 $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
-(equation \ref{eq:Fourier-B-alpha}) and
+(equation \ref{eq:Fourier-B-alpha}),
 $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
-(equation \ref{eq:Fourier-B-t}), we obtain:
+(equation \ref{eq:Fourier-B-t}) and 
+$\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-B-r}), we obtain:
 \begin{equation}
 \mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right] = 
 2\pi \, c_{m} \, 
@@ -707,18 +581,28 @@ $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
 dz' \: , \:\: z_{0} < z' \: , \:\: \alpha = x, y, z \: ,
 \label{eq:Fourier-B-alpha-final}
 \end{equation}
-and
 \begin{equation}
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
 2\pi \, c_{m} \, 
 \mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, z_{0}} 
 \int\limits_{z_{0}}^{\infty} 
 \mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
-dz' \: , \:\: z_{0} < z' \: .
+dz' \: , \:\: z_{0} < z' \: ,
 \label{eq:Fourier-B-t-final}
 \end{equation}
-Note that, in deducing equations \ref{eq:Fourier-B-alpha-final} and
-\ref{eq:Fourier-B-t-final}, we have replaced $z_{c}$ by
+and
+\begin{equation}
+	\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right] = 
+	2\pi \, c_{m}
+	\: |k| \, e^{|k| \, z_{0}} 
+	\int\limits_{z_{0}}^{\infty} 
+	\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
+	dz' \: , \:\: z_{0} < z' \: .
+	\label{eq:Fourier-B-r-final}
+\end{equation}
+Note that, in deducing equations 
+\ref{eq:Fourier-B-alpha-final}--\ref{eq:Fourier-B-r-final}, 
+we have replaced $z_{c}$ by
 $z_{0}$ in the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
 (equation \ref{eq:Fourier-Dz-Theta}). This change does not affect the result
 because we assume that $h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
@@ -729,28 +613,38 @@ $\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right]$
 (equation \ref{eq:Fourier-B-alpha-final}) and 
 $\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$ (equation \ref{eq:Fourier-B-t-final})
 are exactly the same found, for example, in \citet{gunn1975} or 
-\citet[][ p. 298]{blakely1996}, and are equivalent to the 2DFT's of the volume integrals 
-for $B_{\alpha}(\mathbf{r})$ (equation \ref{eq:B-alpha}) and 
+\citet[][ p. 298]{blakely1996}.
+It is important to stress, however, that differently from those authors, 
+we have not deduced equations \ref{eq:Fourier-B-alpha-final} 
+and \ref{eq:Fourier-B-t-final} by computing the 2DFT's of the volume integrals 
+$B_{\alpha}(\mathbf{r})$ (equation \ref{eq:B-alpha}) and 
 $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) at the horizontal plane $z = z_{0}$. 
+Instead, we have deduced them by computing the 2DFT's of the surface integrals
+given by equations \ref{eq:B-alpha-Neumann} and \ref{eq:B-t-Neumann}.
 It can also be verified from equations 
-\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-Dzz-Psi} and 
-\ref{eq:Fourier-B-t-final} that $\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ 
-(equation \ref{eq:Fourier-B-r}) can be rewritten as follows:
+\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-B-t-final} and 
+\ref{eq:Fourier-B-r-final} that $\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ 
+(equation \ref{eq:Fourier-B-r-final}) can be rewritten as follows:
 \begin{equation}
 \mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
 = \frac{1}{\mathcal{U}_{t} \,\mathcal{U}_{h}} \, 
 \mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] \: ,
-\label{eq:Fourier-B-r-final}
+\label{eq:Fourier-RTP}
 \end{equation}
 which represents the common expression defining the RTP in Fourier domain
 \cite[e.g.,][ p. 331]{blakely1996}.
 
-Equations \ref{eq:Fourier-B-t-final} and \ref{eq:Fourier-B-r-final} establish,
-for the first time, the theoretical connection between the RTP in space and Fourier domains.
+The results presented here establish, for the first time, 
+the theoretical connection between the RTP in space and Fourier domains.
+We show that the well-known equation \ref{eq:Fourier-RTP} for computing the
+RTP in Fourier domain can be obtained from the 2DFT's of the surface integrals
+defining the RTP in space domain (equations \ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann}).
 We stress that these equations are valid for the particular case in which the
 equivalent layer of dipoles has the same uniform magnetization direction
 $\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources 
-(equation \ref{eq:total-magnetization-vector}). 
+(equation \ref{eq:total-magnetization-vector}) and the observation points 
+$\mathbf{r}_{0} = \left[x \:\: y \:\: z_{0} \right]^{\top}$ 
+located on a horizontal plane with constant vertical coordinate $z = z_{0}$.
 
 
 \subsection{Continuous analytical solutions with arbitrary uniform magnetization direction}
