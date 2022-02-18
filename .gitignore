@@ -13,7 +13,6 @@ manuscript/output/
 *.bbl 
 *.blg 
 *.log 
-*.pdf 
 *.lof 
 *.lot 
 *.synctex.gz 
