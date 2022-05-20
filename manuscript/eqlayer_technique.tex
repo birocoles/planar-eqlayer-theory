@@ -1,183 +1,101 @@
 \section{Equivalent-layer technique}
 \label{eq:equivalent_layer_technique}
 
+Consider a set of 3D gravity or magnetic sources located 
+in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
+$x$, $y$, and $z$ pointing to north, east and down, respectively. 
 Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$th element
-$d_{i}^{o}$ represents the gravity disturbance 
+$d^{o}_{i}$ represents the gravity disturbance 
 \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005} or 
-total-field anomaly \cite[e.g.,][ p. 178]{blakely1996} produced by 3D sources 
-at an observation point $(x_{i}, y_{i}, z_{i})$, $i = 1, \dots, N$, of a
-topocentric Cartesian coordinate system with axes $x$, $y$, and $z$ 
-pointing to north, east and down, respectively. 
+total-field anomaly \cite[e.g.,][ p. 178]{blakely1996} produced by the 3D sources 
+at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$
+located above them.
 
-Now, consider that $d_{i}^{o}$ can be approximated 
-by the potential field produced at $(x_{i}, y_{i}, z_{i})$ by a discrete set of $M$ 
-virtual sources that are usually called \textit{equivalent sources}. Here, we limit
-ourselves to the particular case in which they are disposed on a horizontal plane 
-located below the potential-field data, at points $(x''_{j}, y''_{j}, z''_{c})$,
-$j = 1, \dots, M$, with constant vertical coordinate $z''_{c} > z_{i}$, $i = 1, \dots, N$.
-The potential field produced at $(x_{i}, y_{i}, z_{i})$ by the equivalent sources
-is given by:
+Now, consider that $d^{o}_{i}$ can be approximated 
+by the potential field produced at $\mathbf{r}_{i}$ by a discrete set of $M$ 
+virtual sources such as monopoles (or point masses) or dipoles, for example. 
+These virtual sources are usually called \textit{equivalent sources}.
+Here, we limit ourselves to the particular case in which they are disposed on a 
+horizontal plane located below the potential-field data, at points 
+$\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$,
+$j = 1, \dots, M$, with constant vertical coordinate $z''_{0} > z_{i}$, $i = 1, \dots, N$.
+The potential field produced by the equivalent sources at $\mathbf{r}_{i}$ is given by:
 \begin{equation}
-d_{i}(\mathbf{p}) = \sum\limits_{j = 1}^{M} p_{j} \, a_{ij} \: ,
+d_{i} = \sum\limits_{j = 1}^{M} p_{j} \, a_{ij} \: ,
 \label{eq:predicted-data-i}
 \end{equation}
-where the coefficient $p_{j}$ is the $j$th element of an $M \times 1$ parameter vector
+where the coefficient $p_{j}$ is the $j$-th element of an $M \times 1$ parameter vector
 $\mathbf{p}$ and $a_{ij}$ is a harmonic function depending on the
-coordinates of the $i$th observation point and the $j$th equivalent source.
+coordinates of the $i$-th observation point and the $j$-th equivalent source.
 From the physical point of view, the term $p_{j} \, a_{ij}$ (equation 
-\ref{eq:predicted-data-i}) defines the potential field produced at the $i$th observation
-point by the $j$th equivalent source with scalar physical property $p_{j}$.
+\ref{eq:predicted-data-i}) defines the potential field produced at the $i$-th observation
+point by the $j$-th equivalent source with scalar physical property $p_{j}$.
 For example, if $d_{i}^{o}$ represent gravity disturbance data, then
 $p_{j} \, a_{ij}$ commonly defines the vertical component of the gravitational attraction
-produced at $(x_{i}, y_{i}, z_{i})$ by a monopole (or point mass) located at
-$(x''_{j}, y''_{j}, z''_{c})$, with mass $p_{j}$.
-For the case in which $d_{i}^{o}$ represent total-field anomaly data, the term 
+produced at $\mathbf{r}_{i}$ by a monopole (or point mass) located at
+$\mathbf{r}''_{j}$, with mass $p_{j}$.
+For the case in which $d_{i}^{o}$ represent total-field anomaly data instead, the term 
 $p_{j} \, a_{ij}$ often defines a component of the magnetic induction field
-produced at the $i$th observation point by a dipole located at $(x''_{j}, y''_{j}, z''_{c})$,
+produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
 with magnetic moment intensity $p_{j}$.
+The set of coefficients $p_{j}$ defining the scalar physical property of the
+equivalent sources form a discrete \textit{equivalent layer}, which is ``equivalent" 
+in the sense that it produces the same potential field as that
+of the true volume sources at the observation points.
 
-The equivalent-layer technique consists in solving the following linear system 
+The equivalent-layer technique consists in solving the linear system 
 \begin{equation}
-	\mathbf{d}^{o} \approx \mathbf{d}(\mathbf{p}) = \mathbf{A} \, \mathbf{p}
+	\mathbf{d}^{o} \approx \mathbf{d} = \mathbf{A} \, \mathbf{p}
 	\label{eq:linear-system-eqlayer}
 \end{equation}
-for the parameter vector $\mathbf{p}$, 
-where $\mathbf{d}(\mathbf{p})$ is the $N \times 1$ predicted data vector whose $i$th 
-element is $d_{i}(\mathbf{p})$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
+for the parameter vector $\mathbf{p}$, whose $j$-th element is the scalar physical
+property of the $j$-th equivalent source. In equation \ref{eq:linear-system-eqlayer},
+$\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$th 
+element is $d_{i}$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
 $ij$ is defined by the harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
-This linear system (equation \ref{eq:linear-system-eqlayer}) represents the discrete form
-of the integral equation
+After estimating a parameter vector $\mathbf{p}^{\ast}$ that fits the observed data, 
+a potential field transformation such as upward continuation, interpolation or reduction 
+to the pole, for example, can be computed as follows:
+\begin{equation}
+	\tilde{\mathbf{d}} = \tilde{\mathbf{A}} \, \mathbf{p}^{\ast} \: ,
+	\label{eq:field-transformation-eqlayer} 
+\end{equation}
+where $\tilde{\mathbf{d}}$ is an $L \times 1$ vector whose $k$-th element $\tilde{d}_{k}$,
+$k = 1, \dots, L$, represents the transformed potential field at a point 
+$\mathbf{r}_{k} = (x_{k}, y_{k}, z_{k})^{\top}$, with $z_{k} < z''_{0}$, 
+and $\tilde{\mathbf{A}}$ is an 
+$L \times M$ matrix whose element $kj$, $j = 1, \dots, M$, defines the transformed
+potential field due to the $j$-th equivalent source.
+
+The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
+discrete form of the following integral equation:
 \begin{equation}
 	d(\mathbf{r}) = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: dx'' \, dy'' \: ,
 	\label{eq:integral-equation-eqlayer}
 \end{equation}
-where $\mathbf{r} = \left[ x \: y \: z \right]^{\top}$ and 
-$\mathbf{r}'' = \left[ x'' \: y'' \: z''_{c} \right]^{\top}$ are position vectors
-associated, respectively, with a generic observation point $(x, y, z)$ and a 
-point $(x'', y'', z''_{c})$ located on the horizontal plane at $z''_{c}$; 
-$d(\mathbf{r})$ is a harmonic function defining the potential field data;
-$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel and
+where $\mathbf{r} = (x, y, z)^{\top}$ defines generic observation point and
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the horizontal 
+plane at $z''_{0}$; 
+$d(\mathbf{r})$ is a harmonic function defining the potential field data at $\mathbf{r}$;
+$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function and
 $p(\mathbf{r}'')$ is a continuous function defining a scalar physical property
-distribution on the horizontal plane.
+distribution on the horizontal plane, i.e., a continuous equivalent layer.
+For convenience, we call the integral equation \ref{eq:integral-equation-eqlayer} 
+as \textit{planar equivalent-layer integral}.
 
-PAREI AQUI
+Note that the equivalent-layer technique implicitly presumes that the potential-field 
+data can be satisfactorily described by a harmonic function.
+Besides, it is also presumed that, given a potential-field data set, there is an
+equivalent layer that reproduces the observed potential-field data and can be 
+used to compute field transformations.
+Most of the theoretical discussions on the equivalent-layer technique also assume that
+the layer is located below the observation points and does not cross the sources;
+a condition that cannot be guaranteed in practical situations.
 
-
-defined 
-in terms of derivatives of the inverse distance
-\begin{equation}
-	\frac{1}{\ell_{ij}} = 
-\end{equation}
-
-
-
-the potential-field measurements
-$d_{i}^{o}$ by a linear combination of harmonic functions as follows:
-
-
-gravity exploration methods, the common potential-field measurements 
-(or observed data) are gravity disturbance data, which 
-
-or total-field anomaly 
- data. 
-We consider that the gravity disturbance data 
-
-
-Consider also that the total-magnetization vector at each point $(x', y', z') \in v$ 
-within the sources, with an associated position vector 
-$\mathbf{r}' = \left[x' \:\: y' \:\: z' \right]^{\top}$
-
-
-Consider a generic planar layer of dipoles located above the magnetic sources, at 
-$z = z_{c}$,
-with uniform magnetization direction $\hat{\mathbf{u}}(I_{p}, D_{p})$ 
-(equation \ref{eq:u-unit-vector}) defined by the constant inclination $I_{p}$ and
-declination $D_{p}$.
-Now, consider that this planar layer exactly reproduces the approximated total-field anomaly
-$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) at observation points $\mathbf{r}$ 
-located above the layer, with $z < z_{c}$. In this case, we may write the following 
-integral equation:
-\begin{equation}
-B_{t}(\mathbf{r}) = 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-p(\mathbf{r}'') \:\: 
-\partial_{tp} \Psi(\mathbf{r}, \mathbf{r}'') \: 
-dx''dy'' \: , \:\: z < z_{c} \: ,
-\label{eq:B-t-generic-layer}
-\end{equation}
-where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
-position vector defining a point $(x'', y'', z_{c})$ located on the plane 
-$z = z_{c}$; $p(\mathbf{r}'')$ is an unknown scalar function representing the 
-magnetic moment distribution on the planar layer;
-\begin{equation}
-\partial_{tp} \Psi(\mathbf{r}, \mathbf{r}'') \equiv
-\hat{\mathbf{u}}(I_{t}, D_{t})^{\top} 
-\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \: 
-\hat{\mathbf{u}}(I_{p}, D_{p}) 
-\label{eq:Dtp-Psi}
-\end{equation}
-denotes the second directional derivative of the inverse distance function
-\begin{equation}
-\Psi(\mathbf{r}, \mathbf{r}'') = 
-\frac{1}{2\pi} \: 
-\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
-\label{eq:Psi}
-\end{equation}
-along the uniform magnetization direction $\hat{\mathbf{u}}(I_{p}, D_{p})$ of the planar
-layer and the presumed constant direction $\hat{\mathbf{u}}(I_{t}, D_{t})$ 
-of the main geomagnetic field at the study area; and
-\begin{equation}
-\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') = 
-\begin{bmatrix}
-\partial_{xx} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') \\
-\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{yy} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') \\
-\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') & 
-\partial_{zz} \Psi(\mathbf{r}, \mathbf{r}'')
-\end{bmatrix}
-\label{eq:H-Psi}
-\end{equation}
-is the Hessian matrix of the inverse distance function 
-$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}), with elements defined
-by second derivatives $\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \equiv 
-\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Psi(\mathbf{r}, \mathbf{r}'')$,
-$\alpha = x, y, z$, $\beta = x, y, z$, with respect to the coordinates of
-the observation point $\mathbf{r}$.
-
-Methods based on equivalent layer for dealing with total-field anomaly data 
-have been traditionally developed in space domain 
-\cite[e.g.,][]{silva_1986, oliveirajr-etal_2013}
-by numerically solving the integral equation \ref{eq:B-t-generic-layer} 
-for the unknown physical-property distribution $p(\mathbf{r}'')$, 
-with predefined constant values for the inclination $I = I_{p}$ and declination $D = D_{p}$. 
-Those methods usually assume that total-field anomaly data 
-can be satisfactorily approximated by the harmonic function $B_{t}(\mathbf{r})$
-(equation \ref{eq:B-t-generic-layer}).
-After obtaining a numerical solution for the physical-property distribution 
-$p(\mathbf{r}'')$, it is used to compute a potential-field transformation. 
-If the desired transformation does not
-cause phase changes in the magnetic data, such as the upward/downward continuation, 
-then the predefined constant values for the inclination $I_{p}$ and declination $D_{p}$ 
-may be arbitrarily chosen. 
-Otherwise, the $I_{p}$ and $D_{p}$ must assume the same constant inclination and declination
-values defining the total-magnetization direction of the true sources. An example of 
-transformation that produces phase changes in the magnetic data is the RTP.
-
-What follows aims at deducing analytical solutions for the integral equation
-\ref{eq:B-t-generic-layer} in space and Fourier domains. 
-These solutions are planar equivalent layers of dipoles that are located above the sources
-and exactly reproduce the magnetic 
-scalar potential $V(\mathbf{r})$ (equation \ref{eq:scalar-potential-V}), magnetic induction 
-field $\mathbf{B}(\mathbf{r})$ (equation \ref{eq:B-field}),
-approximated total-field anomaly $\mathbf{B}_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) 
-and RTP anomaly $\mathbf{B}_{r}(\mathbf{r})$ (equation \ref{eq:B-r})
-yielded by 3D sources with uniform total-magnetization direction. 
-To the authors knowledge, the existence of a planar equivalent layer of monopoles
-reproducing gravity data has been proven;
-however, the theoretical prove of the existence of a planar equivalent layer of dipoles 
-reproducing magnetic data has never been done before.
+What follows aims at discussing the existence of a theoretical planar equivalent layer
+that is located below the observation points and exactly reproduce the
+gravitational and magnetic induction field due to 3D sources even for the
+case in which the layer crosses the sources.
+Specifically, we present closed-form solutions $p(\mathbf{r}'')$ for the 
+planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer}). 

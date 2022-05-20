@@ -1,0 +1,91 @@
+\section{Planar equivalent layers located above the sources}
+\label{sec:eqlayers_above_sources}
+
+
+Most of what is known or assumed to be true without any proof about the
+equivalent-layer technique can be deduced from the solution of Neumann's 
+problem on a plane (equation \ref{eq:Theta-Neumann}).
+Note that, for the case in which the observation points 
+$\mathbf{r} = (x, y, z)^{\top}$ satisfy $z < z''_{0}$, where $z''_{0}$ defines a 
+horizontal plane located above the 3D sources, $\Theta(\mathbf{r})$ (equation 
+\ref{eq:scalar-potential-Theta}) has continuous partial derivatives of all orders. 
+These derivatives, in turn, can be obtained from equation \ref{eq:Theta-Neumann} 
+by differentiating under the sign of integration.
+Consider, for example, the partial derivatives of first and second order:
+\begin{equation}
+	\partial_{\alpha} \Theta(\mathbf{r}) =  
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\partial_{z} \Theta(\mathbf{r}'') \:\: 
+	\partial_{\alpha} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , 
+	\quad z < z''_{0} \: ,
+	\quad \alpha = x, y, z \: ,
+	\label{eq:1st-deriv-Theta-Neumann}
+\end{equation}
+and
+\begin{equation}
+	\partial_{\alpha\beta} \Theta(\mathbf{r}) =  
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\partial_{z} \Theta(\mathbf{r}'') \:\: 
+	\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , 
+	\quad z < z''_{0} \: ,
+	\quad \alpha, \beta = x, y, z \: ,
+	\label{eq:2st-deriv-Theta-Neumann}
+\end{equation}
+where $\partial_{\alpha} \Theta(\mathbf{r}) \equiv \tfrac{\partial
+\Theta(\mathbf{r})}{\partial \alpha}$ and 
+$\partial_{\alpha\beta} \Theta(\mathbf{r}) \equiv \tfrac{\partial^{2}
+\Theta(\mathbf{r})}{\partial \alpha \, \partial \beta}$.
+Note that the derivatives are computed with respect to the coordinates
+of $\mathbf{r}$ and, consequently, act only on the kernel of the integral 
+defined by equation \ref{eq:Theta-Neumann}.
+The following subsections use equations \ref{eq:1st-deriv-Theta-Neumann} and
+\ref{eq:2st-deriv-Theta-Neumann} to deduce some closed-form solutions $p(\mathbf{r}'')$ of 
+the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer}) 
+applied to different potential-field data.
+
+\subsection{Closed-form solutions for gravity data}
+\label{subsec:solutions_gravity_data}
+
+Consider the case in which we apply the planar equivalent-layer technique to 
+gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}. 
+In this case, the potential-field
+data are considered as a harmonic function $d(\mathbf{r})$ representing the vertical 
+component of the gravitational attraction produced by the 3D sources at the observation
+points $\mathbf{r}$. It means that $d(\mathbf{r}) = \partial_{z} \Theta(\mathbf{r})$
+(equation \ref{eq:1st-deriv-Theta-Neumann}) and 
+$a(\mathbf{r}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$, so that 
+the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer}) has
+a closed-form solution $p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$.
+This result shows that, under the conditions established for the solution of 
+Neumann's problem (equation \ref{eq:Theta-Neumann}), there exists a continuous planar
+equivalent layer of monopoles that exactly reproduces the observed gravity disturbance
+data above the sources.
+\citet{dampney1969} was the pioneer in using this result to interpolate gravity data and
+a considerable amount of literature has been published on this topic since then.
+This solution $p(\mathbf{r}'')$ can also be directly deduced from the
+\textit{upward-continuation integral}
+\citep[e.g., ][]{peters1949, roy1962, bhattacharyya1967, henderson1970, gunn1975}, 
+which represents the solution of Dirichlet’s problem on a plane
+(equation \ref{eq:Theta-Dirichlet}).
+
+Consider now the case in which the potential-field data are gravity-gradient tensor 
+components. These data are usually described as the partial derivatives of second order 
+of the gravitational potential. Hence, by using the second derivatives of 
+$\Theta(\mathbf{r})$ (equation \ref{eq:2st-deriv-Theta-Neumann}), we obtain for the 
+$\alpha\beta$-component of gravity tensor that
+$d(\mathbf{r}) = \partial_{\alpha\beta} \Theta(\mathbf{r})$ and 
+$a(\mathbf{r}, \mathbf{r}'') = \partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'')$, 
+so that the planar equivalent-layer integral 
+(equation \ref{eq:integral-equation-eqlayer}) has a closed-form solution 
+$p(\mathbf{r}'') = \partial_{z} \Theta(\mathbf{r}'')$.
+This result shows that the same continuous planar equivalent layer of monopoles that 
+exactly reproduces the observed gravity disturbance data also reproduces the 
+gravity gradient tensor data above the sources.
+This result has been used by the scientific community for processing gravity-gradient
+data \citep{barnes-lumley_2011} or converting gravity disturbance into the
+gravity-gradient tensor \citep{piauilino_etal2019_seg, li_etal2021}, for example.
+However, researchers have not treated this topic in much detail and it is usually assumed
+to be true without any proof.
+
+\subsection{Closed-form solutions for magnetic data}
+\label{subsec:solutions_magnetic_data}

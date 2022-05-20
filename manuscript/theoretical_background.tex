@@ -1,0 +1,89 @@
+\section{Theoretical background}
+\label{sec:theoretical_background}
+
+
+Let $\mathcal{V} \subset \mathbb{R}^{3}$ be a \textit{regular region} with boundary
+$\partial \mathcal{V}$. 
+Some important properties of $\mathcal{V}$ in this case is that it is an open and 
+connected set of points and $\partial \mathcal{V}$ is a closed and compact surface 
+free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+This definition is slightly different from that given by \citet[][ p. 100]{kellogg1967},
+for example, which includes the boundary as part of the region.
+
+Consider a set of 3D gravity or magnetic sources located in the subsurface,
+over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
+Consider also that the density (contrast) or total-magnetization intensity within 
+the sources can be represented by a piecewise continuous, integrable and bounded function
+$\sigma(\mathbf{r}')$ defined at points 
+$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
+Here, we limit ourselves to magnetic sources having constant total-magnetization direction
+defined by an unit vector $\hat{\mathbf{h}}$.
+
+In this case, the gravitational and magnetic fields produced by the 3D sources 
+at an observation point $\mathbf{r} = (x, y, z)^{\top}$ 
+can be defined in terms of the following Newtonian potential:
+\begin{equation}
+	\Theta(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
+	\: dx'dy'dz' \: ,
+	\label{eq:scalar-potential-Theta}
+\end{equation}
+where $\kappa$ is a proportionality constant; 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
+between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$.
+If we consider gravity sources, then $\Theta(\mathbf{r})$ 
+(equation \ref{eq:scalar-potential-Theta}) represents the gravitational potential.
+If we consider magnetic sources instead, then the negative directional 
+derivative of $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) along
+the constant total-magnetization direction $\hat{\mathbf{h}}$ represents the magnetic 
+scalar potential.
+
+It can be shown that, at all points $\mathbf{r}$ located outside the sources (i.e., 
+$\mathbf{r} \notin \overline{\mathcal{V}}$), $\Theta(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-Theta}) has continuous partial derivatives of all orders
+and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
+Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
+As a consequence of these properties, the potential $\Theta(\mathbf{r})$ also satisfies 
+the following integrals:
+\begin{equation}
+\Theta(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\Theta(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z''_{0} \: ,
+\label{eq:Theta-Dirichlet}
+\end{equation}
+and 
+\begin{equation}
+\Theta(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Theta(\mathbf{r}'') \:\: 
+\Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z''_{0} \: ,
+\label{eq:Theta-Neumann}
+\end{equation}
+where 
+$\partial_{z} \Theta(\mathbf{r}'') \equiv \tfrac{\partial \Theta(\mathbf{r}'')}{\partial z}$
+and 
+$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') \equiv \tfrac{\partial
+\Psi(\mathbf{r}, \mathbf{r}'')}{\partial z}$, with 
+\begin{equation}
+\Psi(\mathbf{r}, \mathbf{r}'') = 
+\frac{1}{2\pi} \: 
+\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\label{eq:Psi}
+\end{equation}
+representing the scaled inverse distance function between an observation point
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ and a point 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \notin \overline{\mathcal{V}}$ on the horizontal
+plane $z''_{0}$ located above the sources.
+Equation \ref{eq:Theta-Dirichlet} states that $\Theta(\mathbf{r})$ can be defined
+in terms of its values $\Theta(\mathbf{r}'')$ on the plane $z''_{0}$ and 
+represents the solution of the \textit{Dirichlet’s problem} or the \textit{first boundary
+value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane.
+On the other hand, equation \ref{eq:Theta-Neumann} shows that $\Theta(\mathbf{r})$ can 
+be defined in terms of its vertical derivative values $\partial_{z} \Theta(\mathbf{r}'')$ 
+on the plane $z''_{0}$ and represents the solution of the 
+\textit{Neumann’s problem} or the \textit{second boundary value problem of potential
+theory} \cite[][ p. 246]{kellogg1967} on a plane.
+The common outline to deduce equations \ref{eq:Theta-Dirichlet} and \ref{eq:Theta-Neumann}
+can be found, for example, in \citet{roy1962} and \citet{reis_etal2020}.
+
