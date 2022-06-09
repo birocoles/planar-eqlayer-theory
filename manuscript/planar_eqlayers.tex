@@ -48,7 +48,7 @@ $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) due to the 3D sources.
 In practical situation, however, the potential-field measurements are represented
 by the partial derivatives of first and second orders of $U(\mathbf{r})$
 (equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}).
-Here, we show the planar equivalent layers associated with these derivatives can be
+Here, we show the planar equivalent layer associated with these derivatives can be
 obtained from the generalized solution of Neumann's problem 
 (equation \ref{eq:U-Neumann-cross}).
 
@@ -109,8 +109,8 @@ $a(\mathbf{r}, \mathbf{r}'') = \partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r
 so that the continuous equivalent layer has a closed-form solution 
 $p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$.
 This result shows that the same continuous planar equivalent layer of monopoles that 
-reproduces the observed gravity disturbance data also reproduces the 
-gradient tensor data above the sources.
+reproduces the gravitational potential and observed gravity disturbance data also 
+reproduces the gradient tensor data above the sources.
 This result has been used by the scientific community for processing gravity-gradient
 data \citep{barnes-lumley_2011} or converting gravity disturbance into the
 gradient tensor \citep{piauilino_etal2019_seg, li_etal2021}, for example.
@@ -120,8 +120,11 @@ to be true without any proof.
 \subsection{Planar equivalent layer of dipoles applied to magnetic data}
 \label{subsec:eqlayer_dipoles}
 
-We may also combine the partial derivatives of first order 
-(equation \ref{eq:1st-deriv-U-Neumann}) to compute the
+
+Planar equivalent layers of dipoles can also be deduced from the 
+generalized solution of Neumann's problem (equation \ref{eq:U-Neumann-cross}).
+To do this, we need first combine the partial derivatives of first order 
+defined by equation \ref{eq:1st-deriv-U-Neumann}) to compute the
 following directional derivative of first order:
 \begin{equation}
 \partial_{h} U(\mathbf{r}) = 
@@ -129,7 +132,6 @@ following directional derivative of first order:
 \upsilon(\mathbf{r}'') \:\: 
 \partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \:\: dx''dy'' \: , 
 \quad z < z''_{0} \: ,
-\quad \alpha, \beta = x, y, z \: ,
 \label{eq:oblique-1st-deriv-U-Neumann}
 \end{equation}
 where 
@@ -140,23 +142,29 @@ where
 \end{equation}
 is the directional derivative of the inverse distance function 
 $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) along the
-unit vector $\hat{\mathbf{h}}$ and
+unit vector $\hat{\mathbf{h}}$; and
 $\nabla \Psi(\mathbf{r}, \mathbf{r}'')$ is the gradient of $\Psi(\mathbf{r}, \mathbf{r}'')$
 with respect to the coordinates of the observation point $\mathbf{r}$.
-
-Finally, we may use partial derivatives of second order 
-(equation \ref{eq:2nd-deriv-U-Neumann}) to obtain the following directional derivative
-of second order:
+The directional derivative of second order can also be obtained by combining the
+partial derivatives of second order defined by equation \ref{eq:2nd-deriv-U-Neumann}
+as follows:
 \begin{equation}
 \partial_{th} U(\mathbf{r}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 \upsilon(\mathbf{r}'') \:\: 
-\hat{\mathbf{t}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \hat{\mathbf{h}} 
+\partial_{th} \Psi(\mathbf{r}, \mathbf{r}'')
 \:\: dx''dy'' \: , \quad z < z''_{0} \: ,
-\quad \alpha, \beta = x, y, z \: ,
-\label{eq:oblique-2nd-deriv-Theta-Neumann}
+\label{eq:oblique-2nd-deriv-U-Neumann}
 \end{equation}
 where
+\begin{equation}
+	\partial_{th} \Psi(\mathbf{r}, \mathbf{r}'') = 
+	\hat{\mathbf{t}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \, \hat{\mathbf{h}}
+	\label{eq:oblique-2nd-deriv-Psi}
+\end{equation}
+is the directional derivative of the inverse distance function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) along the
+unit vectors $\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$; and
 \begin{equation}
 \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') = 
 \begin{bmatrix}
@@ -178,3 +186,57 @@ the second derivatives $\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \e
 \frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Psi(\mathbf{r}, \mathbf{r}'')$,
 $\alpha = x, y, z$, $\beta = x, y, z$, with respect to the coordinates of
 the observation point $\mathbf{r}$.
+
+Note that equation \ref{eq:oblique-1st-deriv-U-Neumann} is a surface integral representation
+for the directional derivative of $U(\mathbf{r})$, which is originally defined by equation 
+\ref{eq:oblique-1st-deriv-U} in terms of a volume integral.
+The negative of equation \ref{eq:oblique-1st-deriv-U-Neumann} represents a solution of the
+planar equivalent layer integral (equation \ref{eq:integral-equation-eqlayer})
+for the case in which the potential field 
+$d(\mathbf{r})$ is the magnetic scalar potential due to the 3D sources with 
+a constant total-magnetization direction defined by the unit vector $\hat{\mathbf{h}}$. 
+In this case, the kernel is given by 
+$a(\mathbf{r}, \mathbf{r}'') = -\partial_{h} \Psi(\mathbf{r}, \mathbf{r}'')$ and
+the continuous equivalent layer has the closed-form solution 
+$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, which represents the pseudogravity
+anomaly \citep[e.g.,][ p. 344]{blakely1996} due to the 3D sources 
+on the horizontal plane $z''_{0}$.
+This result shows for the first time that there exists a continuous planar equivalent layer
+of dipoles that exactly reproduces the magnetic scalar potential data above the sources.
+
+Consider now the surface integral defined by equation \ref{eq:oblique-2nd-deriv-U-Neumann},
+which reproduces the directional derivative of second order $\partial_{th}U(\mathbf{r})$,
+which is also originally defined by equation 
+\ref{eq:oblique-2nd-deriv-U} in terms of a volume integral.
+Equation \ref{eq:oblique-2nd-deriv-U-Neumann} represents a solution of the
+planar equivalent layer integral (equation \ref{eq:integral-equation-eqlayer})
+for the case in which the potential field 
+$d(\mathbf{r})$ is the approximated total-field anomaly 
+\cite[e.g., ][ p. 179]{blakely1996} produced by the 3D sources 
+when they have a constant total-magnetization direction defined by the unit vector
+$\hat{\mathbf{h}}$ and the main geomagnetic field at the study area has a constant
+direction defined by the unit vector $\hat{\mathbf{t}}$.
+In this case, the kernel is given by 
+$a(\mathbf{r}, \mathbf{r}'') = \partial_{th} \Psi(\mathbf{r}, \mathbf{r}'')$ and
+the continuous equivalent layer has the closed-form solution 
+$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, which also represents the pseudogravity
+anomaly \citep[e.g.,][ p. 344]{blakely1996} due to the 3D sources 
+on the horizontal plane $z''_{0}$.
+
+Most previous published studies \citep[e.g.,][]{emilia1973, bhattacharyya-chan1977, 
+silva_1986, oliveirajr-etal_2013, li_etal_2014, oliveirajr_etal_2015, 
+ribeiro_filho_etal2020, li-etal2021} are limited to the empirical use of 
+a planar equivalent layer of dipoles for processing total-field anomaly data. Few studies 
+\citep[e.g.,][]{pedersen1991, li_etal_2014, reis_etal2020} have drawn attention to the
+problem of proving the existence of a planar equivalent layer of dipoles that exactly
+reproduces the approximated total-field anomaly \cite[e.g., ][ p. 179]{blakely1996} above
+the sources.
+Here, present a slightly different approach from that used by \citet{reis_etal2020} 
+to deduce equation \ref{eq:oblique-2nd-deriv-U-Neumann} and show that there exists a
+continuous planar equivalent layer of dipoles that exactly reproduces the approximated
+total-field anomaly data above the sources.
+From equation \ref{eq:oblique-2nd-deriv-U-Neumann}, 
+we also expand the theoretical results presented by \citet{reis_etal2020} to show
+that the same continuous planar equivalent layer of dipoles that reproduces the magnetic
+scalar potential and approximated total-field anomaly also reproduces any magnetic field
+component above the sources, even for the case in which the layer crosses the sources.
