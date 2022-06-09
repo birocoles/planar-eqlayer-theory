@@ -1,4 +1,4 @@
-\section{Theoretical background}
+\section{Dirichlet's and Neumann's problems on a plane above the sources}
 \label{sec:theoretical_background}
 
 
@@ -18,72 +18,73 @@ $\sigma(\mathbf{r}')$ defined at points
 $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
 Here, we limit ourselves to magnetic sources having constant total-magnetization direction
 defined by an unit vector $\hat{\mathbf{h}}$.
-
-In this case, the gravitational and magnetic fields produced by the 3D sources 
+In this case, the gravitational or magnetic induction field produced by the 3D sources 
 at an observation point $\mathbf{r} = (x, y, z)^{\top}$ 
 can be defined in terms of the following Newtonian potential:
 \begin{equation}
-	\Theta(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
 	\: dx'dy'dz' \: ,
-	\label{eq:scalar-potential-Theta}
+	\label{eq:scalar-potential-U}
 \end{equation}
 where $\kappa$ is a proportionality constant; 
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$.
-If we consider gravity sources, then $\Theta(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-Theta}) represents the gravitational potential.
+If we consider gravity sources, then $U(\mathbf{r})$ 
+(equation \ref{eq:scalar-potential-U}) represents the gravitational potential.
 If we consider magnetic sources instead, then the negative directional 
-derivative of $\Theta(\mathbf{r})$ (equation \ref{eq:scalar-potential-Theta}) along
+derivative of $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) along
 the constant total-magnetization direction $\hat{\mathbf{h}}$ represents the magnetic 
 scalar potential.
 
 It can be shown that, at all points $\mathbf{r}$ located outside the sources (i.e., 
-$\mathbf{r} \notin \overline{\mathcal{V}}$), $\Theta(\mathbf{r})$ (equation
-\ref{eq:scalar-potential-Theta}) has continuous partial derivatives of all orders
+$\mathbf{r} \notin \overline{\mathcal{V}}$), $U(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-U}) has continuous partial derivatives of all orders
 and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
 Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
-As a consequence of these properties, the potential $\Theta(\mathbf{r})$ also satisfies 
+As a consequence of these properties, the potential $U(\mathbf{r})$ also satisfies 
 the following integrals:
 \begin{equation}
-\Theta(\mathbf{r}) =  
+U(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\Theta(\mathbf{r}'') \:\: 
-\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z''_{0} \: ,
-\label{eq:Theta-Dirichlet}
+U(\mathbf{r}^{\dagger}) \:\: 
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: ,
+\label{eq:U-Dirichlet}
 \end{equation}
 and 
 \begin{equation}
-\Theta(\mathbf{r}) =  
+U(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Theta(\mathbf{r}'') \:\: 
-\Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , \quad z < z''_{0} \: ,
-\label{eq:Theta-Neumann}
+\partial_{z} U(\mathbf{r}^{\dagger}) \:\: 
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: ,
+\label{eq:U-Neumann}
 \end{equation}
 where 
-$\partial_{z} \Theta(\mathbf{r}'') \equiv \tfrac{\partial \Theta(\mathbf{r}'')}{\partial z}$
+$\partial_{z} U(\mathbf{r}^{\dagger}) \equiv \tfrac{\partial U(\mathbf{r}^{\dagger})}{\partial z}$
 and 
-$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') \equiv \tfrac{\partial
-\Psi(\mathbf{r}, \mathbf{r}'')}{\partial z}$, with 
+$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \equiv \tfrac{\partial
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger})}{\partial z}$, with 
 \begin{equation}
-\Psi(\mathbf{r}, \mathbf{r}'') = 
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger}) = 
 \frac{1}{2\pi} \: 
-\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|}
+\frac{1}{\| \mathbf{r} - \mathbf{r}^{\dagger} \|}
 \label{eq:Psi}
 \end{equation}
 representing the scaled inverse distance function between an observation point
 $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ and a point 
-$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \notin \overline{\mathcal{V}}$ on the horizontal
-plane $z''_{0}$ located above the sources.
-Equation \ref{eq:Theta-Dirichlet} states that $\Theta(\mathbf{r})$ can be defined
-in terms of its values $\Theta(\mathbf{r}'')$ on the plane $z''_{0}$ and 
-represents the solution of the \textit{Dirichlet’s problem} or the \textit{first boundary
-value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane.
-On the other hand, equation \ref{eq:Theta-Neumann} shows that $\Theta(\mathbf{r})$ can 
-be defined in terms of its vertical derivative values $\partial_{z} \Theta(\mathbf{r}'')$ 
-on the plane $z''_{0}$ and represents the solution of the 
-\textit{Neumann’s problem} or the \textit{second boundary value problem of potential
-theory} \cite[][ p. 246]{kellogg1967} on a plane.
-The common outline to deduce equations \ref{eq:Theta-Dirichlet} and \ref{eq:Theta-Neumann}
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ on the horizontal
+plane $z^{\dagger}_{0}$ located above the sources.
+The common outline to deduce equations \ref{eq:U-Dirichlet} and \ref{eq:U-Neumann}
 can be found, for example, in \citet{roy1962} and \citet{reis_etal2020}.
 
+Equation \ref{eq:U-Dirichlet} states that $U(\mathbf{r})$ can be defined
+in terms of its values $U(\mathbf{r}^{\dagger})$ on the plane $z^{\dagger}_{0}$ and 
+represents the solution of the \textit{Dirichlet’s problem} or the \textit{first boundary
+value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane.
+On the other hand, equation \ref{eq:U-Neumann} shows that $U(\mathbf{r})$ can 
+be defined in terms of its vertical derivative $\partial_{z} U(\mathbf{r}^{\dagger})$ 
+on the plane $z^{\dagger}_{0}$ and represents the solution of the 
+\textit{Neumann’s problem} or the \textit{second boundary value problem of potential
+theory} \cite[][ p. 246]{kellogg1967} on a plane.

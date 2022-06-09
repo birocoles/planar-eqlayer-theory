@@ -5,9 +5,7 @@ Consider a set of 3D gravity or magnetic sources located
 in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
 Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$th element
-$d^{o}_{i}$ represents the gravity disturbance 
-\cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005} or 
-total-field anomaly \cite[e.g.,][ p. 178]{blakely1996} produced by the 3D sources 
+$d^{o}_{i}$ represents a potential field produced by the 3D sources 
 at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$
 located above them.
 
@@ -30,18 +28,20 @@ coordinates of the $i$-th observation point and the $j$-th equivalent source.
 From the physical point of view, the term $p_{j} \, a_{ij}$ (equation 
 \ref{eq:predicted-data-i}) defines the potential field produced at the $i$-th observation
 point by the $j$-th equivalent source with scalar physical property $p_{j}$.
-For example, if $d_{i}^{o}$ represent gravity disturbance data, then
+For example, if $d_{i}^{o}$ represent gravity disturbance data
+\cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, then
 $p_{j} \, a_{ij}$ commonly defines the vertical component of the gravitational attraction
-produced at $\mathbf{r}_{i}$ by a monopole (or point mass) located at
+produced at $\mathbf{r}_{i}$ by a monopole located at
 $\mathbf{r}''_{j}$, with mass $p_{j}$.
-For the case in which $d_{i}^{o}$ represent total-field anomaly data instead, the term 
-$p_{j} \, a_{ij}$ often defines a component of the magnetic induction field
+For the case in which $d_{i}^{o}$ represent total-field anomaly data 
+\cite[e.g.,][ p. 178]{blakely1996} instead, the term 
+$p_{j} \, a_{ij}$ often defines a magnetic induction field component 
 produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
 with magnetic moment intensity $p_{j}$.
 The set of coefficients $p_{j}$ defining the scalar physical property of the
 equivalent sources form a discrete \textit{equivalent layer}, which is ``equivalent" 
 in the sense that it produces the same potential field as that
-of the true volume sources at the observation points.
+of the true volume sources at points with $z < z''_{0}$.
 
 The equivalent-layer technique consists in solving the linear system 
 \begin{equation}
@@ -74,7 +74,7 @@ discrete form of the following integral equation:
 	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: dx'' \, dy'' \: ,
 	\label{eq:integral-equation-eqlayer}
 \end{equation}
-where $\mathbf{r} = (x, y, z)^{\top}$ defines generic observation point and
+where $\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the horizontal 
 plane at $z''_{0}$; 
 $d(\mathbf{r})$ is a harmonic function defining the potential field data at $\mathbf{r}$;
@@ -86,7 +86,7 @@ as \textit{planar equivalent-layer integral}.
 
 Note that the equivalent-layer technique implicitly presumes that the potential-field 
 data can be satisfactorily described by a harmonic function.
-Besides, it is also presumed that, given a potential-field data set, there is an
+Besides, it also presumes that, given a potential-field data set, there is an
 equivalent layer that reproduces the observed potential-field data and can be 
 used to compute field transformations.
 Most of the theoretical discussions on the equivalent-layer technique also assume that
@@ -95,7 +95,7 @@ a condition that cannot be guaranteed in practical situations.
 
 What follows aims at discussing the existence of a theoretical planar equivalent layer
 that is located below the observation points and exactly reproduce the
-gravitational and magnetic induction field due to 3D sources even for the
+gravitational and magnetic induction field due to 3D sources, even for the
 case in which the layer crosses the sources.
 Specifically, we present closed-form solutions $p(\mathbf{r}'')$ for the 
 planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer}). 
