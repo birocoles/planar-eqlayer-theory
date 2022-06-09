@@ -1,0 +1,123 @@
+\section{Potential fields due to 3D sources}
+\label{sec:potential_fields_3D_sources}
+
+
+Let $\mathcal{V} \subset \mathbb{R}^{3}$ be a \textit{regular region} with boundary
+$\partial \mathcal{V}$. 
+Some important properties of $\mathcal{V}$ in this case is that it is an open and 
+connected set of points and $\partial \mathcal{V}$ is a closed and compact surface 
+free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+This definition is slightly different from that given by \citet[][ p. 100]{kellogg1967},
+for example, which includes the boundary as part of the region.
+
+Consider a set of 3D gravity or magnetic sources located in the subsurface,
+over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
+Consider also that the gravitational or magnetic induction field produced by the 3D sources 
+at an observation point $\mathbf{r} = (x, y, z)^{\top}$ 
+can be defined in terms of the following Newtonian potential:
+\begin{equation}
+	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
+	\: dx'dy'dz' \: ,
+	\label{eq:scalar-potential-U}
+\end{equation}
+where $\kappa$ is a proportionality constant; 
+$\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
+between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$;
+and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
+$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ as the density (contrast) 
+or total-magnetization intensity within the sources.
+To insure that the partial derivatives of first order of $U(\mathbf{r})$ can be computed
+at points within the sources, we need to impose that $\sigma(\mathbf{r}')$ is
+a piecewise continuous, integrable and bounded function. 
+Additionally, the partial derivatives of second order of $U(\mathbf{r})$ exist only at
+points $\mathbf{r}' \in \overline{\mathcal{V}}$ where $\sigma(\mathbf{r}')$ satisfies some
+Hölder condition \citep[][ p. 152]{kellogg1967}.
+
+If we consider gravity sources, then $U(\mathbf{r})$ 
+(equation \ref{eq:scalar-potential-U}) represents the gravitational potential
+\citep[e.g.,][ p. 46]{blakely1996}. Its partial derivatives of first order
+\begin{equation}
+	\partial_{\alpha} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: 
+	\partial_{\alpha} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
+	\: dx'dy'dz' \: , \quad \alpha = x, y, z \: ,
+	\label{eq:1st-deriv-U}
+\end{equation}
+represent the Cartesian components of the gravitational attraction 
+\citep[e.g.,][ p. 47]{blakely1996} and its partial derivatives of second order
+\begin{equation}
+	\partial_{\alpha\beta} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: 
+	\partial_{\alpha\beta} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
+	\: dx'dy'dz' \: , \quad \alpha, \beta = x, y, z \: ,
+	\label{eq:2nd-deriv-U}
+\end{equation}
+represent the elements of the gravitational tensor \citep[e.g.,][]{pedersen_rasmussen1990}
+produced by the 3D sources. We conveniently use the notation 
+$\partial_{\alpha} U(\mathbf{r}) \equiv 
+\tfrac{\partial U(\mathbf{r})}{\partial \alpha}$ and
+$\partial_{\alpha} U(\mathbf{r}) \equiv 
+\tfrac{\partial^{2} U(\mathbf{r})}{\partial \alpha \, \partial \beta}$
+to denote, respectively, partial derivatives of first and second order throughout the
+manuscript.
+
+To define the magnetic fields due to the 3D sources, we limit ourselves to the case
+in which they have a constant total-magnetization direction defined by an unit vector
+$\hat{\mathbf{h}}$. In this case, the magnetic scalar potential is given by the
+following directional derivative:
+\begin{equation}
+	\partial_{h} U(\mathbf{r}) = - \nabla U(\mathbf{r})^{\top} \hat{\mathbf{h}} \: ,
+	\label{eq:oblique-1st-deriv-U}
+\end{equation}
+where 
+$\partial_{h} U(\mathbf{r}) \equiv 
+\tfrac{\partial U(\mathbf{r})}{\partial \hat{\mathbf{h}}}$ and 
+$\nabla U(\mathbf{r})$ represents the gradient of $U(\mathbf{r})$ with respect to the
+coordinates of the observation points $\mathbf{r}$.
+Finally, the magnetic induction field along an arbitrary constant direction defined
+by an unit vector $\hat{\mathbf{t}}$ can be defined as follows:
+\begin{equation}
+	\partial_{th} U(\mathbf{r}) = 
+	\hat{\mathbf{t}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{h}} \: ,
+	\label{eq:oblique-2nd-deriv-U}
+\end{equation}
+where 
+$\partial_{th} U(\mathbf{r}) \equiv 
+\tfrac{\partial^{2} U(\mathbf{r})}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}}$
+and
+\begin{equation}
+	\mathbf{H}_{U}(\mathbf{r}) = 
+	\begin{bmatrix}
+	\partial_{xx} U(\mathbf{r}) & 
+	\partial_{xy} U(\mathbf{r}) & 
+	\partial_{xz} U(\mathbf{r}) \\
+	\partial_{xy} U(\mathbf{r}) & 
+	\partial_{yy} U(\mathbf{r}) & 
+	\partial_{yz} U(\mathbf{r}) \\
+	\partial_{xz} U(\mathbf{r}) & 
+	\partial_{yz} U(\mathbf{r}) & 
+	\partial_{zz} U(\mathbf{r})
+	\end{bmatrix}
+	\label{eq:H-U}
+\end{equation}
+is the Hessian matrix of $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}), 
+with elements defined by its second derivatives (equation \ref{eq:2nd-deriv-U}).
+
+Due to the conditions imposed on $\sigma(\mathbf{r}')$, equations 
+\ref{eq:scalar-potential-U}--\ref{eq:H-U} are valid at all points 
+$\mathbf{r} \in \mathbb{R}^{3}$ in space.
+In geophysics, the vertical component of the gravitational attraction defined by
+$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) is commonly used to approximate
+the gravity disturbance \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005} due to the 3D
+sources.
+Equation \ref{eq:oblique-2nd-deriv-U} defines the Cartesian components along 
+$x$, $y$, and $z$ directions for the cases in which the unit vector $\hat{\mathbf{t}}$
+is given by, respectively, $(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
+Equation \ref{eq:oblique-2nd-deriv-U} can also be used to approximate the total-field
+anomaly produced by the 3D sources for the
+case in which $\hat{\mathbf{t}}$ defines the constant direction of the main geomagnetic
+field at the study area \cite[e.g., ][ p. 179]{blakely1996}.
+
+
+
