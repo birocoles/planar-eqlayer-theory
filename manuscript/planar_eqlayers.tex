@@ -1,0 +1,180 @@
+\section{Planar equivalent layers}
+\label{sec:eqlayers}
+
+The integral equations representing the generalized solutions of Dirichlet's
+and Neumann's problems (equations \ref{eq:U-Dirichlet-cross} and \ref{eq:U-Neumann-cross})
+can be alternatively interpreted in terms of their kernels.
+Note that, according to equation \ref{eq:U-Dirichlet-cross}, the potential 
+$U(\mathbf{r})$ is analogous to the vertical component of the gravitational 
+attraction produced at all points $\mathbf{r}$ located above $z''_{0}$ by a fictitious 
+planar layer of monopoles defined on $z''_{0}$, with mass distribution
+$\tau(\mathbf{r}'')$.
+This equation also represents a solution of the planar equivalent-layer integral
+(equation \ref{eq:integral-equation-eqlayer}) for the particular case in which 
+the potential field $d(\mathbf{r})$ is the gravitational potential 
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) due to the
+3D sources and the kernel $a(\mathbf{r}, \mathbf{r}'')$ is defined by 
+$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$. In this case, 
+$p(\mathbf{r}'') = \tau(\mathbf{r}'')$, which represents (i) the actual gravitational
+potential produced by the 3D sources on a plane $z''_{0}$ located above the sources
+or (ii) a fictitious gravitational potential obtained by downward continuation to points
+inside the sources.
+
+Equation \ref{eq:U-Neumann-cross}, instead, shows that  
+$U(\mathbf{r})$ is analogous to the gravitational potential produced at all points
+$\mathbf{r}$ located above $z''_{0}$ by a fictitious planar layer of monopoles defined on
+$z''_{0}$, with mass distribution $\upsilon(\mathbf{r}'')$.
+Besides, it defines another solution of the planar equivalent-layer integral
+(equation \ref{eq:integral-equation-eqlayer}) for the case in which the
+potential field $d(\mathbf{r})$ is the gravitational potential 
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) due to the 3D sources
+and the kernel is given by $a(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$.
+In this case, the continuous physical property distribution $p(\mathbf{r}'')$ is defined
+by $\upsilon(\mathbf{r}'')$, which represents (i) the actual vertical component of the
+gravitational attraction produced by the 3D sources on a 
+plane $z''_{0}$ located above the sources or (ii) a fictitious gravity disturbance 
+obtained by downward continuation to points inside the sources.
+
+
+\subsection{Planar equivalent layer of monopoles applied to gravity data}
+\label{subsec:eqlayer_monopoles}
+
+
+The integral equations representing the generalized solutions of Dirichlet's
+and Neumann's problems (equations \ref{eq:U-Dirichlet-cross} and \ref{eq:U-Neumann-cross})
+represent solutions for the planar equivalent-layer integral for the case in which
+the potential field $d(\mathbf{r})$ is the gravitational potential 
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) due to the 3D sources.
+In practical situation, however, the potential-field measurements are represented
+by the partial derivatives of first and second orders of $U(\mathbf{r})$
+(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}).
+Here, we show the planar equivalent layers associated with these derivatives can be
+obtained from the generalized solution of Neumann's problem 
+(equation \ref{eq:U-Neumann-cross}).
+
+Consider the partial derivatives of first and second orders of $U(\mathbf{r})$ obtained
+by differentiating equation \ref{eq:U-Neumann-cross}:
+\begin{equation}
+\partial_{\alpha} U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\partial_{\alpha} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , 
+\quad z < z''_{0} \: ,
+\quad \alpha = x, y, z \: ,
+\label{eq:1st-deriv-U-Neumann}
+\end{equation}
+and
+\begin{equation}
+\partial_{\alpha\beta} U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \: dx''dy'' \: , 
+\quad z < z''_{0} \: ,
+\quad \alpha, \beta = x, y, z \: .
+\label{eq:2nd-deriv-U-Neumann}
+\end{equation}
+Note that the derivatives are computed with respect to the coordinates
+of $\mathbf{r}$ and, consequently, act only on the kernel $\Psi(\mathbf{r}, \mathbf{r}'')$
+and not on the function $\upsilon(\mathbf{r}'')$ 
+(equation \ref{eq:U-Neumann-cross}).
+
+Note that equation \ref{eq:1st-deriv-U-Neumann} represents a solution of the
+planar equivalent layer integral for the case in which the potential field 
+$d(\mathbf{r})$ is the vertical component $\partial_{z} U(\mathbf{r})$ of the
+gravitational attraction due to the 3D sources, which is commonly used to
+approximate gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}.
+In this case, the kernel and physical property distribution are given by 
+$a(\mathbf{r}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ and
+$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, respectively.
+This result shows that there exists a continuous planar
+equivalent layer of monopoles that exactly reproduces the gravity disturbance
+data above the sources.
+\citet{dampney1969} was the pioneer in using this result to interpolate gravity data and
+a considerable amount of literature has been published on this topic since then.
+This solution $p(\mathbf{r}'')$ can also be directly deduced from the
+\textit{upward-continuation integral}
+\citep[e.g., ][]{peters1949, roy1962, bhattacharyya1967, henderson1970, gunn1975}, 
+which represents the solution of Dirichlet’s problem on a plane
+(equation \ref{eq:U-Dirichlet}), or from the generalized solution presented here
+(equation \ref{eq:U-Dirichlet}-cross).
+
+Consider now the case in which the potential-field data $d(\mathbf{r})$ in the 
+planar equivalent layer integral (equation \ref{eq:integral-equation-eqlayer}) 
+are gravitational gradient tensor components. These data are usually described as the
+partial derivatives of second order of the gravitational potential. Hence, by using the
+second derivatives defined by equation \ref{eq:2nd-deriv-U-Neumann}, we obtain for the 
+$\alpha\beta$-component of gravity tensor that
+$d(\mathbf{r}) = \partial_{\alpha\beta} U(\mathbf{r})$ and 
+$a(\mathbf{r}, \mathbf{r}'') = \partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'')$, 
+so that the continuous equivalent layer has a closed-form solution 
+$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$.
+This result shows that the same continuous planar equivalent layer of monopoles that 
+reproduces the observed gravity disturbance data also reproduces the 
+gradient tensor data above the sources.
+This result has been used by the scientific community for processing gravity-gradient
+data \citep{barnes-lumley_2011} or converting gravity disturbance into the
+gradient tensor \citep{piauilino_etal2019_seg, li_etal2021}, for example.
+However, researchers have not treated this topic in much detail and it is usually assumed
+to be true without any proof.
+
+\subsection{Planar equivalent layer of dipoles applied to magnetic data}
+\label{subsec:eqlayer_dipoles}
+
+We may also combine the partial derivatives of first order 
+(equation \ref{eq:1st-deriv-U-Neumann}) to compute the
+following directional derivative of first order:
+\begin{equation}
+\partial_{h} U(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') \:\: dx''dy'' \: , 
+\quad z < z''_{0} \: ,
+\quad \alpha, \beta = x, y, z \: ,
+\label{eq:oblique-1st-deriv-U-Neumann}
+\end{equation}
+where 
+\begin{equation}
+\partial_{h} \Psi(\mathbf{r}, \mathbf{r}'') = 
+\nabla \Psi(\mathbf{r}, \mathbf{r}'')^{\top} \hat{\mathbf{h}} 
+\label{eq:oblique-1st-deriv-Psi}
+\end{equation}
+is the directional derivative of the inverse distance function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) along the
+unit vector $\hat{\mathbf{h}}$ and
+$\nabla \Psi(\mathbf{r}, \mathbf{r}'')$ is the gradient of $\Psi(\mathbf{r}, \mathbf{r}'')$
+with respect to the coordinates of the observation point $\mathbf{r}$.
+
+Finally, we may use partial derivatives of second order 
+(equation \ref{eq:2nd-deriv-U-Neumann}) to obtain the following directional derivative
+of second order:
+\begin{equation}
+\partial_{th} U(\mathbf{r}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\hat{\mathbf{t}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \hat{\mathbf{h}} 
+\:\: dx''dy'' \: , \quad z < z''_{0} \: ,
+\quad \alpha, \beta = x, y, z \: ,
+\label{eq:oblique-2nd-deriv-Theta-Neumann}
+\end{equation}
+where
+\begin{equation}
+\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') = 
+\begin{bmatrix}
+\partial_{xx} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') \\
+\partial_{xy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yy} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') \\
+\partial_{xz} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{yz} \Psi(\mathbf{r}, \mathbf{r}'') & 
+\partial_{zz} \Psi(\mathbf{r}, \mathbf{r}'')
+\end{bmatrix} \: ,
+\label{eq:H-Psi}
+\end{equation}
+is the Hessian matrix of the inverse distance function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) defined in terms of
+the second derivatives $\partial_{\alpha\beta} \Psi(\mathbf{r}, \mathbf{r}'') \equiv 
+\frac{\partial^{2}}{\partial\alpha \, \partial\beta} \Psi(\mathbf{r}, \mathbf{r}'')$,
+$\alpha = x, y, z$, $\beta = x, y, z$, with respect to the coordinates of
+the observation point $\mathbf{r}$.
