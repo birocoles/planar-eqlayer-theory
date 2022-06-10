@@ -4,7 +4,7 @@
 Consider a set of 3D gravity or magnetic sources located 
 in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
-Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$th element
+Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$-th element
 $d^{o}_{i}$ represents a potential field produced by the 3D sources 
 at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$
 located above them.
@@ -50,7 +50,7 @@ The equivalent-layer technique consists in solving the linear system
 \end{equation}
 for the parameter vector $\mathbf{p}$, whose $j$-th element is the scalar physical
 property of the $j$-th equivalent source. In equation \ref{eq:linear-system-eqlayer},
-$\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$th 
+$\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$-th 
 element is $d_{i}$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
 $ij$ is defined by the harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
 After estimating a parameter vector $\mathbf{p}^{\ast}$ that fits the observed data, 
@@ -78,11 +78,11 @@ where $\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the horizontal 
 plane at $z''_{0}$; 
 $d(\mathbf{r})$ is a harmonic function defining the potential field data at $\mathbf{r}$;
-$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function and
+$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel and
 $p(\mathbf{r}'')$ is a continuous function defining a scalar physical property
 distribution on the horizontal plane, i.e., a continuous equivalent layer.
 For convenience, we call the integral equation \ref{eq:integral-equation-eqlayer} 
-as \textit{planar equivalent-layer integral}.
+as \textit{planar equivalent layer integral}.
 
 Note that the equivalent-layer technique implicitly presumes that the potential-field 
 data can be satisfactorily described by a harmonic function.
