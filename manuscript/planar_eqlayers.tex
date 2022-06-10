@@ -45,7 +45,7 @@ and Neumann's problems (equations \ref{eq:U-Dirichlet-cross} and \ref{eq:U-Neuma
 represent solutions for the planar equivalent-layer integral for the case in which
 the potential field $d(\mathbf{r})$ is the gravitational potential 
 $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) due to the 3D sources.
-In practical situation, however, the potential-field measurements are represented
+In practical situations, however, the potential-field measurements are represented
 by the partial derivatives of first and second orders of $U(\mathbf{r})$
 (equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}).
 Here, we show the planar equivalent layer associated with these derivatives can be
@@ -201,8 +201,17 @@ the continuous equivalent layer has the closed-form solution
 $p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, which represents the pseudogravity
 anomaly \citep[e.g.,][ p. 344]{blakely1996} due to the 3D sources 
 on the horizontal plane $z''_{0}$.
-This result shows for the first time that there exists a continuous planar equivalent layer
-of dipoles that exactly reproduces the magnetic scalar potential data above the sources.
+It is important to stress that, for the case in which the potential $U(\mathbf{r})$
+is used to describe the magnetic field, $\sigma(\mathbf{r}')$ is a strictly positive scalar
+function at all points $\mathbf{r}' \in \overline {\mathcal{V}}$ within the sources 
+(equation \ref{eq:scalar-potential-U}) because, in this case, it represents the 
+total-magnetization intensity. Consequently, the continuous function 
+$\upsilon(\mathbf{r}'')$ defining the planar equivalent layer of dipoles 
+is strictly positive at all points $\mathbf{r}''$ on the plane $z''_{0}$.
+This result shows that there exists a continuous planar equivalent layer
+of dipoles that is all positive, has the same constant total-magnetization
+of the true 3D sources and exactly reproduces the magnetic scalar potential data 
+above the sources.
 
 Consider now the surface integral defined by equation \ref{eq:oblique-2nd-deriv-U-Neumann},
 which reproduces the directional derivative of second order $\partial_{th}U(\mathbf{r})$,
@@ -212,16 +221,26 @@ Equation \ref{eq:oblique-2nd-deriv-U-Neumann} represents a solution of the
 planar equivalent layer integral (equation \ref{eq:integral-equation-eqlayer})
 for the case in which the potential field 
 $d(\mathbf{r})$ is the approximated total-field anomaly 
-\cite[e.g., ][ p. 179]{blakely1996} produced by the 3D sources 
+\cite[e.g.,][ p. 179]{blakely1996} produced by the 3D sources 
 when they have a constant total-magnetization direction defined by the unit vector
 $\hat{\mathbf{h}}$ and the main geomagnetic field at the study area has a constant
 direction defined by the unit vector $\hat{\mathbf{t}}$.
 In this case, the kernel is given by 
 $a(\mathbf{r}, \mathbf{r}'') = \partial_{th} \Psi(\mathbf{r}, \mathbf{r}'')$ and
 the continuous equivalent layer has the closed-form solution 
-$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, which also represents the pseudogravity
-anomaly \citep[e.g.,][ p. 344]{blakely1996} due to the 3D sources 
+$p(\mathbf{r}'') = \upsilon(\mathbf{r}'')$, which also represents the all-positive 
+pseudogravity anomaly \citep[e.g.,][ p. 344]{blakely1996} produced by the 3D sources 
 on the horizontal plane $z''_{0}$.
+Equation \ref{eq:oblique-2nd-deriv-U-Neumann} also defines the solution
+of the planar equivalent layer integral for the cases in which the potential field
+is the $x-$, $y-$ or $z-$component of the magnetic induction field produced by the 
+sources. This can be shown by setting the unit vector $\hat{\mathbf{t}}$ as, respectively, 
+$(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
+Finally, the particular case in which the unit vectors $\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$ are set as $(0, 0, 1)^{\top}$ in equation 
+\ref{eq:oblique-2nd-deriv-U-Neumann} defines a solution of 
+the planar equivalent layer integral for the case in which the potential 
+field is the RTP anomaly $\partial_{zz}U(\mathbf{r})$ 
+(equation \ref{eq:2nd-deriv-U-Neumann}).
 
 Most previous published studies \citep[e.g.,][]{emilia1973, bhattacharyya-chan1977, 
 silva_1986, oliveirajr-etal_2013, li_etal_2014, oliveirajr_etal_2015, 
@@ -231,12 +250,10 @@ a planar equivalent layer of dipoles for processing total-field anomaly data. Fe
 problem of proving the existence of a planar equivalent layer of dipoles that exactly
 reproduces the approximated total-field anomaly \cite[e.g., ][ p. 179]{blakely1996} above
 the sources.
-Here, present a slightly different approach from that used by \citet{reis_etal2020} 
-to deduce equation \ref{eq:oblique-2nd-deriv-U-Neumann} and show that there exists a
-continuous planar equivalent layer of dipoles that exactly reproduces the approximated
-total-field anomaly data above the sources.
-From equation \ref{eq:oblique-2nd-deriv-U-Neumann}, 
-we also expand the theoretical results presented by \citet{reis_etal2020} to show
-that the same continuous planar equivalent layer of dipoles that reproduces the magnetic
-scalar potential and approximated total-field anomaly also reproduces any magnetic field
-component above the sources, even for the case in which the layer crosses the sources.
+We start from the classic Neumann's problem on plane and expand the theoretical results
+presented by \citet{reis_etal2020} to prove the existence of a
+continuous planar equivalent layer of dipoles that is all positive, has the same constant
+total-magnetization direction of the true 3D sources and exactly reproduces the 
+magnetic scalar potential, approximated total-field anomaly, the Cartesian components 
+of the magnetic induction field and the RTP anomaly at points above the sources, even 
+for the case in which the layer crosses the sources.

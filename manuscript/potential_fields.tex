@@ -53,8 +53,9 @@ represent the Cartesian components of the gravitational attraction
 	\: dx'dy'dz' \: , \quad \alpha, \beta = x, y, z \: ,
 	\label{eq:2nd-deriv-U}
 \end{equation}
-represent the elements of the gravitational tensor \citep[e.g.,][]{pedersen_rasmussen1990}
-produced by the 3D sources. We conveniently use the notation 
+represent the elements of the \textit{gravitational tensor} 
+\citep[e.g.,][]{pedersen_rasmussen1990} produced by the 3D sources. 
+We conveniently use the notation 
 $\partial_{\alpha} U(\mathbf{r}) \equiv 
 \tfrac{\partial U(\mathbf{r})}{\partial \alpha}$ and
 $\partial_{\alpha} U(\mathbf{r}) \equiv 
@@ -109,15 +110,31 @@ Due to the conditions imposed on $\sigma(\mathbf{r}')$, equations
 $\mathbf{r} \in \mathbb{R}^{3}$ in space.
 In geophysics, the vertical component of the gravitational attraction defined by
 $\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) is commonly used to approximate
-the gravity disturbance \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005} due to the 3D
-sources.
+the \textit{gravity disturbance} \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005} due 
+to the 3D sources.
 Equation \ref{eq:oblique-2nd-deriv-U} defines the Cartesian components along 
 $x$, $y$, and $z$ directions for the cases in which the unit vector $\hat{\mathbf{t}}$
 is given by, respectively, $(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
-Equation \ref{eq:oblique-2nd-deriv-U} can also be used to approximate the total-field
-anomaly produced by the 3D sources for the
+Equation \ref{eq:oblique-2nd-deriv-U} can also be used to approximate the 
+\textit{total-field anomaly} produced by the 3D sources for the
 case in which $\hat{\mathbf{t}}$ defines the constant direction of the main geomagnetic
 field at the study area \cite[e.g., ][ p. 179]{blakely1996}.
+Finally, the particular case in which both unit vectors $\hat{\mathbf{h}}$ and 
+$\hat{\mathbf{t}}$ are set as $(0, 0, 1)^{\top}$ in equation \ref{eq:oblique-2nd-deriv-U}
+leads to a special magnetic anomaly defined by the partial derivative of second order 
+$\partial_{zz}U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}). 
+This special anomaly represents the vertical component of 
+the magnetic induction field that would be produced by the 3D sources if they had a 
+purely induced and vertical magnetization. Differently from generic total-field anomalies 
+\cite[e.g.,][ p. 178]{blakely1996}, which have a ``skewed'' pattern 
+oscillating from negative to positive values and do not have their maxima placed right 
+above the magnetic sources, this special magnetic anomaly is easier to interpret 
+because it is predominantly positive right above the sources and
+decays to zero towards their boundaries. \citet{baranov1957} was the first
+to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
+total-field anomalies into this special anomaly, conveniently called here 
+\textit{RTP anomaly}.
+
 
 
 
