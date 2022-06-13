@@ -1,0 +1,101 @@
+\section{Equivalent-layer technique}
+\label{eq:equivalent_layer_technique}
+
+Consider a set of 3D gravity or magnetic sources located 
+in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
+$x$, $y$, and $z$ pointing to north, east and down, respectively. 
+Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$-th element
+$d^{o}_{i}$ represents a potential field produced by the 3D sources 
+at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$
+located above them.
+
+Now, consider that $d^{o}_{i}$ can be approximated 
+by the potential field produced at $\mathbf{r}_{i}$ by a discrete set of $M$ 
+virtual sources such as monopoles (or point masses) or dipoles, for example. 
+These virtual sources are usually called \textit{equivalent sources}.
+Here, we limit ourselves to the particular case in which they are disposed on a 
+horizontal plane located below the potential-field data, at points 
+$\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$,
+$j = 1, \dots, M$, with constant vertical coordinate $z''_{0} > z_{i}$, $i = 1, \dots, N$.
+The potential field produced by the equivalent sources at $\mathbf{r}_{i}$ is given by:
+\begin{equation}
+d_{i} = \sum\limits_{j = 1}^{M} p_{j} \, a_{ij} \: ,
+\label{eq:predicted-data-i}
+\end{equation}
+where the coefficient $p_{j}$ is the $j$-th element of an $M \times 1$ parameter vector
+$\mathbf{p}$ and $a_{ij}$ is a harmonic function depending on the
+coordinates of the $i$-th observation point and the $j$-th equivalent source.
+From the physical point of view, the term $p_{j} \, a_{ij}$ (equation 
+\ref{eq:predicted-data-i}) defines the potential field produced at the $i$-th observation
+point by the $j$-th equivalent source with scalar physical property $p_{j}$.
+For example, if $d_{i}^{o}$ represent gravity disturbance data
+\cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, then
+$p_{j} \, a_{ij}$ commonly defines the vertical component of the gravitational attraction
+produced at $\mathbf{r}_{i}$ by a monopole located at
+$\mathbf{r}''_{j}$, with mass $p_{j}$.
+For the case in which $d_{i}^{o}$ represent total-field anomaly data 
+\cite[e.g.,][ p. 178]{blakely1996} instead, the term 
+$p_{j} \, a_{ij}$ often defines a magnetic induction field component 
+produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
+with magnetic moment intensity $p_{j}$.
+The set of coefficients $p_{j}$ defining the scalar physical property of the
+equivalent sources form a discrete \textit{equivalent layer}, which is ``equivalent" 
+in the sense that it produces the same potential field as that
+of the true volume sources at points with $z < z''_{0}$.
+
+The equivalent-layer technique consists in solving the linear system 
+\begin{equation}
+	\mathbf{d}^{o} \approx \mathbf{d} = \mathbf{A} \, \mathbf{p}
+	\label{eq:linear-system-eqlayer}
+\end{equation}
+for the parameter vector $\mathbf{p}$, whose $j$-th element is the scalar physical
+property of the $j$-th equivalent source. In equation \ref{eq:linear-system-eqlayer},
+$\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$-th 
+element is $d_{i}$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
+$ij$ is defined by the harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
+After estimating a parameter vector $\mathbf{p}^{\ast}$ that fits the observed data, 
+a potential field transformation such as upward continuation, interpolation or reduction 
+to the pole, for example, can be computed as follows:
+\begin{equation}
+	\tilde{\mathbf{d}} = \tilde{\mathbf{A}} \, \mathbf{p}^{\ast} \: ,
+	\label{eq:field-transformation-eqlayer} 
+\end{equation}
+where $\tilde{\mathbf{d}}$ is an $L \times 1$ vector whose $k$-th element $\tilde{d}_{k}$,
+$k = 1, \dots, L$, represents the transformed potential field at a point 
+$\mathbf{r}_{k} = (x_{k}, y_{k}, z_{k})^{\top}$, with $z_{k} < z''_{0}$, 
+and $\tilde{\mathbf{A}}$ is an 
+$L \times M$ matrix whose element $kj$, $j = 1, \dots, M$, defines the transformed
+potential field due to the $j$-th equivalent source.
+
+The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
+discrete form of the following integral equation:
+\begin{equation}
+	d(\mathbf{r}) = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: dx'' \, dy'' \: ,
+	\label{eq:integral-equation-eqlayer}
+\end{equation}
+where $\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the horizontal 
+plane at $z''_{0}$; 
+$d(\mathbf{r})$ is a harmonic function defining the potential field data at $\mathbf{r}$;
+$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel and
+$p(\mathbf{r}'')$ is a continuous function defining a scalar physical property
+distribution on the horizontal plane, i.e., a continuous equivalent layer.
+For convenience, we call the integral equation \ref{eq:integral-equation-eqlayer} 
+as \textit{planar equivalent layer integral}.
+
+Note that the equivalent-layer technique implicitly presumes that the potential-field 
+data can be satisfactorily described by a harmonic function.
+Besides, it also presumes that, given a potential-field data set, there is an
+equivalent layer that reproduces the observed potential-field data and can be 
+used to compute field transformations.
+Most of the theoretical discussions on the equivalent-layer technique also assume that
+the layer is located below the observation points and does not cross the sources;
+a condition that cannot be guaranteed in practical situations.
+
+What follows aims at discussing the existence of a theoretical planar equivalent layer
+that is located below the observation points and exactly reproduce the
+gravitational and magnetic induction field due to 3D sources, even for the
+case in which the layer crosses the sources.
+Specifically, we present closed-form solutions $p(\mathbf{r}'')$ for the 
+planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer}). 

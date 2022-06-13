@@ -1,0 +1,235 @@
+\section{Dirichlet's and Neumann's problems on a plane}
+\label{sec:dirichlet_neumann}
+
+\subsection{Horizontal plane located above the sources}
+\label{subsec:dirichlet_neumann_above_sources}
+
+It can be shown that, at all points $\mathbf{r}$ located outside the sources (i.e., 
+$\mathbf{r} \notin \overline{\mathcal{V}}$), $U(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-U}) has continuous partial derivatives of all orders
+and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
+Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
+As a consequence of these properties, the potential $U(\mathbf{r})$ also satisfies 
+the following integrals:
+\begin{equation}
+U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+U(\mathbf{r}^{\dagger}) \:\: 
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: ,
+\label{eq:U-Dirichlet}
+\end{equation}
+and 
+\begin{equation}
+U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} U(\mathbf{r}^{\dagger}) \:\: 
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: ,
+\label{eq:U-Neumann}
+\end{equation}
+where 
+$\partial_{z} U(\mathbf{r}^{\dagger}) \equiv \tfrac{\partial U(\mathbf{r}^{\dagger})}{\partial z}$
+and 
+$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \equiv \tfrac{\partial
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger})}{\partial z}$, with 
+\begin{equation}
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger}) = 
+\frac{1}{2\pi} \: 
+\frac{1}{\| \mathbf{r} - \mathbf{r}^{\dagger} \|}
+\label{eq:Psi}
+\end{equation}
+representing the scaled inverse distance function between an observation point
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ and a point 
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ on the horizontal
+plane $z^{\dagger}_{0}$ located above the sources.
+The common outline to deduce equations \ref{eq:U-Dirichlet} and \ref{eq:U-Neumann}
+can be found, for example, in \citet{roy1962} and \citet{reis_etal2020}.
+
+Equation \ref{eq:U-Dirichlet} states that $U(\mathbf{r})$ can be defined
+in terms of its values $U(\mathbf{r}^{\dagger})$ on the plane $z^{\dagger}_{0}$ and 
+represents the solution of the \textit{Dirichlet’s problem} or the \textit{first boundary
+value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane.
+On the other hand, equation \ref{eq:U-Neumann} shows that $U(\mathbf{r})$ can 
+be defined in terms of its vertical derivative $\partial_{z} U(\mathbf{r}^{\dagger})$ 
+on the plane $z^{\dagger}_{0}$ and represents the solution of the 
+\textit{Neumann’s problem} or the \textit{second boundary value problem of potential
+theory} \cite[][ p. 246]{kellogg1967} on a plane.
+
+\subsection{Horizontal plane that crosses the sources}
+\label{subsec:generalized_dirichlet_neumann}
+
+To generalize the integral equations \ref{eq:U-Dirichlet} and 
+\ref{eq:U-Neumann} for the case in which they are defined on a plane that crosses the 3D
+sources, we need first consider the following integral equation:
+\begin{equation}
+U(\mathbf{r}^{\dagger}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau(\mathbf{r}'') \:
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+\:\: dx''dy'' \: ,
+\label{eq:U-tau}
+\end{equation}
+where $\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the vertical
+derivative of the same scaled inverse distance
+defined by equation \ref{eq:Psi}, but in this case computed for a point
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on the
+horizontal plane $z^{\dagger}_{0}$ above the 3D sources and a point 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
+on a horizontal plane that is located at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
+with $\Delta z > 0$ , and may cross the 3D sources.
+By applying the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996},
+we obtain the following closed-form solution for $\tau(\mathbf{r}'')$ in Fourier domain:
+\begin{equation}
+\begin{split}
+\mathcal{F} \left[ \tau(\mathbf{r}'') \right] 
+&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] {\Big /}
+\mathcal{F} \left[ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right] \\
+&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+\, e^{\vert k \vert \, \Delta z}
+\end{split} \quad , \quad \Delta z > 0 \: , \quad \vert k \vert \ne 0 \: ,
+\label{eq:Fourier-U-tau}
+\end{equation}
+where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
+with respect to the horizontal coordinates $x$ and $y$.
+The 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
+along the $x$ and $y$ directions, respectively.
+The wavenumbers have units of inverse distance. In equation \ref{eq:Fourier-U-tau},
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, the 2DFT of 
+$\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is computed according to
+\citet[][ p. 275]{blakely1996} and the dependence of the 2DFT's on $k_{x}$ and $k_{y}$
+is conveniently omitted to simplify the notation.
+From a geophysical point of view, $\tau(\mathbf{r}'')$ represents a  
+potential field obtained by computing the downward continuation of 
+$U(\mathbf{r}^{\dagger})$ to points that may be located inside the sources. 
+This potential field is different from the $U(\mathbf{r}'')$ produced by the true 3D 
+sources on the plane $z''_{0}$ for the case in which this plane crosses the sources.
+Note that $\tau(\mathbf{r}'')$ is equal to $U(\mathbf{r}'')$ for the case in which the
+horizontal plane $z''_{0}$ is located above the sources.
+
+Now, let us substitute the integral equation \ref{eq:U-tau} into the solution of the
+Dirichlet's problem (equation \ref{eq:U-Dirichlet}) and change the integration order:
+\begin{equation}
+\begin{split}
+U(\mathbf{r}) 
+&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+\: dx''dy'' \right]
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\:\: dx^{\dagger}dy^{\dagger} \\
+&= 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau(\mathbf{r}'') \:\:
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
+\: \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \right]
+\:\: dx''dy'' \quad .
+\end{split}
+\label{eq:intermediary-equation}
+\end{equation}
+Finally, by noting that the term within brackets in the second line of equation
+\ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
+for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
+$z^{\dagger}_{0}$, we obtain:
+\begin{equation}
+U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
+\:\: dx''dy'' \: , \quad z < z''_{0} \: .
+\label{eq:U-Dirichlet-cross}
+\end{equation}
+This equation shows that the same continuous function $\tau(\mathbf{r}'')$
+that reproduces the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
+$z^{\dagger}_{0}$ above the sources also reproduces the potential $U(\mathbf{r})$ 
+at all observation points 
+$\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$, with $z < z^{\dagger}_{0}$.
+Equation \ref{eq:U-Dirichlet-cross} generalizes the solution of Dirichlet's problem
+for the case in which the horizontal plane $z''_{0}$ crosses the true 3D sources.
+
+Consider now the following integral equation:
+\begin{equation}
+U(\mathbf{r}^{\dagger}) = 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:
+\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+\:\: dx''dy'' \: .
+\label{eq:U-upsilon}
+\end{equation}
+Then, by applying the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996},
+we obtain the following closed-form solution for 
+$\upsilon(\mathbf{r}'')$ in Fourier domain:
+\begin{equation}
+\begin{split}
+\mathcal{F} \left[ \upsilon(\mathbf{r}'') \right] 
+&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] {\Big /}
+\mathcal{F} \left[ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right] \\
+&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+\vert k \vert \, e^{\vert k \vert \, \Delta z} \\
+&= \mathcal{F} \left[ \partial_{z} U(\mathbf{r}^{\dagger}) \right] 
+\, e^{\vert k \vert \, \Delta z} \\
+\end{split} \quad , \quad \Delta z > 0 \: , \quad \vert k \vert \ne 0 \: ,
+\label{eq:Fourier-U-upsilon}
+\end{equation}
+In this equation, the 2DFT of $\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ 
+is computed according to \citet[][ p. 275]{blakely1996}.
+From a geophysical point of view, $\upsilon(\mathbf{r}'')$ represents a  
+potential field obtained by computing the downward continuation of 
+$\partial_{z} U(\mathbf{r}^{\dagger})$ to points that may be located inside the sources. 
+This potential field is different from the $\partial_{z} U(\mathbf{r}'')$ produced by 
+the true 3D sources on the plane $z''_{0}$ for the case in which this plane crosses 
+the sources.
+Note that $\upsilon(\mathbf{r}'')$ is equal to $\partial_{z} U(\mathbf{r}'')$ for the 
+case in which the horizontal plane $z''_{0}$ is located above the sources.
+
+Now, let us substitute the vertical derivative of the integral equation \ref{eq:U-upsilon}
+into the solution of the Neumann's problem (equation \ref{eq:U-Neumann}) and change the
+integration order:
+\begin{equation}
+\begin{split}
+U(\mathbf{r}) 
+&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+\: dx''dy'' \right]
+\Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\:\: dx^{\dagger}dy^{\dagger} \\
+&= 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\:
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
+\: \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \right]
+\:\: dx''dy'' \quad .
+\end{split}
+\label{eq:intermediary-equation-2}
+\end{equation}
+Finally, by noting that the term within brackets in the second line of equation
+\ref{eq:intermediary-equation-2} represents the solution of Neumann's problem
+for the function $\Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
+$z^{\dagger}_{0}$, we obtain:
+\begin{equation}
+U(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\upsilon(\mathbf{r}'') \:\: 
+\Psi(\mathbf{r}, \mathbf{r}'') 
+\:\: dx''dy'' \: , \quad z < z''_{0} \: .
+\label{eq:U-Neumann-cross}
+\end{equation}
+Equation \ref{eq:U-Neumann-cross} shows that the same continuous function
+$\upsilon(\mathbf{r}'')$ that reproduces the potential $U(\mathbf{r}^{\dagger})$ on 
+the horizontal plane $z^{\dagger}_{0}$ above the sources 
+also reproduces the potential $U(\mathbf{r})$ at all
+observation points $\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$, 
+with $z < z^{\dagger}_{0}$.
+Equation \ref{eq:U-Neumann-cross} generalizes the solution of Neumann's problem
+for the case in which the horizontal plane $z''_{0}$ crosses the true 3D sources.

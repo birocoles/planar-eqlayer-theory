@@ -19,5 +19,4 @@ figs:
 
 # Remove unused files
 clean:
-	rm *.aux *.bbl *.blg *.log *.pdf *.lof *.lot *.synctex.gz *.out
-
+	rm *.aux *.bbl *.blg *.log *.lof *.lot *.synctex.gz *.out
