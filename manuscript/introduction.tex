@@ -22,11 +22,11 @@ ribeiro_filho_etal2020, reis_etal2020}.
 Methods for processing/interpreting potential-field data 
 via equivalent-layer technique usually follow the pioneer approach presented
 by \citet{dampney1969} and rely on the numerical solution of the 
-\textit{upward continuation integral} \citep{skeels1947, peters1949, henderson-zietz1949,
+\textit{upward continuation integral} \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949,
 dean1958, roy1962, bhattacharyya1967, henderson1970}, which is the solution of the
 \textit{Dirichlet’s problem} or the \textit{first boundary value problem of potential
-theory} \cite[][ p. 236]{kellogg1967} on a plane. 
-This numerical solution represents the density (or mass) distribution on a
+theory} on a plane \cite[][ p. 236]{kellogg1967}. 
+This numerical solution is analogous to the density (or mass) distribution on a
 fictitious discrete layer of monopoles (points of mass) that are placed on a plane above 
 the true sources and reproduce the discrete potential-field data set.
 This layer is usually called \textit{equivalent layer} and the monopoles (or points of mass)
@@ -45,21 +45,23 @@ reproduces the potential-field data at the observation points and
 allows computing some potential field transformations at points with no data above the
 layer.
 
-PAREI AQUI
-
-
-that satisfies the Laplace's equation. Besides, it establishes that the estimated 
-physical property distribution represents a scaled version of the potential field on
-the plane of the equivalent layer \citep{roy1962, siqueira_etal_2017, mendonca-2020}.
-
-The equivalent-layer technique commonly applied to magnetic data, on the other hand, 
-does not have the same well-established theoretical background.
+It is important to stress that the equivalent layer defined in space domain as the solution
+of Dirichlet's problem on a plane is valid for the case in 
+which the layer does not cross the sources. 
+This condition, however, cannot be assured in practical situations with field data.
+It is also important noting that this space domain approach does not guarantee that 
+the same equivalent layer of monopoles reproducing conventional gravity data also 
+reproduces the corresponding gravity gradient tensor components due the same sources.
+Notwithstanding this lack of theoretical background, the equivalent-layer technique 
+has been successfully used for jointly processing gravity-gradient 
+data \citep[e.g.,][]{li2001, barnes-lumley_2011, martinez_li_2016} or converting gravity 
+disturbance into gradient tensor components \citep[e.g.,][]{boggs-dransfield2004,  piauilino_etal2019_seg, li_etal2021}, for example.
 
 In the geophysical literature, it has long been assumed by principle that the magnetic
 induction field produced by 3D sources can be reproduced by a fictitious and 
-purely mathematical planar layer of dipoles \cite[e.g.,][]{emilia1973, silva_1986,
-oliveirajr-etal_2013} that does not represent the solution of any 
-boundary value problem of potential theory.
+purely mathematical planar layer of dipoles \citep[e.g.,][]{emilia1973, 
+bhattacharyya-chan1977, silva_1986, oliveirajr-etal_2013, li_etal_2014, 
+oliveirajr_etal_2015, ribeiro_filho_etal2020, li-etal2021}. 
 Few works have investigated the theoretical aspects related to the existence of
 a planar equivalent layer of dipoles or its relationship with a boundary value
 problem of potential theory.
@@ -67,35 +69,43 @@ By following different approaches in the wavenumber domain,
 \citet{pedersen1991} and \citet{li_etal_2014} proved the existence of a
 planar equivalent layer of dipoles with all-positive
 magnetic moment distribution that exactly reproduces the approximated total-field anomaly
-caused by sources having a purely induced magnetization in the vertical direction.
+\cite[e.g., ][ p. 179]{blakely1996} caused by sources having a purely induced magnetization
+in the vertical direction.
 Their approach, however, is valid only for the case in which 
 the total-field anomaly data rely on a plane.
 \citet{reis_etal2020} generalized the works of \citet{pedersen1991} and \citet{li_etal_2014}
 to prove that this planar equivalent layer exists for the case in which the dipoles have 
 the same arbitrary uniform magnetization direction of the sources, regardless of whether 
 the sources magnetization is purely induced or not.
-\citet{reis_etal2020} also were the first to present a theoretical relationship between a
-planar equivalent layer of dipoles and a boundary value problem, but their approach is
-restricted to total-field anomaly data.
 
-The present paper aims at extending the work of \citet{reis_etal2020} to show, for the
-first time, (i) that the planar layer of dipoles is obtained by solving a boundary
-value problem of potential theory and that (ii) this layer exactly reproduces not only 
-the magnetic scalar potential, but also the magnetic induction field yielded by the
-true sources.
+Here, we present a more general discussion on the existence of planar equivalent layers
+that exactly reproduce the gravitational and magnetic induction fields due to 3D sources,
+even for the case in which the layer crosses them.
 We limit ourselves to the case in which the magnetic
-sources have a uniform total-magnetization direction, but spatially-variable intensity.
-We present analytical expressions for the planar equivalent layer of dipoles reproducing
-the magnetic scalar potential and magnetic induction field components  
-in space and Fourier domains for the case in which the equivalent layer has the same
-uniform magnetization direction of the true sources. Besides, we present analytical 
-expressions in Fourier domain for the case in which the uniform magnetization direction
-on the layer is different from that of the true sources.
-Our results show, for example, the theoretical connection between the reduction to the pole
-(RTP) in space and Fourier domains, as well as some relationships between the moments of 
-the true sources and of the magnetic-moment intensity distribution on the equivalent layer.
-The theoretical developments presented here open the door for future investigations about,
-for example, the instability of RTP in space domain and also the generalization of RTP 
-to the case in which the sources have a nonuniform total-magnetization direction.
+sources have a total-magnetization with uniform direction, but spatially-variable intensity.
+We deduce the space-domain solutions of the Dirichlet's and Neumann's problems  
+on a planar surface that crosses the sources. 
+Then we use these solutions to prove the existence of a continuous planar equivalent layer
+of monopoles that simultaneously reproduces the gravitational potential, attraction and
+tensor components due to arbitrary gravity sources.
+We also expand the work of \citet{reis_etal2020} to prove, in space domain, 
+the existence of a continuous planar equivalent layer of dipoles that is all positive,
+has the same constant total-magnetization direction of the true 3D sources and 
+simultaneously reproduces the magnetic scalar potential and magnetic induction
+field components along arbitrary constant directions.
+Besides, we show that this planar equivalent layer of dipoles also reproduces the 
+special magnetic anomaly that would be yielded by the true sources if they have
+a purely induced magnetization with vertical direction.
+This theoretical result has been implicitly assumed to be true, but never proved 
+neither in the pioneer work of \citet{silva_1986}, nor in the succeeding 
+methods \citep[e.g.,][]{leao-silva_1989, oliveirajr-etal_2013, li_etal_2014, reis_etal2020}
+proposed to compute the reduction to the pole (RTP) in space domain.
 
-
+The theoretical developments presented here open the door for future 
+investigations in space domain about,
+for example, the instability of RTP in space domain and its generalization 
+to the case in which the sources have a nonuniform total-magnetization direction,
+the existence of a closed-form solution for the case in which the planar equivalent layer 
+of dipoles has a constant magnetization direction different from that of the true sources
+and also indicate a research direction to understand the relationship between the planar
+equivalent layer and the true 3D sources.
