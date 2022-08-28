@@ -25,8 +25,10 @@ where $\kappa$ is a proportionality constant;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$;
 and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
-$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ as the density (contrast) 
-or total-magnetization intensity within the sources.
+$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
+as the density (contrast) or total-magnetization intensity within the sources.
+We implicitly assume that $\sigma(\mathbf{r}) = 0$ for all points 
+$\mathbf{r} \notin \overline{\mathcal{V}}$.
 To insure that the partial derivatives of first order of $U(\mathbf{r})$ can be computed
 at points within the sources, $\sigma(\mathbf{r}')$ must be
 a piecewise continuous, integrable and bounded function. 
@@ -126,7 +128,7 @@ The $x-$, $y-$, and $z-$components of the magnetic induction field produced by t
 sources can be easily obtained from equation \ref{eq:oblique-2nd-deriv-U}
 by setting the unit vector $\hat{\mathbf{t}}$ equal to,
 respectively, $(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
-Finally, the particular case in which both unit vectors $\hat{\mathbf{h}}$ and 
+The particular case in which both unit vectors $\hat{\mathbf{h}}$ and 
 $\hat{\mathbf{t}}$ are set as $(0, 0, 1)^{\top}$ in equation \ref{eq:oblique-2nd-deriv-U}
 leads to a special magnetic anomaly defined by the partial derivative of second order 
 $\partial_{zz}U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}). 
@@ -141,6 +143,74 @@ decays to zero towards their boundaries. \citet{baranov1957} was the first
 to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
 total-field anomalies into this special anomaly, conveniently called here 
 \textit{RTP anomaly}.
+
+For the subsequent developments, it is also important to define the 
+two-dimensional Fourier transform (2DFT) of the potential $U(\mathbf{r})$ 
+(equation \ref{eq:scalar-potential-U}) with respect to the horizontal coordinates $x$ and
+$y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ located above
+the sources \citep{bhattacharyya1967,gunn1975}:
+\begin{equation}
+	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 2 \pi \kappa 
+	\int\limits_{z^{t}}^{\infty}
+	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
+	\frac{e^{- k \, (z' - z^{\dagger}_{0})}}{k}
+	\: dz' \: , \quad z^{\dagger}_{0} < z^{t} \: ,
+	\label{eq:Fourier-U-r-dagger}
+\end{equation}
+where 
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
+\overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0}$ located
+above the sources, $z^{t}$ is the top of the sources, $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
+is defined in terms of the wavenumbers $k_{x}$ and $k_{y}$ along the $x$ and $y$ directions,
+respectively, and
+\begin{equation}
+	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
+	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\sigma(\mathbf{r}') \: e^{-\mathtt{i} \, (k_{x} \, x' + k_{y} \, y')}
+	\: dx'dy'
+	\label{eq:Fourier-sigma-r'}
+\end{equation}
+is the 2DFT of the function $\sigma(\mathbf{r}')$ 
+(equation \ref{eq:scalar-potential-U}) on a horizontal plane with constant vertical
+coordinate $z'$, with $\mathtt{i}$ representing the imaginary unit.
+The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
+simplify the notation.
+
+Because $z^{t} \le z'$, where $z^{t}$ defines the top of the sources and $z'$ the vertical
+coordinate of a point inside the sources, we have that 
+$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t} - z^{\dagger}_{0})}$ and, 
+consequently, that the absolute value of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
+(equation \ref{eq:Fourier-U-r-dagger}), i.e., its amplitude spectrum, satisfies 
+\begin{equation}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
+	2 \pi \kappa \, \frac{e^{- k \, (z^{t} - z^{\dagger}_{0})}}{k} \, \Omega \: ,
+	\: \quad z^{\dagger}_{0} < z^{t} \: ,
+	\label{eq:abs-Fourier-U-r-dagger-bound}
+\end{equation}
+where
+\begin{equation}
+	\Omega = \int\limits_{z^{t}}^{\infty}
+	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert 
+	\: dz' \: , \quad z^{\dagger}_{0} < z^{t} \: ,
+	\label{eq:Omega}
+\end{equation}
+is a constant depending only on the position and shape of the sources.
+Equation \ref{eq:abs-Fourier-U-r-dagger-bound} shows that the amplitude spectrum 
+$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ of $U(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:scalar-potential-U}) on a plane above the sources 
+(i) is finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tends
+exponentially to zero as $k$ goes to infinite.
+Our approach to deduce an upper bound for 
+$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ (equation 
+\ref{eq:abs-Fourier-U-r-dagger-bound}) is the same proposed by
+\citet{bhattacharyya1967} to define
+\begin{equation}
+	\vert \mathcal{F} [ \partial_{z} U(\mathbf{r}^{\dagger}) ] \vert \le
+	2 \pi \kappa \, e^{- k \, (z^{t} - z^{\dagger}_{0})} \, \Omega \: ,
+	\: \quad z^{\dagger}_{0} < z^{t} \: ,
+	\label{eq:abs-Fourier-DzU-r-dagger-bound}
+\end{equation}
+which can also be deduced from equations \ref{eq:Fourier-U-r-dagger}--\ref{eq:Omega}.
 
 
 
