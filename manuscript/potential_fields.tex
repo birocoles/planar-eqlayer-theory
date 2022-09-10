@@ -172,9 +172,10 @@ respectively, and
 \end{equation}
 is the 2DFT of the function $\sigma(\mathbf{r}')$ 
 (equation \ref{eq:scalar-potential-U}) on a horizontal plane with constant vertical
-coordinate $z'$, with $\mathtt{i}$ representing the imaginary unit.
+coordinate $z'$ with $\mathtt{i}$ representing the imaginary unit.
 The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
+It is important noting that the horizontal plane $z'$ may cross the sources.
 
 Because $z^{t} \le z'$, where $z^{t}$ defines the top of the sources and $z'$ the vertical
 coordinate of a point inside the sources, we have that 
@@ -183,13 +184,13 @@ consequently, that the absolute value of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) 
 (equation \ref{eq:Fourier-U-r-dagger}), i.e., its amplitude spectrum, satisfies 
 \begin{equation}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
-	2 \pi \kappa \, \frac{e^{- k \, (z^{t} - z^{\dagger}_{0})}}{k} \, \Omega \: ,
+	\frac{e^{- k \, (z^{t} - z^{\dagger}_{0})}}{k} \, \Omega \: ,
 	\: \quad z^{\dagger}_{0} < z^{t} \: ,
 	\label{eq:abs-Fourier-U-r-dagger-bound}
 \end{equation}
 where
 \begin{equation}
-	\Omega = \int\limits_{z^{t}}^{\infty}
+	\Omega = 2 \pi \kappa \, \int\limits_{z^{t}}^{\infty}
 	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert 
 	\: dz' \: , \quad z^{\dagger}_{0} < z^{t} \: ,
 	\label{eq:Omega}

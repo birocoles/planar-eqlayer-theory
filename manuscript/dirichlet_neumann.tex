@@ -63,24 +63,14 @@ To generalize the integral equations \ref{eq:U-Dirichlet} and
 \ref{eq:U-Neumann} for the case in which they are defined on a plane that crosses the 3D
 sources, we need first consider the following harmonic function:
 \begin{equation}
-U_{\varepsilon}(\mathbf{r}^{\dagger}) = 
+U(\mathbf{r}^{\dagger}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau_{\varepsilon}(\mathbf{r}'') \:
+\tau(\mathbf{r}'') \:
 \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
 \:\: dx''dy'' \: ,
-\label{eq:U-tau-epsilon}
+\label{eq:U-tau}
 \end{equation}
-such that
-\begin{equation}
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert 
-	U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger})
-	\vert^{2} 
-	\: dx^{\dagger}dy^{\dagger} < \varepsilon \: ,
-	\label{eq:U-tau-epsilon-error}
-\end{equation}
-where $\varepsilon$ is an arbitrary and positive small error level and 
-$\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the vertical
+where $\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the vertical
 derivative of the scaled inverse distance function (equation \ref{eq:Psi}) 
 evaluated at the points
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on the
@@ -88,63 +78,63 @@ horizontal plane $z^{\dagger}_{0}$ above the 3D sources and
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
 on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
 with $\Delta z > 0$. 
-The next step consists in finding an appropriate function $\tau_{\varepsilon}$ 
-satisfying equations \ref{eq:U-tau-epsilon} and \ref{eq:U-tau-epsilon-error}. 
+The next step consists in finding an appropriate function $\tau$ 
+satisfying equation \ref{eq:U-tau}. 
 This can be made by first applying the Fourier-convolution theorem 
-\cite[][ p. 268]{blakely1996} to $U_{\varepsilon}(\mathbf{r}^{\dagger})$ 
-(equation \ref{eq:U-tau-epsilon}) to obtain:
+\cite[][ p. 268]{blakely1996} to $U(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:U-tau}) to obtain:
 \begin{equation}
-	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
-	= \mathcal{F} [ \tau_{\varepsilon}(\mathbf{r}'') ] \:
+	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]
+	= \mathcal{F} [ \tau(\mathbf{r}'') ] \:
 	\mathcal{F} [ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\label{eq:Fourier-U-tau-epsilon}
+	\label{eq:Fourier-U-tau}
 \end{equation}
 where
 \begin{equation}
 	\mathcal{F} [ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
-	= e^{- k \, \Delta z}
-	\quad , \quad \Delta z > 0 \: , \quad k \ne 0 \: ,
+	= e^{- k \, (z''_{0} - z^{\dagger}_{0})}
+	\: , \quad z''_{0} > z^{\dagger}_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Fourier-Dz-Psi}
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-Now, we define a general solution for the function $\tau_{\varepsilon}$ as follows:
+Now, we define a general solution for $\tau$ as follows:
 \begin{equation}
-	\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right] = 
-	\begin{cases}
-		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-		e^{ \, k \, \Delta z} \: , 
-		&0 < k \le k_{\varepsilon} \\
-		0 \: , & k > k_{\varepsilon}
-	\end{cases}
-	\quad , \quad \Delta z > 0 \: ,
-	\label{eq:Fourier-tau-epsilon}
+	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+	e^{k \, (z''_{0} - z^{\dagger}_{0})}
+	\: , \quad z''_{0} > z^{\dagger}_{0} \: .
+	\label{eq:Fourier-tau}
 \end{equation}
-where $k_{\epsilon}$ is a fixed and possibly very large truncating wavenumber.
-Note that $\tau_{\varepsilon}(\mathbf{r}'')$ 
+Note that $\tau(\mathbf{r}'')$ 
 approximates the potential field obtained by computing the downward continuation of 
 $U(\mathbf{r}^{\dagger})$ to points located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
 continuation plane is limited by the top of the sources, otherwise the continued field will 
 present an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002}.
-Because of that, we truncate $\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-tau-epsilon}) at $k_{\epsilon}$ to guarantee that it is
-square integrable and that the Fourier-convolution theorem can be applied. 
-An alternative strategy is imposing that 
+Because of that, $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ (equation
+\ref{eq:Fourier-tau}) is valid only for the particular case in which
 $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ attenuates more rapidly than
-the exponential factor $e^{ \, k \, \Delta z}$ as the wavenumber $k$ increases 
-\citep[e.g.,][]{bhattacharyya1967}. 
-%It is important to stress that this attenuation constraint and the truncation imposed to
-%equation \ref{eq:Fourier-tau-epsilon} implicitly assume some degree of smoothness
-%about the scalar function $\sigma(\mathbf{r}')$ (equation \ref{eq:scalar-potential-U})
-%defining the physical property distribution within the sources.
-%A detailed discussion of this implicit assumption is beyond the scope of our work.
+the exponential factor $e^{ \, k \, (z''_{0} - z^{\dagger}_{0})}$ as the 
+wavenumber $k$ increases \citep[e.g.,][]{bhattacharyya1967}. Otherwise, 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ is not square integrable and
+the Fourier-convolution theorem cannot be applied. 
+To investigate this attenuation condition we may use the upper bound 
+for $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ 
+(equation \ref{eq:abs-Fourier-U-r-dagger-bound}) to obtain:
+\begin{equation}
+	\vert \mathcal{F} [ \tau(\mathbf{r}'') ] \vert \le
+	\frac{e^{\, k \, (z''_{0} - z^{t})}}{k} \, \Omega \: ,
+	\: \quad z^{t} \le z''_{0} \: .
+	\label{eq:abs-Fourier-tau-bound}
+\end{equation}
+PAREI AQUI
 
 We get by substituting $\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-tau-epsilon}) and 
+(equation \ref{eq:Fourier-tau}) and 
 $\mathcal{F} \left[ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Dz-Psi}) into equation \ref{eq:Fourier-U-tau-epsilon} that
+(equation \ref{eq:Fourier-Dz-Psi}) into equation \ref{eq:Fourier-U-tau} that
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
 	\begin{cases}
@@ -155,12 +145,12 @@ $\mathcal{F} \left[ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right
 	\label{eq:Fourier-U-tau-epsilon-2}
 \end{equation}
 which shows that the Fourier transforms of $U_{\varepsilon}(\mathbf{r}^{\dagger})$
-(equation \ref{eq:U-tau-epsilon}) and $U(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:U-tau}) and $U(\mathbf{r}^{\dagger})$ 
 (equation \ref{eq:scalar-potential-U}) on the horizontal plane
 $z^{\dagger}_{0}$ located above the 3D sources coincide up to the truncating frequency
 $k_{\varepsilon}$.
 Then, by applying the Plancherel's theorem 
-\citep[][ p. 119]{bracewell1999} to equation \ref{eq:U-tau-epsilon} and
+\citep[][ p. 119]{bracewell1999} to equation \ref{eq:U-tau} and
 changing variables with $k_{x} = k \, \cos\theta$, 
 $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ we get
 \begin{equation}
@@ -193,7 +183,7 @@ integrable, we may use an adapted version of the Runge–Walsh theorem
 \citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
 large $k_{\varepsilon}$ such that the right hand side of 
 \ref{eq:Plancherel-U-tau-epsilon-2} is smaller than 
-$\varepsilon$, which guarantees that \ref{eq:U-tau-epsilon} holds true.
+$\varepsilon$, which guarantees that \ref{eq:U-tau} holds true.
 It is important to stress, however, that this is a pure existence theorem and 
 we may not be able to provide a particular rule on how to choose $k_{\varepsilon}$.
 
@@ -204,7 +194,7 @@ at investigating if this is also the case for points located above $z^{\dagger}_
 (i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
 To do this, let us first define the solution of the Dirichlet's problem 
 (equation \ref{eq:U-Dirichlet}) for the harmonic function 
-$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}) 
+$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau}) 
 and change the integration order:
 \begin{equation}
 \begin{split}
