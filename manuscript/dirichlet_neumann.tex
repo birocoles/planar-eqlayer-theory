@@ -61,68 +61,172 @@ theory} \cite[][ p. 246]{kellogg1967} on a plane.
 
 To generalize the integral equations \ref{eq:U-Dirichlet} and 
 \ref{eq:U-Neumann} for the case in which they are defined on a plane that crosses the 3D
-sources, we need first consider the following integral equation:
+sources, we need first consider the following harmonic function:
 \begin{equation}
-U(\mathbf{r}^{\dagger}) = 
+U_{\varepsilon}(\mathbf{r}^{\dagger}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau(\mathbf{r}'') \:
+\tau_{\varepsilon}(\mathbf{r}'') \:
 \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
 \:\: dx''dy'' \: ,
-\label{eq:U-tau}
+\label{eq:U-tau-epsilon}
 \end{equation}
-where $\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the vertical
-derivative of the same scaled inverse distance
-defined by equation \ref{eq:Psi}, but in this case computed for a point
+such that
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger})
+	\vert^{2} 
+	\: dx^{\dagger}dy^{\dagger} < \varepsilon \: ,
+	\label{eq:U-tau-epsilon-error}
+\end{equation}
+where $\varepsilon$ is an arbitrary small error level and 
+$\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the vertical
+derivative of the scaled inverse distance function (equation \ref{eq:Psi}) 
+evaluated at the points
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on the
-horizontal plane $z^{\dagger}_{0}$ above the 3D sources and a point 
+horizontal plane $z^{\dagger}_{0}$ above the 3D sources and 
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
-on a horizontal plane that is located at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
-with $\Delta z > 0$ , and may cross the 3D sources.
-By applying the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996},
-we obtain the following closed-form solution for $\tau(\mathbf{r}'')$ in Fourier domain:
+on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
+with $\Delta z > 0$. 
+The next step consists in finding an appropriate function $\tau_{\varepsilon}$ 
+satisfying equations \ref{eq:U-tau-epsilon} and \ref{eq:U-tau-epsilon-error}. 
+This can be made by first applying the Fourier-convolution theorem 
+\cite[][ p. 268]{blakely1996} to $U_{\varepsilon}(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:U-tau-epsilon}) to obtain:
 \begin{equation}
-\begin{split}
-\mathcal{F} \left[ \tau(\mathbf{r}'') \right] 
-&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] {\Big /}
-\mathcal{F} \left[ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right] \\
-&= \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-\, e^{\vert k \vert \, \Delta z}
-\end{split} \quad , \quad \Delta z > 0 \: , \quad \vert k \vert \ne 0 \: ,
-\label{eq:Fourier-U-tau}
+	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
+	= \mathcal{F} [ \tau_{\varepsilon}(\mathbf{r}'') ] \:
+	\mathcal{F} [ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:Fourier-U-tau-epsilon}
 \end{equation}
-where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
-with respect to the horizontal coordinates $x$ and $y$.
-The 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
+where
+\begin{equation}
+	\mathcal{F} [ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
+	= e^{- k \, \Delta z}
+	\quad , \quad \Delta z > 0 \: , \quad k \ne 0 \: ,
+	\label{eq:Fourier-Dz-Psi}
+\end{equation}
+is defined according to \citet[][ p. 275]{blakely1996}, with 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
+In these equations, $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier transform 
+(2DFT) with respect to the horizontal coordinates $x$ and $y$.
+These 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
 along the $x$ and $y$ directions, respectively.
-The wavenumbers have units of inverse distance. In equation \ref{eq:Fourier-U-tau},
-$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, the 2DFT of 
-$\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is computed according to
-\citet[][ p. 275]{blakely1996} and the dependence of the 2DFT's on $k_{x}$ and $k_{y}$
-is conveniently omitted to simplify the notation.
-From a geophysical point of view, $\tau(\mathbf{r}'')$ represents a  
-potential field obtained by computing the downward continuation of 
-$U(\mathbf{r}^{\dagger})$ to points that may be located inside the sources. 
-This potential field is different from the $U(\mathbf{r}'')$ produced by the true 3D 
-sources on the plane $z''_{0}$ for the case in which this plane crosses the sources.
-Note that $\tau(\mathbf{r}'')$ is equal to $U(\mathbf{r}'')$ for the case in which the
-horizontal plane $z''_{0}$ is located above the sources.
+The wavenumbers have units of inverse distance. The dependence of the 2DFT's on $k_{x}$ 
+and $k_{y}$ is conveniently omitted to simplify the notation.
+Now, we define a general solution for the function $\tau_{\varepsilon}$ as follows:
+\begin{equation}
+	\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right] = 
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{ \, k \, \Delta z} \: , 
+		&0 < k \le k_{\varepsilon} \\
+		0 \: , & k > k_{\varepsilon}
+	\end{cases}
+	\quad , \quad \Delta z > 0 \: ,
+	\label{eq:Fourier-tau-epsilon}
+\end{equation}
+where $k_{\epsilon}$ is a fixed and possibly very large truncating wavenumber.
+Note that $\tau_{\varepsilon}(\mathbf{r}'')$ 
+approximates the potential field obtained by computing the downward continuation of 
+$U(\mathbf{r}^{\dagger})$ to points located inside the sources. 
+It is well-known, however, that downward continuation can only be computed at 
+source-free points, where the Laplace's equation applies. This means that the
+continuation plane is limited by the top of the sources, otherwise the continued field will 
+present an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002}.
+Because of that, we truncate $\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-tau-epsilon}) at $k_{\epsilon}$ to guarantee that it is
+square integrable and that the Fourier-convolution theorem can be applied. 
+An alternative strategy is imposing that 
+$\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ attenuates more rapidly than
+the exponential factor $e^{ \, k \, \Delta z}$ as the wavenumber $k$ increases 
+\citep[e.g.,][]{bhattacharyya1967}. 
+It is important to stress that this attenuation constraint and the truncation imposed to
+equation \ref{eq:Fourier-tau-epsilon} implicitly assume some degree of smoothness
+about the scalar function $\sigma(\mathbf{r}')$ (equation \ref{eq:scalar-potential-U})
+defining the physical property distribution within the sources.
+A detailed discussion of this implicit assumption is beyond the scope of our work.
 
-Now, let us substitute the integral equation \ref{eq:U-tau} into the solution of the
-Dirichlet's problem (equation \ref{eq:U-Dirichlet}) and change the integration order:
+We get by substituting $\mathcal{F} \left[ \tau_{\varepsilon}(\mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-tau-epsilon}) and 
+$\mathcal{F} \left[ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Dz-Psi}) into equation \ref{eq:Fourier-U-tau-epsilon} that
+\begin{equation}
+	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
+	\begin{cases}
+		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+		\: , &0 < k \le k_{\varepsilon} \\
+		0 \: , & k > k_{\varepsilon}
+	\end{cases} \quad ,
+	\label{eq:Fourier-U-tau-epsilon-2}
+\end{equation}
+which shows that the Fourier transforms of $U_{\varepsilon}(\mathbf{r}^{\dagger})$
+(equation \ref{eq:U-tau-epsilon}) and $U(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:scalar-potential-U}) on the horizontal plane
+$z^{\dagger}_{0}$ located above the 3D sources coincide up to the truncating frequency
+$k_{\varepsilon}$.
+Then, by applying the Plancherel's theorem 
+%which corresponds to Parseval's theorem for
+%Fourier series and is sometimes also known as Rayleigh's theorem 
+\citep[][ p. 119]{bracewell1999} to equation \ref{eq:U-tau-epsilon} and
+changing variables with $k_{x} = k \, \cos\theta$, 
+$k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ we get
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger})
+	\vert^{2} 
+	\: dx^{\dagger}dy^{\dagger} = 
+	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+	U_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 	
+	\quad .
+	\label{eq:Plancherel-U-tau-epsilon}
+\end{equation}
+Finally, by substituting equation \ref{eq:Fourier-U-tau-epsilon-2} into
+\ref{eq:Plancherel-U-tau-epsilon} we obtain
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger})
+	\vert^{2} 
+	\: dx^{\dagger}dy^{\dagger} = 
+	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 	
+	\quad .
+	\label{eq:Plancherel-U-tau-epsilon-2}
+\end{equation}
+Because we know that $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ must be square
+integrable, we may use an adapted version of the Runge–Walsh theorem 
+\citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
+large $k_{\varepsilon}$ such that the right hand side of 
+\ref{eq:Plancherel-U-tau-epsilon-2} is smaller than 
+$\varepsilon$, which guarantees that \ref{eq:U-tau-epsilon} holds true.
+It is important to stress, however, that this is a pure existence theorem and 
+we may not be able to provide a particular rule on how to choose $k_{\varepsilon}$.
+
+We have just shown that the there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
+reproducing the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
+$z^{\dagger}_{0}$ to some predefined error level $\varepsilon$. What follows aims
+at investigating if this is also the case for points located above $z^{\dagger}_{0}$
+(i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
+To do this, let us first substitute the integral equation \ref{eq:U-tau-epsilon} into the 
+solution of the Dirichlet's problem (equation \ref{eq:U-Dirichlet}) and change the
+integration order:
 \begin{equation}
 \begin{split}
-U(\mathbf{r}) 
+U_{\varepsilon}(\mathbf{r}) 
 &= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 \left[ 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau(\mathbf{r}'') \:\: 
+\tau_{\varepsilon}(\mathbf{r}'') \:\: 
 \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
 \: dx''dy'' \right]
 \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
 \:\: dx^{\dagger}dy^{\dagger} \\
 &= 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau(\mathbf{r}'') \:\:
+\tau_{\varepsilon}(\mathbf{r}'') \:\:
 \left[ 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
@@ -132,25 +236,52 @@ U(\mathbf{r})
 \end{split}
 \label{eq:intermediary-equation}
 \end{equation}
-Finally, by noting that the term within brackets in the second line of equation
+Then, by noting that the term within brackets in the second line of equation
 \ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
 for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
 $z^{\dagger}_{0}$, we obtain:
 \begin{equation}
-U(\mathbf{r}) =  
+U_{\varepsilon}(\mathbf{r}) =  
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau(\mathbf{r}'') \:\: 
+\tau_{\varepsilon}(\mathbf{r}'') \:\: 
 \partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
 \:\: dx''dy'' \: , \quad z < z''_{0} \: .
-\label{eq:U-Dirichlet-cross}
+\label{eq:U-tau-epsilon-Dirichlet-cross}
 \end{equation}
-This equation shows that the same continuous function $\tau(\mathbf{r}'')$
-that reproduces the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
-$z^{\dagger}_{0}$ above the sources also reproduces the potential $U(\mathbf{r})$ 
-at all observation points 
-$\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$, with $z < z^{\dagger}_{0}$.
-Equation \ref{eq:U-Dirichlet-cross} generalizes the solution of Dirichlet's problem
-for the case in which the horizontal plane $z''_{0}$ crosses the true 3D sources.
+Now, we use the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) 
+to evaluate the difference between 
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U})
+and $U_{\varepsilon}(\mathbf{r})$ (equation \ref{eq:U-tau-epsilon-Dirichlet-cross})
+at an observation point $\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$,
+with $z < z^{\dagger}_{0}$, to show that:
+\begin{equation}
+	\vert U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) \vert^{2} =
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2} \:\: 
+	\partial_{z} \Psi^{2}(\mathbf{r}, \mathbf{r}^{\dagger})
+	\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: .
+	\label{eq:U-tau-epsilon-difference-r}
+\end{equation}
+Finally, we use the fact that 
+\begin{equation}
+	0 < z^{\dagger}_{0} - z \le \sqrt{\tfrac{1}{2\pi}} \implies
+	0 < \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \le 1 \: ,
+	\label{eq:Dz-Phi-constraint}
+\end{equation}
+and the inequality defined by equation \ref{eq:U-tau-epsilon-error} to obtain:
+\begin{equation}
+	\vert U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) \vert^{2} < \varepsilon \: ,
+	\quad 0 < z^{\dagger}_{0} - z \le \sqrt{\tfrac{1}{2\pi}} \: .
+	\label{eq:U-error-level-r}
+\end{equation}
+Equations \ref{eq:Fourier-tau-epsilon}, 
+\ref{eq:U-tau-epsilon-Dirichlet-cross} and \ref{eq:U-error-level-r}
+generalize the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) for the case
+in which the horizontal plane $z''_{0}$ crosses the true 3D sources. In this case, however,
+the potential field $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) cannot be exactly
+reproduced, but approximated to a predefined error level $\varepsilon$.
+
+PAREI AQUI
 
 Consider now the following integral equation:
 \begin{equation}
@@ -161,7 +292,7 @@ U(\mathbf{r}^{\dagger}) =
 \:\: dx''dy'' \: .
 \label{eq:U-upsilon}
 \end{equation}
-Then, by applying the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996},
+Then, by applying the Fourier-convolution theorem \cite[][ p. 268]{blakely1996},
 we obtain the following closed-form solution for 
 $\upsilon(\mathbf{r}'')$ in Fourier domain:
 \begin{equation}
