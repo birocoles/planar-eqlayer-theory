@@ -44,7 +44,7 @@ $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ and a point
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ on the horizontal
 plane $z^{\dagger}_{0}$ located above the sources.
 The common outline to deduce equations \ref{eq:U-Dirichlet} and \ref{eq:U-Neumann}
-can be found, for example, in \citet{roy1962} and \citet{reis_etal2020}.
+can be found, for example, in \citet{roy1962}.
 
 Equation \ref{eq:U-Dirichlet} states that $U(\mathbf{r})$ can be defined
 in terms of its values $U(\mathbf{r}^{\dagger})$ on the plane $z^{\dagger}_{0}$ and 
@@ -61,11 +61,11 @@ theory} \cite[][ p. 246]{kellogg1967} on a plane.
 
 To generalize the integral equations \ref{eq:U-Dirichlet} and 
 \ref{eq:U-Neumann} for the case in which they are defined on a plane that crosses the 3D
-sources, we need first consider the following harmonic function:
+sources, we first consider the following harmonic function:
 \begin{equation}
 U(\mathbf{r}^{\dagger}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau(\mathbf{r}'') \:
+\tau_{\varepsilon}(\mathbf{r}'') \:
 \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
 \:\: dx''dy'' \: ,
 \label{eq:U-tau}
@@ -78,14 +78,14 @@ horizontal plane $z^{\dagger}_{0}$ above the 3D sources and
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
 on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
 with $\Delta z > 0$. 
-The next step consists in finding an appropriate function $\tau$ 
+The next step consists in finding an appropriate function $\tau_{\varepsilon}$ 
 satisfying equation \ref{eq:U-tau}. 
 This can be made by first applying the Fourier-convolution theorem 
 \cite[][ p. 268]{blakely1996} to $U(\mathbf{r}^{\dagger})$ 
 (equation \ref{eq:U-tau}) to obtain:
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]
-	= \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	= \mathcal{F} [ \tau_{\varepsilon}(\mathbf{r}'') ] \:
 	\mathcal{F} [ \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:Fourier-U-tau}
 \end{equation}
@@ -98,21 +98,29 @@ where
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-Now, we define a general solution for $\tau$ as follows:
+Now, we define a general solution for $\tau_{\varepsilon}$ as follows:
 \begin{equation}
 	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
-	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-	e^{k \, (z''_{0} - z^{\dagger}_{0})}
-	\: , \quad z''_{0} > z^{\dagger}_{0} \: .
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\epsilon} \: , \\
+		0 & , \quad k > k_{\epsilon} \: ,
+	\end{cases}
 	\label{eq:Fourier-tau}
 \end{equation}
-Note that $\tau(\mathbf{r}'')$ 
+where $k_{\epsilon}$ is a fixed and possibly very large truncating wavenumber.
+Note that $\tau_{\epsilon}(\mathbf{r}'')$ 
 approximates the potential field obtained by computing the downward continuation of 
 $U(\mathbf{r}^{\dagger})$ to points located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
 continuation plane is limited by the top of the sources, otherwise the continued field will 
-present an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002}.
+present an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
+prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
+In this case, the Fourier-convolution theorem cannot be applied.
+
+
 Because of that, $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ (equation
 \ref{eq:Fourier-tau}) is valid only for the particular case in which
 $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ attenuates more rapidly than

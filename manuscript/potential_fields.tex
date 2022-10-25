@@ -171,8 +171,8 @@ respectively, and
 	\label{eq:Fourier-sigma-r'}
 \end{equation}
 is the 2DFT of the function $\sigma(\mathbf{r}')$ 
-(equation \ref{eq:scalar-potential-U}) on a horizontal plane with constant vertical
-coordinate $z'$ with $\mathtt{i}$ representing the imaginary unit.
+(equation \ref{eq:scalar-potential-U}) on a horizontal plane, with constant vertical
+coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
 The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
 It is important noting that the horizontal plane $z'$ may cross the sources.
@@ -201,17 +201,19 @@ $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ of $U(\mathbf{r}^{\dagger}
 (equation \ref{eq:scalar-potential-U}) on a plane above the sources 
 (i) is finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tends
 exponentially to zero as $k$ goes to infinite.
+It means that $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ is square integrable.
 Our approach to deduce an upper bound for 
 $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ (equation 
 \ref{eq:abs-Fourier-U-r-dagger-bound}) is the same proposed by
-\citet{bhattacharyya1967} to define
+\citet{bhattacharyya1967} to define 
 \begin{equation}
 	\vert \mathcal{F} [ \partial_{z} U(\mathbf{r}^{\dagger}) ] \vert \le
 	2 \pi \kappa \, e^{- k \, (z^{t} - z^{\dagger}_{0})} \, \Omega \: ,
 	\: \quad z^{\dagger}_{0} < z^{t} \: ,
 	\label{eq:abs-Fourier-DzU-r-dagger-bound}
 \end{equation}
-which can also be deduced from equations \ref{eq:Fourier-U-r-dagger}--\ref{eq:Omega}.
+which is an upper bound for the amplitude spectrum of 
+$\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:1st-deriv-U}).
 
 
 
