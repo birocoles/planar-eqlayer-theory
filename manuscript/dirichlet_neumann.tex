@@ -75,7 +75,7 @@ subject to
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert U(\mathbf{r}^{\dagger}) - 
 	U_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} < \varepsilon \: ,
+	\:\: dx^{\dagger}dy^{\dagger} \le \varepsilon \: ,
 	\label{eq:epsilon}
 \end{equation}
 where $\varepsilon > 0$ is a fixed but arbitrarily small error level, 
@@ -176,7 +176,7 @@ $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ we get
 	\quad .
 	\label{eq:Plancherel-U-tau-epsilon}
 \end{equation}
-Finally, by substituting equation \ref{eq:Fourier-U-tau-epsilon-2} into
+If we now substitute equation \ref{eq:Fourier-U-tau-epsilon-2} into
 \ref{eq:Plancherel-U-tau-epsilon} we obtain
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -200,85 +200,102 @@ $\varepsilon > 0$ (equation \ref{eq:epsilon}), which guarantees that
 \ref{eq:U-tau-epsilon} holds true.
 It is important to stress, however, that this is a pure existence theorem and 
 we may not be able to provide a particular rule on how to choose $k_{\varepsilon}$.
+Fortunately, we may substitute the upper bound for the amplitude spectrum of
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:abs-Fourier-U-r-dagger-bound})
+into the right side of equation \ref{eq:Plancherel-U-tau-epsilon-2} to define an 
+$\varepsilon$ (equation \ref{eq:epsilon}) as follows:
+\begin{equation}
+	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\le 2\pi \, \Omega^{2} \, \Gamma(0, 2 \, \Delta z \, k_{\varepsilon}) = \varepsilon \quad ,
+	\label{eq:epsilon-Gamma-function}
+\end{equation}
+where 
+\begin{equation}
+	\Gamma(0, 2 \, \Delta z \, k_{\varepsilon}) = \int\limits_{k_{\varepsilon}}^{\infty}
+	\frac{e^{- 2 \, \Delta z \, k }}{k} \: dk \: , \quad \Delta z = (z^{t} - z^{\dagger}_{0}) > 0 \: ,
+	\label{eq:Gamma-function}
+\end{equation}
+is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
 
-%We have just shown that the there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
-%reproducing the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
-%$z^{\dagger}_{0}$ to some predefined error level $\varepsilon$. What follows aims
-%at investigating if this is also the case for points located above $z^{\dagger}_{0}$
-%(i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
-%To do this, let us first define the solution of the Dirichlet's problem 
-%(equation \ref{eq:U-Dirichlet}) for the harmonic function 
-%$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau}) 
-%and change the integration order:
-%\begin{equation}
-%\begin{split}
-%U_{\varepsilon}(\mathbf{r}) 
-%&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%\left[ 
-%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%\tau_{\varepsilon}(\mathbf{r}'') \:\: 
-%\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
-%\: dx''dy'' \right]
-%\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
-%\:\: dx^{\dagger}dy^{\dagger} \\
-%&= 
-%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%\tau_{\varepsilon}(\mathbf{r}'') \:\:
-%\left[ 
-%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
-%\: \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
-%\: dx^{\dagger}dy^{\dagger} \right]
-%\:\: dx''dy'' \quad .
-%\end{split}
-%\label{eq:intermediary-equation}
-%\end{equation}
-%Then, by noting that the term within brackets in the second line of equation
-%\ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
-%for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
-%$z^{\dagger}_{0}$, we obtain:
-%\begin{equation}
-%U_{\varepsilon}(\mathbf{r}) =  
-%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%\tau_{\varepsilon}(\mathbf{r}'') \:\: 
-%\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
-%\:\: dx''dy'' \: , \quad z < z''_{0} \: .
-%\label{eq:U-tau-epsilon-Dirichlet-cross}
-%\end{equation}
-%Now, we define the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) 
-%for the difference between $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U})
-%and $U_{\varepsilon}(\mathbf{r})$ (equation \ref{eq:U-tau-epsilon-Dirichlet-cross})
-%at an observation point $\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$,
-%with $z < z^{\dagger}_{0}$:
-%\begin{equation}
-%	U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) =
-%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-%	\left[ U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] \: 
-%	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger})
-%	\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: .
-%	\label{eq:U-tau-epsilon-difference-r}
-%\end{equation}
-%Finally, we use the inequality defined by equation \ref{eq:U-tau-epsilon-error},
-%the squared absolute value of the difference $U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r})$
-%(equation \ref{eq:U-tau-epsilon-difference-r}) and the fact that 
-%\begin{equation}
-%	z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
-%	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \le 1 \: ,
-%	\label{eq:Dz-Phi-constraint}
-%\end{equation}
-%to show that:
-%\begin{equation}
-%	\vert U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) \vert < \sqrt{\varepsilon} \: ,
-%	\quad z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
-%	\label{eq:U-error-level-r}
-%\end{equation}
-%
+We have just shown that the there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
+reproducing the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
+$z^{\dagger}_{0}$ to some predefined error level $\varepsilon$. What follows aims
+at investigating if this is also the case for points located above $z^{\dagger}_{0}$
+(i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
+To do this, let us first define the solution of the Dirichlet's problem 
+(equation \ref{eq:U-Dirichlet}) for the harmonic function 
+$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau}) 
+and change the integration order:
+\begin{equation}
+\begin{split}
+U_{\varepsilon}(\mathbf{r}) 
+&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau_{\varepsilon}(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+\: dx''dy'' \right]
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\:\: dx^{\dagger}dy^{\dagger} \\
+&= 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau_{\varepsilon}(\mathbf{r}'') \:\:
+\left[ 
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
+\: \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+\: dx^{\dagger}dy^{\dagger} \right]
+\:\: dx''dy'' \quad .
+\end{split}
+\label{eq:intermediary-equation}
+\end{equation}
+Then, by noting that the term within brackets in the second line of equation
+\ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
+for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
+$z^{\dagger}_{0}$, we obtain:
+\begin{equation}
+U_{\varepsilon}(\mathbf{r}) =  
+\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+\tau_{\varepsilon}(\mathbf{r}'') \:\: 
+\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
+\:\: dx''dy'' \: , \quad z < z''_{0} \: .
+\label{eq:U-tau-epsilon-Dirichlet-cross}
+\end{equation}
+Now, we define the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) 
+for the difference between $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U})
+and $U_{\varepsilon}(\mathbf{r})$ (equation \ref{eq:U-tau-epsilon-Dirichlet-cross})
+at an observation point $\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$,
+with $z < z^{\dagger}_{0}$:
+\begin{equation}
+	U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) =
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\left[ U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] \: 
+	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger})
+	\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: .
+	\label{eq:U-tau-epsilon-difference-r}
+\end{equation}
+Finally, we use the inequality defined by equation \ref{eq:U-tau-epsilon-error},
+the squared absolute value of the difference $U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r})$
+(equation \ref{eq:U-tau-epsilon-difference-r}) and the fact that 
+\begin{equation}
+	z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
+	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \le 1 \: ,
+	\label{eq:Dz-Phi-constraint}
+\end{equation}
+to show that:
+\begin{equation}
+	\vert U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) \vert < \sqrt{\varepsilon} \: ,
+	\quad z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
+	\label{eq:U-error-level-r}
+\end{equation}
 Equations \ref{eq:U-tau-epsilon}, \ref{eq:epsilon} and \ref{eq:Fourier-tau-epsilon}
 generalize the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) for the 
 case in which the horizontal plane $z''_{0}$ crosses the true 3D sources. 
 In this case, however, the potential field $U$ 
 (equation \ref{eq:scalar-potential-U}) cannot be exactly
 reproduced, but approximated to a predefined error level $\varepsilon$.
+
 
 PAREI AQUI 1
 
@@ -296,7 +313,7 @@ subject to
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert U(\mathbf{r}^{\dagger}) - 
 	U_{\zeta}(\mathbf{r}^{\dagger}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} < \zeta \: ,
+	\:\: dx^{\dagger}dy^{\dagger} \le \zeta \: ,
 	\label{eq:zeta}
 \end{equation}
 where $\zeta > 0$ is a fixed but arbitrarily small error level, 
@@ -373,6 +390,8 @@ the vertical derivative of $U_{\zeta}(\mathbf{r}^{\dagger})$
 (equation \ref{eq:U-upsilon-zeta}) 
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\zeta}$.
+
+
 Again, we may use the Plancherel's theorem \citep[][ p. 119]{bracewell1999} and 
 an adapted version of the Runge–Walsh theorem 
 \citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
