@@ -199,7 +199,7 @@ large $k_{\varepsilon}$ such that the right hand side of
 $\varepsilon > 0$ (equation \ref{eq:epsilon}), which guarantees that 
 \ref{eq:U-tau-epsilon} holds true.
 It is important to stress, however, that this is a pure existence theorem and 
-we may not be able to provide a particular rule on how to choose $k_{\varepsilon}$.
+we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
 Fortunately, we may substitute the upper bound for the amplitude spectrum of
 $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:abs-Fourier-U-r-dagger-bound})
 into the right side of equation \ref{eq:Plancherel-U-tau-epsilon-2} to define an 
@@ -219,14 +219,17 @@ where
 is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
 
 We have just shown that the there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
-reproducing the potential $U(\mathbf{r}^{\dagger})$ on the horizontal plane 
-$z^{\dagger}_{0}$ to some predefined error level $\varepsilon$. What follows aims
-at investigating if this is also the case for points located above $z^{\dagger}_{0}$
-(i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
+(equation \ref{eq:Fourier-tau-epsilon}) defining the potential 
+$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}), which
+reproduces $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) on the
+horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error 
+level $\varepsilon$ (equations \ref{eq:epsilon} and \ref{eq:epsilon-Gamma-function}).
+What follows aims at investigating if this is also the case for points located 
+above $z^{\dagger}_{0}$ (i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
 To do this, let us first define the solution of the Dirichlet's problem 
 (equation \ref{eq:U-Dirichlet}) for the harmonic function 
-$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau}) 
-and change the integration order:
+$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}) on the
+plane $z^{\dagger}_{0}$ and change the integration order:
 \begin{equation}
 \begin{split}
 U_{\varepsilon}(\mathbf{r}) 
@@ -262,20 +265,24 @@ U_{\varepsilon}(\mathbf{r}) =
 \:\: dx''dy'' \: , \quad z < z''_{0} \: .
 \label{eq:U-tau-epsilon-Dirichlet-cross}
 \end{equation}
-Now, we define the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) 
-for the difference between $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U})
-and $U_{\varepsilon}(\mathbf{r})$ (equation \ref{eq:U-tau-epsilon-Dirichlet-cross})
-at an observation point $\mathbf{r} = (x, y, z)^{\top}$ located above $z^{\dagger}_{0}$,
-with $z < z^{\dagger}_{0}$:
+Now, we integrate the squared absolute difference between $U(\mathbf{r})$ 
+(equation \ref{eq:scalar-potential-U}) and $U_{\varepsilon}(\mathbf{r})$ 
+(equation \ref{eq:U-tau-epsilon-Dirichlet-cross}) on a horizontal plane 
+located at $z^{\ddagger}_{0} < z^{\dagger}_{0}$ to obtain
 \begin{equation}
-	U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) =
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\left[ U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] \: 
-	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger})
-	\: dx^{\dagger}dy^{\dagger} \: , \quad z < z^{\dagger}_{0} \: .
-	\label{eq:U-tau-epsilon-difference-r}
+	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
+	\: dx^{\ddagger}dy^{\ddagger} 
+	= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2} \: 
+	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger})^{2}
+	\: dx^{\dagger}dy^{\dagger} \: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
+	\label{eq:U-tau-epsilon-difference}
 \end{equation}
-Finally, we use the inequality defined by equation \ref{eq:U-tau-epsilon-error},
+
+PAREI AQUI
+
+Finally, we use the inequality defined by equation \ref{eq:epsilon},
 the squared absolute value of the difference $U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r})$
 (equation \ref{eq:U-tau-epsilon-difference-r}) and the fact that 
 \begin{equation}
