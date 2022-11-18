@@ -279,137 +279,138 @@ located at $z^{\ddagger}_{0} < z^{\dagger}_{0}$ to obtain
 	\: dx^{\dagger}dy^{\dagger} \: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
 	\label{eq:U-tau-epsilon-difference}
 \end{equation}
-
-PAREI AQUI
-
-Finally, we use the inequality defined by equation \ref{eq:epsilon},
-the squared absolute value of the difference $U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r})$
-(equation \ref{eq:U-tau-epsilon-difference-r}) and the fact that 
+Finally, we use the inequality 
 \begin{equation}
-	z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
-	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) \le 1 \: ,
+	z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
+	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger}) \le 1 \: ,
 	\label{eq:Dz-Phi-constraint}
 \end{equation}
-to show that:
+and equation \ref{eq:epsilon} to show that the left side of equation
+\ref{eq:U-tau-epsilon-difference} satisfies:
 \begin{equation}
-	\vert U(\mathbf{r}) - U_{\varepsilon}(\mathbf{r}) \vert < \sqrt{\varepsilon} \: ,
-	\quad z \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
+	\: dx^{\ddagger}dy^{\ddagger} \le \varepsilon \: ,
+	\quad z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
 	\label{eq:U-error-level-r}
 \end{equation}
-Equations \ref{eq:U-tau-epsilon}, \ref{eq:epsilon} and \ref{eq:Fourier-tau-epsilon}
-generalize the solution of Dirichlet's problem (equation \ref{eq:U-Dirichlet}) for the 
-case in which the horizontal plane $z''_{0}$ crosses the true 3D sources. 
-In this case, however, the potential field $U$ 
-(equation \ref{eq:scalar-potential-U}) cannot be exactly
-reproduced, but approximated to a predefined error level $\varepsilon$.
+
+We have shown here an attempt to generalize the Dirichlet's problem 
+(equation \ref{eq:U-Dirichlet}) for the case in which the $z''_{0}$ crosses the sources.
+In this case, the potential field $U$ (equation \ref{eq:scalar-potential-U})
+cannot be exactly reproduced, but approximated by $U_{\varepsilon}$ 
+(equation \ref{eq:U-tau-epsilon}) to a predefined error level $\varepsilon$
+(equations \ref{eq:epsilon} and \ref{eq:epsilon-Gamma-function}) in terms of
+a continuous function $\tau_{\varepsilon}$ (equation \ref{eq:Fourier-tau-epsilon}).
 
 
-PAREI AQUI 1
 
-Consider now the following integral equation:
-\begin{equation}
-	U_{\zeta}(\mathbf{r}^{\dagger}) = 
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\upsilon_{\zeta}(\mathbf{r}'') \:
-	\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
-	\:\: dx''dy'' \: ,
-	\label{eq:U-upsilon-zeta}
-\end{equation}
-subject to
-\begin{equation}
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert U(\mathbf{r}^{\dagger}) - 
-	U_{\zeta}(\mathbf{r}^{\dagger}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} \le \zeta \: ,
-	\label{eq:zeta}
-\end{equation}
-where $\zeta > 0$ is a fixed but arbitrarily small error level, 
-$\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the scaled inverse distance function 
-(equation \ref{eq:Psi}) evaluated at the points
-$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on the
-horizontal plane $z^{\dagger}_{0}$ above the 3D sources and 
-$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
-on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
-with $\Delta z > 0$. 
-
-The same approach followed to find a function $\tau_{\varepsilon}$ 
-satisfying equation \ref{eq:U-tau-epsilon} can be applied to find a function
-$\tau_{\zeta}$ satisfying equation \ref{eq:U-upsilon-zeta}.
-We first apply the Fourier-convolution theorem 
-\cite[][ p. 268]{blakely1996} to $U_{\zeta}(\mathbf{r}^{\dagger})$ 
-(equation \ref{eq:U-upsilon-zeta}) and obtain:
-\begin{equation}
-	\mathcal{F} [ U_{\zeta}(\mathbf{r}^{\dagger}) ]
-	= \mathcal{F} [ \upsilon_{\zeta}(\mathbf{r}'') ] \:
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\label{eq:Fourier-U-upsilon}
-\end{equation}
-where
-\begin{equation}
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
-	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
-	\: , \quad z''_{0} > z^{\dagger}_{0} \: , \quad k \ne 0 \: ,
-	\label{eq:Fourier-Psi}
-\end{equation}
-is defined according to \citet[][ p. 275]{blakely1996}, with 
-$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-Then we define a general solution for $\upsilon_{\zeta}$ as follows:
-\begin{equation}
-	\mathcal{F} \left[ \upsilon_{\zeta}(\mathbf{r}'') \right] = 
-	\begin{cases}
-		\mathcal{F} \left[ \partial_{z} U(\mathbf{r}^{\dagger}) \right] 
-		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\zeta} \: , \\
-		0 & , \quad k > k_{\zeta} \: ,
-	\end{cases}
-	\label{eq:Fourier-upsilon-zeta}
-\end{equation}
-where $\mathcal{F} \left[ \partial_{z} U(\mathbf{r}^{\dagger}) \right] = 
-k \, \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$
-\cite[][ p. 326]{blakely1996} and $k_{\zeta}$ is a fixed and possibly very 
-large truncating wavenumber.
-In this case, $\upsilon_{\zeta}(\mathbf{r}'')$ 
-approximates the potential field obtained by computing the downward continuation of 
-$\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-Neumann}) 
-to points located inside the sources. 
-
-Then, by substituting 
-$\mathcal{F} \left[ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-Psi}) and 
-$\mathcal{F} \left[ \upsilon_{\zeta}(\mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-upsilon-zeta}) into equation \ref{eq:Fourier-U-upsilon},
-as well using the identity 
-$\mathcal{F} \left[ \partial_{z} U_{\zeta}(\mathbf{r}^{\dagger}) \right] = 
-k \, \mathcal{F} \left[ U_{\zeta}(\mathbf{r}^{\dagger}) \right]$
-\cite[][ p. 326]{blakely1996}, we show that
-\begin{equation}
-	\mathcal{F} [ \partial_{z} U_{\zeta}(\mathbf{r}^{\dagger}) ] = 
-	\begin{cases}
-		\mathcal{F} [ \partial_{z} U(\mathbf{r}^{\dagger}) ] &
-		, \quad 0 < k \le k_{\zeta} \: , \\
-		0 & , \quad k > k_{\zeta} \: ,
-	\end{cases}
-	\label{eq:Fourier-Dz-U-upsilon-zeta}
-\end{equation}
-which shows that the Fourier transforms of 
-$\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:1st-deriv-U}) and  
-the vertical derivative of $U_{\zeta}(\mathbf{r}^{\dagger})$ 
-(equation \ref{eq:U-upsilon-zeta}) 
-on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
-to the truncating wavenumber $k_{\zeta}$.
-
-
-Again, we may use the Plancherel's theorem \citep[][ p. 119]{bracewell1999} and 
-an adapted version of the Runge–Walsh theorem 
-\citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
-large $k_{\zeta}$ such that equations \ref{eq:U-upsilon-zeta}
-and \ref{eq:zeta} hold true.
-
-Equations \ref{eq:U-upsilon-zeta}, \ref{eq:zeta} and \ref{eq:Fourier-upsilon-zeta}
-generalize the solution of Neumann's problem (equation \ref{eq:U-Neumann}) for the 
-case in which the horizontal plane $z''_{0}$ crosses the true 3D sources. 
-In this case, however, the potential field $U$ 
-(equation \ref{eq:scalar-potential-U}) cannot be exactly
-reproduced, but approximated to a predefined error level $\zeta$.
-
-PAREI AQUI 2
+%PAREI AQUI 1
+%
+%Consider now the following integral equation:
+%\begin{equation}
+%	U_{\zeta}(\mathbf{r}^{\dagger}) = 
+%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\upsilon_{\zeta}(\mathbf{r}'') \:
+%	\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+%	\:\: dx''dy'' \: ,
+%	\label{eq:U-upsilon-zeta}
+%\end{equation}
+%subject to
+%\begin{equation}
+%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\vert U(\mathbf{r}^{\dagger}) - 
+%	U_{\zeta}(\mathbf{r}^{\dagger}) \vert^{2}
+%	\:\: dx^{\dagger}dy^{\dagger} \le \zeta \: ,
+%	\label{eq:zeta}
+%\end{equation}
+%where $\zeta > 0$ is a fixed but arbitrarily small error level, 
+%$\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ is the scaled inverse distance function 
+%(equation \ref{eq:Psi}) evaluated at the points
+%$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on the
+%horizontal plane $z^{\dagger}_{0}$ above the 3D sources and 
+%$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ 
+%on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
+%with $\Delta z > 0$. 
+%
+%The same approach followed to find a function $\tau_{\varepsilon}$ 
+%satisfying equation \ref{eq:U-tau-epsilon} can be applied to find a function
+%$\tau_{\zeta}$ satisfying equation \ref{eq:U-upsilon-zeta}.
+%We first apply the Fourier-convolution theorem 
+%\cite[][ p. 268]{blakely1996} to $U_{\zeta}(\mathbf{r}^{\dagger})$ 
+%(equation \ref{eq:U-upsilon-zeta}) and obtain:
+%\begin{equation}
+%	\mathcal{F} [ U_{\zeta}(\mathbf{r}^{\dagger}) ]
+%	= \mathcal{F} [ \upsilon_{\zeta}(\mathbf{r}'') ] \:
+%	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+%	\label{eq:Fourier-U-upsilon}
+%\end{equation}
+%where
+%\begin{equation}
+%	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
+%	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
+%	\: , \quad z''_{0} > z^{\dagger}_{0} \: , \quad k \ne 0 \: ,
+%	\label{eq:Fourier-Psi}
+%\end{equation}
+%is defined according to \citet[][ p. 275]{blakely1996}, with 
+%$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
+%Then we define a general solution for $\upsilon_{\zeta}$ as follows:
+%\begin{equation}
+%	\mathcal{F} \left[ \upsilon_{\zeta}(\mathbf{r}'') \right] = 
+%	\begin{cases}
+%		\mathcal{F} \left[ \partial_{z} U(\mathbf{r}^{\dagger}) \right] 
+%		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+%		\quad 0 < k \le k_{\zeta} \: , \\
+%		0 & , \quad k > k_{\zeta} \: ,
+%	\end{cases}
+%	\label{eq:Fourier-upsilon-zeta}
+%\end{equation}
+%where $\mathcal{F} \left[ \partial_{z} U(\mathbf{r}^{\dagger}) \right] = 
+%k \, \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$
+%\cite[][ p. 326]{blakely1996} and $k_{\zeta}$ is a fixed and possibly very 
+%large truncating wavenumber.
+%In this case, $\upsilon_{\zeta}(\mathbf{r}'')$ 
+%approximates the potential field obtained by computing the downward continuation of 
+%$\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-Neumann}) 
+%to points located inside the sources. 
+%
+%Then, by substituting 
+%$\mathcal{F} \left[ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+%(equation \ref{eq:Fourier-Psi}) and 
+%$\mathcal{F} \left[ \upsilon_{\zeta}(\mathbf{r}'') \right]$
+%(equation \ref{eq:Fourier-upsilon-zeta}) into equation \ref{eq:Fourier-U-upsilon},
+%as well using the identity 
+%$\mathcal{F} \left[ \partial_{z} U_{\zeta}(\mathbf{r}^{\dagger}) \right] = 
+%k \, \mathcal{F} \left[ U_{\zeta}(\mathbf{r}^{\dagger}) \right]$
+%\cite[][ p. 326]{blakely1996}, we show that
+%\begin{equation}
+%	\mathcal{F} [ \partial_{z} U_{\zeta}(\mathbf{r}^{\dagger}) ] = 
+%	\begin{cases}
+%		\mathcal{F} [ \partial_{z} U(\mathbf{r}^{\dagger}) ] &
+%		, \quad 0 < k \le k_{\zeta} \: , \\
+%		0 & , \quad k > k_{\zeta} \: ,
+%	\end{cases}
+%	\label{eq:Fourier-Dz-U-upsilon-zeta}
+%\end{equation}
+%which shows that the Fourier transforms of 
+%$\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:1st-deriv-U}) and  
+%the vertical derivative of $U_{\zeta}(\mathbf{r}^{\dagger})$ 
+%(equation \ref{eq:U-upsilon-zeta}) 
+%on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
+%to the truncating wavenumber $k_{\zeta}$.
+%
+%
+%Again, we may use the Plancherel's theorem \citep[][ p. 119]{bracewell1999} and 
+%an adapted version of the Runge–Walsh theorem 
+%\citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
+%large $k_{\zeta}$ such that equations \ref{eq:U-upsilon-zeta}
+%and \ref{eq:zeta} hold true.
+%
+%Equations \ref{eq:U-upsilon-zeta}, \ref{eq:zeta} and \ref{eq:Fourier-upsilon-zeta}
+%generalize the solution of Neumann's problem (equation \ref{eq:U-Neumann}) for the 
+%case in which the horizontal plane $z''_{0}$ crosses the true 3D sources. 
+%In this case, however, the potential field $U$ 
+%(equation \ref{eq:scalar-potential-U}) cannot be exactly
+%reproduced, but approximated to a predefined error level $\zeta$.
+%
+%PAREI AQUI 2
