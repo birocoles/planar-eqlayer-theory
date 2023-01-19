@@ -59,9 +59,11 @@ theory} \cite[][ p. 246]{kellogg1967} on a plane.
 \subsection{Horizontal plane that crosses the sources}
 \label{subsec:generalized_dirichlet_neumann}
 
-To investigate the integral equations \ref{eq:U-Dirichlet} and 
-\ref{eq:U-Neumann} for the case in which they are defined on a plane that crosses the 3D
-sources, we first consider the following harmonic function:
+\subsubsection{Generalized Dirichlet's problem}
+
+To investigate the integral equation \ref{eq:U-Dirichlet} for the case in which 
+it is defined on a plane that crosses the 3D sources, we first consider the 
+following harmonic function:
 \begin{equation}
 U_{\varepsilon}(\mathbf{r}^{\dagger}) = 
 \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -86,8 +88,7 @@ $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}
 \notin \overline{\mathcal{V}}$ on the
 horizontal plane $z^{\dagger}_{0}$ above the 3D sources and 
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \overline{\mathcal{V}}$ 
-on a horizontal plane that crosses the 3D sources at $z''_{0} = z^{\dagger}_{0} + \Delta z$, 
-with $\Delta z > 0$. 
+on a horizontal plane that crosses the 3D sources at $z''_{0} > z^{\dagger}_{0}$. 
 The next step consists in finding an appropriate function $\tau_{\varepsilon}$ 
 satisfying equation \ref{eq:U-tau-epsilon}. 
 This can be made by first applying the Fourier-convolution theorem 
@@ -189,6 +190,7 @@ If we now substitute equation \ref{eq:Fourier-U-tau-epsilon-2} into
 	\quad .
 	\label{eq:Plancherel-U-tau-epsilon-2}
 \end{equation}
+
 Because we know that $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ 
 (equation \ref{eq:Fourier-U-r-dagger}) is square integrable 
 (equation \ref{eq:abs-Fourier-U-r-dagger-bound}), we may use an adapted version 
@@ -213,97 +215,109 @@ $\varepsilon$ (equation \ref{eq:epsilon}) as follows:
 where 
 \begin{equation}
 	\Gamma(0, 2 \, \Delta z \, k_{\varepsilon}) = \int\limits_{k_{\varepsilon}}^{\infty}
-	\frac{e^{- 2 \, \Delta z \, k }}{k} \: dk \: , \quad \Delta z = (z^{t} - z^{\dagger}_{0}) > 0 \: ,
+	\frac{e^{- 2 \, \Delta z \, k }}{k} \: dk \: , \quad \Delta z = z^{t} - z^{\dagger}_{0} > 0 \: ,
 	\label{eq:Gamma-function}
 \end{equation}
 is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
 
-We have just shown that the there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
+We have just shown that there exists a function $\tau_{\varepsilon}(\mathbf{r}'')$
 (equation \ref{eq:Fourier-tau-epsilon}) defining the potential 
 $U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}), which
 reproduces $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) on the
 horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error 
 level $\varepsilon$ (equations \ref{eq:epsilon} and \ref{eq:epsilon-Gamma-function}).
-What follows aims at investigating if this is also the case for points located 
-above $z^{\dagger}_{0}$ (i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
-To do this, let us first define the solution of the Dirichlet's problem 
-(equation \ref{eq:U-Dirichlet}) for the harmonic function 
-$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}) on the
-plane $z^{\dagger}_{0}$ and change the integration order:
-\begin{equation}
-\begin{split}
-U_{\varepsilon}(\mathbf{r}) 
-&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\left[ 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau_{\varepsilon}(\mathbf{r}'') \:\: 
-\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
-\: dx''dy'' \right]
-\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
-\:\: dx^{\dagger}dy^{\dagger} \\
-&= 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau_{\varepsilon}(\mathbf{r}'') \:\:
-\left[ 
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
-\: \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
-\: dx^{\dagger}dy^{\dagger} \right]
-\:\: dx''dy'' \quad .
-\end{split}
-\label{eq:intermediary-equation}
-\end{equation}
-Then, by noting that the term within brackets in the second line of equation
-\ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
-for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
-$z^{\dagger}_{0}$, we obtain:
-\begin{equation}
-U_{\varepsilon}(\mathbf{r}) =  
-\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-\tau_{\varepsilon}(\mathbf{r}'') \:\: 
-\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
-\:\: dx''dy'' \: , \quad z < z''_{0} \: .
-\label{eq:U-tau-epsilon-Dirichlet-cross}
-\end{equation}
-Now, we integrate the squared absolute difference between $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) and $U_{\varepsilon}(\mathbf{r})$ 
-(equation \ref{eq:U-tau-epsilon-Dirichlet-cross}) on a horizontal plane 
-located at $z^{\ddagger}_{0} < z^{\dagger}_{0}$ to obtain
-\begin{equation}
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
-	\: dx^{\ddagger}dy^{\ddagger} 
-	= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2} \: 
-	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger})^{2}
-	\: dx^{\dagger}dy^{\dagger} \: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
-	\label{eq:U-tau-epsilon-difference}
-\end{equation}
-Finally, we use the inequality 
-\begin{equation}
-	z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
-	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger}) \le 1 \: ,
-	\label{eq:Dz-Phi-constraint}
-\end{equation}
-and equation \ref{eq:epsilon} to show that the left side of equation
-\ref{eq:U-tau-epsilon-difference} satisfies:
-\begin{equation}
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
-	\: dx^{\ddagger}dy^{\ddagger} \le \varepsilon \: ,
-	\quad z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
-	\label{eq:U-error-level-r}
-\end{equation}
-
-We have shown here an attempt to generalize the Dirichlet's problem 
-(equation \ref{eq:U-Dirichlet}) for the case in which the $z''_{0}$ crosses the sources.
-In this case, the potential field $U$ (equation \ref{eq:scalar-potential-U})
-cannot be exactly reproduced, but approximated by $U_{\varepsilon}$ 
+This result allows us generalizing the Dirichlet's problem 
+(equation \ref{eq:U-Dirichlet}) as follows:
+The potential field $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) is exactly reproduced
+in terms of its values on a plane $z^{\dagger}_{0}$ located above the sources,
+according to equation \ref{eq:U-Dirichlet}, or approximated by $U_{\varepsilon}$ 
 (equation \ref{eq:U-tau-epsilon}) to a predefined error level $\varepsilon$
 (equations \ref{eq:epsilon} and \ref{eq:epsilon-Gamma-function}) in terms of
 a continuous function $\tau_{\varepsilon}$ (equation \ref{eq:Fourier-tau-epsilon}).
 
 
+%What follows aims at investigating if this is also the case for points located 
+%above $z^{\dagger}_{0}$ (i.e., at points with vertical coordinate $z < z^{\dagger}_{0}$).
+%To do this, let us first define the solution of the Dirichlet's problem 
+%(equation \ref{eq:U-Dirichlet}) for the harmonic function 
+%$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:U-tau-epsilon}) on the
+%plane $z^{\dagger}_{0}$ and change the integration order:
+%\begin{equation}
+%\begin{split}
+%U_{\varepsilon}(\mathbf{r}) 
+%&= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\left[ 
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\tau_{\varepsilon}(\mathbf{r}'') \:\: 
+%\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') 
+%\: dx''dy'' \right]
+%\partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+%\:\: dx^{\dagger}dy^{\dagger} \\
+%&= 
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\tau_{\varepsilon}(\mathbf{r}'') \:\:
+%\left[ 
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')
+%\: \partial_{z} \Psi(\mathbf{r}, \mathbf{r}^{\dagger}) 
+%\: dx^{\dagger}dy^{\dagger} \right]
+%\:\: dx''dy'' \quad .
+%\end{split}
+%\label{eq:intermediary-equation}
+%\end{equation}
+%Then, by noting that the term within brackets in the second line of equation
+%\ref{eq:intermediary-equation} represents the solution of Dirichlet's problem
+%for the function $\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ on the plane
+%$z^{\dagger}_{0}$, we obtain:
+%\begin{equation}
+%U_{\varepsilon}(\mathbf{r}) =  
+%\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%\tau_{\varepsilon}(\mathbf{r}'') \:\: 
+%\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') 
+%\:\: dx''dy'' \: , \quad z < z''_{0} \: .
+%\label{eq:U-tau-epsilon-Dirichlet-cross}
+%\end{equation}
+%Now, consider that both $U(\mathbf{r})$ (equation \ref{eq:U-Dirichlet}) and 
+%$U_{\varepsilon}(\mathbf{r})$ (equation \ref{eq:U-tau-epsilon-Dirichlet-cross}) 
+%are evaluated at the same points 
+%$\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top}
+%\notin \overline{\mathcal{V}}$, 
+%on a horizontal plane located at $z^{\ddagger}_{0} < z^{\dagger}_{0}$.
+%In this case, the difference 
+%
+%PAREI AQUI
+%
+%we integrate the squared absolute difference between $U(\mathbf{r})$ 
+%(equation \ref{eq:U-Dirichlet}) and $U_{\varepsilon}(\mathbf{r})$ 
+%(equation \ref{eq:U-tau-epsilon-Dirichlet-cross}) on a horizontal plane 
+%located at $z^{\ddagger}_{0} < z^{\dagger}_{0}$ to obtain
+%\begin{equation}
+%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
+%	\: dx^{\ddagger}dy^{\ddagger} 
+%	= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\vert U(\mathbf{r}^{\dagger}) - U_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2} \: 
+%	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger})^{2}
+%	\: dx^{\dagger}dy^{\dagger} \: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
+%	\label{eq:U-tau-epsilon-difference}
+%\end{equation}
+%Finally, we use the inequality 
+%\begin{equation}
+%	z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \implies
+%	\partial_{z} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}^{\dagger}) \le 1 \: ,
+%	\label{eq:Dz-Phi-constraint}
+%\end{equation}
+%and equation \ref{eq:epsilon} to show that the left side of equation
+%\ref{eq:U-tau-epsilon-difference} satisfies:
+%\begin{equation}
+%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\vert U(\mathbf{r}^{\ddagger}) - U_{\varepsilon}(\mathbf{r}^{\ddagger}) \vert^{2} 
+%	\: dx^{\ddagger}dy^{\ddagger} \le \varepsilon \: ,
+%	\quad z^{\ddagger}_{0} \le z^{\dagger}_{0} - \sqrt{\tfrac{1}{2\pi}} \: .
+%	\label{eq:U-error-level-r}
+%\end{equation}
+
+\subsubsection{Generalized Neumann's problem}
 
 %PAREI AQUI 1
 %
