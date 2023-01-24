@@ -151,16 +151,16 @@ $y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ l
 the sources \citep{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 2 \pi \kappa 
-	\int\limits_{z^{t}}^{\infty}
+	\int\limits_{z^{t}_{0}}^{\infty}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
 	\frac{e^{- k \, (z' - z^{\dagger}_{0})}}{k}
-	\: dz' \: , \quad z^{\dagger}_{0} < z^{t} \: ,
+	\: dz' \: , \quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:Fourier-U-r-dagger}
 \end{equation}
 where 
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
 \overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0}$ located
-above the sources, $z^{t}$ is the top of the sources, $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
+above the sources, $z^{t}_{0}$ is the top of the sources, $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
 is defined in terms of the wavenumbers $k_{x}$ and $k_{y}$ along the $x$ and $y$ directions,
 respectively, and
 \begin{equation}
@@ -177,20 +177,20 @@ The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
 It is important noting that the horizontal plane $z'$ may cross the sources.
 
-Because $z^{t} \le z'$, where $z^{t}$ defines the top of the sources and $z'$ the vertical
+Because $z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
 coordinate of a point inside the sources, we have that 
-$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t} - z^{\dagger}_{0})}$ and, 
+$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ and, 
 consequently, that the absolute value of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
 (equation \ref{eq:Fourier-U-r-dagger}), i.e., its amplitude spectrum, satisfies 
 \begin{equation}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
-	\frac{e^{- k \, (z^{t} - z^{\dagger}_{0})}}{k} \, \Omega \: ,
-	\: \quad z^{\dagger}_{0} < z^{t} \: ,
+	\frac{e^{- k \, \Delta z}}{k} \, \Omega \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
 	\label{eq:abs-Fourier-U-r-dagger-bound}
 \end{equation}
 where
 \begin{equation}
-	\Omega = 2 \pi \kappa \, \int\limits_{z^{t}}^{\infty}
+	\Omega = 2 \pi \kappa \, \int\limits_{z^{t}_{0}}^{\infty}
 	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert 
 	\: dz' \: ,
 	\label{eq:Omega}
@@ -205,14 +205,7 @@ It means that $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ is square integrable.
 Our approach to deduce an upper bound for 
 $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ (equation 
 \ref{eq:abs-Fourier-U-r-dagger-bound}) is the same proposed by
-\citet{bhattacharyya1967} to define 
-\begin{equation}
-	\vert \mathcal{F} [ \partial_{z} U(\mathbf{r}^{\dagger}) ] \vert \le
-	e^{- k \, (z^{t} - z^{\dagger}_{0})} \, \Omega \: ,
-	\: \quad z^{\dagger}_{0} < z^{t} \: ,
-	\label{eq:abs-Fourier-DzU-r-dagger-bound}
-\end{equation}
-which is an upper bound for the amplitude spectrum of 
+\citet{bhattacharyya1967} to define an upper bound for the amplitude spectrum of 
 $\partial_{z} U(\mathbf{r}^{\dagger})$ (equation \ref{eq:1st-deriv-U}).
 
 
