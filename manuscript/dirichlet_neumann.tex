@@ -1,5 +1,8 @@
-\section{Classical Dirichlet's and Neumann's problems on a plane}
+\section{Solutions of Dirichlet's and Neumann's problems on a plane}
 \label{sec:dirichlet_neumann}
+
+\subsection{Exact solutions on a horizontal plane located above the sources}
+\label{subsec:exact_dirichlet_neumann}
 
 Let $V(\mathbf{r}, z^{\dagger}_{0})$ and $W(\mathbf{r}, z^{\dagger}_{0})$ be 
 surface integrals given by:
@@ -76,10 +79,11 @@ so that $z < z^{\dagger}_{0} < z^{t}_{0}$. What follows aims at generalizing
 these equations for the case in which they are defined on a horizontal plane that
 crosses the sources. 
 
-\subsection{Generalized Dirichlet's and Neumann's problems on a plane}
-\label{subsec:generalized_dirichlet_neumann}
+\subsection{Approximated solutions on a horizontal plane that crosses the sources}
+\label{subsec:approx_dirichlet_neumann}
 
-\subsubsection{Generalized Dirichlet's problem}
+\subsubsection{Approximated solution for the Dirichlet's problem}
+\label{subsubsec:approx_dirichlet}
 
 Let $V_{\varepsilon}(\mathbf{r}^{\dagger}, z^{\ddagger}_{0})$ be the surface integral given by:
 \begin{equation}
@@ -240,21 +244,20 @@ As a consequence, we have that $V_{\varepsilon}(\mathbf{r}^{\dagger}, z^{\ddagge
 approximates $U(\mathbf{r}^{\dagger})$ to the predefined error $\varepsilon$
 not only on the horizontal plane $z^{\dagger}_{0}$, but also at all those 
 horizontal planes above it (i.e., with $z < z^{\dagger}_{0}$).
-This result allows us generalizing the Dirichlet's problem 
-(equation \ref{eq:U-Dirichlet}) as follows:
+This result allows defining the following approximated solution for the Dirichlet's problem 
+(equation \ref{eq:U-Dirichlet}) on a plane $z^{\ddagger}_{0}$ that crosses the sources:
 \begin{equation}
 	U(\mathbf{r}) 
-	\begin{cases}
-		= V(\mathbf{r}, z^{\dagger}_{0}) &, \quad z < z^{\dagger}_{0} < z^{t}_{0} \: , \\
-		\approx V_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0}) &, \quad z < z^{t}_{0} < z^{\ddagger}_{0} \: ,
-	\end{cases}
-	\label{eq:generalized-Dirichlet}
+	\approx V_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0}) \: , \quad z < z^{t}_{0} < z^{\ddagger}_{0} \: ,
+	\label{eq:approx-Dirichlet}
 \end{equation}
-where $V(\mathbf{r}, z^{\dagger}_{0})$ and $V_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0})$
-are defined according to equations \ref{eq:scalar-potential-V} and \ref{eq:V-tau-epsilon},
-respectively.
+where $V_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0})$ (equation \ref{eq:V-tau-epsilon})
+approximates $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) to the predefined error 
+level $\varepsilon$ (equations \ref{eq:epsilon-bound-V} and \ref{eq:epsilon-Gamma-function}).
 
-\subsubsection{Generalized Neumann's problem}
+
+\subsubsection{Approximated solution for the Neumann's problem}
+\label{subsubsec:approx_neumann}
 
 Consider now the following surface integral:
 \begin{equation}
@@ -356,16 +359,13 @@ horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error
 level $\varepsilon$ (equations \ref{eq:epsilon-Gamma-function} and \ref{eq:epsilon-bound-W}).
 This result is also valid for all horizontal planes located above $z^{\dagger}_{0}$, with
 $z < z^{\dagger}_{0}$.
-This result allows us generalizing the Neumann's problem 
-(equation \ref{eq:U-Neumann}) as follows:
+This result allows defining the following approximated solution for the Neumann's problem 
+(equation \ref{eq:U-Neumann}) on a plane $z^{\ddagger}_{0}$ that crosses the sources:
 \begin{equation}
 	U(\mathbf{r}) 
-	\begin{cases}
-		= W(\mathbf{r}, z^{\dagger}_{0}) &, \quad z < z^{\dagger}_{0} < z^{t}_{0} \: , \\
-		\approx W_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0}) &, \quad z < z^{t}_{0} < z^{\ddagger}_{0} \: ,
-	\end{cases}
-	\label{eq:generalized-Neumann}
+	\approx W_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0}) \: , \quad z < z^{t}_{0} < z^{\ddagger}_{0} \: ,
+	\label{eq:approx-Neumann}
 \end{equation}
-where $W(\mathbf{r}, z^{\dagger}_{0})$ and $W_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0})$
-are defined according to equations \ref{eq:scalar-potential-W} and \ref{eq:W-upsilon-epsilon},
-respectively.
+where $W_{\varepsilon}(\mathbf{r}, z^{\ddagger}_{0})$ (equation \ref{eq:W-upsilon-epsilon})
+approximates $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) to the predefined error 
+level $\varepsilon$ (equations \ref{eq:epsilon-Gamma-function} and \ref{eq:epsilon-bound-W}).
