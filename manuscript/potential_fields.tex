@@ -177,25 +177,44 @@ The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
 It is important noting that the horizontal plane $z'$ may cross the sources.
 
-Because $z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
-coordinate of a point inside the sources, we have that 
-$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ and, 
-consequently, that the absolute value of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
+Manipulating the 2DFT $\mathcal{F} [ \sigma(\mathbf{r}') ]$ (equation \ref{eq:Fourier-sigma-r'}), 
+we obtain
+\begin{equation}
+	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert \le
+	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\vert \sigma(\mathbf{r}') \vert 
+	\: dx'dy'
+	\label{eq:Fourier-sigma-bound}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	2 \pi \kappa \, 
+	\int\limits_{z^{t}_{0}}^{\infty}
+	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert
+	\: dz' \le \Omega \: ,
+	\label{eq:Omega-bound}
+\end{equation}
+where
+\begin{equation}
+	\Omega = 2 \pi \kappa \, \iiint\limits_{\mathcal{V}}
+	\vert \sigma(\mathbf{r}') \vert 
+	\: dx'dy'dz'
+	\label{eq:Omega}
+\end{equation}
+is a constant depending only on the position and shape of the sources. Besides, 
+$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ because
+$z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
+coordinate of a point inside the sources. 
+Combining this identity with equations \ref{eq:Omega-bound} and \ref{eq:Omega},
+we conclude that the absolute value of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
 (equation \ref{eq:Fourier-U-r-dagger}), i.e., its amplitude spectrum, satisfies 
 \begin{equation}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
 	\frac{e^{- k \, \Delta z}}{k} \, \Omega \: ,
-	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
 	\label{eq:abs-Fourier-U-r-dagger-bound}
 \end{equation}
-where
-\begin{equation}
-	\Omega = 2 \pi \kappa \, \int\limits_{z^{t}_{0}}^{\infty}
-	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert 
-	\: dz' \: ,
-	\label{eq:Omega}
-\end{equation}
-is a constant depending only on the position and shape of the sources.
+
 Equation \ref{eq:abs-Fourier-U-r-dagger-bound} shows that the amplitude spectrum 
 $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ of $U(\mathbf{r}^{\dagger})$ 
 (equation \ref{eq:scalar-potential-U}) on a plane above the sources 
