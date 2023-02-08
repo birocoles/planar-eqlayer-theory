@@ -239,6 +239,38 @@ $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ of $U(\mathbf{r}^{\dagger}
 exponentially to zero as $k$ goes to infinite.
 This shows the well-known fact that $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ is square integrable.
 
-
+By using the differentiation properties of $U(\mathbf{r}^{\dagger})$ in Fourier domain
+\cite[e.g.,][ p. 263, 323]{blakely1996} we obtain
+\begin{equation}
+	\mathcal{F} \left[ 
+	\tfrac{\partial^{\ell}}{\partial x^{\ell}}
+	\tfrac{\partial^{m}}{\partial y^{m}}
+	\tfrac{\partial^{n}}{\partial z^{n}}
+	U(\mathbf{r}^{\dagger}) \right] =
+	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\label{eq:Fourier-general-derivative-U}
+\end{equation}
+where $\ell$, $m$ and $n$ are positive integers and
+\begin{equation}
+	\alpha_{U} = (\mathtt{i} \, k_{x})^{\ell} (\mathtt{i} \, k_{y})^{m} k^{n} \: .
+	\label{eq:alpha_U}
+\end{equation}
+Finally, we use this property (equations \ref{eq:Fourier-general-derivative-U} and \ref{eq:alpha_U}) 
+to generalize equation \ref{eq:abs-Fourier-U-r-dagger-bound} and deduce the following upper bound:
+\begin{equation}
+	{\Big \vert} \mathcal{F} \left[ 
+	\tfrac{\partial^{\ell}}{\partial x^{\ell}}
+	\tfrac{\partial^{m}}{\partial y^{m}}
+	\tfrac{\partial^{n}}{\partial z^{n}}
+	U(\mathbf{r}^{\dagger}) \right] {\Big \vert} \le
+	\vert \alpha_{U} \vert \, \Omega \, 
+	\frac{e^{- k \, \Delta z}}{k} \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:abs-Fourier-general-derivative-U-bound}
+\end{equation}
+Note that, by using $\ell = m = 0$ and $n = 1$ in equation 
+\ref{eq:abs-Fourier-general-derivative-U-bound}, we obtain the same result
+presented by \citet{bhattacharyya1967} as the upper bound for the amplitude spectrum of 
+$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}).
 
 
