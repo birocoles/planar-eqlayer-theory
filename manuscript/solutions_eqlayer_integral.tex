@@ -1,3 +1,68 @@
 \section{Solutions of the planar equivalent-layer integral}
 \label{sec:solutions_eqlayer_integral}
 
+\begin{equation}
+	d^{o}(\mathbf{r}) = 
+	\tfrac{\partial^{\ell}}{\partial x^{\ell}}
+	\tfrac{\partial^{m}}{\partial y^{m}}
+	\tfrac{\partial^{n}}{\partial z^{n}}
+	U(\mathbf{r}) \: ,
+	\label{eq:observed-data}
+\end{equation}
+
+\begin{equation}
+	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
+	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]
+	\label{eq:Fourier-observed-data}
+\end{equation}
+
+\begin{equation}
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] =
+	\mathcal{F} [ p(\mathbf{r}'') ] \, 
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+	\label{eq:Fourier-predicted-data}
+\end{equation}
+
+\begin{equation}
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{a} \, \alpha_{\Phi} \,
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+	\label{eq:Fourier-kernel}
+\end{equation}
+
+\subsection{Exact solutions on a horizontal plane above the sources}
+\label{subsec:exact_eqlayer_integral}
+
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\frac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
+	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+	\: e^{\, k \, (z''_{0} - z^{\dagger}_{0})}
+	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:Fourier-p-exact}
+\end{equation}
+
+\begin{equation}
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\alpha_{U} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: .
+	\label{eq:Fourier-predicted-data-exact}
+\end{equation}
+
+\begin{equation}
+	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]
+	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:Fourier-datafit-exact}
+\end{equation}
+
+\begin{equation}
+	d^{o}(\mathbf{r}) =
+	d(\mathbf{r}, z''_{0})
+	\: , \quad z < z''_{0} < z^{t}_{0} \: .
+	\label{eq:space-datafit-exact}
+\end{equation}
+
+\subsection{Approximated solutions on a horizontal plane crossing the sources}
+\label{subsec:approx_eqlayer_integral}
+
