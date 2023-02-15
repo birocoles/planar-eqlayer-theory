@@ -1,68 +1,202 @@
 \section{Solutions of the planar equivalent-layer integral}
 \label{sec:solutions_eqlayer_integral}
 
-\begin{equation}
-	d^{o}(\mathbf{r}) = 
-	\tfrac{\partial^{\ell}}{\partial x^{\ell}}
-	\tfrac{\partial^{m}}{\partial y^{m}}
-	\tfrac{\partial^{n}}{\partial z^{n}}
-	U(\mathbf{r}) \: ,
-	\label{eq:observed-data}
-\end{equation}
-
+Let $d^{o}(\mathbf{r})$ be the harmonic function defining a given 
+observed potential field at the observation point 
+$\mathbf{r} \notin \overline{\mathcal{V}}$ outside the sources. 
+Let us also consider that this
+potential field is defined in terms of the potential $U(\mathbf{r})$
+(equation \ref{eq:scalar-potential-U}) so that its 2DFT on a horizontal plane
+$z^{\dagger}_{0} < z^{t}_{0}$ above the sources is given by:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
-	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]
+	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
 	\label{eq:Fourier-observed-data}
 \end{equation}
+where $\alpha_{U}$ defines the relationship between $d^{o}(\mathbf{r})$ 
+and $U(\mathbf{r})$ as a function of the wavenumbers $k_{x}$, $k_{y}$ and 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
 
+Using the upper bound for the amplitude spectra of $U(\mathbf{r}^{\dagger})$
+(equation \ref{eq:abs-Fourier-U-r-dagger-bound}) and the 2DFT of $d^{o}(\mathbf{r}^{\dagger})$
+(equation \ref{eq:Fourier-observed-data}), we deduce the following upper bound:
+\begin{equation}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert \le
+	\vert \alpha_{U} \vert \, \Omega \, 
+	\frac{e^{- k \, \Delta z}}{k} \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:abs-Fourier-general-derivative-U-bound}
+\end{equation}
+Note that, by using $\alpha_{U} = k$, we obtain the same result
+presented by \citet{bhattacharyya1967} as the upper bound for the amplitude spectrum of 
+$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}), whereas 
+$\alpha_{U} = 1$ leads to the upper bound defined by equation \ref{eq:abs-Fourier-U-r-dagger-bound}.
+
+Let us now apply the Fourier-convolution theorem to the planar equivalent-layer integral
+(equation \ref{eq:integral-equation-eqlayer}) on a horizontal plane 
+$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain:
 \begin{equation}
 	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] =
 	\mathcal{F} [ p(\mathbf{r}'') ] \, 
-	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:Fourier-predicted-data}
 \end{equation}
-
+where
 \begin{equation}
 	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
-	\alpha_{a} \, \alpha_{\Phi} \,
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+	\alpha_{a} \, 
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:Fourier-kernel}
 \end{equation}
+and $\alpha_{a}$ defines the relationship between 
+$a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:integral-equation-eqlayer}) 
+and $\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:Psi})
+in terms of the wavenumbers $k_{x}$, $k_{y}$ and 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
+Our next step consists in 
+defining a solution $\mathcal{F} [ p(\mathbf{r}'') ]$ so that the
+predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]$
+(equation \ref{eq:Fourier-predicted-data}) approximates the observed
+potential field $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$
+(equation \ref{eq:Fourier-observed-data}).
+
 
 \subsection{Exact solutions on a horizontal plane above the sources}
 \label{subsec:exact_eqlayer_integral}
 
+Consider that the horizontal plane $z''_{0}$ is located above the sources.
+In this case, $\mathcal{F} [ p(\mathbf{r}'') ]$ can be defined in terms of the
+exact solutions of the Dirichlet's and Neumann's problems in Fourier-domain
+(equation \ref{eq:Fourier-U-Dirichlet-Neumann}) as follows:
 \begin{equation}
 	\mathcal{F} [ p(\mathbf{r}'') ] =
 	\frac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
-	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
-	\: e^{\, k \, (z''_{0} - z^{\dagger}_{0})}
-	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\mathcal{F} [ U(\mathbf{r}'') ] 
+	\: , \quad z''_{0} < z^{t}_{0} \: .
 	\label{eq:Fourier-p-exact}
 \end{equation}
-
+By using $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ 
+(equation \ref{eq:Fourier-kernel}) and $\mathcal{F} [ p(\mathbf{r}'') ]$
+(equation \ref{eq:Fourier-p-exact}) into the planar equivalent-layer integral
+in Fourier domain (equation \ref{eq:Fourier-predicted-data}) we obtain
 \begin{equation}
 	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
 	\alpha_{U} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
 	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: .
 	\label{eq:Fourier-predicted-data-exact}
 \end{equation}
-
+From equations \ref{eq:Fourier-observed-data} and \ref{eq:Fourier-predicted-data},
+we finally have that 
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
 	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]
 	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:Fourier-datafit-exact}
 \end{equation}
-
+and, consequently, that
 \begin{equation}
 	d^{o}(\mathbf{r}) =
 	d(\mathbf{r}, z''_{0})
 	\: , \quad z < z''_{0} < z^{t}_{0} \: .
 	\label{eq:space-datafit-exact}
 \end{equation}
+Hence, we conclude that the solution $p(\mathbf{r}'')$ for the planar
+equivalent-layer integral in space domain (equation \ref{eq:integral-equation-eqlayer})
+is given by the inverse Fourier transform of equation \ref{eq:Fourier-p-exact},
+which leads to a predicted potential field $d(\mathbf{r}^{\dagger}, z''_{0})$
+that exactly reproduces the observed potential field $d^{o}(\mathbf{r}^{\dagger})$.
 
 \subsection{Approximated solutions on a horizontal plane crossing the sources}
 \label{subsec:approx_eqlayer_integral}
 
+Consider now that the horizontal plane $z''_{0}$ crosses the sources. 
+In this case, we use the general approximated solution of the Dirichlet's and
+Neumann's problems (equation \ref{eq:Fourier-tau}) to define a
+$\mathcal{F} [ p(\mathbf{r}'') ]$ given by
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\frac{\alpha_{U}}{\alpha_{a}} \,
+	\mathcal{F} [ \tau(\mathbf{r}'') ] 
+	\: , \quad z^{t}_{0} < z''_{0} \: ,
+	\label{eq:Fourier-p-approx}
+\end{equation}
+which results in
+\begin{equation}
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\alpha_{U} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
+	\: , \quad z^{\dagger}_{0} < z^{t}_{0} < z''_{0} \: .
+	\label{eq:Fourier-predicted-data-approx}
+\end{equation}
+We now want to show that the solution $\mathcal{F} [ p(\mathbf{r}'') ]$
+(equation \ref{eq:Fourier-p-approx}) leads to a predicted potential field
+that satisfies
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert d^{o}(\mathbf{r}^{\dagger}) - 
+	d(\mathbf{r}^{\dagger}, z''_{0}) \vert^{2}
+	\:\: dx^{\dagger}dy^{\dagger} \le \eta \: ,
+	\label{eq:eta-bound-data}
+\end{equation}
+where $\eta > 0$ is another fixed but arbitrarily small error level.
+To do this, we first apply the Plancherel's theorem 
+\citep[][ p. 119]{bracewell1999} to the error bound given above 
+(equation \ref{eq:eta-bound-data}), then use the 2DFT's
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:Fourier-V-k-epsilon}),
+$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:Fourier-observed-data})
+and $\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-predicted-data-approx})
+and change variables with $k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ to obtain
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}, z''_{0})
+	\vert^{2} 
+	\: dx^{\dagger}dy^{\dagger} =
+	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
+	\: k \: d k \, d \theta \: .
+	\label{eq:Plancherel-k-theta-data}
+\end{equation}
+Then we define a conservative error bound $\eta$ 
+by substituting the upper bound for the amplitude spectrum of 
+$d^{o}(\mathbf{r}^{\dagger})$ (equation \ref{eq:abs-Fourier-general-derivative-U-bound})
+into the right-hand side of equation \ref{eq:Plancherel-k-theta-data} as follows
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}, z''_{0})
+	\vert^{2} 
+	\: dx^{\dagger}dy^{\dagger}
+	\le 2\pi \, \Omega^{2} \; \Upsilon(2 \, \Delta z , k_\varepsilon, q) = \eta 
+	\: , 
+	\label{eq:eta}
+\end{equation}
+where
+\begin{equation}
+	\Upsilon(2 \, \Delta z , k_\varepsilon, q) = 
+	\int\limits_{k_{\varepsilon}}^{\infty}
+	\frac{e^{- 2 \, \Delta z \, k }}{k} \, \vert \tilde{\alpha}_{U} \vert^{2}
+	\: d k \: ,
+	\label{eq:Upsilon}
+\end{equation}
+with $\tilde{\alpha}_{U}$ representing $\alpha_{U}$ in terms of the new variables
+$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ .
+Finally, we use equation \ref{eq:amplitude-spectrum-U-inequality} to show that
+\begin{equation}
+	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\ddagger}) ] \vert^{2} \: k \, dkd\theta <
+	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \: ,
+	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
+	\label{eq:amplitude-spectrum-do-inequality}
+\end{equation}
+and, consequently, that the predicted potential field $d(\mathbf{r}^{\dagger}, z''_{0})$
+approximates the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ to 
+the predefined error $\eta$ (equation \ref{eq:eta}) not only on the horizontal plane $z^{\dagger}_{0}$, but also 
+at all those horizontal planes above it (i.e., with $z < z^{\dagger}_{0}$), so that
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx d(\mathbf{r}, z''_{0})
+	\: , \quad z < z^{t}_{0} < z''_{0} \: .
+	\label{eq:space-datafit-approx}
+\end{equation}

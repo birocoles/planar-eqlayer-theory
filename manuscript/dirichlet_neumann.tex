@@ -36,7 +36,8 @@ is the vertical derivative of
 \begin{equation}
 	\Psi(\mathbf{r}, \mathbf{r}'') = 
 	\frac{1}{2\pi} \: 
-	\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: ,
+	\frac{1}{\| \mathbf{r} - \mathbf{r}'' \|} \: , 
+	\quad \mathbf{r} \ne \mathbf{r}'' \: ,
 	\label{eq:Psi}
 \end{equation}
 which represents the scaled inverse distance function between 
@@ -66,11 +67,25 @@ In this case, we may apply the Fourier-convolution theorem
 and obtain:
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 
-	k \, \mathcal{F} [ U(\mathbf{r}'') ] \, 
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ U(\mathbf{r}'') ] \, 
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Fourier-U-Dirichlet-Neumann}
 \end{equation}
-where
+where 
+\begin{equation}
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
+	= \alpha_{\Phi} \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
+	\label{eq:Fourier-Phi}
+\end{equation}
+\begin{equation}
+	\alpha_{\Phi} = \begin{cases}
+		1 \\ k
+	\end{cases} \quad ,
+	\label{eq:alpha-Psi}
+\end{equation}
+and 
 \begin{equation}
 	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
 	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
@@ -79,17 +94,16 @@ where
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-Note that equation \ref{eq:Fourier-U-Dirichlet-Neumann} leads to the solution of 
-Dirichlet's problem (equation \ref{eq:U-Dirichlet}), if we consider that $k$ multiplies 
-$\mathcal{F} [ U(\mathbf{r}'') ]$, or to the solution of Neumann's problem
-(equation \ref{eq:U-Neumann}), if $k$ multiplies 
-$\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$.
+Note that, depending on $\alpha_{\Phi}$ (equation \ref{eq:alpha-Psi}), 
+equation \ref{eq:Fourier-U-Dirichlet-Neumann} leads to the solution of 
+the Dirichlet's (equation \ref{eq:U-Dirichlet}) or Neumann's (equation \ref{eq:U-Neumann}) 
+problem.
 
 
 \subsection{Approximated solutions on a horizontal plane crossing the sources}
 \label{subsec:approx_dirichlet_neumann}
 
-The solutions of Dirichlet's and Neumann's problems in the space 
+The exact solutions of Dirichlet's and Neumann's problems in the space 
 (equations \ref{eq:U-Dirichlet} and \ref{eq:U-Neumann}) or Fourier
 (equation \ref{eq:Fourier-U-Dirichlet-Neumann}) domains are valid for the case in which 
 the horizontal plane $z''_{0}$ does not cross the sources, i.e., for the case in which
@@ -104,7 +118,7 @@ auxiliary potential:
 	\:\: dx''dy'' \: , \quad z < z^{t}_{0} < z''_{0} \: .
 	\label{eq:potential-V}
 \end{equation}
-Our goal now is finding appropriate functions $\tau$ and $\Phi$ 
+Our goal now is finding an appropriate function $\tau$ 
 (equation \ref{eq:potential-V}) so that the following error bound is satisfied
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -121,20 +135,8 @@ This can be made by first applying the Fourier-convolution theorem to obtain:
 	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:Fourier-V}
 \end{equation}
-where 
-\begin{equation}
-	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
-	= \alpha_{\Phi} \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\label{eq:Fourier-Phi}
-\end{equation}
-with $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ defined by equation 
-\ref{eq:Fourier-Psi}, and
-\begin{equation}
-	\alpha_{\Phi} = \begin{cases}
-		1 \\ k
-	\end{cases} \quad .
-	\label{eq:alpha-Psi}
-\end{equation}
+where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
+equation \ref{eq:Fourier-Phi}. 
 Now, we define a general solution for $\tau$ as follows:
 \begin{equation}
 	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
@@ -241,18 +243,17 @@ $\varepsilon > 0$, which guarantees that the error bound given by equation
 \ref{eq:epsilon-bound-V} holds true.
 It is important to stress, however, that this is a pure existence theorem and 
 we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
-To overcome this problem, we propose combining the upper bound for the amplitude spectrum of
+A conservative definition of the error level $\varepsilon$ can be made by
+combining the upper bound for the amplitude spectrum of
 $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:abs-Fourier-U-r-dagger-bound})
-and equation \ref{eq:Plancherel-k-epsilon} to define the 
-error level $\varepsilon$ (equation \ref{eq:epsilon-bound-V}) 
-as follows:
+and equation \ref{eq:Plancherel-k-epsilon} as follows:
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert 
 	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0})
 	\vert^{2} 
 	\: dx^{\dagger}dy^{\dagger}
-	\le 2\pi \, \Omega^{2} \, \Gamma(0, 2 \, \Delta z \, k_{\varepsilon}) = \varepsilon \: ,
+	\le 2\pi \, \Omega^{2} \; \Gamma(0, 2 \, \Delta z \, k_{\varepsilon}) = \varepsilon \: ,
 	\label{eq:epsilon-Gamma-function}
 \end{equation}
 where 
@@ -284,18 +285,9 @@ $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) decreases with height
 and, consequently, that $V(\mathbf{r}^{\dagger}, z''_{0})$
 approximates $U(\mathbf{r}^{\dagger})$ to the predefined error $\varepsilon$
 not only on the horizontal plane $z^{\dagger}_{0}$, but also at all those 
-horizontal planes above it (i.e., with $z < z^{\dagger}_{0}$).
-This result establishes,
-depending on the way $\alpha_{\Phi}$ (equation \ref{eq:alpha-Psi}) is defined,
-the following approximated solution of the Dirichlet's and
-Neumann's problems for the potential $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U})
-when the horizontal plane $z''_{0}$ crosses the sources:
+horizontal planes above it (i.e., with $z < z^{\dagger}_{0}$), so that
 \begin{equation}
 	U(\mathbf{r}) 
-	\approx V(\mathbf{r}, z''_{0}) \: , \quad z < z^{t}_{0} < z''_{0} \: ,
+	\approx V(\mathbf{r}, z''_{0}) \: , \quad z < z^{t}_{0} < z''_{0} \: .
 	\label{eq:approx-Dirichlet-Neumann}
 \end{equation}
-where $V(\mathbf{r}, z''_{0})$ (equation \ref{eq:potential-V})
-approximates $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) to the predefined error 
-level $\varepsilon$ (equations \ref{eq:epsilon-bound-V} and \ref{eq:epsilon-Gamma-function}),
-in terms of the function $\tau(\mathbf{r}'')$ (equation \ref{eq:Fourier-tau}).
