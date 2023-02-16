@@ -108,18 +108,18 @@ The exact solutions of Dirichlet's and Neumann's problems in the space
 (equation \ref{eq:Fourier-U-Dirichlet-Neumann}) domains are valid for the case in which 
 the horizontal plane $z''_{0}$ does not cross the sources, i.e., for the case in which
 $z''_{0} < z^{t}_{0}$. 
-To define solutions for the case in which $z''_{0} > z^{t}_{0}$, we first consider the
-auxiliary potential:
-\begin{equation}
-	V(\mathbf{r}, z''_{0}) = 
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\tau(\mathbf{r}'') \:
-	\Phi(\mathbf{r}, \mathbf{r}'') 
-	\:\: dx''dy'' \: , \quad z < z^{t}_{0} < z''_{0} \: .
-	\label{eq:potential-V}
-\end{equation}
-Our goal now is finding an appropriate function $\tau$ 
-(equation \ref{eq:potential-V}) so that the following error bound is satisfied
+To define solutions for the case in which $z''_{0} > z^{t}_{0}$, we first consider 
+an auxiliary potential $V(\mathbf{r}, z''_{0})$ that satisfies
+%\begin{equation}
+%	V(\mathbf{r}, z''_{0}) = 
+%	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+%	\tau(\mathbf{r}'') \:
+%	\Phi(\mathbf{r}, \mathbf{r}'') 
+%	\:\: dx''dy'' \: , \quad z < z^{t}_{0} < z''_{0} \: .
+%	\label{eq:potential-V}
+%\end{equation}
+%Our goal now is finding an appropriate function $\tau$ 
+%(equation \ref{eq:potential-V}) so that the following error bound is satisfied
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert U(\mathbf{r}^{\dagger}) - 
@@ -127,21 +127,25 @@ Our goal now is finding an appropriate function $\tau$
 	\:\: dx^{\dagger}dy^{\dagger} \le \varepsilon \: ,
 	\label{eq:epsilon-bound-V}
 \end{equation}
-where $\varepsilon > 0$ is a fixed but arbitrarily small error level.
-This can be made by first applying the Fourier-convolution theorem to obtain:
+on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, with 
+$\varepsilon > 0$ being a fixed but arbitrarily small error level.
+Besides, we consider that the 2DFT of $V(\mathbf{r}, z''_{0})$ on $z^{\dagger}_{0}$ is given by
+%This can be made by first applying the Fourier-convolution theorem to obtain:
 \begin{equation}
 	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
-	= \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
 	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:Fourier-V}
 \end{equation}
 where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
 equation \ref{eq:Fourier-Phi}. 
-Now, we define a general solution for $\tau$ as follows:
+Our goal now is finding an appropriate function $\tau$ 
+(equation \ref{eq:Fourier-V}) so that the error bound given by equation 
+\ref{eq:epsilon-bound-V} is satisfied.
+A general solution for $\tau$ can be defined as follows:
 \begin{equation}
 	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
 	\begin{cases}
-		\frac{k}{\alpha_{\Phi}}
 		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
 		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
 		\quad 0 < k \le k_{\varepsilon} \: , \\
@@ -151,11 +155,8 @@ Now, we define a general solution for $\tau$ as follows:
 \end{equation}
 where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber.
 
-Note that, depending on $\alpha_{\Phi}$ (equation \ref{eq:alpha-Psi}), 
-$\tau(\mathbf{r}'')$ approximates the potential field obtained by computing the 
-downward continuation of 
-$U(\mathbf{r}'')$ (equation \ref{eq:scalar-potential-U}) or its vertical derivative
-$\partial_{z} U(\mathbf{r}'')$ (equation \ref{eq:1st-deriv-U}) 
+Note that $\tau(\mathbf{r}'')$ approximates the potential field obtained by computing the 
+downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:scalar-potential-U}) 
 to points located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
@@ -164,14 +165,14 @@ presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that
 prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
 In this case, the Fourier-convolution theorem cannot be applied.
 The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}) 
-overcomes this problem and guarantees that the Fourier-convolution can be applied to
-$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V}). 
+overcomes this problem and guarantees the existence of  
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V}). 
 
 We get by substituting 
 $\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
 (equation \ref{eq:Fourier-Phi}) and 
 $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
-(equation \ref{eq:Fourier-tau}) into the 2DFT 
+(equation \ref{eq:Fourier-tau}) into 
 $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V}) that
 \begin{equation}
 	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
@@ -183,8 +184,8 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V})
 	\label{eq:Fourier-V-k-epsilon}
 \end{equation}
 which shows that the Fourier transforms of 
-$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) and 
-$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V}) 
+$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:Fourier-U-r-dagger}) and 
+$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:Fourier-V}) 
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\varepsilon}$.
 If we now apply the Plancherel's theorem 
@@ -218,7 +219,7 @@ $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ as follows:
 \end{equation}
 If we now combine the results obtained via Plancherel's theorem 
 (equations \ref{eq:Plancherel-kx-ky} and \ref{eq:Plancherel-k-theta}) and the
-2DFT $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$
 (equation \ref{eq:Fourier-V}), we finally obtain
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -266,8 +267,8 @@ where
 is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
 
 We have just shown that there exists a function $\tau(\mathbf{r}'')$
-(equation \ref{eq:Fourier-tau}) defining the potential 
-$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V}), which
+(equation \ref{eq:Fourier-tau}) defining a potential 
+$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:Fourier-V}), which
 approximates $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) on the
 horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error 
 level $\varepsilon$ (equations \ref{eq:epsilon-bound-V} and \ref{eq:epsilon-Gamma-function}).
