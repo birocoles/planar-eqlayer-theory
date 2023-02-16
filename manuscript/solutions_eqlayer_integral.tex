@@ -211,7 +211,7 @@ above the sources (equation \ref{eq:Fourier-p-exact}) and that crosses the sourc
 (equation \ref{eq:Fourier-p-approx}) are essentially the same, depending on the truncating
 wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}). 
 The physical meaning of a given solution is defined by the respective $\alpha_{\Phi}$
-(equation \ref{eq:alpha-Psi}), $\alpha_{U}$ (equation \ref{eq:Fourier-observed-data}) 
+(equation \ref{eq:alpha-Phi}), $\alpha_{U}$ (equation \ref{eq:Fourier-observed-data}) 
 and $\alpha_{a}$ (equation \ref{eq:Fourier-kernel}).
 
 \subsubsection{Solutions defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
@@ -223,7 +223,12 @@ In this case, the planar equivalent-layer integral (equation \ref{eq:integral-eq
 is the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
 which represents the solution of the Dirichlet’s problem on the
-layer plane \cite[][ p. 236]{kellogg1967}. 
+layer plane \cite[][ p. 236]{kellogg1967} and has a kernel 
+$a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ given by 
+$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = k \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
+(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain or
+$a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
+(equation \ref{eq:Psi}) in the space domain.
 Besides, the equivalent layer is basically the observed potential field $d^{o}(\mathbf{r})$
 continued to the layer plane.
 Note that such equivalent layers preserve the physical relationship between the 
@@ -248,13 +253,32 @@ Most of what is known or assumed to be true without any proof about planar equiv
 layers can be deduced from the solutions of the planar equivalent-layer integral
 (equation \ref{eq:integral-equation-eqlayer}) obtained with 
 $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$.
+These equivalent layers split into two main groups, according to $\alpha_{U}$.
 
+The first group is formed by layers of monopoles and have $\alpha_{U}$ given by
+\begin{equation}
+	\alpha_{U} = (\mathtt{i} \, k_{x})^{\ell} (\mathtt{i} \, k_{y})^{m} k^{n} \: ,
+	\label{eq:alpha_U_monopoles}
+\end{equation}
+where $\ell$, $m$ and $n$ are non-negative integers. 
+For example, defining $\alpha_{U}$ (equation \ref{eq:alpha_U_monopoles}) with $\ell = m = 0$ 
+and $n = 1$ leads to an observed potential field 
+$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] = k \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
+(equation \ref{eq:Fourier-observed-data}) and a kernel
+$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = k \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
+(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain, or 
+gravity disturbance data 
+$d^{o}(\mathbf{r}) = \partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) and
+a kernel $a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
+(equation \ref{eq:Psi}) in the space domain.
+If we now use $\ell = m = 1$ and $n = 0$ (equation \ref{eq:alpha_U_monopoles}), we obtain
+$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =  -k_{x} k_{y} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
+(equation \ref{eq:Fourier-observed-data}) and a kernel
+$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = -k_{x} k_{y} \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
+(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain,
+or the $xy$ component of the gravitational gradient tensor 
+$d^{o}(\mathbf{r}) = \partial_{xy} U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}) and
+a kernel $a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{xy} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
+(equation \ref{eq:Psi}) in the space domain.
 
-%Note that all equivalent layers obtained with $\alpha_{\Psi} = 1$ and $\alpha_{a} = \alpha_{U}$
-%are solutions of the Neumann's problem and preserve the physical relationship between the 
-%observed potential field and its true sources.
-
-%In this case, for example, $\alpha_{U} = k$ leads to an equivalent layer that approximates the
-%observed gravity disturbance $d^{o}(\mathbf{r}) = \partial_{z} U(\mathbf{r})$
-%(equation \ref{eq:1st-deriv-U}) by the vertical component of the gravitational attraction
-%(i.e., the gravity disturbance) due to a continuous layer of monopoles.
+FALAR QUE, INDEPENDENTE DO ALPHA-U, A EQLAYER EH GRAVITY DISTURBANCE
