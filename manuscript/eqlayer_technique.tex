@@ -37,25 +37,26 @@ This is the pioneer approach presented by \cite{dampney1969} for
 processing gravity data.
 For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data 
 \cite[e.g.,][ p. 178]{blakely1996} instead, the common approach consists in
-following \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
+following the pioneer work of \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
 that it represents a magnetic induction field component 
 produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
 with magnetic moment intensity $p_{j}$.
-The set of coefficients $p_{j}$ defining the scalar physical property of the
-equivalent sources form a discrete \textit{equivalent layer}, which is ``equivalent" 
+The discrete set of equivalent sources with scalar physical property defined by the 
+coefficients $p_{j}$ form a discrete \textit{equivalent layer}, which is ``equivalent" 
 in the sense that it satisfactorily reproduces the potential field due to
 the 3D sources at points with $z < z''_{0}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the
 same as that between the data and the equivalent sources.
-However, as pointed out before 
-\cite[e.g.,][]{cordell1992, guspi_novara2009, li_etal2014}, 
+However, many authors 
+\cite[e.g.,][]{cordell1992, guspi_novara2009, li_etal2014, soler_uieda2021} 
+have proposed equivalent-layer methods by presuming that
 the harmonic functions $a_{ij}$ (equation \ref{eq:predicted-data-i}) are 
 independent of the nature of the observed potential-field data and can be 
 conveniently chosen according to the characteristics of the problem.
-The necessary condition is that these functions must be 
-harmonic and vanish as the distance to the source increases.
+The only conditions generally imposed on these functions are that they must be 
+harmonic and vanish as the distance from the equivalent sources increases.
 
 
 The equivalent-layer technique consists in solving the linear system 
@@ -97,7 +98,7 @@ plane at $z''_{0}$;
 $d^{o}(\mathbf{r})$ represents the observed potential field;
 $d(\mathbf{r}, z''_{0})$
 is a harmonic function defining the potential field at $\mathbf{r}$ due to 
-a continuous equivalent layer with scalar physical property $p(\mathbf{r}'')$; and
+a continuous equivalent layer $p(\mathbf{r}'')$; and
 $a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
 For convenience, we call the equation \ref{eq:integral-equation-eqlayer} 
 as \textit{planar equivalent layer integral}.
@@ -115,6 +116,6 @@ What follows aims at discussing the existence of a planar equivalent layer
 that is located below the observation points and reproduces the
 gravitational or magnetic induction field due to 3D sources, even for the
 case in which the layer crosses the sources.
-Specifically, we present some closed-form solutions $p(\mathbf{r}'')$ for the 
-planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
+Specifically, we define equivalent layers as closed-form solutions $p(\mathbf{r}'')$ 
+of the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
 and briefly discuss their physical meaning.
