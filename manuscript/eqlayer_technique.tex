@@ -58,7 +58,6 @@ conveniently chosen according to the characteristics of the problem.
 The only conditions generally imposed on these functions are that they must be 
 harmonic and vanish as the distance from the equivalent sources increases.
 
-
 The equivalent-layer technique consists in solving the linear system 
 \begin{equation}
 	\mathbf{d}^{o} \approx \mathbf{d} = \mathbf{A} \, \mathbf{p}
@@ -103,19 +102,23 @@ $a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
 For convenience, we call the equation \ref{eq:integral-equation-eqlayer} 
 as \textit{planar equivalent layer integral}.
 
-Note that the equivalent-layer technique presumes that the potential-field 
-data can be satisfactorily described by a harmonic function.
-Besides, it also presumes that, given a potential-field data set, there is an
-equivalent layer that reproduces the observed potential-field data and can be 
-used to compute field transformations.
+%Note that the equivalent-layer technique presumes that the potential-field 
+%data can be satisfactorily described by a harmonic function.
+%Besides, it also presumes that, given a potential-field data set, there is an
+%equivalent layer that reproduces the observed potential-field data and can be 
+%used to compute field transformations.
+It is important to stress that most of the proposed equivalent-layer methods
+considers the equivalent layer as a purely mathematical tool for processing 
+potential-field data 
+\cite[e.g.,][]{bhattacharyya_chan1977, hansen_miyazaki1984, pedersen1989, cordell1992}.
+They does not discuss the underlying theoretical assumptions supporting the use of 
+a specific harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}) and considers 
+that the associated physical property distribution $p(\mathbf{r}'')$ does not have
+any relationship with the true potential-field sources.
 Most of the theoretical discussions on the equivalent-layer technique also assume that
 the layer is located below the observation points and does not cross the sources;
 a condition that cannot be guaranteed in practical situations.
-
-What follows aims at discussing the existence of a planar equivalent layer
-that is located below the observation points and reproduces the
-gravitational or magnetic induction field due to 3D sources, even for the
-case in which the layer crosses the sources.
-Specifically, we define equivalent layers as closed-form solutions $p(\mathbf{r}'')$ 
-of the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
-and briefly discuss their physical meaning.
+What follows aims at defining planar equivalent layers as closed-form solutions 
+$p(\mathbf{r}'')$ of the planar equivalent-layer integral 
+(equation \ref{eq:integral-equation-eqlayer}) for different kernels $a(\mathbf{r}, \mathbf{r}'')$
+and potential-field data $d^{o}(\mathbf{r})$, even for the case in which the layer crosses the sources.

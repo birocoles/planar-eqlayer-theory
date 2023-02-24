@@ -10,6 +10,17 @@
 \usepackage[english,ruled]{algorithm2e}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
+
+%% For creating theorems, corollaries and lemmas
+%% source: https://www.overleaf.com/learn/latex/Theorems_and_proofs
+%\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+%% Define the QED symbol as a black square
+\renewcommand\qedsymbol{$\blacksquare$}
 
 % for creating tables
 %\usepackage{booktabs}
