@@ -124,7 +124,7 @@ the Dirichlet's (equation \ref{eq:U-Dirichlet}) or Neumann's (equation \ref{eq:U
 problem.
 
 
-\subsection{Approximate solutions on a horizontal plane crossing the sources}
+\subsection{Generalized solutions on a horizontal plane}
 \label{subsec:approx_dirichlet_neumann}
 
 The exact solutions of Dirichlet's and Neumann's problems in the space 
@@ -134,41 +134,12 @@ the horizontal plane $z''_{0}$ does not cross the sources, i.e., for the case in
 $z''_{0} < z^{t}_{0}$. 
 We can deduce, however, approximate solutions for the Dirichlet's and Neumann's problems
 on a plane $z''_{0} > z^{t}_{0}$ that crosses the sources.
-Specifically, it can be shown that there exists a function $\tau(\mathbf{r}'')$ leading to
-the auxiliary potential
+Specifically, it can be shown that,
+for any horizontal plane $z''_{0}$ that is located above the sources ($z''_{0} < z^{t}_{0}$)
+or crosses them ($z''_{0} > z^{t}_{0}$), there exists a function 
+$\tau(\mathbf{r}'', k_{\varepsilon})$ with 2DFT given by
 \begin{equation}
-	V(\mathbf{r}, z''_{0}) = 
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\tau(\mathbf{r}'') \:
-	\Phi(\mathbf{r}, \mathbf{r}'') 
-	\:\: dx''dy'' \: , \quad z < z^{t}_{0} < z''_{0} \: ,
-	\label{eq:potential-V}
-\end{equation}
-that satisfies
-\begin{equation}
-	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert U(\mathbf{r}^{\dagger}) - 
-	V(\mathbf{r}^{\dagger}, z''_{0}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} \le \varepsilon
-	\: , \quad z^{\dagger}_{0} < z^{t}_{0} < z''_{0} \: ,
-	\label{eq:epsilon-bound-V}
-\end{equation}
-on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, with 
-$\Phi(\mathbf{r}, \mathbf{r}'')$ given by equation \ref{eq:Phi} and
-$\varepsilon > 0$ being a fixed but arbitrarily small error level.
-To show this, we first consider that the 2DFT of $V(\mathbf{r}, z''_{0})$ (equation \ref{eq:potential-V}) 
-on $z^{\dagger}_{0}$ is given by
-\begin{equation}
-	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
-	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
-	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\label{eq:Fourier-V}
-\end{equation}
-where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
-equation \ref{eq:Fourier-Phi}. 
-A general solution for $\tau(\mathbf{r}'')$ can be defined in the Fourier domain as follows:
-\begin{equation}
-	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ \tau(\mathbf{r}'', k_{\varepsilon}) \right] = 
 	\begin{cases}
 		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
 		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
@@ -177,29 +148,60 @@ A general solution for $\tau(\mathbf{r}'')$ can be defined in the Fourier domain
 	\end{cases}
 	\label{eq:Fourier-tau}
 \end{equation}
-where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber.
+which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
+and leads to the auxiliary potential
+\begin{equation}
+	V(\mathbf{r}, z''_{0}, k_{\varepsilon}) = 
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\tau(\mathbf{r}'', k_{\varepsilon}) \:
+	\Phi(\mathbf{r}, \mathbf{r}'') 
+	\:\: dx''dy'' \: , 
+	\quad z < z^{t} \: , \quad z < z''_{0} \: ,
+	\label{eq:potential-V}
+\end{equation}
+so that
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert U(\mathbf{r}^{\dagger}) - 
+	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) \vert^{2}
+	\:\: dx^{\dagger}dy^{\dagger} \le \varepsilon \: ,
+	\quad z^{\dagger} < z^{t} \: , \quad z^{\dagger} < z''_{0} \: ,
+	\label{eq:epsilon-bound-V}
+\end{equation}
+on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, where 
+$\Phi(\mathbf{r}, \mathbf{r}'')$ is given by equation \ref{eq:Phi} and
+$\varepsilon > 0$ is a fixed but arbitrarily small error level.
 
-Note that $\tau(\mathbf{r}'')$ approximates the potential field obtained by computing the 
-downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:scalar-potential-U}) 
+Note that $\tau(\mathbf{r}'', k_{\varepsilon})$ (equation \ref{eq:potential-V})
+approximates the potential field obtained by 
+computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:scalar-potential-U}) 
 to points located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
 continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
 presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
-prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
-In this case, the Fourier-convolution theorem cannot be applied.
+prevent $\mathcal{F} \left[ \tau(\mathbf{r}'', k_{\varepsilon}) \right]$ to be square integrable.
 The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}) 
-overcomes this problem and guarantees the existence of  
-$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V}). 
+overcomes this problem and guarantees that the Fourier-convolution theorem 
+can be applied to the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:potential-V})
+on the horizontal plane $z^{\dagger}_{0}$ and results in
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]
+	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'', k_{\varepsilon}) ] \:
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:Fourier-V}
+\end{equation}
+where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
+equation \ref{eq:Fourier-Phi}. 
 
 We get by substituting 
 $\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
 (equation \ref{eq:Fourier-Phi}) and 
-$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
+$\mathcal{F} \left[ \tau(\mathbf{r}'', k_{\varepsilon}) \right]$
 (equation \ref{eq:Fourier-tau}) into 
-$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V}) that
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$ (equation \ref{eq:Fourier-V}) that
 \begin{equation}
-	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] = 
 	\begin{cases}
 		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] &
 		, \quad 0 < k \le k_{\varepsilon} \: , \\
@@ -209,7 +211,7 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-V})
 \end{equation}
 which shows that the Fourier transforms of 
 $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:Fourier-U-r-dagger}) and 
-$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:Fourier-V}) 
+$V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:Fourier-V}) 
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\varepsilon}$.
 If we now apply the Plancherel's theorem 
@@ -218,12 +220,12 @@ equation \ref{eq:epsilon-bound-V} we get
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert 
-	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0})
+	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})
 	\vert^{2} 
 	\: dx^{\dagger}dy^{\dagger} = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-	V(\mathbf{r}^{\dagger}, z''_{0}) ] \vert^{2} 
+	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] \vert^{2} 
 	\: d k_{x} \, d k_{y} \: .
 	\label{eq:Plancherel-kx-ky}
 \end{equation}
@@ -233,22 +235,22 @@ $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ as follows:
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-	V(\mathbf{r}^{\dagger}, z''_{0}) ] \vert^{2} 
+	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] \vert^{2} 
 	\: d k_{x} \, d k_{y} = 
 	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-	V(\mathbf{r}^{\dagger}, z''_{0}) ] \vert^{2} \: k \, dkd\theta 	
+	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] \vert^{2} \: k \, dkd\theta 	
 	\quad .
 	\label{eq:Plancherel-k-theta}
 \end{equation}
 If we now combine the results obtained via Plancherel's theorem 
 (equations \ref{eq:Plancherel-kx-ky} and \ref{eq:Plancherel-k-theta}) and the
-$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$
 (equation \ref{eq:Fourier-V}), we finally obtain
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert 
-	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0})
+	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})
 	\vert^{2} 
 	\: dx^{\dagger}dy^{\dagger} = 
 	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
@@ -260,8 +262,9 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$
 Because we know that $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ 
 (equation \ref{eq:Fourier-U-r-dagger}) is square integrable 
 (equation \ref{eq:abs-Fourier-U-r-dagger-bound}), we may use an adapted version 
-of the Runge–Walsh theorem 
-\citep[e.g.,][ p. 152]{freeden_gerhards2012} to affirm that there exists a sufficiently
+of the Runge-Walsh theorem, which is well-known in Geodesy 
+\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015},
+to affirm that there exists a sufficiently
 large $k_{\varepsilon}$ such that the right-hand side of 
 \ref{eq:Plancherel-k-epsilon} is smaller than or equal to a predefined 
 $\varepsilon > 0$, which guarantees that the error bound given by equation 
@@ -278,26 +281,52 @@ and equation \ref{eq:Plancherel-k-epsilon} as follows:
 	\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
 	\label{eq:epsilon}
 \end{equation}
-where the integral representing the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
+where the integral represents the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
 
-We have just shown that there exists a function $\tau(\mathbf{r}'')$
-defining a potential $V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V}), which
+We have just shown that there exists a function $\tau(\mathbf{r}'', k_{\varepsilon})$
+defining a potential $V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:potential-V}), which
 approximates $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) on the
 horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error 
 level $\varepsilon$ (equations \ref{eq:epsilon-bound-V} and \ref{eq:epsilon}).
-Besides, we may use the fact that the total energy of the potential
-$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) decreases with height
-\citep{bhattacharyya1967} to show that
+Besides, we may use equations \ref{eq:Fourier-U-Dirichlet-Neumann}, \ref{eq:Fourier-Psi} and the
+Fourier-convolution theorem to manipulate the right-hand side of equation 
+\ref{eq:Plancherel-k-epsilon} and show, by following \citet{bhattacharyya1967},
+that the total energy of the potential
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) decreases with height:
+%\begin{equation}
+%	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+%	\vert \mathcal{F} [ U(\mathbf{r}^{\ddagger}) ] \vert^{2} \: k \, dkd\theta <
+%	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+%	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \: ,
+%	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
+%	\label{eq:amplitude-spectrum-U-inequality}
+%\end{equation}
 \begin{equation}
-	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-	\vert \mathcal{F} [ U(\mathbf{r}^{\ddagger}) ] \vert^{2} \: k \, dkd\theta <
-	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \: ,
-	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	U(\mathbf{r}^{\ddagger}) \vert^{2} 
+	\: dx^{\ddagger}dy^{\ddagger} \le 
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert 
+	U(\mathbf{r}^{\dagger}) \vert^{2} 
+	\: dx^{\dagger}dy^{\dagger}
+	\: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
 	\label{eq:amplitude-spectrum-U-inequality}
 \end{equation}
-and, consequently, that $V(\mathbf{r}, z''_{0}) \approx U(\mathbf{r})$ to the 
+and, consequently, that $V(\mathbf{r}, z''_{0}, k_{\varepsilon}) \approx U(\mathbf{r})$ to the 
 predefined error $\varepsilon$ (equation \ref{eq:epsilon}) according to
 equation \ref{eq:epsilon-bound-V} not only on the 
 horizontal plane $z^{\dagger}_{0}$, but also at any horizontal plane above it,
 with $z < z^{\dagger}_{0} < z^{t}_{0} < z''_{0}$.
+
+Finally, if we let the truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}) goes 
+to $+\infty$ for the case in which $z''_{0} < z^{t}_{0}$, then the error $\varepsilon$ (equation \ref{eq:epsilon}) 
+tends to $0$, the function $\tau(\mathbf{r}'', k_{\varepsilon})$ tends to the potential
+$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) on the plane $z''_{0}$ and
+the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:potential-V})
+tends to the potential $U(\mathbf{r})$ at all points $\mathbf{r}$ with $z < z''_{0}$.
+It means that equations \ref{eq:Fourier-tau}--\ref{eq:epsilon-bound-V} and
+\ref{eq:epsilon} constitute generalized the solutions of the Dirichlet's and Neumann's problems 
+(equation \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:Fourier-U-Dirichlet-Neumann}) 
+on a given horizontal plane $z''_{0}$ (that may be above of cross the sources),
+for a predefined truncating wavenumber $k_{\varepsilon}$.

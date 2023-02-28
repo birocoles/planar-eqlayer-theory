@@ -77,6 +77,9 @@ $a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:integral-equation-eqla
 and $\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:Psi})
 in terms of the wavenumbers $k_{x}$, $k_{y}$ and 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
+Here, we limit ourselves to the particular case in which $\alpha_{a}$ is
+defined in the same way as $\alpha_{U}$ (equations \ref{eq:alpha_U_monopoles} 
+and \ref{eq:alpha_U_dipoles}).
 %Our next step consists in 
 %defining an equivalent layer with physical property distribution 
 %$\mathcal{F} [ p(\mathbf{r}'') ]$ that produces a
@@ -91,7 +94,7 @@ $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$.
 \label{subsec:exact_eqlayer_integral}
 
 Consider a horizontal plane $z''_{0} < z^{t}_{0}$ located above the sources.
-In this case, we may affirm that there exist solutions $p(\mathbf{r}'')$ 
+In this case, there exist solutions $p(\mathbf{r}'')$ 
 of the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
 producing predicted potential fields $d(\mathbf{r}, z''_{0})$
 that exactly reproduce the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
@@ -136,7 +139,7 @@ $\mathbf{r}$ with $z < z''_{0} < z^{t}_{0}$.
 \label{subsec:approx_eqlayer_integral}
 
 Consider a horizontal plane $z''_{0} > z^{t}_{0}$ that crosses the sources.
-In this case, we may affirm that there exist solutions $p(\mathbf{r}'')$ 
+In this case, there exist solutions $p(\mathbf{r}'')$ 
 of the planar equivalent-layer integrals (equation \ref{eq:integral-equation-eqlayer})
 producing predicted potential fields $d(\mathbf{r}, z''_{0})$
 that approximate the observed potential field $d^{o}(\mathbf{r})$ to 
@@ -232,18 +235,27 @@ and $\alpha_{a}$ (equation \ref{eq:Fourier-kernel}).
 All equivalent layers obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ 
 give rise to a predicted potential field $d(\mathbf{r}, z''_{0})$ which is analogous
 to the vertical component of the gravitational attraction due to a layer of monopoles.
-In this case, the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
-is the well-known \textit{upward continuation integral} 
+In this case, the physical property distribution $p(\mathbf{r}'')$ is the observed 
+potential field $d^{o}(\mathbf{r})$ (or its filtered version) continued to the layer plane
+and, consequently, the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
+represents the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
-which represents the solution of the Dirichlet’s problem on the
-layer plane \cite[][ p. 236]{kellogg1967} and has a kernel 
+which is the exact or approximate solution of the Dirichlet’s problem on the
+layer plane \cite[][ p. 236]{kellogg1967}.
+
+In the Fourier domain, the equivalent-layer integral assumes the form:
+%\begin{equation}
+%	
+%	\label{eq:eqlayer-integral-dirichlet-Fourier}
+%\end{equation}
+
+ and has a kernel 
 $a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ given by 
 $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = k \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
 (equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain or
 $a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
 (equation \ref{eq:Psi}) in the space domain.
-Besides, the equivalent layer is the observed potential field $d^{o}(\mathbf{r})$ (or its
-filtered version) continued to the layer plane.
+
 Note that such equivalent layers preserve the physical relationship between the 
 observed potential field and its true sources only for the particular case in which 
 the observed potential field is gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, 

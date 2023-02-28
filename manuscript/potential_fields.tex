@@ -7,8 +7,6 @@ $\partial \mathcal{V}$.
 Some important properties of $\mathcal{V}$ in this case is that it is an open and 
 connected set of points and $\partial \mathcal{V}$ is a closed and compact surface 
 free of double points \citep[][ p. 22]{freeden_gerhards2012}.
-This definition is slightly different from that given by \citet[][ p. 100]{kellogg1967},
-for example, which includes the boundary as part of the region.
 
 Consider a set of 3D gravity or magnetic sources located in the subsurface,
 over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
@@ -18,10 +16,11 @@ can be defined in terms of the following Newtonian potential:
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
-	\: dx'dy'dz' \: ,
+	\: d\mathcal{V}' \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:scalar-potential-U}
 \end{equation}
-where $\kappa$ is a proportionality constant; 
+where $d\mathcal{V}' = dx'dy'dz'$, $\kappa$ is a proportionality constant; 
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$;
 and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
@@ -46,7 +45,8 @@ If we consider gravity sources, then $U(\mathbf{r})$
 	\partial_{\alpha} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: 
 	\partial_{\alpha} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
-	\: dx'dy'dz' \: , \quad \alpha = x, y, z \: ,
+	\: d\mathcal{V}' \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad \alpha \in \{ x, y, z \} \: ,
 	\label{eq:1st-deriv-U}
 \end{equation}
 represent the Cartesian components of the gravitational attraction 
@@ -61,9 +61,9 @@ The partial derivatives of second order of $U(\mathbf{r})$
 	\partial_{\alpha\beta} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: 
 	\partial_{\alpha\beta} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
-	\: dx'dy'dz' \: , \quad \alpha, \beta = x, y, z \: ,
+	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad \alpha, \beta \in \{ x, y, z \} \: ,
 	\label{eq:2nd-deriv-U}
-\end{equation}
+\end{equation} 
 and represent the elements of the \textit{gravitational gradient tensor} 
 \citep[e.g.,][]{pedersen_rasmussen1990} produced by the 3D sources. 
 Note that we use the notation 
@@ -217,7 +217,7 @@ where
 \begin{equation}
 	\Omega = 2 \pi \kappa \, \iiint\limits_{\mathcal{V}}
 	\vert \sigma(\mathbf{r}') \vert 
-	\: dx'dy'dz'
+	\: d\mathcal{V}'
 	\label{eq:Omega}
 \end{equation}
 is a constant depending only on the position and shape of the sources. 
