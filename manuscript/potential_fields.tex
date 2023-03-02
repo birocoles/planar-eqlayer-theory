@@ -2,6 +2,9 @@
 \label{sec:potential_fields_3D_sources}
 
 
+\subsection{Preliminaries}
+\label{subsec:preliminaries}
+
 Let $\mathcal{V} \subset \mathbb{R}^{3}$ be a \textit{regular region} with boundary
 $\partial \mathcal{V}$. 
 Some important properties of $\mathcal{V}$ in this case is that it is an open and 
@@ -10,200 +13,141 @@ free of double points \citep[][ p. 22]{freeden_gerhards2012}.
 
 Consider a set of 3D gravity or magnetic sources located in the subsurface,
 over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
-Consider also that the gravitational or magnetic induction field produced by the 3D sources 
-at an observation point $\mathbf{r} = (x, y, z)^{\top}$ 
-can be defined in terms of the following Newtonian potential:
+The potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at an observation point 
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ 
+can be defined by
+\begin{equation}
+	d^{o}(\mathbf{r}) = D_{U} \, U(\mathbf{r}) \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\label{eq:observed-data-space}
+\end{equation}
+where $D_{U}$ defines a differential operator in the space domain,
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
 	\: d\mathcal{V}' \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
-	\label{eq:scalar-potential-U}
+	\label{eq:potential-U-space}
 \end{equation}
-where $d\mathcal{V}' = dx'dy'dz'$, $\kappa$ is a proportionality constant; 
+is a Newtonian potential, $d\mathcal{V}' = dx'dy'dz'$ represents a volume element,
+$\kappa$ is a proportionality constant,
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
-between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$;
+between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$,
 and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
 $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
 as the density (contrast) or total-magnetization intensity within the sources.
 We implicitly assume that $\sigma(\mathbf{r}) = 0$ for all points 
 $\mathbf{r} \notin \overline{\mathcal{V}}$.
-To insure that the partial derivatives of first order of $U(\mathbf{r})$ can be computed
-at points within the sources, $\sigma(\mathbf{r}')$ must be
-a piecewise continuous, integrable and bounded function. 
-Additionally, the partial derivatives of second order of $U(\mathbf{r})$ exist only at
-points $\mathbf{r}' \in \overline{\mathcal{V}}$ where $\sigma(\mathbf{r}')$ satisfies some
-Hölder condition \citep[][ p. 152]{kellogg1967}.
-Hence, we impose these conditions on $\sigma(\mathbf{r}')$, so that the partial derivatives
-of first and second orders of $U(\mathbf{r})$ exist at all points 
-$\mathbf{r} \in \mathbb{R}^{3}$ in space, including those within the sources.
+To insure that the partial derivatives of first and second orders of $U(\mathbf{r})$ 
+exist at all points $\mathbf{r} \in \mathbb{R}^{3}$ in space, including those within the sources,
+we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
+that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
+$\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-If we consider gravity sources, then $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) represents the gravitational potential
-\citep[e.g.,][ p. 46]{blakely1996} and its partial derivatives of first order
-\begin{equation}
-	\partial_{\alpha} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
-	\sigma(\mathbf{r}') \: 
-	\partial_{\alpha} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
-	\: d\mathcal{V}' \: , 
-	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad \alpha \in \{ x, y, z \} \: ,
-	\label{eq:1st-deriv-U}
-\end{equation}
-represent the Cartesian components of the gravitational attraction 
-\citep[e.g.,][ p. 47]{blakely1996} due to the 3D sources.
-In geophysics, the vertical component of the gravitational attraction defined by
-$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) is commonly used to approximate
-\textit{gravity disturbance} data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}.
-
-The partial derivatives of second order of $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) are given by:
-\begin{equation}
-	\partial_{\alpha\beta} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
-	\sigma(\mathbf{r}') \: 
-	\partial_{\alpha\beta} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
-	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad \alpha, \beta \in \{ x, y, z \} \: ,
-	\label{eq:2nd-deriv-U}
-\end{equation} 
-and represent the elements of the \textit{gravitational gradient tensor} 
-\citep[e.g.,][]{pedersen_rasmussen1990} produced by the 3D sources. 
-Note that we use the notation 
-$\partial_{\alpha} U(\mathbf{r}) \equiv 
-\tfrac{\partial U(\mathbf{r})}{\partial \alpha}$ and
-$\partial_{\alpha} U(\mathbf{r}) \equiv 
-\tfrac{\partial^{2} U(\mathbf{r})}{\partial \alpha \, \partial \beta}$
-to denote, respectively, partial derivatives of first and second order throughout the
-manuscript.
-
-To define the magnetic fields due to the 3D sources, we limit ourselves to the case
-in which they have a constant total-magnetization direction defined by an unit vector
-$\hat{\mathbf{h}}$. In this case, the magnetic scalar potential is given by the
-negative of the following directional derivative of first order:
-\begin{equation}
-	\partial_{h} U(\mathbf{r}) = \nabla U(\mathbf{r})^{\top} \hat{\mathbf{h}} \: ,
-	\label{eq:oblique-1st-deriv-U}
-\end{equation}
-where 
-$\partial_{h} U(\mathbf{r}) \equiv 
-\tfrac{\partial U(\mathbf{r})}{\partial \hat{\mathbf{h}}}$ and 
-$\nabla U(\mathbf{r})$ represents the gradient of $U(\mathbf{r})$ with respect to the
-coordinates of the observation points $\mathbf{r}$.
-
-The magnetic induction field along an arbitrary constant direction represented
-by an unit vector $\hat{\mathbf{t}}$ is defined by the following directional derivative
-of second order:
-\begin{equation}
-	\partial_{th} U(\mathbf{r}) = 
-	\hat{\mathbf{t}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{h}} \: ,
-	\label{eq:oblique-2nd-deriv-U}
-\end{equation}
-where 
-$\partial_{th} U(\mathbf{r}) \equiv 
-\tfrac{\partial^{2} U(\mathbf{r})}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}}$
-and
-\begin{equation}
-	\mathbf{H}_{U}(\mathbf{r}) = 
-	\begin{bmatrix}
-	\partial_{xx} U(\mathbf{r}) & 
-	\partial_{xy} U(\mathbf{r}) & 
-	\partial_{xz} U(\mathbf{r}) \\
-	\partial_{xy} U(\mathbf{r}) & 
-	\partial_{yy} U(\mathbf{r}) & 
-	\partial_{yz} U(\mathbf{r}) \\
-	\partial_{xz} U(\mathbf{r}) & 
-	\partial_{yz} U(\mathbf{r}) & 
-	\partial_{zz} U(\mathbf{r})
-	\end{bmatrix}
-	\label{eq:H-U}
-\end{equation}
-is the Hessian matrix of $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}), 
-with elements defined by its second derivatives (equation \ref{eq:2nd-deriv-U}).
-Equation \ref{eq:oblique-2nd-deriv-U} is commonly used to approximate the 
-\textit{total-field anomaly} produced by the 3D sources for the
-case in which $\hat{\mathbf{t}}$ defines the constant direction of the main geomagnetic
-field at the study area \cite[e.g., ][ p. 179]{blakely1996}.
-Because of that, we use the term ``approximated total-field anomaly'' to denote the
-directional derivative $\partial_{th} U(\mathbf{r})$ along the manuscript.
-
-The $x-$, $y-$, and $z-$components of the magnetic induction field produced by the 3D
-sources can be easily obtained from equation \ref{eq:oblique-2nd-deriv-U}
-by setting the unit vector $\hat{\mathbf{t}}$ equal to,
-respectively, $(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
-The particular case in which both unit vectors $\hat{\mathbf{h}}$ and 
-$\hat{\mathbf{t}}$ are set as $(0, 0, 1)^{\top}$ in equation \ref{eq:oblique-2nd-deriv-U}
-leads to a special magnetic anomaly defined by the partial derivative of second order 
-$\partial_{zz}U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}). 
-This special anomaly represents the vertical component of 
-the magnetic induction field that would be produced by the 3D sources if they had a 
-purely induced and vertical magnetization. Differently from generic total-field anomalies 
-\cite[e.g.,][ p. 178]{blakely1996}, which have a ``skewed'' pattern 
-oscillating from negative to positive values and do not have their maxima placed right 
-above the magnetic sources, this special magnetic anomaly is easier to interpret 
-because it is predominantly positive right above the sources and
-decays to zero towards their boundaries. \citet{baranov1957} was the first
-to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
-total-field anomalies into this special anomaly, conveniently called here 
-\textit{RTP anomaly}.
-
-For the subsequent developments, it is also important to define the 
-two-dimensional Fourier transform (2DFT) of the potential $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) with respect to the horizontal coordinates $x$ and
+The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}(\mathbf{r})$ 
+(equation \ref{eq:observed-data-space}) with respect to the horizontal coordinates $x$ and
 $y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ located above
-the sources \citep{bhattacharyya1967,gunn1975}:
+the sources is given by
+\begin{equation}
+	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
+	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
+	\label{eq:observed-data-Fourier}
+\end{equation}
+where $\alpha_{U}$ represents the differential operator $D_{U}$ (equation \ref{eq:observed-data-space})
+in the Fourier domain, as a function of the wavenumbers $k_{x}$, $k_{y}$ and 
+$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ along the $x$, $y$ and $z$ directions,
+respectively;
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
+\overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$;
+$z^{t}_{0}$ is the top of the sources;
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 2 \pi \kappa 
 	\int\limits_{z^{t}_{0}}^{\infty}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
 	\frac{e^{- k \, (z' - z^{\dagger}_{0})}}{k}
 	\: dz' \: , \quad z^{\dagger}_{0} < z^{t}_{0} \: ,
-	\label{eq:Fourier-U-r-dagger}
+	\label{eq:potential-U-Fourier}
 \end{equation}
-where 
-$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
-\overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0}$ located
-above the sources, $z^{t}_{0}$ is the top of the sources, $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
-is defined in terms of the wavenumbers $k_{x}$ and $k_{y}$ along the $x$ and $y$ directions,
-respectively, and
+is the 2DFT of the Newtonian potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
+on the plane $z^{\dagger}_{0}$;
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
 	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	\sigma(\mathbf{r}') \: e^{-\mathtt{i} \, (k_{x} \, x' + k_{y} \, y')}
 	\: dx'dy'
-	\label{eq:Fourier-sigma-r'}
+	\label{eq:sigma-Fourier}
 \end{equation}
-is the 2DFT of the function $\sigma(\mathbf{r}')$ 
-(equation \ref{eq:scalar-potential-U}) on a horizontal plane with constant vertical
-coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
+is the 2DFT of $\sigma(\mathbf{r}')$ 
+(equation \ref{eq:potential-U-space}) on a horizontal plane with constant vertical
+coordinate $z'$; and $\mathtt{i}$ represents the imaginary unit
+\citep[e.g.,][]{bhattacharyya1967,gunn1975}.
 The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
-It is important noting that the horizontal plane $z'$ may cross the sources.
+
+Here, we consider that the differential operators $D_{U}$ (equation \ref{eq:observed-data-space})
+and $\alpha_{U}$ (equation \ref{eq:observed-data-Fourier}) are given by
+\begin{equation}
+	D_{U} = 
+	\tfrac{\partial^{\ell}}{\partial x^{\ell}} \tfrac{\partial^{m}}{\partial y^{m}} \tfrac{\partial^{n}}{\partial z^{n}}
+	\Leftrightarrow
+	\alpha_{U} = (\mathtt{i} \, k_{x})^{\ell} (\mathtt{i} \, k_{y})^{m} k^{n} \: ,
+	\quad \ell, m , n \in \{0, 1, 2\} \: ,
+	\label{eq:diff-operators-monopoles}
+\end{equation}
+or
+\begin{equation}
+	D_{U} = 
+	\tfrac{\partial^{\ell}}{\partial \hat{\mathbf{h}}^{\ell}} \tfrac{\partial^{m}}{\partial \hat{\mathbf{t}}^{m}}
+	\Leftrightarrow
+	\alpha_{U} = (\mathbf{k} \cdot \hat{\mathbf{h}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{h}})^{m} \: ,
+	\quad \ell, m \in \{0, 1\} \: ,
+	\label{eq:diff-operators-dipoles}
+\end{equation}
+where $\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$ are constant unit vectors and 
+$\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$,
+according to the compact notation proposed by \citet{pedersen1978}.
+Note that using $\ell = m = 1$ and $n = 0$ into equation \ref{eq:diff-operators-monopoles} 
+leads to the partial derivatives of second order $D_{U} = \tfrac{\partial^{2}}{\partial x \, \partial y}$ 
+and $\alpha_{U} = -k_{x} \, k_{y}$, whereas $\ell = m = 1$ into equation \ref{eq:diff-operators-dipoles} 
+gives the directional derivatives of second order 
+$D_{U} = \tfrac{\partial^{2}}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}}$ and
+$\alpha_{U} = (\mathbf{k} \cdot \hat{\mathbf{h}}) \, (\mathbf{k} \cdot \hat{\mathbf{h}})$, for example.
+For the subsequent developments, it is important to draw attention to the fact that 
+$\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and 
+\ref{eq:diff-operators-dipoles}) admit the upper bound
+\begin{equation}
+	\alpha_{U} \le (3 \, k)^{6} \: .
+	\label{eq:alpha_U_upper_bound}
+\end{equation}
 
 We are also interested in defining an upper bound for the absolute value
-of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:Fourier-U-r-dagger}), 
-i.e., for the amplitude spectrum of $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}). 
+of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), 
+i.e., for the amplitude spectrum of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}). 
 To do this, we have adapted the approach presented by
 \citet{bhattacharyya1967} to define an upper bound for the amplitude spectrum of 
-$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}). 
+$\tfrac{\partial}{\partial z} U(\mathbf{r})$. 
 We first stress that 
 $e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ because
 $z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
 coordinate of a point inside the sources. Using this identity into  
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:Fourier-U-r-dagger}), we obtain
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), we obtain
 \begin{equation}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le 2 \pi \kappa 
 	\frac{e^{- k \, \Delta z}}{k}
 	\int\limits_{z^{t}_{0}}^{\infty}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
 	\: dz' \: , \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:abs-Fourier-U-r-dagger-bound1}
+	\label{eq:potential-U-spectrum-bound1}
 \end{equation}
-Manipulating the 2DFT $\mathcal{F} [ \sigma(\mathbf{r}') ]$ (equation \ref{eq:Fourier-sigma-r'}), 
+Manipulating $\mathcal{F} [ \sigma(\mathbf{r}') ]$ (equation \ref{eq:sigma-Fourier}), 
 we obtain
 \begin{equation}
 	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert \le
 	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	\vert \sigma(\mathbf{r}') \vert 
 	\: dx'dy'
-	\label{eq:Fourier-sigma-bound}
+	\label{eq:sigma-spectrum-bound}
 \end{equation}
 and, consequently, that
 \begin{equation}
@@ -222,19 +166,146 @@ where
 \end{equation}
 is a constant depending only on the position and shape of the sources. 
 Then, by combining equations 
-\ref{eq:abs-Fourier-U-r-dagger-bound1}--\ref{eq:Omega},
+\ref{eq:potential-U-spectrum-bound1}--\ref{eq:Omega},
 we conclude that the amplitude spectrum of 
-$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) on a horizontal plane 
+$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) on a horizontal plane 
 $z^{\dagger}_{0} < z^{t}_{0}$ located above the sources satisfies 
 \begin{equation}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
 	\frac{e^{- k \, \Delta z}}{k} \, \Omega \: ,
 	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:abs-Fourier-U-r-dagger-bound}
+	\label{eq:potential-U-spectrum-bound}
 \end{equation}
-Equation \ref{eq:abs-Fourier-U-r-dagger-bound} shows that the amplitude spectrum 
-$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ of $U(\mathbf{r}^{\dagger})$ 
-(equation \ref{eq:scalar-potential-U}) on a plane above the sources 
-(i) is finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tends
-exponentially to zero as $k$ goes to infinite.
-This shows the well-known fact that $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ is square integrable.
+From the upper bound of $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$
+(equation \ref{eq:potential-U-spectrum-bound}) and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$
+(equation \ref{eq:observed-data-Fourier}), we also deduce
+\begin{equation}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert \le
+	\vert \alpha_{U} \vert \, \Omega \, 
+	\frac{e^{- k \, \Delta z}}{k} \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:observed-data-spectrum-bound}
+\end{equation}
+Note that, for the case in which $\alpha_{U} = k$ (equation \ref{eq:diff-operators-monopoles}), 
+we obtain the same result presented by \citet{bhattacharyya1967} as the upper bound for the 
+amplitude spectrum of $\tfrac{\partial}{\partial z} U(\mathbf{r})$, whereas
+$\alpha_{U} = 1$ leads to the upper bound defined by equation \ref{eq:potential-U-spectrum-bound}.
+Equations \ref{eq:potential-U-spectrum-bound} and \ref{eq:observed-data-spectrum-bound} 
+show that the amplitude spectra 
+$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ and 
+$\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ on a plane $z^{\dagger}_{0} < z^{t}_{0}$ 
+above the sources 
+(i) are finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tend
+to zero as $k$ goes to infinite.
+These results confirm the well-known fact that 
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
+(equations \ref{eq:potential-U-Fourier} and \ref{eq:observed-data-Fourier}) are square integrable.
+
+
+\subsubsection{Gravitational field}
+\label{subsec:gravitational_field}
+
+
+If we consider gravity sources, then $U(\mathbf{r})$ 
+(equation \ref{eq:potential-U-space}) represents the gravitational potential
+\citep[e.g.,][ p. 46]{blakely1996} and its partial derivatives of first order
+\begin{equation}
+	\tfrac{\partial}{\partial u} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: 
+	\tfrac{\partial}{\partial u} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
+	\: d\mathcal{V}' \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad u \in \{ x, y, z \} \: ,
+	\label{eq:1st-deriv-U}
+\end{equation}
+represent the Cartesian components of the gravitational attraction 
+\citep[e.g.,][ p. 47]{blakely1996} due to the 3D sources.
+In geophysics, the vertical component of the gravitational attraction defined by
+$\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) is commonly used to approximate
+\textit{gravity disturbance} data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}.
+The partial derivatives of second order of $U(\mathbf{r})$ 
+(equation \ref{eq:potential-U-space}) are given by:
+\begin{equation}
+	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\sigma(\mathbf{r}') \: 
+	\tfrac{\partial^{2}}{\partial u \, \partial v} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
+	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad u, v \in \{ x, y, z \} \: ,
+	\label{eq:2nd-deriv-U}
+\end{equation} 
+and represent the elements of the \textit{gravitational gradient tensor} 
+\citep[e.g.,][]{pedersen_rasmussen1990} produced by the 3D sources. 
+%Note that we use the notation 
+%$\partial_{\alpha} U(\mathbf{r}) \equiv 
+%\tfrac{\partial U(\mathbf{r})}{\partial \alpha}$ and
+%$\partial_{\alpha} U(\mathbf{r}) \equiv 
+%\tfrac{\partial^{2} U(\mathbf{r})}{\partial \alpha \, \partial \beta}$
+%to denote, respectively, partial derivatives of first and second order throughout the
+%manuscript.
+
+\subsubsection{Magnetic induction field}
+\label{subsec:magnetic_induction_field}
+
+To define the magnetic fields due to the 3D sources, we limit ourselves to the case
+in which they have a constant total-magnetization direction defined by a constant unit vector
+$\hat{\mathbf{h}}$. In this case, the magnetic scalar potential is given by the
+negative of the following directional derivative of first order:
+\begin{equation}
+	\tfrac{\partial}{\partial \hat{\mathbf{h}}} U(\mathbf{r}) = \nabla U(\mathbf{r}) \cdot \hat{\mathbf{h}} \: ,
+	\label{eq:oblique-1st-deriv-U}
+\end{equation}
+where 
+$\nabla U(\mathbf{r})$ represents the gradient of $U(\mathbf{r})$ with respect to the
+coordinates of the observation points $\mathbf{r}$.
+The magnetic induction field along an arbitrary direction represented
+by a constant unit vector $\hat{\mathbf{t}}$ is defined by the following directional derivative
+of second order:
+\begin{equation}
+	\tfrac{\partial^{2}}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}} U(\mathbf{r}) = 
+	\hat{\mathbf{t}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{h}} \: ,
+	\label{eq:oblique-2nd-deriv-U}
+\end{equation}
+where 
+\begin{equation}
+	\mathbf{H}_{U}(\mathbf{r}) = 
+	\begin{bmatrix}
+	\tfrac{\partial^{2}}{\partial x^{2}} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial x \, \partial y} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial x \, \partial z} U(\mathbf{r}) \\
+	\tfrac{\partial^{2}}{\partial x \, \partial y} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial y^{2}} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial y \, \partial z} U(\mathbf{r}) \\
+	\tfrac{\partial^{2}}{\partial x \, \partial z} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial y \, \partial z} U(\mathbf{r}) & 
+	\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})
+	\end{bmatrix}
+	\label{eq:H-U}
+\end{equation}
+is the Hessian matrix of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}), 
+with elements defined by its second derivatives (equation \ref{eq:2nd-deriv-U}).
+Equation \ref{eq:oblique-2nd-deriv-U} is commonly used to approximate the 
+\textit{total-field anomaly} produced due to the 3D sources for the
+case in which $\hat{\mathbf{t}}$ defines the constant direction of the main geomagnetic
+field at the study area \cite[e.g., ][ p. 179]{blakely1996}.
+Because of that, we use the term ``approximated total-field anomaly'' to denote the
+directional derivative 
+$\tfrac{\partial^{2}}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}} U(\mathbf{r})$ 
+along the manuscript.
+
+The $x-$, $y-$, and $z-$components of the magnetic induction field produced by the 3D
+sources can be easily obtained from equation \ref{eq:oblique-2nd-deriv-U}
+by setting the unit vector $\hat{\mathbf{t}}$ equal to,
+respectively, $(1, 0, 0)^{\top}$, $(0, 1, 0)^{\top}$, and $(0, 0, 1)^{\top}$.
+The particular case in which both unit vectors $\hat{\mathbf{h}}$ and 
+$\hat{\mathbf{t}}$ are set as $(0, 0, 1)^{\top}$ in equation \ref{eq:oblique-2nd-deriv-U}
+leads to a special magnetic anomaly defined by the partial derivative of second order 
+$\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}). 
+This special anomaly represents the vertical component of 
+the magnetic induction field that would be produced by the 3D sources if they had a 
+purely induced and vertical magnetization. Differently from generic total-field anomalies 
+\cite[e.g.,][ p. 178]{blakely1996}, which have a ``skewed'' pattern 
+oscillating from negative to positive values and do not have their maxima placed right 
+above the magnetic sources, this special magnetic anomaly is easier to interpret 
+because it is predominantly positive right above the sources and
+decays to zero towards their boundaries. \citet{baranov1957} was the first
+to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
+total-field anomalies into this special anomaly, conveniently called here 
+\textit{RTP anomaly}.

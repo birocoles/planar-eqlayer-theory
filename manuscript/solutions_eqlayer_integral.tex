@@ -1,69 +1,16 @@
-\section{Planar equivalent-layer theorems}
-\label{sec:solutions_eqlayer_integral}
+\section{Planar equivalent-layer theorem}
+\label{sec:planar_eqlayer_theorem}
 
 \subsection{Preliminaries}
 
-Let $d^{o}(\mathbf{r})$ be the harmonic function defining a given 
-observed potential field at the observation point 
-$\mathbf{r} \notin \overline{\mathcal{V}}$ outside the sources. 
-Let us also consider that this
-potential field is defined in terms of the potential $U(\mathbf{r})$
-(equation \ref{eq:scalar-potential-U}) so that its 2DFT on a horizontal plane
-$z^{\dagger}_{0} < z^{t}_{0}$ above the sources is given by:
-\begin{equation}
-	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
-	\alpha_{U} \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
-	\label{eq:Fourier-observed-data}
-\end{equation}
-where $\alpha_{U}$ defines the relationship between $d^{o}(\mathbf{r})$ 
-and $U(\mathbf{r})$ as a function of the wavenumbers $k_{x}$, $k_{y}$ and 
-$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-Here, we consider two kinds of $\alpha_{U}$ given by
-\begin{equation}
-	\alpha_{U} = (\mathtt{i} \, k_{x})^{\ell} (\mathtt{i} \, k_{y})^{m} k^{n} \: ,
-	\quad \ell, m , n \in \{0, 1, 2\} \: ,
-	\label{eq:alpha_U_monopoles}
-\end{equation}
-or
-\begin{equation}
-	\alpha_{U} = (\mathbf{k} \cdot \hat{\mathbf{h}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{h}})^{m} \: ,
-	\quad \ell, m \in \{0, 1\} \: ,
-	\label{eq:alpha_U_dipoles}
-\end{equation}
-where $\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$ are unit vectors and 
-$\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$,
-according to the compact notation proposed by \citet{pedersen1978}.
-For the subsequent developments, it is important to draw attention to the fact that 
-$\alpha_{U}$ (equations \ref{eq:alpha_U_monopoles} and \ref{eq:alpha_U_dipoles}) admit 
-the upper bound
-\begin{equation}
-	\alpha_{U} \le (3 \, k)^{6} \: .
-	\label{eq:alpha_U_upper_bound}
-\end{equation}
-
-Using the upper bound for the amplitude spectra of $U(\mathbf{r}^{\dagger})$
-(equation \ref{eq:abs-Fourier-U-r-dagger-bound}) and the 2DFT of $d^{o}(\mathbf{r}^{\dagger})$
-(equation \ref{eq:Fourier-observed-data}), we deduce
-\begin{equation}
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert \le
-	\vert \alpha_{U} \vert \, \Omega \, 
-	\frac{e^{- k \, \Delta z}}{k} \: ,
-	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:abs-Fourier-general-derivative-U-bound}
-\end{equation}
-Note that, by using $\alpha_{U} = k$, we obtain the same result
-presented by \citet{bhattacharyya1967} as the upper bound for the amplitude spectrum of 
-$\partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}), whereas 
-$\alpha_{U} = 1$ leads to the upper bound defined by equation \ref{eq:abs-Fourier-U-r-dagger-bound}.
-
 Let us now apply the Fourier-convolution theorem to the planar equivalent-layer integral
-(equation \ref{eq:integral-equation-eqlayer}) on a horizontal plane 
+(equation \ref{eq:eqlayer-integral}) on a horizontal plane 
 $z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain:
 \begin{equation}
 	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] =
 	\mathcal{F} [ p(\mathbf{r}'') ] \, 
 	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\label{eq:Fourier-integral-equation-eqlayer}
+	\label{eq:Fourier-eqlayer-integral}
 \end{equation}
 where
 \begin{equation}
@@ -73,74 +20,68 @@ where
 	\label{eq:Fourier-kernel}
 \end{equation}
 and $\alpha_{a}$ defines the relationship between 
-$a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:integral-equation-eqlayer}) 
+$a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}) 
 and $\Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:Psi})
 in terms of the wavenumbers $k_{x}$, $k_{y}$ and 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
 Here, we limit ourselves to the particular case in which $\alpha_{a}$ is
 defined in the same way as $\alpha_{U}$ (equations \ref{eq:alpha_U_monopoles} 
 and \ref{eq:alpha_U_dipoles}).
-%Our next step consists in 
-%defining an equivalent layer with physical property distribution 
-%$\mathcal{F} [ p(\mathbf{r}'') ]$ that produces a
-%predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]$
-%(equation \ref{eq:Fourier-integral-equation-eqlayer}) close to the observed
-%potential field $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$
-%(equation \ref{eq:Fourier-observed-data}).
 
 
-%\subsection{Exact solutions on a horizontal plane above the sources}
-\subsection{Planar equivalent-layer theorem on a horizontal plane above the sources}
-\label{subsec:exact_eqlayer_integral}
-
-Consider a horizontal plane $z''_{0} < z^{t}_{0}$ located above the sources.
-In this case, there exist solutions $p(\mathbf{r}'')$ 
-of the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
-producing predicted potential fields $d(\mathbf{r}, z''_{0})$
-that exactly reproduce the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
-at any point $\mathbf{r}$ with $z < z''_{0}$.
-
-A proof of this theorem can be obtained by first defining 
-the 2DFT of $p(\mathbf{r}'')$ on the horizontal plane $z''_{0}$ in terms 
-of the exact solutions of the Dirichlet's and Neumann's problems 
-in Fourier-domain (equation \ref{eq:Fourier-U-Dirichlet-Neumann}) as follows:
-\begin{equation}
-	\mathcal{F} [ p(\mathbf{r}'') ] =
-	\tfrac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
-	\mathcal{F} [ U(\mathbf{r}'') ] 
-	\: , \quad z''_{0} < z^{t}_{0} \: .
-	\label{eq:Fourier-p-exact}
-\end{equation}
-Then, by substituting $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ 
-(equation \ref{eq:Fourier-kernel}) and $\mathcal{F} [ p(\mathbf{r}'') ]$
-(equation \ref{eq:Fourier-p-exact}) into the planar equivalent-layer integral
-in Fourier domain (equation \ref{eq:Fourier-integral-equation-eqlayer}) we obtain
-\begin{equation}
-	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
-	\alpha_{U} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
-	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: .
-	\label{eq:Fourier-predicted-data-exact}
-\end{equation}
-From equations \ref{eq:Fourier-observed-data} and \ref{eq:Fourier-predicted-data-exact},
-we finally have that 
-\begin{equation}
-	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
-	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]
-	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
-	\label{eq:Fourier-datafit-exact}
-\end{equation}
-and, consequently, that 
-$d^{o}(\mathbf{r}) = d(\mathbf{r}, z''_{0})$ at any point 
-$\mathbf{r}$ with $z < z''_{0} < z^{t}_{0}$.
+%\subsection{Planar equivalent-layer theorem on a horizontal plane above the sources}
+%\label{subsec:eqlayer_theorem_above_sources}
+%
+%Consider a horizontal plane $z''_{0} < z^{t}_{0}$ located above the sources.
+%In this case, there exist solutions $p(\mathbf{r}'')$ 
+%of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+%producing predicted potential fields $d(\mathbf{r}, z''_{0})$
+%that exactly reproduce the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
+%at any point $\mathbf{r}$ with $z < z''_{0}$.
+%
+%A proof of this theorem can be obtained by first defining 
+%the 2DFT of $p(\mathbf{r}'')$ on the horizontal plane $z''_{0}$ in terms 
+%of the exact solutions of the Dirichlet's and Neumann's problems 
+%in Fourier-domain (equation \ref{eq:Fourier-U-Dirichlet-Neumann}) as follows:
+%\begin{equation}
+%	\mathcal{F} [ p(\mathbf{r}'') ] =
+%	\tfrac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
+%	\mathcal{F} [ U(\mathbf{r}'') ] 
+%	\: , \quad z''_{0} < z^{t}_{0} \: .
+%	\label{eq:Fourier-p-exact}
+%\end{equation}
+%Then, by substituting $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ 
+%(equation \ref{eq:Fourier-kernel}) and $\mathcal{F} [ p(\mathbf{r}'') ]$
+%(equation \ref{eq:Fourier-p-exact}) into the planar equivalent-layer integral
+%in Fourier domain (equation \ref{eq:Fourier-eqlayer-integral}) we obtain
+%\begin{equation}
+%	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+%	\alpha_{U} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+%	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: .
+%	\label{eq:Fourier-predicted-data-exact}
+%\end{equation}
+%From equations \ref{eq:Fourier-observed-data} and \ref{eq:Fourier-predicted-data-exact},
+%we finally have that 
+%\begin{equation}
+%	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
+%	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]
+%	\: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+%	\label{eq:Fourier-datafit-exact}
+%\end{equation}
+%and, consequently, that 
+%$d^{o}(\mathbf{r}) = d(\mathbf{r}, z''_{0})$ at any point 
+%$\mathbf{r}$ with $z < z''_{0} < z^{t}_{0}$.
 
 
 %\subsection{Approximate solutions on a horizontal plane crossing the sources}
-\subsection{Planar equivalent-layer theorem on a horizontal plane crossing the sources}
-\label{subsec:approx_eqlayer_integral}
+%\subsection{Planar equivalent-layer theorem on a horizontal plane crossing the sources}
+\subsection{Planar equivalent-layer theorem}
+\label{subsec:eqlayer_theorem}
 
-Consider a horizontal plane $z''_{0} > z^{t}_{0}$ that crosses the sources.
+Consider a horizontal plane $z''_{0}$ that may be above the sources 
+(i.e., $z''_{0} < z^{t}_{0}$) or cross them (i.e., $z''_{0} > z^{t}_{0}$).
 In this case, there exist solutions $p(\mathbf{r}'')$ 
-of the planar equivalent-layer integrals (equation \ref{eq:integral-equation-eqlayer})
+of the planar equivalent-layer integrals (equation \ref{eq:eqlayer-integral})
 producing predicted potential fields $d(\mathbf{r}, z''_{0})$
 that approximate the observed potential field $d^{o}(\mathbf{r})$ to 
 a predefined error $\eta > 0$ at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$
@@ -149,33 +90,30 @@ so that
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert d^{o}(\mathbf{r}^{\dagger}) - 
 	d(\mathbf{r}^{\dagger}, z''_{0}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} \le \eta 
+	\:\: d\mathcal{S}^{\dagger} \le \eta 
 	\: , \quad z^{\dagger}_{0} < z^{t}_{0} < z''_{0} \: ,
 	\label{eq:eta-bound-data}
 \end{equation}
 where $\eta > 0$ is a fixed but arbitrarily small error level.
 
-This theorem can be proved by using the general approximate solution of the Dirichlet's and
-Neumann's problems (equation \ref{eq:Fourier-tau}) to define a
-$\mathcal{F} [ p(\mathbf{r}'') ]$ given by
+This theorem can be proved by first using equation \ref{eq:Fourier-tau} to define
 \begin{equation}
 	\mathcal{F} [ p(\mathbf{r}'') ] =
 	\tfrac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
-	\mathcal{F} [ \tau(\mathbf{r}'') ] 
-	\: , \quad z^{t}_{0} < z''_{0} \: ,
-	\label{eq:Fourier-p-approx}
+	\mathcal{F} [ \tau(\mathbf{r}'', k_{\varepsilon}) ] \: ,
+	\label{eq:Fourier-p}
 \end{equation}
-which combined with equations \ref{eq:Fourier-integral-equation-eqlayer} and
+which combined with equations \ref{eq:Fourier-eqlayer-integral} and
 \ref{eq:Fourier-kernel} results in
 \begin{equation}
 	\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
-	\alpha_{U} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
-	\: , \quad z^{\dagger}_{0} < z^{t}_{0} < z''_{0} \: .
+	\alpha_{U} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] 
+	\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
 	\label{eq:Fourier-predicted-data-approx}
 \end{equation}
 Next we apply the Plancherel's theorem \citep[][ p. 119]{bracewell1999} to the 
 left-hand side of equation \ref{eq:eta-bound-data}, use 
-$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:Fourier-V-k-epsilon}),
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$ (equation \ref{eq:Fourier-V-k-epsilon}),
 $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:Fourier-observed-data})
 and $\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-predicted-data-approx})
 and change variables with $k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and 
@@ -185,7 +123,7 @@ $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ to obtain
 	\vert 
 	d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}, z''_{0})
 	\vert^{2} 
-	\: dx^{\dagger}dy^{\dagger} =
+	\: d\mathcal{S}^{\dagger} =
 	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 	\: k \: d k \, d \theta \: .
@@ -205,10 +143,10 @@ equation \ref{eq:Plancherel-k-theta-data} as follows
 \end{equation}
 Finally, we use equation \ref{eq:amplitude-spectrum-U-inequality} to show that
 \begin{equation}
-	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\ddagger}) ] \vert^{2} \: k \, dkd\theta <
-	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \: ,
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\ddagger}) ] \vert^{2} \: d\mathcal{S}^{\ddagger} \le
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} \: d\mathcal{S}^{\dagger} \: ,
 	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
 	\label{eq:amplitude-spectrum-do-inequality}
 \end{equation}
@@ -222,11 +160,10 @@ with $z < z^{\dagger}_{0} < z^{t}_{0} < z''_{0}$.
 \subsection{Remarks on particular solutions of the planar equivalent-layer integral}
 \label{subsec:remarks_eqlayer_integral}
 
-The Fourier-domain solutions $\mathcal{F} [ p(\mathbf{r}'') ]$ associated with equivalent layers located
-above the sources (equation \ref{eq:Fourier-p-exact}) and that cross the sources
-(equation \ref{eq:Fourier-p-approx}) are essentially the same, depending on the truncating
-wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}). 
-The physical meaning of a given equivalent layer is defined by the respective $\alpha_{\Phi}$
+The space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
+(equation \ref{eq:eqlayer-integral}) obtained by computing the inverse Fourier transform
+of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:Fourier-p}) defines the physical property 
+distribution of an equivalent layer, whose physical meaning depends on the respective $\alpha_{\Phi}$
 (equation \ref{eq:alpha-Phi}), $\alpha_{U}$ (equation \ref{eq:Fourier-observed-data}) 
 and $\alpha_{a}$ (equation \ref{eq:Fourier-kernel}).
 
@@ -235,32 +172,38 @@ and $\alpha_{a}$ (equation \ref{eq:Fourier-kernel}).
 All equivalent layers obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ 
 give rise to a predicted potential field $d(\mathbf{r}, z''_{0})$ which is analogous
 to the vertical component of the gravitational attraction due to a layer of monopoles.
-In this case, the physical property distribution $p(\mathbf{r}'')$ is the observed 
-potential field $d^{o}(\mathbf{r})$ (or its filtered version) continued to the layer plane
-and, consequently, the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
-represents the well-known \textit{upward continuation integral} 
+In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+assumes the form
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r}, z''_{0})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \, \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral-Dirichlet-space}
+\end{equation}
+where $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform of
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:Fourier-p-Dirichlet}
+\end{equation}
+with $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ defined by equation \ref{eq:Fourier-observed-data}.
+Note that equation \ref{eq:Fourier-p-Dirichlet} is (or approximates) the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
-which is the exact or approximate solution of the Dirichlet’s problem on the
-layer plane \cite[][ p. 236]{kellogg1967}.
+which is traditionally derived from the exact solution of the Dirichlet’s problem on the
+layer plane (equation \ref{eq:U-Dirichlet}).
 
-In the Fourier domain, the equivalent-layer integral assumes the form:
-%\begin{equation}
-%	
-%	\label{eq:eqlayer-integral-dirichlet-Fourier}
-%\end{equation}
-
- and has a kernel 
-$a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ given by 
-$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = k \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
-(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain or
-$a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
-(equation \ref{eq:Psi}) in the space domain.
-
-Note that such equivalent layers preserve the physical relationship between the 
+It is important to highlight that such equivalent layers preserve the physical relationship between the 
 observed potential field and its true sources only for the particular case in which 
 the observed potential field is gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, 
 i.e., for the case in which $d^{o}(\mathbf{r}) = \partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}).
-The solution of the planar equivalent-layer integral (equation \ref{eq:integral-equation-eqlayer})
+The solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ is the basis of the pioneer method
 proposed by \cite{dampney1969} for processing gravity data.
 
@@ -268,10 +211,31 @@ proposed by \cite{dampney1969} for processing gravity data.
 
 Most of what is known or assumed to be true without any proof about planar equivalent 
 layers can be deduced from the set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-integral (equation \ref{eq:integral-equation-eqlayer}) obtained with 
+integral (equation \ref{eq:eqlayer-integral}) obtained with 
 $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$,
-which are directly related to the solution of the Neumann’s problem for the potential $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) on the layer plane \cite[][ p. 246]{kellogg1967}. 
+which are directly related to the exact solution of the Neumann’s problem for the potential 
+$U(\mathbf{r})$ on the layer plane (equation \ref{eq:U-Neumann}) and assume the form:
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r}, z''_{0})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \, \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral-Neumann-space}
+\end{equation}
+where $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform of
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \: , \\
+		0 & , \quad k > k_{\varepsilon} \: ,
+	\end{cases}
+	\label{eq:Fourier-p-Neumann}
+\end{equation}
+
+
 All these equivalent layers preserve the physical relationship between the 
 observed potential field and its true sources.
 Besides, all these equivalent layers have physical property distribution $p(\mathbf{r}'')$ defined 
@@ -280,7 +244,7 @@ or $V(\mathbf{r}, z''_{0})$ (equation \ref{eq:potential-V}) on the layer plane,
 regardless of how $\alpha_{U}$ is set.
 
 The set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-integral (equation \ref{eq:integral-equation-eqlayer}) obtained with 
+integral (equation \ref{eq:eqlayer-integral}) obtained with 
 $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$ results in two groups of equivalent 
 layers, according to $\alpha_{U}$.
 The first group has $\alpha_{U}$ given by equation \ref{eq:alpha_U_monopoles} and is formed 

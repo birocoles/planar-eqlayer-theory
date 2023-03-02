@@ -83,15 +83,17 @@ $L \times M$ matrix whose element $kj$ defines the transformed
 potential field due to the $j$-th equivalent source, with $j = 1, \dots, M$.
 
 The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
-discrete form of the following integral equation:
+discrete form of the \textit{planar equivalent layer integral}:
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r}, z''_{0})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
-	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: dx'' \, dy'' \: ,
-	\label{eq:integral-equation-eqlayer}
+	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral}
 \end{equation}
-where $\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
+where $d\mathcal{S}'' = dx'' \, dy''$ defines an element of area; 
+$\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the generic horizontal 
 plane at $z''_{0}$; 
 $d^{o}(\mathbf{r})$ represents the observed potential field;
@@ -99,8 +101,6 @@ $d(\mathbf{r}, z''_{0})$
 is a harmonic function defining the potential field at $\mathbf{r}$ due to 
 an equivalent layer with continuous physical property distribution $p(\mathbf{r}'')$; and
 $a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
-For convenience, we call the equation \ref{eq:integral-equation-eqlayer} 
-as \textit{planar equivalent layer integral}.
 
 %Note that the equivalent-layer technique presumes that the potential-field 
 %data can be satisfactorily described by a harmonic function.
@@ -120,5 +120,5 @@ the layer is located below the observation points and does not cross the sources
 a condition that cannot be guaranteed in practical situations.
 What follows aims at defining planar equivalent layers as closed-form solutions 
 $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
-(equation \ref{eq:integral-equation-eqlayer}) for different kernels $a(\mathbf{r}, \mathbf{r}'')$
+(equation \ref{eq:eqlayer-integral}) for different kernels $a(\mathbf{r}, \mathbf{r}'')$
 and potential-field data $d^{o}(\mathbf{r})$, even for the case in which the layer crosses the sources.

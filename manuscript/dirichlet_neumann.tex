@@ -4,9 +4,9 @@
 \subsection{Exact solutions on a horizontal plane above the sources}
 \label{subsec:exact_dirichlet_neumann}
 
-It can be shown that, at all points $\mathbf{r}$ located outside the sources (i.e., 
-$\mathbf{r} \notin \overline{\mathcal{V}}$), $U(\mathbf{r})$ (equation
-\ref{eq:scalar-potential-U}) has continuous partial derivatives of all orders
+It can be shown that, at all points $\mathbf{r} \notin \overline{\mathcal{V}}$ 
+located outside the sources, $U(\mathbf{r})$ (equation
+\ref{eq:potential-U-space}) has continuous partial derivatives of all orders
 and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
 Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
 Because of these properties, we have that
@@ -14,25 +14,23 @@ Because of these properties, we have that
 	U(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	U(\mathbf{r}'') \:\: 
-	\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')
-	\: dx''dy'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
+	\: d\mathcal{S}'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:U-Dirichlet}
 \end{equation}
 and
 \begin{equation}
 	U(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\partial_{z} U(\mathbf{r}'') \:\: 
+	\tfrac{\partial}{\partial z} U(\mathbf{r}'') \:\: 
 	\Psi(\mathbf{r}, \mathbf{r}'')
-	\: dx''dy'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\: d\mathcal{S}'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:U-Neumann}
 \end{equation}
 where $z^{t}_{0}$ defines the top of the sources, 
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ defines a point  
-on the horizontal plane $z''_{0}$, which in this case is located above the sources
-and satisfies $z''_{0} < z^{t}_{0}$, and 
-$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') \equiv \tfrac{\partial \Psi(\mathbf{r}, \mathbf{r}'')}{\partial z}$ 
-is the vertical derivative of 
+on the horizontal plane $z''_{0} < z^{t}_{0}$, which in this case is located 
+above the sources, and 
 \begin{equation}
 	\Psi(\mathbf{r}, \mathbf{r}'') = 
 	\frac{1}{2\pi} \: 
@@ -56,14 +54,14 @@ in terms of its values $U(\mathbf{r}^{\dagger})$ on the plane $z^{\dagger}_{0}$ 
 represents the solution of the classical \textit{Dirichlet’s problem} or the 
 \textit{first boundary value problem of potential theory} 
 \cite[][ p. 236]{kellogg1967} on a plane, where 
-$\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'')$ represents the Green's function.
+$\tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ represents the Green's function.
 From the physical point of view, equation \ref{eq:U-Dirichlet} defines a continuous 
 layer of monopoles that is located on the horizontal plane $z^{\dagger}_{0}$, has 
 physical property distribution $U(\mathbf{r}^{\dagger})$ and exactly reproduces the 
 potential field $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z^{\dagger}_{0}$.
 
 On the other hand, equation \ref{eq:U-Neumann} shows that $U(\mathbf{r})$ can also
-be defined in terms of its vertical derivative $\partial_{z} U(\mathbf{r}^{\dagger})$ 
+be defined in terms of its vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r}^{\dagger})$ 
 on the plane $z^{\dagger}_{0}$ and represents the solution of the classical 
 \textit{Neumann’s problem} or the 
 \textit{second boundary value problem of potential theory} 
@@ -71,7 +69,7 @@ on the plane $z^{\dagger}_{0}$ and represents the solution of the classical
 $\Psi(\mathbf{r}, \mathbf{r}'')$.
 Equation \ref{eq:U-Neumann} can be alternatively interpreted as a planar layer of
 vertically-magnetized dipoles that is located on the horizontal plane $z^{\dagger}_{0}$, has 
-physical property distribution $\partial_{z} U(\mathbf{r}^{\dagger})$ and exactly reproduces 
+physical property distribution $\tfrac{\partial}{\partial z} U(\mathbf{r}^{\dagger})$ and exactly reproduces 
 $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z^{\dagger}_{0}$.
 
 Consider now that $U(\mathbf{r})$ is not evaluated at a generic
@@ -96,18 +94,19 @@ where
 	\quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Fourier-Phi}
 \end{equation}
+with
 \begin{equation}
-	\alpha_{\Phi} = \begin{cases}
-		1 \\ k
-	\end{cases} \quad ,
-	\label{eq:alpha-Phi}
+	\Phi(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')
+	\Longleftrightarrow
+	\alpha_{\Phi} = 1
+	\label{eq:diff-operators-Phi-1}
 \end{equation}
+or
 \begin{equation}
-	\Phi(\mathbf{r}, \mathbf{r}'') = \begin{cases}
-		\Psi(\mathbf{r}, \mathbf{r}'') & \text{if} \quad \alpha_{\Phi} = 1 \\
-		\partial_{z} \Psi(\mathbf{r}, \mathbf{r}'') &\text{if} \quad \alpha_{\Phi} = k 
-	\end{cases} \quad ,
-	\label{eq:Phi}
+	\Phi(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z}\Psi(\mathbf{r}, \mathbf{r}'')
+	\Longleftrightarrow
+	\alpha_{\Phi} = k \: ,
+	\label{eq:diff-operators-Phi-2}
 \end{equation}
 and 
 \begin{equation}
@@ -118,14 +117,15 @@ and
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-It is worth noting that, depending on $\alpha_{\Phi}$ (equation \ref{eq:alpha-Phi}), 
+It is worth noting that, depending on the differential operator $\alpha_{\Phi}$ 
+(equations \ref{eq:diff-operators-Phi-1} and \ref{eq:diff-operators-Phi-2}), 
 equation \ref{eq:Fourier-U-Dirichlet-Neumann} leads to the solution of 
 the Dirichlet's (equation \ref{eq:U-Dirichlet}) or Neumann's (equation \ref{eq:U-Neumann}) 
 problem.
 
 
 \subsection{Generalized solutions on a horizontal plane}
-\label{subsec:approx_dirichlet_neumann}
+\label{subsec:general_dirichlet_neumann}
 
 The exact solutions of Dirichlet's and Neumann's problems in the space 
 (equations \ref{eq:U-Dirichlet} and \ref{eq:U-Neumann}) or Fourier
@@ -143,9 +143,9 @@ $\tau(\mathbf{r}'', k_{\varepsilon})$ with 2DFT given by
 	\begin{cases}
 		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
 		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \: , \\
-		0 & , \quad k > k_{\varepsilon} \: ,
-	\end{cases}
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
 	\label{eq:Fourier-tau}
 \end{equation}
 which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
@@ -155,8 +155,8 @@ and leads to the auxiliary potential
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\tau(\mathbf{r}'', k_{\varepsilon}) \:
 	\Phi(\mathbf{r}, \mathbf{r}'') 
-	\:\: dx''dy'' \: , 
-	\quad z < z^{t} \: , \quad z < z''_{0} \: ,
+	\:\: d\mathcal{S}'' \: , 
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: ,
 	\label{eq:potential-V}
 \end{equation}
 so that
@@ -164,17 +164,18 @@ so that
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert U(\mathbf{r}^{\dagger}) - 
 	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) \vert^{2}
-	\:\: dx^{\dagger}dy^{\dagger} \le \varepsilon \: ,
-	\quad z^{\dagger} < z^{t} \: , \quad z^{\dagger} < z''_{0} \: ,
+	\:\: d\mathcal{S}^{\dagger} \le \varepsilon \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
 	\label{eq:epsilon-bound-V}
 \end{equation}
-on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, where 
-$\Phi(\mathbf{r}, \mathbf{r}'')$ is given by equation \ref{eq:Phi} and
+where $d\mathcal{S}^{\dagger} = dx^{\dagger}dy^{\dagger}$,
+$\Phi(\mathbf{r}, \mathbf{r}'')$ is given by equation 
+\ref{eq:diff-operators-Phi-1} or \ref{eq:diff-operators-Phi-2} and
 $\varepsilon > 0$ is a fixed but arbitrarily small error level.
 
 Note that $\tau(\mathbf{r}'', k_{\varepsilon})$ (equation \ref{eq:potential-V})
 approximates the potential field obtained by 
-computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:scalar-potential-U}) 
+computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:potential-U-space}) 
 to points located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
@@ -210,7 +211,7 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$ (equation \r
 	\label{eq:Fourier-V-k-epsilon}
 \end{equation}
 which shows that the Fourier transforms of 
-$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:Fourier-U-r-dagger}) and 
+$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
 $V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:Fourier-V}) 
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\varepsilon}$.
@@ -222,7 +223,7 @@ equation \ref{eq:epsilon-bound-V} we get
 	\vert 
 	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})
 	\vert^{2} 
-	\: dx^{\dagger}dy^{\dagger} = 
+	\: d\mathcal{S}^{\dagger} = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
 	V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] \vert^{2} 
@@ -252,7 +253,7 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$
 	\vert 
 	U(\mathbf{r}^{\dagger}) - V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})
 	\vert^{2} 
-	\: dx^{\dagger}dy^{\dagger} = 
+	\: d\mathcal{S}^{\dagger} = 
 	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 	
 	\: .
@@ -260,8 +261,8 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$
 \end{equation}
 
 Because we know that $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ 
-(equation \ref{eq:Fourier-U-r-dagger}) is square integrable 
-(equation \ref{eq:abs-Fourier-U-r-dagger-bound}), we may use an adapted version 
+(equation \ref{eq:potential-U-Fourier}) is square integrable 
+(equation \ref{eq:potential-U-spectrum-bound}), we may use an adapted version 
 of the Runge-Walsh theorem, which is well-known in Geodesy 
 \cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015},
 to affirm that there exists a sufficiently
@@ -273,7 +274,7 @@ It is important to stress, however, that this is a pure existence theorem and
 we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
 A conservative definition of the error level $\varepsilon$ (equation \ref{eq:epsilon-bound-V})
 can be made by combining the upper bound for the amplitude spectrum of
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:abs-Fourier-U-r-dagger-bound})
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier})
 and equation \ref{eq:Plancherel-k-epsilon} as follows:
 \begin{equation}
 	\varepsilon \equiv 2\pi \, \Omega^{2} \, \int\limits_{k_{\varepsilon}}^{\infty}
@@ -285,14 +286,14 @@ where the integral represents the Incomplete Gamma function \citep[][ p. 899]{gr
 
 We have just shown that there exists a function $\tau(\mathbf{r}'', k_{\varepsilon})$
 defining a potential $V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:potential-V}), which
-approximates $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:scalar-potential-U}) on the
+approximates $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-space}) on the
 horizontal plane $z^{\dagger}_{0}$ above the sources to some predefined error 
 level $\varepsilon$ (equations \ref{eq:epsilon-bound-V} and \ref{eq:epsilon}).
 Besides, we may use equations \ref{eq:Fourier-U-Dirichlet-Neumann}, \ref{eq:Fourier-Psi} and the
 Fourier-convolution theorem to manipulate the right-hand side of equation 
 \ref{eq:Plancherel-k-epsilon} and show, by following \citet{bhattacharyya1967},
 that the total energy of the potential
-$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) decreases with height:
+$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) decreases with height:
 %\begin{equation}
 %	\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 %	\vert \mathcal{F} [ U(\mathbf{r}^{\ddagger}) ] \vert^{2} \: k \, dkd\theta <
@@ -305,15 +306,17 @@ $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) decreases with height:
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert 
 	U(\mathbf{r}^{\ddagger}) \vert^{2} 
-	\: dx^{\ddagger}dy^{\ddagger} \le 
+	\: d\mathcal{S}^{\ddagger} \le 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	\vert 
 	U(\mathbf{r}^{\dagger}) \vert^{2} 
-	\: dx^{\dagger}dy^{\dagger}
+	\: d\mathcal{S}^{\dagger}
 	\: , \quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
 	\label{eq:amplitude-spectrum-U-inequality}
 \end{equation}
-and, consequently, that $V(\mathbf{r}, z''_{0}, k_{\varepsilon}) \approx U(\mathbf{r})$ to the 
+where $d\mathcal{S}^{\ddagger} = dx^{\ddagger}dy^{\ddagger}$. 
+It follows from equation \ref{eq:amplitude-spectrum-U-inequality} that 
+$V(\mathbf{r}, z''_{0}, k_{\varepsilon}) \approx U(\mathbf{r})$ to the 
 predefined error $\varepsilon$ (equation \ref{eq:epsilon}) according to
 equation \ref{eq:epsilon-bound-V} not only on the 
 horizontal plane $z^{\dagger}_{0}$, but also at any horizontal plane above it,
@@ -322,7 +325,7 @@ with $z < z^{\dagger}_{0} < z^{t}_{0} < z''_{0}$.
 Finally, if we let the truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:Fourier-tau}) goes 
 to $+\infty$ for the case in which $z''_{0} < z^{t}_{0}$, then the error $\varepsilon$ (equation \ref{eq:epsilon}) 
 tends to $0$, the function $\tau(\mathbf{r}'', k_{\varepsilon})$ tends to the potential
-$U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) on the plane $z''_{0}$ and
+$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) on the plane $z''_{0}$ and
 the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$ (equation \ref{eq:potential-V})
 tends to the potential $U(\mathbf{r})$ at all points $\mathbf{r}$ with $z < z''_{0}$.
 It means that equations \ref{eq:Fourier-tau}--\ref{eq:epsilon-bound-V} and
