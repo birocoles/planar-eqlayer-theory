@@ -22,7 +22,7 @@ can be defined by
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
-where $D_{U}$ defines a differential operator in the space domain,
+where $D_{U}$ defines a $q$th-order differential operator in the space domain,
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -55,7 +55,7 @@ the sources is given by
 	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:observed-data-Fourier}
 \end{equation}
-where $\alpha_{U}$ represents the differential operator $D_{U}$ (equation \ref{eq:observed-data-space})
+where $\alpha_{U}$ represents the $q$th-order differential operator $D_{U}$ (equation \ref{eq:observed-data-space})
 in the Fourier domain, as a function of the wavenumbers $k_{x}$, $k_{y}$ and 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ along the $x$, $y$ and $z$ directions,
 respectively;
@@ -86,7 +86,17 @@ coordinate $z'$; and $\mathtt{i}$ represents the imaginary unit
 The dependence of these 2DFT's on $k_{x}$ and $k_{y}$ is conveniently omitted to
 simplify the notation.
 
-Here, we consider that the differential operators $D_{U}$ (equation \ref{eq:observed-data-space})
+A remarkable aspect of equation \ref{eq:potential-U-Fourier} can be deduced by using 
+the same reasoning presented by \citet[][ p. 317]{blakely1996}, which consists 
+in noting that the integral term 
+represents a weighted sum of the Fourier transforms $\mathcal{F} [ \sigma(\mathbf{r}') ]$
+(equation \ref{eq:sigma-Fourier}) over all depth slices crossing the sources.
+Because these weights are real functions, they do not impart any phase changes
+to $\mathcal{F} [ \sigma(\mathbf{r}') ]$ and, consequently, the phase spectrum
+\cite[e.g.,][ p. 261]{blakely1996} of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ is the same
+as that of the true sources distribution.
+
+Here, we consider that the $q$th-order differential operators $D_{U}$ (equation \ref{eq:observed-data-space})
 and $\alpha_{U}$ (equation \ref{eq:observed-data-Fourier}) are given by
 \begin{equation}
 	D_{U} = 
@@ -105,9 +115,12 @@ or
 	\quad \ell, m \in \{0, 1\} \: ,
 	\label{eq:diff-operators-dipoles}
 \end{equation}
-where $\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$ are constant unit vectors and 
+where $q = \ell+m+n$ defines the order, 
+$\hat{\mathbf{h}}$ and $\hat{\mathbf{t}}$ are constant unit vectors and 
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$,
 according to the compact notation proposed by \citet{pedersen1978}.
+We consider that $n$ is always $0$ in equation \ref{eq:diff-operators-dipoles} and that
+$\ell = m = n = 0$ produces no differentiation.
 Note that using $\ell = m = 1$ and $n = 0$ into equation \ref{eq:diff-operators-monopoles} 
 leads to the partial derivatives of second order $D_{U} = \tfrac{\partial^{2}}{\partial x \, \partial y}$ 
 and $\alpha_{U} = -k_{x} \, k_{y}$, whereas $\ell = m = 1$ into equation \ref{eq:diff-operators-dipoles} 
@@ -115,18 +128,55 @@ gives the directional derivatives of second order
 $D_{U} = \tfrac{\partial^{2}}{\partial \hat{\mathbf{h}} \, \partial \hat{\mathbf{t}}}$ and
 $\alpha_{U} = (\mathbf{k} \cdot \hat{\mathbf{h}}) \, (\mathbf{k} \cdot \hat{\mathbf{h}})$, for example.
 
+Finally, by using again the same reasoning presented by \citet[][ p. 317]{blakely1996},
+we can see that any vertical derivative of $U(\mathbf{r})$ obtained by using the differential
+operators $D_{U}$ and $\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
+with $\ell = m = 0$ and $n > 0$ has the same phase spectrum of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
+(equation \ref{eq:potential-U-Fourier}) and, consequently, the same phase spectrum of the
+true sources distribution.
 
 \subsection{Some useful upper bounds}
 \label{subsec:upper-bounds}
 
 
-For the subsequent developments, it is important to draw attention to the fact that 
-$\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and 
-\ref{eq:diff-operators-dipoles}) admit the upper bound
+For the subsequent developments, it is important to establish a common upper bound for
+the squared absolute value of $\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and
+\ref{eq:diff-operators-dipoles}). To do this, we first use the fact that $\hat{\mathbf{h}}$ and
+$\hat{\mathbf{t}}$ (equation \ref{eq:diff-operators-dipoles}) are unit vectors and also 
+convert the wavenumber $k_{x}$ and $k_{y}$ to polar coordinates 
+$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
+to show that
 \begin{equation}
-	\alpha_{U} \le (3 \, k)^{6} \: .
+	\begin{split}
+		\vert (\mathtt{i} \, k_{x})^{\ell} (\mathtt{i} \, k_{y})^{m} k^{n} \vert^{2} 
+		&= (k_{x}^{2} )^{\ell} ( k_{y}^{2} )^{m} ( k^{2} )^{n} \\ 
+		&= (k^{2} \cos^{2}\theta)^{\ell} (k^{2} \sin^{2}\theta)^{m} (k^{2})^{n} \\ 
+		&\le k^{2 \, q}
+	\end{split}
+	\label{eq:alpha_U_monopoles_upper_bound}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+		\vert (\mathbf{k} \cdot \hat{\mathbf{h}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{h}})^{m} \vert^{2}
+		&= \left[ (\mathbf{k} \cdot \hat{\mathbf{h}})^{2} \right]^{\ell} \left[ (\mathbf{k} \cdot \hat{\mathbf{h}})^{2} \right]^{m} \\
+		&\le \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{\ell} \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{m} \\
+		&\le 3^{q} k^{2 \, q} \: ,
+	\end{split}
+\label{eq:alpha_U_dipoles_upper_bound}
+\end{equation}
+where $q = \ell+m+n$, $\ell, m , n \in \{0, 1, 2\}$.
+From equation \ref{eq:alpha_U_monopoles_upper_bound} and \ref{eq:alpha_U_dipoles_upper_bound}, we can
+then verify that $\vert \alpha_{U} \vert^{2}$ (equations \ref{eq:diff-operators-monopoles} and 
+\ref{eq:diff-operators-dipoles}) admits the upper bound
+\begin{equation}
+	\vert \alpha_{U} \vert^{2} \le 3^{q} \, k^{2\, q} \: , 
+	\quad q = \ell+m+n \: ,
+	\quad \ell, m , n \in \{0, 1, 2\} \: ,
 	\label{eq:alpha_U_upper_bound}
 \end{equation}
+for given non-negative integers $\ell$, $m$ and $n$.
+
 We are also interested in defining an upper bound for the absolute value
 of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), 
 i.e., for the amplitude spectrum of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}). 

@@ -12,12 +12,14 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
-%% For creating theorems, corollaries and lemmas
+%% For creating theorems, corollaries, lemmas and definitions
 %% source: https://www.overleaf.com/learn/latex/Theorems_and_proofs
 %\newtheorem{theorem}{Theorem}[section]
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
 
 %% Define the QED symbol as a black square
 \renewcommand\qedsymbol{$\blacksquare$}

@@ -1,140 +1,313 @@
+\section{Preliminary definitions}
+\label{sec:preliminaries}
+
+Consider a function $\tau(\mathbf{r}'')$ defined on a horizontal 
+plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
+the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
+\begin{equation}
+	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:tau-Fourier}
+\end{equation}
+which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
+and leads to the auxiliary potential
+\begin{equation}
+	V(\mathbf{r}, z''_{0}, k_{\varepsilon}) = 
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\tau(\mathbf{r}'') \:
+	\Phi(\mathbf{r}, \mathbf{r}'') 
+	\:\: d\mathcal{S}'' \: , 
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: .
+	\label{eq:potential-V-space}
+\end{equation}
+
+Note that the function $\tau(\mathbf{r}'')$ obtained by computing
+the inverse Fourier transform of 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ (equation \ref{eq:tau-Fourier})
+approximates the potential field obtained by 
+computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:potential-U-space}) 
+to points that may be located inside the sources. 
+It is well-known, however, that downward continuation can only be computed at 
+source-free points, where the Laplace's equation applies. This means that the
+continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
+presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
+prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
+The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) 
+overcomes this problem, as pointed out by \citet{bhattacharyya1967},
+and guarantees that the Fourier-convolution theorem 
+can be applied to the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$
+(equation \ref{eq:potential-V-space}) on a horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ 
+above the sources to obtain
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
+	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:potential-V-Fourier}
+\end{equation}
+where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
+equation \ref{eq:Phi-Fourier}. 
+
+We get by substituting 
+$\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Phi-Fourier}) and 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
+(equation \ref{eq:tau-Fourier}) into 
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V-Fourier}) that
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\begin{cases}
+		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] &
+		, \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:potential-V-Fourier-convolution}
+\end{equation}
+which shows that the Fourier transforms of 
+$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
+$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V-space}) 
+on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
+to the truncating wavenumber $k_{\varepsilon}$.
+
+At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
+goes to infinite for the case in which $z''_{0} < z^{t}_{0}$, we get 
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-tau-Fourier}
+\end{equation}
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ V(\mathbf{r}^{\dagger}, z''_{0}) \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-Fourier}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} V(\mathbf{r}, z''_{0}) = 
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-space}
+\end{equation}
+which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
+problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
+
 \section{Planar equivalent-layer theorem}
 \label{sec:planar_eqlayer_theorem}
 
-
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
-	Consider a horizontal plane $z''_{0}$ that may be above the sources 
-	(i.e., $z''_{0} < z^{t}_{0}$) or cross them (i.e., $z''_{0} > z^{t}_{0}$).
-	In this case, there exist solutions $p(\mathbf{r}'')$ 
-	of the planar equivalent-layer integrals (equation \ref{eq:eqlayer-integral})
-	producing predicted potential fields $d(\mathbf{r}, z''_{0})$
-	that approximate the observed potential field $d^{o}(\mathbf{r})$ to 
-	a predefined error $\eta > 0$ at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$
-	so that
+	\label{theorem:planar-eqlayer-theorem}
+	For a given observed potential field $d^{o}(\mathbf{r})$, 
+	there exist a set of different solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
+	integral on the same horizontal plane $z''_{0}$, all of them producing the 
+	same predicted potential field $d(\mathbf{r})$ that satisfies, 
+	at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, the condition
 	\begin{equation}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert d^{o}(\mathbf{r}^{\dagger}) - 
-		d(\mathbf{r}^{\dagger}, z''_{0}) \vert^{2}
-		\:\: d\mathcal{S}^{\dagger} \le \eta 
-		\: , \quad z^{\dagger}_{0} < z^{t}_{0} < z''_{0} \: ,
-		\label{eq:eta-bound-data}
+		d(\mathbf{r}^{\dagger}) \vert^{2}
+		\:\: d\mathcal{S}^{\dagger} \le \varepsilon \: ,
+		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
+		\label{eq:epsilon-bound-data}
 	\end{equation}
-	where $\eta > 0$ is a fixed but arbitrarily small error level.
+	where $z^{t}_{0}$ defines the top of the sources and $\varepsilon > 0$ a 
+	fixed but arbitrarily small error level.
 \end{theorem}
 
 \begin{proof}
-	This theorem can be proved by first applying 
-	the Fourier-convolution theorem to the planar equivalent-layer integral
+	Let us first apply the Fourier-convolution theorem to the planar equivalent-layer integral
 	(equation \ref{eq:eqlayer-integral}) on a horizontal plane 
-	$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain:
+	$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain
 	\begin{equation}
-		\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] =
+		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
 		\mathcal{F} [ p(\mathbf{r}'') ] \, 
 		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-		\label{eq:Fourier-eqlayer-integral}
+		\label{eq:eqlayer-integral-Fourier}
 	\end{equation}
 	where
 	\begin{equation}
 		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
 		\alpha_{a} \, 
 		\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-		\label{eq:Fourier-kernel}
+		\label{eq:kernel-Fourier}
 	\end{equation}
 	and $\alpha_{a}$ defines a Fourier-domain differential operator acting
 	on the kernel function $a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}). 
 	Here, we limit ourselves to the particular case in which $\alpha_{a}$ is
 	defined in the same way as $\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} 
 	and \ref{eq:diff-operators-dipoles}).
-	
-	Then we use equation \ref{eq:Fourier-tau} to define
+	Then we use equation \ref{eq:tau-Fourier} to define
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
 		\tfrac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
-		\mathcal{F} [ \tau(\mathbf{r}'', k_{\varepsilon}) ] \: ,
-		\label{eq:Fourier-p}
+		\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
+		\label{eq:p-Fourier}
 	\end{equation}
-	which combined with equations \ref{eq:Fourier-eqlayer-integral} and
-	\ref{eq:Fourier-kernel} results in
+	which combined with equations \ref{eq:eqlayer-integral-Fourier} and
+	\ref{eq:kernel-Fourier} results in
 	\begin{equation}
-		\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ] = 
-		\alpha_{U} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ] 
+		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
+		\alpha_{U} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
 		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
-		\label{eq:Fourier-predicted-data-approx}
+		\label{eq:predicted-data-Fourier}
 	\end{equation}
-	Next we apply the Plancherel's theorem \citep[][ p. 119]{bracewell1999} to the 
-	left-hand side of equation \ref{eq:eta-bound-data}, use 
-	$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:observed-data-Fourier}),
-	$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}, k_{\varepsilon}) ]$ (equation \ref{eq:Fourier-V-k-epsilon})	
-	and $\mathcal{F} [ d(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:Fourier-predicted-data-approx})
-	and change variables with $k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and 
-	$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ to obtain
+
+	Then we obtain by applying the Plancherel's theorem \citep[][ p. 119]{bracewell1999} to the 
+	left-hand side of equation \ref{eq:epsilon-bound-data} that
 	\begin{equation}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert 
-		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}, z''_{0})
+		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+		\vert^{2} 
+		\: d\mathcal{S}^{\dagger} = 
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		\: d k_{x} \, d k_{y} \: .
+		\label{eq:Plancherel-kx-ky}
+	\end{equation}
+	The right-hand side of this equation can be conveniently rewritten in 
+	polar coordinates by using $k_{x} = k \, \cos\theta$, 
+	$k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ as follows:
+	\begin{equation}
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		\: d k_{x} \, d k_{y} = 
+		\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 	
+		\quad .
+		\label{eq:Plancherel-k-theta}
+	\end{equation}
+	If we now combine the results obtained via Plancherel's theorem 
+	(equations \ref{eq:Plancherel-kx-ky} and \ref{eq:Plancherel-k-theta}), 
+	$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:observed-data-Fourier}),
+	$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V-Fourier-convolution})	
+	and $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:predicted-data-Fourier}),
+	we obtain
+	\begin{equation}
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert 
+		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
 		\vert^{2} 
 		\: d\mathcal{S}^{\dagger} =
 		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: k \: d k \, d \theta \: .
-		\label{eq:Plancherel-k-theta-data}
+		\label{eq:Plancherel-data}
 	\end{equation}
-	Then we define a conservative $\eta$ (equation \ref{eq:eta-bound-data})
-	by substituting the upper bounds for $\alpha_{U}$ (equation \ref{eq:alpha_U_upper_bound}) 
-	and for the amplitude spectrum of $d^{o}(\mathbf{r}^{\dagger})$ 
-	(equation \ref{eq:observed-data-spectrum-bound}) into the right-hand side of 
-	equation \ref{eq:Plancherel-k-theta-data} as follows
+
+	Because we know that $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right]$ 
+	(equation \ref{eq:observed-data-Fourier}) is square integrable 
+	(equation \ref{eq:observed-data-spectrum-bound}), we may use an adapted version 
+	of the Runge-Walsh theorem, which is well-known in Geodesy 
+	\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015},
+	to affirm that there exists a sufficiently
+	large $k_{\varepsilon}$ such that the right-hand side of 
+	\ref{eq:Plancherel-data} is smaller than or equal to a predefined 
+	$\varepsilon > 0$, which guarantees that the error bound given by equation 
+	\ref{eq:epsilon-bound-data} holds true.
+	It is important to stress, however, that this is a pure existence theorem and 
+	we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
+	For the present case, however, it is possible to consider that the error level in equation \ref{eq:epsilon-bound-data}
+	is given by $\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$, where
 	\begin{equation}
-		\eta \equiv 2\pi \, \Omega^{2} \,
-		\int\limits_{k_{\varepsilon}}^{\infty}
-		\frac{e^{- 2 \, \Delta z \, k }}{k} \, (3 \, k)^{6}
-		\: d k \: .
-		\label{eq:eta}
+		\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) = \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
+		\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) \: ,
+		\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
+		\label{eq:epsilon}
 	\end{equation}
-	Finally, we use equation \ref{eq:amplitude-spectrum-U-inequality} to show that
+	is obtained by combining 
+	the upper bounds for $\alpha_{U}$ (equation \ref{eq:alpha_U_upper_bound}) 
+	and for the amplitude spectrum of $d^{o}(\mathbf{r}^{\dagger})$ 
+	(equation \ref{eq:observed-data-spectrum-bound}) with the right-hand side of 
+	equation \ref{eq:Plancherel-data}, $q=\ell+m+n$, $\ell, m, n \in \{ 0, 1, 2 \}$, defines the order of 
+	the differential operator $\alpha_{U}$ 
+	(equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) and
+	\begin{equation}
+		\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
+		\int\limits_{2 \, \Delta z \, k_{\varepsilon}}^{\infty}
+		e^{- 2 \, \Delta z \, k } \, k^{2q-1} \, (2 \, \Delta z)^{2q} 
+		\: d k
+		\label{eq:incomplete-Gamma-function}
+	\end{equation}
+	is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
+	We now use equations \ref{eq:U-Dirichlet-Neumann-Fourier}, \ref{eq:Psi-Fourier}, \ref{eq:epsilon} 
+	and the Fourier-convolution theorem to manipulate the right-hand side of equation 
+	\ref{eq:Plancherel-data} and show that
 	\begin{equation}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\ddagger}) ] \vert^{2} \: d\mathcal{S}^{\ddagger} \le
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} \: d\mathcal{S}^{\dagger} \: ,
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} \: d\mathcal{S}^{\dagger} \le 
+		\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
 		\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
 		\label{eq:amplitude-spectrum-do-inequality}
 	\end{equation}
-	and, consequently, that 
-	$d(\mathbf{r}, z''_{0}) \approx d^{o}(\mathbf{r})$ to the 
-	predefined error $\eta$ (equation \ref{eq:eta}) according to
-	equation \ref{eq:eta-bound-data} not only on the 
+	where $d\mathcal{S}^{\ddagger} = dx^{\ddagger}dy^{\ddagger}$. 
+	It follows from equation \ref{eq:amplitude-spectrum-do-inequality} that 
+	$d(\mathbf{r}) \approx d^{o}(\mathbf{r})$ to the 
+	predefined error $\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ 
+	(equation \ref{eq:epsilon}) according to
+	equation \ref{eq:epsilon-bound-data} not only on the 
 	horizontal plane $z^{\dagger}_{0}$, but also at any horizontal plane above it,
 	with $z < z^{\dagger}_{0} < z^{t}_{0} < z''_{0}$.
 \end{proof}
+	
+Note that, if we consider the particular case in which the horizontal plane $z''_{0}$ is located above the sources 
+and let the truncating wavenumber $k_{\varepsilon}$ goes to infinite, we obtain from equations 
+\ref{eq:observed-data-Fourier}, \ref{eq:lim-kepsilon-tau-Fourier}--\ref{eq:lim-kepsilon-potential-V-space}, 
+\ref{eq:p-Fourier} and \ref{eq:predicted-data-Fourier} that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ p(\mathbf{r}'') \right] = 
+	\tfrac{k \, \alpha_{U}}{\alpha_{a} \, \alpha_{\Phi}} \,
+	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-p-Fourier}
+\end{equation}
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ d(\mathbf{r}^{\dagger}) \right] = 
+	\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-predicted-data-Fourier}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} d(\mathbf{r}) = 
+	d^{o}(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: .
+	\label{eq:lim-kepsilon-predicted-data-space}
+\end{equation}
+
 
 \subsection{Remarks on particular solutions of the planar equivalent-layer integral}
 \label{subsec:remarks_eqlayer_integral}
 
 The space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
 (equation \ref{eq:eqlayer-integral}) obtained by computing the inverse Fourier transform
-of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:Fourier-p}) defines the physical property 
+of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) defines the physical property 
 distribution of an equivalent layer, whose physical meaning depends on the respective 
 $\alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-Phi-1} and \ref{eq:diff-operators-Phi-2})
-and $\alpha_{a}$ (equation \ref{eq:Fourier-kernel}).
+and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 
 \subsubsection{Solutions defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
 
-All equivalent layers obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ 
-give rise to a predicted potential field $d(\mathbf{r}, z''_{0})$ which is analogous
+All equivalent layers obtained with $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-Phi-2})
+and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}) 
+give rise to a predicted potential field $d(\mathbf{r})$ which is analogous
 to the vertical component of the gravitational attraction due to a layer of monopoles.
 In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
-	d(\mathbf{r}, z''_{0})
+	d(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p(\mathbf{r}'') \, \tfrac{\partial}{\partial z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \:\: d\mathcal{S}''
 	\: , \quad z < z''_{0} \: ,
 	\label{eq:eqlayer-integral-Dirichlet-space}
 \end{equation}
-where $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform of
+and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by 
 \begin{equation}
 	\mathcal{F} [ p(\mathbf{r}'') ] =
 	\begin{cases}
@@ -146,9 +319,12 @@ where $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform o
 	\label{eq:Fourier-p-Dirichlet}
 \end{equation}
 with $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ defined by equation \ref{eq:observed-data-Fourier}.
-Note that equation \ref{eq:Fourier-p-Dirichlet} is (or approximates) the well-known \textit{upward continuation integral} 
+Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
+$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:Fourier-p-Dirichlet}) is (or approximates) the
+observed potential field on the layer plane.
+Moreover, equation \ref{eq:eqlayer-integral-Dirichlet-space} is (or approximates) the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
-which is traditionally derived from the exact solution of the Dirichlet’s problem on the
+which is traditionally derived from the solution of the Dirichlet’s problem on the
 layer plane (equation \ref{eq:U-Dirichlet}).
 
 It is important to highlight that such equivalent layers preserve the physical relationship between the 
@@ -165,13 +341,33 @@ proposed by \cite{dampney1969} for processing gravity data.
 Most of what is known or assumed to be true without any proof about planar equivalent 
 layers can be deduced from the set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
 integral (equation \ref{eq:eqlayer-integral}) obtained with 
-$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$.
-All these layers preserve the physical relationship between the observed potential field and its true sources.
-Moreover, they are directly related to the exact solution of the Neumann’s problem 
-on the layer plane (equation \ref{eq:U-Neumann}) and assume the form:
+$\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+$\alpha_{a} = \alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}).
+All these layers are directly related to the solution of the Neumann’s problem on the layer plane (equation \ref{eq:U-Neumann})
+and preserve the physical relationship between the observed potential field and its true sources.
+
+The set of equivalent layers obtained with 
+$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$ can be split into two groups,
+according to $\alpha_{U}$.
+The first group has $\alpha_{U}$ given by equation \ref{eq:diff-operators-monopoles} and is formed 
+by layers of monopoles.
+In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
+(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) represents the potential 
+$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) or any of its $q$th-order partial derivatives 
+(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}), which describe the gravitational 
+field produced by the true sources.
+The second group has $\alpha_{U}$ given by equation \ref{eq:diff-operators-dipoles} and 
+is formed by layers of dipoles.
+In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ 
+represents directional derivatives of the potential $U(\mathbf{r})$ 
+(equations \ref{eq:oblique-1st-deriv-U} and \ref{eq:oblique-2nd-deriv-U}),
+which describe the magnetic induction field due to the true sources.
+
+For the case in which $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$, 
+the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
-	d(\mathbf{r}, z''_{0})
+	d(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p(\mathbf{r}'') \: D_{U} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \:\: d\mathcal{S}''
 	\: , \quad z < z''_{0} \: ,
@@ -180,7 +376,7 @@ on the layer plane (equation \ref{eq:U-Neumann}) and assume the form:
 where $D_{U}$ is defined by equations \ref{eq:diff-operators-monopoles} and
 \ref{eq:diff-operators-dipoles} as the same space-domain differential operator acting 
 on the potential field data $d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space})
-and $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform of
+and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by
 \begin{equation}
 	\mathcal{F} [ p(\mathbf{r}'') ] =
 	\begin{cases}
@@ -189,83 +385,140 @@ and $p(\mathbf{r}'')$ is obtained by computing the inverse Fourier transform of
 		\quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon}
 	\end{cases} \: .
-	\label{eq:Fourier-p-Neumann}
+	\label{eq:p-Fourier-Neumann}
 \end{equation}
-Note that the $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
-equation \ref{eq:Fourier-p-Neumann} is (or approximates) the 
+Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
+equation \ref{eq:p-Fourier-Neumann} is (or approximates) the vertical derivative 
 $\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) on the 
-layer plane $z''_{0}$, regardless of how $\alpha_{U}$ is set.
+layer plane $z''_{0}$, regardless of how $\alpha_{U}$ 
+(equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) is set.
 
-PAREI AQUI
+Equation \ref{eq:eqlayer-integral-Neumann-space} shows that
+the differential operators $D_{U}$ and $\alpha_{U}$ (equation \ref{eq:diff-operators-monopoles})
+act only on the observed potential field $d^{o}(\mathbf{r})$ 
+(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) and the kernel 
+$a(\mathbf{r}, \mathbf{r}'')$ (equations \ref{eq:eqlayer-integral} and \ref{eq:kernel-Fourier}). 
+Consequently, a change on the order $q$ of the
+differential operators $D_{U}$ and $\alpha_{U}$ does not affect $p(\mathbf{r}'')$, which means that the
+same $p(\mathbf{r}'')$ obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+$\alpha_{a} = \alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) 
+solves the equivalent-layer integral for the case in which
+$d^{o}(\mathbf{r})$ represents the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
+or any of its partial derivatives (equations \ref{eq:1st-deriv-U}, \ref{eq:2nd-deriv-U}, \ref{eq:oblique-1st-deriv-U}
+and \ref{eq:oblique-2nd-deriv-U}), so that the predicted potential fields $d(\mathbf{r})$ 
+(equation \ref{eq:predicted-data-Fourier}) approximate the observed potential fields 
+$d^{o}(\mathbf{r})$ at any horizontal plane $z^{\dagger}_{0}$ above the sources according to 
+equation \ref{eq:epsilon-bound-data}, where the error level $\varepsilon$ can be defined by 
+equation \ref{eq:epsilon}, as a function of $q$.
 
-The set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-integral (equation \ref{eq:eqlayer-integral}) obtained with 
-$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$ results in two groups of equivalent 
-layers, according to $\alpha_{U}$.
-The first group has $\alpha_{U}$ given by equation \ref{eq:alpha_U_monopoles} and is formed 
-by layers of monopoles.
-In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
-(equation \ref{eq:Fourier-observed-data}) represents the potential $U(\mathbf{r})$ 
-(equation \ref{eq:scalar-potential-U}) or its derivatives 
-(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}), which describe the gravitational 
-field produced by the true sources.
-It can be shown that any given layer of monopoles in this group, defined 
-on a specific horizontal plane $z''_{0}$, simultaneously reproduces (or approximates) the
-potential $U(\mathbf{r})$ (equation \ref{eq:scalar-potential-U}) and all its derivatives
-(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}).
-This result gives the theoretical support for jointly processing gravity-gradient data 
+Note that, for the case in which $\alpha_{U}$ is given by equation \ref{eq:diff-operators-dipoles},
+the solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) 
+is a layer of dipoles having a constant magnetization direction equal to that of the total-magnetization
+of the true sources. Besides, the solution $p(\mathbf{r}'')$ is strictly positive 
+because it is (or approximates) the vertical derivative 
+$\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) on the layer plane, 
+which is defined in terms of a strictly positive function $\sigma(\mathbf{r}')$ representing the 
+total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
+within the sources.
+In this case, $p(\mathbf{r}'')$ represents the pseudogravity anomaly \citep[][ p. 345]{blakely1996} 
+due to the true sources on the layer plane.
+This result is in perfect agreement with that presented by \citet{reis_etal2020} for
+the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
+the approximated total-field anomaly (equation \ref{eq:oblique-2nd-deriv-U}).
+
+Moreover, equation \ref{eq:p-Fourier-Neumann} shows that $\mathcal{F} [ p(\mathbf{r}'') ]$
+is a truncated version of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier})
+multiplied by real functions. It means that the phase spectra of $\mathcal{F} [ p(\mathbf{r}'') ]$
+coincides with that of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (and consequently with that
+of the true sources distribution) up to the truncating wavenumber $k_{\varepsilon}$.
+
+All these aspects of equivalent layers obtained by solving the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+$\alpha_{a} = \alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
+can be formulated as two important corollaries of the Planar equivalent-layer
+theorem (Theorem \ref{theorem:planar-eqlayer-theorem}):
+\begin{corollary}
+	\label{corollary:monopoles-layers}
+	There is a layer of monopoles obtained by solving the planar equivalent-layer
+	integral on a given horizontal plane $z''_{0}$ that has a mass distribution
+	$p(\mathbf{r}'')$ with phase spectrum equal to that of the true sources distribution 
+	up to a truncating wavenumber and
+	produces predicted potential fields $d(\mathbf{r})$ satisfying, at any horizontal plane 
+	$z^{\dagger}_{0}$ above the sources, the condition
+	\begin{equation*}
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert d^{o}(\mathbf{r}^{\dagger}) - 
+		d(\mathbf{r}^{\dagger}) \vert^{2}
+		\:\: d\mathcal{S}^{\dagger} \le \varepsilon_{q} \: ,
+		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
+		\label{eq:epsilon-bound-data-monopoles}
+	\end{equation*}
+	where $d^{o}(\mathbf{r})$ is the gravitational potential or any of its 
+	$q$th-order partial derivatives and
+	$\varepsilon_{q} > 0$ a fixed but arbitrarily small error level depending on $q$.
+\end{corollary}
+and
+\begin{corollary}
+	\label{corollary:dipoles-layers}
+	There is a layer of dipoles obtained by solving the planar equivalent-layer
+	integral on a given horizontal plane $z''_{0}$ that has a magnetic-moment intensity distribution
+	$p(\mathbf{r}'')$ with phase spectrum equal to that of the true sources distribution 
+	up to a truncating wavenumber, has the same constant magnetization direction as that of the 
+	true sources and 
+	produces predicted potential fields $d(\mathbf{r})$ satisfying, at any horizontal plane 
+	$z^{\dagger}_{0}$ above the sources, the condition
+	\begin{equation*}
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert d^{o}(\mathbf{r}^{\dagger}) - 
+		d(\mathbf{r}^{\dagger}) \vert^{2}
+		\:\: d\mathcal{S}^{\dagger} \le \varepsilon_{q} \: ,
+		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
+		\label{eq:epsilon-bound-data-dipoles}
+	\end{equation*}
+	where $d^{o}(\mathbf{r})$ is defined in terms of partial derivatives of the
+	gravitational potential up to order $q = 2$ as the magnetic scalar potential or any component of 
+	the magnetic induction field due to the true sources, including the RTP anomaly, 
+	and $\varepsilon_{q} > 0$ is a fixed but arbitrarily small error level depending on $q$.
+\end{corollary}
+
+
+The importance of the Corollary \ref{corollary:monopoles-layers} relies on the fact that
+it gives the theoretical support for jointly processing gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
 gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg} via equivalent-layer 
 technique, for example.
-We draw attention to the fact that these potential-field applications implicitly presume
+These potential-field applications implicitly presume
 the existence of a single layer of monopoles that satisfactorily reproduces all components
 of the gravitational field. This premise, however, is usually assumed
 to be true without any proof.
 
-The second group of solutions $p(\mathbf{r}'')$ obtained with 
-$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{U}$ is formed by layers of dipoles.
-In this case, the
-observed potential field $d^{o}(\mathbf{r}^{\dagger})$ (equation \ref{eq:Fourier-observed-data}) 
-represents directional derivatives of the potential $U(\mathbf{r})$ 
-(equations \ref{eq:oblique-1st-deriv-U} and \ref{eq:oblique-2nd-deriv-U}),
-which describe the magnetic induction field due to the true sources.
-
-A PARTE ABAIXO SE REFERE A FONTES COM DIREÇÃO UNIFORME E CAMADA COM A MESMA
-DIREÇÃO DA FONTE - ISSO PRECISA SER ESPECIFICADO
-
-It can be shown that any given layer of dipoles in this group, defined 
-on a specific horizontal plane $z''_{0}$, simultaneously reproduces 
-(or approximates) all the directional derivatives of the
-potential $U(\mathbf{r})$ (equations \ref{eq:oblique-1st-deriv-U} and 
-\ref{eq:oblique-2nd-deriv-U}).
-
-This result is important because most previously published studies are limited to
-the empirical use of a planar layer of dipoles for processing total-field anomaly data.
-
+The Corollary \ref{corollary:dipoles-layers} is extremely relevant for 
+all magnetic-field transformations based on the equivalent-layer technique.
+Surprisingly, most of previously published studies are limited to
+the use of a planar layer of dipoles as a purely mathematical tool for processing total-field 
+anomaly data, as clearly pointed out by \citet{bhattacharyya_chan1977} and 
+\citet{pedersen1989}.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces the approximated total-field anomaly $\partial_{th} U(\mathbf{r})$
 (equation \ref{eq:oblique-2nd-deriv-U}).
+The Corollary \ref{corollary:dipoles-layers} is important in this case because it
+establishes the existence of a layer of dipoles that is intrinsically related to the
+true magnetic sources and is deduced as a solution of the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) and is directly related to the solution of the Neumann's 
+problem on a plane (equation \ref{eq:U-Neumann}).
+
+Another important aspect of the Corollary \ref{corollary:dipoles-layers} is that it
+establishes the existence of a planar layer of dipoles that reproduces the magnetic scalar
+potential and any component of the magnetic induction field, including the RTP anomaly.
+This represents the theoretical basis for computing the RTP in the space domain, from total-field
+anomaly data, via equivalent-layer technique, according to the pioneer work of \citet{silva1986}.
+It is important to underline that this theoretical result has never been clearly
+defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
+\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}
+proposed to compute the RTP in space-domain, via equivalent-layer technique.
+The layer of dipoles obtained by solving the planar equivalent-layer integral also offers
+the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
+in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
 
-
-FALAR DA IMPORTANCIA DESTE RESULTADO PARA O PROCESSAMENTO DE DADOS MAGNETICOS, 
-ESTIMATIVA DAS COMPONENTS DO CAMPO VIA AN DE CAMPO TOTAL APROX E RTP
-
-%For example, defining $\alpha_{U}$ (equation \ref{eq:alpha_U_monopoles}) with $\ell = m = 0$ 
-%and $n = 1$ leads to an observed potential field 
-%$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] = k \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
-%(equation \ref{eq:Fourier-observed-data}) and a kernel
-%$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = k \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
-%(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain, or 
-%$d^{o}(\mathbf{r}) = \partial_{z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) and
-%$a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{z} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
-%(equation \ref{eq:Psi}) in the space domain.
-%If we now use $\ell = m = 1$ and $n = 0$ (equation \ref{eq:alpha_U_monopoles}), we obtain
-%$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =  -k_{x} k_{y} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
-%(equation \ref{eq:Fourier-observed-data}) and a kernel
-%$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = -k_{x} k_{y} \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
-%(equations \ref{eq:Fourier-Phi}--\ref{eq:Fourier-Psi}) in the Fourier domain,
-%or $d^{o}(\mathbf{r}) = \partial_{xy} U(\mathbf{r})$ (equation \ref{eq:2nd-deriv-U}) and
-%$a(\mathbf{r}^{\dagger}, \mathbf{r}'') = \partial_{xy} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$
-%(equation \ref{eq:Psi}) in the space domain.
