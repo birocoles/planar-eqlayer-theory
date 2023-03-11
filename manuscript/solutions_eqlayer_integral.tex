@@ -413,16 +413,16 @@ equation \ref{eq:epsilon}, as a function of $q$.
 
 Note that, for the case in which $\alpha_{U}$ is given by equation \ref{eq:diff-operators-dipoles},
 the solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) 
-is a layer of dipoles having a constant magnetization direction equal to that of the total-magnetization
-of the true sources. Besides, the solution $p(\mathbf{r}'')$ is strictly positive 
+is a layer of dipoles having a constant magnetization direction equal to that of the 
+true sources total magnetization. Besides, the solution $p(\mathbf{r}'')$ is strictly positive 
 because it is (or approximates) the vertical derivative 
 $\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) on the layer plane, 
 which is defined in terms of a strictly positive function $\sigma(\mathbf{r}')$ representing the 
-total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
+total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
 within the sources.
 In this case, $p(\mathbf{r}'')$ represents the pseudogravity anomaly \citep[][ p. 345]{blakely1996} 
 due to the true sources on the layer plane.
-This result is in perfect agreement with that presented by \citet{reis_etal2020} for
+This result is in perfect agreement with that deduced by \citet{reis_etal2020} for
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:oblique-2nd-deriv-U}).
 
@@ -497,15 +497,15 @@ all magnetic-field transformations based on the equivalent-layer technique.
 Surprisingly, most of previously published studies are limited to
 the use of a planar layer of dipoles as a purely mathematical tool for processing total-field 
 anomaly data, as clearly pointed out by \citet{bhattacharyya_chan1977} and 
-\citet{pedersen1989}.
+\citet{pedersen1989}, for example.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces the approximated total-field anomaly $\partial_{th} U(\mathbf{r})$
 (equation \ref{eq:oblique-2nd-deriv-U}).
 The Corollary \ref{corollary:dipoles-layers} is important in this case because it
-establishes the existence of a layer of dipoles that is intrinsically related to the
-true magnetic sources and is deduced as a solution of the planar equivalent-layer integral
-(equation \ref{eq:eqlayer-integral}) and is directly related to the solution of the Neumann's 
+establishes the existence of a layer of dipoles that is (i) intrinsically related to the
+true magnetic sources, (ii) deduced as a solution of the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) and (iii) directly related to the solution of the Neumann's 
 problem on a plane (equation \ref{eq:U-Neumann}).
 
 Another important aspect of the Corollary \ref{corollary:dipoles-layers} is that it
@@ -522,3 +522,21 @@ the theoretical link between the RTP in the space domain, via equivalent-layer t
 in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
 
+\subsubsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{U}$}
+
+
+Equivalent layers obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+$\alpha_{a} \ne \alpha_{U}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
+do not preserve the physical relationship between the observed potential field and its true sources.
+For example, by using $\alpha_{\Phi} = \alpha_{a} = 1$, we obtain a kernel $a(\mathbf{r}, \mathbf{r}'')$ 
+(equations \ref{eq:eqlayer-integral}) given by the scaled inverse distance function $\Psi(\mathbf{r}, \mathbf{r}'')$ 
+(equation \ref{eq:Psi}) in the space domain. This is the ``generalized equivalent sources'' approach 
+proposed by \citet{cordell1992}, and recently adapted by \citet{soler_uieda2021}, to perform gravity-data
+processing.
+Another example of alternative equivalent-layer approach is obtained by using
+$\alpha_{\Phi} = 1$ and 
+$\alpha_{a} = \tfrac{(\mathbf{k} \cdot \hat{\mathbf{h}}) \, (\mathbf{k} \cdot \hat{\mathbf{h}})}{k^{2}}$.
+In this case, according to equation \ref{eq:p-Fourier}, the solution of the equivalent-layer
+integral (equation \ref{eq:eqlayer-integral}) on a horizontal plane $z''_{0}$ is (or approximates) 
+the second vertical integral of $U(\mathbf{r}'')$ on the layer plane.
+This approach was proposed by \citet{guspi_novara2009} for computing the RTP anomaly in the space domain.
