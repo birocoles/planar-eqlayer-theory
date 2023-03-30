@@ -1,5 +1,7 @@
-\section{Preliminary definitions}
+\section{Definitions}
 \label{sec:preliminaries}
+
+\subsubsection{Auxiliary functions}
 
 Consider a function $\tau(\mathbf{r}'')$ defined on a horizontal 
 plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
@@ -94,10 +96,53 @@ and, consequently, that
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
 problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
+
+\subsubsection{Planar equivalent-layer integral in Fourier domain}
+
+
+Let us apply the Fourier-convolution theorem to the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) on a horizontal plane 
+$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain
+\begin{equation}
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
+	\mathcal{F} [ p(\mathbf{r}'') ] \, 
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:eqlayer-integral-Fourier}
+\end{equation}
+where
+\begin{equation}
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{a} \, 
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:kernel-Fourier}
+\end{equation}
+with $\alpha_{a}$ being a generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
+Then we use equation \ref{eq:tau-Fourier} to define
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
+	\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
+	\label{eq:p-Fourier}
+\end{equation}
+which combined with equations \ref{eq:eqlayer-integral-Fourier} and
+\ref{eq:kernel-Fourier} results in
+\begin{equation}
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
+	\alpha_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
+	\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
+	\label{eq:predicted-data-Fourier}
+\end{equation}
+We draw attention to the fact that $z''_{0}$ may be above the sources (i.e., $z''_{0} < z^{t}_{0}$)
+or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
+
+
 \section{Planar equivalent-layer theorem}
 \label{sec:planar_eqlayer_theorem}
 
-\begin{theorem}[\textbf{Planar equivalent-layer theorem}]
+Grounded on the definitions of the previous section, we state the following
+theorem about the existence of planar equivalent layers:
+
+\begin{theorem}%[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
 	For a given observed potential field $d^{o}(\mathbf{r})$, 
 	there exist a set of different solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
@@ -117,43 +162,6 @@ problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref
 \end{theorem}
 
 \begin{proof}
-	Let us first apply the Fourier-convolution theorem to the planar equivalent-layer integral
-	(equation \ref{eq:eqlayer-integral}) on a horizontal plane 
-	$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain
-	\begin{equation}
-		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
-		\mathcal{F} [ p(\mathbf{r}'') ] \, 
-		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-		\label{eq:eqlayer-integral-Fourier}
-	\end{equation}
-	where
-	\begin{equation}
-		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
-		\alpha_{a} \, 
-		\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-		\label{eq:kernel-Fourier}
-	\end{equation}
-	and $\alpha_{a}$ defines a Fourier-domain differential operator acting
-	on the kernel function $a(\mathbf{r}^{\dagger}, \mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}). 
-	Here, we limit ourselves to the particular case in which $\alpha_{a}$ is
-	defined in the same way as $\alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} 
-	and \ref{eq:diff-operators-dipoles}).
-	Then we use equation \ref{eq:tau-Fourier} to define
-	\begin{equation}
-		\mathcal{F} [ p(\mathbf{r}'') ] =
-		\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
-		\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
-		\label{eq:p-Fourier}
-	\end{equation}
-	which combined with equations \ref{eq:eqlayer-integral-Fourier} and
-	\ref{eq:kernel-Fourier} results in
-	\begin{equation}
-		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
-		\alpha_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
-		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
-		\label{eq:predicted-data-Fourier}
-	\end{equation}
-
 	We obtain by applying the Plancherel's theorem \citep[][ p. 119]{bracewell1999} to the 
 	left-hand side of equation \ref{eq:epsilon-bound-data} that
 	\begin{equation}
@@ -257,8 +265,8 @@ problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref
 	with $z < z^{\dagger}_{0} < z^{t}_{0} < z''_{0}$.
 \end{proof}
 
-\subsection{Remarks on the horizontal plane $z''_{0}$}
-\label{subsec:remarks_layer_plane}
+%\subsection{Remarks on the horizontal plane $z''_{0}$}
+%\label{subsec:remarks_layer_plane}
 
 Note that, if we consider the particular case in which the horizontal plane $z''_{0}$ is located above the sources 
 and let the truncating wavenumber $k_{\varepsilon}$ goes to infinite, we obtain from equations 
@@ -283,8 +291,8 @@ and, consequently, that
 \end{equation}
 which clearly satisfies equation \ref{eq:epsilon-bound-data} for a given $\varepsilon > 0$.
 
-\subsection{Remarks on particular solutions $p(\mathbf{r}'')$}
-\label{subsec:remarks_particular_solutions}
+\section{Remarks on particular solutions of the planar equivalent layer integral}
+\label{sec:remarks_particular_solutions}
 
 The space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
 (equation \ref{eq:eqlayer-integral}) obtained by computing the inverse Fourier transform
@@ -294,7 +302,7 @@ $\alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-opera
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-Phi-1} and \ref{eq:diff-operators-Phi-2})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 
-\subsubsection{Solutions defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
+\subsection{Solutions defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
 
 All equivalent layers obtained with $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-Phi-2})
 and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}) 
@@ -335,39 +343,129 @@ observed potential field and its true sources only for the particular case in wh
 the observed potential field is gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, 
 i.e., for the case in which 
 $d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}).
+In this case, both the observed and predicted potential fields represent the vertical component of the 
+gravitational attraction.
 The solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ is the basis of the pioneer method
 proposed by \cite{dampney1969} for processing gravity data.
 
-\subsubsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$}
 
-Most of what is known or assumed to be true without any proof about planar equivalent 
-layers can be deduced from the set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-integral (equation \ref{eq:eqlayer-integral}) obtained with 
-$\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
-$\alpha_{a} = \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}).
-All these layers are directly related to the solution of the Neumann’s problem on the layer plane (equation \ref{eq:U-Neumann})
+\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{f} \, \alpha_{d}$}
+
+
+Consider that $\alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function
+of the wavenumbers $k_{x}$ and $k_{y}$.
+In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+assumes the form
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \: D_{a} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral-min-phase-space}
+\end{equation}
+where $D_{a}$ is a space-domain differential operator that acts 
+on the function $\Psi$ (equation \ref{eq:Psi}) and satisfies the condition
+\begin{equation}
+	\mathcal{F} [ D_{a} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{f} \, \alpha_{d} \, 
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:diff-operator-Da-condition}
+\end{equation}
+where $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by equation \ref{eq:Phi-Fourier},
+and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		\tfrac{k}{\alpha_{f}} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon}
+	\end{cases} \: .
+	\label{eq:p-Fourier-min-phase}
+\end{equation}
+Note that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-min-phase}) does not depend on $\alpha_{d}$.
+It means that changes in the differential operator $\alpha_{d}$ affect only the
+potential-field data and the kernel $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'')$ 
+(equations \ref{eq:eqlayer-integral} and \ref{eq:kernel-Fourier}).
+As a consequence, the same function $p(\mathbf{r}'')$ (equation \ref{eq:eqlayer-integral-Neumann-space})
+defined for a given horizontal plane $z''_{0}$ as the inverse Fourier transform of equation 
+\ref{eq:p-Fourier-min-phase} simultaneously solves the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+for the cases in which $d^{o}(\mathbf{r})$ represents the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
+or any of its partial derivatives (equations \ref{eq:1st-deriv-U}, \ref{eq:2nd-deriv-U}, \ref{eq:oblique-1st-deriv-U}
+and \ref{eq:oblique-2nd-deriv-U}) according to the error bound \ref{eq:epsilon-bound-data}.
+
+It is important to underline that the independence of $p(\mathbf{r}'')$ 
+(equations \ref{eq:eqlayer-integral-min-phase-space} and \ref{eq:p-Fourier-min-phase})
+with respect to $\alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) 
+occurs if and only if $\alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function.
+This independence reflects an import property of the phase spectrum \cite[e.g.,][ p. 261]{blakely1996} 
+of $p(\mathbf{r}'')$. 
+To show this property, let us define the phase spectrum of  
+$\mathcal{F} [ U(\mathbf{r}'') ]$ (equation \ref{eq:potential-U-Fourier}) and
+$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) as follows:
+\begin{equation}
+	\Theta [ U(\mathbf{r}'') ] = \tan^{-1} \left( 
+	\frac{\text{Im} \, \mathcal{F} [ U(\mathbf{r}'') ]}{\text{Re} \, \mathcal{F} [ U(\mathbf{r}'') ]} 
+	\right)
+	\label{eq:potential-U-phase-spectrum}
+\end{equation}
+and
+\begin{equation}
+	\Theta [ p(\mathbf{r}'') ] = \tan^{-1} \left( 
+	\frac{\text{Im} \, \mathcal{F} [ p(\mathbf{r}'') ]}{\text{Re} \, \mathcal{F} [ p(\mathbf{r}'') ]} 
+	\right) \: ,
+	\label{eq:p-phase-spectrum}
+\end{equation}
+where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, respectively.
+From equations \ref{eq:p-Fourier-min-phase}--\ref{eq:p-phase-spectrum}, we can easily verify that
+\begin{equation}
+	\Theta [ p(\mathbf{r}'') ] = \begin{cases}
+		\Theta [ U(\mathbf{r}'') ] & , \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon}
+	\end{cases} \: ,
+	\label{eq:p-phase-spectrum-U}
+\end{equation}
+which shows that the phase spectra of $\mathcal{F} [ p(\mathbf{r}'') ]$, $\mathcal{F} [ U(\mathbf{r}'') ]$ 
+and consequently that of the true sources distribution coincide up to the truncating wavenumber $k_{\varepsilon}$.
+Note that equation \ref{eq:p-phase-spectrum-U} holds true if and only if 
+$\alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function.
+
+All these aspects concerning equivalent layers obtained by solving the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+$\alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function and 
+$\alpha_{d}$ is given by equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles},
+can be formulated as an important Corollary of the Planar equivalent-layer
+theorem (Theorem \ref{theorem:planar-eqlayer-theorem}):
+\begin{corollary}
+	\label{corollary:minimum-phase-change-layers}
+	Any solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral defined 
+	on a horizontal plane $z''_{0}$ with phase spectrum given by equation \ref{eq:p-phase-spectrum-U}
+	simultaneously approximates the scalar potential $U$ (equation \ref{eq:potential-U-space}) 
+	or any of its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above 
+	the sources, according to the error bound \ref{eq:epsilon-bound-data}.
+\end{corollary}
+
+PAREI AQUI
+
+
+
+\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$}
+
+
+\subsubsection{General aspects}
+
+%Most of what is known or assumed to be true without any proof about planar equivalent 
+%layers can be deduced from the set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
+%integral (equation \ref{eq:eqlayer-integral}) obtained with 
+%$\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
+%$\alpha_{a} = \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}).
+All equivalent layers obtained with $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$
+(equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
+are directly related to the solution of the Neumann’s problem on the layer plane (equation \ref{eq:U-Neumann})
 and preserve the physical relationship between the observed potential field and its true sources.
-
-The set of equivalent layers obtained with 
-$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$ can be split into two groups,
-according to $\alpha_{d}$.
-The first group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-monopoles} and is formed 
-by layers of monopoles.
-In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
-(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) represents the potential 
-$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) or any of its $q$th-order partial derivatives 
-(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}), which describe the gravitational 
-field produced by the true sources.
-The second group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-dipoles} and 
-is formed by layers of dipoles.
-In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ 
-represents directional derivatives of the potential $U(\mathbf{r})$ 
-(equations \ref{eq:oblique-1st-deriv-U} and \ref{eq:oblique-2nd-deriv-U}),
-which describe the magnetic induction field due to the true sources.
-
-For the case in which $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$, 
-the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
+In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r})
@@ -390,38 +488,53 @@ and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by
 	\end{cases} \: .
 	\label{eq:p-Fourier-Neumann}
 \end{equation}
-Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
-equation \ref{eq:p-Fourier-Neumann} is (or approximates) the vertical derivative 
-$\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) on the 
-layer plane $z''_{0}$, regardless of how $\alpha_{d}$ 
-(equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) is set.
-It is important to underline that this independence of $p(\mathbf{r}'')$ with respect to 
-$\alpha_{d}$ occurs if and only if $\alpha_{a} = \alpha_{d}$. Any other $\alpha_{a}$ leads to 
-a $p(\mathbf{r}'')$ that depends on $\alpha_{d}$ and, consequently, on the potential field nature.
-... CORRIGIR
 
-Equation \ref{eq:eqlayer-integral-Neumann-space} shows that
-the differential operators $D_{d}$ and $\alpha_{d}$ (equation \ref{eq:diff-operators-monopoles})
-act only on the observed potential field $d^{o}(\mathbf{r})$ 
-(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) and the kernel 
-$a(\mathbf{r}, \mathbf{r}'')$ (equations \ref{eq:eqlayer-integral} and \ref{eq:kernel-Fourier}). 
-Consequently, a change on the order $q$ of the
-differential operators $D_{d}$ and $\alpha_{d}$ does not affect $p(\mathbf{r}'')$, which means that the
-same $p(\mathbf{r}'')$ obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
-$\alpha_{a} = \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) 
-solves the equivalent-layer integral for the case in which
-$d^{o}(\mathbf{r})$ represents the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
-or any of its partial derivatives (equations \ref{eq:1st-deriv-U}, \ref{eq:2nd-deriv-U}, \ref{eq:oblique-1st-deriv-U}
-and \ref{eq:oblique-2nd-deriv-U}), so that the predicted potential fields $d(\mathbf{r})$ 
-(equation \ref{eq:predicted-data-Fourier}) approximate the observed potential fields 
-$d^{o}(\mathbf{r})$ at any horizontal plane $z^{\dagger}_{0}$ above the sources according to 
-equation \ref{eq:epsilon-bound-data}, where the error level $\varepsilon$ can be defined by 
-equation \ref{eq:epsilon}, as a function of $q$.
 
-Note that, for the case in which $\alpha_{d}$ is given by equation \ref{eq:diff-operators-dipoles},
-the solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) 
-is a layer of dipoles having a constant magnetization direction equal to that of the 
-true sources total magnetization. Besides, the solution $p(\mathbf{r}'')$ is strictly positive 
+
+
+\subsubsection{Physical meaning}
+
+
+The set of equivalent layers obtained with 
+$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$ can be split into two groups,
+according to $\alpha_{d}$.
+The first group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-monopoles} and is formed 
+by layers of monopoles.
+In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
+(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) represents the potential 
+$U(\mathbf{r})$ (equation \ref{eq:potential-U-space} and \ref{eq:potential-U-Fourier}) 
+or any of its $q$th-order partial derivatives 
+(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}), which describe the gravitational 
+field produced by the true sources.
+The second group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-dipoles} and 
+is formed by layers of dipoles.
+In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ 
+represents directional derivatives of the potential $U(\mathbf{r})$ 
+(equations \ref{eq:oblique-1st-deriv-U} and \ref{eq:oblique-2nd-deriv-U}),
+which describe the magnetic induction field due to the true sources.
+
+Note that solutions of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+obtained according to the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
+by using $\alpha_{a} = \alpha_{d}$, where $\alpha_{d}$ is given by equation 
+\ref{eq:diff-operators-dipoles}, establish the existence of dipole layers 
+that (i) have the same constant total-magnetization direction of the true sources, 
+(ii) are intrinsically related to the true magnetic sources and 
+(iii) are directly related to the solution of the Neumann's problem on a plane (equation \ref{eq:U-Neumann}).
+This theoretical result contrasts with most of the previously published studies because,
+surprisingly, they are limited to
+the use of a planar layer of dipoles as a purely mathematical tool for processing total-field 
+anomaly data, as clearly pointed out by \citet{bhattacharyya_chan1977} and 
+\citet{pedersen1989}, for example.
+
+DELIMITAR A IMPORTANCIA DO NOSSO RESULTADO
+
+Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
+attention to the problem of proving the existence of a planar layer of dipoles
+that reproduces the approximated total-field anomaly $\partial_{th} U(\mathbf{r})$
+(equation \ref{eq:oblique-2nd-deriv-U}).
+We show that 
+
+Besides, the solution $p(\mathbf{r}'')$ is strictly positive 
 because it is (or approximates) the vertical derivative 
 $\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}) on the layer plane, 
 which is defined in terms of a strictly positive function $\sigma(\mathbf{r}')$ representing the 
@@ -433,91 +546,21 @@ This result is in perfect agreement with that deduced by \citet{reis_etal2020} f
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:oblique-2nd-deriv-U}).
 
-Moreover, equation \ref{eq:p-Fourier-Neumann} shows that $\mathcal{F} [ p(\mathbf{r}'') ]$
-is a truncated version of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier})
-multiplied by real functions. It means that the phase spectra of $\mathcal{F} [ p(\mathbf{r}'') ]$
-coincides with that of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (and consequently with that
-of the true sources distribution) up to the truncating wavenumber $k_{\varepsilon}$.
-Note that any $\alpha_{a} \ne \alpha_{d}$ leads to a $\mathcal{F} [ p(\mathbf{r}'') ]$ with
-phase spectrum different ... CORRIGIR
-
-All these aspects of equivalent layers obtained by solving the planar equivalent-layer integral
-(equation \ref{eq:eqlayer-integral}) with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
-$\alpha_{a} = \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
-can be formulated as two important corollaries of the Planar equivalent-layer
-theorem (Theorem \ref{theorem:planar-eqlayer-theorem}):
-\begin{corollary}
-	\label{corollary:monopoles-layers}
-	There is a layer of monopoles obtained by solving the planar equivalent-layer
-	integral on a given horizontal plane $z''_{0}$ that has a mass distribution
-	$p(\mathbf{r}'')$ with phase spectrum equal to that of the true sources distribution 
-	up to a truncating wavenumber and
-	produces predicted potential fields $d(\mathbf{r})$ satisfying, at any horizontal plane 
-	$z^{\dagger}_{0}$ above the sources, the condition
-	\begin{equation*}
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert d^{o}(\mathbf{r}^{\dagger}) - 
-		d(\mathbf{r}^{\dagger}) \vert^{2}
-		\:\: d\mathcal{S}^{\dagger} \le \varepsilon_{q} \: ,
-		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
-		\label{eq:epsilon-bound-data-monopoles}
-	\end{equation*}
-	where $d^{o}(\mathbf{r})$ is the gravitational potential or any of its 
-	$q$th-order partial derivatives and
-	$\varepsilon_{q} > 0$ a fixed but arbitrarily small error level depending on $q$.
-\end{corollary}
-and
-\begin{corollary}
-	\label{corollary:dipoles-layers}
-	There is a layer of dipoles obtained by solving the planar equivalent-layer
-	integral on a given horizontal plane $z''_{0}$ that has a magnetic-moment intensity distribution
-	$p(\mathbf{r}'')$ with phase spectrum equal to that of the true sources distribution 
-	up to a truncating wavenumber, has the same constant magnetization direction as that of the 
-	true sources and 
-	produces predicted potential fields $d(\mathbf{r})$ satisfying, at any horizontal plane 
-	$z^{\dagger}_{0}$ above the sources, the condition
-	\begin{equation*}
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert d^{o}(\mathbf{r}^{\dagger}) - 
-		d(\mathbf{r}^{\dagger}) \vert^{2}
-		\:\: d\mathcal{S}^{\dagger} \le \varepsilon_{q} \: ,
-		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
-		\label{eq:epsilon-bound-data-dipoles}
-	\end{equation*}
-	where $d^{o}(\mathbf{r})$ is defined in terms of partial derivatives of the
-	gravitational potential up to order $q = 2$ as the magnetic scalar potential or any component of 
-	the magnetic induction field due to the true sources, including the RTP anomaly, 
-	and $\varepsilon_{q} > 0$ is a fixed but arbitrarily small error level depending on $q$.
-\end{corollary}
 
 
-The importance of the Corollary \ref{corollary:monopoles-layers} relies on the fact that
-it gives the theoretical support for jointly processing gravity-gradient data 
+
+
+The Corollary \ref{corollary:minimum-phase-change-layers} is extremely relevant for
+potential-field transformations based on the equivalent-layer technique. 
+It provides, for example, the theoretical support for jointly processing gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
-gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg} via equivalent-layer 
-technique, for example.
+gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg}.
 These potential-field applications implicitly presume
 the existence of a single layer of monopoles that satisfactorily reproduces all components
 of the gravitational field. This premise, however, is usually assumed
 to be true without any proof.
 
-The Corollary \ref{corollary:dipoles-layers} is extremely relevant for 
-all magnetic-field transformations based on the equivalent-layer technique.
-Surprisingly, most of previously published studies are limited to
-the use of a planar layer of dipoles as a purely mathematical tool for processing total-field 
-anomaly data, as clearly pointed out by \citet{bhattacharyya_chan1977} and 
-\citet{pedersen1989}, for example.
-Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
-attention to the problem of proving the existence of a planar layer of dipoles
-that reproduces the approximated total-field anomaly $\partial_{th} U(\mathbf{r})$
-(equation \ref{eq:oblique-2nd-deriv-U}).
-Note that the Corollary \ref{corollary:dipoles-layers} 
-establishes the existence of a layer of dipoles that is (i) intrinsically related to the
-true magnetic sources, (ii) deduced as a solution of the planar equivalent-layer integral
-(equation \ref{eq:eqlayer-integral}) and (iii) directly related to the solution of the Neumann's 
-problem on a plane (equation \ref{eq:U-Neumann}).
-
-Another important aspect of the Corollary \ref{corollary:dipoles-layers} is that it
+Another important aspect of the Corollary \ref{corollary:minimum-phase-change-layers} is that it
 establishes the existence of a planar layer of dipoles that reproduces the magnetic scalar
 potential and any component of the magnetic induction field, including the RTP anomaly.
 This represents the theoretical basis for computing the RTP in the space domain, from total-field
@@ -531,7 +574,11 @@ the theoretical link between the RTP in the space domain, via equivalent-layer t
 in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
 
-\subsubsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}
+\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}
+
+
+
+\subsubsection{Dipole layers with arbitrary constant magnetization direction}
 
 
 Equivalent layers obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
