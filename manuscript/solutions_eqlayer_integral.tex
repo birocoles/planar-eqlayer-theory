@@ -1,7 +1,7 @@
-\section{Definitions}
+\section{Preliminary definitions}
 \label{sec:preliminaries}
 
-\subsubsection{Auxiliary functions}
+\subsection{Auxiliary functions}
 
 Consider a function $\tau(\mathbf{r}'')$ defined on a horizontal 
 plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
@@ -97,7 +97,7 @@ which is in perfect agreement with the solutions of the Dirichlet's and Neumann'
 problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
 
-\subsubsection{Planar equivalent-layer integral in Fourier domain}
+\subsection{Planar equivalent-layer integral in Fourier domain}
 
 
 Let us apply the Fourier-convolution theorem to the planar equivalent-layer integral
@@ -117,9 +117,9 @@ where
 	\label{eq:kernel-Fourier}
 \end{equation}
 with $\alpha_{a}$ being a generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
-This function may be defined with the purpose of obtaining a kernel $a(\mathbf{r}, \mathbf{r}'')$
-(equation \ref{eq:eqlayer-integral}) that preserves the physical relationship between the observed 
-data and the true sources or not.
+This function may be defined by $\alpha_{a} \equiv \alpha(\ell,m,n)$ (equations \ref{eq:diff-operators-monopoles} 
+and \ref{eq:diff-operators-dipoles}), using non-negative integers $\ell$, $m$ and $n$ not necessarily equal to
+that used to define $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}).
 Again, we draw attention to the fact that $z''_{0}$ may be above the sources (i.e., $z''_{0} < z^{t}_{0}$)
 or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 
@@ -133,10 +133,9 @@ theorem about the existence of planar equivalent layers:
 \begin{theorem}%[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
 	For a given observed potential field $d^{o}(\mathbf{r})$, 
-	there exist a set of different solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-	integral on the same horizontal plane $z''_{0}$, all of them producing the 
-	same predicted potential field $d(\mathbf{r})$ that satisfies, 
-	at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, the condition
+	there exist a set of different planar equivalent layers that are defined on
+	the same horizontal plane $z''_{0}$, produce the same predicted potential field $d(\mathbf{r})$ 
+	and satisfies, at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, the condition
 	\begin{equation}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert d^{o}(\mathbf{r}^{\dagger}) - 
@@ -219,8 +218,8 @@ theorem about the existence of planar equivalent layers:
 	Because we know that $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
 	(equation \ref{eq:observed-data-Fourier}) is square integrable 
 	(equation \ref{eq:observed-data-spectrum-bound}), we may use an adapted version 
-	of the Runge-Walsh theorem, which is well-known in Geodesy 
-	\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015},
+	of the well-known Runge-Walsh theorem 
+	\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015}
 	to affirm that there exists a sufficiently
 	large $k_{\varepsilon}$ such that the right-hand side of 
 	\ref{eq:Plancherel-data} is smaller than or equal to a predefined 
@@ -229,7 +228,7 @@ theorem about the existence of planar equivalent layers:
 	It is important to stress, however, that this is a pure existence theorem and 
 	we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
 	For the present case, however, it is possible to combine 
-	the upper bounds for $\alpha_{d}$ (equation \ref{eq:alpha_U_upper_bound}) 
+	the upper bounds for $\alpha(\ell,m,n)$ (equation \ref{eq:alpha_U_upper_bound}) 
 	and for the amplitude spectrum of $d^{o}(\mathbf{r}^{\dagger})$ 
 	(equation \ref{eq:observed-data-spectrum-bound}) with the right-hand side of 
 	equation \ref{eq:Plancherel-data} to show that
@@ -257,12 +256,14 @@ theorem about the existence of planar equivalent layers:
 		\label{eq:incomplete-Gamma-function}
 	\end{equation}
 	is the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}.
-	We have just shown that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier})
-	leads to a $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ 
+	We have just shown that a planar equivalent layer with physical property distribution 
+	$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier})
+	leads to a predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ 
 	(equation \ref{eq:predicted-data-Fourier}) that satisfies the condition 
 	\ref{eq:Plancherel-data-epsilon}, where $\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ 
 	is the real function given by equation \ref{eq:epsilon}.
-	If we now use equations \ref{eq:Plancherel-kx-ky}--\ref{eq:Plancherel-data-epsilon} and 
+	If we now use the results obtained by applying the Plancherel's theorem 
+	(equations \ref{eq:Plancherel-kx-ky}--\ref{eq:Plancherel-data-epsilon}) and 
 	consider that the error bound in equation \ref{eq:epsilon-bound-data} is given by 
 	$\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ (equation \ref{eq:epsilon}),
 	we conclude that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is a solution
@@ -292,7 +293,7 @@ theorem about the existence of planar equivalent layers:
 	\end{equation}
 	where $d\mathcal{S}^{\ddagger} = dx^{\ddagger}dy^{\ddagger}$, which means that 
 	the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of
-	\ref{eq:p-Fourier} leads to a predicted potential field that satisfies  
+	$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) leads to a predicted potential field that satisfies  
 	$d(\mathbf{r}) \approx d^{o}(\mathbf{r})$ to the 
 	predefined error $\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ 
 	(equation \ref{eq:epsilon}) according to equation \ref{eq:epsilon-bound-data} not only on the 
@@ -326,64 +327,129 @@ and, consequently, that
 \end{equation}
 which clearly satisfies equation \ref{eq:epsilon-bound-data} for a given $\varepsilon > 0$.
 
-
-\section{Remarks on particular solutions of the planar equivalent layer integral}
-\label{sec:remarks_particular_solutions}
-
+\section{Remarks on particular equivalent layers}
+\label{sec:remarks_particular_eqlayers}
 
 The space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
 (equation \ref{eq:eqlayer-integral}) obtained by computing the inverse Fourier transform
 of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) defines the physical property 
 distribution of an equivalent layer and depends on the respective 
-$\alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}),
+$\alpha_{d}$ (equations \ref{eq:observed-data-Fourier}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 
-An equivalent layer can be classified according to its physical nature, which is expressed by
-the product $\alpha_{a} \, \alpha_{\Phi}$.
+\subsection{Physical nature}
+\label{subsec:physical-nature}
+
+The physical nature of a given equivalent layer is expressed by the product $\alpha_{a} \, \alpha_{\Phi}$.
 Layers defined in terms of a product $\alpha_{a} \, \alpha_{\Phi}$ that can
 be written according to equation \ref{eq:diff-operators-monopoles}, by using non-negative integers $\ell$, $m$ and $n$
-not necessarily equal to that associated with the observed data, are formed by monopoles (or points of mass).
-A second class of equivalent layers commonly used in Geophysics is formed by dipoles and are characterized
-by a product $\alpha_{a} \, \alpha_{\Phi}$ which can be written according to equation \ref{eq:diff-operators-dipoles},
-with non-negative integers $\ell$ and $m$ not necessarily equal to that associated with the observed data.
+not necessarily equal to that defining the differential operator $\alpha_{d}$ 
+associated with the observed data, are formed by monopoles (or points of mass).
+Such layers have the same physical nature of gravity sources.
+
+A second class of equivalent layers commonly used in Geophysics is formed by dipoles and is characterized
+by a product $\alpha_{a} \, \alpha_{\Phi}$ that can be written according to equation \ref{eq:diff-operators-dipoles},
+with non-negative integers $\ell$ and $m$ not necessarily equal to that defining $\alpha_{d}$.
+Such layers have the same physical nature of magnetic sources.
 Layers of dipoles can have a constant or spatially-varied magnetization direction. 
 We limit ourselves to the particular case in which the magnetization direction is constant throughout the layer.
 
-Equivalent layers can also be classified according to its predicted potential field.
-The physical relationship between a given equivalent layer and its predicted potential field may or may not be same 
-as that between the observed potential field and its true sources.
+\subsection{Equivalent layers in terms of their physical nature and predicted potential field}
 
-For example, consider that the observed potential field is the $x$-component of the magnetic-induction field 
-produced by sources having a given constant total-magnetization direction.
-According to the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}), it is possible to
-obtain different equivalent layers that reproduce this field. 
-Let us consider that we obtained three equivalent layers by using different products $\alpha_{a} \, \alpha_{\Phi}$.
-The first layer is formed by monopoles and its predicted potential field represents the vertical component
-of gravitational attraction.
-The second hypothetical layer is formed by dipoles and the respective predicted potential field represents the $y$-component of its
-magnetic-induction field.
-The third and last layers is also formed by dipoles, but the predicted potential field represents the $x$-component of its
-magnetic-induction field.
-The first layer neither has the same physical nature of the true sources nor preserves the physical relationship between the observed potential
-field and the true sources.
-The second has the same physical nature of the true sources, but does not preserve the physical relationship between the observed 
-field and the true sources.
-Finally, the third layer has the same physical nature of the true sources and also preserves the physical relationship between the
-observed field and the true sources.
-Note that, in these example, we do not impose any constraint on the magnetization direction of the dipole layers. 
+We classify equivalent layers according to their physical nature and predicted potential fields
+as follows:
+\begin{definition}
+	A source-compatible equivalent layer has the same physical nature of the true sources.
+	Otherwise, it is a source-incompatible equivalent layer.
+	\label{def:eql-source-compatible}
+\end{definition}
+\begin{definition}
+	A data-compatible equivalent layer has a physical relationship with its predicted potential
+	field equal to that between the observed potential field and its true sources.
+	Otherwise, it is a data-incompatible equivalent layer.
+	\label{def:eql-data-compatible}
+\end{definition}
+\begin{definition}
+	According to Definitions \ref{def:eql-source-compatible} and \ref{def:eql-data-compatible},
+	an equivalent layer can be:
+	\begin{itemize}
+		\item[(i)] fully-compatible if it is both source- and data-compatible;
+		\item[(ii)] partially-compatible if it is source- or data-compatible;
+		\item[(iii)] fully-incompatible if it is neither source- nor data-compatible.
+	\end{itemize}
+	\label{def:eql-fully-compatible}
+\end{definition}
 
-In another example, let us consider that the observed potential field is gravity disturbance data and that we have
-two equivalent layers.
+\subsubsection{Example 1}
+
+For example, let us consider that the observed potential field is gravity disturbance data and, consequently, that
+$\alpha_{d} = k$ is defined by equation \ref{eq:diff-operators-monopoles} with $\ell = m = 0$ and $n = 1$.
+Besides, consider that we have two equivalent layers.
 The first layer if formed by monopoles and the predicted potential field is the $y$-component of its gravitational
-attraction.
-The second layer is also formed by monopoles, but the predicted potential represents the $z$-component of its 
-gravitational attraction.
-In this case, both layers have the same physical nature of the true sources but only the second preserves the
-physical relationship between the observed potential field and the true sources.
+attraction, i.e., $\alpha_{\Phi} \, \alpha_{a} = \mathtt{i} \, k_{y}$ is defined by equation \ref{eq:diff-operators-monopoles}
+with $\ell = n = 0$ and $m = 1$.
+The second layer is also formed by monopoles, but the predicted potential field represents the $z$-component of its 
+gravitational attraction, which corresponds to a $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$.
+
+In this case, both layers are source-compatible (Definition \ref{def:eql-source-compatible}), 
+but only the second is data-compatible (Definition \ref{def:eql-data-compatible}). 
+It means that the first layer is partially-compatible and the second is fully-compatible 
+according to the Definition \ref{def:eql-fully-compatible}.
+
+\subsubsection{Example 2}
+
+In another example, consider that the observed potential field is the $x$-component of the magnetic-induction field 
+produced by sources having a given constant total-magnetization direction defined by a unit vector $\hat{\mathbf{v}}'$
+not aligned with $x$, $y$ or $z$ directions.
+In this case, $\alpha_{d} = \mathtt{i} \, k_{x} \, (\mathbf{k} \cdot \hat{\mathbf{v}}')$ (equation \ref{eq:observed-data-Fourier}) is defined by 
+equation \ref{eq:diff-operators-dipoles}, with $\ell = m = 1$, $\hat{\mathbf{v}} = \hat{\mathbf{v}}'$ and 
+$\hat{\mathbf{u}} = \hat{\mathbf{x}} = (1,0,0)^{\top}$.
+Let us also consider that we have defined three equivalent layers.
+The first layer is formed by monopoles and its predicted potential field represents the vertical component of gravitational attraction,
+which corresponds to $\alpha_{\Phi} \, \alpha_{a} = k$ obtained from equation \ref{eq:diff-operators-monopoles}
+with $\ell = m = 0$ and $n = 1$.
+The second hypothetical layer is formed by dipoles and has $\alpha_{\Phi} \, \alpha_{a} = \mathtt{i} \, k_{y} \, (\mathbf{k} \cdot \hat{\mathbf{v}}'')$,
+which corresponds to a predicted potential field representing the $y$-component of its
+magnetic-induction field and
+is obtained from equation \ref{eq:diff-operators-dipoles} with $\ell = m = 1$,
+$\hat{\mathbf{v}} = \hat{\mathbf{v}}''$ and $\hat{\mathbf{u}} = \hat{\mathbf{y}} = (0,1,0)^{\top}$.
+The last layer is also formed by dipoles, but the predicted potential field represents the $x$-component of its
+magnetic-induction field. In this case, $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$.
+
+The first layer neither has the same physical nature of the true sources nor preserves the physical relationship between the observed potential
+field and the true sources, hence it is a source-incompatible, data-incompatible and partially-compatible equivalent layer according to 
+Definitions \ref{def:eql-source-compatible}, \ref{def:eql-data-compatible} and \ref{def:eql-fully-compatible}, respectively.
+The second layer has the same physical nature of the true sources, but does not preserve the physical relationship between the observed 
+field and the true sources. This is another example of partially-compatible equivalent layer (Definition \ref{def:eql-fully-compatible})
+because it is source-compatible and data-incompatible according to Definitions \ref{def:eql-source-compatible} and \ref{def:eql-data-compatible}.
+Finally, the third layer is both source- and data-compatible because it has the same physical nature of the true 
+sources and also preserves the physical relationship between the observed field and the true sources.
+Consequently, it is a fully-compatible layer (Definition \ref{def:eql-fully-compatible}).
+Note that, in these examples, we do not impose any constraint on the magnetization direction of the dipole layer. 
+
+\subsubsection{Example 3}
+
+In our final example, consider again that the observed potential field is the $x$-component of the magnetic-induction field 
+produced by sources having a constant total-magnetization direction. The difference with respect to the Example 2 is that,
+now, the constant magnetization direction is defined by the unit vector 
+$\hat{\mathbf{v}}' = \hat{\mathbf{y}}$.
+In this case, $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}) is given by
+equation \ref{eq:diff-operators-monopoles} or \ref{eq:diff-operators-dipoles}, 
+with $\ell = m = 1$, $n = 0$, $\hat{\mathbf{v}} = \hat{\mathbf{v}}'$ and $\hat{\mathbf{u}} = \hat{\mathbf{x}}$.
+Due to this equivalence associated with the observed data, the fully-compatible
+equivalent layer (Definition \ref{def:eql-fully-compatible})
+obtained by using $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$ can be thought of
+(i) a monopole layer with predicted potential field given by the $xy$-component of the
+gravitational tensor, (ii) a dipole layer having a constant
+magnetization direction $\hat{\mathbf{v}}'' = \hat{\mathbf{y}}$, with predicted potential field
+given by the $x$-component of the magnetic induction field or 
+(iii) a dipole layer having a constant
+magnetization direction $\hat{\mathbf{v}}'' = \hat{\mathbf{x}}$, with predicted potential field
+given by the $y$-component of the magnetic induction field.
 
 
-\subsection{Solutions defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
+\subsection{Equivalent layers defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
 
 All equivalent layers obtained with $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-alpha-Phi-k})
 and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}) 
@@ -416,28 +482,32 @@ Moreover, it can also be verified that in this case the planar equivalent-layer 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
 which is traditionally derived from the solution of the Dirichlet’s problem on the
 layer plane (equation \ref{eq:U-Dirichlet}).
-
-It is important to highlight that such equivalent layers preserve the physical relationship between the 
-observed potential field and its true sources only for the particular case in which 
-the observed potential field is gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, 
-i.e., for the case in which 
-$d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}).
-In this case, both the observed and predicted potential fields represent the vertical component of the 
-gravitational attraction.
 The solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ is the basis of the pioneer method
 proposed by \cite{dampney1969} for processing gravity data.
 
+%It is important to highlight that such equivalent layers preserve the physical relationship between the 
+%observed potential field and its true sources only for the particular case in which 
+%the observed potential field is gravity disturbance data \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, 
+%i.e., for the case in which 
+%$d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:1st-deriv-U}).
+%In this case, both observed and predicted potential fields represent the vertical component of the 
+%gravitational attraction.
+%The solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+%obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ is the basis of the pioneer method
+%proposed by \cite{dampney1969} for processing gravity data.
 
-\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{f} \, \alpha_{d}$}
+
+\subsection{Equivalent layers defined by $\alpha_{\Phi} \, \alpha_{a} = \alpha_{f} \, \alpha_{d}$}
 
 
-Let $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1}) and
-$\alpha_{a} = \alpha_{f} \, \alpha_{d}$ (equation \ref{eq:kernel-Fourier}), with $\alpha_{f}$ being
+Let $\alpha_{\Phi} \, \alpha_{a} = \alpha_{f} \, \alpha_{d}$,
+with $\alpha_{\Phi}$ defined by equation \ref{eq:diff-operators-alpha-Phi-1} or
+\ref{eq:diff-operators-alpha-Phi-k}, $\alpha_{f}$ being
 a real function of the wavenumbers $k_{x}$ and $k_{y}$ and $\alpha_{d}$ given by
-equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}.
-In this case, it can be verified from equations \ref{eq:Psi}, \ref{eq:Psi-Fourier}, \ref{eq:Phi-Fourier}
-and \ref{eq:diff-operators-alpha-Phi-1} that the kernel $a(\mathbf{r}, \mathbf{r}'')$
+equation \ref{eq:diff-operators-monopoles} or \ref{eq:diff-operators-dipoles}.
+In this case, it can be verified from equations \ref{eq:Psi}--\ref{eq:diff-operators-alpha-Phi-k} 
+that the kernel $a(\mathbf{r}, \mathbf{r}'')$
 (equation \ref{eq:eqlayer-integral}) assumes, in the Fourier domain, the form
 \begin{equation}
 	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
@@ -471,7 +541,7 @@ and \ref{eq:oblique-2nd-deriv-U}) according to the error bound \ref{eq:epsilon-b
 It is important to underline that the independence of $p(\mathbf{r}'')$ 
 (equations \ref{eq:eqlayer-integral} and \ref{eq:p-Fourier-min-phase})
 with respect to $\alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}) 
-occurs if and only if $\alpha_{a} = \alpha_{f} \, \alpha_{d}$ (equations \ref{eq:kernel-Fourier} and \ref{eq:kernel-Fourier-min-phase}), 
+occurs if and only if $\alpha_{\Phi} \, \alpha_{a} = \alpha_{f} \, \alpha_{d}$ (equations \ref{eq:kernel-Fourier} and \ref{eq:kernel-Fourier-min-phase}), 
 where $\alpha_{f}$ is a real function.
 This independence reflects an import property of the phase spectrum \cite[e.g.,][ p. 261]{blakely1996} 
 of $p(\mathbf{r}'')$. 
@@ -502,40 +572,31 @@ From equations \ref{eq:p-Fourier-min-phase}--\ref{eq:p-phase-spectrum}, we can e
 \end{equation}
 which shows that the phase spectra of $\mathcal{F} [ p(\mathbf{r}'') ]$, $\mathcal{F} [ U(\mathbf{r}'') ]$ 
 and consequently that of the true sources distribution coincide up to the truncating wavenumber $k_{\varepsilon}$.
+This property gives rise to a noteworthy class of equivalent layers:
+\begin{definition}
+	An equivalent layer has minimum phase changes (with respect to the true sources distribution) if its
+	physical property distribution has a phase spectrum given by equation \ref{eq:p-phase-spectrum-U}.
+	\label{def:eql-min-phase}
+\end{definition}
 
-All these aspects of equivalent layers obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1}) and
-$\alpha_{a} = \alpha_{f} \, \alpha_{d}$ (equation \ref{eq:kernel-Fourier}), where $\alpha_{f}$ is
+All these aspects of equivalent layers obtained with $\alpha_{\Phi} \, \alpha_{a} = \alpha_{f} \, \alpha_{d}$ 
+(equation \ref{eq:kernel-Fourier}), where $\alpha_{f}$ is
 a real function of the wavenumbers $k_{x}$ and $k_{y}$ and $\alpha_{d}$ is given by
 equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}, can be formulated as an important
 Corollary of the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}):
 \begin{corollary}
 	\label{corollary:minimum-phase-change-layers}
-	Any solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral having 
-	a phase spectrum coinciding with that of the true 
-	sources distribution up to a truncating wavenumber $k_{\varepsilon}$ simultaneously 
-	approximates the scalar potential $U$ (equation \ref{eq:potential-U-space}) or any of 
-	its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
+	An equivalent layer having minimum phase changes (Definition \ref{def:eql-min-phase})
+	simultaneously approximates the scalar potential $U$ 
+	and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
 	sources according to the error bound \ref{eq:epsilon-bound-data}.
 \end{corollary}
 
-PAREI AQUI
+\subsection{Equivalent layers defined by $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$}
 
-
-
-\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$}
-
-
-\subsubsection{General aspects}
-
-%Most of what is known or assumed to be true without any proof about planar equivalent 
-%layers can be deduced from the set of solutions $p(\mathbf{r}'')$ of the planar equivalent-layer 
-%integral (equation \ref{eq:eqlayer-integral}) obtained with 
-%$\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
-%$\alpha_{a} = \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles}).
-All equivalent layers obtained with $\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$
-(equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
-are directly related to the solution of the Neumann’s problem on the layer plane (equation \ref{eq:U-Neumann})
-and preserve the physical relationship between the observed potential field and its true sources.
+All equivalent layers obtained with $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$ are
+directly related to the solution of the Neumann’s problem on the layer plane (equation \ref{eq:U-Neumann})
+and fully compatible (Definition \ref{def:eql-fully-compatible}).
 In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
@@ -560,29 +621,48 @@ and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by
 	\label{eq:p-Fourier-Neumann}
 \end{equation}
 
+Let us consider a planar equivalent layer of monopoles, which has $\alpha_{\Phi} \, \alpha_{a}$ 
+defined by equation \ref{eq:diff-operators-monopoles}.
+In this case, we have that:
+\begin{lemma}
+	If a planar equivalent layer of monopoles is fully-compatible (Definition \ref{def:eql-fully-compatible}),
+	then it has minimum phase changes (Definition \ref{def:eql-min-phase}).
+	\label{lemma:eql-monopoles}
+\end{lemma}
+\begin{proof}
+	Observe that a planar layer of monopoles is fully-compatible (Definition \ref{def:eql-fully-compatible}) if
+	$\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$. This implies that $\mathcal{F} [ p(\mathbf{r}'') ]$ is given by
+	equation \ref{eq:p-Fourier-min-phase}, with $\alpha_{f} = 1$, and consequently has minimum phase changes
+	according to Definition \ref{def:eql-min-phase}.
+\end{proof}
 
+Lemma \ref{lemma:eql-monopoles} gives the theoretical support for methods aiming at
+jointly processing gravity-gradient data 
+\cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
+gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg} via equivalent-layer technique, for example.
+Such gravity-data transformations usually presume, without any proof, the existence of a single layer of 
+monopoles that satisfactorily reproduces all components of the gravitational field.
+This assumption, however, can be proved as a direct consequence of 
+Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-monopoles}.
 
+Let us now consider a planar equivalent layer of dipoles, which has $\alpha_{\Phi} \, \alpha_{a}$ 
+defined by equation \ref{eq:diff-operators-dipoles}.
+In this case, we have that:
+\begin{lemma}
+	If a planar equivalent layer of dipoles is fully-compatible (Definition \ref{def:eql-fully-compatible}) and
+	has a constant magnetization direction equal to that of the true sources total-magnetization, 
+	then it has minimum phase changes (Definition \ref{def:eql-min-phase}).
+	\label{lemma:eql-dipoles}
+\end{lemma}
+\begin{proof}
+	Start by noting that a planar layer of dipoles having the same constant magnetization direction 
+	as that of the true sources is fully-compatible (Definition \ref{def:eql-fully-compatible}) if
+	$\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$. This implies that $\mathcal{F} [ p(\mathbf{r}'') ]$ is given by
+	equation \ref{eq:p-Fourier-min-phase}, with $\alpha_{f} = 1$, and consequently has minimum phase changes
+	according to Definition \ref{def:eql-min-phase}.
+\end{proof}
 
-\subsubsection{Physical meaning}
-
-
-The set of equivalent layers obtained with 
-$\alpha_{\Phi} = 1$ and $\alpha_{a} = \alpha_{d}$ can be split into two groups,
-according to $\alpha_{d}$.
-The first group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-monopoles} and is formed 
-by layers of monopoles.
-In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
-(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) represents the potential 
-$U(\mathbf{r})$ (equation \ref{eq:potential-U-space} and \ref{eq:potential-U-Fourier}) 
-or any of its $q$th-order partial derivatives 
-(equations \ref{eq:1st-deriv-U} and \ref{eq:2nd-deriv-U}), which describe the gravitational 
-field produced by the true sources.
-The second group has $\alpha_{d}$ given by equation \ref{eq:diff-operators-dipoles} and 
-is formed by layers of dipoles.
-In this case, the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ 
-represents directional derivatives of the potential $U(\mathbf{r})$ 
-(equations \ref{eq:oblique-1st-deriv-U} and \ref{eq:oblique-2nd-deriv-U}),
-which describe the magnetic induction field due to the true sources.
+PAREI AQUI - TA PUXADO
 
 Note that solutions of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 obtained according to the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
@@ -617,20 +697,6 @@ This result is in perfect agreement with that deduced by \citet{reis_etal2020} f
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:oblique-2nd-deriv-U}).
 
-
-
-
-
-The Corollary \ref{corollary:minimum-phase-change-layers} is extremely relevant for
-potential-field transformations based on the equivalent-layer technique. 
-It provides, for example, the theoretical support for jointly processing gravity-gradient data 
-\cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
-gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg}.
-These potential-field applications implicitly presume
-the existence of a single layer of monopoles that satisfactorily reproduces all components
-of the gravitational field. This premise, however, is usually assumed
-to be true without any proof.
-
 Another important aspect of the Corollary \ref{corollary:minimum-phase-change-layers} is that it
 establishes the existence of a planar layer of dipoles that reproduces the magnetic scalar
 potential and any component of the magnetic induction field, including the RTP anomaly.
@@ -644,13 +710,9 @@ The layer of dipoles obtained by solving the planar equivalent-layer integral al
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
 in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
-
 \subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}
 
-
-
 \subsubsection{Dipole layers with arbitrary constant magnetization direction}
-
 
 Equivalent layers obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
 $\alpha_{a} \ne \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})

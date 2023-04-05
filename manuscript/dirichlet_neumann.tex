@@ -86,7 +86,13 @@ where
 	\quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Phi-Fourier}
 \end{equation}
-with
+\begin{equation}
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
+	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
+	\: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
+	\label{eq:Psi-Fourier}
+\end{equation}
+is defined according to \citet[][ p. 275]{blakely1996}, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, and
 \begin{equation}
 	\Phi(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z}\Psi(\mathbf{r}, \mathbf{r}'')
 	\Longleftrightarrow
@@ -97,19 +103,11 @@ or
 \begin{equation}
 	\Phi(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')
 	\Longleftrightarrow
-	\alpha_{\Phi} = 1
+	\alpha_{\Phi} = 1 \: .
 	\label{eq:diff-operators-alpha-Phi-1}
 \end{equation}
-and 
-\begin{equation}
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
-	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
-	\: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
-	\label{eq:Psi-Fourier}
-\end{equation}
-is defined according to \citet[][ p. 275]{blakely1996}, with 
-$k = \sqrt{k_{x}^{2} + k_{y}^{2}}$. 
-It is worth noting that, depending on the differential operator $\alpha_{\Phi}$ 
+
+It is worth noting that, depending on how $\alpha_{\Phi}$ is set
 (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1}), 
 equation \ref{eq:U-Dirichlet-Neumann-Fourier} leads to the solution of 
 the Dirichlet's (equation \ref{eq:U-Dirichlet}) or Neumann's (equation \ref{eq:U-Neumann}) 
