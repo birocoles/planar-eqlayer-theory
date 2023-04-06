@@ -214,7 +214,7 @@ above the magnetic sources, this special magnetic anomaly is easier to interpret
 because it is predominantly positive right above the sources and
 decays to zero towards their boundaries. \citet{baranov1957} was the first
 to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
-total-field anomalies into this special anomaly..
+total-field anomalies into this special anomaly.
 
 \subsection{Phase spectrum of potential $U(\mathbf{r})$}
 \label{subsec:potential-U-min-phase}
@@ -241,7 +241,8 @@ $k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + 
 to show that
 \begin{equation}
 	\begin{split}
-		\vert (\mathbf{k} \cdot \hat{\mathbf{u}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{v}})^{m} \, (\mathbf{k} \cdot \hat{\mathbf{w}})^{n} \vert^{2}
+		\vert \alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}}) \vert^{2} 
+		&= \vert (\mathbf{k} \cdot \hat{\mathbf{u}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{v}})^{m} \, (\mathbf{k} \cdot \hat{\mathbf{w}})^{n} \vert^{2} \\
 		&= \left[ (\mathbf{k} \cdot \hat{\mathbf{u}})^{2} \right]^{\ell} \left[ (\mathbf{k} \cdot \hat{\mathbf{v}})^{2} \right]^{m} 
 		\left[ (\mathbf{k} \cdot \hat{\mathbf{w}})^{2} \right]^{n} \\
 		&\le \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{\ell} \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{m} 
@@ -250,14 +251,6 @@ to show that
 		\quad \ell, m , n \in \{0, 1, 2\} \: .
 	\end{split}
 \label{eq:alpha-upper-bound}
-\end{equation}
-From equation \ref{eq:alpha-upper-bound}, we can
-then verify that 
-\begin{equation}
-	\vert \alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}}) \vert^{2} \le 3^{q} \, k^{2\, q} \: , 
-	\quad q = \ell+m+n \: ,
-	\quad \ell, m , n \in \{0, 1, 2\} \: .
-	\label{eq:alpha_U_upper_bound}
 \end{equation}
 
 We are also interested in defining an upper bound for the absolute value
