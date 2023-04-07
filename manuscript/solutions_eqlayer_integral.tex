@@ -132,7 +132,7 @@ or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 	\begin{itemize}
 		\item[(a)] are defined on the same horizontal plane $z''_{0}$, 
 		\item[(b)] produce the same predicted potential field $d(\mathbf{r})$ and 
-		\item[(c)] satisfies, at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, the condition
+		\item[(c)] satisfy, at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the sources, the condition
 		\begin{equation}
 			\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 			\vert d^{o}(\mathbf{r}^{\dagger}) - 
@@ -417,7 +417,7 @@ where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, r
 \end{corollary}
 \begin{proof}
 	It follows from equations \ref{eq:potential-U-phase-spectrum} and \ref{eq:p-phase-spectrum-U} that 
-	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be defined by the product of a real function and
+	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ for $0 < k \le k_{\varepsilon}$ and equal to $0$ for $k > k_{\varepsilon}$.
 	From equation \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
 	$\alpha_{\Phi} \alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function.
@@ -447,13 +447,13 @@ where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, r
 	potential-field data and the kernel $a(\mathbf{r}, \mathbf{r}'')$ 
 	(equations \ref{eq:eqlayer-integral} and \ref{eq:kernel-Fourier}).
 	As a consequence, the same function $p(\mathbf{r}'')$ 
-	defined for a given horizontal plane $z''_{0}$ as the inverse Fourier transform of equation 
+	defined on a given horizontal plane $z''_{0}$ as the inverse Fourier transform of equation 
 	\ref{eq:p-Fourier-min-phase} simultaneously solves the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
 	for the cases in which $d^{o}(\mathbf{r})$ represents the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
 	or any of its partial derivatives (equations \ref{eq:potential-U-oblique-1st-deriv-space},
 	\ref{eq:potential-U-1st-deriv-space}, \ref{eq:potential-U-2nd-deriv-space}, 
 	and \ref{eq:potential-U-oblique-2nd-deriv-space}) according to the error bound \ref{eq:epsilon-bound-data},
-	concluding the proof.
+	which concludes the proof.
 \end{proof}
 
 \subsection{Fully-compatible equivalent layers}
@@ -476,16 +476,20 @@ where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, r
 \end{definition}
 \begin{lemma}
 	If a planar equivalent layer is fully-compatible (Definition \ref{def:eql-fully-compatible}),
-	then it has minimum phase changes  according to Definition \ref{def:eql-min-phase}.
-	\label{lemma:eql-monopoles}
+	then it has minimum phase changes according to Definition \ref{def:eql-min-phase}.
+	\label{lemma:eql-fully-compatible}
 \end{lemma}
 \begin{proof}
-	From equation \ref{eq:p-Fourier}, we have that $\mathcal{F} [ p(\mathbf{r}'') ]$ assumes the form \ref{eq:p-Fourier-Neumann} 
+	From equation \ref{eq:p-Fourier}, we have that the particular $\mathcal{F} [ p(\mathbf{r}'') ]$ 
+	defined by equation \ref{eq:p-Fourier-Neumann} as a necessary condition for a planar equivalent layer
+	be fully-compatible (Definition \ref{def:eql-fully-compatible}) is satisfied 
 	only for the case in which $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$. This condition implies that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ is a particular case of equation \ref{eq:p-Fourier-min-phase},
 	with $\alpha_{f} = 1$, and consequently has minimum phase changes
 	according to Definition \ref{def:eql-min-phase}.
 \end{proof}
+
+\subsubsection{General aspects}
 
 All fully-compatible equivalent layers have a close connection with the solution of the Neumann’s 
 problem on the layer plane (equation \ref{eq:U-Neumann}) and has a relationship with its predicted
@@ -506,26 +510,71 @@ distribution $p(\mathbf{r}'')$ of fully-compatible equivalent layers approximate
 $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
 layer plane $z''_{0}$.
 
-Lemma \ref{lemma:eql-monopoles} makes an important contribution to potential-field transformations
-based on equivalent-layer technique.
-In the context of gravity exploration, it gives the theoretical foundation for methods aiming at
-jointly processing gravity-gradient data 
+\subsubsection{Implications for gravity-field transformations}
+
+In the context of gravity exploration, Lemma \ref{lemma:eql-fully-compatible} gives the 
+theoretical foundation for methods aiming at jointly processing gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
 gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg}, for example.
 Such gravity-data transformations usually presume, without any proof, the existence of a single layer of 
 monopoles that satisfactorily reproduces all components of the gravitational field.
 This assumption, however, is a direct consequence of 
-Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-monopoles}.
+Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-fully-compatible}.
 
-In the context of magnetic exploration methods, Lemma \ref{lemma:eql-monopoles} contributes 
-to a deeper understanding about the use of dipole layers to perform potential-field transformations.
+\subsubsection{Implications for magnetic-field transformations}
+
+\begin{lemma}
+	Let the observed potential field be the magnetic scalar potential or a component of the magnetic induction 
+	field produced along a given constant direction by sources with a constant total-magnetization direction.
+	In this case, a planar equivalent layer of dipoles is fully-compatible (Definition \ref{def:eql-fully-compatible})
+	if and only if its constant magnetization direction is equal to that defining the total magnetization of the sources.
+	\label{lemma:eql-fully-compatible-dipoles}
+\end{lemma}
+\begin{proof}
+	Again, we get from equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} that all fully-compatible
+	equivalent layers must be defined by $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$.
+	We split this proof into two parts.
+	
+	In the first part, we consider that the observed potential field is the magnetic scalar potential. 
+	In this case, the differential operator 
+	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}),
+	where $\hat{\mathbf{v}}$ is a unit vector with the same direction as that defining the
+	sources total magnetization. Consider that 
+	$\alpha_{\Phi} \, \alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$ (equation \ref{eq:diff-operators-generic}),
+	where $\hat{\mathbf{h}}$ is a unit vector different from $\hat{\mathbf{v}}$. Suppose for sake of
+	contradiction that $\alpha(1, \hat{\mathbf{v}}) = \alpha(1, \hat{\mathbf{h}})$. Then, we use 
+	equation \ref{eq:diff-operators-generic} and the fact that the dot product is distributive to obtain 
+	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top} \mathbf{k} = 0$, which means that $\mathtt{i} k_{x}$, 
+	$\mathtt{i} k_{y}$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ are linearly dependent, a contradiction.
+	This implies that $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, completing the first part of our proof.
+	
+	In the second part of our proof, we consider that the observed potential field is a component
+	of the magnetic induction field along a given constant direction defined by the unit vector $\hat{\mathbf{u}}$.
+	Now, we have that 
+	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ and
+	$\alpha_{\Phi} \, \alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
+	(equation \ref{eq:diff-operators-generic}). We consider that these two differential operators
+	are equal to each other for sake of contradiction, which also leads to
+	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top} \mathbf{k} = 0$, another contradiction.
+	This implies again that $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, completing the second part of our proof.
+	
+	By combining the two parts, we conclude that the condition $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$
+	is meet only for the case in which the constant magnetization direction of the
+	planar equivalent layer of dipoles is the same as that defining the total-magnetization of the sources,
+	which completes the proof.
+\end{proof}
+
+In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-fully-compatible} and 
+\ref{lemma:eql-fully-compatible-dipoles} contribute to a deeper understanding about the use 
+of dipole layers to perform magnetic-field transformations.
 Surprisingly, most of the previously published studies about this topic are limited to
 the use of a planar layer of dipoles as purely mathematical strategy for processing total-field 
 anomaly data \citep[e.g.,][]{bhattacharyya_chan1977, pedersen1989}.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces total-field anomaly data.
-Lemma \ref{lemma:eql-monopoles} defines that a planar layers of dipoles having a constant 
+By Lemmas \ref{lemma:eql-fully-compatible} and \ref{lemma:eql-fully-compatible-dipoles},
+we obtain that planar layers of dipoles having a constant 
 magnetization direction equal to that associated with the total-magnetization of the true sources
 are (i) fully-compatible (Definition \ref{def:eql-fully-compatible}), (ii) intrinsically related 
 to the true magnetic sources and (iii) directly connected to the solution of the Neumann's problem on 
@@ -544,8 +593,9 @@ This result is in perfect agreement with that deduced by \citet{reis_etal2020} f
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
 
-By the Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-monopoles},
-we conclude that fully-compatible layers of dipoles having a constant magnetization direction 
+By combining Lemmas \ref{lemma:eql-fully-compatible} and \ref{lemma:eql-fully-compatible-dipoles} with
+Corollary \ref{corollary:minimum-phase-change-layers}, we obtain that
+fully-compatible layers of dipoles having a constant magnetization direction 
 simultaneously reproduces the approximated total-field and RTP anomalies 
 (see the subsection \textit{Some relevant potential fields for geophysical applications}).
 This gives the theoretical basis for computing the RTP in the space domain, from total-field
@@ -558,7 +608,34 @@ Our result also offers
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
 in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
-PAREI AQUI - TO BEM
+\subsection{Dipole layers with arbitrary constant magnetization direction}
+
+Let the observed potential field be
+the approximated total-field anomaly produced by sources with constant total-magnetization direction
+given by $\hat{\mathbf{v}}$, at a study area where the main geomagnetic field has a constant direction defined by 
+$\hat{\mathbf{u}}$. In this case, $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:observed-data-Fourier})
+is defined by the differential operator 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}).
+Moreover, consider a planar equivalent layer of dipoles defined by using $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1})
+and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ (equation \ref{eq:diff-operators-generic}), 
+where $\hat{\mathbf{h}}$ is a constant unit vector not necessarily equal to $\hat{\mathbf{v}}$.
+It can be verified from equation \ref{eq:p-Fourier} that, in this case, 
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		k \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: .
+	\label{eq:p-Fourier-dipoles}
+\end{equation}
+
+PAREI AQUI - DESISTI POR HOJE
+
+Note that this layes does not depend on $\hat{\mathbf{u}}$, which means that it reproduces 
+
 
 \subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}
 
