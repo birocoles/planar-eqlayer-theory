@@ -112,6 +112,7 @@ where
 	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
 	\alpha_{a} \, 
 	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad \left| \alpha_{a} \right| \ne 0 \: ,
 	\label{eq:kernel-Fourier}
 \end{equation}
 with $\alpha_{a}$ being a generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
@@ -119,6 +120,26 @@ This function may be defined in terms of the Fourier-domain differential operato
 $\alpha(\ell,\hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}), using 
 $\ell$ and $\hat{\mathbf{u}}$ not necessarily equal to
 that used to define $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}).
+Similarly, we get by applying the Fourier-convolution theorem to equation \ref{eq:transformed-field-integral-space}
+that
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
+	\mathcal{F} [ \tilde{p}(\mathbf{r}'') ] \, 
+	\mathcal{F} [ t(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:transformed-field-integral-Fourier}
+\end{equation}
+where $\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ is the Fourier transform of a particular solution $\tilde{p}(\mathbf{r}'')$ 
+of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) and
+\begin{equation}
+	\mathcal{F} [ t(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{t} \, 
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad \left| \alpha_{t} \right| \ne 0 \: ,
+	\label{eq:kernel-transformation-Fourier}
+\end{equation}
+defines the kernel of the potential-field transformation in the Fourier domain,
+with $\alpha_{t}$ being another generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
+
 Again, we draw attention to the fact that $z''_{0}$ may be above the sources (i.e., $z''_{0} < z^{t}_{0}$)
 or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 
@@ -152,7 +173,8 @@ or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
 		\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
-		\mathcal{F} [ \tau(\mathbf{r}'') ] \: .
+		\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
+		\quad \left| \alpha_{a} \right| \ne 0 \: , \quad k \ne 0 \: .
 		\label{eq:p-Fourier}
 	\end{equation}
 	We obtain from equations \ref{eq:potential-V-Fourier} and \ref{eq:eqlayer-integral-Fourier} that 
@@ -160,7 +182,7 @@ or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 	\begin{equation}
 		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
 		\alpha_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
-		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
+		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: .
 		\label{eq:predicted-data-Fourier}
 	\end{equation}
 	Note that, in this case, different solutions $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier})
@@ -297,13 +319,10 @@ or cross the sources (i.e., $z''_{0} > z^{t}_{0}$).
 	with $z^{\ddagger}_{0} < z^{\dagger}_{0} < z''_{0}$. This proves (c) and consequently concludes the proof.
 \end{proof}
 
-%\subsection{Remarks on the horizontal plane $z''_{0}$}
-%\label{subsec:remarks_layer_plane}
-
 Note that, if we consider the particular case in which the horizontal plane $z''_{0}$ is located above the sources 
 and let the truncating wavenumber $k_{\varepsilon}$ goes to infinite, we obtain from equations 
 \ref{eq:observed-data-Fourier}, \ref{eq:lim-kepsilon-tau-Fourier}--\ref{eq:lim-kepsilon-potential-V-space}, 
-\ref{eq:p-Fourier} and \ref{eq:predicted-data-Fourier} that
+\ref{eq:p-Fourier} and \ref{eq:predicted-data-Fourier} that, for $\left| \alpha_{a} \right| \ne 0$ and $k \ne 0$,
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ p(\mathbf{r}'') \right] = 
 	\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
@@ -334,43 +353,94 @@ $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 
-\subsection{Equivalent layers defined by $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$}
+For convenience, we use an upper tilde ($\sim$) to denote quantities set in a particular way.
+For example, $\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) denotes
+a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) 
+defined in terms of a particular kernel 
+$\mathcal{F} [ \tilde{a}(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = \tilde{\alpha}_{a} \, \mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$
+(equation \ref{eq:kernel-Fourier}) and an observed potential field 
+$\mathcal{F} [ \tilde{d}^{o}(\mathbf{r}^{\dagger}) ] = \tilde{\alpha}_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
+(equation \ref{eq:observed-data-Fourier}). 
+It is important noting that $\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
+carries information about the observed potential field and the kernel 
+of the equivalent-layer integral in the ratio $\nicefrac{\tilde{\alpha}_{d}}{\tilde{\alpha}_{a}}$.
+This generic solution produces a predicted potential field
+$\mathcal{F} [ \tilde{d}(\mathbf{r}^{\dagger}) ] = \tilde{\alpha}_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$
+(equation \ref{eq:predicted-data-Fourier}) that, according to the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}),
+fits the observed data according to equation \ref{eq:epsilon-bound-data}, for a given error bound $\tilde{\varepsilon}$.
+The particular solution $\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ can then
+be used to compute a transformed potential field $\mathcal{F} [ f(\mathbf{r}^{\dagger}) ]$
+defined by a given function $\alpha_{t}$ (equation \ref{eq:transformed-field-integral-Fourier}).
+%What follows aims at defining what transformed potential fields 
+%$\mathcal{F} [ f(\mathbf{r}^{\dagger}) ]$ can be computed with a particular solution
+%$\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ of the planar equivalent-layer integral.
 
-All equivalent layers obtained with $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-alpha-Phi-k})
-and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}) 
+
+\subsection{Arbitrarily-defined equivalent layers}
+
+
+Note that, given a planar equivalent layer defined for a particular potential field $\tilde{d}^{o}(\mathbf{r})$ 
+(equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
+$\tilde{\alpha}_{d}$, $\tilde{\alpha}_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
+and $\tilde{\alpha}_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
+transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
+This can be made by setting 
+\begin{equation}
+	\alpha_{t} = \left( \tfrac{\tilde{\alpha}_{\Phi} \, \tilde{\alpha}_{a}}{\tilde{\alpha}_{d}} \right) \alpha_{f} \: ,
+	\quad \left| \tilde{\alpha}_{d} \right| \ne 0 \: ,
+	\label{eq:alpha-t-generic}
+\end{equation}
+in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a complex or real function of the wavenumbers
+$k_{x}$ and $k_{y}$ defining a transformed potential field $\mathcal{F} \left[ f(\mathbf{r}^{\dagger}) \right]$
+on a horizontal plane $z^{\dagger}_{0}$ that is located above the layer plane and does not cross the sources.
+
+Note that the generic $\alpha_{t}$ given above (equation \ref{eq:alpha-t-generic}) depends on the particular 
+$\tilde{\alpha}_{d}$, $\tilde{\alpha}_{\Phi}$ and $\tilde{\alpha}_{a}$ used to define the equivalent layer.
+It means that, for arbitrarily-defined equivalent layers, the transformed potential field $f(\mathbf{r}^{\dagger})$ 
+(equation \ref{eq:transformed-field-integral-space}) obtained by computing the inverse Fourier transform of 
+$\mathcal{F} \left[ f(\mathbf{r}^{\dagger}) \right]$ (equation \ref{eq:transformed-field-integral-Fourier}), 
+depends on the particular observed potential field $\tilde{d}^{o}(\mathbf{r})$ (equations \ref{eq:observed-data-space} 
+and \ref{eq:observed-data-Fourier}) used to define the equivalent layer.
+It can be shown, however, that this dependence does not exist for some special equivalent layers.
+
+
+\subsection{Equivalent layers defined by $\tilde{\alpha}_{\Phi} = k$ and $\tilde{\alpha}_{a} = 1$}
+
+All equivalent layers obtained with $\tilde{\alpha}_{\Phi} = k$ (equation \ref{eq:diff-operators-alpha-Phi-k})
+and $\tilde{\alpha}_{a} = 1$ (equation \ref{eq:kernel-Fourier}) 
 give rise to a predicted potential field $d(\mathbf{r})$ which is analogous
 to the vertical component of the gravitational attraction due to a layer of monopoles
 or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
 In this case, it can be verified from equations \ref{eq:Psi}--\ref{eq:diff-operators-alpha-Phi-k} 
 that the kernel $a(\mathbf{r}, \mathbf{r}'')$
-(equation \ref{eq:eqlayer-integral}) assumes the form
+(equation \ref{eq:eqlayer-integral}) assumes the particular form
 \begin{equation}
-	a(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
+	\tilde{\alpha}(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
 	\label{eq:kernel-Dirichlet-space}
 \end{equation}
 and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is given by 
 \begin{equation}
-	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\mathcal{F} [ \tilde{p}(\mathbf{r}'') ] =
 	\begin{cases}
-		\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] 
+		\tilde{\alpha}_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
 		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
 		\quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
-	\end{cases} \: ,
-	\label{eq:Fourier-p-Dirichlet}
+	\end{cases} \: .
+	\label{eq:p-Fourier-Dirichlet}
 \end{equation}
-with $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ defined by equation \ref{eq:observed-data-Fourier}.
-Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
-$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:Fourier-p-Dirichlet}) approximates the
-observed potential field on the layer plane.
+Note that the solution $\tilde{p}(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
+$\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-Dirichlet}) approximates the
+downward continuation of the observed potential field to the layer plane.
 Moreover, it can also be verified that in this case the planar equivalent-layer integral 
 (equation \ref{eq:eqlayer-integral}) approximates the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
 which is traditionally derived from the solution of the Dirichlet’s problem on the
 layer plane (equation \ref{eq:U-Dirichlet}).
 The solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
-obtained with $\alpha_{\Phi} = k$ and $\alpha_{a} = 1$ is the basis of the pioneer method
+obtained with $\tilde{\alpha}_{\Phi} = k$ and $\tilde{\alpha}_{a} = 1$ is the basis of the pioneer method
 proposed by \cite{dampney1969} for processing gravity data.
+
 
 %It is important to highlight that such equivalent layers preserve the physical relationship between the 
 %observed potential field and its true sources only for the particular case in which 
@@ -396,7 +466,7 @@ on a horizontal plane $z^{\dagger}_{0}$ above the sources be defined as follows:
 \end{equation}
 where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, respectively.
 \begin{definition}
-	An equivalent layer has minimum phase changes (with respect to the true sources distribution) if its
+	An equivalent layer has minimum phase changes (with respect to the spatial distribution of the true sources) if its
 	physical property distribution has a phase spectrum given by 
 	\begin{equation}
 		\Theta [ p(\mathbf{r}'') ] = \begin{cases}
@@ -411,23 +481,23 @@ where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, r
 \begin{corollary}
 	\label{corollary:minimum-phase-change-layers}
 	An equivalent layer having minimum phase changes (Definition \ref{def:eql-min-phase})
-	simultaneously approximates the scalar potential $U$ 
-	and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
-	sources according to the error bound \ref{eq:epsilon-bound-data}.
+	depends only on the spatial distribution of the true sources and not on its associated 
+	potential field.
 \end{corollary}
 \begin{proof}
 	It follows from equations \ref{eq:potential-U-phase-spectrum} and \ref{eq:p-phase-spectrum-U} that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ for $0 < k \le k_{\varepsilon}$ and equal to $0$ for $k > k_{\varepsilon}$.
 	From equation \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
-	$\alpha_{\Phi} \alpha_{a} = \alpha_{f} \, \alpha_{d}$, where $\alpha_{f}$ is a real function.
+	$\alpha_{\Phi} \alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function, $\left| \alpha_{r} \right| \ne 0$.
 	In this case, it can be verified from equations \ref{eq:U-Dirichlet-Neumann-Fourier}--\ref{eq:diff-operators-alpha-Phi-k} 
 	that $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-Fourier}) 
 	assumes the form
 	\begin{equation}
 		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
-		\alpha_{f} \, \alpha_{d} \, 
+		\alpha_{r} \, \alpha_{d} \, 
 		\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+		\quad \left| \alpha_{r} \right| \ne 0 \: ,
 		\label{eq:kernel-Fourier-min-phase}
 	\end{equation}
 	where $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by equation \ref{eq:Phi-Fourier},
@@ -435,26 +505,34 @@ where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, r
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
 		\begin{cases}
-			\tfrac{k}{\alpha_{f}} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+			\tfrac{k}{\alpha_{r}} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
 			e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-			\quad 0 < k \le k_{\varepsilon} \\
+			\quad 0 < k \le k_{\varepsilon} \: , \quad \left| \alpha_{r} \right| \ne 0 \\
 			0 & , \quad k > k_{\varepsilon}
 		\end{cases} \: .
 		\label{eq:p-Fourier-min-phase}
 	\end{equation}
 	Note that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-min-phase}) does not depend on $\alpha_{d}$.
-	It means that changes in the differential operator $\alpha_{d}$ affect only the
+	As a consequence, changes in the differential operator $\alpha_{d}$ affect only the
 	potential-field data and the kernel $a(\mathbf{r}, \mathbf{r}'')$ 
 	(equations \ref{eq:eqlayer-integral} and \ref{eq:kernel-Fourier}).
-	As a consequence, the same function $p(\mathbf{r}'')$ 
-	defined on a given horizontal plane $z''_{0}$ as the inverse Fourier transform of equation 
-	\ref{eq:p-Fourier-min-phase} simultaneously solves the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
-	for the cases in which $d^{o}(\mathbf{r})$ represents the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
-	or any of its partial derivatives (equations \ref{eq:potential-U-oblique-1st-deriv-space},
-	\ref{eq:potential-U-1st-deriv-space}, \ref{eq:potential-U-2nd-deriv-space}, 
-	and \ref{eq:potential-U-oblique-2nd-deriv-space}) according to the error bound \ref{eq:epsilon-bound-data},
-	which concludes the proof.
+	This concludes the proof.
 \end{proof}
+
+We call attention to the fact that the same function $p(\mathbf{r}'')$ 
+defined on a given horizontal plane $z''_{0}$ as the inverse Fourier transform of equation 
+\ref{eq:p-Fourier-min-phase} simultaneously approximates the scalar potential $U$ 
+and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
+sources according to the error bound \ref{eq:epsilon-bound-data}.
+Consequently, any potential field transformation 
+(equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier})
+does not depend on the particular observed potential field used to define the equivalent layer as well.
+This can be shown by noting that, for a particular $\alpha_{\Phi} \alpha_{a} = \tilde{\alpha}_{r} \, \tilde{\alpha}_{d}$,
+we have $\tilde{\alpha}_{t} = \tilde{\alpha}_{r} \, \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), which does not
+depend on the $\tilde{\alpha}_{d}$ associated with the particular observed potential field.
+
+PAREI AQUI
+
 
 \subsection{Fully-compatible equivalent layers}
 
@@ -558,10 +636,7 @@ Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-f
 	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top} \mathbf{k} = 0$, another contradiction.
 	This implies again that $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, completing the second part of our proof.
 	
-	By combining the two parts, we conclude that the condition $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$
-	is meet only for the case in which the constant magnetization direction of the
-	planar equivalent layer of dipoles is the same as that defining the total-magnetization of the sources,
-	which completes the proof.
+	By combining the two parts, we conclude the proof.
 \end{proof}
 
 In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-fully-compatible} and 
@@ -626,7 +701,7 @@ It can be verified from equation \ref{eq:p-Fourier} that, in this case,
 		k \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
 		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
 		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \\
+		\quad 0 < k \le k_{\varepsilon} \: , \quad \| \hat{\mathbf{h}} \| \ne 0 \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: .
 	\label{eq:p-Fourier-dipoles}

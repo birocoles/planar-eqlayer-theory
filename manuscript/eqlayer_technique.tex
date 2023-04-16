@@ -68,18 +68,18 @@ property of the $j$-th equivalent source. In equation \ref{eq:linear-system-eqla
 $\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$-th 
 element is $d_{i}$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
 $ij$ is defined by the harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
-After estimating a parameter vector $\mathbf{p}^{\ast}$ that fits the observed data, 
+After estimating a parameter vector $\tilde{\mathbf{p}}$ that fits the observed data, 
 a potential field transformation such as upward continuation, interpolation or reduction 
 to the pole, for example, can be computed as follows:
 \begin{equation}
-	\tilde{\mathbf{d}} = \tilde{\mathbf{A}} \, \mathbf{p}^{\ast} \: ,
-	\label{eq:field-transformation-eqlayer} 
+	\mathbf{f} = \mathbf{T} \, \tilde{\mathbf{p}} \: ,
+	\label{eq:transformed-field-space} 
 \end{equation}
-where $\tilde{\mathbf{d}}$ is an $L \times 1$ vector whose $k$-th element $\tilde{d}_{k}$,
+where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$,
 $k = 1, \dots, L$, represents the transformed potential field at a point 
 $\mathbf{r}_{k} = (x_{k}, y_{k}, z_{k})^{\top}$, with $z_{k} < z''_{0}$, 
-and $\tilde{\mathbf{A}}$ is an 
-$L \times M$ matrix whose element $kj$ defines the transformed
+and $\mathbf{T}$ is an 
+$L \times M$ matrix whose element $t_{kj}$ defines the transformed
 potential field due to the $j$-th equivalent source, with $j = 1, \dots, M$.
 
 The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
@@ -101,6 +101,17 @@ $d(\mathbf{r})$
 is a harmonic function defining the potential field at $\mathbf{r}$ due to 
 an equivalent layer with continuous physical property distribution $p(\mathbf{r}'')$; and
 $a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
+Similarly, equation \ref{eq:transformed-field-space} assumes the form:
+\begin{equation}
+	f(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}(\mathbf{r}'') \, t(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:transformed-field-integral-space}
+\end{equation}
+where $\tilde{p}(\mathbf{r}'')$ is a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}),
+$f(\mathbf{r})$ is the transformed potential field and
+$t(\mathbf{r}, \mathbf{r}'')$ defines the transformation kernel.
 
 %Note that the equivalent-layer technique presumes that the potential-field 
 %data can be satisfactorily described by a harmonic function.
