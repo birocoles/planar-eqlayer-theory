@@ -474,7 +474,7 @@ Such layers are the basis of the pioneer method proposed by \cite{dampney1969} f
 \begin{proof}
 	It follows from equations \ref{eq:potential-U-phase-spectrum} and \ref{eq:p-phase-spectrum-U} that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
-	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, and $0$, for $k > k_{\varepsilon}$.
+	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, or $0$, for $k > k_{\varepsilon}$.
 	From equations \ref{eq:tau-Fourier} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
 	$\alpha_{\Phi} \alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function, $\left| \alpha_{r} \right| \ne 0$.
 	In this case, it can be verified from equations \ref{eq:Phi-Fourier}--\ref{eq:diff-operators-alpha-Phi-1} 
@@ -505,7 +505,7 @@ Such layers are the basis of the pioneer method proposed by \cite{dampney1969} f
 	This concludes the proof.
 \end{proof}
 
-As a direct consequence of Corollary \ref{corollary:minimum-phase-change-layers}, we have that the  
+As a direct consequence of Corollary \ref{corollary:minimum-phase-change-layers}, we have that a 
 solution $p(\mathbf{r}'')$ defined on a given horizontal plane $z''_{0}$ by computing the inverse Fourier 
 transform of equation 
 \ref{eq:p-Fourier-min-phase} simultaneously approximates the scalar potential $U$ 
@@ -535,17 +535,17 @@ sources according to the error bound \ref{eq:epsilon-bound-data}.
 		\label{eq:p-Fourier-Neumann}
 	\end{equation}
 	where $z''_{0} > z^{\dagger}_{0}$.
-	\label{def:eql-fully-compatible}
+	\label{def:eql-Neumann}
 \end{definition}
 \begin{lemma}
-	If a planar equivalent layer is fully-compatible (Definition \ref{def:eql-fully-compatible}),
-	then it has minimum phase changes according to Definition \ref{def:eql-min-phase}.
-	\label{lemma:eql-fully-compatible}
+	All Neumann's equivalent layers (Definition \ref{def:eql-Neumann}) have 
+	minimum phase changes according to Definition \ref{def:eql-min-phase}.
+	\label{lemma:eql-Neumann}
 \end{lemma}
 \begin{proof}
 	From equation \ref{eq:p-Fourier}, we have that the solution $\mathcal{F} [ p(\mathbf{r}'') ]$ 
-	defined by equation \ref{eq:p-Fourier-Neumann} as a necessary condition for a planar equivalent layer
-	be fully-compatible (Definition \ref{def:eql-fully-compatible}) is satisfied 
+	given by equation \ref{eq:p-Fourier-Neumann} to define a Neumann's equivalent layer
+	(Definition \ref{def:eql-Neumann}) is satisfied 
 	only for the case in which $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$. This condition implies that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ is a particular case of equation \ref{eq:p-Fourier-min-phase},
 	with $\alpha_{r} = 1$, and consequently has minimum phase changes
@@ -554,7 +554,7 @@ sources according to the error bound \ref{eq:epsilon-bound-data}.
 
 \subsubsection{General aspects}
 
-All fully-compatible equivalent layers have a close connection with the solution of the Neumann’s 
+All Neumann's equivalent layers have a close connection with the solution of the Neumann’s 
 problem on the layer plane (equation \ref{eq:U-Neumann}) and has a relationship with its predicted
 potential field equal to that between the observed potential field and the true sources.
 In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
@@ -569,32 +569,33 @@ In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-int
 where $D_{d}$ is the same space-domain differential operator associated with
 the observed potential field data $d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}).
 Furthermore, it follows immediately from equation \ref{eq:p-Fourier-Neumann} that the physical property 
-distribution $p(\mathbf{r}'')$ of fully-compatible equivalent layers approximates the vertical derivative
+distribution $p(\mathbf{r}'')$ of Neumann's equivalent layers approximates the vertical derivative
 $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
 layer plane $z''_{0}$.
 
 \subsubsection{Implications for gravity-field transformations}
 
-In the context of gravity exploration, Lemma \ref{lemma:eql-fully-compatible} gives the 
+In the context of gravity exploration, Lemma \ref{lemma:eql-Neumann} gives the 
 theoretical foundation for methods aiming at jointly processing gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
-gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg}, for example.
+gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023}, for example.
 Such gravity-data transformations usually presume, without any proof, the existence of a single layer of 
 monopoles that satisfactorily reproduces all components of the gravitational field.
 This assumption, however, is a direct consequence of 
-Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-fully-compatible}.
+Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-Neumann}.
 
 \subsubsection{Implications for magnetic-field transformations}
 
 \begin{lemma}
-	Let the observed potential field be the magnetic scalar potential or a component of the magnetic induction 
-	field produced along a given constant direction by sources with a constant total-magnetization direction.
-	In this case, a planar equivalent layer of dipoles is fully-compatible (Definition \ref{def:eql-fully-compatible})
+	A planar equivalent layer of dipoles defined in terms of the magnetic scalar potential or a 
+	component of the magnetic induction 
+	field produced along a given constant direction by sources with a constant total-magnetization direction
+	is a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) 
 	if and only if its constant magnetization direction is equal to that defining the total magnetization of the sources.
-	\label{lemma:eql-fully-compatible-dipoles}
+	\label{lemma:eql-Neumann-dipoles}
 \end{lemma}
 \begin{proof}
-	Again, we get from equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} that all fully-compatible
+	Again, we get from equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} that all Neumann's 
 	equivalent layers must be defined by $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$.
 	We split this proof into two parts.
 	
@@ -624,8 +625,8 @@ Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-f
 	By combining the two parts, we conclude the proof.
 \end{proof}
 
-In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-fully-compatible} and 
-\ref{lemma:eql-fully-compatible-dipoles} contribute to a deeper understanding about the use 
+In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-Neumann} and 
+\ref{lemma:eql-Neumann-dipoles} contribute to a deeper understanding about the use 
 of dipole layers to perform magnetic-field transformations.
 Surprisingly, most of the previously published studies about this topic are limited to
 the use of a planar layer of dipoles as a purely mathematical strategy for processing total-field 
@@ -633,10 +634,10 @@ anomaly data \citep[e.g.,][]{bhattacharyya_chan1977, pedersen1989}.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces total-field anomaly data.
-By Lemmas \ref{lemma:eql-fully-compatible} and \ref{lemma:eql-fully-compatible-dipoles},
+By Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles},
 we obtain that planar layers of dipoles having a constant 
 magnetization direction equal to that associated with the total-magnetization of the true sources
-are (i) fully-compatible (Definition \ref{def:eql-fully-compatible}), (ii) intrinsically related 
+are (i) Neumann's equivalent layers (Definition \ref{def:eql-Neumann}), (ii) intrinsically related 
 to the true magnetic sources and (iii) directly connected to the solution of the Neumann's problem on 
 a plane (equation \ref{eq:U-Neumann}). It means that such layers do not have a purely mathematical,
 but also a physical meaning.
@@ -653,9 +654,9 @@ This result is in perfect agreement with that deduced by \citet{reis_etal2020} f
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
 
-By combining Lemmas \ref{lemma:eql-fully-compatible} and \ref{lemma:eql-fully-compatible-dipoles} with
+By combining Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles} with
 Corollary \ref{corollary:minimum-phase-change-layers}, we obtain that
-fully-compatible layers of dipoles having a constant magnetization direction 
+Neumann's equivalent layers of dipoles having a constant magnetization direction 
 simultaneously reproduces the approximated total-field and RTP anomalies 
 (see the subsection \textit{Some relevant potential fields for geophysical applications}).
 This gives the theoretical basis for computing the RTP in the space domain, from total-field
@@ -666,7 +667,7 @@ defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies
 proposed to compute the RTP in space-domain, via equivalent-layer technique.
 Our result also offers
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
-in the Fourier domain, according to the classical approach \citep[e.g., ][ p. 331]{blakely1996}.
+in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}.
 
 \subsection{Dipole layers with arbitrary constant magnetization direction}
 
@@ -702,9 +703,23 @@ Additionally, we also deduce the same solution given by equation \ref{eq:p-Fouri
 observed potential field is the magnetic scalar potential. In this case, $\tilde{\alpha}_{d}$ and $\tilde{\alpha}_{a}$ are defined
 without the term $\alpha(1, \hat{\mathbf{u}})$.
 
-PAREI AQUI - DESISTI POR HOJE
+Note that the layer defined by equation \ref{eq:p-Fourier-dipoles} does not depend on $\hat{\mathbf{u}}$, simultaneously reproduces 
+the magnetic scalar potential and any component magnetic induction field, but does not reproduce the RTP anomaly.
+This can be verified by first setting an equivalent layer with physical property distribution given by equation 
+\ref{eq:p-Fourier-dipoles} and then computing a potential field transformation with 
 
-Note that this layes does not depend on $\hat{\mathbf{u}}$, which means that it reproduces 
+PAREI AQUI - não precisa ser Neumann pra fazer RTP, basta usar o coeficiente certo.
+Ajustar a camada com a direção errada e tentar calcular a RTP apenas usando camada
+com magnetização vertical dá errado. É isso que tem que dizer aqui.
+Esta camada com a direção errada não tem fase mínima
+
+
+This fact, which is widely known by the geophysical community in practice, is a direct consequence of 
+the Corollary \ref{corollary:minimum-phase-change-layers} and Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles}.
+A planar equivalent layer of dipoles reproducing the RTP anomaly must have minimum phase changes 
+(Definition \ref{def:eql-min-phase}). 
+
+
 
 
 \subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}

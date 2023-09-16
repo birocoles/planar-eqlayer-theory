@@ -7,7 +7,7 @@ $x$, $y$, and $z$ pointing to north, east and down, respectively.
 Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$-th element
 $d^{o}_{i}$ represents a potential field produced by the 3D sources 
 at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$
-located above them, with $i = 1, \dots, N$.
+located above them, with $i \in \{ 1, \dots, N \}$.
 
 Now, consider that $d^{o}_{i}$ can be approximated 
 by the potential field produced at $\mathbf{r}_{i}$ by a discrete set of $M$ 
@@ -16,7 +16,7 @@ These virtual sources are usually called \textit{equivalent sources}.
 Here, we limit ourselves to the particular case in which they are disposed on a 
 generic horizontal plane located below the potential-field data, at points 
 $\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$,
-$j = 1, \dots, M$, with constant vertical coordinate $z''_{0} > z_{i}$, $i = 1, \dots, N$.
+$j \in \{ 1, \dots, M \}$, with constant vertical coordinate $z''_{0} > z_{i}$, $i \in \{ 1, \dots, N \}$.
 The potential field produced by the equivalent sources at $\mathbf{r}_{i}$ is given by:
 \begin{equation}
 d_{i} = \sum\limits_{j = 1}^{M} p_{j} \, a_{ij} \: ,
@@ -44,7 +44,7 @@ with magnetic moment intensity $p_{j}$.
 The discrete set of equivalent sources with scalar physical property defined by the 
 coefficients $p_{j}$ form a discrete \textit{equivalent layer}, which is ``equivalent" 
 in the sense that it satisfactorily reproduces the potential field due to
-the 3D sources at points with $z < z''_{0}$.
+the true 3D sources at points with $z < z''_{0}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the
@@ -68,7 +68,7 @@ property of the $j$-th equivalent source. In equation \ref{eq:linear-system-eqla
 $\mathbf{d}$ is the $N \times 1$ predicted data vector whose $i$-th 
 element is $d_{i}$ and $\mathbf{A}$ is an $N \times M$ matrix whose element 
 $ij$ is defined by the harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
-After estimating a parameter vector $\tilde{\mathbf{p}}$ that fits the observed data, 
+After estimating a particular parameter vector $\tilde{\mathbf{p}}$ that fits the observed data, 
 a potential field transformation such as upward continuation, interpolation or reduction 
 to the pole, for example, can be computed as follows:
 \begin{equation}
@@ -76,11 +76,11 @@ to the pole, for example, can be computed as follows:
 	\label{eq:transformed-field-space} 
 \end{equation}
 where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$,
-$k = 1, \dots, L$, represents the transformed potential field at a point 
+$k \in \{ 1, \dots, L \}$, represents the transformed potential field at a point 
 $\mathbf{r}_{k} = (x_{k}, y_{k}, z_{k})^{\top}$, with $z_{k} < z''_{0}$, 
 and $\mathbf{T}$ is an 
 $L \times M$ matrix whose element $t_{kj}$ defines the transformed
-potential field due to the $j$-th equivalent source, with $j = 1, \dots, M$.
+potential field due to the $j$-th equivalent source, with $j \in \{ 1, \dots, M \}$.
 
 The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
 discrete form of the \textit{planar equivalent layer integral}:
