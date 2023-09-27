@@ -1,0 +1,205 @@
+\section{The planar equivalent-layer integral}
+\label{sec:planar_eqlayer}
+
+\subsection{Integral in the space domain}
+\label{subsec:space_eqlayer_integral}
+
+The linear system defined by equation \ref{eq:linear-system-eqlayer} represents the
+discrete form of the \textit{planar equivalent layer integral}:
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral}
+\end{equation}
+where $d\mathcal{S}'' = dx'' \, dy''$ defines an element of area; 
+$\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on the generic horizontal 
+plane at $z''_{0}$; 
+$d^{o}(\mathbf{r})$ represents the observed potential field;
+$d(\mathbf{r})$
+is a harmonic function defining the potential field at $\mathbf{r}$ due to 
+an equivalent layer with continuous physical property distribution $p(\mathbf{r}'')$; and
+$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
+Similarly, equation \ref{eq:transformed-field-space} assumes the form:
+\begin{equation}
+	f(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}(\mathbf{r}'') \, t(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:transformed-field-integral-space}
+\end{equation}
+where $\tilde{p}(\mathbf{r}'')$ is a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}),
+$f(\mathbf{r})$ is the transformed potential field and
+$t(\mathbf{r}, \mathbf{r}'')$ defines the transformation kernel.
+We stress that the observed potential field $d^{o}(\mathbf{r})$ (equation \ref{eq:eqlayer-integral})
+and the transformed field $f(\mathbf{r})$ (equation \ref{eq:transformed-field-integral-space}) do not
+have to be defined at the same observation point $\mathbf{r}$.
+
+%Note that the equivalent-layer technique presumes that the potential-field 
+%data can be satisfactorily described by a harmonic function.
+%Besides, it also presumes that, given a potential-field data set, there is an
+%equivalent layer that reproduces the observed potential-field data and can be 
+%used to compute field transformations.
+%It is important to stress that most of the proposed equivalent-layer methods
+%considers the equivalent layer as a purely mathematical tool for processing 
+%potential-field data 
+%\cite[e.g.,][]{bhattacharyya_chan1977, hansen_miyazaki1984, pedersen1989, cordell1992}.
+%They generally neither deduce the existence of planar equivalent layers from potential theory,
+%nor discuss the underlying theoretical assumptions supporting the use of 
+%a specific harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
+%Most of them considers that the associated physical property distribution $p(\mathbf{r}'')$ does not have
+%any relationship with the true potential-field sources and also assume that
+%the layer is located below the observation points and does not cross the sources;
+%a condition that cannot be guaranteed in practical situations.
+%What follows aims at defining planar equivalent layers as closed-form solutions 
+%$p(\mathbf{r}'')$ of the planar equivalent-layer integral 
+%(equation \ref{eq:eqlayer-integral}) for different kernels $a(\mathbf{r}, \mathbf{r}'')$
+%and potential-field data $d^{o}(\mathbf{r})$, even for the case in which the layer crosses the sources.
+
+\subsection{Integral in the Fourier domain}
+\label{subsec:Fourier_eqlayer_integral}
+
+Let us apply the Fourier-convolution theorem to the planar equivalent-layer integral
+(equation \ref{eq:eqlayer-integral}) on a horizontal plane 
+$z^{\dagger}_{0} < z^{t}_{0}$ above the sources to obtain
+\begin{equation}
+	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \approx 
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
+	\mathcal{F} [ p(\mathbf{r}'') ] \, 
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:eqlayer-integral-Fourier}
+\end{equation}
+where
+\begin{equation}
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{a} \, 
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad \left| \alpha_{a} \right| \ne 0 \: ,
+	\label{eq:kernel-Fourier}
+\end{equation}
+with $\alpha_{a}$ being a generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
+This function may be defined in terms of the Fourier-domain differential operator 
+$\alpha(\ell,\hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}), using 
+$\ell$ and $\hat{\mathbf{u}}$ not necessarily equal to
+that used to define $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}).
+Similarly, we get by applying the Fourier-convolution theorem to equation \ref{eq:transformed-field-integral-space}
+that
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\mathcal{F} [ \tilde{p}(\mathbf{r}'') ] \, 
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+	\label{eq:transformed-field-integral-Fourier}
+\end{equation}
+where $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top}$ is a generic point not
+necessarily equal to $\mathbf{r}^{\dagger}$, 
+$\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ is the Fourier transform of a particular solution $\tilde{p}(\mathbf{r}'')$ 
+of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) and
+\begin{equation}
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] =
+	\alpha_{t} \, 
+	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+	\quad \left| \alpha_{t} \right| \ne 0 \: ,
+	\label{eq:kernel-transformation-Fourier}
+\end{equation}
+defines the kernel of the potential-field transformation in the Fourier domain,
+with $\alpha_{t}$ being another generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
+
+\subsection{Auxiliary functions}
+
+The subsequent sections aims at presenting solutions for the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
+To do that, we need first consider a function $\tau(\mathbf{r}'')$ defined on a horizontal 
+plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
+the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
+\begin{equation}
+	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:tau-Fourier}
+\end{equation}
+which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
+and leads to the auxiliary potential
+\begin{equation}
+	V(\mathbf{r}, z''_{0}) = 
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\tau(\mathbf{r}'') \:
+	\Phi(\mathbf{r}, \mathbf{r}'') 
+	\:\: d\mathcal{S}'' \: , 
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: .
+	\label{eq:potential-V-space}
+\end{equation}
+
+Note that the function $\tau(\mathbf{r}'')$ obtained by computing
+the inverse Fourier transform of 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ (equation \ref{eq:tau-Fourier})
+approximates the potential field obtained by 
+computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:potential-U-space}) 
+to points that may be located inside the sources. 
+It is well-known, however, that downward continuation can only be computed at 
+source-free points, where the Laplace's equation applies. This means that the
+continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
+presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
+prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
+The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) 
+overcomes this problem, as pointed out by \citet{bhattacharyya1967},
+and guarantees that the Fourier-convolution theorem 
+can be applied to the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$
+(equation \ref{eq:potential-V-space}) on a horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ 
+above the sources to obtain
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
+	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:potential-V-Fourier}
+\end{equation}
+where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
+equation \ref{eq:Phi-Fourier}. 
+
+We get by substituting 
+$\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Phi-Fourier}) and 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
+(equation \ref{eq:tau-Fourier}) into 
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V-Fourier}) that
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\begin{cases}
+		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] &
+		, \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:potential-V-Fourier-convolution}
+\end{equation}
+which shows that the Fourier transforms of 
+$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
+$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V-space}) 
+on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
+to the truncating wavenumber $k_{\varepsilon}$.
+
+At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
+goes to infinite for the case in which $z''_{0} < z^{t}_{0}$, we get 
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-tau-Fourier}
+\end{equation}
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ V(\mathbf{r}^{\dagger}, z''_{0}) \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-Fourier}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} V(\mathbf{r}, z''_{0}) = 
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-space}
+\end{equation}
+which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
+problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
