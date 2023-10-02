@@ -1,6 +1,105 @@
 \section{On the existence of planar equivalent layers}
 \label{sec:existence}
 
+\subsection{Auxiliary functions}
+
+The subsequent developments aim at presenting solutions for the planar equivalent-layer integral 
+(equation \ref{eq:eqlayer-integral}). 
+To do that, we need first consider a function $\tau(\mathbf{r}'')$ defined on a horizontal 
+plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
+the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
+\begin{equation}
+	\mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:tau-Fourier}
+\end{equation}
+which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
+and leads to the auxiliary potential
+\begin{equation}
+	V(\mathbf{r}, z''_{0}) = 
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\tau(\mathbf{r}'') \:
+	\Phi(\mathbf{r}, \mathbf{r}'') 
+	\:\: d\mathcal{S}'' \: , 
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: .
+	\label{eq:potential-V-space}
+\end{equation}
+
+Note that the function $\tau(\mathbf{r}'')$ obtained by computing
+the inverse Fourier transform of 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ (equation \ref{eq:tau-Fourier})
+approximates the potential field obtained by 
+computing the downward continuation of $U(\mathbf{r}'')$ (equation \ref{eq:potential-U-space}) 
+to points that may be located inside the sources. 
+It is well-known, however, that downward continuation can only be computed at 
+source-free points, where the Laplace's equation applies. This means that the
+continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
+presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
+prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
+The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) 
+overcomes this problem, as pointed out by \citet{bhattacharyya1967},
+and guarantees that the Fourier-convolution theorem 
+can be applied to the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$
+(equation \ref{eq:potential-V-space}) on a horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ 
+above the sources to obtain
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
+	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:potential-V-Fourier}
+\end{equation}
+where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
+equation \ref{eq:Phi-Fourier}. 
+
+We get by substituting 
+$\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Phi-Fourier}) and 
+$\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
+(equation \ref{eq:tau-Fourier}) into 
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V-Fourier}) that
+\begin{equation}
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\begin{cases}
+		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] &
+		, \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:potential-V-Fourier-convolution}
+\end{equation}
+which shows that the Fourier transforms of 
+$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
+$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V-space}) 
+on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
+to the truncating wavenumber $k_{\varepsilon}$.
+
+At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
+goes to infinite for the case in which $z''_{0} < z^{t}_{0}$, we get 
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ \tau(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-tau-Fourier}
+\end{equation}
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ V(\mathbf{r}^{\dagger}, z''_{0}) \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-Fourier}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} V(\mathbf{r}, z''_{0}) = 
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-V-space}
+\end{equation}
+which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
+problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
+
+\subsection{The planar equivalent-layer theorem}
+
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
 	For a given observed potential field $d^{o}(\mathbf{r})$, 
@@ -174,6 +273,8 @@
 	with $z^{\ddagger}_{0} < z^{\dagger}_{0} < z''_{0}$. This proves (c) and consequently concludes the proof.
 \end{proof}
 
+\subsection{Remarks on the planar equivalent-layer theorem}
+
 Given a potential field $d^{o}(\mathbf{r})$ and a horizontal plane $z''_{0}$, 
 the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}) states that 
 a particular space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
@@ -183,7 +284,8 @@ $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 This particular solution, in turn, defines the physical property 
-distribution of a planar equivalent layer that reproduces $d^{o}(\mathbf{r})$.
+distribution of a planar equivalent layer that produces a predicted potential field 
+$d(\mathbf{r})$ satisfying the error bound given by equation \ref{eq:epsilon-bound-data} at any plane above $z''_{0}$.
 We would like to emphasize three general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
 
 The first concerns the particular case in which the horizontal plane $z''_{0}$ is located above the sources.
@@ -228,16 +330,18 @@ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possibl
 transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
 This can be made by setting 
 \begin{equation}
-	\alpha_{t} = \tilde{\alpha}_{a} \, \alpha_{f} \: ,
+	\alpha_{t} = \tfrac{\alpha_{a} \, \alpha_{\Phi}}{\alpha_{d}} \, \alpha_{f} \: ,
 	\label{eq:alpha-t-generic}
 \end{equation}
 in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a complex or real function of the wavenumbers
-$k_{x}$ and $k_{y}$ defining a transformed potential field $\mathcal{F} \left[ f(\mathbf{r}^{\ddagger}) \right]$
-on a horizontal plane $z^{\ddagger}_{0}$ located above the layer plane $z''_{0}$ (i.e., $z^{\ddagger}_{0} < z''_{0}$).
+$k_{x}$ and $k_{y}$ defining the transformed potential field in the Fourier domain.
 
 
-\section{Remarks on particular equivalent layers}
-\label{sec:remarks_particular_eqlayers}
+INCLUIR UM FRAMEWORK OU ALGORÍTMO?
+
+
+\section{Equivalent layer classes}
+\label{sec:eqlayer_classes}
 
 \subsection{Dirichlet's equivalent layers}
 
@@ -262,14 +366,22 @@ Any Dirichlet's equivalent layer (Definition \ref{def:eql-Dirichlet})
 give rise to a predicted potential field $d(\mathbf{r})$ which is analogous
 to the vertical component of the gravitational attraction due to a layer of monopoles
 or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
-In this case, it can be verified from equations \ref{eq:Psi}--\ref{eq:diff-operators-alpha-Phi-k} 
-that the kernel $a(\mathbf{r}, \mathbf{r}'')$
-(equation \ref{eq:eqlayer-integral}) assumes the particular form
+In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
-	\alpha(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
-	\label{eq:kernel-Dirichlet-space}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \: \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral-Dirichlet-space}
 \end{equation}
-
+%In this case, it can be verified from equations \ref{eq:Psi}--\ref{eq:diff-operators-alpha-Phi-k} 
+%that the kernel $a(\mathbf{r}, \mathbf{r}'')$
+%(equation \ref{eq:eqlayer-integral}) assumes the particular form
+%\begin{equation}
+%	\alpha(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
+%	\label{eq:kernel-Dirichlet-space}
+%\end{equation}
 Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
 $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-Dirichlet}) approximates the
 downward continuation of the observed potential field to the layer plane.
@@ -336,11 +448,11 @@ Dirichlet's equivalent layers are the basis of the pioneer method proposed by \c
 	This concludes the proof.
 \end{proof}
 
-As a direct consequence of Corollary \ref{corollary:minimum-phase-change-layers}, we have that any 
-equivalent layer having minimum phase changes (Definition \ref{def:eql-min-phase}) 
-simultaneously approximates the scalar potential $U$ 
-and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
-sources according to the error bound \ref{eq:epsilon-bound-data}.
+%As a direct consequence of Corollary \ref{corollary:minimum-phase-change-layers}, we have that any 
+%equivalent layer having minimum phase changes (Definition \ref{def:eql-min-phase}) 
+%simultaneously approximates the scalar potential $U$ 
+%and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
+%sources according to the error bound \ref{eq:epsilon-bound-data}.
 %Consequently, any potential field transformation 
 %(equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier})
 %does not depend on the particular observed potential field used to define the equivalent layer as well.
@@ -391,7 +503,7 @@ In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-int
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
-	p(\mathbf{r}'') \: D_{d} \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \:\: d\mathcal{S}''
+	p(\mathbf{r}'') \: D_{d} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
 	\: , \quad z < z''_{0} \: ,
 	\label{eq:eqlayer-integral-Neumann-space}
 \end{equation}
@@ -403,6 +515,10 @@ $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st
 layer plane $z''_{0}$.
 Note that the Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) preserves the physical
 relationship between the observed potential field and the true sources.
+It means that, if the observed potential field $d^{o}(\mathbf{r})$ is the $x$-component of the 
+gravitational attraction due to the true sources, the predicted potential field $d(\mathbf{r})$
+represents the $x$-component of the gravitational attraction due to the planar equivalent layer, for example.
+The same is valid for any other potential field.
 
 
 \subsubsection{Implications for gravity-field transformations}
@@ -489,10 +605,14 @@ the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-d
 By combining Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles} with
 Corollary \ref{corollary:minimum-phase-change-layers}, we obtain that
 Neumann's equivalent layers of dipoles having a constant magnetization direction 
-simultaneously reproduces the approximated total-field and RTP anomalies 
-(see the subsection \textit{Some relevant potential fields for geophysical applications}).
-This gives the theoretical basis for computing the RTP in the space domain, from total-field
-anomaly data, according to the pioneer work of \citet{silva1986}.
+provides the theoretical basis for the common strategy to compute the RTP in the space domain, 
+from total-field anomaly data, according to the pioneer work of \citet{silva1986}.
+This common strategy consists in first considering that the observed potential field 
+is satisfactorily described by the directional derivative $d^{o}(\mathbf{r}) = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
+(equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
+
+
 It is important to underline, however, that this theoretical result has never been clearly
 defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
 \citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}
