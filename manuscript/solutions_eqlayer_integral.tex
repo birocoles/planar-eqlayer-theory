@@ -509,17 +509,116 @@ In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-int
 \end{equation}
 where $D_{d}$ is the same space-domain differential operator associated with
 the observed potential field data $d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}).
-Furthermore, it follows immediately from equation \ref{eq:p-Fourier-Neumann} that the physical property 
-distribution $p(\mathbf{r}'')$ of Neumann's equivalent layers approximates the vertical derivative
-$\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
-layer plane $z''_{0}$.
-Note that the Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) preserves the physical
+As a consequence, Neumann's equivalent layers (Definition \ref{def:eql-Neumann}) preserve the physical
 relationship between the observed potential field and the true sources.
 It means that, if the observed potential field $d^{o}(\mathbf{r})$ is the $x$-component of the 
 gravitational attraction due to the true sources, the predicted potential field $d(\mathbf{r})$
 represents the $x$-component of the gravitational attraction due to the planar equivalent layer, for example.
 The same is valid for any other potential field.
 
+\subsubsection{Direct relationship with the true sources}
+
+It follows immediately from equation \ref{eq:p-Fourier-Neumann} that, in the space domain, the physical property 
+distribution $p(\mathbf{r}'')$ of Neumann's equivalent layers (equation \ref{eq:eqlayer-integral-Neumann-space})
+approximates the vertical derivative
+$\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
+layer plane $z''_{0}$.
+For the cases in which $d^{o}(\mathbf{r})$ represents gravity data, the physical property 
+distribution $p(\mathbf{r}'')$ approximates the gravity disturbance (or vertical component of the gravitational
+attraction) due to the true sources on the layer plane.
+If $d^{o}(\mathbf{r})$ represents magnetic data produced by sources with constant total magnetization direction, 
+then $p(\mathbf{r}'')$ approximates the pseudogravity 
+anomaly \citep[][ p. 345]{blakely1996} due to the true sources on the layer plane.
+In this case, $p(\mathbf{r}'')$ is strictly positive because it is defined in terms of a strictly positive 
+function $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space}) representing the 
+total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
+within the sources.
+This result is in perfect agreement with that deduced by \citet{reis_etal2020} for
+the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
+the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
+
+LEVANTAR A BOLA DOS MOMENTOS
+
+It is important to notice that, for Neumann's equivalent layers, $p(\mathbf{r}'')$ 
+(equation \ref{eq:eqlayer-integral-Neumann-space}) has some properties in common with the true sources. 
+The first one is its total mass (or dipole moment) $m_{0}$. Notice that, by integrating 
+$p(\mathbf{r}'') = \tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space})
+on the layer plane, we obtain the well-known formula for computing the total mass (or dipole moment) 
+of gravity (or magnetic) sources:
+\begin{equation}
+m_{0} = \frac{1}{2 \, \pi \, \kappa}
+	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: .
+\label{eq:total-mass}
+\end{equation}
+This formula can also be deduced by applying the Gauss' Theorem \citep[e.g.,][]{hammer1945, lafehr1965, bhattacharyya1967} 
+and considering $\delta g (x, y, z_{c})$ as the observed gravity disturbance on the planar surface located 
+at $z_{c}$. Here, this formula shows that the total mass of the equivalent layer is equal to the total mass of 
+the gravity sources and can be uniquely determined only from the gravity data \citep{medeiros-silva1995}. 
+\citet{siqueira-etal2017} used this property to develop a fast iterative method for estimating the 
+physical property on the equivalent layer.
+
+In addition to the total mass $m_{0}$ (equation \ref{eq:total-mass}), the planar equivalent layer 
+discussed here shares other properties with the true sources that can also be uniquely determined 
+from the gravity data only. These properties are the first-order moments $m_{x}$ and $m_{y}$, 
+the second-order moment $m_{xy}$, the difference between the second-order moments $m_{xx}$ and $m_{yy}$ 
+and the horizontal coordinates $x_{cm}$ and $y_{cm}$ of the center of mass of the gravity sources. 
+By computing these quantities for the particular physical property $p(x, y, z_{c})$ 
+(equation \ref{eq:p-planar-grav-layer}), we obtain: 
+\begin{equation}
+m_{x} = \frac{1}{2 \, \pi \, c_{g} \, G}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  (x - x_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
+\label{eq:moment-mx}
+\end{equation}
+\begin{equation}
+m_{y} = \frac{1}{2 \, \pi \, c_{g} \, G}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  (y - y_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
+\label{eq:moment-my}
+\end{equation}
+\begin{equation}
+m_{xy} = \frac{1}{2 \, \pi \, c_{g} \, G}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  (x - x_{0}) \, (y - y_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
+\label{eq:moment-mxy}
+\end{equation}
+\begin{equation}
+m_{yy} - m_{xx} = \frac{1}{2 \, \pi \, c_{g} \, G}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  \left[ (y - y_{0})^{2} - (x - x_{0})^{2} \right] \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
+\label{eq:difference-moments-myy-mxx}
+\end{equation}
+\begin{equation}
+x_{cm} = \frac{1}{2 \, \pi \, c_{g} \, G \, m_{0}}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  x \, \delta g (x, y, z_{c}) \, dx \, dy
+\label{eq:center-of-mass-x}
+\end{equation}
+and
+\begin{equation}
+y_{cm} = \frac{1}{2 \, \pi \, c_{g} \, G \, m_{0}}
+\int \limits_{-\infty}^{+\infty}
+  \int \limits_{-\infty}^{+\infty}
+  y \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
+\label{eq:center-of-mass-y}
+\end{equation}
+where $x_{0}$ and $y_{0}$ are the horizontal coordinates of a 
+point within the gravity sources. Equations \ref{eq:moment-mx} to 
+\ref{eq:center-of-mass-y} are well-known in the literature 
+\citep[e.g.,][]{medeiros-silva1995}. Nevertheless, they were 
+previously derived by considering the plane $z_{c}$ as the 
+surface containing the observed gravity data. To our knowledge, 
+an analysis of the common properties shared by a planar 
+equivalent layer and the true gravity sources has never been done 
+before.
+ 
 
 \subsubsection{Implications for gravity-field transformations}
 
@@ -589,18 +688,6 @@ are (i) Neumann's equivalent layers (Definition \ref{def:eql-Neumann}), (ii) int
 to the true magnetic sources and (iii) directly connected to the solution of the Neumann's problem on 
 a plane (equation \ref{eq:U-Neumann}). It means that such layers do not have a purely mathematical,
 but also a physical meaning.
-Besides, their physical property distributions $p(\mathbf{r}'')$ are strictly positive
-because approximate the vertical derivative 
-$\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:potential-U-1st-deriv-space}) on the layer plane $z''_{0}$, 
-which is defined in terms of a strictly positive function $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space})
-representing the 
-total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
-within the sources.
-In this case, $p(\mathbf{r}'')$ represents the pseudogravity anomaly \citep[][ p. 345]{blakely1996} 
-due to the true sources on the layer plane.
-This result is in perfect agreement with that deduced by \citet{reis_etal2020} for
-the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
-the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
 
 By combining Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles} with
 Corollary \ref{corollary:minimum-phase-change-layers}, we obtain that
@@ -612,6 +699,7 @@ is satisfactorily described by the directional derivative $d^{o}(\mathbf{r}) = \
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 
+PAREI AQUI
 
 It is important to underline, however, that this theoretical result has never been clearly
 defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
