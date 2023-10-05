@@ -128,7 +128,8 @@ problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref
 		\mathcal{F} [ p(\mathbf{r}'') ] =
 		\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
 		\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
-		\quad \left| \alpha_{a} \right| \ne 0 \: , \quad k \ne 0 \: .
+		%\quad \left| \alpha_{a} \right| \ne 0 \: , 
+		\quad k \ne 0 \: .
 		\label{eq:p-Fourier}
 	\end{equation}
 	We obtain from equations \ref{eq:potential-V-Fourier} and \ref{eq:eqlayer-integral-Fourier} that 
@@ -286,11 +287,12 @@ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 This particular solution, in turn, defines the physical property 
 distribution of a planar equivalent layer that produces a predicted potential field 
 $d(\mathbf{r})$ satisfying the error bound given by equation \ref{eq:epsilon-bound-data} at any plane above $z''_{0}$.
-We would like to emphasize three general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
+We would like to emphasize three 
+general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
 
 The first concerns the particular case in which the horizontal plane $z''_{0}$ is located above the sources.
 In this case, if we consider that the truncating wavenumber $k_{\varepsilon}$ goes to infinite, 
-$\left| \alpha_{a} \right| \ne 0$ and $k \ne 0$, we obtain from equations 
+we obtain from equations 
 \ref{eq:observed-data-Fourier}, \ref{eq:lim-kepsilon-tau-Fourier}--\ref{eq:lim-kepsilon-potential-V-space}, 
 \ref{eq:p-Fourier} and \ref{eq:predicted-data-Fourier} that
 \begin{equation}
@@ -313,14 +315,11 @@ and, consequently, that
 which clearly satisfies equation \ref{eq:epsilon-bound-data} for a given $\varepsilon > 0$.
 
 The second remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
-consists in noting that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
-may carry information about the observed potential field and the kernel 
-of the equivalent-layer integral in the ratio $\nicefrac{\alpha_{d}}{\alpha_{a}}$.
-For the cases in which the observed potential field is the magnetic scalar potential or any
-component of the magnetic induction field due to 3D sources with constant total-magnetization direction 
-(see the subsection \textit{Some relevant potential fields for geophysical applications}), 
-then $\mathcal{F} [ p(\mathbf{r}'') ]$ may 
-also carries information about the constant total-magnetization direction of the true sources.
+consists in stressing the dependence of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
+on the ratio $\nicefrac{\alpha_{d}}{\alpha_{a}}$. It is evident that points $(k_{x}, k_{y})$ where 
+$\vert \alpha_{a} \vert$ is equal (or close) to zero and $\vert \alpha_{d} \vert \ne 0$ in the Fourier domain are 
+problematic and may cause severe numerical instabilities. Because of that, $\alpha_{a}$ must be carefully defined 
+in order to avoid this problem.
 
 The third and last remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
 involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
@@ -335,10 +334,10 @@ This can be made by setting
 \end{equation}
 in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a complex or real function of the wavenumbers
 $k_{x}$ and $k_{y}$ defining the transformed potential field in the Fourier domain.
-
-
-INCLUIR UM FRAMEWORK OU ALGORÍTMO?
-
+It is worth noting in \ref{eq:alpha-t-generic} that points $(k_{x}, k_{y})$ where 
+$\vert \alpha_{d} \vert$ is equal (or close) to zero and $\vert \alpha_{a} \vert \ne 0$ in the Fourier domain 
+may lead to numerical instabilities. The impact of this problem depends on the desired potential-field transformation 
+to be performed with a particular equivalent layer.
 
 \section{Equivalent layer classes}
 \label{sec:eqlayer_classes}
@@ -362,35 +361,42 @@ INCLUIR UM FRAMEWORK OU ALGORÍTMO?
 	\label{def:eql-Dirichlet}
 \end{definition}
 
-Any Dirichlet's equivalent layer (Definition \ref{def:eql-Dirichlet}) 
-give rise to a predicted potential field $d(\mathbf{r})$ which is analogous
-to the vertical component of the gravitational attraction due to a layer of monopoles
-or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
-In this case, the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) assumes the form
+Note that such layers are obtained from \ref{eq:p-Fourier} by setting $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-alpha-Phi-k}) 
+and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}).
+In this case, the planar equivalent-layer integral in the space domain (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p(\mathbf{r}'') \: \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad z < z''_{0} \: ,
+	\: , \quad z < z''_{0} \: .
 	\label{eq:eqlayer-integral-Dirichlet-space}
 \end{equation}
-%In this case, it can be verified from equations \ref{eq:Psi}--\ref{eq:diff-operators-alpha-Phi-k} 
-%that the kernel $a(\mathbf{r}, \mathbf{r}'')$
-%(equation \ref{eq:eqlayer-integral}) assumes the particular form
-%\begin{equation}
-%	\alpha(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')
-%	\label{eq:kernel-Dirichlet-space}
-%\end{equation}
 Note that the solution $p(\mathbf{r}'')$ obtained by computing the inverse Fourier transform of 
 $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-Dirichlet}) approximates the
 downward continuation of the observed potential field to the layer plane.
+From the physical point of view, Dirichlet's layers give rise to a predicted potential field $d(\mathbf{r})$ which is analogous
+to the vertical component of the gravitational attraction due to a layer of monopoles
+or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
 Moreover, it can also be verified that in this case the planar equivalent-layer integral 
 (equation \ref{eq:eqlayer-integral}) approximates the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
 which is traditionally derived from the solution of the Dirichlet’s problem on the
 layer plane (equation \ref{eq:U-Dirichlet}). 
 Dirichlet's equivalent layers are the basis of the pioneer method proposed by \cite{dampney1969} for processing gravity data.
+
+The particular physical property distribution $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Dirichlet-space}
+for a given observed potential field $d^{o}(\mathbf{r})$ leads to potential field transformations (equations 
+\ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) defined by 
+$\alpha_{t} = \tfrac{\alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
+Dirichlet's equivalent layers are commonly used to perform upward/downward continuation of the observed potential 
+field. In this case, $\alpha_{f} = \alpha_{d}$ and $\alpha_{t} = 1$. 
+Other potential field transformations can also be accomplished from such equivalent layers, but they must be 
+defined in terms of $\alpha_{f} \ne \alpha_{d}$ and $\alpha_{t} \ne 1$.
+In this case, however, defining the potential field transformation in the space domain (equation \ref{eq:transformed-field-integral-space})
+from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) is generally 
+non-trivial.
+
 
 \subsection{Equivalent layers having minimum phase changes}
 
@@ -419,7 +425,8 @@ Dirichlet's equivalent layers are the basis of the pioneer method proposed by \c
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, or $0$, for $k > k_{\varepsilon}$.
 	From equations \ref{eq:tau-Fourier} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
-	$\alpha_{\Phi} \alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function, $\left| \alpha_{r} \right| \ne 0$.
+	$\alpha_{\Phi} \alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function satisfying 
+	$\left| \alpha_{r} \right| \ne 0$ for $k > 0$.
 	In this case, it can be verified from equations \ref{eq:Phi-Fourier}--\ref{eq:diff-operators-alpha-Phi-1} 
 	that $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-Fourier}) 
 	assumes the form
@@ -444,9 +451,16 @@ Dirichlet's equivalent layers are the basis of the pioneer method proposed by \c
 	\end{equation}
 	Note that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-min-phase}) does not depend on $\alpha_{d}$.
 	As a consequence, changes in the differential operator $\alpha_{d}$, which carries all the information related to
-	the observed potential field, does not affect $p(\mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}).
+	the observed potential field, do not affect $p(\mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}).
 	This concludes the proof.
 \end{proof}
+
+The representation of equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) in the
+space domain is usually non-trivial and depends on the particular form of the real function $\alpha_{r}$ 
+(equations \ref{eq:kernel-Fourier-min-phase} and \ref{eq:p-Fourier-min-phase}).
+Such layers give raise to potential field transformations (equation \ref{eq:transformed-field-integral-Fourier})
+defined by $\alpha_{t} = \alpha_{r} \, \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), which may also
+have non-trivial representations in the space domain.
 
 %As a direct consequence of Corollary \ref{corollary:minimum-phase-change-layers}, we have that any 
 %equivalent layer having minimum phase changes (Definition \ref{def:eql-min-phase}) 
@@ -516,6 +530,23 @@ gravitational attraction due to the true sources, the predicted potential field 
 represents the $x$-component of the gravitational attraction due to the planar equivalent layer, for example.
 The same is valid for any other potential field.
 
+Another interesting aspect of Neumann's layers is that, given a particular physical-property distribution 
+$\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Neumann-space}, potential-field transformations 
+are defined in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) by using 
+$\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}). Hence, potential-field transformations
+(equation \ref{eq:transformed-field-integral-space}) assume the following form in the space domain:
+\begin{equation}
+	D_{t} U(\mathbf{r}) \approx
+	f(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}(\mathbf{r}'') \: D_{t} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:transformed-field-integral-Neumann-space}
+\end{equation}
+where $D_{t}$ is the space-domain representation of the differential operator $\alpha_{t}$ (equations \ref{eq:kernel-transformation-Fourier} 
+and \ref{eq:alpha-t-generic}) associated with the desired transformed field.
+Usually, $D_{t}$ can be easily defined in terms of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
+
 \subsubsection{Direct relationship with the true sources}
 
 It follows immediately from equation \ref{eq:p-Fourier-Neumann} that, in the space domain, the physical property 
@@ -537,99 +568,58 @@ This result is in perfect agreement with that deduced by \citet{reis_etal2020} f
 the particular case in which the observed potential field $d^{o}(\mathbf{r})$ is
 the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
 
-LEVANTAR A BOLA DOS MOMENTOS
-
-It is important to notice that, for Neumann's equivalent layers, $p(\mathbf{r}'')$ 
-(equation \ref{eq:eqlayer-integral-Neumann-space}) has some properties in common with the true sources. 
-The first one is its total mass (or dipole moment) $m_{0}$. Notice that, by integrating 
-$p(\mathbf{r}'') = \tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space})
-on the layer plane, we obtain the well-known formula for computing the total mass (or dipole moment) 
-of gravity (or magnetic) sources:
-\begin{equation}
-m_{0} = \frac{1}{2 \, \pi \, \kappa}
-	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
-	p(\mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad z < z''_{0} \: .
-\label{eq:total-mass}
-\end{equation}
-This formula can also be deduced by applying the Gauss' Theorem \citep[e.g.,][]{hammer1945, lafehr1965, bhattacharyya1967} 
-and considering $\delta g (x, y, z_{c})$ as the observed gravity disturbance on the planar surface located 
-at $z_{c}$. Here, this formula shows that the total mass of the equivalent layer is equal to the total mass of 
-the gravity sources and can be uniquely determined only from the gravity data \citep{medeiros-silva1995}. 
-\citet{siqueira-etal2017} used this property to develop a fast iterative method for estimating the 
-physical property on the equivalent layer.
-
-In addition to the total mass $m_{0}$ (equation \ref{eq:total-mass}), the planar equivalent layer 
-discussed here shares other properties with the true sources that can also be uniquely determined 
-from the gravity data only. These properties are the first-order moments $m_{x}$ and $m_{y}$, 
-the second-order moment $m_{xy}$, the difference between the second-order moments $m_{xx}$ and $m_{yy}$ 
-and the horizontal coordinates $x_{cm}$ and $y_{cm}$ of the center of mass of the gravity sources. 
-By computing these quantities for the particular physical property $p(x, y, z_{c})$ 
-(equation \ref{eq:p-planar-grav-layer}), we obtain: 
-\begin{equation}
-m_{x} = \frac{1}{2 \, \pi \, c_{g} \, G}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  (x - x_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
-\label{eq:moment-mx}
-\end{equation}
-\begin{equation}
-m_{y} = \frac{1}{2 \, \pi \, c_{g} \, G}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  (y - y_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
-\label{eq:moment-my}
-\end{equation}
-\begin{equation}
-m_{xy} = \frac{1}{2 \, \pi \, c_{g} \, G}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  (x - x_{0}) \, (y - y_{0}) \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
-\label{eq:moment-mxy}
-\end{equation}
-\begin{equation}
-m_{yy} - m_{xx} = \frac{1}{2 \, \pi \, c_{g} \, G}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  \left[ (y - y_{0})^{2} - (x - x_{0})^{2} \right] \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
-\label{eq:difference-moments-myy-mxx}
-\end{equation}
-\begin{equation}
-x_{cm} = \frac{1}{2 \, \pi \, c_{g} \, G \, m_{0}}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  x \, \delta g (x, y, z_{c}) \, dx \, dy
-\label{eq:center-of-mass-x}
-\end{equation}
-and
-\begin{equation}
-y_{cm} = \frac{1}{2 \, \pi \, c_{g} \, G \, m_{0}}
-\int \limits_{-\infty}^{+\infty}
-  \int \limits_{-\infty}^{+\infty}
-  y \, \delta g (x, y, z_{c}) \, dx \, dy \: ,
-\label{eq:center-of-mass-y}
-\end{equation}
-where $x_{0}$ and $y_{0}$ are the horizontal coordinates of a 
-point within the gravity sources. Equations \ref{eq:moment-mx} to 
-\ref{eq:center-of-mass-y} are well-known in the literature 
-\citep[e.g.,][]{medeiros-silva1995}. Nevertheless, they were 
-previously derived by considering the plane $z_{c}$ as the 
-surface containing the observed gravity data. To our knowledge, 
-an analysis of the common properties shared by a planar 
-equivalent layer and the true gravity sources has never been done 
-before.
- 
+Since $p(\mathbf{r}'')$ (equation \ref{eq:eqlayer-integral-Neumann-space}) approximates 
+$\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
+layer plane $z''_{0}$, then it shares some common properties with the true sources.
+The first is the total mass, for gravity sources, or total dipole moment, for magnetic sources with
+constant total-magnetization direction.
+For the cases in which the layer plane is located above the sources, $p(\mathbf{r}'')$ (equation \ref{eq:eqlayer-integral-Neumann-space})
+reproduces $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) exactly 
+(equations \ref{eq:lim-kepsilon-p-Fourier}--\ref{eq:lim-kepsilon-predicted-data-space}) 
+and its integration on the layer plane gives the total mass (or total dipole moment) according to the
+Gauss' Theorem \citep[e.g.,][]{hammer1945, lafehr1965, bhattacharyya1967}. 
+Furthermore, \citet{medeiros-silva1995a} show that the horizontal first-order moments, second-order moment $xy$, 
+difference between the second-order moments $xx$ and $yy$, as well as the horizontal coordinates of the sources center of mass
+(or center of dipole moment) of the true sources can also be estimated from the $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$
+that they produce on a horizontal plane above them.
+These quantities can only be approximated for the case in which the layer crosses the sources because, in this case,
+$p(\mathbf{r}'')$ does not reproduce $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ exactly.
+The important aspect to be emphasized here is that the horizontal distribution of the physical property distribution $p(\mathbf{r}'')$
+(equation \ref{eq:eqlayer-integral-Neumann-space}) on Neumann's equivalent layers is equal to or approximates 
+that associated with the true sources.
 
 \subsubsection{Implications for gravity-field transformations}
 
 In the context of gravity exploration, Lemma \ref{lemma:eql-Neumann} gives the 
-theoretical foundation for methods aiming at jointly processing gravity-gradient data 
-\cite[e.g.,][]{barnes_lumley2011} or converting gravity disturbance data into the 
+theoretical foundation for the common approach to jointly process gravity-gradient data 
+\cite[e.g.,][]{barnes_lumley2011} or to convert gravity disturbance data into the 
 gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023}, for example.
 Such gravity-data transformations usually presume, without any proof, the existence of a single layer of 
 monopoles that satisfactorily reproduces all components of the gravitational field.
 This assumption, however, is a direct consequence of 
 Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-Neumann}.
+
+For example, let us consider the common two-step approach to convert gravity-disturbance into gravity
+gradient data. The first step consists in solving the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+numerically for obtaining an estimated physical property distribution $\tilde{p}(\mathbf{r}'')$ by considering that the
+observed potential field is given by $d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:potential-U-1st-deriv-space})
+and that the kernel is $a(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ 
+(equation \ref{eq:Psi}).
+The second step consists in using the estimated $\tilde{p}(\mathbf{r}'')$ to compute the gradient components.
+The $uv$-component of the gradient tensor is computed by setting $D_{t} = \tfrac{\partial^{2}}{\partial u \, \partial v}$
+(equations \ref{eq:potential-U-2nd-deriv-space} and \ref{eq:transformed-field-integral-Neumann-space}),
+where $u, v \in \{ x, y, z \}$.
+
+Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
+$\alpha_{d} = k$ (equation \ref{eq:observed-data-Fourier}), $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1})
+and $\alpha_{a} = k$ (equation \ref{eq:kernel-Fourier}), which leads to a particular physical property distribution 
+$\tilde{p}(\mathbf{r}'')$ having a 2DFT given by \ref{eq:p-Fourier-Neumann}. The second step is equivalent to 
+compute the potential field transformations (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
+by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
+$\alpha_{f} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}), 
+where the unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are given by the canonical base vectors (equation \ref{eq:canonical-base-vector}).
+This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain operator $D_{t} = D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}})$
+(equation \ref{eq:diff-operators-generic}).
 
 \subsubsection{Implications for magnetic-field transformations}
 
@@ -677,34 +667,55 @@ In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-Neumann} a
 of dipole layers to perform magnetic-field transformations.
 Surprisingly, most of the previously published studies about this topic are limited to
 the use of a planar layer of dipoles as a purely mathematical strategy for processing total-field 
-anomaly data \citep[e.g.,][]{bhattacharyya_chan1977, pedersen1989}.
+anomaly data, as we can see in the comments of \citet{pedersen1989} on the work of \citet{bhattacharyya_chan1977}.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces total-field anomaly data.
-By Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles},
-we obtain that planar layers of dipoles having a constant 
-magnetization direction equal to that associated with the total-magnetization of the true sources
-are (i) Neumann's equivalent layers (Definition \ref{def:eql-Neumann}), (ii) intrinsically related 
-to the true magnetic sources and (iii) directly connected to the solution of the Neumann's problem on 
-a plane (equation \ref{eq:U-Neumann}). It means that such layers do not have a purely mathematical,
-but also a physical meaning.
+%By Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles},
+%we obtain that planar layers of dipoles having a constant 
+%magnetization direction equal to that associated with the total-magnetization of the true sources
+%are (i) Neumann's equivalent layers (Definition \ref{def:eql-Neumann}), (ii) intrinsically related 
+%to the true magnetic sources and (iii) directly connected to the solution of the Neumann's problem on 
+%a plane (equation \ref{eq:U-Neumann}). It means that such layers do not have a purely mathematical,
+%but also a physical meaning.
 
 By combining Lemmas \ref{lemma:eql-Neumann} and \ref{lemma:eql-Neumann-dipoles} with
 Corollary \ref{corollary:minimum-phase-change-layers}, we obtain that
 Neumann's equivalent layers of dipoles having a constant magnetization direction 
-provides the theoretical basis for the common strategy to compute the RTP in the space domain, 
+provides the theoretical basis for the common two-step strategy to compute the RTP in the space domain, 
 from total-field anomaly data, according to the pioneer work of \citet{silva1986}.
-This common strategy consists in first considering that the observed potential field 
+
+The first step consists in solving the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
+numerically by considering that (i) the observed potential field 
 is satisfactorily described by the directional derivative $d^{o}(\mathbf{r}) = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
-field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources, and (ii)
+the kernel is $a(\mathbf{r}, \mathbf{r}'') = \hat{\mathbf{u}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \, \hat{\mathbf{v}}$,
+where $\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'')$ is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of
+function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
+The second step consists in using the estimated $\tilde{p}(\mathbf{r}'')$ to compute the RTP anomaly 
+$\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (see the subsection \textit{Some relevant potential fields for geophysical applications}).
+This is made by evaluating the potential field transformation (equation \ref{eq:transformed-field-integral-space}) 
+with $t(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}, \mathbf{r}'')$ 
+(equation \ref{eq:Psi}).
 
-PAREI AQUI
+Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} and 
+\ref{eq:diff-operators-generic}), $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1})
+and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations 
+\ref{eq:diff-operators-generic} and \ref{eq:kernel-Fourier}), which leads to a dipole layer having the same constant 
+magnetization direction of the true sources and a particular physical property distribution 
+$\tilde{p}(\mathbf{r}'')$ with 2DFT given by \ref{eq:p-Fourier-Neumann}. The second step is equivalent to  
+compute the potential field transformation (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
+by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
+$\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
+This Fourier-domain operator $\alpha_{f}$ leads to the space-domain operator $D_{t} \equiv \tfrac{\partial^{2}}{\partial z^{2}}$.
+It is important to underline that this theoretical result presented here in terms of a Neumann's equivalent layer 
+to compute the RTP in the space domain has never been clearly defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
+\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022} 
+using the equivalent-layer technique.
 
-It is important to underline, however, that this theoretical result has never been clearly
-defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
-\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}
-proposed to compute the RTP in space-domain, via equivalent-layer technique.
+
 Our result also offers
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
 in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}.
