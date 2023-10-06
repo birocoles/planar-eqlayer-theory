@@ -37,14 +37,14 @@ This is the pioneer approach presented by \cite{dampney1969} for
 processing gravity data.
 For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data 
 \cite[e.g.,][ p. 178]{blakely1996} instead, the common approach consists in
-following the pioneer work of \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
+following \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
 that it represents a magnetic induction field component 
 produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
 with magnetic moment intensity $p_{j}$.
 The discrete set of equivalent sources with scalar physical property defined by the 
 coefficients $p_{j}$ form a discrete \textit{equivalent layer}, which is ``equivalent" 
 in the sense that it satisfactorily reproduces the potential field due to
-the true 3D sources at points with $z < z''_{0}$.
+the true 3D sources at the observation points $z_{i} < z''_{0}$, $i \in \{ 1, \dots, N \}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the
@@ -75,9 +75,10 @@ to the pole, for example, can be computed as follows:
 	\mathbf{f} = \mathbf{T} \, \tilde{\mathbf{p}} \: ,
 	\label{eq:transformed-field-space} 
 \end{equation}
-where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$,
-$k \in \{ 1, \dots, L \}$, represents the transformed potential field at a point 
+where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ 
+represents the transformed potential field at a point 
 $\mathbf{r}_{k} = (x_{k}, y_{k}, z_{k})^{\top}$, with $z_{k} < z''_{0}$, 
 and $\mathbf{T}$ is an 
 $L \times M$ matrix whose element $t_{kj}$ defines the transformed
-potential field due to the $j$-th equivalent source, with $j \in \{ 1, \dots, M \}$.
+potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
+$j \in \{ 1, \dots, M \}$.

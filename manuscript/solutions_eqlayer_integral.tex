@@ -287,8 +287,9 @@ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 This particular solution, in turn, defines the physical property 
 distribution of a planar equivalent layer that produces a predicted potential field 
 $d(\mathbf{r})$ satisfying the error bound given by equation \ref{eq:epsilon-bound-data} at any plane above $z''_{0}$.
-We would like to emphasize three 
-general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
+We would like to emphasize four general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
+
+\subsubsection{Remark 1}
 
 The first concerns the particular case in which the horizontal plane $z''_{0}$ is located above the sources.
 In this case, if we consider that the truncating wavenumber $k_{\varepsilon}$ goes to infinite, 
@@ -314,6 +315,8 @@ and, consequently, that
 \end{equation}
 which clearly satisfies equation \ref{eq:epsilon-bound-data} for a given $\varepsilon > 0$.
 
+\subsubsection{Remark 2}
+
 The second remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
 consists in stressing the dependence of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
 on the ratio $\nicefrac{\alpha_{d}}{\alpha_{a}}$. It is evident that points $(k_{x}, k_{y})$ where 
@@ -321,7 +324,9 @@ $\vert \alpha_{a} \vert$ is equal (or close) to zero and $\vert \alpha_{d} \vert
 problematic and may cause severe numerical instabilities. Because of that, $\alpha_{a}$ must be carefully defined 
 in order to avoid this problem.
 
-The third and last remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
+\subsubsection{Remark 3}
+
+The third remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
 involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$, $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
@@ -338,6 +343,48 @@ It is worth noting in \ref{eq:alpha-t-generic} that points $(k_{x}, k_{y})$ wher
 $\vert \alpha_{d} \vert$ is equal (or close) to zero and $\vert \alpha_{a} \vert \ne 0$ in the Fourier domain 
 may lead to numerical instabilities. The impact of this problem depends on the desired potential-field transformation 
 to be performed with a particular equivalent layer.
+
+\subsubsection{Remark 4}
+
+In the last remark, we first stress that, in the context of the equivalent-layer technique, 
+a potential-field transformation is generally defined
+in the space domain, by following two steps. The first consists in obtaining a numerical solution $\tilde{p}(\mathbf{r}'')$ for the 
+physical-property distribution on the layer plane $z''_{0}$, for a given observed potential field 
+$d^{o}(\mathbf{r})$ and kernel $a(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}).
+The second step involves using $\tilde{p}(\mathbf{r}'')$ to evaluate a transformed potential field
+$f(\mathbf{r})$ for a given kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:transformed-field-integral-space}).
+The Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}) allows defining 
+an alternative single-step approach in the Fourier domain.
+
+We start by combining the Fourier-domain representations of the functions $\Phi(\mathbf{r}, \mathbf{r}'')$ 
+and $\Psi(\mathbf{r}, \mathbf{r}'')$ (equations \ref{eq:Phi-Fourier} and \ref{eq:Psi-Fourier}) with the 
+planar equivalent-layer integral, potential-field transformation and physical-property distribution 
+$p(\mathbf{r}'')$ (equations \ref{eq:eqlayer-integral-Fourier}--\ref{eq:kernel-transformation-Fourier} and 
+\ref{eq:p-Fourier}) to obtain
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right] \: ,
+	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+	\label{eq:transformed-field-integral-Fourier2}
+\end{equation}
+where $\mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right]$ is given by equation \ref{eq:tau-Fourier}
+on the plane $z^{\ddagger}_{0}$ where the potential-field transformation is computed.
+Then, by considering that 
+$\alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right]$ approximates the 2DFT of observed potential field
+on the plane $z^{\ddagger}_{0}$, we finally obtain
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
+	\begin{cases}
+		\mathcal{F} \left[ d^{o}(\mathbf{r}^{\ddagger}) \right] & , \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: .
+	\label{eq:transformed-field-integral-Fourier3}
+\end{equation}
+Equation \ref{eq:transformed-field-integral-Fourier3} defines a potential-field transformation 
+computed in a single step in terms of the observed potential field truncated up to the
+wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}).
+
 
 \section{Equivalent layer classes}
 \label{sec:eqlayer_classes}
