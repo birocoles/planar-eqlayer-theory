@@ -274,20 +274,19 @@ problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref
 	with $z^{\ddagger}_{0} < z^{\dagger}_{0} < z''_{0}$. This proves (c) and consequently concludes the proof.
 \end{proof}
 
-\subsection{Remarks on the planar equivalent-layer theorem}
+%\subsection{Remarks on the planar equivalent-layer theorem}
+\subsection{Remarks on the general solution of the planar equivalent-layer integral}
 
 Given a potential field $d^{o}(\mathbf{r})$ and a horizontal plane $z''_{0}$, 
 the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}) states that 
-a particular space-domain solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral 
-(equation \ref{eq:eqlayer-integral}) can be obtained by computing the inverse Fourier transform
+it is possible to find a set of different planar equivalent layers.
+We define these layers as solutions of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}),
+with physical-property distribution obtained by computing the inverse Fourier transform
 of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) in terms of specific 
 $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
-This particular solution, in turn, defines the physical property 
-distribution of a planar equivalent layer that produces a predicted potential field 
-$d(\mathbf{r})$ satisfying the error bound given by equation \ref{eq:epsilon-bound-data} at any plane above $z''_{0}$.
-We would like to emphasize four general remarks about Theorem \ref{theorem:planar-eqlayer-theorem}.
+We would like to emphasize five general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
 
 \subsubsection{Remark 1}
 
@@ -317,8 +316,7 @@ which clearly satisfies equation \ref{eq:epsilon-bound-data} for a given $\varep
 
 \subsubsection{Remark 2}
 
-The second remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
-consists in stressing the dependence of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
+The second remark consists in stressing the dependence of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) 
 on the ratio $\nicefrac{\alpha_{d}}{\alpha_{a}}$. It is evident that points $(k_{x}, k_{y})$ where 
 $\vert \alpha_{a} \vert$ is equal (or close) to zero and $\vert \alpha_{d} \vert \ne 0$ in the Fourier domain are 
 problematic and may cause severe numerical instabilities. Because of that, $\alpha_{a}$ must be carefully defined 
@@ -326,8 +324,7 @@ in order to avoid this problem.
 
 \subsubsection{Remark 3}
 
-The third remark about the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})
-involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
+The third remark involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$, $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
@@ -341,20 +338,19 @@ in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a comp
 $k_{x}$ and $k_{y}$ defining the transformed potential field in the Fourier domain.
 It is worth noting in \ref{eq:alpha-t-generic} that points $(k_{x}, k_{y})$ where 
 $\vert \alpha_{d} \vert$ is equal (or close) to zero and $\vert \alpha_{a} \vert \ne 0$ in the Fourier domain 
-may lead to numerical instabilities. The impact of this problem depends on the desired potential-field transformation 
-to be performed with a particular equivalent layer.
+may lead to numerical instabilities. The impact of this problem depends on the particular equivalent layer 
+and the desired potential-field transformation.
 
 \subsubsection{Remark 4}
 
 In the last remark, we first stress that, in the context of the equivalent-layer technique, 
 a potential-field transformation is generally defined
 in the space domain, by following two steps. The first consists in obtaining a numerical solution $\tilde{p}(\mathbf{r}'')$ for the 
-physical-property distribution on the layer plane $z''_{0}$, for a given observed potential field 
-$d^{o}(\mathbf{r})$ and kernel $a(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:eqlayer-integral}).
+planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
 The second step involves using $\tilde{p}(\mathbf{r}'')$ to evaluate a transformed potential field
-$f(\mathbf{r})$ for a given kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:transformed-field-integral-space}).
-The Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}) allows defining 
-an alternative single-step approach in the Fourier domain.
+$f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:transformed-field-integral-space}).
+Here, we show that an alternative single-step approach for computing potential-field transformations can be 
+deduced from the general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}).
 
 We start by combining the Fourier-domain representations of the functions $\Phi(\mathbf{r}, \mathbf{r}'')$ 
 and $\Psi(\mathbf{r}, \mathbf{r}'')$ (equations \ref{eq:Phi-Fourier} and \ref{eq:Psi-Fourier}) with the 
@@ -363,15 +359,14 @@ $p(\mathbf{r}'')$ (equations \ref{eq:eqlayer-integral-Fourier}--\ref{eq:kernel-t
 \ref{eq:p-Fourier}) to obtain
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
-	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right] \: ,
-	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\dagger}) \right]
+	e^{- k \, (z''_{0} - z^{\ddagger}_{0})} \: , 
+	\quad z^{\ddagger}_{0} < z''_{0} \: .
 	\label{eq:transformed-field-integral-Fourier2}
 \end{equation}
-where $\mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right]$ is given by equation \ref{eq:tau-Fourier}
-on the plane $z^{\ddagger}_{0}$ where the potential-field transformation is computed.
 Then, by considering that 
-$\alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\ddagger}) \right]$ approximates the 2DFT of observed potential field
-on the plane $z^{\ddagger}_{0}$, we finally obtain
+$\alpha_{d} \, \mathcal{F} \left[ \tau(\mathbf{r}^{\dagger}) \right]$ approximates the 2DFT of observed potential field
+on the plane $z^{\dagger}_{0}$, we finally obtain
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
@@ -387,6 +382,20 @@ on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential fiel
 wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) on a plane $z^{\dagger}_{0}$.
 It is important to highlight that the field transformation plane $z^{\ddagger}_{0}$ may be located above, 
 below or at the same vertical coordinate $z^{\dagger}_{0}$ of the observed potential-field data.
+Apart from the truncating wavenumber $k_{\varepsilon}$, equation \ref{eq:transformed-field-integral-Fourier3} is in perfect 
+agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975}.
+
+\subsubsection{Remark 5}
+
+The seminal work of \citet{gunn1975} was the pioneer in showing a complete description of potential-field 
+transformations in the Fourier domain. That author has also formulated such transformations in terms of 
+equivalent layers by presuming the existence of density and magnetization distributions on a plane, 
+without explicitly defining them mathematically or establishing any relationship with boundary-value problems
+of potential theory.
+Our work contrasts with that of \citet{gunn1975} because we (i) generalize 
+the Dirichlet's and Neumann's boundary-value problems (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) 
+to the case in which the plane $z''_{0}$ crosses the sources and then (ii) use this to 
+explicitly define the physical-property distribution on planar equivalent layers (equation \ref{eq:p-Fourier}). 
 
 
 \section{Equivalent layer classes}
