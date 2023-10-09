@@ -286,7 +286,7 @@ of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) in terms of s
 $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}),
 $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
-We would like to emphasize five general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
+We would like to emphasize six general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
 
 \subsubsection{Remark 1}
 
@@ -396,6 +396,18 @@ Our work contrasts with that of \citet{gunn1975} because we (i) generalize
 the Dirichlet's and Neumann's boundary-value problems (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) 
 to the case in which the plane $z''_{0}$ crosses the sources and then (ii) use this to 
 explicitly define the physical-property distribution on planar equivalent layers (equation \ref{eq:p-Fourier}). 
+
+\subsubsection{Remark 6}
+
+The Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})  and the 
+general solution (equation \ref{eq:p-Fourier}) of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) present here 
+depend on a truncating wavenumber $k_{\varepsilon}$.
+Nonetheless, interpreters do not need to explicitly set this parameter because the numerical solution of the 
+planar equivalent-layer integral obtained by solving equation \ref{eq:linear-system-eqlayer} automatically
+impose a truncation in the Fourier domain due to the discretization of planar equivalent-layer integral 
+on a finite region of space.
+It seems that is this automatic truncation that usually guarantees the application of the equivalent-layer technique when 
+the layer plane crosses the sources.
 
 
 \section{Equivalent layer classes}
@@ -608,12 +620,12 @@ Usually, $D_{t}$ can be easily defined in terms of $D(\ell, \hat{\mathbf{u}})$ (
 
 \subsubsection{Direct relationship with the true sources}
 
-It follows immediately from equation \ref{eq:p-Fourier-Neumann} that, in the space domain, the physical property 
+It follows immediately from equation \ref{eq:p-Fourier-Neumann} that, in the space domain, the physical-property 
 distribution $p(\mathbf{r}'')$ of Neumann's equivalent layers (equation \ref{eq:eqlayer-integral-Neumann-space})
 approximates the vertical derivative
 $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) on the 
 layer plane $z''_{0}$.
-For the cases in which $d^{o}(\mathbf{r})$ represents gravity data, the physical property 
+For the cases in which $d^{o}(\mathbf{r})$ represents gravity data, the physical-property 
 distribution $p(\mathbf{r}'')$ approximates the gravity disturbance (or vertical component of the gravitational
 attraction) due to the true sources on the layer plane.
 If $d^{o}(\mathbf{r})$ represents magnetic data produced by sources with constant total magnetization direction, 
@@ -724,7 +736,8 @@ In the context of magnetic exploration methods, Lemmas \ref{lemma:eql-Neumann} a
 of dipole layers to perform magnetic-field transformations.
 Surprisingly, most of the previously published studies about this topic are limited to
 the use of a planar layer of dipoles as a purely mathematical strategy for processing total-field 
-anomaly data, as we can see in the comments of \citet{pedersen1989} on the work of \citet{bhattacharyya_chan1977}.
+anomaly data, as we can see in the comments of \citet{pedersen1989} on the work of \citet{bhattacharyya_chan1977},
+for example.
 Few studies \cite[][]{pedersen1991, li_etal2014, reis_etal2020} have drawn
 attention to the problem of proving the existence of a planar layer of dipoles
 that reproduces total-field anomaly data.
@@ -776,6 +789,16 @@ using the equivalent-layer technique.
 Our result also offers
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
 in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}.
+This can be seen by noting that the RTP can be formulated in the Fourier domain by using equation
+\ref{eq:transformed-field-integral-Fourier3}, with $\alpha_{f} = k^{2}$ 
+(equations \ref{eq:transformed-field-integral-Fourier} and \ref{eq:alpha-t-generic}) and 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} and 
+\ref{eq:diff-operators-generic}), 
+where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
+Apart from the truncating wavenumber $k_{\varepsilon}$, 
+the resultant single-step equation representing the RTP in the Fourier domain is the same 
+commonly found in the literature \citep[e.g., ][ p. 331]{blakely1996}.
 
 PAREI AQUI
 
