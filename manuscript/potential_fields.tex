@@ -21,7 +21,8 @@ can be defined by
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
-where 
+where $D_{d}$ is a space-domain differential operator
+acting on the potential
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -29,7 +30,7 @@ where
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:potential-U-space}
 \end{equation}
-is a Newtonian potential; $d\mathcal{V}' = dx'dy'dz'$ represents a volume element;
+$d\mathcal{V}' = dx'dy'dz'$ represents a volume element;
 $\kappa$ is a proportionality constant;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$
@@ -43,9 +44,6 @@ exist at all points $\mathbf{r} \in \mathbb{R}^{3}$ in space, including those wi
 we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
-In equation \ref{eq:observed-data-space}, $D_{d}$ is a space-domain differential operator
-acting on the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) to define
-a given potential-field $d^{o}(\mathbf{r})$.
 
 The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}(\mathbf{r})$ 
 (equation \ref{eq:observed-data-space}) with respect to the horizontal coordinates $x$ and
@@ -86,8 +84,11 @@ In equation \ref{eq:potential-U-Fourier}, $\alpha_{d}$ is a function of the
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
 $D_{d}$ (equation \ref{eq:observed-data-space}) in the Fourier domain.
 
-We define the differential operators $D_{d}$ and $\alpha_{d}$ (equations \ref{eq:observed-data-space} 
-and \ref{eq:observed-data-Fourier}) as follows:
+Most of the potential fields $d^{o}(\mathbf{r})$ commonly used in Geophysics are described 
+by the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) and its partial derivatives of 
+first and second order. 
+The differential operators $D_{d}$ and $\alpha_{d}$ (equations \ref{eq:observed-data-space} 
+and \ref{eq:observed-data-Fourier}) associated with these common potential fields can be defined as follows:
 \begin{equation}
 	D(\ell, \hat{\mathbf{u}}) = 
 	\left( \hat{\mathbf{u}}^{\top} \nabla \right)^{\ell} \Leftrightarrow
@@ -99,7 +100,6 @@ where $\hat{\mathbf{u}}$ is a constant unit vector,
 $\nabla$ is the vector differential operator nabla \citep[e.g.,][ p. 179]{kaplan2002} and 
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \citep{pedersen1978}.
-Note that $D(0, \hat{\mathbf{u}}) = \alpha(0, \hat{\mathbf{u}}) = 1$ produces no differentiation.
 The differential operator $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}, for example, where the suggested
 dot product and exponentiation actually leads to a differentiation.
@@ -107,6 +107,7 @@ dot product and exponentiation actually leads to a differentiation.
 By combining successive applications of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 with properly chosen $\ell$ and $\hat{\mathbf{u}}$, we may define differential operators that 
 result in all potential fields $d^{o}(\mathbf{r})$ commonly used in Geophysics.
+Note that $D(0, \hat{\mathbf{u}}) = \alpha(0, \hat{\mathbf{u}}) = 1$ produces no differentiation.
 It can be verified, for example, that using $\ell = 1$ and a constant unit vector $\hat{\mathbf{u}}$
 in equation \ref{eq:diff-operators-generic} leads to the following directional derivative 
 of first order

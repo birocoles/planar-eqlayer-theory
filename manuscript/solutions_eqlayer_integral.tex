@@ -21,14 +21,18 @@ the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
 which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
 and leads to the auxiliary potential
 \begin{equation}
-	V(\mathbf{r}, z''_{0}) = 
+	V(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\tau(\mathbf{r}'') \:
-	\Phi(\mathbf{r}, \mathbf{r}'') 
+	D(\ell, \hat{\mathbf{u}}) \tau(\mathbf{r}'') \:\:
+	D(\ell-1, \hat{\mathbf{u}}) \Psi(\mathbf{r}, \mathbf{r}'') 
 	\:\: d\mathcal{S}'' \: , 
-	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: .
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: ,
+	\quad \ell \in \{ 0, 1 \} \: ,
 	\label{eq:potential-V-space}
 \end{equation}
+where $D(\ell, \hat{\mathbf{u}})$ is the space-domain differential operator 
+defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
+$\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
 
 Note that the function $\tau(\mathbf{r}'')$ obtained by computing
 the inverse Fourier transform of 
@@ -44,26 +48,24 @@ prevent $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$ to be square integrable.
 The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) 
 overcomes this problem, as pointed out by \citet{bhattacharyya1967},
 and guarantees that the Fourier-convolution theorem 
-can be applied to the auxiliary potential $V(\mathbf{r}, z''_{0}, k_{\varepsilon})$
+can be applied to the auxiliary potential $V(\mathbf{r})$
 (equation \ref{eq:potential-V-space}) on a horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ 
 above the sources to obtain
 \begin{equation}
-	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]
-	= \tfrac{k}{\alpha_{\Phi}} \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
-	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}) ]
+	= k \, \mathcal{F} [ \tau(\mathbf{r}'') ] \:
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: .
 	\label{eq:potential-V-Fourier}
 \end{equation}
-where $\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by
-equation \ref{eq:Phi-Fourier}. 
 
 We get by substituting 
-$\mathcal{F} \left[ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
-(equation \ref{eq:Phi-Fourier}) and 
+$\mathcal{F} \left[ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Psi-Fourier}) and 
 $\mathcal{F} \left[ \tau(\mathbf{r}'') \right]$
 (equation \ref{eq:tau-Fourier}) into 
-$\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V-Fourier}) that
+$\mathcal{F} [ V(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-V-Fourier}) that
 \begin{equation}
-	\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] = 
+	\mathcal{F} [ V(\mathbf{r}^{\dagger}) ] = 
 	\begin{cases}
 		\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] &
 		, \quad 0 < k \le k_{\varepsilon} \\
@@ -73,7 +75,7 @@ $\mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ]$ (equation \ref{eq:potential-V
 \end{equation}
 which shows that the Fourier transforms of 
 $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
-$V(\mathbf{r}^{\dagger}, z''_{0})$ (equation \ref{eq:potential-V-space}) 
+$V(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-V-space}) 
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\varepsilon}$.
 
@@ -85,18 +87,18 @@ goes to infinite for the case in which $z''_{0} < z^{t}_{0}$, we get
 	\label{eq:lim-kepsilon-tau-Fourier}
 \end{equation}
 \begin{equation}
-	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ V(\mathbf{r}^{\dagger}, z''_{0}) \right] = 
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ V(\mathbf{r}^{\dagger}) \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-potential-V-Fourier}
 \end{equation}
 and, consequently, that
 \begin{equation}
-	\lim_{k_{\varepsilon}\to\infty} V(\mathbf{r}, z''_{0}) = 
+	\lim_{k_{\varepsilon}\to\infty} V(\mathbf{r}) = 
 	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-potential-V-space}
 \end{equation}
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
-problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
+problems on a plane (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
 \subsection{The planar equivalent-layer theorem}
 
@@ -126,17 +128,16 @@ problems on a plane (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref
 	equation \ref{eq:eqlayer-integral-Fourier}, in the Fourier domain, as follows:
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
-		\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
+		\tfrac{k \, \alpha_{d}}{\alpha_{a}} \,
 		\mathcal{F} [ \tau(\mathbf{r}'') ] \: ,
-		%\quad \left| \alpha_{a} \right| \ne 0 \: , 
 		\quad k \ne 0 \: .
 		\label{eq:p-Fourier}
 	\end{equation}
-	We obtain from equations \ref{eq:potential-V-Fourier} and \ref{eq:eqlayer-integral-Fourier} that 
+	We obtain from equations \ref{eq:eqlayer-integral-Fourier} and \ref{eq:potential-V-Fourier} that 
 	the $\mathcal{F} [ p(\mathbf{r}'') ]$ defined above leads to a predicted potential field given by
 	\begin{equation}
 		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
-		\alpha_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}, z''_{0}) ] 
+		\alpha_{d} \, \mathcal{F} [ V(\mathbf{r}^{\dagger}) ] 
 		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: .
 		\label{eq:predicted-data-Fourier}
 	\end{equation}
@@ -283,8 +284,7 @@ it is possible to find a set of different planar equivalent layers.
 We define these layers as solutions of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}),
 with physical-property distribution obtained by computing the inverse Fourier transform
 of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) in terms of specific 
-$\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}),
-$\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
+$\alpha_{d}$ (equation \ref{eq:observed-data-Fourier})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
 We would like to emphasize six general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
 
@@ -293,11 +293,10 @@ We would like to emphasize six general remarks about the $p(\mathbf{r}'')$ obtai
 The first concerns the particular case in which the horizontal plane $z''_{0}$ is located above the sources.
 In this case, if we consider that the truncating wavenumber $k_{\varepsilon}$ goes to infinite, 
 we obtain from equations 
-\ref{eq:observed-data-Fourier}, \ref{eq:lim-kepsilon-tau-Fourier}--\ref{eq:lim-kepsilon-potential-V-space}, 
-\ref{eq:p-Fourier} and \ref{eq:predicted-data-Fourier} that
+\ref{eq:observed-data-Fourier} and \ref{eq:lim-kepsilon-tau-Fourier}--\ref{eq:predicted-data-Fourier} that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ p(\mathbf{r}'') \right] = 
-	\tfrac{k \, \alpha_{d}}{\alpha_{a} \, \alpha_{\Phi}} \,
+	\tfrac{k \, \alpha_{d}}{\alpha_{a}} \,
 	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-p-Fourier}
 \end{equation}
@@ -326,16 +325,16 @@ in order to avoid this problem.
 
 The third remark involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
-$\alpha_{d}$, $\alpha_{\Phi}$ (equations \ref{eq:diff-operators-alpha-Phi-k} and \ref{eq:diff-operators-alpha-Phi-1})
-and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
+$\alpha_{d}$ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
 transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
 This can be made by setting 
 \begin{equation}
-	\alpha_{t} = \tfrac{\alpha_{a} \, \alpha_{\Phi}}{\alpha_{d}} \, \alpha_{f} \: ,
+	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} 
 	\label{eq:alpha-t-generic}
 \end{equation}
 in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a complex or real function of the wavenumbers
 $k_{x}$ and $k_{y}$ defining the transformed potential field in the Fourier domain.
+This function is usually defined in terms of $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
 It is worth noting in \ref{eq:alpha-t-generic} that points $(k_{x}, k_{y})$ where 
 $\vert \alpha_{d} \vert$ is equal (or close) to zero and $\vert \alpha_{a} \vert \ne 0$ in the Fourier domain 
 may lead to numerical instabilities. The impact of this problem depends on the particular equivalent layer 
@@ -352,8 +351,8 @@ $f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation 
 Here, we show that an alternative single-step approach for computing potential-field transformations can be 
 deduced from the general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}).
 
-We start by combining the Fourier-domain representations of the functions $\Phi(\mathbf{r}, \mathbf{r}'')$ 
-and $\Psi(\mathbf{r}, \mathbf{r}'')$ (equations \ref{eq:Phi-Fourier} and \ref{eq:Psi-Fourier}) with the 
+We start by combining the Fourier-domain representations of the function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi-Fourier}) with the 
 planar equivalent-layer integral, potential-field transformation and physical-property distribution 
 $p(\mathbf{r}'')$ (equations \ref{eq:eqlayer-integral-Fourier}--\ref{eq:kernel-transformation-Fourier} and 
 \ref{eq:p-Fourier}) to obtain
@@ -383,7 +382,8 @@ wavenumber $k_{\varepsilon}$ (equation \ref{eq:tau-Fourier}) on a plane $z^{\dag
 It is important to highlight that the field transformation plane $z^{\ddagger}_{0}$ may be located above, 
 below or at the same vertical coordinate $z^{\dagger}_{0}$ of the observed potential-field data.
 Apart from the truncating wavenumber $k_{\varepsilon}$, equation \ref{eq:transformed-field-integral-Fourier3} is in perfect 
-agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975}.
+agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute potential-field transformations 
+in the Fourier domain.
 
 \subsubsection{Remark 5}
 
@@ -393,14 +393,14 @@ equivalent layers by presuming the existence of density and magnetization distri
 without explicitly defining them mathematically or establishing any relationship with boundary-value problems
 of potential theory.
 Our work contrasts with that of \citet{gunn1975} because we (i) generalize 
-the Dirichlet's and Neumann's boundary-value problems (equations \ref{eq:U-Dirichlet}, \ref{eq:U-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) 
+the Dirichlet's and Neumann's boundary-value problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) 
 to the case in which the plane $z''_{0}$ crosses the sources and then (ii) use this to 
 explicitly define the physical-property distribution on planar equivalent layers (equation \ref{eq:p-Fourier}). 
 
 \subsubsection{Remark 6}
 
 The Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})  and the 
-general solution (equation \ref{eq:p-Fourier}) of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) present here 
+general solution (equation \ref{eq:p-Fourier}) of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) presented here 
 depend on a truncating wavenumber $k_{\varepsilon}$.
 Nonetheless, interpreters do not need to explicitly set this parameter because the numerical solution of the 
 planar equivalent-layer integral obtained by solving equation \ref{eq:linear-system-eqlayer} automatically
@@ -432,9 +432,9 @@ the layer plane crosses the sources.
 	\label{def:eql-Dirichlet}
 \end{definition}
 
-Note that such layers are obtained from \ref{eq:p-Fourier} by setting $\alpha_{\Phi} = k$ (equation \ref{eq:diff-operators-alpha-Phi-k}) 
-and $\alpha_{a} = 1$ (equation \ref{eq:kernel-Fourier}).
-In this case, the planar equivalent-layer integral in the space domain (equation \ref{eq:eqlayer-integral}) assumes the form
+Note that such layers are obtained from \ref{eq:p-Fourier} by setting $\alpha_{a} = k$ (equation \ref{eq:kernel-Fourier}).
+In this case, $D_{a} \equiv D(1, \hat{\mathbf{z}})$ (equation \ref{eq:diff-operators-generic}) and 
+the planar equivalent-layer integral in the space domain (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r})
@@ -453,7 +453,7 @@ Moreover, it can also be verified that in this case the planar equivalent-layer 
 (equation \ref{eq:eqlayer-integral}) approximates the well-known \textit{upward continuation integral} 
 \citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
 which is traditionally derived from the solution of the Dirichlet’s problem on the
-layer plane (equation \ref{eq:U-Dirichlet}). 
+layer plane (equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$). 
 Dirichlet's equivalent layers are the basis of the pioneer method proposed by \cite{dampney1969} for processing gravity data.
 
 The particular physical property distribution $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Dirichlet-space}
@@ -496,9 +496,9 @@ non-trivial.
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, or $0$, for $k > k_{\varepsilon}$.
 	From equations \ref{eq:tau-Fourier} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
-	$\alpha_{\Phi} \alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function satisfying 
+	$\alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function satisfying 
 	$\left| \alpha_{r} \right| \ne 0$ for $k > 0$.
-	In this case, it can be verified from equations \ref{eq:Phi-Fourier}--\ref{eq:diff-operators-alpha-Phi-1} 
+	In this case, it can be verified 
 	that $\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-Fourier}) 
 	assumes the form
 	\begin{equation}
@@ -508,7 +508,7 @@ non-trivial.
 		\quad \left| \alpha_{r} \right| \ne 0 \: ,
 		\label{eq:kernel-Fourier-min-phase}
 	\end{equation}
-	where $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by equation \ref{eq:Phi-Fourier},
+	where $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ is given by equation \ref{eq:Psi-Fourier} 
 	and $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) assumes the form
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
@@ -529,7 +529,7 @@ non-trivial.
 The representation of equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) in the
 space domain is usually non-trivial and depends on the particular form of the real function $\alpha_{r}$ 
 (equations \ref{eq:kernel-Fourier-min-phase} and \ref{eq:p-Fourier-min-phase}).
-Such layers give raise to potential field transformations (equation \ref{eq:transformed-field-integral-Fourier})
+Such layers give raise to potential-field transformations (equation \ref{eq:transformed-field-integral-Fourier})
 defined by $\alpha_{t} = \alpha_{r} \, \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), which may also
 have non-trivial representations in the space domain.
 
@@ -541,7 +541,7 @@ have non-trivial representations in the space domain.
 %Consequently, any potential field transformation 
 %(equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier})
 %does not depend on the particular observed potential field used to define the equivalent layer as well.
-%This can be shown by noting that, for a particular $\alpha_{\Phi} \alpha_{a} = \tilde{\alpha}_{r} \, \tilde{\alpha}_{d}$,
+%This can be shown by noting that, for a particular $\alpha_{a} = \tilde{\alpha}_{r} \, \tilde{\alpha}_{d}$,
 %we have $\tilde{\alpha}_{t} = \left(\nicefrac{\tilde{\alpha}_{r}}{\tilde{\alpha}_{\Phi}}\right) \, \alpha_{f}$ 
 %(equation \ref{eq:alpha-t-generic}), which does not
 %depend on the $\tilde{\alpha}_{d}$ associated with the particular observed potential field.
@@ -573,7 +573,7 @@ have non-trivial representations in the space domain.
 	From equation \ref{eq:p-Fourier}, we have that the solution $\mathcal{F} [ p(\mathbf{r}'') ]$ 
 	given by equation \ref{eq:p-Fourier-Neumann} to define a Neumann's equivalent layer
 	(Definition \ref{def:eql-Neumann}) is satisfied 
-	only for the case in which $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$. This condition implies that 
+	only for the case in which $\alpha_{a} = \alpha_{d}$. This condition implies that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ is a particular case of equation \ref{eq:p-Fourier-min-phase},
 	with $\alpha_{r} = 1$, and consequently has minimum phase changes
 	according to Definition \ref{def:eql-min-phase}.
@@ -677,19 +677,19 @@ observed potential field is given by $d^{o}(\mathbf{r}) = \tfrac{\partial}{\part
 and that the kernel is $a(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 (equation \ref{eq:Psi}).
 The second step consists in using the estimated $\tilde{p}(\mathbf{r}'')$ to compute the gradient components.
-The $uv$-component of the gradient tensor is computed by setting $D_{t} = \tfrac{\partial^{2}}{\partial u \, \partial v}$
+The $uv$-component of the gradient tensor is computed by setting $D_{t} \equiv \tfrac{\partial^{2}}{\partial u \, \partial v}$
 (equations \ref{eq:potential-U-2nd-deriv-space} and \ref{eq:transformed-field-integral-Neumann-space}),
 where $u, v \in \{ x, y, z \}$.
 
 Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
-$\alpha_{d} = k$ (equation \ref{eq:observed-data-Fourier}), $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1})
+$\alpha_{d} = k$ (equation \ref{eq:observed-data-Fourier}) 
 and $\alpha_{a} = k$ (equation \ref{eq:kernel-Fourier}), which leads to a particular physical property distribution 
 $\tilde{p}(\mathbf{r}'')$ having a 2DFT given by \ref{eq:p-Fourier-Neumann}. The second step is equivalent to 
 compute the potential field transformations (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}), 
 where the unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are given by the canonical base vectors (equation \ref{eq:canonical-base-vector}).
-This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain operator $D_{t} = D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}})$
+This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain operator $D_{t} \equiv D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}})$
 (equation \ref{eq:diff-operators-generic}).
 
 \subsubsection{Implications for magnetic-field transformations}
@@ -704,7 +704,7 @@ This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain oper
 \end{lemma}
 \begin{proof}
 	Again, we get from equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} that all Neumann's 
-	equivalent layers must be defined by $\alpha_{\Phi} \, \alpha_{a} = \alpha_{d}$.
+	equivalent layers must be defined by $\alpha_{a} = \alpha_{d}$.
 	We split this proof into two parts.
 	
 	In the first part, we consider that the observed potential field is the magnetic scalar potential. 
@@ -712,7 +712,7 @@ This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain oper
 	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}),
 	where $\hat{\mathbf{v}}$ is a unit vector with the same direction as that defining the
 	sources total magnetization. Consider that 
-	$\alpha_{\Phi} \, \alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$ (equation \ref{eq:diff-operators-generic}),
+	$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$ (equation \ref{eq:diff-operators-generic}),
 	where $\hat{\mathbf{h}}$ is a unit vector different from $\hat{\mathbf{v}}$. Suppose for sake of
 	contradiction that $\alpha(1, \hat{\mathbf{v}}) = \alpha(1, \hat{\mathbf{h}})$. Then, we use 
 	equation \ref{eq:diff-operators-generic} and the fact that the dot product is distributive to obtain 
@@ -724,7 +724,7 @@ This Fourier-domain operator $\alpha_{f}$ is equivalent to the space-domain oper
 	of the magnetic induction field along a given constant direction defined by the unit vector $\hat{\mathbf{u}}$.
 	Now, we have that 
 	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ and
-	$\alpha_{\Phi} \, \alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
+	$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
 	(equation \ref{eq:diff-operators-generic}). We consider that these two differential operators
 	are equal to each other for sake of contradiction, which also leads to
 	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top} \mathbf{k} = 0$, another contradiction.
@@ -771,7 +771,7 @@ with $t(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\m
 
 Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
 $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} and 
-\ref{eq:diff-operators-generic}), $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-alpha-Phi-1})
+\ref{eq:diff-operators-generic}) 
 and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations 
 \ref{eq:diff-operators-generic} and \ref{eq:kernel-Fourier}), which leads to a dipole layer having the same constant 
 magnetization direction of the true sources and a particular physical property distribution 
@@ -780,12 +780,11 @@ compute the potential field transformation (equation \ref{eq:transformed-field-i
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 This Fourier-domain operator $\alpha_{f}$ leads to the space-domain operator $D_{t} \equiv \tfrac{\partial^{2}}{\partial z^{2}}$.
-It is important to underline that this theoretical result presented here in terms of a Neumann's equivalent layer 
+
+It is important to underline that our theoretical approach in terms of a Neumann's equivalent layer 
 to compute the RTP in the space domain has never been clearly defined in the pioneer work of \citet{silva1986}, nor in the succeeding studies 
 \citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022} 
-using the equivalent-layer technique.
-
-
+using the equivalent-layer technique. 
 Our result also offers
 the theoretical link between the RTP in the space domain, via equivalent-layer technique, and 
 in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}.

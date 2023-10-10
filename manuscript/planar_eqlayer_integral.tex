@@ -2,7 +2,7 @@
 \label{sec:planar_eqlayer}
 
 The linear system defined by equation \ref{eq:linear-system-eqlayer} in the space domain 
-represents the discrete form of the following Fredholm integral equation of the first kind
+represents a discrete form of the following Fredholm integral equation of the first kind
 \citep[e.g.,][ p. 4]{aster_etal2019}, that we conveniently call \textit{planar equivalent-layer integral}:
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
@@ -20,7 +20,10 @@ $d^{o}(\mathbf{r})$ represents the observed potential field;
 $d(\mathbf{r})$
 is a harmonic function defining the potential field at $\mathbf{r}$ due to 
 an equivalent layer with continuous physical property distribution $p(\mathbf{r}'')$; and
-$a(\mathbf{r}, \mathbf{r}'')$ is a harmonic function defining the kernel.
+$a(\mathbf{r}, \mathbf{r}'') \equiv D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ is a harmonic function 
+that usually represents a generic partial derivative of the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}),
+where $D_{a}$ is defined in terms of the space-domain differential operator 
+$D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
 Similarly, the discrete potential-field transformation (equation \ref{eq:transformed-field-space}) assumes the form:
 \begin{equation}
 	f(\mathbf{r})
@@ -29,9 +32,12 @@ Similarly, the discrete potential-field transformation (equation \ref{eq:transfo
 	\: , \quad z < z''_{0} \: ,
 	\label{eq:transformed-field-integral-space}
 \end{equation}
-where $\tilde{p}(\mathbf{r}'')$ is a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}),
-$f(\mathbf{r})$ is the transformed potential field and
-$t(\mathbf{r}, \mathbf{r}'')$ defines the transformation kernel.
+where $\tilde{p}(\mathbf{r}'')$ is a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral});
+$f(\mathbf{r}) \equiv D_{f} U(\mathbf{r})$ is the transformed potential field and
+$t(\mathbf{r}, \mathbf{r}'') \equiv D_{t} \Psi(\mathbf{r}, \mathbf{r}'')$ the transformation kernel,
+which are usually defined, respectively, as generic partial derivatives of the potential $U(\mathbf{r})$ and function $\Psi(\mathbf{r}, \mathbf{r}'')$
+(equations \ref{eq:potential-U-space} and \ref{eq:Psi}), in terms of space-domain differential operators 
+$D_{f}$ and $D_{t}$ obtained by properly applying $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
 We stress that the observed potential field $d^{o}(\mathbf{r})$ (equation \ref{eq:eqlayer-integral})
 and the transformed field $f(\mathbf{r})$ (equation \ref{eq:transformed-field-integral-space}) do not
 have to be defined at the same observation point $\mathbf{r}$.
@@ -71,15 +77,10 @@ where
 \begin{equation}
 	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
 	\alpha_{a} \, 
-	\mathcal{F} [ \Phi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	%\quad \left| \alpha_{a} \right| \ne 0 \: ,
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 	\label{eq:kernel-Fourier}
 \end{equation}
-with $\alpha_{a}$ being a generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
-This function may be defined in terms of the Fourier-domain differential operator 
-$\alpha(\ell,\hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}), using 
-$\ell$ and $\hat{\mathbf{u}}$ not necessarily equal to
-that used to define $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier}).
+with $\alpha_{a}$ commonly defined by $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
 Similarly, we get by applying the Fourier-convolution theorem to equation \ref{eq:transformed-field-integral-space}
 that
 \begin{equation}
@@ -90,9 +91,9 @@ that
 	\label{eq:transformed-field-integral-Fourier}
 \end{equation}
 where $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top}$ is a generic point not
-necessarily equal to $\mathbf{r}^{\dagger}$, 
+necessarily equal to $\mathbf{r}^{\dagger}$; 
 $\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ is the Fourier transform of a particular solution $\tilde{p}(\mathbf{r}'')$ 
-of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) and
+of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}); and
 \begin{equation}
 	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] =
 	\alpha_{t} \, 
@@ -101,4 +102,5 @@ of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) and
 	\label{eq:kernel-transformation-Fourier}
 \end{equation}
 defines the kernel of the potential-field transformation in the Fourier domain,
-with $\alpha_{t}$ being another generic complex or real function of the wavenumbers $k_{x}$ and $k_{y}$.
+with $\alpha_{t}$ usually defined in terms of $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}) 
+as the corresponding Fourier-domain differential operator associated with $D_{t}$ (equation \ref{eq:transformed-field-integral-space}).
