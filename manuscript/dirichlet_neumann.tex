@@ -11,7 +11,7 @@ Because of these properties, we have that
 	U(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	D(\ell, \hat{\mathbf{z}}) U(\mathbf{r}'') \:\: 
-	D(\ell - 1, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
+	D(1 - \ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
 	\: d\mathcal{S}'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
@@ -76,7 +76,6 @@ where
 	\label{eq:Psi-Fourier}
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$.
-In deducing equation \ref{eq:U-Dirichlet-Neumann-Fourier}, we use equation \ref{eq:diff-operators-generic} 
-to the fact that applying $D(\ell, \hat{\mathbf{z}})$ and $D(\ell-1, \hat{\mathbf{z}})$ in the 
-space domain results leads to the product of $\alpha(\ell, \hat{\mathbf{z}})$ and $\alpha(\ell-1, \hat{\mathbf{z}})$
-in the Fourier domain, which in turn results in the term $k$.
+We get from equation \ref{eq:diff-operators-generic} that the term $k$ in equation \ref{eq:U-Dirichlet-Neumann-Fourier} represents,
+in the Fourier domain, the combined effect of the differential operators $D(\ell, \hat{\mathbf{z}})$ and $D(1-\ell, \hat{\mathbf{z}})$ 
+acting in the space domain.
