@@ -970,10 +970,16 @@ In this case, the observed potential field represents a Cartesian component of t
 Additionally, we also deduce the same solution given by equation \ref{eq:p-Fourier-dipoles} if we consider that the 
 observed potential field is the magnetic scalar potential. In this case, $\alpha_{d}$ and $\alpha_{a}$ are defined
 without the term $\alpha(1, \hat{\mathbf{u}})$.
+Hence, the planar equivalent layer formed by dipoles with physical-property distribution 
+given by equation \ref{eq:p-Fourier-dipoles} simultaneously explain the magnetic scalar potential and
+magnetic field components.
 
 Another interesting aspect to be emphasized on the particular solution defined by equation \ref{eq:p-Fourier-dipoles} is that it 
 does not necessarily lead to equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) owing to the complex ratio 
-$\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)}$.
+$\nicefrac{\alpha_{d}}{\alpha_{a}}$, where 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}}) = (\mathbf{k}^{\top} \hat{\mathbf{v}} )$ and 
+$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}}) = (\mathbf{k}^{\top} \hat{\mathbf{h}} )$ 
+(equation \ref{eq:diff-operators-generic}).
 For the particular case in which $\hat{\mathbf{h}}$ coincides with the constant magnetization direction $\hat{\mathbf{v}}$ of the true sources,
 then equation \ref{eq:p-Fourier-dipoles} reduces to that defining the physical-property distribution of a Neumann's layer 
 (equation \ref{eq:p-Fourier-Neumann}), which has minimum phase changes according to Definition \ref{def:eql-min-phase}.
@@ -982,48 +988,72 @@ Note that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (
 with an arbitrarily magnetized dipole layer leads to potential field transformations (equations 
 \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) with 
 $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}) defined in terms of the complex ratio 
-$\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}$.
+$\nicefrac{\alpha_{a}}{\alpha_{d}}$.
 It means, for example, that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-dipoles}) 
 cannot be used to compute the RTP by using the common approach with $\alpha_{t} = \alpha(2, \hat{\mathbf{z}}) = k^{2}$ 
 (equations \ref{eq:diff-operators-generic}, \ref{eq:canonical-base-vector} and \ref{eq:alpha-t-generic}).
 This common approach can only be used if the constant magnetization direction $\hat{\mathbf{h}}$ coincides with 
 that of the true sources $\hat{\mathbf{v}}$.
-This fact is widely known by the geophysical community in practice. 
-We have just provided its theoretical background.
+This fact is widely known by the geophysical community in practice and has long been assumed to be true
+without any mathematical proof by several authors 
+\citep[e.g., ][]{silva1986, leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, takahashi-etal2022}. 
+Our results offer the first theoretical explanation to this fact.
+
+\subsection{Alternative equivalent layers}
+
+\subsubsection{``Generalized equivalent sources'' proposed by \citet{cordell1992}}
+
+Let the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) be numerically solved by
+using a kernel function $a(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}). 
+Note that, in this case, the predicted potential field $d(\mathbf{r})$ 
+represents the gravitational potential due to the equivalent layer.
+The solution $p(\mathbf{r})$ obtained by this approach is defined from equation \ref{eq:p-Fourier}, in the Fourier domain, 
+by setting $\alpha_{a} = 1$ (equation \ref{eq:diff-operators-generic}):
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		k \, \alpha_{d} \, \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: .
+	\label{eq:p-Fourier-generalized-eqs}
+\end{equation}
+It is also important noting that 
+this particular solution (equation \ref{eq:p-Fourier-generalized-eqs}) approximates the vertical derivative of the observed 
+potential field on the layer plane and results in potential-field transformations (equations \ref{eq:transformed-field-integral-space} and 
+\ref{eq:transformed-field-integral-Fourier}) defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
+
+This strategy, called \textit{generalized equivalent sources}, was proposed by \citet{cordell1992} and recently adapted by 
+\citet{soler_uieda2021} to perform gravity-data processing. 
+Those authors considered only the particular case in which observed potential field is gravity disturbance data 
+$d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:observed-data-space}), 
+with $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ (equations \ref{eq:observed-data-Fourier}, 
+\ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
+In this case, the solution given by equation \ref{eq:p-Fourier-generalized-eqs} 
+(i) approximates $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (equation \ref{eq:potential-U-2nd-deriv-space}) 
+in the space domain, 
+(ii) gives rise to equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}), with 
+$\alpha_{r} = \nicefrac{1}{k}$ (equation \ref{eq:p-Fourier-min-phase}), and 
+(iii) requires potential-field transformations defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{k}$ (equation \ref{eq:alpha-t-generic}).
+
+\subsubsection{Alternative approach proposed by \citet{guspi_novara2009}}
+
+\citet{guspi_novara2009} proposed an alternative approach that consists in solving the planar 
+equivalent-layer integral (equations \ref{eq:eqlayer-integral} and \ref{eq:eqlayer-integral-Fourier}) numerically 
+by considering that (i) the observed potential field 
+is satisfactorily described by the directional derivative 
+$d^{o}(\mathbf{r}) = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
+(equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources, and (ii)
+the kernel is given by 
+$a(\mathbf{r}, \mathbf{r}'') = \left( z''_{0} - z \right) \, \ln{\Big[} \left( z''_{0} - z \right) + \| \mathbf{r}'' - \mathbf{r} \| {\Big]} - \| \mathbf{r}'' - \mathbf{r} \|$.
 
 PAREI AQUI
 
-\subsection{Solutions defined by $\alpha_{\Phi} = 1$ and $\alpha_{a} \ne \alpha_{d}$}
+AGORA DEFINIR ESTE KERNEL E A RESPECTIVA PROP FISICA NO DOMINIO DE FOURIER. VER A FOTO QUE TIREI DA MINHA LOUSA
 
-\subsubsection{Dipole layers with arbitrary constant magnetization direction}
+$\alpha_{d} = (\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{v}})$
 
-Equivalent layers obtained with $\alpha_{\Phi} = 1$ (equation \ref{eq:diff-operators-Phi-1}) and 
-$\alpha_{a} \ne \alpha_{d}$ (equations \ref{eq:diff-operators-monopoles} and \ref{eq:diff-operators-dipoles})
-not necessarily preserve the physical relationship between the observed potential field and its true sources.
+$\alpha_{a} = \tfrac{(\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{h}})}{k^{2}}$
 
-For example, consider the case in which the observed potential field is gravity disturbance data, i. e.,
-$d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:observed-data-space}),
-and $\alpha_{\Phi} = \alpha_{a} = 1$. In this case, the kernel $a(\mathbf{r}, \mathbf{r}'')$ 
-(equations \ref{eq:eqlayer-integral}) given by the scaled inverse distance function $\Psi(\mathbf{r}, \mathbf{r}'')$ 
-(equation \ref{eq:Psi}) in the space domain. 
-Note that, in this case, the predicted potential field $d(\mathbf{r}^{\dagger})$ (equation \ref{eq:predicted-data-i})
-does not represents the gravity disturbance, but the gravitational potential due to the equivalent layer.
-This is the ``generalized equivalent sources'' approach proposed by \citet{cordell1992}, and recently adapted by 
-\citet{soler_uieda2021}, to perform gravity-data processing. 
-The solution $p(\mathbf{r})$ obtained by these methods has (or approximates) the phase spectrum of
-the sources because, in this case, $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) approximates
-the product of $\mathcal{F} [ U(\mathbf{r}'') ]$ by a real function. 
-
-This is not the case, for example, if the approach is applied to total-field anomaly data or
-the $xy$-component of the gravitational tensor. In these cases, $\mathcal{F} [ p(\mathbf{r}'') ]$ 
-approximates the product of $\mathcal{F} [ U(\mathbf{r}'') ]$ by a complex function, which imparts 
-phase changes with respect to the sources phase spectrum.
-
-Another example of alternative equivalent-layer approach is obtained by using
-$\alpha_{\Phi} = 1$ and 
-$\alpha_{a} = \tfrac{(\mathbf{k} \cdot \hat{\mathbf{h}}) \, (\mathbf{k} \cdot \hat{\mathbf{h}})}{k^{2}}$.
-In this case, according to equation \ref{eq:p-Fourier}, the solution $p(\mathbf{r}'')$ of the equivalent-layer
-integral (equation \ref{eq:eqlayer-integral}) on a horizontal plane $z''_{0}$ is (or approximates) 
-the second vertical integral $U(\mathbf{r}'')$ on the layer plane and has a phase spectrum different from that
-of the sources because the ratio $\alpha_{d}/\alpha_{a}$ is a complex function.
-This approach was proposed by \citet{guspi_novara2009} for computing the RTP anomaly in the space domain.
