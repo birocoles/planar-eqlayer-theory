@@ -111,111 +111,6 @@ which is in perfect agreement with the solutions of the Dirichlet's and Neumann'
 problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) on a plane $z''_{0}$ 
 that is located above the sources.
 
-\subsection{Some useful upper bounds}
-\label{subsec:upper-bounds}
-
-For the subsequent developments, it is important to establish a common upper bound for
-the squared absolute value of 
-$\alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}})$,
-that is defined by equation \ref{eq:diff-operators-generic} using $\ell, m , n \in \{0, 1, 2\}$
-and constant unit vectors $\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$ and $\hat{\mathbf{w}}$. 
-To do this, we first convert the wavenumber $k_{x}$ and $k_{y}$ to polar coordinates 
-$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
-to show that
-\begin{equation}
-	\begin{split}
-		\vert \alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}}) \vert^{2} 
-		&= \vert (\mathbf{k} \cdot \hat{\mathbf{u}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{v}})^{m} \, (\mathbf{k} \cdot \hat{\mathbf{w}})^{n} \vert^{2} \\
-		&= \left[ (\mathbf{k} \cdot \hat{\mathbf{u}})^{2} \right]^{\ell} \left[ (\mathbf{k} \cdot \hat{\mathbf{v}})^{2} \right]^{m} 
-		\left[ (\mathbf{k} \cdot \hat{\mathbf{w}})^{2} \right]^{n} \\
-		&\le \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{\ell} \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{m} 
-		\left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{n} \\
-		&\le 3^{q} k^{2 \, q} \: , \quad q = \ell+m+n \: ,
-		\quad \ell, m , n \in \{0, 1, 2\} \: .
-	\end{split}
-\label{eq:alpha-upper-bound}
-\end{equation}
-
-We are also interested in defining an upper bound for the absolute value
-of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), 
-i.e., for the amplitude spectrum of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}). 
-To do this, we have adapted the approach presented by
-\citet{bhattacharyya1967} to define an upper bound for the amplitude spectrum of 
-$\tfrac{\partial}{\partial z} U(\mathbf{r})$. 
-We first stress that 
-$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ because
-$z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
-coordinate of a point inside the sources. Using this identity into  
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), we obtain
-\begin{equation}
-	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le 2 \pi \kappa 
-	\frac{e^{- k \, \Delta z}}{k}
-	\int\limits_{z^{t}_{0}}^{\infty}
-	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
-	\: dz' \: , \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:potential-U-spectrum-bound1}
-\end{equation}
-Manipulating $\mathcal{F} [ \sigma(\mathbf{r}') ]$ (equation \ref{eq:sigma-Fourier}), 
-we obtain
-\begin{equation}
-	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert \le
-	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
-	\vert \sigma(\mathbf{r}') \vert 
-	\: dx'dy'
-	\label{eq:sigma-spectrum-bound}
-\end{equation}
-and, consequently, that
-\begin{equation}
-	2 \pi \kappa \, 
-	\int\limits_{z^{t}_{0}}^{\infty}
-	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert
-	\: dz' \le \Omega \: ,
-	\label{eq:Omega-bound}
-\end{equation}
-where
-\begin{equation}
-	\Omega = 2 \pi \kappa \, \iiint\limits_{\mathcal{V}}
-	\vert \sigma(\mathbf{r}') \vert 
-	\: d\mathcal{V}'
-	\label{eq:Omega}
-\end{equation}
-is a constant depending only on the position and shape of the sources. 
-Then, by combining equations 
-\ref{eq:potential-U-spectrum-bound1}--\ref{eq:Omega},
-we conclude that the amplitude spectrum of 
-$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) on a horizontal plane 
-$z^{\dagger}_{0} < z^{t}_{0}$ located above the sources satisfies 
-\begin{equation}
-	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
-	\frac{e^{- k \, \Delta z}}{k} \, \Omega \: ,
-	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:potential-U-spectrum-bound}
-\end{equation}
-From the upper bound of $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$
-(equation \ref{eq:potential-U-spectrum-bound}) and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$
-(equation \ref{eq:observed-data-Fourier}), we also deduce
-\begin{equation}
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert \le
-	\vert \alpha_{d} \vert \, \Omega \, 
-	\frac{e^{- k \, \Delta z}}{k} \: ,
-	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
-	\label{eq:observed-data-spectrum-bound}
-\end{equation}
-Note that, for the case in which $\alpha_{d} = k$ (equation \ref{eq:observed-data-Fourier}), 
-we obtain the same result presented by \citet{bhattacharyya1967} as the upper bound for the 
-amplitude spectrum of $\tfrac{\partial}{\partial z} U(\mathbf{r})$, whereas
-$\alpha_{d} = 1$ leads to the upper bound defined by equation \ref{eq:potential-U-spectrum-bound}.
-Equations \ref{eq:potential-U-spectrum-bound} and \ref{eq:observed-data-spectrum-bound} 
-show that the amplitude spectra 
-$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ and 
-$\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ on a plane $z^{\dagger}_{0} < z^{t}_{0}$ 
-above the sources 
-(i) are finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tend
-to zero as $k$ goes to infinite.
-These results confirm the well-known fact that 
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
-(equations \ref{eq:potential-U-Fourier} and \ref{eq:observed-data-Fourier}) are square integrable.
-
 \subsection{The planar equivalent-layer theorem}
 
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
@@ -467,11 +362,11 @@ $f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation 
 Here, we show that an alternative single-step approach for computing potential-field transformations can be 
 deduced from the general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}).
 
-We start by combining the Fourier-domain representations of the function 
-$\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi-Fourier}) with the 
-planar equivalent-layer integral, potential-field transformation and physical-property distribution 
-$p(\mathbf{r}'')$ (equations \ref{eq:eqlayer-integral-Fourier}--\ref{eq:kernel-transformation-Fourier} and 
-\ref{eq:p-Fourier}) to obtain
+We start by substituting the Fourier-domain representations of the function 
+$\Psi(\mathbf{r}, \mathbf{r}'')$, kernel $t(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ and 
+physical-property distribution $p(\mathbf{r}'')$ 
+(equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-transformation-Fourier}, \ref{eq:p-Fourier} and \ref{eq:alpha-t-generic}) 
+into the potential-field transformation (equation \ref{eq:transformed-field-integral-Fourier}) to obtain
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \alpha_{d} \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]
@@ -479,9 +374,10 @@ $p(\mathbf{r}'')$ (equations \ref{eq:eqlayer-integral-Fourier}--\ref{eq:kernel-t
 	\quad z^{\ddagger}_{0} < z''_{0} \: .
 	\label{eq:transformed-field-integral-Fourier2}
 \end{equation}
-Then, by considering that 
-$\alpha_{d} \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]$ approximates the 2DFT of observed potential field
-on the plane $z^{\dagger}_{0}$, we finally obtain
+Then, we get by considering the definitions of the observed data $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right]$ and 
+the auxiliary function $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]$ 
+(equations \ref{eq:observed-data-Fourier} and \ref{eq:potential-U-epsilon-Fourier}) that equation 
+\ref{eq:transformed-field-integral-Fourier2} can be rewritten as follows:
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
@@ -492,15 +388,20 @@ on the plane $z^{\dagger}_{0}$, we finally obtain
 	\end{cases} \: .
 	\label{eq:transformed-field-integral-Fourier3}
 \end{equation}
-Equation \ref{eq:transformed-field-integral-Fourier3} defines a single-step potential-field transformation 
-on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field truncated up to the
-wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier}) on a plane $z^{\dagger}_{0}$.
-It is important to highlight that the field transformation plane $z^{\ddagger}_{0}$ may be located above, 
-below or at the same vertical coordinate $z^{\dagger}_{0}$ of the observed potential-field data.
-
-Apart from the truncating wavenumber $k_{\varepsilon}$, equation \ref{eq:transformed-field-integral-Fourier3} is in perfect 
-agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute potential-field transformations 
-in the Fourier domain.
+By noting that both planes $z^{\dagger}_{0}$ and $z^{\ddagger}_{0}$ are located above the sources, 
+we let the truncating wavenumber $k_{\varepsilon}$ goes to infinite in equation 
+\ref{eq:transformed-field-integral-Fourier3} to finally obtain
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
+	e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} \: .
+	\label{eq:transformed-field-integral-Fourier4}
+\end{equation}
+Equation \ref{eq:transformed-field-integral-Fourier4} defines a single-step potential-field transformation 
+on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field on a plane $z^{\dagger}_{0}$ 
+located above the sources.
+This equation is in perfect agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
+potential-field transformations in the Fourier domain.
 It is important to bear in mind that this single-step approach for potential-field transformation 
 does not bring any substantially new concept. 
 On the other hand, this approach establishes a theoretical link between potential-field transformations made via
@@ -925,15 +826,15 @@ the theoretical link between the RTP in the space domain, via equivalent-layer t
 in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
 This can be seen by first noting that the common two-step approach to compute the RTP via equivalent-layer technique is 
 equivalent to a single-step approach defined by equation
-\ref{eq:transformed-field-integral-Fourier3}, with $\alpha_{f} = \alpha(2, \hat{\mathbf{z}})$ 
+\ref{eq:transformed-field-integral-Fourier4}, with $\alpha_{f} = \alpha(2, \hat{\mathbf{z}})$ 
 (equations \ref{eq:diff-operators-generic}, \ref{eq:canonical-base-vector}, 
 \ref{eq:transformed-field-integral-Fourier} and \ref{eq:alpha-t-generic}) and 
 $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} and 
 \ref{eq:diff-operators-generic}), 
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
-Then, by considering that the plane containing the observed data $d^{o}(\mathbf{r}^{\dagger})$ coincides with the 
-plane where the transformed field $f(\mathbf{r}^{\ddagger})$ is computed, equation \ref{eq:transformed-field-integral-Fourier3} 
+Then, by considering that the plane $z^{\dagger}_{0}$ containing the observed data $d^{o}(\mathbf{r}^{\dagger})$ coincides with the 
+plane $z^{\ddagger}_{0}$ where the transformed field $f(\mathbf{r}^{\ddagger})$ is computed, equation \ref{eq:transformed-field-integral-Fourier4} 
 reduces to that commonly used in the literature \citep[e.g., ][ p. 331]{blakely1996} to perform the RTP in the 
 Fourier domain.
 
@@ -948,7 +849,9 @@ where $\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'')$ is the Hessian matrix \citep
 function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) and $\hat{\mathbf{h}}$ is a constant unit vector not necessarily equal to 
 $\hat{\mathbf{v}}$.
 In this case, we get from equation \ref{eq:p-Fourier} that a solution of the planar equivalent layer 
-can be obtained by using $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
+can be obtained by using 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ and 
+$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
 (equation \ref{eq:diff-operators-generic}), so that the physical-property distribution assumes the following form 
 in the Fourier domain:
 \begin{equation}
@@ -976,10 +879,7 @@ magnetic field components.
 
 Another interesting aspect to be emphasized on the particular solution defined by equation \ref{eq:p-Fourier-dipoles} is that it 
 does not necessarily lead to equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) owing to the complex ratio 
-$\nicefrac{\alpha_{d}}{\alpha_{a}}$, where 
-$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}}) = (\mathbf{k}^{\top} \hat{\mathbf{v}} )$ and 
-$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}}) = (\mathbf{k}^{\top} \hat{\mathbf{h}} )$ 
-(equation \ref{eq:diff-operators-generic}).
+$\nicefrac{(\mathbf{k}^{\top} \hat{\mathbf{v}})}{(\mathbf{k}^{\top} \hat{\mathbf{h}})}$.
 For the particular case in which $\hat{\mathbf{h}}$ coincides with the constant magnetization direction $\hat{\mathbf{v}}$ of the true sources,
 then equation \ref{eq:p-Fourier-dipoles} reduces to that defining the physical-property distribution of a Neumann's layer 
 (equation \ref{eq:p-Fourier-Neumann}), which has minimum phase changes according to Definition \ref{def:eql-min-phase}.
@@ -988,7 +888,10 @@ Note that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (
 with an arbitrarily magnetized dipole layer leads to potential field transformations (equations 
 \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) with 
 $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}) defined in terms of the complex ratio 
-$\nicefrac{\alpha_{a}}{\alpha_{d}}$.
+$\nicefrac{\alpha_{a}}{\alpha_{d}}$, where 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ and 
+$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ 
+(equation \ref{eq:diff-operators-generic}).
 It means, for example, that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-dipoles}) 
 cannot be used to compute the RTP by using the common approach with $\alpha_{t} = \alpha(2, \hat{\mathbf{z}}) = k^{2}$ 
 (equations \ref{eq:diff-operators-generic}, \ref{eq:canonical-base-vector} and \ref{eq:alpha-t-generic}).
