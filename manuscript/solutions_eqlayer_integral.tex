@@ -981,7 +981,8 @@ $\alpha_{r} = \nicefrac{1}{k}$ (equation \ref{eq:p-Fourier-min-phase}), and
 
 \subsubsection{Alternative approach proposed by \citet{guspi_novara2009}}
 
-\citet{guspi_novara2009} proposed an alternative approach that consists in solving the planar 
+\citet{guspi_novara2009} proposed an alternative two-step approach to compute the RTP via equivalent-layer technique. 
+The first step consists in solving the planar 
 equivalent-layer integral (equations \ref{eq:eqlayer-integral} and \ref{eq:eqlayer-integral-Fourier}) numerically 
 by considering that (i) the observed potential field 
 is satisfactorily described by the directional derivative 
@@ -990,17 +991,39 @@ $d^{o}(\mathbf{r}) = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources, and (ii)
 the kernel is given by 
 \begin{equation}
-	a(\mathbf{r}, \mathbf{r}'') = \left( z''_{0} - z \right) \, \ln{\Big[} \left( z''_{0} - z \right) + \| \mathbf{r}'' - \mathbf{r} \| {\Big]} - 
-	\| \mathbf{r}'' - \mathbf{r} \| \: .
+	a(\mathbf{r}, \mathbf{r}'') = \tfrac{\left( z''_{0} - z \right)}{2 \, \pi} \, 
+	\ln{\Big[} \left( z''_{0} - z \right) + \| \mathbf{r}'' - \mathbf{r} \| {\Big]} - 
+	\tfrac{\| \mathbf{r}'' - \mathbf{r} \|}{2 \, \pi} \: ,
 	\label{eq:kernel-Fourier-Guspi}
 \end{equation}
+which represents the double integral of the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) 
+along the vertical direction $z$.
+The second step of the alternative approach proposed by \citet{guspi_novara2009} computes the RTP anomaly 
+by setting the potential-field transformation (equation \ref{eq:transformed-field-integral-space}) with 
+$t(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
 
-
-PAREI AQUI
-
-AGORA DEFINIR ESTE KERNEL E A RESPECTIVA PROP FISICA NO DOMINIO DE FOURIER. VER A FOTO QUE TIREI DA MINHA LOUSA
-
-$\alpha_{d} = (\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{v}})$
-
-$\alpha_{a} = \tfrac{(\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{h}})}{k^{2}}$
-
+Note that the first step consists in obtaining an equivalent layer defined by 
+$\alpha_{d} = (\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} 
+and \ref{eq:diff-operators-generic}) and 
+$\alpha_{a} = \nicefrac{(\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{h}})}{k^{2}}$, 
+where the term $\nicefrac{1}{k^{2}}$ represents the double integration along the vertical direction. In this case,  
+the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) assumes the form:
+\begin{equation}
+	\mathcal{F} [ p(\mathbf{r}'') ] =
+	\begin{cases}
+		k^{3} \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: .
+	\label{eq:p-Fourier-guspi}
+\end{equation}
+The second step is equivalent to compute the potential field transformation (equation \ref{eq:transformed-field-integral-Fourier}) 
+defined in the Fourier domain by using $\alpha_{t} = 1$ (equation \ref{eq:alpha-t-generic}).
+In this case, it can be verified that the transformed potential field $\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ]$ 
+(equation \ref{eq:transformed-field-integral-Fourier}) actually approximates the RTP anomaly for the particular case 
+in which $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-guspi}) is defined by using $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
+i.e., for the case in which the constant magnetization direction of the equivalent layer coincides with that of the true sources.
+This result shows the effectiveness of our approach in providing the theoretical background not only for classical 
+equivalent-layer methods, but also for unconventional ones.
