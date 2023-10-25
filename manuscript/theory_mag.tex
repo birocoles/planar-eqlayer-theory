@@ -1,0 +1,267 @@
+\section{old section}
+
+\subsection{Continuous analytical solutions in Fourier domain with true magnetization direction}
+\label{subsec:Fourier_domain_true_mag}
+
+Consider now that the 2D convolutions representing the 
+$\alpha$-component $B_{\alpha}(\mathbf{r})$ (equation \ref{eq:B-alpha-Neumann}),
+approximated total-field anomaly $B_{t}(\mathbf{r})$ (equation \ref{eq:B-t-Neumann}) 
+and RTP anomaly $B_{r}(\mathbf{r})$ (equation \ref{eq:B-r-Neumann}) are 
+evaluated at observation points $\mathbf{r}_{0} = \left[x \:\: y \:\: z_{0} \right]^{\top}$ 
+located on a horizontal plane with constant vertical coordinate $z = z_{0}$. 
+Then, we use the Fourier-Convolution Theorem \cite[][ p. 268]{blakely1996} to obtain:
+\begin{equation}
+\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \partial_{\alpha h} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\:\: \alpha = x, y, z \: ,
+\label{eq:Fourier-B-alpha}
+\end{equation}
+\begin{equation}
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]
+\label{eq:Fourier-B-t}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\label{eq:Fourier-B-r}
+\end{equation}
+where $\mathcal{F}\left[ \cdot \right]$ denotes the 2D Fourier Transform (2DFT)
+with respect to the horizontal coordinates $x$ and $y$ of the observation points.
+The 2DFT's are two-dimensional functions of the wavenumbers $k_{x}$ and $k_{y}$ 
+along the $x$ and $y$ directions, respectively. The wavenumbers have units of 
+inverse distance. The dependence of the 2DFT's on $k_{x}$ and $k_{y}$ is conveniently
+omitted to simplify the notation.
+
+To define the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+on the right side of equations \ref{eq:Fourier-B-t} and \ref{eq:Fourier-B-r}, 
+where $\mathbf{r}'' = \left[x'' \:\: y'' \:\: z_{c} \right]^{\top}$ is the 
+position vector defining a point $(x'', y'', z_{c})$ on the equivalent layer, 
+we can first compute the derivative of $\Theta(\mathbf{r})$ (equation
+\ref{eq:scalar-potential-Theta}) with respect to $z$ and then use 
+\citet[][ p. 297]{blakely1996} to obtain:
+\begin{equation}
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] 
+= 2\pi \, c_{m} \, e^{|k| \, z_{c}} 
+\int\limits_{z_{c}}^{\infty} 
+\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
+dz' \: , \:\: z_{c} < z' \: ,
+\label{eq:Fourier-Dz-Theta}
+\end{equation}
+where $|k| = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and 
+$\mathcal{F}\left[ h(\mathbf{r}') \right]$ represents the 
+2DFT of the magnetization intensity distribution $h(\mathbf{r}')$
+(equation \ref{eq:total-magnetization-vector}) on one horizontal slice
+through the magnetic sources at $z = z'$.
+In equation \ref{eq:Fourier-Dz-Theta}, we assume that 
+$h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
+and, consequently, at any coordinate $z < z_{0} < z_{c}$.
+According to \citet[][ p. 278]{blakely1996}, the 2DFT's 
+$\mathcal{F}\left[ \partial_{\alpha h} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-alpha}),
+$\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-t}) and 
+$\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-B-r}) are given by:
+\begin{equation}
+\mathcal{F}\left[ \partial_{\alpha h} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{\alpha} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\: , \:\: z_{0} < z_{c} \: , \:\: \alpha = x, y, z \: ,
+\label{eq:Fourier-Dalphah-Psi}
+\end{equation}
+\begin{equation}
+\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\: , \:\: z_{0} < z_{c} \: ,
+\label{eq:Fourier-Dth-Psi}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] 
+= |k| \, e^{|k| \, (z_{0} - z_{c})} \: ,
+\:\: z_{0} < z_{c} \: ,
+\label{eq:Fourier-Dzz-Psi}
+\end{equation}
+where 
+$\mathcal{U}_{x} \equiv \mathcal{U}(0^{\circ}, 0^{\circ})$,
+$\mathcal{U}_{y} \equiv \mathcal{U}(0^{\circ}, 90^{\circ})$,
+$\mathcal{U}_{z} \equiv \mathcal{U}(90^{\circ}, 0^{\circ})$,
+$\mathcal{U}_{t} \equiv \mathcal{U}(I_{t}, D_{t})$ and
+$\mathcal{U}_{h} \equiv \mathcal{U}(I_{h}, D_{h})$ are defined by the complex function
+\begin{equation}
+\mathcal{U}(I, D) = \hat{u}_{z}(I, D) + 
+\mathrm{i} \: \frac{ \hat{u}_{x}(I, D) \: k_{x} + 
+\hat{u}_{y}(I, D) \: k_{y} }{|k|} \: ,
+\label{eq:U-complex-function}
+\end{equation}
+in terms of the imaginary unity $\mathrm{i} = \sqrt{-1}$
+and the Cartesian components of the unit vector
+$\hat{\mathbf{u}}(I, D)$ (equation \ref{eq:u-unit-vector}) computed with 
+the corresponding inclination $I$ and declination $D$ values.
+Now, by substituting the 2DFT's 
+$\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dz-Theta}),
+$\mathcal{F}\left[ \partial_{\alpha h} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Dalphah-Psi}), 
+$\mathcal{F}\left[ \partial_{th} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$
+(equation \ref{eq:Fourier-Dth-Psi}) and
+$\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dzz-Psi}) into those defining
+$\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-B-alpha}),
+$\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-B-t}) and 
+$\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$
+(equation \ref{eq:Fourier-B-r}), we obtain:
+\begin{equation}
+\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right] = 
+2\pi \, c_{m} \, 
+\mathcal{U}_{\alpha} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, z_{0}} 
+\int\limits_{z_{0}}^{\infty} 
+\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
+dz' \: , \:\: z_{0} < z' \: , \:\: \alpha = x, y, z \: ,
+\label{eq:Fourier-B-alpha-final}
+\end{equation}
+\begin{equation}
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
+2\pi \, c_{m} \, 
+\mathcal{U}_{t} \: \mathcal{U}_{h} \: |k| \, e^{|k| \, z_{0}} 
+\int\limits_{z_{0}}^{\infty} 
+\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
+dz' \: , \:\: z_{0} < z' \: ,
+\label{eq:Fourier-B-t-final}
+\end{equation}
+and
+\begin{equation}
+	\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right] = 
+	2\pi \, c_{m}
+	\: |k| \, e^{|k| \, z_{0}} 
+	\int\limits_{z_{0}}^{\infty} 
+	\mathcal{F}\left[ h(\mathbf{r}') \right] e^{-|k| \, z'} \:
+	dz' \: , \:\: z_{0} < z' \: .
+	\label{eq:Fourier-B-r-final}
+\end{equation}
+Note that, in deducing equations 
+\ref{eq:Fourier-B-alpha-final}--\ref{eq:Fourier-B-r-final}, 
+we have replaced $z_{c}$ by
+$z_{0}$ in the 2DFT $\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right]$ 
+(equation \ref{eq:Fourier-Dz-Theta}). This change does not affect the result
+because we assume that $h(\mathbf{r}')$ is zero outside the volume $v$ of the sources
+and, consequently, at any coordinate $z < z_{0} < z_{c}$.
+
+Regardless of notation differences, the 2DFT's
+$\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right]$ 
+(equation \ref{eq:Fourier-B-alpha-final}) and 
+$\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$ (equation \ref{eq:Fourier-B-t-final})
+are exactly the same found, for example, in \citet{gunn1975} or 
+\citet[][ p. 298]{blakely1996}.
+It is important to stress, however, that differently from those authors, 
+we have not deduced equations \ref{eq:Fourier-B-alpha-final} 
+and \ref{eq:Fourier-B-t-final} by computing the 2DFT's of the volume integrals 
+$B_{\alpha}(\mathbf{r})$ (equation \ref{eq:B-alpha}) and 
+$B_{t}(\mathbf{r})$ (equation \ref{eq:B-t}) at the horizontal plane $z = z_{0}$. 
+Instead, we have deduced them by computing the 2DFT's of the surface integrals
+given by equations \ref{eq:B-alpha-Neumann} and \ref{eq:B-t-Neumann}.
+It can also be verified from equations 
+\ref{eq:Fourier-Dz-Theta}, \ref{eq:Fourier-B-t-final} and 
+\ref{eq:Fourier-B-r-final} that $\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ 
+(equation \ref{eq:Fourier-B-r-final}) can be rewritten as follows:
+\begin{equation}
+\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
+= \frac{1}{\mathcal{U}_{t} \,\mathcal{U}_{h}} \, 
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] \: ,
+\label{eq:Fourier-RTP}
+\end{equation}
+which represents the common expression defining the RTP in Fourier domain
+\cite[e.g.,][ p. 331]{blakely1996}.
+
+The results presented here establish, for the first time, 
+the theoretical connection between the RTP in space and Fourier domains.
+We show that the well-known equation \ref{eq:Fourier-RTP} for computing the
+RTP in Fourier domain can be obtained from the 2DFT's of the surface integrals
+defining the RTP in space domain (equations \ref{eq:B-t-Neumann} and \ref{eq:B-r-Neumann}).
+We stress that these equations are valid for the particular case in which the
+equivalent layer of dipoles has the same uniform magnetization direction
+$\hat{\mathbf{u}}(I_{h}, D_{h})$ of the true sources 
+(equation \ref{eq:total-magnetization-vector}) and the observation points 
+$\mathbf{r}_{0} = \left[x \:\: y \:\: z_{0} \right]^{\top}$ 
+located on a horizontal plane with constant vertical coordinate $z = z_{0}$.
+
+
+\subsection{Continuous analytical solutions with arbitrary uniform magnetization direction}
+\label{subsec:arbitrary_mag}
+
+
+Alternative analytical expressions for the 2DFT's 
+$\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right]$ 
+(equations \ref{eq:Fourier-B-alpha} and \ref{eq:Fourier-B-alpha-final})
+and
+$\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right]$ 
+(equations \ref{eq:Fourier-B-t} and \ref{eq:Fourier-B-t-final}) 
+can also be deduced for the case in which the
+equivalent layer has an arbitrary uniform magnetization direction 
+$\hat{\mathbf{u}}(I_{p}, D_{p})$. These alternative expressions are obtained from the
+simple manipulation of equations \ref{eq:Fourier-Dz-Theta},
+\ref{eq:Fourier-Dalphah-Psi} and \ref{eq:Fourier-Dth-Psi}, as follows:
+\begin{equation}
+\mathcal{F}\left[ B_{\alpha}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ p(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \partial_{\alpha p} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\:\: \alpha = x, y, z \: ,
+\label{eq:Fourier-B-alpha-arbitrary}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ B_{t}(\mathbf{r}_{0}) \right] = 
+\mathcal{F}\left[ p(\mathbf{r}'') \right] \: 
+\mathcal{F}\left[ \partial_{tp} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: ,
+\label{eq:Fourier-B-t-arbitrary}
+\end{equation}
+where
+\begin{equation}
+\mathcal{F}\left[ p(\mathbf{r}'') \right] 
+= \frac{\mathcal{U}_{h}}{\mathcal{U}_{p}} \, 
+\mathcal{F}\left[ \partial_{z} \Theta(\mathbf{r}'') \right] \: ,
+\label{eq:Fourier-p}
+\end{equation}
+\begin{equation}
+\mathcal{F}\left[ \partial_{\alpha p} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{\alpha} \: \mathcal{U}_{p} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\: , \:\: z_{0} < z_{c} \: , \:\: \alpha = x, y, z \: ,
+\label{eq:Fourier-Dalphap-Psi}
+\end{equation}
+and
+\begin{equation}
+\mathcal{F}\left[ \partial_{tp} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] = 
+\mathcal{U}_{t} \: \mathcal{U}_{p} \: |k| \, e^{|k| \, (z_{0} - z_{c})}
+\: , \:\: z_{0} < z_{c} \: ,
+\label{eq:Fourier-Dtp-Psi}
+\end{equation}
+with $\mathcal{U}_{p} \equiv \mathcal{U}(I_{p}, D_{p})$ (equation 
+\ref{eq:U-complex-function}) defined in terms of the arbitrary constant 
+inclination $I_{p}$ and declination $D_{p}$ values.
+Note that, in this case, it is not possible to compute the 2DFT 
+$\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]$ of the RTP anomaly from the
+2DFT $\mathcal{F}\left[ p(\mathbf{r}'') \right]$ of the generic physical-property 
+distribution $p(\mathbf{r}'')$ because, according to equations \ref{eq:Fourier-B-r}, 
+\ref{eq:Fourier-Dzz-Psi} and \ref{eq:Fourier-p}:
+\begin{equation}
+\mathcal{F}\left[ B_{r}(\mathbf{r}_{0}) \right]
+\ne \mathcal{F}\left[ p(\mathbf{r}'') \right] \, 
+\mathcal{F}\left[ \partial_{zz} \Psi(\mathbf{r}_{0}, \mathbf{r}'') \right] \: .
+\label{eq:Fourier-B-r-wrong}
+\end{equation}
+
+The alternative analytical expressions presented here 
+(equations \ref{eq:Fourier-B-alpha-arbitrary}--\ref{eq:Fourier-B-r-wrong})
+show, in Fourier domain, that the planar equivalent layer with 
+generic magnetic moment distribution 
+$p(\mathbf{r}'')$ obtained by using an arbitrary uniform magnetization direction
+$\hat{\mathbf{u}}(I_{p}, D_{p})$ can exactly reproduce the magnetic field components
+$B_{\alpha}(\mathbf{r}_{0})$ and approximated total-field anomaly
+$B_{t}(\mathbf{r}_{0})$, but cannot be used to compute the RTP anomaly
+$B_{r}(\mathbf{r}_{0})$.

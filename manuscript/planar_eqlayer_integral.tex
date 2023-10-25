@@ -1,0 +1,120 @@
+\section{Continuous equivalent layers: The planar equivalent-layer integral}
+\label{sec:planar_eqlayer}
+
+A solution $\mathbf{p}$ of the linear system \ref{eq:linear-system-eqlayer} defines the physical-property 
+distribution on a discrete and planar equivalent layer having finite horizontal extension.
+We now move from a discrete to a continuous formulation of the equivalent layer by considering that the 
+linear system defined by equation \ref{eq:linear-system-eqlayer} in the space domain 
+represents a discrete form of the following Fredholm integral equation of the first kind
+\citep[e.g.,][ p. 4]{aster_etal2019}, that we conveniently call \textit{planar equivalent-layer integral}:
+\begin{equation}
+	d^{o}(\mathbf{r}) \approx
+	d(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:eqlayer-integral}
+\end{equation}
+where $d\mathcal{S}'' = dx'' \, dy''$ defines an element of area; 
+$\mathbf{r} = (x, y, z)^{\top}$ defines a generic observation point and
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ a point located on a generic horizontal 
+plane at $z''_{0}$, which may be located above the sources or cross them; 
+$d^{o}(\mathbf{r})$ represents the observed potential field;
+$d(\mathbf{r})$
+is a harmonic function defining the potential field at $\mathbf{r}$ due to 
+an equivalent layer with continuous physical property distribution $p(\mathbf{r}'')$; and
+$a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ is a harmonic function 
+that usually represents a generic partial derivative of the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}),
+where $D_{a}$ is defined in terms of the space-domain differential operator 
+$D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
+Note that a solution $p(\mathbf{r}'')$ of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) 
+defines the physical-property distribution on a planar and continuous equivalent layer that extends to 
+infinite along the horizontal directions.
+This continuous equivalent layer leads to a potential-field transformation given by:
+\begin{equation}
+	f(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}(\mathbf{r}'') \, t(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad z < z''_{0} \: ,
+	\label{eq:transformed-field-integral-space}
+\end{equation}
+where $\tilde{p}(\mathbf{r}'')$ is a solution of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral});
+$f(\mathbf{r})$ is the transformed potential field that approximates $D_{f} U(\mathbf{r})$ and
+$t(\mathbf{r}, \mathbf{r}'') = D_{t} \Psi(\mathbf{r}, \mathbf{r}'')$ the transformation kernel,
+which are usually defined, respectively, as generic partial derivatives of the potential $U(\mathbf{r})$ and function $\Psi(\mathbf{r}, \mathbf{r}'')$
+(equations \ref{eq:potential-U-space} and \ref{eq:Psi}), in terms of space-domain differential operators 
+$D_{f}$ and $D_{t}$ obtained by properly applying $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
+Note that the surface integral \ref{eq:transformed-field-integral-space} represents a continuous formulation of the 
+discrete potential-field transformation given by equation \ref{eq:transformed-field-space}.
+We also stress that the observed potential field $d^{o}(\mathbf{r})$ (equation \ref{eq:eqlayer-integral})
+and the transformed field $f(\mathbf{r})$ (equation \ref{eq:transformed-field-integral-space}) do not
+have to be defined at the same observation point $\mathbf{r}$.
+
+%Note that the equivalent-layer technique presumes that the potential-field 
+%data can be satisfactorily described by a harmonic function.
+%Besides, it also presumes that, given a potential-field data set, there is an
+%equivalent layer that reproduces the observed potential-field data and can be 
+%used to compute field transformations.
+%It is important to stress that most of the proposed equivalent-layer methods
+%considers the equivalent layer as a purely mathematical tool for processing 
+%potential-field data 
+%\cite[e.g.,][]{bhattacharyya_chan1977, hansen_miyazaki1984, pedersen1989, cordell1992}.
+%They generally neither deduce the existence of planar equivalent layers from potential theory,
+%nor discuss the underlying theoretical assumptions supporting the use of 
+%a specific harmonic function $a_{ij}$ (equation \ref{eq:predicted-data-i}).
+%Most of them consider that the associated physical property distribution $p(\mathbf{r}'')$ does not have
+%any relationship with the true potential-field sources and also assume that
+%the layer is located below the observation points and does not cross the sources;
+%a condition that cannot be guaranteed in practical situations.
+%What follows aims at defining planar equivalent layers as closed-form solutions 
+%$p(\mathbf{r}'')$ of the planar equivalent-layer integral 
+%(equation \ref{eq:eqlayer-integral}) for different kernels $a(\mathbf{r}, \mathbf{r}'')$
+%and potential-field data $d^{o}(\mathbf{r})$, even for the case in which the layer crosses the sources.
+
+We may also represent the planar equivalent-layer integral on a horizontal plane 
+$z^{\dagger}_{0} < z^{t}_{0}$ above the sources in the Fourier domain by applying the
+Fourier-convolution theorem to equation \ref{eq:eqlayer-integral} to obtain
+\begin{equation}
+	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \approx 
+	\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
+	\mathcal{F} [ p(\mathbf{r}'') ] \, 
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:eqlayer-integral-Fourier}
+\end{equation}
+where
+\begin{equation}
+	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+	\alpha_{a} \, 
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\label{eq:kernel-Fourier}
+\end{equation}
+with $\alpha_{a}$ commonly defined by $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
+Similarly, we get by applying the Fourier-convolution theorem to equation \ref{eq:transformed-field-integral-space}
+that
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\mathcal{F} [ \tilde{p}(\mathbf{r}'') ] \, 
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+	\label{eq:transformed-field-integral-Fourier}
+\end{equation}
+where $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top}$ is a generic point not
+necessarily equal to $\mathbf{r}^{\dagger}$; 
+$\mathcal{F} [ \tilde{p}(\mathbf{r}'') ]$ is the Fourier transform of a particular solution $\tilde{p}(\mathbf{r}'')$ 
+of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}); and
+\begin{equation}
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] =
+	\alpha_{t} \, 
+	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+	\quad \left| \alpha_{t} \right| \ne 0 \: ,
+	\label{eq:kernel-transformation-Fourier}
+\end{equation}
+defines the kernel of the potential-field transformation in the Fourier domain,
+with $\alpha_{t}$ usually defined in terms of $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}) 
+as the corresponding Fourier-domain differential operator associated with $D_{t}$ (equation \ref{eq:transformed-field-integral-space}).
+
+Along the subsequent sections, we deduce solutions $p(\mathbf{r}'')$ for the planar equivalent-layer 
+integral in the space and Fourier domains (equations \ref{eq:eqlayer-integral} and \ref{eq:eqlayer-integral-Fourier}), 
+with predefined potential-field data $d^{o}(\mathbf{r})$ and kernel $a(\mathbf{r}, \mathbf{r}'')$ functions, 
+and also their relationship with potential-field transformations (equations \ref{eq:transformed-field-integral-space} and 
+\ref{eq:transformed-field-integral-Fourier}).

@@ -10,6 +10,24 @@
 \usepackage[english,ruled]{algorithm2e}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+
+%% For creating theorems, corollaries, lemmas and definitions
+%% source: https://www.overleaf.com/learn/latex/Theorems_and_proofs
+%\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+%\theoremstyle{definition}%
+\newtheorem{definition}{Definition}
+
+%% Define the QED symbol as a black square
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% for creating tables
+%\usepackage{booktabs}
+%\usepackage{array}
 
 \begin{document}
 \title{Theoretical aspects on planar equivalent layers}
@@ -31,29 +49,27 @@
 \maketitle
 
 % Main body
-\include{abstract}
-\include{introduction}
+%\include{abstract}
+%\include{introduction}
+\include{background}
 \include{eqlayer_technique}
-\include{potential_fields}
-\include{dirichlet_neumann}
-\include{planar_eqlayers}
-\include{conclusions}
+\include{planar_eqlayer_integral}
+\include{solutions_eqlayer_integral}
+%\include{planar_eqlayers}
+%\include{conclusions}
 %\include{aknowledgements}
 
-%\clearpage
-
-%\include{figures}
+\clearpage
 
 % Appendices
 %\appendix
-%\include{matrix_C}
-%\include{DFT_computations}
-%\include{eigenvalues_C}
+\include{appendix_A}
 
 \newpage
 
+% References
 \bibliographystyle{seg}  % style file is seg.bst
-\bibliography{references}
+\bibliography{used-references}
 
 %\clearpage
 
