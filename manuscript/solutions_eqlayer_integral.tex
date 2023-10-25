@@ -8,7 +8,8 @@ With the purpose of determining solutions of the planar equivalent-layer integra
 crosses the sources (i.e., $z''_{0} > z^{t}_{0}$, where $z^{t}_{0}$ defines the top of the sources), 
 we need first generalize the Dirichlet's and Neumann's problems
 (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
-Consider a function $U_{\varepsilon}(\mathbf{r}'')$ defined on a horizontal 
+
+Consider an approximating potential $U_{\varepsilon}(\mathbf{r}'')$ defined on a horizontal 
 plane $z''_{0}$ that may be located above (i.e., $z''_{0} < z^{t}_{0}$) or cross 
 the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
 \begin{equation}
@@ -19,10 +20,11 @@ the sources (i.e., $z''_{0} > z^{t}_{0}$), with 2DFT given by
 		\quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: ,
-	\label{eq:potential-U-epsilon-Fourier}
+	\label{eq:potential-U-epsilon-Fourier-layer}
 \end{equation}
-which is defined in terms of a fixed and possibly very large truncating wavenumber $k_{\varepsilon}$
-and leads to the auxiliary potential
+where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and $z^{\dagger}_{0} < z^{t}_{0}$. 
+Consider also that the inverse Fourier transform of $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ 
+(equation \ref{eq:potential-U-epsilon-Fourier-layer}) satisfies
 \begin{equation}
 	U_{\varepsilon}(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -39,7 +41,7 @@ $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
 
 Note that the function $U_{\varepsilon}(\mathbf{r}'')$ obtained by computing
 the inverse Fourier transform of 
-$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ (equation \ref{eq:potential-U-epsilon-Fourier})
+$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ (equation \ref{eq:potential-U-epsilon-Fourier-layer})
 approximates the potential field obtained by 
 computing the downward continuation of $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-space}) 
 to points that may be located inside the sources. 
@@ -48,7 +50,7 @@ source-free points, where the Laplace's equation applies. This means that the
 continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
 presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
 prevent $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ to be square integrable.
-The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier}) 
+The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-layer}) 
 overcomes this problem, as suggested by \citet{bhattacharyya1967},
 and guarantees that the Fourier-convolution theorem 
 can be applied to the auxiliary potential $U_{\varepsilon}(\mathbf{r})$
@@ -58,14 +60,14 @@ to obtain
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
 	= k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \:
 	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: .
-	\label{eq:potential-V-Fourier}
+	\label{eq:potential-U-epsilon-Fourier-dagger}
 \end{equation}
 We get by substituting 
 $\mathcal{F} \left[ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') \right]$
 (equation \ref{eq:Psi-Fourier}) and 
 $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$
-(equation \ref{eq:potential-U-epsilon-Fourier}) into 
-$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-V-Fourier}) that
+(equation \ref{eq:potential-U-epsilon-Fourier-layer}) into 
+$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger}) that
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
 	\begin{cases}
@@ -73,7 +75,7 @@ $\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potent
 		, \quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: ,
-	\label{eq:potential-V-Fourier-convolution}
+	\label{eq:potential-U-epsilon-Fourier-dagger2}
 \end{equation}
 which shows that the Fourier transforms of 
 $U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
@@ -86,18 +88,18 @@ We have just generalized the Dirichlet's and Neumann's problems
 $k_{\varepsilon}$ for the case in which $z''_{0} > z^{t}_{0}$. 
 In this case, we obtain an approximating potential $U_{\varepsilon}(\mathbf{r})$ that coincides with the true 
 potential $U(\mathbf{r})$ up to the truncating wavenumber $k_{\varepsilon}$ 
-(equation \ref{eq:potential-V-Fourier-convolution}). 
+(equation \ref{eq:potential-U-epsilon-Fourier-dagger2}). 
 At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
-goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier} for the case in which $z''_{0} < z^{t}_{0}$, we get 
+goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which $z''_{0} < z^{t}_{0}$, we get 
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
-	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier}
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-layer}
 \end{equation}
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
-	\label{eq:lim-kepsilon-potential-V-Fourier}
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-dagger}
 \end{equation}
 and, consequently, that
 \begin{equation}
@@ -137,7 +139,7 @@ that is located above the sources.
 	by using $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$, 
 	$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ and 
 	$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]$ 
-	(equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-Fourier} and \ref{eq:potential-U-epsilon-Fourier})
+	(equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-Fourier} and \ref{eq:potential-U-epsilon-Fourier-layer})
 	as follows:
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
@@ -150,7 +152,7 @@ that is located above the sources.
 	$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-Fourier}) 
 	into the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral-Fourier}), as well as  
 	using the relationship between $\mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ]$ and 
-	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger})]$ (equation \ref{eq:potential-V-Fourier}), 
+	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger})]$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger}), 
 	we obtain a predicted potential field given by
 	\begin{equation}
 		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
@@ -196,7 +198,7 @@ that is located above the sources.
 	If we now combine this result (equation \ref{eq:Plancherel-k-theta}) 
 	obtained via Plancherel's theorem with
 	$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:observed-data-Fourier}),
-	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-V-Fourier-convolution})	
+	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger2})	
 	and $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:predicted-data-Fourier}),
 	we obtain
 	\begin{equation}
@@ -315,7 +317,7 @@ We would like to emphasize six general remarks about the $p(\mathbf{r}'')$ obtai
 The first concerns the particular case in which the horizontal plane $z''_{0}$ is located above the sources.
 In this case, if we consider that the truncating wavenumber $k_{\varepsilon}$ goes to infinite, 
 we obtain from equations 
-\ref{eq:observed-data-Fourier} and \ref{eq:lim-kepsilon-potential-U-epsilon-Fourier}--\ref{eq:predicted-data-Fourier} that
+\ref{eq:observed-data-Fourier} and \ref{eq:lim-kepsilon-potential-U-epsilon-Fourier-layer}--\ref{eq:predicted-data-Fourier} that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ p(\mathbf{r}'') \right] = 
 	\tfrac{k \, \alpha_{d}}{\alpha_{a}} \,
@@ -349,19 +351,44 @@ in order to avoid this problem.
 The third remark involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
-transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
-This can be made by setting 
+transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier-single-step}).
+This can be made by setting $\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-transformation-Fourier})
+with
 \begin{equation}
-	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} 
+	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} \: ,
 	\label{eq:alpha-t-generic}
 \end{equation}
-in equation \ref{eq:kernel-transformation-Fourier}, where $\alpha_{f}$ is a complex or real function of the wavenumbers
+where $\alpha_{f}$ is a complex or real function of the wavenumbers
 $k_{x}$ and $k_{y}$ defining the transformed potential field in the Fourier domain.
-This function is usually defined in terms of $\alpha(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
-It is worth noting in equation \ref{eq:alpha-t-generic} that points $(k_{x}, k_{y})$ in the Fourier domain where 
-$\vert \alpha_{d} \vert$ is equal (or close) to zero and $\vert \alpha_{a} \vert \ne 0$ 
-may lead to numerical instabilities. The impact of this problem depends on the particular equivalent layer 
-and the desired potential-field transformation.
+In this case, we get from equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-transformation-Fourier} and \ref{eq:p-Fourier} 
+that the transformed potential field $f(\mathbf{r}^{\ddagger})$ in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) 
+is given by:
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\alpha_{f} \, k \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]
+	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: , 
+	\quad z^{\ddagger}_{0} < z''_{0} \: .
+	\label{eq:transformed-field-integral-Fourier2}
+\end{equation}
+Finally, by substituting 
+$\mathcal{F} \left[ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') \right]$
+(equation \ref{eq:Psi-Fourier}) and 
+$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$
+(equation \ref{eq:potential-U-epsilon-Fourier-layer}) into 
+$\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ]$ (equation \ref{eq:transformed-field-integral-Fourier2}), we obtain 
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] = 
+	\begin{cases}
+		\alpha_{f} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \, 
+		e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} &
+		, \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:transformed-field-integral-Fourier3}
+\end{equation}
+which shows that $f(\mathbf{r}^{\ddagger})$ and the potential field obtained by continuing 
+$D_{f} U(\mathbf{r}^{\dagger})$ to the plane $z^{\ddagger}_{0}$ coincide up 
+to the truncating wavenumber $k_{\varepsilon}$.
 
 \subsubsection{Remark 4}
 
@@ -374,22 +401,10 @@ $f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation 
 Here, we show that an alternative single-step approach for computing potential-field transformations can be 
 deduced from the general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}).
 
-We start by substituting the Fourier-domain representations of the function 
-$\Psi(\mathbf{r}, \mathbf{r}'')$, kernel $t(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ and 
-physical-property distribution $p(\mathbf{r}'')$ 
-(equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-transformation-Fourier}, \ref{eq:p-Fourier} and \ref{eq:alpha-t-generic}) 
-into the potential-field transformation (equation \ref{eq:transformed-field-integral-Fourier}) to obtain
-\begin{equation}
-	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
-	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \alpha_{d} \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]
-	e^{- k \, (z''_{0} - z^{\ddagger}_{0})} \: , 
-	\quad z^{\ddagger}_{0} < z''_{0} \: .
-	\label{eq:transformed-field-integral-Fourier2}
-\end{equation}
-Then, we get by considering the definitions of the observed data $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right]$ and 
-the auxiliary function $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]$ 
-(equations \ref{eq:observed-data-Fourier} and \ref{eq:potential-U-epsilon-Fourier}) that equation 
-\ref{eq:transformed-field-integral-Fourier2} can be rewritten as follows:
+We get by considering the definition of the observed data $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right]$ 
+in the Fourier domain (equation \ref{eq:observed-data-Fourier}), on a horizontal plane $z^{\dagger}_{0}$ above the sources 
+(i.e., $z^{\dagger}_{0} < z^{t}_{0}$) that the potential-field transformation 
+given by equation \ref{eq:transformed-field-integral-Fourier3} can be rewritten as follows:
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
@@ -398,21 +413,20 @@ the auxiliary function $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger})
 		e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} & , \quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: .
-	\label{eq:transformed-field-integral-Fourier3}
+	\label{eq:transformed-field-integral-Fourier-single-step}
 \end{equation}
-This equation is valid for the cases in which $z^{\ddagger}_{0}$ is located above or below $z^{\dagger}_{0}$,
-but still above the sources (i.e., $z^{\ddagger}_{0} < z^{t}_{0}$, where $z^{t}_{0}$ is the top of the sources).
+This equation is valid for the cases in which $z^{\ddagger}_{0}$ is located above or below $z^{\dagger}_{0}$.
 By considering the particular case in which $z^{\ddagger}_{0}$ is located above $z^{\dagger}_{0}$ 
 (i.e., $z^{\ddagger}_{0} < z^{\dagger}_{0}$), we let the truncating wavenumber $k_{\varepsilon}$ goes to infinite in equation 
-\ref{eq:transformed-field-integral-Fourier3} to finally obtain
+\ref{eq:transformed-field-integral-Fourier-single-step} to finally obtain
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
 	e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} \: ,
-	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
-	\label{eq:transformed-field-integral-Fourier4}
+	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} < z^{t}_{0} \: .
+	\label{eq:transformed-field-integral-Fourier-single-step2}
 \end{equation}
-Equation \ref{eq:transformed-field-integral-Fourier4} defines a single-step potential-field transformation 
+Equation \ref{eq:transformed-field-integral-Fourier-single-step2} defines a single-step potential-field transformation 
 on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field on a plane $z^{\dagger}_{0}$ 
 located above the sources.
 This equation is in perfect agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
@@ -539,7 +553,7 @@ non-trivial.
 	It follows from equations \ref{eq:potential-U-phase-spectrum} and \ref{eq:p-phase-spectrum-U} that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, or $0$, for $k > k_{\varepsilon}$.
-	From equations \ref{eq:potential-U-epsilon-Fourier} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
+	From equations \ref{eq:potential-U-epsilon-Fourier-layer} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
 	$\alpha_{a} = \alpha_{r} \, \alpha_{d}$, where $\alpha_{r}$ is a real function satisfying 
 	$\left| \alpha_{r} \right| \ne 0$ for $k > 0$.
 	In this case, it can be verified 
@@ -820,7 +834,9 @@ $\tilde{p}(\mathbf{r}'')$ with 2DFT given by \ref{eq:p-Fourier-Neumann}. The sec
 compute the potential field transformation (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
-This Fourier-domain operator $\alpha_{f}$ leads to the space-domain operator $D_{t} \equiv \tfrac{\partial^{2}}{\partial z^{2}}$.
+In this case, it can be verified from equations \ref{eq:diff-operators-generic} and \ref{eq:transformed-field-integral-Fourier3} that the 
+transformed potential field $f(\mathbf{r}^{\ddagger})$ approximates the RTP anomaly $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r}^{\ddagger})$ 
+on the plane $z^{\ddagger}_{0}$.
 
 It is important to underline two significant aspects that stands out from our theoretical approach to compute the RTP 
 in terms of a Neumann's equivalent layer.
@@ -845,7 +861,7 @@ the theoretical link between the RTP in the space domain, via equivalent-layer t
 in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
 This can be seen by first noting that the common two-step approach to compute the RTP via equivalent-layer technique is 
 equivalent to a single-step approach defined by equation
-\ref{eq:transformed-field-integral-Fourier4}, with $\alpha_{f} = \alpha(2, \hat{\mathbf{z}})$ 
+\ref{eq:transformed-field-integral-Fourier-single-step2}, with $\alpha_{f} = \alpha(2, \hat{\mathbf{z}})$ 
 (equations \ref{eq:diff-operators-generic}, \ref{eq:canonical-base-vector}, 
 \ref{eq:transformed-field-integral-Fourier} and \ref{eq:alpha-t-generic}) and 
 $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} and 
@@ -853,7 +869,7 @@ $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 Then, by considering that the plane $z^{\dagger}_{0}$ containing the observed data $d^{o}(\mathbf{r}^{\dagger})$ coincides with the 
-plane $z^{\ddagger}_{0}$ where the transformed field $f(\mathbf{r}^{\ddagger})$ is computed, equation \ref{eq:transformed-field-integral-Fourier4} 
+plane $z^{\ddagger}_{0}$ where the transformed field $f(\mathbf{r}^{\ddagger})$ is computed, equation \ref{eq:transformed-field-integral-Fourier-single-step2} 
 reduces to that commonly used in the literature \citep[e.g., ][ p. 331]{blakely1996} to perform the RTP in the 
 Fourier domain.
 This result gives the reason by which the equivalent-layer technique ultimately suffers the same instability as 
