@@ -250,7 +250,7 @@ that is located above the sources.
 		\label{eq:incomplete-Gamma-function}
 	\end{equation}
 	with $q$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}).
-	We have just shown that a planar equivalent layer with physical property distribution 
+	We have just shown that a planar equivalent layer with physical-property distribution 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier})
 	leads to a predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ 
 	(equation \ref{eq:predicted-data-Fourier}) that satisfies the condition 
@@ -351,7 +351,7 @@ in order to avoid this problem.
 The third remark involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
-transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier-single-step}).
+transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
 This can be made by setting $\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-transformation-Fourier})
 with
 \begin{equation}
@@ -388,7 +388,8 @@ $\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ]$ (equation \ref{eq:transformed-field-i
 \end{equation}
 which shows that $f(\mathbf{r}^{\ddagger})$ and the potential field obtained by continuing 
 $D_{f} U(\mathbf{r}^{\dagger})$ to the plane $z^{\ddagger}_{0}$ coincide up 
-to the truncating wavenumber $k_{\varepsilon}$.
+to the truncating wavenumber $k_{\varepsilon}$, where $D_{f}$ is the space-domain differential 
+operator associated with $\alpha_{f}$, according to equation \ref{eq:diff-operators-generic}.
 
 \subsubsection{Remark 4}
 
@@ -427,8 +428,8 @@ By considering the particular case in which $z^{\ddagger}_{0}$ is located above 
 	\label{eq:transformed-field-integral-Fourier-single-step2}
 \end{equation}
 Equation \ref{eq:transformed-field-integral-Fourier-single-step2} defines a single-step potential-field transformation 
-on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field on a plane $z^{\dagger}_{0}$ 
-located above the sources.
+on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
+on a plane $z^{\dagger}_{0}$ located above the sources.
 This equation is in perfect agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
 potential-field transformations in the Fourier domain.
 It is important to bear in mind that this single-step approach for potential-field transformation 
@@ -440,7 +441,7 @@ a theoretical link between potential-field transformations made via
 equivalent-layer technique and those commonly made via Fourier transform of the observed data.
 This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
 numerical problems generally associated with those made via Fourier transform of the observed potential-field data, 
-as have been already pointed out by \citet{li_etal2014} about reduction to the pole.
+as have already been pointed out by \citet{li_etal2014} about the reduction to the pole.
 
 
 \subsubsection{Remark 5}
@@ -474,7 +475,7 @@ technique when the layer plane crosses the sources.
 \subsection{Dirichlet's equivalent layers}
 
 \begin{definition}
-	An equivalent layer is called Dirichlet's equivalent layer if the Fourier transform of its physical property distribution has 
+	An equivalent layer is called Dirichlet's equivalent layer if the Fourier transform of its physical-property distribution has 
 	the form
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
@@ -490,9 +491,12 @@ technique when the layer plane crosses the sources.
 	\label{def:eql-Dirichlet}
 \end{definition}
 
-Note that such layers are obtained from \ref{eq:p-Fourier} by setting $\alpha_{a} = k$ (equation \ref{eq:kernel-Fourier}).
-In this case, $D_{a} \equiv D(1, \hat{\mathbf{z}})$ (equation \ref{eq:diff-operators-generic}) and 
-the planar equivalent-layer integral in the space domain (equation \ref{eq:eqlayer-integral}) assumes the form
+Note that the particular $\mathcal{F} [ p(\mathbf{r}'') ]$ associated with Dirichlet's layers (equation \ref{eq:p-Fourier-Dirichlet}) 
+is defined from the general solution (equation \ref{eq:p-Fourier}) by setting $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}})$ 
+(equations \ref{eq:diff-operators-generic}, \ref{eq:canonical-base-vector} and \ref{eq:kernel-Fourier}).
+It is important noting that this particular $\mathcal{F} [ p(\mathbf{r}'') ]$ depends on $\alpha_{d}$, which 
+carries information about the observed potential field (equation \ref{eq:observed-data-Fourier}).
+In this case, the planar equivalent-layer integral in the space domain (equation \ref{eq:eqlayer-integral}) assumes the form
 \begin{equation}
 	d^{o}(\mathbf{r}) \approx
 	d(\mathbf{r})
@@ -514,15 +518,15 @@ which is traditionally derived from the solution of the Dirichlet’s problem on
 layer plane (equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$). 
 Dirichlet's equivalent layers are the basis of the pioneer method proposed by \cite{dampney1969} for processing gravity data.
 
-The particular physical property distribution $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Dirichlet-space}
-for a given observed potential field $d^{o}(\mathbf{r})$ leads to potential field transformations (equations 
+The particular physical-property distribution $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Dirichlet-space}
+for a given observed potential field $d^{o}(\mathbf{r})$ leads to potential-field transformations (equations 
 \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) defined by 
-$\alpha_{t} = \nicefrac{\alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
+$\alpha_{t} = \nicefrac{k \, \alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
 Dirichlet's equivalent layers are commonly used to perform upward/downward continuation of the observed potential 
-field. In this case, $\alpha_{f} = \alpha_{d}$ and $\alpha_{t} = 1$. 
-Other potential field transformations can also be accomplished from such equivalent layers, but they must be 
-defined in terms of $\alpha_{f} \ne \alpha_{d}$ and $\alpha_{t} \ne 1$.
-In this case, however, defining the potential field transformation in the space domain (equation \ref{eq:transformed-field-integral-space})
+field. In this case, $\alpha_{f} = \alpha_{d}$ and $\alpha_{t} = k$. 
+Other potential-field transformations can also be accomplished from such equivalent layers, but they must be 
+defined in terms of $\alpha_{f} \ne \alpha_{d}$ and $\alpha_{t} \ne k$.
+In this case, however, defining the potential-field transformation in the space domain (equation \ref{eq:transformed-field-integral-space})
 from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) is generally 
 non-trivial.
 
@@ -531,7 +535,7 @@ non-trivial.
 
 \begin{definition}
 	An equivalent layer has minimum phase changes (with respect to the spatial distribution of the true sources) if its
-	physical property distribution has a phase spectrum given by 
+	physical-property distribution has a phase spectrum given by 
 	\begin{equation}
 		\Theta [ p(\mathbf{r}'') ] = \begin{cases}
 			\Theta [ U(\mathbf{r}^{\dagger}) ] & , \quad 0 < k \le k_{\varepsilon} \\
@@ -596,7 +600,7 @@ have non-trivial representations in the space domain.
 %simultaneously approximates the scalar potential $U$ 
 %and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
 %sources according to the error bound \ref{eq:epsilon-bound-data}.
-%Consequently, any potential field transformation 
+%Consequently, any potential-field transformation 
 %(equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier})
 %does not depend on the particular observed potential field used to define the equivalent layer as well.
 %This can be shown by noting that, for a particular $\alpha_{a} = \tilde{\alpha}_{r} \, \tilde{\alpha}_{d}$,
@@ -607,7 +611,7 @@ have non-trivial representations in the space domain.
 \subsection{Neumann's equivalent layers}
 
 \begin{definition}
-	An equivalent layer is called Neumann's equivalent layer if the Fourier transform of its physical property distribution has 
+	An equivalent layer is called Neumann's equivalent layer if the Fourier transform of its physical-property distribution has 
 	the form
 	\begin{equation}
 		\mathcal{F} [ p(\mathbf{r}'') ] =
@@ -671,9 +675,9 @@ $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}). Hence, potential-
 	\: , \quad z < z''_{0} \: ,
 	\label{eq:transformed-field-integral-Neumann-space}
 \end{equation}
-where $D_{f}$ is the space-domain representation of the differential operator $\alpha_{f}$ (equations \ref{eq:kernel-transformation-Fourier} 
-and \ref{eq:alpha-t-generic}) associated with the desired transformed field $f(\mathbf{r}) \equiv D_{f} U(\mathbf{r})$.
-Usually, $D_{f}$ can be easily defined in terms of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic}).
+where $D_{f}$ is the space-domain representation of the differential operator $\alpha_{f}$ 
+(equations \ref{eq:diff-operators-generic}, \ref{eq:kernel-transformation-Fourier} 
+and \ref{eq:alpha-t-generic}) associated with the desired transformed field $f(\mathbf{r})$.
 
 \subsubsection{Direct relationship with the true sources}
 
@@ -712,7 +716,7 @@ difference between the second-order moments $xx$ and $yy$, as well as the horizo
 that they produce on a horizontal plane above them.
 These quantities can only be approximated for the case in which the layer crosses the sources because, in this case,
 $p(\mathbf{r}'')$ does not reproduce $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ exactly.
-The important aspect to be emphasized here is that the horizontal distribution of the physical property distribution $p(\mathbf{r}'')$
+The important aspect to be emphasized here is that the horizontal distribution of the physical-property distribution $p(\mathbf{r}'')$
 (equation \ref{eq:eqlayer-integral-Neumann-space}) on Neumann's equivalent layers is equal to or approximates 
 that associated with the true sources.
 
@@ -729,7 +733,7 @@ Corollary \ref{corollary:minimum-phase-change-layers} and Lemma \ref{lemma:eql-N
 
 For example, let us consider the common two-step approach to convert gravity-disturbance into gravity
 gradient data. The first step consists in solving the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral})
-numerically for obtaining an estimated physical property distribution $\tilde{p}(\mathbf{r}'')$ by considering that the
+numerically for obtaining an estimated physical-property distribution $\tilde{p}(\mathbf{r}'')$ by considering that the
 observed potential field is given by $d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:potential-U-1st-deriv-space})
 and that the kernel is $a(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 (equation \ref{eq:Psi}).
@@ -739,10 +743,11 @@ The $uv$-component of the gradient tensor is computed by setting $D_{t} \equiv \
 where $u, v \in \{ x, y, z \}$.
 
 Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
-$\alpha_{d} = k$ (equation \ref{eq:observed-data-Fourier}) 
-and $\alpha_{a} = k$ (equation \ref{eq:kernel-Fourier}), which leads to a particular physical property distribution 
+$\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}})$ 
+(equations \ref{eq:observed-data-Fourier}, \ref{eq:diff-operators-generic} and \ref{eq:kernel-Fourier}) 
+which leads to a particular physical-property distribution 
 $\tilde{p}(\mathbf{r}'')$ having a 2DFT given by \ref{eq:p-Fourier-Neumann}. The second step is equivalent to 
-compute the potential field transformations (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
+compute the potential-field transformations (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}), 
 where the unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are given by the canonical base vectors (equation \ref{eq:canonical-base-vector}).
@@ -822,16 +827,16 @@ where $\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'')$ is the Hessian matrix \citep
 function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
 The second step consists in using the estimated $\tilde{p}(\mathbf{r}'')$ to compute the RTP anomaly 
 $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (see the subsection \textit{Some relevant potential fields for geophysical applications}).
-This is made by evaluating the potential field transformation (equation \ref{eq:transformed-field-integral-space}) 
+This is made by evaluating the potential-field transformation (equation \ref{eq:transformed-field-integral-space}) 
 with $t(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 (equation \ref{eq:Psi}).
 
 Note that the first step consists in defining a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) with 
 $\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier}, 
 \ref{eq:diff-operators-generic} and \ref{eq:kernel-Fourier}), which leads to a dipole layer having the same constant 
-magnetization direction of the true sources and a particular physical property distribution 
+magnetization direction of the true sources and a particular physical-property distribution 
 $\tilde{p}(\mathbf{r}'')$ with 2DFT given by \ref{eq:p-Fourier-Neumann}. The second step is equivalent to  
-compute the potential field transformation (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
+compute the potential-field transformation (equation \ref{eq:transformed-field-integral-Fourier}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 In this case, it can be verified from equations \ref{eq:diff-operators-generic} and \ref{eq:transformed-field-integral-Fourier3} that the 
@@ -924,7 +929,7 @@ then equation \ref{eq:p-Fourier-dipoles} reduces to that defining the physical-p
 (equation \ref{eq:p-Fourier-Neumann}), which has minimum phase changes according to Definition \ref{def:eql-min-phase}.
 
 Note that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-dipoles}) associated 
-with an arbitrarily magnetized dipole layer leads to potential field transformations (equations 
+with an arbitrarily magnetized dipole layer leads to potential-field transformations (equations 
 \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) with 
 $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}) defined in terms of the complex ratio 
 $\nicefrac{\alpha_{a}}{\alpha_{d}}$, where 
@@ -972,7 +977,7 @@ Those authors considered only the particular case in which observed potential fi
 $d^{o}(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:observed-data-space}), 
 with $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}})$ (equations \ref{eq:observed-data-Fourier}, 
 \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
-In this case, the solution given by equation \ref{eq:p-Fourier-generalized-eqs} 
+In this particular case, the solution given by equation \ref{eq:p-Fourier-generalized-eqs} 
 (i) approximates $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (equation \ref{eq:potential-U-2nd-deriv-space}) 
 in the space domain, 
 (ii) gives rise to equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}), with 
@@ -1019,7 +1024,7 @@ the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \
 	\end{cases} \: .
 	\label{eq:p-Fourier-guspi}
 \end{equation}
-The second step is equivalent to compute the potential field transformation (equation \ref{eq:transformed-field-integral-Fourier}) 
+The second step is equivalent to compute the potential-field transformation (equation \ref{eq:transformed-field-integral-Fourier}) 
 defined in the Fourier domain by using $\alpha_{t} = 1$ (equation \ref{eq:alpha-t-generic}).
 In this case, it can be verified that the transformed potential field $\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ]$ 
 (equation \ref{eq:transformed-field-integral-Fourier}) actually approximates the RTP anomaly for the particular case 
