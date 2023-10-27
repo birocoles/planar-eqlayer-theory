@@ -310,7 +310,7 @@ with physical-property distribution obtained by computing the inverse Fourier tr
 of $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) in terms of specific 
 $\alpha_{d}$ (equation \ref{eq:observed-data-Fourier})
 and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}).
-We would like to emphasize six general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
+We would like to emphasize three general remarks about the $p(\mathbf{r}'')$ obtained from \ref{eq:p-Fourier}.
 
 \subsubsection{Remark 1}
 
@@ -348,7 +348,23 @@ in order to avoid this problem.
 
 \subsubsection{Remark 3}
 
-The third remark involves noting that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
+Finally, we draw attention to the truncating wavenumber $k_{\varepsilon}$ that was introduced to define 
+the auxiliary potential $U_{\varepsilon}(\mathbf{r}'')$ (equation \ref{eq:potential-U-epsilon-Fourier-layer}) 
+in the Fourier domain.
+This truncating wavenumber play a central role in the planar equivalent-layer theorem 
+(Theorem \ref{theorem:planar-eqlayer-theorem}) and the general solution (equation \ref{eq:p-Fourier}) of the planar 
+equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
+We would like to highlight here that the interpreter does not need to explicitly set $k_{\varepsilon}$ 
+in practical situations because the numerical solution of the planar equivalent-layer integral obtained by solving 
+equation \ref{eq:linear-system-eqlayer} automatically
+imposes a truncation in the Fourier domain due to the discretization of the planar equivalent-layer integral 
+on a finite region of space.
+It seems that this practical truncation is the predominant factor allowing the application of the equivalent-layer 
+technique when the layer plane crosses the sources.
+
+\subsection{Potential-field transformations}
+
+Note that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
 transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
@@ -391,9 +407,7 @@ $D_{f} U(\mathbf{r}^{\dagger})$ to the plane $z^{\ddagger}_{0}$ coincide up
 to the truncating wavenumber $k_{\varepsilon}$, where $D_{f}$ is the space-domain differential 
 operator associated with $\alpha_{f}$, according to equation \ref{eq:diff-operators-generic}.
 
-\subsubsection{Remark 4}
-
-We begin stressing that, in the context of the equivalent-layer technique, 
+It is also important stressing that, in the context of the equivalent-layer technique, 
 a potential-field transformation is generally defined
 in the space domain, by following two steps. The first consists in obtaining a numerical solution $\tilde{p}(\mathbf{r}'')$ for the 
 planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
@@ -442,32 +456,6 @@ equivalent-layer technique and those commonly made via Fourier transform of the 
 This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
 numerical problems generally associated with those made via Fourier transform of the observed potential-field data, 
 as have already been pointed out by \citet{li_etal2014} about the reduction to the pole.
-
-
-\subsubsection{Remark 5}
-
-The seminal work of \citet{gunn1975} was the pioneer in showing a complete description of potential-field 
-transformations in the Fourier domain. That author has also formulated such transformations in terms of 
-equivalent layers by presuming the existence of density and magnetization distributions on a plane, 
-without explicitly defining them mathematically or establishing any relationship with boundary-value problems
-of potential theory.
-Our work contrasts with that of \citet{gunn1975} because we (i) generalize 
-the Dirichlet's and Neumann's boundary-value problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) 
-to the case in which the plane $z''_{0}$ crosses the sources and then (ii) use this to 
-explicitly define the physical-property distribution on planar equivalent layers (equation \ref{eq:p-Fourier}). 
-
-\subsubsection{Remark 6}
-
-The Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem})  and the 
-general solution (equation \ref{eq:p-Fourier}) of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) presented here 
-depend on a truncating wavenumber $k_{\varepsilon}$.
-Nonetheless, interpreters do not need to explicitly set $k_{\varepsilon}$ because the numerical solution of the 
-planar equivalent-layer integral obtained by solving equation \ref{eq:linear-system-eqlayer} automatically
-imposes a truncation in the Fourier domain due to the discretization of the planar equivalent-layer integral 
-on a finite region of space.
-It seems that this automatic truncation is the predominant factor allowing the application of the equivalent-layer 
-technique when the layer plane crosses the sources.
-
 
 \section{Equivalent layer classes}
 \label{sec:eqlayer_classes}
