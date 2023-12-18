@@ -1,12 +1,12 @@
 \section{Solutions of the planar equivalent-layer integral}
 \label{sec:existence}
 
-\subsection{Generalization of Dirichlet's and Neumann's problems on a plane}
+\subsection{Modified Dirichlet's and Neumann's problems on a plane}
 
 With the purpose of determining solutions of the planar equivalent-layer integral 
 (equations \ref{eq:eqlayer-integral} and \ref{eq:eqlayer-integral-Fourier}) for the case in which $z''_{0}$ 
 crosses the sources (i.e., $z''_{0} > z^{t}_{0}$, where $z^{t}_{0}$ defines the top of the sources), 
-we need first generalize the Dirichlet's and Neumann's problems
+we need first modify the Dirichlet's and Neumann's problems
 (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
 Consider an approximating potential $U_{\varepsilon}(\mathbf{r}'')$ defined on a horizontal 
@@ -83,7 +83,7 @@ $U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-epsilon-sp
 on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
 to the truncating wavenumber $k_{\varepsilon}$.
 
-We have just generalized the Dirichlet's and Neumann's problems 
+We have just specified the Dirichlet's and Neumann's problems 
 (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) in terms of a truncating wavenumber 
 $k_{\varepsilon}$ for the case in which $z''_{0} > z^{t}_{0}$. 
 In this case, we obtain an approximating potential $U_{\varepsilon}(\mathbf{r})$ that coincides with the true 
@@ -101,7 +101,7 @@ goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the 
 	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-dagger}
 \end{equation}
-and, consequently, that
+pointwise and, consequently, that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} U_{\varepsilon}(\mathbf{r}) = 
 	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
@@ -116,7 +116,7 @@ that is located above the sources.
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
 	For a given observed potential field $d^{o}(\mathbf{r})$, 
-	there exist a set of different planar equivalent layers that 
+	there exist a set of planar equivalent layers that 
 	\begin{itemize}
 		\item[(a)] are defined on the same horizontal plane $z''_{0}$, 
 		\item[(b)] produce the same predicted potential field $d(\mathbf{r})$ and 
@@ -213,10 +213,10 @@ that is located above the sources.
 
 	Because we know that $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
 	(equation \ref{eq:observed-data-Fourier}) is square integrable 
-	(equation \ref{eq:observed-data-spectrum-bound}), we may use an adapted version 
+	(equation \ref{eq:observed-data-spectrum-bound}), we can [ REMOVE? use an adapted version 
 	of the well-known Runge-Walsh theorem 
 	\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015}
-	to affirm that there exists a sufficiently
+	to] affirm that there exists a sufficiently
 	large $k_{\varepsilon}$ such that the right-hand side of 
 	\ref{eq:Plancherel-data} is smaller than or equal to a predefined 
 	$\varepsilon > 0$, which guarantees that the error bound given by equation 
@@ -273,8 +273,7 @@ that is located above the sources.
 	
 	To prove (c), we need to demonstrate that the error bound $\ref{eq:epsilon-bound-data}$ is also 
 	satisfied at any plane $z^{\dagger}_{0}$ above the sources.
-	Fortunately, it can be verified from equations \ref{eq:Plancherel-kx-ky}--\ref{eq:incomplete-Gamma-function}
-	that
+	Fortunately, it follows from equation \ref{eq:potential-U-Fourier} that
 	\begin{equation}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger})
@@ -356,9 +355,9 @@ This truncating wavenumber play a central role in the planar equivalent-layer th
 equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
 We would like to highlight here that the interpreter does not need to explicitly set $k_{\varepsilon}$ 
 in practical situations because the numerical solution of the planar equivalent-layer integral obtained by solving 
-equation \ref{eq:linear-system-eqlayer} automatically
-imposes a truncation in the Fourier domain due to the discretization of the planar equivalent-layer integral 
-on a finite region of space.
+equation \ref{eq:linear-system-eqlayer} 
+[REFORMULATE] automatically imposes a truncation in the Fourier domain due to the discretization of the planar 
+equivalent-layer integral on a finite region of space.
 It seems that this practical truncation is the predominant factor allowing the application of the equivalent-layer 
 technique when the layer plane crosses the sources.
 

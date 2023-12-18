@@ -19,7 +19,7 @@ computing the amplitude of the anomalous magnetic field,
 transforming total-field anomalies into field components, 
 as well as estimating the magnetization direction and computing the reduction to the pole
 of magnetic data. 
-\citet{oliveirajr_etal2023} have been presented a recent review about the equivalent-layer technique.
+\citet{oliveirajr_etal2023} have presented a recent review about the equivalent-layer technique.
 
 Several equivalent-layer methods follow the pioneer approach presented
 by \citet{dampney1969} and rely on the numerical solution of the 
@@ -32,13 +32,13 @@ which is analogous to the vertical component of the gravitational attraction due
 or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
 This approach provides the theoretical background for computing the interpolation or upward/downward 
 continuation of any potential-field data.
-However, other field transformations that has been successfully used in practice, 
-such as jointly processing of gravity-gradient data 
+However, other field transformations that have successfully used in practice, 
+such as joint processing of gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or conversion of gravity disturbance data into the 
 gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023}, are 
 empirical generalizations commonly assumed to be true without any mathematical proof.
 
-Surprisingly, most of the well-known equivalent-layer methods for magnetic data processing are 
+Most of the well-known equivalent-layer methods for magnetic data processing are 
 also empirical generalizations of the Neumann's problem or the \textit{second boundary value problem of potential 
 theory} \cite[][ p. 246]{kellogg1967}.
 These methods usually presume, without any proof, the existence of an equivalent layer of dipoles located above 
@@ -61,17 +61,17 @@ the total-field anomaly data rely on a plane.
 to prove that this planar equivalent layer exists for the case in which the dipoles have 
 the same arbitrary uniform magnetization direction of the sources, regardless of whether 
 the sources magnetization is purely induced or not.
-All those studies assume that the equivalent layer does not cross the true sources.
+All those studies assume that the equivalent layer is defined in a source-free region, where the 
+the Laplace’s equation is obeyed. Consequently, all those studies presume that the equivalent layer 
+does not cross the true sources.
 
 The seminal work of \citet{gunn1975} was the pioneer in showing a complete description of potential-field 
 transformations in the Fourier domain. That author has also formulated such transformations in terms of 
 planar equivalent layers of monopoles and dipoles.
-Nonetheless, \citet{gunn1975} presumed the existence of such layers, did not establish any relationship 
-with boundary-value problems of potential theory and did not considered the case in which 
-they cross the sources.
+Gunn (1975), while presuming the existence of planar layers, did not establish any relationship with boundary-value problems in potential theory and did not take into account situations in which they intersect the true sources.
 
 The widely accepted \textit{equivalent-layer principle} refers to the 
-empirical generalizations by which most of the studies found in the literature justify the 
+empirical generalizations by which most of the studies found in the geophysical literature justify the 
 existence of equivalent layers allowing computing potential-field transformations. 
 There have been no attempts to establish the theoretical background explaining, for example,
 the existence of a planar layer of monopoles that simultaneously fit gravitational potential and 
@@ -81,7 +81,12 @@ induction field components due to arbitrarily magnetized sources; or the existen
 equivalent layers that crosses the sources.
 To the authors knowledge, all equivalent-layer methods found in the literature 
 consider that the layer is located above the sources; 
-a condition that cannot be ensured in practical situations with field data.
+a condition that cannot be ensured in practical situations with field data produced by 
+anomaly sources having undisclosed depths.
+The absence of precise depth information about the true sources, however, 
+does not prevent the real-world application of the equivalent-layer technique.
+Actually, existing literature contains numerous examples of its use with a wide range of real-data 
+applications, from exploration to satellite geophysics \citep[e.g.,][]{gonzalez_etal2022}.
 
 Here, we present a systematic theoretical discussion on the existence of planar equivalent layers 
 that reproduce the gravitational and magnetic induction fields due to 3D sources, 
@@ -92,8 +97,8 @@ Our approach consists in defining continuous equivalent layers defined on a hori
 as closed-form solutions of a Fredholm integral equation of the first kind
 \citep[e.g.,][ p. 4]{aster_etal2019} that we conveniently call \textit{planar equivalent-layer integral}.
 Then we formulate the existence of continuous layers as the \textit{planar equivalent-layer theorem},
-that we mathematically prove by generalizing the solutions of the Dirichlet's and Neumann's problems 
-on a planar surface that may cross the sources. 
+that we mathematically prove by modifying the solutions of the Dirichlet's and Neumann's problems 
+on planar surfaces that may cross the sources. 
 Our results fill the theoretical gaps in most of the existing equivalent-layer methods, including 
 those presenting alternative formulations \citep[e.g.,][]{cordell1992, guspi_novara2009}.
 We also establish how a particular equivalent layer obtained by solving the 
@@ -105,12 +110,12 @@ We address theoretical aspects about the existence of planar equivalent layers a
 with potential-field transformations with the purpose of replacing the widely accepted equivalent-layer principle 
 by the planar equivalent-layer theorem. 
 A detailed discussion of potential practical applications of results presented here is beyond the scope of this paper. 
-Rather than present a totally new application for the equivalent-layer technique, the main goal here is 
+Rather than a totally new application for the equivalent-layer technique, the main goal here is 
 explaining or shedding new light on why the technique has long been successfully applied to perform potential-field transformations. 
 The present theoretical investigation opens the door for future investigations about, for example, the 
 (i) numerical instability of the reduction to the pole in space domain and its generalization 
 to the case in which the sources have a nonuniform total-magnetization direction;
 (ii) impact on potential-field transformations of planar non-null physical-property distributions that produce
-no field, i.e., the anniquilators \citep[][ p. 66]{parker1994} or silent sources
+no field, i.e., the annihilators \citep[][ p. 66]{parker1994} or silent sources
 \citep{baratchart2013}; and also 
 (iii) relationship between particular planar equivalent layers and the true 3D sources.
