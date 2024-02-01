@@ -1,9 +1,8 @@
 \section{Discrete equivalent layers: The classical formulation}
 \label{eq:equivalent_layer_technique}
 
-Consider a set of 3D gravity or magnetic sources located 
-in the subsurface, referred to a topocentric Cartesian coordinate system with axes 
-$x$, $y$, and $z$ pointing to north, east and down, respectively. 
+Consider a set of 3D gravity or magnetic sources located in the subsurface,
+over $\overline{\mathcal{V}}$ (see the subsection \textit{Potential fields due to 3D sources}). 
 Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$-th element
 $d^{o}_{i} \equiv d^{o}(\mathbf{r}_{i})$ (equation \ref{eq:observed-data-space}) 
 represents a potential field produced by the 3D sources 
@@ -11,7 +10,7 @@ at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top} \noti
 located above them, with $i \in \{ 1, \dots, N \}$.
 
 Now, consider that $d^{o}_{i}$ can be approximated 
-by the potential field produced at $\mathbf{r}_{i}$ by a discrete set of $M$ 
+by the potential field produced at $\mathbf{r}_{i}$ by a discrete and finite set of $M$ 
 virtual sources such as monopoles (or point masses) or dipoles, for example. 
 These virtual sources are usually called \textit{equivalent sources}.
 Here, we limit ourselves to the particular case in which they are disposed on a 
@@ -74,12 +73,15 @@ a potential field transformation such as upward continuation, interpolation or r
 to the pole, for example, can be computed as follows:
 \begin{equation}
 	\mathbf{f} = \mathbf{T} \, \tilde{\mathbf{p}} \: ,
-	\label{eq:transformed-field-space} 
+	\label{eq:transformed-field-layer-space} 
 \end{equation}
-where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ 
-represents the transformed potential field at a point 
+where $\mathbf{f}$ is an $L \times 1$ vector whose $k$-th element $f_{k} \equiv f(\mathbf{r}^{\ddagger}_{k})$ 
+(equation \ref{eq:transformed-field-space}) represents the transformed potential field at a point 
 $\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{k})^{\top}$, 
 with $z^{\ddagger}_{k} < z''_{0}$, and $\mathbf{T}$ is an 
 $L \times M$ matrix whose element $t_{kj}$ defines the transformed
 potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
-$j \in \{ 1, \dots, M \}$.
+$j \in \{ 1, \dots, M \}$. 
+We have defined the transformed potential field $f_{k}$ at generic points 
+$\mathbf{r}^{\ddagger}_{k} \notin \overline{\mathcal{V}}$ above the layer plane $z''_{0}$, but they 
+can coincide with those at which the observed potential field is measured. 

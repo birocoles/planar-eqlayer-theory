@@ -20,8 +20,7 @@ can be defined by
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
-where $D_{d}$ is a space-domain differential operator
-acting on the potential
+where $D_{d}$ is a space-domain differential operator acting on the potential
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -51,7 +50,7 @@ the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
 	\alpha_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
+	\quad \mathbf{r}^{\dagger} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:observed-data-Fourier}
 \end{equation}
 where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
@@ -219,27 +218,6 @@ decays to zero towards their boundaries. \citet{baranov1957} was the first
 to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
 total-field anomalies into this special anomaly.
 
-\subsection{Phase spectrum of the potential $U(\mathbf{r})$}
-\label{subsec:potential-U-min-phase}
-
-Let the phase spectrum \cite[e.g.,][ p. 261]{blakely1996} of  
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}) 
-on a horizontal plane $z^{\dagger}_{0}$ above the sources be defined as follows:
-\begin{equation}
-	\Theta [ U(\mathbf{r}^{\dagger}) ] = \tan^{-1} \left( 
-	\frac{\text{Im} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]}{\text{Re} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]} 
-	\right) \: ,
-	\label{eq:potential-U-phase-spectrum}
-\end{equation}
-where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, respectively.
-As pointed out by \citet[][ p. 317]{blakely1996}, the phase spectrum $\Theta [ U(\mathbf{r}^{\dagger}) ]$ is the same
-as that of the spatial distribution of the true sources because the integral term in equation \ref{eq:potential-U-Fourier}
-represents a weighted sum of the Fourier transforms $\mathcal{F} [ \sigma(\mathbf{r}') ]$
-(equation \ref{eq:sigma-Fourier}) over all depth slices crossing the sources,
-where the weights are real functions.
-The same reasoning can be used to verify that any vertical integral or vertical derivative of the potential $U(\mathbf{r})$
-also has the same phase spectrum of the spatial distribution of the true sources.
-
 \subsection{Classical Dirichlet's and Neumann's problems on a plane}
 \label{subsec:dirichlet_neumann}
 
@@ -321,3 +299,54 @@ is defined according to \citet[][ p. 275]{blakely1996}, with $k = \sqrt{k_{x}^{2
 We get from equation \ref{eq:diff-operators-generic} that the term $k$ in equation \ref{eq:U-Dirichlet-Neumann-Fourier} represents,
 in the Fourier domain, the combined effect of the differential operators $D(\ell, \hat{\mathbf{z}})$ and $D(1-\ell, \hat{\mathbf{z}})$ 
 acting in the space domain.
+
+\subsection{Potential-field transformations}
+\label{subsec:potential_field_transformations}
+
+Several geophysical applications use the observed potential field 
+$d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}) to estimate another potential field 
+defined in the space domain by
+\begin{equation}
+	f(\mathbf{r}) = D_{f} \, U(\mathbf{r}) \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\label{eq:transformed-field-space}
+\end{equation}
+where $D_{f}$ is a space-domain differential operator acting on the potential $U(\mathbf{r})$ 
+(equation \ref{eq:potential-U-space}), or in the Fourier domain, 
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
+	\alpha_{f} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\quad \mathbf{r}^{\dagger} \notin \overline{\mathcal{V}} \: ,
+	\label{eq:transformed-field-Fourier}
+\end{equation}
+where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
+\overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$, 
+with $z^{t}_{0}$ defining the depth to the sources top (Figure \ref{fig:geometry}), and 
+$\alpha_{f}$ represents the differential operator 
+$D_{f}$ (equation \ref{eq:transformed-field-space}) in the Fourier domain, as a function of the wavenumbers 
+$k_{x}$ and $k_{y}$.
+The differential operators $D_{f}$ and $\alpha_{f}$ associated with the transformed potential field 
+$f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) are commonly
+defined in terms of $D(\ell, \hat{\mathbf{u}})$ and $\alpha(\ell, \hat{\mathbf{u}})$ 
+(equation \ref{eq:diff-operators-generic}) for specific $\ell$ and $\hat{\mathbf{u}}$. 
+Estimating $f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) from 
+the observed potential field $d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}) is an operation 
+commonly known in geophysics as \textit{potential-field transformation}.
+
+A common approach to compute potential-field transformations \cite[e.g.,][]{gunn1975} 
+consists in using the definition of observed data in the Fourier domain (equation \ref{eq:observed-data-Fourier}) 
+and manipulating the Fourier domain solution of the Dirichlet's and Neumann's problems 
+(equation \ref{eq:U-Dirichlet-Neumann-Fourier}) to obtain
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
+	\: , \quad \mathbf{r}^{\dagger} \notin \overline{\mathcal{V}} \: .
+	\label{eq:field-transformation-Fourier}
+\end{equation}
+Equation \ref{eq:field-transformation-Fourier} defines a single-step potential-field transformation 
+in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a plane $z^{\dagger}_{0}$ 
+located above the sources. 
+The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
+transform of \ref{eq:field-transformation-Fourier}.
+The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
+space domain to compute potential-field transformations.

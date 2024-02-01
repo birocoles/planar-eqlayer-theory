@@ -431,26 +431,11 @@ given by equation \ref{eq:transformed-field-integral-Fourier3} can be rewritten 
 \end{equation}
 This equation is valid for the cases in which $z^{\ddagger}_{0}$ is located above or below $z^{\dagger}_{0}$.
 By considering the particular case in which $z^{\ddagger}_{0}$ is located above $z^{\dagger}_{0}$ 
-(i.e., $z^{\ddagger}_{0} < z^{\dagger}_{0}$), we let the truncating wavenumber $k_{\varepsilon}$ goes to infinite in equation 
-\ref{eq:transformed-field-integral-Fourier-single-step} to finally obtain
-\begin{equation}
-	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
-	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
-	e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} \: ,
-	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} < z^{t}_{0} \: .
-	\label{eq:transformed-field-integral-Fourier-single-step2}
-\end{equation}
-Equation \ref{eq:transformed-field-integral-Fourier-single-step2} defines a single-step potential-field transformation 
-on a horizontal plane $z^{\ddagger}_{0}$ in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$
-on a plane $z^{\dagger}_{0}$ located above the sources.
-This equation is in perfect agreement with those commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
-potential-field transformations in the Fourier domain.
-It is important to bear in mind that this single-step approach for potential-field transformation 
-does not bring any substantially new concept. 
-The main goal here is showing that this approach can be deduced from a solution 
-$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) of the planar equivalent-layer integral
-(equation \ref{eq:eqlayer-integral-Fourier}), which establishes 
-a theoretical link between potential-field transformations made via
+(i.e., $z^{\ddagger}_{0} < z^{\dagger}_{0}$) and letting the truncating wavenumber $k_{\varepsilon}$ goes to infinite,
+equation \ref{eq:transformed-field-integral-Fourier-single-step} reduces to that 
+commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
+potential-field transformations in the Fourier domain (equation \ref{eq:field-transformation-Fourier}).
+This result establishes a theoretical link between potential-field transformations made via
 equivalent-layer technique and those commonly made via Fourier transform of the observed data.
 This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
 numerical problems generally associated with those made via Fourier transform of the observed potential-field data, 
@@ -530,7 +515,7 @@ non-trivial.
 		\end{cases} \: ,
 		\label{eq:p-phase-spectrum-U}
 	\end{equation}
-	where $z''_{0} > z^{\dagger}_{0}$ and $\Theta [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-phase-spectrum})
+	where $z''_{0} > z^{\dagger}_{0}$ and $\Theta [ U(\mathbf{r}^{\dagger}) ]$ (Appendix B, equation \ref{eq:potential-U-phase-spectrum})
 	is the phase spectrum of the potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}).
 	\label{def:eql-min-phase}
 \end{definition}
@@ -541,7 +526,7 @@ non-trivial.
 	used to define the layer.
 \end{corollary}
 \begin{proof}
-	It follows from equations \ref{eq:potential-U-phase-spectrum} and \ref{eq:p-phase-spectrum-U} that 
+	It follows from equations \ref{eq:p-phase-spectrum-U} and \ref{eq:potential-U-phase-spectrum} that 
 	$\mathcal{F} [ p(\mathbf{r}'') ]$ must be the product of a real function and
 	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$, for $0 < k \le k_{\varepsilon}$, or $0$, for $k > k_{\varepsilon}$.
 	From equations \ref{eq:potential-U-epsilon-Fourier-layer} and \ref{eq:p-Fourier}, we conclude that this condition is satisfied only for the case in which 
