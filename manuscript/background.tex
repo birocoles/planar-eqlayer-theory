@@ -37,13 +37,13 @@ $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$
 as the density (contrast) or total-magnetization intensity within the sources.
 We implicitly assume that $\sigma(\mathbf{r}) = 0$ for all points 
 $\mathbf{r} \notin \overline{\mathcal{V}}$.
-To insure that the partial derivatives of first and second orders of $U(\mathbf{r})$ 
+To insure that the partial derivatives of first and second orders of $U$ 
 exist at all points $\mathbf{r} \in \mathbb{R}^{3}$ in space, including those within the sources,
 we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}(\mathbf{r})$ 
+The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}$ 
 (equation \ref{eq:observed-data-space}) with respect to the horizontal coordinates $x$ and
 $y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ located above
 the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
@@ -65,7 +65,7 @@ $z^{t}_{0}$ is the depth to the sources top (Figure \ref{fig:geometry});
 	\label{eq:potential-U-Fourier}
 \end{equation}
 with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, is the 2DFT of the Newtonian potential 
-$U(\mathbf{r})$ (equation \ref{eq:potential-U-space}) on the plane $z^{\dagger}_{0}$;
+$U$ (equation \ref{eq:potential-U-space}) on the plane $z^{\dagger}_{0}$;
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
 	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -96,13 +96,13 @@ where $\hat{\mathbf{u}}$ is a constant unit vector,
 $\nabla$ is the vector differential operator nabla \citep[e.g.,][ p. 179]{kaplan2002} and 
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \citep{pedersen1978}.
-The differential operator $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
+The differential operator $D$ (equation \ref{eq:diff-operators-generic})
 has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}, for example, where the suggested
 dot product and exponentiation actually leads to a differentiation.
 
 By combining successive applications of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 with properly chosen $\ell$ and $\hat{\mathbf{u}}$, we may define differential operators that 
-result in all potential fields $d^{o}(\mathbf{r})$ commonly used in Geophysics.
+result in all potential fields $d^{o}$ commonly used in Geophysics.
 Note that $D(0, \hat{\mathbf{u}}) = \alpha(0, \hat{\mathbf{u}}) = 1$ produces no differentiation.
 It can be verified, for example, that using $\ell = 1$ and a constant unit vector $\hat{\mathbf{u}}$
 in equation \ref{eq:diff-operators-generic} leads to the following directional derivative 
@@ -130,7 +130,7 @@ given by the partial derivatives of first order
 	\label{eq:potential-U-1st-deriv-space}
 \end{equation}
 The first-order directional derivative (equation \ref{eq:potential-U-oblique-1st-deriv-space})
-coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U(\mathbf{r})$ (equation \ref{eq:potential-U-1st-deriv-space})
+coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U$ (equation \ref{eq:potential-U-1st-deriv-space})
 for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides with one of the canonical base vectors
 \begin{equation}
 	\hat{\mathbf{x}} = (1,0,0)^{\top} , \quad 
@@ -138,7 +138,7 @@ for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides wi
 	\hat{\mathbf{z}} = (0,0,1)^{\top} \: .
 	\label{eq:canonical-base-vector}
 \end{equation}
-In the case $D(1, \hat{\mathbf{z}}) \, U(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$, for example.
+For example, $D(1, \hat{\mathbf{z}}) \, U(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$.
 
 It can also be verified from equation \ref{eq:diff-operators-generic} that 
 \begin{equation}
@@ -163,7 +163,7 @@ $\hat{\mathbf{v}}$, where
 	\end{bmatrix}
 	\label{eq:potential-U-Hessian}
 \end{equation}
-is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}),
+is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of $U$ (equation \ref{eq:potential-U-space}),
 with elements given by the partial derivatives of second order
 \begin{equation}
 	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
@@ -183,25 +183,25 @@ For example, $D(1, \hat{\mathbf{x}}) \, D(1, \hat{\mathbf{y}}) \, U(\mathbf{r}) 
 \subsection{Some relevant potential fields for geophysical applications}
 \label{subsec:relevant-potential-fields}
 
-In gravity exploration methods, the vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r})$
+In gravity exploration methods, the vertical derivative $\tfrac{\partial}{\partial z} U$
 (equation \ref{eq:potential-U-1st-deriv-space}) does not define the gravity anomaly, but the \textit{gravity disturbance} data 
 \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}.
 The debate around the differences between gravity anomaly and gravity disturbance is beyond the scope of the 
 present work and has been carried about from a more geodetic than a geophysical point of view 
 \citep[e.g.,][]{li2001, fairhead2003, hackney-featherstone2003, hinze2005, vajda-etal2006, vajda-etal2007, vajda-etal2008}. 
 Maybe, that is why it is still unfamiliar to a considerable group of exploration geophysicists.
-Another important quantity for gravity exploration method is the Hessian matrix $\mathbf{H}_{U}(\mathbf{r})$
+Another important quantity for gravity exploration method is the Hessian matrix $\mathbf{H}_{U}$
 (equation \ref{eq:potential-U-Hessian}), which defines the
 (gravitational) \textit{gradient tensor} \citep[e.g.,][]{pedersen_rasmussen1990}.
 
 In magnetic exploration methods, it is well-established that the second-order directional derivative 
-$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space})
+$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space})
 is commonly used to approximate the \textit{total-field anomaly} produced by 3D sources \cite[e.g., ][ p. 179]{blakely1996},
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 Because of that, we use the term \textit{approximated total-field anomaly} to denote this 
 potential field throughout the manuscript.
-Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
+Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}) can be used to define (i) the  
 \textit{Cartesian components of the magnetic induction field} produced due to the 3D
 sources by setting the unit vector $\hat{\mathbf{u}}$ equal to the canonical base vectors $\hat{\mathbf{x}}$,
@@ -222,7 +222,7 @@ total-field anomalies into this special anomaly.
 \label{subsec:dirichlet_neumann}
 
 At all points $\mathbf{r} \notin \overline{\mathcal{V}}$ 
-located outside the sources, $U(\mathbf{r})$ (equation
+located outside the sources, $U$ (equation
 \ref{eq:potential-U-space}) has continuous partial derivatives of all orders
 and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
 Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
@@ -276,7 +276,7 @@ vertically-magnetized dipoles (or monopoles) that is located on the horizontal p
 physical-property distribution $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ and exactly reproduces 
 $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z''_{0}$.
 
-Consider now that $U(\mathbf{r})$ is not evaluated at a generic observation point $\mathbf{r}$, but at a point 
+Consider now that $U$ is not evaluated at a generic observation point $\mathbf{r}$, but at a point 
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
 on a horizontal plane $z^{\dagger}_{0}$ above the sources, with $z^{\dagger}_{0} < z''_{0} < z^{t}_{0}$.
 In this case, we get by applying the Fourier-convolution theorem 
@@ -304,33 +304,33 @@ acting in the space domain.
 \label{subsec:potential_field_transformations}
 
 Several geophysical applications use the observed potential field 
-$d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}) to estimate another potential field 
+$d^{o}$ (equation \ref{eq:observed-data-space}) to estimate another potential field 
 defined in the space domain by
 \begin{equation}
 	f(\mathbf{r}) = D_{f} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:transformed-field-space}
 \end{equation}
-where $D_{f}$ is a space-domain differential operator acting on the potential $U(\mathbf{r})$ 
-(equation \ref{eq:potential-U-space}), or in the Fourier domain, 
+or, in the Fourier domain, 
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
 	\alpha_{f} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
 	\quad \mathbf{r}^{\dagger} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:transformed-field-Fourier}
 \end{equation}
-where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
+where $D_{f}$ is a space-domain differential operator acting on the potential $U$ 
+(equation \ref{eq:potential-U-space}); 
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
 \overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$, 
-with $z^{t}_{0}$ defining the depth to the sources top (Figure \ref{fig:geometry}), and 
+with $z^{t}_{0}$ defining the depth to the sources top (Figure \ref{fig:geometry}); and 
 $\alpha_{f}$ represents the differential operator 
 $D_{f}$ (equation \ref{eq:transformed-field-space}) in the Fourier domain, as a function of the wavenumbers 
 $k_{x}$ and $k_{y}$.
 The differential operators $D_{f}$ and $\alpha_{f}$ associated with the transformed potential field 
 $f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) are commonly
-defined in terms of $D(\ell, \hat{\mathbf{u}})$ and $\alpha(\ell, \hat{\mathbf{u}})$ 
-(equation \ref{eq:diff-operators-generic}) for specific $\ell$ and $\hat{\mathbf{u}}$. 
+defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). 
 Estimating $f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) from 
-the observed potential field $d^{o}(\mathbf{r})$ (equation \ref{eq:observed-data-space}) is an operation 
+the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) is an operation 
 commonly known in geophysics as \textit{potential-field transformation}.
 
 A common approach to compute potential-field transformations \cite[e.g.,][]{gunn1975} 
@@ -348,12 +348,13 @@ in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a plan
 located above the sources. 
 The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
 transform of \ref{eq:field-transformation-Fourier}.
-In equation \ref{eq:field-transformation-Fourier}, note that we have defined $d^{o}$ and $f$ at the same points. 
+For the sake of simplicity, we have opted for defining the fields $d^{o}$ and $f$ at the same points in equation 
+\ref{eq:field-transformation-Fourier}.
 However, it is important to stress that, depending on the 
 geophysical application, $f$ may be estimated at points different from those at which the observations are 
-placed. For the sake of simplicity, we have opted for defining both fields at the same points.
+placed.
 
 The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
 space domain to compute potential-field transformations. What follows aims at discussing the well-established 
-empirical approaches used in the equivalent-layer technique, as well as providing the theoretical background 
+empirical approaches used in the equivalent-layer technique, as well as discussing the theoretical background 
 supporting them.
