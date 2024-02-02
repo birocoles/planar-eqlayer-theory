@@ -16,8 +16,9 @@ These virtual sources are usually called \textit{equivalent sources}.
 Here, we limit ourselves to the particular case in which they are disposed on a 
 generic horizontal plane located below the potential-field data, at points 
 $\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$,
-$j \in \{ 1, \dots, M \}$, with constant vertical coordinate $z''_{0} > z_{i}$, $i \in \{ 1, \dots, N \}$.
-
+$j \in \{ 1, \dots, M \}$, with constant vertical coordinate $z''_{0} > z_{i}$, $i \in \{ 1, \dots, N \}$. 
+Hence, in line with the majority of equivalent-layer methods found in the literature, we propose the following 
+definition, with the understanding that it may be subject to slight modifications:
 \begin{definition}[\textbf{Discrete equivalent layer}]
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
 	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$, 
@@ -39,13 +40,15 @@ $j \in \{ 1, \dots, M \}$, with constant vertical coordinate $z''_{0} > z_{i}$, 
 	\end{equation}
 	\label{def:discrete-eqlayer}
 \end{definition}
-
 In Definition \ref{def:discrete-eqlayer}, $\mathbf{d}_{\epsilon}$ is the predicted data vector whose 
 $i$-th element represents the potential field due to $\mathbf{p}_{\epsilon}$ at the observation point $\mathbf{r}_{i}$ 
 and the elements of $\mathbf{A}$ are harmonic functions usually defined by 
 $a_{ij} \equiv D_{a} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, which represents a 
 partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the space-domain differential operator 
-$D$ (equation \ref{eq:diff-operators-generic}).
+$D$ (equation \ref{eq:diff-operators-generic}). 
+We would like to emphasize that Definition \ref{def:discrete-eqlayer} presumes a planar equivalent layer formed 
+by punctual equivalent sources that satisfies a data fit criterion given by equation \ref{eq:epsilon-bound-data-discrete}, 
+but these premises are certainly open to adjustments if necessary.
 
 After estimating a particular $\tilde{\mathbf{p}}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}), 
 a potential field transformation such as upward continuation, 
