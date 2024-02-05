@@ -1,4 +1,4 @@
-\section{Discrete equivalent layers: The classical formulation}
+\section{Discrete equivalent layers}
 \label{eq:equivalent_layer_technique}
 
 Consider a set of 3D gravity or magnetic sources located in the subsurface,
@@ -23,10 +23,10 @@ definition, with the understanding that it may be subject to slight modification
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
 	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$, 
 	$i \in \{1, \dots, N\}$, located above a horizontal plane at $z''_{0}$. Besides, consider an $N \times M$ 
-	matrix $\mathbf{A}$ with element $a_{ij}$ defined by a harmonic function that (i) depends only on $\mathbf{r}_{i}$ 
+	matrix $\mathbf{A}$ with element $a_{ij}$ defined by a harmonic function that depends only on $\mathbf{r}_{i}$ 
 	and the spatial coordinates of a point $\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$ on the plane $z''_{0}$,
 	$j \in \{1, \dots, M\}$, and
-	(ii) vanishes as the distance $\| \mathbf{r}_{i} - \mathbf{r}''_{j} \|_{2}$ increases. 
+	vanishes as the distance $\| \mathbf{r}_{i} - \mathbf{r}''_{j} \|_{2}$ increases. 
 	Then, for a chosen accuracy $\epsilon > 0$, we may call the $M \times 1$ vector $\mathbf{p}_{\epsilon}$ with $j$-th element $p_{j}$ 
 	a \textbf{discrete equivalent layer} if its predicted potential field 
 	\begin{equation}
@@ -94,5 +94,6 @@ However, many authors
 have proposed equivalent-layer methods by assuming without any proof that the harmonic functions $a_{ij}$ are 
 independent of the nature of the observed potential-field data and can be 
 conveniently chosen according to the characteristics of the problem.
-We show later that this independence holds true and how 
-the particular form of predefined harmonic functions $a_{ij}$ affect the subsequent potential-field transformations.
+We mathematically confirm this independence some sections later and also show how 
+the particular form of predefined harmonic functions $a_{ij}$ affect the subsequent 
+potential-field transformations.
