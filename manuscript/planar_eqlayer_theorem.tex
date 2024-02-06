@@ -1,51 +1,15 @@
-\section{The planar equivalent-layer Theorem}
+\section{Existence of continuous equivalent layers on a plane}
 \label{sec:planar_eqlayer_theorem}
-
-\subsection{Useful expressions in the Fourier domain}
-
-For the subsequent developments, it is also useful defining the predicted potential field 
-$d_{\varepsilon}$ (equation \ref{eq:predicted-data-integral}) and transformed field
-$f_{\varepsilon}$ (equation \ref{eq:transformed-field-integral-space}) in the Fourier domain,
-at horizontal planes $z^{\dagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z^{t}_{0}$ 
-above the sources. 
-We obtain by applying the Fourier-convolution theorem to 
-equations \ref{eq:predicted-data-integral} and \ref{eq:transformed-field-integral-space} that
-\begin{equation}
-	\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] =
-	\mathcal{F} [ p(\mathbf{r}'') ] \, 
-	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\quad z^{\dagger}_{0} < z''_{0} \: ,
-	\label{eq:eqlayer-integral-Fourier}
-\end{equation}
-and
-\begin{equation}
-	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
-	\mathcal{F} [ \tilde{p}(\mathbf{r}'') ] \, 
-	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
-	\quad z^{\ddagger}_{0} < z''_{0} \: ,
-	\label{eq:transformed-field-integral-Fourier}
-\end{equation}
-where
-\begin{equation}
-	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
-	\alpha_{a} \, 
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
-	\label{eq:kernel-Fourier}
-\end{equation}
-and
-\begin{equation}
-	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] =
-	\alpha_{t} \, 
-	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
-	\label{eq:kernel-transformation-Fourier}
-\end{equation}
-with $\alpha_{a}$ and $\alpha_{t}$ given in terms of the operator 
-$\alpha$ (equation \ref{eq:diff-operators-generic}).
 
 \subsection{Modified Dirichlet's and Neumann's problems on a plane}
 
-Consider an approximating potential $U_{\varepsilon}(\mathbf{r}'')$ defined on a horizontal 
-plane $z''_{0}$ that may be located above or cross 
+To prove the existence of continuous equivalent layers $p_{\varepsilon}(\mathbf{r}'')$
+according to Definition \ref{def:continuous-eqlayer},
+we need first modify the Dirichlet’s and Neumann’s problems 
+(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) for the case in which
+the plane $z''_{0}$ cross the sources.
+Hence, let us first consider an approximating potential $U_{\varepsilon}(\mathbf{r}'')$ 
+defined on a horizontal plane $z''_{0}$ that may be located above or cross 
 the sources (Figure \ref{fig:geometry}), with 2DFT given by
 \begin{equation}
 	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
@@ -150,50 +114,50 @@ that is located above the sources.
 
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
-	Given an observed potential field $d^{o}$, 
-	let a planar surface $\mathcal{S}''$ located at $z''_{0}$ and a kernel function $a(\mathbf{r}, \mathbf{r}'')$ 
-	be set according to Definition \ref{def:continuous-eqlayer}.
+	Let a planar surface $\mathcal{S}''$ located at $z''_{0}$ and a kernel function $a(\mathbf{r}, \mathbf{r}'')$ 
+	be set according to Definition \ref{def:continuous-eqlayer}, for a given an observed potential field $d^{o}$. 
 	Then, for every $\varepsilon > 0$, there exists a continuous equivalent layer $p_{\varepsilon}$. Furthermore, if 
 	$z''_{0} < z^{t}_{0}$, then the continuous equivalent layer reproduces $d^{o}$ exactly.
 \end{theorem}
-PAREI AQUI
 \begin{proof}
-	We start by defining a general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ of the equivalent-layer 
-	integral in the Fourier domain (equation \ref{eq:eqlayer-integral-Fourier}) 
-	by using $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$, 
-	$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ and 
-	$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]$ 
-	(equations \ref{eq:Psi-Fourier}, \ref{eq:kernel-Fourier} and \ref{eq:potential-U-epsilon-Fourier-layer})
-	as follows:
+	We start by defining $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
+	in the Fourier domain via
 	\begin{equation}
-		\mathcal{F} [ p(\mathbf{r}'') ] =
+		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
 		\tfrac{k \, \alpha_{d}}{\alpha_{a}} \,
 		\mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \: ,
-		\quad k \ne 0 \: .
 		\label{eq:p-Fourier}
 	\end{equation}
-	By inserting this general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ and the definition of 
-	$\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-Fourier}) 
-	into the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral-Fourier}), as well as  
-	using the relationship between $\mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ]$ and 
-	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger})]$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger}), 
-	we obtain a predicted potential field given by
+	where $U_{\varepsilon}(\mathbf{r}'')$ is defined as in \ref{eq:potential-U-epsilon-Fourier-layer}, 
+	for a given truncating wavenumber $k_{\varepsilon}$.
+	For any finite choice of $0 < k_{\varepsilon} < \infty$, both $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ 
+	and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable and, consequently, it is possible to
+	apply the Fourier-convolution theorem to \ref{eq:predicted-data-continuous-layer} and obtain
 	\begin{equation}
-		\mathcal{F} [ d(\mathbf{r}^{\dagger}) ] = 
-		\alpha_{d} \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] 
-		\: , \quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: .
-		\label{eq:predicted-data-Fourier}
+		\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
+		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] \, 
+		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+		\quad z^{\dagger}_{0} < z''_{0} \: ,
+		\label{eq:predicted-data-continuous-layer-Fourier}
 	\end{equation}
-	Note that, in this case, different planar layers with physical-property distributions $\mathcal{F} [ p(\mathbf{r}'') ]$ 
-	(equation \ref{eq:p-Fourier}) obtained at the same horizontal plane $z''_{0}$, for kernels defined in terms of different 
-	$\alpha_{a}$ (equation \ref{eq:kernel-Fourier}),
-	produce the same predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:predicted-data-Fourier}). 
-	At this point, we are not able to affirm that such layers are ``equivalent'' because we have not shown yet that their
-	predicted potential fields $d(\mathbf{r}^{\dagger})$ satisfies the error bound $\ref{eq:epsilon-bound-data}$.
-	
-	Our next step involves applying the Plancherel's theorem \citep[][ p. 119]{bracewell1999} to the 
-	left-hand side of equation \ref{eq:epsilon-bound-data}, so that
+	where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
+	defines a point on the horizontal surface $\mathcal{S}^{\dagger}$ above the sources, at $z^{\dagger}_{0} < z''_{0}$.
+	By considering that the kernel function is given by $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$
+	and using \ref{eq:observed-data-Fourier} and \ref{eq:Psi-Fourier}, we find that $d_{\varepsilon}$ satisfies
 	\begin{equation}
+		\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
+		\begin{cases}
+			\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] &
+			, \quad 0 < k \le k_{\varepsilon} \\
+			0 & , \quad k > k_{\varepsilon} 
+		\end{cases} \: .
+		\label{eq:predicted-data-continuous-layer-Fourier2}
+	\end{equation}
+	From Plancherel's theorem \citep[][ p. 119]{bracewell1999} and use of polar coordinates 
+	$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$,
+	we get
+	\begin{equation}
+		\begin{split}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert 
 		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
@@ -202,125 +166,107 @@ PAREI AQUI
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
 		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
-		\: d k_{x} \, d k_{y} \: .
-		\label{eq:Plancherel-kx-ky}
-	\end{equation}
-	The right-hand side of this equation can be conveniently rewritten in 
-	polar coordinates by using $k_{x} = k \, \cos\theta$, 
-	$k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ as follows:
-	\begin{equation}
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
-		\: d k_{x} \, d k_{y} = 
-		\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 	
-		\quad .
-		\label{eq:Plancherel-k-theta}
-	\end{equation}
-	If we now combine this result (equation \ref{eq:Plancherel-k-theta}) 
-	obtained via Plancherel's theorem with
-	$\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:observed-data-Fourier}),
-	$\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger2})	
-	and $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:predicted-data-Fourier}),
-	we obtain
-	\begin{equation}
-		\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
+		\: d k_{x} \, d k_{y} \\
+		= \int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
 		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
 		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: k \: d k \, d \theta \: .
-		\label{eq:Plancherel-data}
+		\end{split}
+		\label{eq:Plancherel}
 	\end{equation}
-
-	Because we know that $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
-	(equation \ref{eq:observed-data-Fourier}) is square integrable 
-	(equation \ref{eq:observed-data-spectrum-bound}), we can [ REMOVE? use an adapted version 
-	of the well-known Runge-Walsh theorem 
-	\cite[e.g.,][]{walsh1929, moritz1980, borre_krarup2006, grafarend2015}
-	to] affirm that there exists a sufficiently
-	large $k_{\varepsilon}$ such that the right-hand side of 
-	\ref{eq:Plancherel-data} is smaller than or equal to a predefined 
-	$\varepsilon > 0$, which guarantees that the error bound given by equation 
-	\ref{eq:epsilon-bound-data} holds true.
-	It is important to stress, however, that this is a pure existence theorem and 
-	we are generally unable to provide a particular rule on how to choose $k_{\varepsilon}$.
-	For the present case, however, it is possible to combine 
-	the upper bounds defined in Appendix A (equations \ref{eq:alpha-upper-bound} and 
-	\ref{eq:observed-data-spectrum-bound}) with the right-hand side of 
-	equation \ref{eq:Plancherel-data} to show that
-	\begin{equation}
-		\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \le
-		\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
-		\label{eq:Plancherel-data-epsilon}
-	\end{equation}
-	where
-	\begin{equation}
-		\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) = \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
-		\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) \: ,
-		\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
-		\label{eq:epsilon}
-	\end{equation}
-	is a real function depending on the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}
-	\begin{equation}
-		\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
-		\int\limits_{k_{\varepsilon}}^{\infty}
-		e^{- 2 \, \Delta z \, k } \, k^{2q-1} \, (2 \, \Delta z)^{2q} 
-		\: d k \: ,
-		\label{eq:incomplete-Gamma-function}
-	\end{equation}
-	with $q$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}).
-	We have just shown that a planar equivalent layer with physical-property distribution 
-	$\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier})
-	leads to a predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ 
-	(equation \ref{eq:predicted-data-Fourier}) that satisfies the condition 
-	\ref{eq:Plancherel-data-epsilon}, where $\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ 
-	is the real function given by equation \ref{eq:epsilon}.
-	If we now use the results obtained by applying the Plancherel's theorem 
-	(equations \ref{eq:Plancherel-kx-ky}--\ref{eq:Plancherel-data-epsilon}) and 
-	consider that the error bound in equation \ref{eq:epsilon-bound-data} is given by 
-	$\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ (equation \ref{eq:epsilon}),
-	we conclude that $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}) is a solution
-	of the planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}) in the Fourier domain
-	and, consequently, that its inverse Fourier transform $p(\mathbf{r}'')$ is a solution in the
-	space domain.
-	We can now affirm that different equivalent layers with physical-property distributions 
-	$\mathcal{F} [ p(\mathbf{r}'')]$ (equation \ref{eq:p-Fourier}) obtained at the same horizontal plane $z''_{0}$, 
-	for kernels defined in terms of different $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}),
-	produce the same predicted potential field $\mathcal{F} [ d(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:predicted-data-Fourier}),
-	which satisfies the error bound $\ref{eq:epsilon-bound-data}$.
-	This proves (a) and (b). 
-	
-	To prove (c), we need to demonstrate that the error bound $\ref{eq:epsilon-bound-data}$ is also 
-	satisfied at any plane $z^{\dagger}_{0}$ above the sources.
-	Fortunately, it follows from equation \ref{eq:potential-U-Fourier} that
-	\begin{equation}
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger})
-		\vert^{2} \: d\mathcal{S}^{\ddagger} \le
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
-		\vert^{2} \: d\mathcal{S}^{\dagger} \: ,
-		\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: ,
-		\label{eq:error-bound-upper-planes}
-	\end{equation}
-	where $d\mathcal{S}^{\ddagger} = dx^{\ddagger}dy^{\ddagger}$.
-	As we can see, the left-hand side of equation \ref{eq:error-bound-upper-planes} clearly satisfies
-	the error bound $\ref{eq:epsilon-bound-data}$.
-	It means that 
-	planar equivalent layers with physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ 
-	(equation \ref{eq:p-Fourier}) produce predicted potential fields that satisfy 
-	$d(\mathbf{r}) \approx d^{o}(\mathbf{r})$ to the 
-	predefined error $\varepsilon \equiv \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0})$ 
-	(equation \ref{eq:epsilon}) according to equation \ref{eq:epsilon-bound-data} not only on the 
-	horizontal plane $z^{\dagger}_{0}$, but also at any horizontal plane above it, 
-	with $z < z^{\dagger}_{0} < z''_{0}$.
-	This proves (c) and consequently concludes the proof.
+	Since $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \, k$ is square integrable on $\mathcal{S}^{\dagger}$, we may choose 
+	a finite but sufficiently large $k_{\varepsilon} < \infty$ such that 
+	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\le \varepsilon$. This leads to the conclusion that $p_{\varepsilon}$ is a continuous equivalent layer. 
+	If the layer plane is above the sources (i.e., if $z''_{0} < z^{t}_{0}$), then both 
+	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable
+	even for the choice $k_{\varepsilon} = \infty$. Then, in that case, 
+	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	= 0$ and $p_{\varepsilon}$ yields a predicted field $d_{\varepsilon}$ that exactly reproduces the observed field $d^{o}$ 
+	on $\mathcal{S}^{\dagger}$.
 \end{proof}
+	
+\subsubsection{Remark 1}
+
+The above theorem guarantees the existence of an approximate equivalent layer, even if
+the layer crosses the sources, i.e., if $z''_{0} > z^{t}_{0}$.
+But it does not provide any guidance on the particular choice of the truncating wave number $k_{\varepsilon}$ 
+for the construction of $p_{\varepsilon}$.
+However, it is possible to combine the upper bounds defined in Appendix A 
+with the right-hand side of equation \ref{eq:Plancherel} to show that
+\begin{equation}
+	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\le \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
+	\label{eq:Plancherel-epsilon}
+\end{equation}
+where
+\begin{equation}
+	\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) = \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
+	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) \: ,
+	\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
+	\label{eq:epsilon}
+\end{equation}
+is a real function depending on $\Omega$ (Apendix A, equation \ref{eq:Omega}) and the Incomplete Gamma function 
+\citep[][ p. 899]{gradshteyn_ryzhik2007}
+\begin{equation}
+	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
+	\int\limits_{k_{\varepsilon}}^{\infty}
+	e^{- 2 \, \Delta z \, k } \, k^{2q-1} \, (2 \, \Delta z)^{2q} 
+	\: d k \: ,
+	\label{eq:incomplete-Gamma-function}
+\end{equation}
+with $q$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}). 
+According to equation \ref{eq:epsilon}, if we have some a priori bounds 
+on the physical-property distribution and position of the true sources, we get a connection between the choice of 
+$k_{\varepsilon}$ and the desired accuracy level $\varepsilon$. 
+This can potentially support an estimation of the truncating wave number $k_{\varepsilon}$.
+
+\subsubsection{Remark 2}
+
+The truncating wavenumber $k_{\varepsilon}$ plays a central role in the planar equivalent-layer theorem 
+(Theorem \ref{theorem:planar-eqlayer-theorem}).
+We would like to highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
+practical situations. In fact, obtaining a discrete equivalent layer (Definition \ref{def:discrete-eqlayer}) 
+does not strictly imply a truncation of the wavenumber at some maximal $k_{\varepsilon}$, 
+but it leads to an exponentially fast decay at sufficiently large wavenumbers. 
+From a theoretical point of view, it might be interesting to study the influence of
+such a discretization and its relation to $k_{\varepsilon}$ in more detail. 
+For practical purposes it seems that this discretization is the predominant factor rendering 
+the equivalent-layer technique applicably even when the layer plane crosses the sources.
+
+\subsubsection{Remark 3}
+
+The equivalent layer from Theorem \ref{theorem:planar-eqlayer-theorem} leads to a predicted 
+potential field that does not satisfy
+the error bound \ref{eq:epsilon-bound-data} only on the surface $\mathcal{S}^{\dagger}$, but also 
+on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$. 
+Namely, it follows from equation \ref{eq:potential-U-Fourier} that
+\begin{equation}
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger})
+	\vert^{2} \: d\mathcal{S}^{\ddagger} \le
+	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+	\vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+	\vert^{2} \: d\mathcal{S}^{\dagger} \: ,
+	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
+	\label{eq:error-bound-upper-planes}
+\end{equation}
+Thus, if $p_{\varepsilon}$ produces a $d_{\varepsilon}$ satisfying 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+\vert^{2} \: d\mathcal{S}^{\dagger} \le \varepsilon$, then it automatically holds that 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger}) 
+\vert^{2} \: d\mathcal{S}^{\ddagger} \le \varepsilon$.
+	
+PAREI AQUI
+
+
 
 %\subsection{Remarks on the planar equivalent-layer theorem}
 \subsection{Remarks on the general solution of the planar equivalent-layer integral}
@@ -390,7 +336,7 @@ technique when the layer plane crosses the sources.
 Note that, given a planar equivalent layer defined for a particular potential field $d^{o}(\mathbf{r})$ 
 (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}), in terms of specific 
 $\alpha_{d}$ and $\alpha_{a}$ (equation \ref{eq:kernel-Fourier}), it is theoretically possible to compute any potential field
-transformation (equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}).
+transformation (equations \ref{eq:transformed-field-continuous-layer} and \ref{eq:transformed-field-integral-Fourier}).
 This can be made by setting $\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ]$ (equation \ref{eq:kernel-transformation-Fourier})
 with
 \begin{equation}
@@ -435,7 +381,7 @@ a potential-field transformation is generally defined
 in the space domain, by following two steps. The first consists in obtaining a numerical solution $\tilde{p}(\mathbf{r}'')$ for the 
 planar equivalent-layer integral (equation \ref{eq:eqlayer-integral}).
 The second step involves using $\tilde{p}(\mathbf{r}'')$ to evaluate a transformed potential field
-$f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:transformed-field-integral-space}).
+$f(\mathbf{r})$ for a predefined kernel $t(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:transformed-field-continuous-layer}).
 Here, we show that an alternative single-step approach for computing potential-field transformations can be 
 deduced from the general solution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier}).
 
@@ -516,13 +462,13 @@ Dirichlet's equivalent layers are the basis of the pioneer method proposed by \c
 
 The particular physical-property distribution $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Dirichlet-space}
 for a given observed potential field $d^{o}(\mathbf{r})$ leads to potential-field transformations (equations 
-\ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) defined by 
+\ref{eq:transformed-field-continuous-layer} and \ref{eq:transformed-field-integral-Fourier}) defined by 
 $\alpha_{t} = \nicefrac{k \, \alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
 Dirichlet's equivalent layers are commonly used to perform upward/downward continuation of the observed potential 
 field. In this case, $\alpha_{f} = \alpha_{d}$ and $\alpha_{t} = k$. 
 Other potential-field transformations can also be accomplished from such equivalent layers, but they must be 
 defined in terms of $\alpha_{f} \ne \alpha_{d}$ and $\alpha_{t} \ne k$.
-In this case, however, defining the potential-field transformation in the space domain (equation \ref{eq:transformed-field-integral-space})
+In this case, however, defining the potential-field transformation in the space domain (equation \ref{eq:transformed-field-continuous-layer})
 from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) is generally 
 non-trivial.
 
@@ -597,7 +543,7 @@ have non-trivial representations in the space domain.
 %and its partial derivatives at any horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ above the 
 %sources according to the error bound \ref{eq:epsilon-bound-data}.
 %Consequently, any potential-field transformation 
-%(equations \ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier})
+%(equations \ref{eq:transformed-field-continuous-layer} and \ref{eq:transformed-field-integral-Fourier})
 %does not depend on the particular observed potential field used to define the equivalent layer as well.
 %This can be shown by noting that, for a particular $\alpha_{a} = \tilde{\alpha}_{r} \, \tilde{\alpha}_{d}$,
 %we have $\tilde{\alpha}_{t} = \left(\nicefrac{\tilde{\alpha}_{r}}{\tilde{\alpha}_{\Phi}}\right) \, \alpha_{f}$ 
@@ -663,7 +609,7 @@ Another interesting aspect of Neumann's layers is that, given a particular physi
 $\tilde{p}(\mathbf{r}'')$ satisfying \ref{eq:eqlayer-integral-Neumann-space}, potential-field transformations 
 are defined in the Fourier domain (equation \ref{eq:transformed-field-integral-Fourier}) by using 
 $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}). Hence, potential-field transformations
-(equation \ref{eq:transformed-field-integral-space}) assume the following form in the space domain:
+(equation \ref{eq:transformed-field-continuous-layer}) assume the following form in the space domain:
 \begin{equation}
 	f(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -823,7 +769,7 @@ where $\mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'')$ is the Hessian matrix \citep
 function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
 The second step consists in using the estimated $\tilde{p}(\mathbf{r}'')$ to compute the RTP anomaly 
 $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ (see the subsection \textit{Some relevant potential fields for geophysical applications}).
-This is made by evaluating the potential-field transformation (equation \ref{eq:transformed-field-integral-space}) 
+This is made by evaluating the potential-field transformation (equation \ref{eq:transformed-field-continuous-layer}) 
 with $t(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 (equation \ref{eq:Psi}).
 
@@ -926,7 +872,7 @@ then equation \ref{eq:p-Fourier-dipoles} reduces to that defining the physical-p
 
 Note that the physical-property distribution $\mathcal{F} [ p(\mathbf{r}'') ]$ (equation \ref{eq:p-Fourier-dipoles}) associated 
 with an arbitrarily magnetized dipole layer leads to potential-field transformations (equations 
-\ref{eq:transformed-field-integral-space} and \ref{eq:transformed-field-integral-Fourier}) with 
+\ref{eq:transformed-field-continuous-layer} and \ref{eq:transformed-field-integral-Fourier}) with 
 $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}) defined in terms of the complex ratio 
 $\nicefrac{\alpha_{a}}{\alpha_{d}}$, where 
 $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ and 
@@ -964,7 +910,7 @@ by setting $\alpha_{a} = 1$ (equation \ref{eq:diff-operators-generic}):
 \end{equation}
 It is also important noting that 
 this particular solution (equation \ref{eq:p-Fourier-generalized-eqs}) approximates the vertical derivative of the observed 
-potential field on the layer plane and results in potential-field transformations (equations \ref{eq:transformed-field-integral-space} and 
+potential field on the layer plane and results in potential-field transformations (equations \ref{eq:transformed-field-continuous-layer} and 
 \ref{eq:transformed-field-integral-Fourier}) defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
 
 This strategy, called \textit{generalized equivalent sources}, was proposed by \citet{cordell1992} and recently adapted by 
@@ -1000,7 +946,7 @@ the kernel is given by
 which represents the double integral of the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}) 
 along the vertical direction $z$.
 The second step of the alternative approach proposed by \citet{guspi_novara2009} computes the RTP anomaly 
-by setting the potential-field transformation (equation \ref{eq:transformed-field-integral-space}) with 
+by setting the potential-field transformation (equation \ref{eq:transformed-field-continuous-layer}) with 
 $t(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
 
 Note that the first step consists in obtaining an equivalent layer defined by 

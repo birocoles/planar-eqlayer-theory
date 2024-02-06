@@ -32,7 +32,7 @@ definition, with the understanding that it may be subject to slight modification
 	a \textbf{discrete equivalent layer} if its predicted potential field 
 	\begin{equation}
 		\mathbf{d}_{\epsilon} = \mathbf{A} \, \mathbf{p}_{\epsilon}
-		\label{eq:predicted-data-vector}
+		\label{eq:predicted-data-discrete-layer}
 	\end{equation}
 	satisfies 
 	\begin{equation}
@@ -56,7 +56,7 @@ a potential field transformation such as upward continuation,
 interpolation or reduction to the pole, for example, can be computed as follows:
 \begin{equation}
 	\mathbf{f}_{\epsilon} = \mathbf{T} \, \tilde{\mathbf{p}}_{\epsilon} \: ,
-	\label{eq:transformed-field-layer-space} 
+	\label{eq:transformed-field-discrete-layer} 
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
@@ -71,7 +71,7 @@ can coincide with those at which the observed potential field is measured.
 
 From the physical point of view, the product of the $j$-th element $p_{j}$ of $\mathbf{p}_{\epsilon}$ 
 and the harmonic function $a_{ij}$ representing the element $ij$ of matrix $\mathbf{A}$ 
-(equation \ref{eq:predicted-data-vector}) defines the potential field produced at the $i$-th observation
+(equation \ref{eq:predicted-data-discrete-layer}) defines the potential field produced at the $i$-th observation
 point by the $j$-th equivalent source with scalar physical property $p_{j}$.
 For example, if $\mathbf{d}^{o}$ contains gravity disturbance data
 \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, then

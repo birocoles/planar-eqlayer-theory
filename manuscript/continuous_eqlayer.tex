@@ -11,7 +11,7 @@ by the potential field due to a continuous and planar physical-property
 distribution $p(\mathbf{r}'')$ defined at a horizontal plane $z''_{0}$ located below the 
 observations (Figure \ref{fig:geometry}). 
 As in the discrete case, it is important bear in mind that the plane $z''_{0}$ may cross the sources.
-From these definitions, we propose the following definition:
+In light of these considerations, we propose the following definition:
 
 \begin{definition}[\textbf{Continuous equivalent layer}]
 	Let us assume to have an observed potential field $d^{o}(\mathbf{r})$ defined above 
@@ -30,7 +30,7 @@ From these definitions, we propose the following definition:
 		= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 		p_{\varepsilon}(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
 		\: , \quad z < z''_{0} \: ,
-		\label{eq:predicted-data-integral}
+		\label{eq:predicted-data-continuous-layer}
 	\end{equation}
 	satisfies 
 	\begin{equation}
@@ -51,14 +51,14 @@ the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}),
 where $D_{a}$ is defined in terms of the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}).
 
-Similarly to the discrete case (equation \ref{eq:transformed-field-layer-space}), a particular continuous equivalent layer 
+Similarly to the discrete case (equation \ref{eq:transformed-field-discrete-layer}), a particular continuous equivalent layer 
 $\tilde{p}_{\varepsilon}(\mathbf{r}'')$ leads to a transformed potential field given by:
 \begin{equation}
 	f_{\varepsilon}(\mathbf{r}^{\ddagger})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	\tilde{p}_{\varepsilon}(\mathbf{r}'') \, t(\mathbf{r}^{\ddagger}, \mathbf{r}'') \:\: d\mathcal{S}''
 	\: , \quad z < z''_{0} \: ,
-	\label{eq:transformed-field-integral-space}
+	\label{eq:transformed-field-continuous-layer}
 \end{equation}
 where $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger})^{\top} \notin \overline{\mathcal{V}}$ 
 are points located above the layer plane $z''_{0}$, but that can eventually 
@@ -68,3 +68,42 @@ $f(\mathbf{r}^{\ddagger})$ (equations \ref{eq:transformed-field-space}); and
 $t(\mathbf{r}^{\ddagger}, \mathbf{r}'') = D_{t} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ is the transformation kernel,
 which is usually defined as a generic partial derivative of the potential function $\Psi$
 (equation \ref{eq:Psi}), with $D_{t}$ given in terms of $D$ (equation \ref{eq:diff-operators-generic}).
+
+%For the subsequent developments, it is also useful defining the predicted potential field 
+%$d_{\varepsilon}$ (equation \ref{eq:predicted-data-continuous-layer}) and transformed field
+%$f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) in the Fourier domain,
+%at horizontal planes $z^{\dagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z^{t}_{0}$ 
+%above the sources. 
+%We obtain by applying the Fourier-convolution theorem to 
+%equations \ref{eq:predicted-data-continuous-layer} and \ref{eq:transformed-field-continuous-layer} that
+%\begin{equation}
+%	\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
+%	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] \, 
+%	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+%	\quad z^{\dagger}_{0} < z''_{0} \: ,
+%	\label{eq:eqlayer-integral-Fourier}
+%\end{equation}
+%and
+%\begin{equation}
+%	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
+%	\mathcal{F} [ \tilde{p}_{\varepsilon}(\mathbf{r}'') ] \, 
+%	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+%	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+%	\label{eq:transformed-field-integral-Fourier}
+%\end{equation}
+%where
+%\begin{equation}
+%	\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+%	\alpha_{a} \, 
+%	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+%	\label{eq:kernel-Fourier}
+%\end{equation}
+%and
+%\begin{equation}
+%	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] =
+%	\alpha_{t} \, 
+%	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: ,
+%	\label{eq:kernel-transformation-Fourier}
+%\end{equation}
+%with $\alpha_{a}$ and $\alpha_{t}$ given in terms of the operator 
+%$\alpha$ (equation \ref{eq:diff-operators-generic}).
