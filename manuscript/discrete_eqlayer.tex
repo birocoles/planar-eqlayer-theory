@@ -23,7 +23,7 @@ definition, with the understanding that it may be subject to slight modification
 \begin{definition}[\textbf{Discrete equivalent layer}]
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
 	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$, 
-	$i \in \{1, \dots, N\}$, located above a horizontal plane at $z''_{0}$. Besides, consider an $N \times M$ 
+	$i \in \{1, \dots, N\}$, satisfying $\forall z_{i} < z''_{0}$. Besides, consider an $N \times M$ 
 	matrix $\mathbf{A}$ with element $a_{ij}$ defined by a harmonic function that depends only on $\mathbf{r}_{i}$ 
 	and the spatial coordinates of a point $\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$ on the plane $z''_{0}$,
 	$j \in \{1, \dots, M\}$, and
@@ -60,8 +60,8 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
-at a point $\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{k})^{\top}$, 
-with $z^{\ddagger}_{k} < z''_{0}$, and $\mathbf{T}$ is an 
+at any point $\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{k})^{\top}$,  
+with $\forall z^{\ddagger}_{k} < z''_{0}$, and $\mathbf{T}$ is an 
 $L \times M$ matrix whose element $t_{kj}$ defines the transformed
 potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
 $j \in \{ 1, \dots, M \}$. 

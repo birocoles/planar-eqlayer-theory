@@ -8,7 +8,7 @@ produced by the 3D sources at a generic observation point
 $\mathbf{r} = ( x , y , z )^{\top} \notin \overline{\mathcal{V}}$ located above them.
 Besides, consider that $d^{o}(\mathbf{r})$ can be approximated within a given accuracy $\varepsilon$ 
 by the potential field due to a continuous and planar physical-property 
-distribution $p(\mathbf{r}'')$ defined at a horizontal plane $z''_{0}$ located below the 
+distribution $p_{\varepsilon}(\mathbf{r}'')$ defined at a horizontal plane $z''_{0}$ located below the 
 observations (Figure \ref{fig:geometry}). 
 As in the discrete case, it is important bear in mind that the plane $z''_{0}$ may cross the sources.
 In light of these considerations, we propose the following definition:
@@ -29,7 +29,7 @@ In light of these considerations, we propose the following definition:
 		d_{\varepsilon}(\mathbf{r})
 		= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 		p_{\varepsilon}(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
-		\: , \quad z < z''_{0} \: ,
+		\: , \quad \forall z < z''_{0} \: ,
 		\label{eq:predicted-data-continuous-layer}
 	\end{equation}
 	satisfies 
@@ -45,10 +45,9 @@ In light of these considerations, we propose the following definition:
 \end{definition}
 
 In Definition \ref{def:continuous-eqlayer}, $p_{\varepsilon}(\mathbf{r}'')$ defines a continuous physical-property distribution 
-that extends to infinite along the horizontal directions and the kernel function is usually defined by
-$a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$, as a generic partial derivative of 
-the function $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}),
-where $D_{a}$ is defined in terms of the space-domain differential operator 
+that extends to infinite along the horizontal directions and $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ 
+is a kernel function usually defined as a generic partial derivative of $\Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}),
+where $D_{a}$ is set in terms of the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}).
 
 Similarly to the discrete case (equation \ref{eq:transformed-field-discrete-layer}), a particular continuous equivalent layer 
@@ -57,13 +56,13 @@ $\tilde{p}_{\varepsilon}(\mathbf{r}'')$ leads to a transformed potential field g
 	f_{\varepsilon}(\mathbf{r}^{\ddagger})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	\tilde{p}_{\varepsilon}(\mathbf{r}'') \, t(\mathbf{r}^{\ddagger}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad z < z''_{0} \: ,
+	\: , \quad \forall z^{\ddagger} < z''_{0} \: ,
 	\label{eq:transformed-field-continuous-layer}
 \end{equation}
 where $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger})^{\top} \notin \overline{\mathcal{V}}$ 
 are points located above the layer plane $z''_{0}$, but that can eventually 
 coincide with those containing the observed potential field; 
-$f_{\varepsilon}(\mathbf{r}^{\ddagger})$ approximates 
+$f_{\varepsilon}(\mathbf{r}^{\ddagger})$ is a transformed field that approximates 
 $f(\mathbf{r}^{\ddagger})$ (equations \ref{eq:transformed-field-space}); and
 $t(\mathbf{r}^{\ddagger}, \mathbf{r}'') = D_{t} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ is the transformation kernel,
 which is usually defined as a generic partial derivative of the potential function $\Psi$

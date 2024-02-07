@@ -43,7 +43,7 @@ we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and b
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}$ 
+The two-dimensional Fourier transform of the potential field $d^{o}$ 
 (equation \ref{eq:observed-data-space}) with respect to the horizontal coordinates $x$ and
 $y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ located above
 the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
@@ -64,7 +64,7 @@ $z^{t}_{0}$ is the depth to the sources top (Figure \ref{fig:geometry});
 	\: dz' \: , \quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:potential-U-Fourier}
 \end{equation}
-with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, is the 2DFT of the Newtonian potential 
+with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, is the Fourier transform of the Newtonian potential 
 $U$ (equation \ref{eq:potential-U-space}) on the plane $z^{\dagger}_{0}$;
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
@@ -73,10 +73,10 @@ $U$ (equation \ref{eq:potential-U-space}) on the plane $z^{\dagger}_{0}$;
 	\: dx'dy'
 	\label{eq:sigma-Fourier}
 \end{equation}
-is the 2DFT of $\sigma(\mathbf{r}')$ 
+is the Fourier transform of $\sigma(\mathbf{r}')$ 
 (equation \ref{eq:potential-U-space}) on a horizontal plane with constant vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
-The dependence of these 2DFT's on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
+The dependence of these Fourier transforms on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
 $x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
 In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
@@ -232,7 +232,7 @@ Because of these properties, we have that
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	D(\ell, \hat{\mathbf{z}}) U(\mathbf{r}'') \:\: 
 	D(1 - \ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
-	\: d\mathcal{S}'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\: d\mathcal{S}'' \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
@@ -344,8 +344,8 @@ and manipulating the Fourier domain solution of the Dirichlet's and Neumann's pr
 	\label{eq:field-transformation-Fourier}
 \end{equation}
 Equation \ref{eq:field-transformation-Fourier} defines a single-step potential-field transformation 
-in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a plane $z^{\dagger}_{0}$ 
-located above the sources. 
+in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a planar surface $\mathcal{S}^{\dagger}$ 
+located above the sources, at $z^{\dagger}_{0}$. 
 The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
 transform of \ref{eq:field-transformation-Fourier}.
 For the sake of simplicity, we have opted for defining the fields $d^{o}$ and $f$ at the same points in equation 
