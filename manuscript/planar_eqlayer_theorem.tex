@@ -321,31 +321,22 @@ In the context of the equivalent-layer technique, a potential-field transformati
 in the space domain, by following two steps. The first consists in obtaining a particular layer $\tilde{p}_{\varepsilon}$ 
 (Definition \ref{def:continuous-eqlayer}), which is subsequently used to compute a transformed field $f_{\varepsilon}$ via 
 \ref{eq:transformed-field-continuous-layer}.
-It can be verified that this two-step approach is equivalent to the single-step approach based on the 
+It can be verified, however, that this two-step approach is equivalent to the single-step approach based on the 
 Fourier transform of the observed potential field (equation \ref{eq:field-transformation-Fourier}). 
-
-PAREI AQUI
-
-We get by considering the definition of the observed data $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right]$ 
-in the Fourier domain (equation \ref{eq:observed-data-Fourier}), on a horizontal plane $z^{\dagger}_{0}$ above the sources 
-(i.e., $z^{\dagger}_{0} < z^{t}_{0}$), that the potential-field transformation 
-given by equation \ref{eq:transformed-field-integral-Fourier3} can be rewritten as follows:
+We find by using \ref{eq:observed-data-Fourier} to manipulate \ref{eq:transformed-field-continuous-layer-Fourier2} that
 \begin{equation}
-	\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] =
+	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
 	\begin{cases}
 		\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
 		e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} & , \quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: .
-	\label{eq:transformed-field-integral-Fourier-single-step}
+	\label{eq:transformed-field-continuous-layer-single-step}
 \end{equation}
-This equation is valid for the cases in which $z^{\ddagger}_{0}$ is located above or below $z^{\dagger}_{0}$.
-By considering the particular case in which $z^{\ddagger}_{0}$ is located above $z^{\dagger}_{0}$ 
-(i.e., $z^{\ddagger}_{0} < z^{\dagger}_{0}$) and letting the truncating wavenumber $k_{\varepsilon}$ goes to infinite,
-equation \ref{eq:transformed-field-integral-Fourier-single-step} reduces to that 
-commonly found in the literature \cite[e.g.,][]{gunn1975} to compute 
-potential-field transformations in the Fourier domain (equation \ref{eq:field-transformation-Fourier}).
+Note that, for the particular case in which $z^{\ddagger}_{0}$ coincides with $z^{\dagger}_{0}$ and 
+the truncating wavenumber $k_{\varepsilon}$ goes to infinite, equation 
+\ref{eq:transformed-field-continuous-layer-single-step} reduces to \ref{eq:field-transformation-Fourier}.
 This result establishes a theoretical link between potential-field transformations made via
 equivalent-layer technique and those commonly made via Fourier transform of the observed data.
 This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
