@@ -1,0 +1,75 @@
+\section{Potential-field transformations via equivalent-layer technique}
+
+Note that, given a particular equivalent layer $\tilde{p}_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
+defined in terms of specific $\alpha_{d}$ and $\alpha_{a}$ as a square-integrable function by equation \ref{eq:p-Fourier}, 
+it is theoretically possible 
+to compute any potential field transformation (equation \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}).
+This can be verified by first noting that applying the Fourier-convolution theorem to \ref{eq:transformed-field-continuous-layer} 
+on a planar surface $\mathcal{S}^{\ddagger}$ at a constant vertical coordinate $z^{\ddagger}_{0} < z''_{0}$ gives
+\begin{equation}
+	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
+	\mathcal{F} \left[ \tilde{p}_{\varepsilon}(\mathbf{r}'') \right]
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: , 
+	\quad z^{\ddagger}_{0} < z''_{0} \: ,
+	\label{eq:transformed-field-continuous-layer-Fourier}
+\end{equation}
+where
+\begin{equation}
+	\mathcal{F} [ t(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] = \alpha_{t} \, \mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ]
+	\label{eq:kernel-t-Fourier}
+\end{equation}
+is defined in terms of a differential operator $\alpha_{t}$ acting on $\Psi$ (equation \ref{eq:Psi}) in the Fourier domain.
+Then we set 
+\begin{equation}
+	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} \: ,
+	\label{eq:alpha-t-generic}
+\end{equation}
+where $\alpha_{f}$ is the differential operator associated with the desired transformed field $f$ (equation \ref{eq:transformed-field-Fourier}).
+In this case, we get from equations \ref{eq:Psi-Fourier}, \ref{eq:p-Fourier}  and \ref{eq:kernel-t-Fourier} 
+that the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
+is given by:
+\begin{equation}
+	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
+	\alpha_{f} \, k \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]
+	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: , 
+	\quad z^{\ddagger}_{0} < z''_{0} \: .
+	\label{eq:transformed-field-continuous-layer-Fourier2}
+\end{equation}
+Finally, we use \ref{eq:Psi-Fourier}, \ref{eq:transformed-field-Fourier} and \ref{eq:potential-U-epsilon-Fourier-layer} to show that
+\begin{equation}
+	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] = 
+	\begin{cases}
+		\mathcal{F} [ f(\mathbf{r}^{\ddagger}) ] &
+		, \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:transformed-field-continuous-layer-Fourier3}
+\end{equation}
+which shows that the transformed field $f_{\varepsilon}$ yielded by the equivalent layer coincides with 
+that produced by the true sources on the planar surface $\mathcal{S}^{\ddagger}$ up 
+to the truncating wavenumber $k_{\varepsilon}$.
+
+In the context of the equivalent-layer technique, a potential-field transformation is generally defined
+in the space domain, by following two steps. The first consists in obtaining a particular layer $\tilde{p}_{\varepsilon}$ 
+(Definition \ref{def:continuous-eqlayer}), which is subsequently used to compute a transformed field $f_{\varepsilon}$ via 
+\ref{eq:transformed-field-continuous-layer}.
+It can be verified, however, that this two-step approach is equivalent to the single-step approach based on the 
+Fourier transform of the observed potential field (equation \ref{eq:field-transformation-Fourier}). 
+We find by using \ref{eq:observed-data-Fourier} to manipulate \ref{eq:transformed-field-continuous-layer-Fourier2} that
+\begin{equation}
+	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, 
+	\begin{cases}
+		\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z^{\ddagger}_{0} - z^{\dagger}_{0})} & , \quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: .
+	\label{eq:transformed-field-continuous-layer-single-step}
+\end{equation}
+Note that, for the particular case in which $z^{\ddagger}_{0}$ coincides with $z^{\dagger}_{0}$ and 
+the truncating wavenumber $k_{\varepsilon}$ goes to infinite, equation 
+\ref{eq:transformed-field-continuous-layer-single-step} reduces to \ref{eq:field-transformation-Fourier}.
+This result establishes a theoretical link between potential-field transformations made via
+equivalent-layer technique and those commonly made via Fourier transform of the observed data.
+This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
+numerical problems generally associated with those computed via Fourier transform of the observed potential-field data.
