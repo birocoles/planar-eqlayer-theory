@@ -1,32 +1,12 @@
 \section{Discrete equivalent layers}
 \label{eq:discrete_eqlayer}
 
-Consider a set of 3D gravity or magnetic sources located in the subsurface,
-over $\overline{\mathcal{V}}$ (see the subsection \textit{Potential fields due to 3D sources}). 
-Let $\mathbf{d}^{o}$ be an $N \times 1$ observed data vector whose $i$-th element
-$d^{o}_{i} \equiv d^{o}(\mathbf{r}_{i})$ (equation \ref{eq:observed-data-space}) 
-represents a potential field produced by the 3D sources 
-at an observation point $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top} \notin \overline{\mathcal{V}}$
-located above them, with $i \in \{ 1, \dots, N \}$.
-Besides, consider that $d^{o}_{i}$ can be approximated within a given accuracy $\epsilon$ 
-by the potential field produced at $\mathbf{r}_{i}$ by a discrete and finite set of $M$ 
-virtual sources such as monopoles (or point masses) or dipoles, for example, with 
-constant and unknown physical property $p_{j}$ (e.g., mass, magnetic-moment intensity). 
-These virtual sources are usually called \textit{equivalent sources}.
-Here, we limit ourselves to the particular case in which they are disposed on a 
-generic horizontal plane located below the potential-field data, at points 
-$\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$,
-$j \in \{ 1, \dots, M \}$, with constant vertical coordinate $z''_{0} > z_{i}$, $i \in \{ 1, \dots, N \}$. 
-It is important noting that the plane $z''_{0}$ may cross the sources.
-Hence, in line with the majority of equivalent-layer methods found in the literature, we propose the following 
-definition, with the understanding that it may be subject to slight modifications:
 \begin{definition}[\textbf{Discrete equivalent layer}]
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
-	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i} = ( x_{i} , y_{i} , z_{i} )^{\top}$, 
-	$i \in \{1, \dots, N\}$, satisfying $\forall z_{i} < z''_{0}$. Besides, consider an $N \times M$ 
+	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i}$, 
+	$i \in \{1, \dots, N\}$, above a horizontal surface $\mathcal{S}''$. Besides, consider an $N \times M$ 
 	matrix $\mathbf{A}$ with element $a_{ij}$ defined by a harmonic function that depends only on $\mathbf{r}_{i}$ 
-	and the spatial coordinates of a point $\mathbf{r}''_{j} = ( x''_{j} , y''_{j} , z''_{0} )^{\top}$ on the plane $z''_{0}$,
-	$j \in \{1, \dots, M\}$, and
+	and $\mathbf{r}''_{j} \in \mathcal{S}''$, $j \in \{1, \dots, M\}$, and
 	vanishes as the distance $\| \mathbf{r}_{i} - \mathbf{r}''_{j} \|_{2}$ increases. 
 	Then, for a chosen accuracy $\epsilon > 0$, we may call the $M \times 1$ vector $\mathbf{p}_{\epsilon}$ with $j$-th element $p_{j}$ 
 	a \underline{discrete equivalent layer} if its predicted potential field 
@@ -47,8 +27,16 @@ and the elements of $\mathbf{A}$ are harmonic functions usually defined by
 $a_{ij} \equiv D_{a} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, which represents a 
 partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}). 
+The main assumption in Definition \ref{def:discrete-eqlayer} is that $d^{o}_{i}$ can be approximated 
+within a given accuracy $\epsilon$ by the potential field produced by a discrete and finite set of $M$ 
+virtual sources such as monopoles (or point masses) or dipoles, for example, with 
+constant and unknown physical property $p_{j}$ (e.g., mass, magnetic-moment intensity). 
+These virtual sources are usually called \textit{equivalent sources}.
+Here, we limit ourselves to the particular case in which they are disposed on a 
+horizontal surface $\mathcal{S}''$ that is located below the potential-field data and
+may cross the sources. 
 We would like to emphasize that Definition \ref{def:discrete-eqlayer} presumes a planar equivalent layer formed 
-by punctual equivalent sources that satisfies a data fit criterion given by equation \ref{eq:epsilon-bound-data-discrete}, 
+by punctual equivalent sources that satisfies the data fit criterion given by equation \ref{eq:epsilon-bound-data-discrete}, 
 but these premises are certainly open to adjustments if necessary.
 
 After estimating a particular $\tilde{\mathbf{p}}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}), 
@@ -60,13 +48,12 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
-at any point $\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{k})^{\top}$,  
-with $\forall z^{\ddagger}_{k} < z''_{0}$, and $\mathbf{T}$ is an 
+at a point $\mathbf{r}^{\ddagger}_{k}$ above $\mathcal{S}''$ and $\mathbf{T}$ is an 
 $L \times M$ matrix whose element $t_{kj}$ defines the transformed
 potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
 $j \in \{ 1, \dots, M \}$. 
 We have defined the transformed potential field $f_{k}$ at generic points 
-$\mathbf{r}^{\ddagger}_{k} \notin \overline{\mathcal{V}}$ above the layer plane $z''_{0}$, but they 
+$\mathbf{r}^{\ddagger}_{k} \notin \overline{\mathcal{V}}$ above $\mathcal{S}''$, but they 
 can coincide with those at which the observed potential field is measured. 
 
 From the physical point of view, the product of the $j$-th element $p_{j}$ of $\mathbf{p}_{\epsilon}$ 
@@ -84,8 +71,8 @@ For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data
 \cite[e.g.,][ p. 178]{blakely1996} instead, the common approach consists in
 following \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
 that it represents a magnetic induction field component 
-produced at the $i$-th observation point by a dipole located at $\mathbf{r}''_{j}$,
-with magnetic moment intensity $p_{j}$.
+produced at the $i$-th observation point by a dipole located at 
+$\mathbf{r}''_{j} \in \mathcal{S}''$, with magnetic moment intensity $p_{j}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the
