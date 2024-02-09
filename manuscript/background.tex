@@ -1,20 +1,49 @@
 \section{General background}
 \label{sec:background}
 
+\subsection{Preliminary notational and geometric definitions}
+
+The main geometric objects used along the present work are shown in Figure \ref{fig:geometry}.
+We consider a topocentric Cartesian coordinate system with axes 
+$x$, $y$, and $z$ pointing to north, east and down, respectively. 
+We also assume to have a set of 3D gravity or magnetic sources located in the subsurface, 
+with top at the vertical coordinate $z^{t}_{0}$, over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$, where 
+$\mathcal{V} \subset \mathbb{R}^{3}$ is a \textit{regular region} with boundary
+$\partial \mathcal{V}$. 
+Some important properties of $\mathcal{V}$ in this case is that it is an open connected set of points 
+and $\partial \mathcal{V}$ is a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
+
+We also consider to have potential field observations at generic points 
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ or at a finite set of points 
+$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}}$, $i \in \{ 1, \dots, N \}$, 
+located above the sources, i.e., with vertical coordinates satisfying $\forall z < z^{t}_{0}$ and 
+$\forall z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
+
+Specific horizontal surfaces are defined by $\mathcal{S}$, with a particular superscript symbol. 
+The horizontal surface $\mathcal{S}''$, for example, is defined at a vertical coordinate $z''_{0}$ below the 
+observation points, so that $\forall z < z''_{0}$ and $\forall z_{i} < z''_{0}$. 
+The subscript ``$0$'' indicates that the corresponding vertical coordinate is constant. 
+Points and elements of area on a given horizontal surface are defined by using the corresponding superscript symbol. 
+For example, we define the element of area $d\mathcal{S}'' = dx''dy''$, generic points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
+and also a finite set of points $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top} \in \mathcal{S}''$,
+$j \in \{ 1, \dots, M \}$.
+
+Finally, all Fourier transforms computed here are defined on horizontal surfaces, with respect to the 
+spatial coordinates along the horizontal directions. For example, $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
+indicates the two-dimensional Fourier transform of a scalar function $U(\mathbf{r}^{\dagger})$ with respect to
+the spatial coordinates $x$ and $y$, on a horizontal surface $\mathcal{S}^{\dagger}$ formed by points  
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$, i,e., $\mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger}$.
+Besides, the dependence of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
+$x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
+
+PAREI AQUI - CONTINUAR A REVISÃO CONSIDERANDO A NOVA SUBSEÇÃO SOBRE ELEMENTOS GEOMÉTRICOS
+
 \subsection{Potential fields due to 3D sources}
 \label{sec:potential_fields_3D_sources}
 
-Consider a topocentric Cartesian coordinate system with axes $x$, $y$, and $z$ pointing to north, 
-east and down, respectively. 
-Let $\mathcal{V} \subset \mathbb{R}^{3}$ be a \textit{regular region} with boundary
-$\partial \mathcal{V}$ (Figure \ref{fig:geometry}). 
-Some important properties of $\mathcal{V}$ in this case is that it is an open connected set of points and $\partial \mathcal{V}$ is a closed and compact surface 
-free of double points \citep[][ p. 22]{freeden_gerhards2012}. 
-Consider a set of 3D gravity or magnetic sources located in the subsurface,
-over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
-The potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at an observation point 
-$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ (Figure \ref{fig:geometry}) 
-can be defined by
+We define the potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at an observation point 
+$\mathbf{r}$ (Figure \ref{fig:geometry}) by
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
@@ -76,8 +105,6 @@ $U$ (equation \ref{eq:potential-U-space}) on the plane $z^{\dagger}_{0}$;
 is the Fourier transform of $\sigma(\mathbf{r}')$ 
 (equation \ref{eq:potential-U-space}) on a horizontal plane with constant vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
-The dependence of these Fourier transforms on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
-$x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
 In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
 $D_{d}$ (equation \ref{eq:observed-data-space}) in the Fourier domain.
@@ -223,9 +250,8 @@ total-field anomalies into this special anomaly.
 
 At all points $\mathbf{r} \notin \overline{\mathcal{V}}$ 
 located outside the sources, $U$ (equation
-\ref{eq:potential-U-space}) has continuous partial derivatives of all orders
-and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
-Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
+\ref{eq:potential-U-space}) has continuous partial derivatives of all orders, 
+satisfies the Laplace's equation and is regular at infinity \citep[][ p. 122--124, 2017]{kellogg1967}.
 Because of these properties, we have that
 \begin{equation}
 	U(\mathbf{r}) = 
@@ -254,7 +280,7 @@ Equation \ref{eq:U-Dirichlet-Neumann} is commonly deduced from
 the \textit{Green's third identity} \citep[][ p. 219]{kellogg1967}, according to
 the general outline presented by \cite{roy1962}, for example.
 
-For $\ell = 0$, equation \ref{eq:U-Dirichlet-Neumann} states that $U(\mathbf{r})$ can be defined
+For $\ell = 0$, equation \ref{eq:U-Dirichlet-Neumann} states that $U$ can be defined
 in terms of its values $D(0, \hat{\mathbf{u}}) U(\mathbf{r}'') = U(\mathbf{r}'')$ on the plane $z''_{0}$ and 
 represents the solution of the classical \textit{Dirichlet’s problem} or the 
 \textit{first boundary value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane, where 
@@ -265,7 +291,7 @@ layer of monopoles (or vertically-magnetized dipoles) that is located on the hor
 physical-property distribution $U(\mathbf{r}'')$ and exactly reproduces the 
 potential field $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z''_{0}$.
 
-On the other hand, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U(\mathbf{r})$ can also
+On the other hand, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U$ can also
 be defined in terms of its vertical derivative 
 $D(1, \hat{\mathbf{z}}) U(\mathbf{r}'') = \tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
 on the plane $z''_{0}$ and represents the solution of the classical \textit{Neumann’s problem} or the 
@@ -278,7 +304,7 @@ $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z''_{0}$.
 
 Consider now that $U$ is not evaluated at a generic observation point $\mathbf{r}$, but at a point 
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
-on a horizontal plane $z^{\dagger}_{0}$ above the sources, with $z^{\dagger}_{0} < z''_{0} < z^{t}_{0}$.
+above the sources, on a horizontal surface $\mathcal{S}^{\dagger}$ at $z^{\dagger}_{0} < z''_{0} < z^{t}_{0}$.
 In this case, we get by applying the Fourier-convolution theorem 
 \cite[][ p. 268]{blakely1996} to equation \ref{eq:U-Dirichlet-Neumann} that
 \begin{equation}
