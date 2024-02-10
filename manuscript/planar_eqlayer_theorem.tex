@@ -3,14 +3,13 @@
 
 \subsection{Modified Dirichlet's and Neumann's problems on a plane}
 
-To prove the existence of continuous equivalent layers $p_{\varepsilon}(\mathbf{r}'')$
-according to Definition \ref{def:continuous-eqlayer},
-we need first modify the Dirichlet’s and Neumann’s problems 
-(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) for the case in which
-the plane $z''_{0}$ cross the sources.
-Hence, let us first consider an approximating potential $U_{\varepsilon}(\mathbf{r}'')$ 
-defined on a horizontal plane $z''_{0}$ that may be located above or cross 
-the sources (Figure \ref{fig:geometry}), with Fourier transform given by
+We start from the classical solutions for the Dirichlet’s and Neumann’s problems 
+(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) on a plane.
+These solutions apply specifically to scenarios where the horizontal surface 
+$\mathcal{S}''$ is positioned above the sources. Now, let's broaden our scope and eliminate 
+this limitation, allowing $\mathcal{S}''$ to intersect the sources. 
+Then we consider an approximating potential $U_{\varepsilon}$ whose Fourier transform 
+on $\mathcal{S}''$ is given by
 \begin{equation}
 	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
 	\begin{cases}
@@ -21,9 +20,11 @@ the sources (Figure \ref{fig:geometry}), with Fourier transform given by
 	\end{cases} \: ,
 	\label{eq:potential-U-epsilon-Fourier-layer}
 \end{equation}
-where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and $z^{\dagger}_{0} < z^{t}_{0}$. 
-Consider also that the inverse Fourier transform of $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ 
-(equation \ref{eq:potential-U-epsilon-Fourier-layer}) satisfies
+where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and 
+$\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ is defined on the horizontal surface $\mathcal{S}^{\dagger}$ 
+located above the sources, i.e., with $z^{\dagger}_{0} < z^{t}_{0}$. 
+Consider also that the inverse Fourier transform of \ref{eq:potential-U-epsilon-Fourier-layer} leads to 
+a space domain representation of $U_{\varepsilon}$ given by 
 \begin{equation}
 	U_{\varepsilon}(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -38,12 +39,9 @@ where $D$ is the space-domain differential operator
 defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
 $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
 
-Note that the function $U_{\varepsilon}(\mathbf{r}'')$ obtained by computing
-the inverse Fourier transform of 
-$\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ (equation \ref{eq:potential-U-epsilon-Fourier-layer})
-approximates the potential field obtained by 
+Note that $U_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-space}) approximates the potential field obtained by 
 computing the downward continuation of $U$ (equation \ref{eq:potential-U-space}) 
-to points that may be located inside the sources. 
+to points $\mathbf{r}'' \in \mathcal{S}''$ that may be located inside the sources. 
 It is well-known, however, that downward continuation can only be computed at 
 source-free points, where the Laplace's equation applies. This means that the
 continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
@@ -53,12 +51,14 @@ The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilo
 overcomes this problem, as suggested by \citet{bhattacharyya1967},
 and guarantees that the Fourier-convolution theorem 
 can be applied to the auxiliary potential $U_{\varepsilon}$
-(equation \ref{eq:potential-U-epsilon-space}) on a horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$ 
-to obtain
+(equation \ref{eq:potential-U-epsilon-space}) on the horizontal surface $\mathcal{S}^{\dagger}$ above
+the sources, so that
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
 	= k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \:
-	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: .
+	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: .
 	\label{eq:potential-U-epsilon-Fourier-dagger}
 \end{equation}
 We get by substituting \ref{eq:Psi-Fourier} and \ref{eq:potential-U-epsilon-Fourier-layer} into 
@@ -73,19 +73,18 @@ We get by substituting \ref{eq:Psi-Fourier} and \ref{eq:potential-U-epsilon-Four
 	\label{eq:potential-U-epsilon-Fourier-dagger2}
 \end{equation}
 which shows that the Fourier transforms of 
-$U(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-Fourier}) and 
-$U_{\varepsilon}(\mathbf{r}^{\dagger})$ (equation \ref{eq:potential-U-epsilon-space}) 
-on the horizontal plane $z^{\dagger}_{0}$ located above the 3D sources coincide up 
-to the truncating wavenumber $k_{\varepsilon}$.
+$U$ (equation \ref{eq:potential-U-Fourier}) and $U_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-space}) 
+on the horizontal surface $\mathcal{S}^{\dagger}$ above the sources coincide up to the truncating wavenumber $k_{\varepsilon}$.
 
 We have just specified the Dirichlet's and Neumann's problems 
 (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) in terms of a truncating wavenumber 
-$k_{\varepsilon}$ with the purpose of expanding their applicability to the case in which plane $z''_{0}$ cross the sources. 
-In this case, we obtain an approximating potential $U_{\varepsilon}(\mathbf{r})$ that coincides with the true 
-potential $U(\mathbf{r})$ up to the truncating wavenumber $k_{\varepsilon}$ 
+$k_{\varepsilon}$ with the purpose of expanding their applicability to the case in which the horizontal surface $\mathcal{S}''$ cross the sources. 
+In this case, we obtain an approximating potential $U_{\varepsilon}$ that coincides with the true 
+potential $U$ up to the truncating wavenumber $k_{\varepsilon}$ 
 (equation \ref{eq:potential-U-epsilon-Fourier-dagger2}). 
 At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
-goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which $z''_{0} < z^{t}_{0}$, we get 
+goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which 
+$\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we get 
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
@@ -103,18 +102,19 @@ pointwise and, consequently, that
 	\label{eq:lim-kepsilon-potential-U-epsilon-space}
 \end{equation}
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
-problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) on a plane $z''_{0}$ 
-that is located above the sources.
+problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
 \subsection{The planar equivalent-layer theorem}
 
 \begin{theorem}[\textbf{Planar equivalent-layer theorem}]
 	\label{theorem:planar-eqlayer-theorem}
-	Let a planar surface $\mathcal{S}''$ located at $z''_{0}$ and a kernel function $a(\mathbf{r}, \mathbf{r}'')$ 
+	Let a horizontal surface $\mathcal{S}''$ and a kernel function $a(\mathbf{r}, \mathbf{r}'')$ 
 	be set according to Definition \ref{def:continuous-eqlayer}, for a given observed potential field $d^{o}$. 
-	Then, for every $\varepsilon > 0$, there exists a continuous equivalent layer $p_{\varepsilon}$. Furthermore, if 
-	$z''_{0} < z^{t}_{0}$, then the continuous equivalent layer reproduces $d^{o}$ exactly.
+	Then, for every $\varepsilon > 0$, there exists a continuous equivalent layer $p_{\varepsilon}$ on $\mathcal{S}''$. 
+	Furthermore, for the  case in which $\mathcal{S}''$ is above the sources, the continuous equivalent layer 
+	reproduces $d^{o}$ exactly.
 \end{theorem}
+PAREI AQUI - CONTINUAR REVISANDO DE ACORDO COM A NOVA SUBSEÇÃO GEOMETRIC DEFINITIONS
 \begin{proof}
 	We start by defining $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
 	in the Fourier domain via
