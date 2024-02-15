@@ -4,7 +4,8 @@
 \subsection{Dirichlet's equivalent layers}
 
 \begin{definition}
-	An equivalent layer $p_{\varepsilon}$ is called Dirichlet's equivalent layer if it has the following form in the Fourier domain
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is called Dirichlet's equivalent 
+	layer if it has the following form in the Fourier domain
 	\begin{equation}
 		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
 		\begin{cases}
@@ -15,7 +16,6 @@
 		\end{cases} \: .
 		\label{eq:p-Fourier-Dirichlet}
 	\end{equation}
-	where $z''_{0} > z^{\dagger}_{0}$.
 	\label{def:eql-Dirichlet}
 \end{definition}
 
@@ -23,7 +23,7 @@ Note that Dirichlet's layers (Definition \ref{def:eql-Dirichlet}) are obtained f
 equation \ref{eq:p-Fourier} by setting $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ 
 (equation \ref{eq:diff-operators-generic}).
 In this case, we can easily verify from equation \ref{eq:observed-data-Fourier} that they 
-approximate the downward continuation of the observed potential field $d^{o}$ to the layer plane.
+approximate the downward continuation of the observed potential field $d^{o}$ to the layer plane $\mathcal{S}''$.
 It is important noting that such layers depend on $\alpha_{d}$, which 
 carries information about the observed potential field (equation \ref{eq:observed-data-Fourier}).
 In this case, the corresponding predicted field (equation \ref{eq:predicted-data-continuous-layer}) assumes the form
@@ -58,8 +58,8 @@ from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-c
 \subsection{Equivalent layers having minimum phase changes}
 
 \begin{definition}
-	An equivalent layer $p_{\varepsilon}$ is said to have minimum phase changes (with respect to the spatial distribution 
-	of the true sources) if its phase spectrum is given by
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is said to have minimum 
+	phase changes (with respect to the spatial distribution of the true sources) if its phase spectrum is given by
 	\begin{equation}
 		\Theta [ p_{\varepsilon}(\mathbf{r}'') ] = \begin{cases}
 			\Theta [ U(\mathbf{r}^{\dagger}) ] & , \quad 0 < k \le k_{\varepsilon} \\
@@ -121,7 +121,8 @@ have non-trivial representations in the space domain.
 \subsection{Neumann's equivalent layers}
 
 \begin{definition}
-	An equivalent layer $p_{\varepsilon}$ is called Neumann's equivalent layer if it has the following form in the Fourier domain
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is called Neumann's equivalent 
+	layer if it has the following form in the Fourier domain
 	\begin{equation}
 		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
 		\begin{cases}
@@ -129,10 +130,9 @@ have non-trivial representations in the space domain.
 			e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
 			\quad 0 < k \le k_{\varepsilon} \\
 			0 & , \quad k > k_{\varepsilon}
-		\end{cases} \: ,
+		\end{cases} \: .
 		\label{eq:p-Fourier-Neumann}
 	\end{equation}
-	where $z''_{0} > z^{\dagger}_{0}$.
 	\label{def:eql-Neumann}
 \end{definition}
 \begin{proposition}
@@ -186,10 +186,10 @@ the vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation
 on the layer plane $z''_{0}$.
 For the cases in which the observed potential field $d^{o}$ represents gravity data, 
 $p_{\varepsilon}$ approximates the gravity disturbance (or vertical component of the gravitational
-attraction) due to the true sources on the layer plane.
+attraction) due to the true sources on the layer plane $\mathcal{S}''$.
 If $d^{o}$ represents magnetic data produced by sources with constant total magnetization direction, 
 then $p_{\varepsilon}$ approximates the pseudogravity 
-anomaly \citep[][ p. 345]{blakely1996} due to the true sources on the layer plane.
+anomaly \citep[][ p. 345]{blakely1996} due to the true sources on $\mathcal{S}''$.
 In this case, $p_{\varepsilon}$ is strictly positive because it is defined in terms of a strictly positive 
 function $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space}) representing the 
 total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
@@ -200,7 +200,7 @@ the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-d
 
 It is widely known that integrating the potential field $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
 (equation \ref{eq:potential-U-1st-deriv-space}) on a horizontal plane above the causative sources
-gives their total mass (or total dipole moment) according to the
+gives their total mass (or total dipole moment), according to the
 Gauss' Theorem \citep[e.g.,][]{hammer1945, lafehr1965, bhattacharyya1967}. 
 Furthermore, \citet{medeiros-silva1995a} show that the horizontal first-order moments, second-order moment $xy$, 
 difference between the second-order moments $xx$ and $yy$, as well as the horizontal coordinates of the sources center of mass
@@ -209,4 +209,4 @@ that they produce on a horizontal plane above them.
 Thus, all these parameters of the true sources can be directly estimated from 
 Neumann's equivalent layers $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}) because
 they approximate the field $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) 
-on the layer plane $z''_{0}$.
+on $\mathcal{S}''$.

@@ -110,11 +110,10 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 	\label{theorem:planar-eqlayer-theorem}
 	Let a horizontal surface $\mathcal{S}''$ and a kernel function $a(\mathbf{r}, \mathbf{r}'')$ 
 	be set according to Definition \ref{def:continuous-eqlayer}, for a given observed potential field $d^{o}$. 
-	Then, for every $\varepsilon > 0$, there exists a continuous equivalent layer $p_{\varepsilon}$ on $\mathcal{S}''$. 
-	Furthermore, for the  case in which $\mathcal{S}''$ is above the sources, the continuous equivalent layer 
-	reproduces $d^{o}$ exactly.
+	Then, for every $\varepsilon > 0$, there exists a set of continuous equivalent layers $p_{\varepsilon}$ on $\mathcal{S}''$. 
+	Furthermore, for the case in which $\mathcal{S}''$ is above the sources, the continuous equivalent layers 
+	reproduce $d^{o}$ exactly.
 \end{theorem}
-PAREI AQUI - CONTINUAR REVISANDO DE ACORDO COM A NOVA SUBSEÇÃO GEOMETRIC DEFINITIONS
 \begin{proof}
 	We start by defining $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
 	in the Fourier domain via
@@ -125,8 +124,9 @@ PAREI AQUI - CONTINUAR REVISANDO DE ACORDO COM A NOVA SUBSEÇÃO GEOMETRIC DEFIN
 		\label{eq:p-Fourier}
 	\end{equation}
 	where $U_{\varepsilon}(\mathbf{r}'')$ is defined as in \ref{eq:potential-U-epsilon-Fourier-layer}, 
-	for a given truncating wavenumber $k_{\varepsilon}$, and $\alpha_{a}$ is differential operator 
+	for a given truncating wavenumber $k_{\varepsilon}$, and $\alpha_{a}$ is a differential operator 
 	defined in the Fourier domain in terms of $\alpha$ (equation \ref{eq:diff-operators-generic}).
+	Note that there is an equivalent layer $p_{\varepsilon}$ for each particular $\alpha_{a}$.
 	For any finite choice of $0 < k_{\varepsilon} < \infty$, both $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ 
 	and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable and, consequently, it is possible to
 	apply the Fourier-convolution theorem to \ref{eq:predicted-data-continuous-layer} and obtain
