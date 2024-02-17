@@ -1,28 +1,53 @@
 \section{General background}
 \label{sec:background}
 
+\subsection{Preliminary notational and geometric definitions}
+
+The main geometric objects used along the present work are shown in Figure \ref{fig:geometry}.
+We consider a topocentric Cartesian coordinate system with axes 
+$x$, $y$, and $z$ pointing to north, east and down, respectively. 
+We also assume to have a set of 3D gravity or magnetic sources with top at the vertical coordinate $z^{t}_{0}$, 
+located in the subsurface over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$, where 
+$\mathcal{V} \subset \mathbb{R}^{3}$ is a \textit{regular region} with boundary
+$\partial \mathcal{V}$. 
+Some important properties of $\mathcal{V}$ in this case is that it is an open connected set of points 
+and $\partial \mathcal{V}$ is a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
+
+We also consider to have potential field observations at generic points 
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ or at a finite set of points 
+$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}}$, $i \in \{ 1, \dots, N \}$, 
+located above the sources, i.e., with vertical coordinates satisfying $\forall z < z^{t}_{0}$ and 
+$\forall z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
+
+Specific horizontal surfaces are defined by $\mathcal{S}$, with a particular superscript symbol. 
+The horizontal surface $\mathcal{S}''$, for example, is defined at a vertical coordinate $z''_{0}$ below the 
+observation points, so that $\forall z < z''_{0}$ and $\forall z_{i} < z''_{0}$. 
+The subscript ``$0$'' indicates that the corresponding vertical coordinate is constant. 
+Points and elements of area on a given horizontal surface are defined by using the corresponding superscript symbol. 
+For example, we define the element of area $d\mathcal{S}'' = dx''dy''$, generic points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
+and also a finite set of points $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top} \in \mathcal{S}''$,
+$j \in \{ 1, \dots, M \}$.
+
+Finally, all Fourier transforms computed here are defined on horizontal surfaces, with respect to the 
+spatial coordinates along the horizontal directions. For example, $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
+indicates the two-dimensional Fourier transform of a scalar function $U(\mathbf{r}^{\dagger})$ with respect to
+the spatial coordinates $x$ and $y$, on a horizontal surface $\mathcal{S}^{\dagger}$ formed by points  
+$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$, i.e. by $\mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger}$.
+Besides, the dependence of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
+$x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
+
 \subsection{Potential fields due to 3D sources}
 \label{sec:potential_fields_3D_sources}
 
-Consider a topocentric Cartesian coordinate system with axes $x$, $y$, and $z$ pointing to north, 
-east and down, respectively. 
-Let $\mathcal{V} \subset \mathbb{R}^{3}$ be a \textit{regular region} with boundary
-$\partial \mathcal{V}$ (Figure \ref{fig:geometry}). 
-Some important properties of $\mathcal{V}$ in this case is that it is an open and 
-connected set of points and $\partial \mathcal{V}$ is a closed and compact surface 
-free of double points \citep[][ p. 22]{freeden_gerhards2012}. 
-Consider a set of 3D gravity or magnetic sources located in the subsurface,
-over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$.
-The potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at an observation point 
-$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ (Figure \ref{fig:geometry}) 
-can be defined by
+We define the potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
+$\mathbf{r}$ (Figure \ref{fig:geometry}) by
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
-where $D_{d}$ is a space-domain differential operator
-acting on the potential
+where $D_{d}$ is a space-domain differential operator acting on the potential
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -37,37 +62,35 @@ between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal
 and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
 $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
 as the density (contrast) or total-magnetization intensity within the sources.
-We implicitly assume that $\sigma(\mathbf{r}) = 0$ for all points 
-$\mathbf{r} \notin \overline{\mathcal{V}}$.
-To insure that the partial derivatives of first and second orders of $U(\mathbf{r})$ 
-exist at all points $\mathbf{r} \in \mathbb{R}^{3}$ in space, including those within the sources,
+We implicitly assume that $\sigma(\mathbf{r}) = 0$ outside $\overline{\mathcal{V}}$.
+To insure that the partial derivatives of first and second orders of $U$ 
+exist at all points in the $\mathbb{R}^{3}$ space, including those within the sources,
 we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-The two-dimensional Fourier transform (2DFT) of the potential field $d^{o}(\mathbf{r})$ 
-(equation \ref{eq:observed-data-space}) with respect to the horizontal coordinates $x$ and
-$y$, on a horizontal plane with constant vertical coordinate $z^{\dagger}_{0}$ located above
-the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
+The Fourier transform of the potential field $d^{o}$ (equation \ref{eq:observed-data-space}) 
+on a horizontal surface above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
 	\alpha_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
 	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:observed-data-Fourier}
 \end{equation}
-where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin
-\overline{\mathcal{V}}$ represents a point on the horizontal plane $z^{\dagger}_{0} < z^{t}_{0}$;
-$z^{t}_{0}$ is the top of the sources (Figure \ref{fig:geometry});
+where 
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 2 \pi \kappa 
 	\int\limits_{z^{t}_{0}}^{\infty}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
 	\frac{e^{- k \, (z' - z^{\dagger}_{0})}}{k}
-	\: dz' \: , \quad z^{\dagger}_{0} < z^{t}_{0} \: ,
+	\: dz' \: , 
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:potential-U-Fourier}
 \end{equation}
-is the 2DFT of the Newtonian potential $U(\mathbf{r})$ (equation \ref{eq:potential-U-space})
-on the plane $z^{\dagger}_{0}$;
+is the Fourier transform of the Newtonian potential 
+$U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, and
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
 	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -75,12 +98,10 @@ on the plane $z^{\dagger}_{0}$;
 	\: dx'dy'
 	\label{eq:sigma-Fourier}
 \end{equation}
-is the 2DFT of $\sigma(\mathbf{r}')$ 
-(equation \ref{eq:potential-U-space}) on a horizontal plane with constant vertical
+is the Fourier transform of $\sigma(\mathbf{r}')$ 
+(equation \ref{eq:potential-U-space}) on the horizontal plane at the vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
-The dependence of these 2DFT's on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
-$x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
-In equation \ref{eq:potential-U-Fourier}, $\alpha_{d}$ is a function of the 
+In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
 $D_{d}$ (equation \ref{eq:observed-data-space}) in the Fourier domain.
 
@@ -98,13 +119,13 @@ where $\hat{\mathbf{u}}$ is a constant unit vector,
 $\nabla$ is the vector differential operator nabla \citep[e.g.,][ p. 179]{kaplan2002} and 
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \citep{pedersen1978}.
-The differential operator $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
+The differential operator $D$ (equation \ref{eq:diff-operators-generic})
 has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}, for example, where the suggested
 dot product and exponentiation actually leads to a differentiation.
 
 By combining successive applications of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 with properly chosen $\ell$ and $\hat{\mathbf{u}}$, we may define differential operators that 
-result in all potential fields $d^{o}(\mathbf{r})$ commonly used in Geophysics.
+result in all potential fields $d^{o}$ commonly used in Geophysics.
 Note that $D(0, \hat{\mathbf{u}}) = \alpha(0, \hat{\mathbf{u}}) = 1$ produces no differentiation.
 It can be verified, for example, that using $\ell = 1$ and a constant unit vector $\hat{\mathbf{u}}$
 in equation \ref{eq:diff-operators-generic} leads to the following directional derivative 
@@ -131,8 +152,8 @@ given by the partial derivatives of first order
 	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad u \in \{ x, y, z \} \: .
 	\label{eq:potential-U-1st-deriv-space}
 \end{equation}
-The first-order directional derivative $D(1, \hat{\mathbf{u}}) \, U(\mathbf{r})$ (equation \ref{eq:potential-U-oblique-1st-deriv-space})
-coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U(\mathbf{r})$ (equation \ref{eq:potential-U-1st-deriv-space})
+The first-order directional derivative (equation \ref{eq:potential-U-oblique-1st-deriv-space})
+coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U$ (equation \ref{eq:potential-U-1st-deriv-space})
 for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides with one of the canonical base vectors
 \begin{equation}
 	\hat{\mathbf{x}} = (1,0,0)^{\top} , \quad 
@@ -140,7 +161,7 @@ for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides wi
 	\hat{\mathbf{z}} = (0,0,1)^{\top} \: .
 	\label{eq:canonical-base-vector}
 \end{equation}
-In this case, $D(1, \hat{\mathbf{z}}) \, U(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$, for example.
+For example, $D(1, \hat{\mathbf{z}}) \, U(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$.
 
 It can also be verified from equation \ref{eq:diff-operators-generic} that 
 \begin{equation}
@@ -165,7 +186,7 @@ $\hat{\mathbf{v}}$, where
 	\end{bmatrix}
 	\label{eq:potential-U-Hessian}
 \end{equation}
-is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}),
+is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of $U$ (equation \ref{eq:potential-U-space}),
 with elements given by the partial derivatives of second order
 \begin{equation}
 	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
@@ -185,20 +206,25 @@ For example, $D(1, \hat{\mathbf{x}}) \, D(1, \hat{\mathbf{y}}) \, U(\mathbf{r}) 
 \subsection{Some relevant potential fields for geophysical applications}
 \label{subsec:relevant-potential-fields}
 
-In gravity exploration methods, the vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r})$
-(equation \ref{eq:potential-U-1st-deriv-space}) defines \textit{gravity disturbance} data 
-\cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, whereas the Hessian matrix $\mathbf{H}_{U}(\mathbf{r})$
-(equation \ref{eq:potential-U-Hessian}) defines the
+In gravity exploration methods, the vertical derivative $\tfrac{\partial}{\partial z} U$
+(equation \ref{eq:potential-U-1st-deriv-space}) does not define the gravity anomaly, but the \textit{gravity disturbance} data 
+\cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}.
+The debate around the differences between gravity anomaly and gravity disturbance is beyond the scope of the 
+present work and has been carried about from a more geodetic than a geophysical point of view 
+\citep[e.g.,][]{li2001, fairhead2003, hackney-featherstone2003, hinze2005, vajda-etal2006, vajda-etal2007, vajda-etal2008}. 
+Maybe, that is why it is still unfamiliar to a considerable group of exploration geophysicists.
+Another important quantity for gravity exploration method is the Hessian matrix $\mathbf{H}_{U}$
+(equation \ref{eq:potential-U-Hessian}), which defines the
 (gravitational) \textit{gradient tensor} \citep[e.g.,][]{pedersen_rasmussen1990}.
 
-In magnetic exploration methods, the second-order directional derivative 
-$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space})
+In magnetic exploration methods, it is well-established that the second-order directional derivative 
+$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space})
 is commonly used to approximate the \textit{total-field anomaly} produced by 3D sources \cite[e.g., ][ p. 179]{blakely1996},
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 Because of that, we use the term \textit{approximated total-field anomaly} to denote this 
 potential field throughout the manuscript.
-Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
+Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}) can be used to define (i) the  
 \textit{Cartesian components of the magnetic induction field} produced due to the 3D
 sources by setting the unit vector $\hat{\mathbf{u}}$ equal to the canonical base vectors $\hat{\mathbf{x}}$,
@@ -215,51 +241,26 @@ decays to zero towards their boundaries. \citet{baranov1957} was the first
 to propose a method, called \textit{reduction to the pole} (RTP), to transform generic
 total-field anomalies into this special anomaly.
 
-\subsection{Phase spectrum of the potential $U(\mathbf{r})$}
-\label{subsec:potential-U-min-phase}
-
-Let the phase spectrum \cite[e.g.,][ p. 261]{blakely1996} of  
-$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}) 
-on a horizontal plane $z^{\dagger}_{0}$ above the sources be defined as follows:
-\begin{equation}
-	\Theta [ U(\mathbf{r}^{\dagger}) ] = \tan^{-1} \left( 
-	\frac{\text{Im} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]}{\text{Re} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ]} 
-	\right) \: ,
-	\label{eq:potential-U-phase-spectrum}
-\end{equation}
-where ``$\text{Re}$'' and ``$\text{Im}$'' denote the real and imaginary parts, respectively.
-As pointed out by \citet[][ p. 317]{blakely1996}, the phase spectrum $\Theta [ U(\mathbf{r}^{\dagger}) ]$ is the same
-as that of the spatial distribution of the true sources because the integral term in equation \ref{eq:potential-U-Fourier}
-represents a weighted sum of the Fourier transforms $\mathcal{F} [ \sigma(\mathbf{r}') ]$
-(equation \ref{eq:sigma-Fourier}) over all depth slices crossing the sources,
-where the weights are real functions.
-The same reasoning can be used to verify that any vertical integral or derivative of the potential $U(\mathbf{r})$
-also has the same phase spectrum of the spatial distribution of the true sources.
-
 \subsection{Classical Dirichlet's and Neumann's problems on a plane}
 \label{subsec:dirichlet_neumann}
 
 At all points $\mathbf{r} \notin \overline{\mathcal{V}}$ 
-located outside the sources, $U(\mathbf{r})$ (equation
-\ref{eq:potential-U-space}) has continuous partial derivatives of all orders
-and satisfies the Laplace's equation \citep[][ p. 122--124]{kellogg1967}.
-Besides, it is regular at infinity \citep[][ p. 217]{kellogg1967}.
+located outside the sources, $U$ (equation
+\ref{eq:potential-U-space}) has continuous partial derivatives of all orders, 
+satisfies the Laplace's equation and is regular at infinity \citep[][ p. 122--124, 217]{kellogg1967}.
 Because of these properties, we have that
 \begin{equation}
 	U(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	D(\ell, \hat{\mathbf{z}}) U(\mathbf{r}'') \:\: 
 	D(1 - \ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
-	\: d\mathcal{S}'' \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\: d\mathcal{S}'' \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
 where $D(\ell, \hat{\mathbf{u}})$ is the space-domain differential operator 
 defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
-$\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}); 
-$z^{t}_{0}$ defines the top of the sources; 
-$\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ defines a point  
-on the horizontal plane $z''_{0} < z^{t}_{0}$ (Figure \ref{fig:geometry}), which in this case is located above the sources; and 
+$\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}) and 
 \begin{equation}
 	\Psi(\mathbf{r}, \mathbf{r}'') = 
 	\frac{1}{2\pi} \: 
@@ -272,33 +273,31 @@ Equation \ref{eq:U-Dirichlet-Neumann} is commonly deduced from
 the \textit{Green's third identity} \citep[][ p. 219]{kellogg1967}, according to
 the general outline presented by \cite{roy1962}, for example.
 
-Equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 0$ states that $U(\mathbf{r})$ can be defined
-in terms of its values $D(0, \hat{\mathbf{u}}) U(\mathbf{r}'') = U(\mathbf{r}'')$ on the plane $z''_{0}$ and 
+For $\ell = 0$, equation \ref{eq:U-Dirichlet-Neumann} states that $U$ can be defined
+in terms of its values $D(0, \hat{\mathbf{u}}) U(\mathbf{r}'') = U(\mathbf{r}'')$ on a horizontal surface $\mathcal{S}''$ 
+above the sources and 
 represents the solution of the classical \textit{Dirichlet’s problem} or the 
 \textit{first boundary value problem of potential theory} \cite[][ p. 236]{kellogg1967} on a plane, where 
 $D(1, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 represents the Green's function.
-From the physical point of view, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 0$ defines a continuous 
-layer of monopoles (or vertically-magnetized dipoles) that is located on the horizontal plane $z''_{0}$, has 
+From the physical point of view, equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$ defines a continuous 
+layer of monopoles (or vertically-magnetized dipoles) that is located on $\mathcal{S}''$, has 
 physical-property distribution $U(\mathbf{r}'')$ and exactly reproduces the 
-potential field $U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z''_{0}$.
+potential field $U(\mathbf{r})$ at any point $\mathbf{r}$ above $\mathcal{S}''$.
 
-On the other hand, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U(\mathbf{r})$ can also
+On the other hand, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U$ can also
 be defined in terms of its vertical derivative 
 $D(1, \hat{\mathbf{z}}) U(\mathbf{r}'') = \tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
-on the plane $z''_{0}$ and represents the solution of the classical \textit{Neumann’s problem} or the 
+a horizontal surface $\mathcal{S}''$ above the sources and represents the solution of the classical \textit{Neumann’s problem} or the 
 \textit{second boundary value problem of potential theory} \cite[][ p. 246]{kellogg1967} on a plane, 
 with the Green's function given by $D(0, \hat{\mathbf{u}}) \Psi(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$.
 Equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 1$ can be alternatively interpreted as a planar layer of
-vertically-magnetized dipoles (or monopoles) that is located on the horizontal plane $z''_{0}$, has 
+vertically-magnetized dipoles (or monopoles) that is located on $\mathcal{S}''$, has 
 physical-property distribution $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ and exactly reproduces 
-$U(\mathbf{r})$ at any point $\mathbf{r}$ with $z < z''_{0}$.
+$U(\mathbf{r})$ at any point $\mathbf{r}$ above $\mathcal{S}''$.
 
-Consider now that $U(\mathbf{r})$ is not evaluated at a generic observation point $\mathbf{r}$, but at a point 
-$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
-on a horizontal plane $z^{\dagger}_{0}$ above the sources, with $z^{\dagger}_{0} < z''_{0} < z^{t}_{0}$.
-In this case, we get by applying the Fourier-convolution theorem 
-\cite[][ p. 268]{blakely1996} to equation \ref{eq:U-Dirichlet-Neumann} that
+By applying the Fourier-convolution theorem \cite[][ p. 268]{blakely1996} to equation \ref{eq:U-Dirichlet-Neumann} 
+on a horizontal surface $\mathcal{S}^{\dagger}$ above the sources, we find that
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 
 	k \: \mathcal{F} [ U(\mathbf{r}'') ] \:
@@ -315,5 +314,60 @@ where
 \end{equation}
 is defined according to \citet[][ p. 275]{blakely1996}, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$.
 We get from equation \ref{eq:diff-operators-generic} that the term $k$ in equation \ref{eq:U-Dirichlet-Neumann-Fourier} represents,
-in the Fourier domain, the combined effect of the differential operators $D(\ell, \hat{\mathbf{z}})$ and $D(1-\ell, \hat{\mathbf{z}})$ 
-acting in the space domain.
+in the Fourier domain, the combined effect of the space-domain differential operators $D(\ell, \hat{\mathbf{z}})$ and 
+$D(1-\ell, \hat{\mathbf{z}})$.
+
+\subsection{Potential-field transformations}
+\label{subsec:potential_field_transformations}
+
+Several geophysical applications use the observed potential field 
+$d^{o}$ (equation \ref{eq:observed-data-space}) to estimate another potential field 
+defined in the space domain by
+\begin{equation}
+	f(\mathbf{r}) = D_{f} \, U(\mathbf{r}) \: , 
+	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\label{eq:transformed-field-space}
+\end{equation}
+or, in the Fourier domain, 
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
+	\alpha_{f} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
+	\label{eq:transformed-field-Fourier}
+\end{equation}
+where $D_{f}$ is a space-domain differential operator acting on $U$ (equation \ref{eq:potential-U-space}) and
+$\alpha_{f}$ its corresponding representation in the Fourier domain.
+The differential operators $D_{f}$ and $\alpha_{f}$ associated with the transformed potential field 
+$f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) are commonly
+defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). 
+Estimating $f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) from 
+the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) is an operation 
+commonly known in geophysics as \textit{potential-field transformation}.
+
+A common approach to compute potential-field transformations \cite[e.g.,][]{gunn1975} 
+consists in using the definition of observed data in the Fourier domain (equation \ref{eq:observed-data-Fourier}) 
+and manipulating the Fourier domain solution of the Dirichlet's and Neumann's problems 
+(equation \ref{eq:U-Dirichlet-Neumann-Fourier}) to obtain
+\begin{equation}
+	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
+	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] \: , 
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
+	\quad z^{\dagger}_{0} < z^{t}_{0} \: .
+	\label{eq:field-transformation-Fourier}
+\end{equation}
+Equation \ref{eq:field-transformation-Fourier} defines a single-step potential-field transformation 
+in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a planar surface $\mathcal{S}^{\dagger}$ 
+located above the sources, at $z^{\dagger}_{0}$. 
+The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
+transform of \ref{eq:field-transformation-Fourier}.
+For the sake of simplicity, we have opted for defining the fields $d^{o}$ and $f$ at the same points in equation 
+\ref{eq:field-transformation-Fourier}.
+However, it is important to stress that, depending on the 
+geophysical application, $f$ may be estimated at points different from those at which the observations are 
+placed.
+
+The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
+space domain to compute potential-field transformations. What follows aims at discussing the well-established 
+empirical approaches used in the equivalent-layer technique, as well as discussing the theoretical background 
+supporting them.

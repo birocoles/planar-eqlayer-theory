@@ -17,8 +17,11 @@
 %% source: https://www.overleaf.com/learn/latex/Theorems_and_proofs
 %\newtheorem{theorem}{Theorem}[section]
 \newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}{Lemma}[theorem]
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}[theorem]
+%\newtheorem{lemma}{Lemma}
 %\theoremstyle{definition}%
 \newtheorem{definition}{Definition}
 
@@ -52,12 +55,14 @@ Val\'eria C. F. Barbosa\footnotemark[2] and Andr\'e L. A. Reis \footnotemark[3]}
 
 % Main body
 %\include{abstract}
-\include{introduction}
+%\include{introduction}
 \include{background}
-\include{eqlayer_technique}
-\include{planar_eqlayer_integral}
-\include{solutions_eqlayer_integral}
-%\include{planar_eqlayers}
+\include{discrete_eqlayer}
+\include{continuous_eqlayer}
+\include{planar_eqlayer_theorem}
+\include{transformations_eqlayer}
+\include{eqlayer_classes}
+\include{applications}
 %\include{conclusions}
 %\include{aknowledgements}
 
@@ -70,6 +75,7 @@ Val\'eria C. F. Barbosa\footnotemark[2] and Andr\'e L. A. Reis \footnotemark[3]}
 % Appendices
 %\appendix
 \include{appendix_A}
+\include{appendix_B}
 
 \clearpage
 

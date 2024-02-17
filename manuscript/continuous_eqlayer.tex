@@ -1,0 +1,55 @@
+\section{Continuous equivalent layers}
+\label{sec:continuous_eqlayer}
+
+\begin{definition}[\textbf{Continuous equivalent layer}]
+	Let us assume to have an observed potential field $d^{o}(\mathbf{r})$ defined above 
+	a horizontal surface $\mathcal{S}''$. 
+	Besides, consider (i) a horizontal surface $\mathcal{S}^{\dagger}$ that is located above 
+	$\mathcal{S}''$ and does not cross the sources and (ii) a harmonic kernel 
+	$a(\mathbf{r}, \mathbf{r}'')$ that depends only on $\mathbf{r}$ and $\mathbf{r}'' \in \mathcal{S}''$, as well as 
+	vanishes as the distance $\| \mathbf{r} - \mathbf{r}'' \|_{2}$ increases. 
+	Then, for a chosen accuracy $\varepsilon > 0$, we may call $p_{\varepsilon}(\mathbf{r}'')$ 
+	a \underline{continuous equivalent layer} if its predicted potential field 
+	\begin{equation}
+		d_{\varepsilon}(\mathbf{r})
+		= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+		p_{\varepsilon}(\mathbf{r}'') \, a(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+		\: , \quad \forall z < z''_{0} \: ,
+		\label{eq:predicted-data-continuous-layer}
+	\end{equation}
+	satisfies 
+	\begin{equation}
+		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+		\vert d^{o}(\mathbf{r}^{\dagger}) - 
+		d_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2}
+		\:\: d\mathcal{S}^{\dagger} \le \varepsilon \: ,
+		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
+		\label{eq:epsilon-bound-data}
+		\end{equation}
+	\label{def:continuous-eqlayer}
+\end{definition}
+
+In Definition \ref{def:continuous-eqlayer}, $p_{\varepsilon}(\mathbf{r}'')$ represents a continuous 
+physical-property distribution that extends to infinite along the horizontal directions and 
+the kernel function $a(\mathbf{r}, \mathbf{r}'')$ is usually defined by $D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ 
+as a generic partial derivative of $\Psi$ (equation \ref{eq:Psi}),
+where $D_{a}$ is set in terms of the space-domain differential operator 
+$D$ (equation \ref{eq:diff-operators-generic}).
+
+Similarly to the discrete case (equation \ref{eq:transformed-field-discrete-layer}), a particular continuous equivalent layer 
+$\tilde{p}_{\varepsilon}(\mathbf{r}'')$ leads to a transformed potential field given by:
+\begin{equation}
+	f_{\varepsilon}(\mathbf{r}^{\ddagger})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}_{\varepsilon}(\mathbf{r}'') \, t(\mathbf{r}^{\ddagger}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad \forall z^{\ddagger} < z''_{0} \: ,
+	\label{eq:transformed-field-continuous-layer}
+\end{equation}
+where $\mathbf{r}^{\ddagger} \notin \overline{\mathcal{V}}$ are points located above 
+$\mathcal{S}''$, but that can eventually coincide with those containing the observed potential field; 
+$f_{\varepsilon}(\mathbf{r}^{\ddagger})$ is a transformed field that approximates 
+$f(\mathbf{r}^{\ddagger})$ (equations \ref{eq:transformed-field-space}); and
+$t(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ is the transformation kernel,
+which is usually defined by $D_{t} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ as a generic partial 
+derivative of the potential function $\Psi$
+(equation \ref{eq:Psi}), with $D_{t}$ given in terms of $D$ (equation \ref{eq:diff-operators-generic}).

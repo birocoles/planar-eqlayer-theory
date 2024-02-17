@@ -1,0 +1,212 @@
+\section{Equivalent layer classes}
+\label{sec:eqlayer_classes}
+
+\subsection{Dirichlet's equivalent layers}
+
+\begin{definition}
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is called Dirichlet's equivalent 
+	layer if it has the following form in the Fourier domain
+	\begin{equation}
+		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
+		\begin{cases}
+			\alpha_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+			e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+			\quad 0 < k \le k_{\varepsilon} \\
+			0 & , \quad k > k_{\varepsilon} 
+		\end{cases} \: .
+		\label{eq:p-Fourier-Dirichlet}
+	\end{equation}
+	\label{def:eql-Dirichlet}
+\end{definition}
+
+Note that Dirichlet's layers (Definition \ref{def:eql-Dirichlet}) are obtained from 
+equation \ref{eq:p-Fourier} by setting $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ 
+(equation \ref{eq:diff-operators-generic}).
+In this case, we can easily verify from equation \ref{eq:observed-data-Fourier} that they 
+approximate the downward continuation of the observed potential field $d^{o}$ to the layer plane $\mathcal{S}''$.
+It is important noting that such layers depend on $\alpha_{d}$, which 
+carries information about the observed potential field (equation \ref{eq:observed-data-Fourier}).
+In this case, the corresponding predicted field (equation \ref{eq:predicted-data-continuous-layer}) assumes the form
+\begin{equation}
+	d_{\varepsilon}(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p_{\varepsilon}(\mathbf{r}'') \: \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad \forall z < z''_{0} \: .
+	\label{eq:predicted-data-Dirichlet-layer}
+\end{equation}
+From the physical point of view, this $d_{\varepsilon}$ is analogous
+to the vertical component of the gravitational attraction due to a layer of monopoles
+or the magnetic scalar potential due to a layer of vertically-magnetized dipoles.
+Moreover, equation \ref{eq:predicted-data-Dirichlet-layer} approximates the well-known \textit{upward continuation integral} 
+\citep[e.g.,][]{skeels1947, peters1949, henderson-zietz1949, dean1958, roy1962, bhattacharyya1967, henderson1970},
+which is traditionally derived from the solution of the Dirichlet’s problem on the
+layer plane (equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$). 
+
+Dirichlet's equivalent layers are the basis of the pioneer method proposed by \cite{dampney1969} for processing gravity data.
+Such layers lead to potential-field transformations (equations 
+\ref{eq:transformed-field-continuous-layer} and \ref{eq:transformed-field-continuous-layer-Fourier}) defined by 
+$\alpha_{t} = \nicefrac{k \, \alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
+Dirichlet's equivalent layers are commonly used to perform upward/downward continuation of the observed potential 
+field, which is obtained by setting $\alpha_{f} = \alpha_{d}$, resulting in $\alpha_{t} = k$. 
+Other potential-field transformations can also be accomplished from such equivalent layers, but they must be 
+defined in terms of $\alpha_{f} \ne \alpha_{d}$.
+In this case, however, defining the resulting transformed field $f_{\varepsilon}$ explicitly in the space domain 
+(equation \ref{eq:transformed-field-continuous-layer}) 
+from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-continuous-layer-Fourier}) may be very difficult.
+
+
+\subsection{Equivalent layers having minimum phase changes}
+
+\begin{definition}
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is said to have minimum 
+	phase changes (with respect to the spatial distribution of the true sources) if its phase spectrum is given by
+	\begin{equation}
+		\Theta [ p_{\varepsilon}(\mathbf{r}'') ] = \begin{cases}
+			\Theta [ U(\mathbf{r}^{\dagger}) ] & , \quad 0 < k \le k_{\varepsilon} \\
+			0 & , \quad k > k_{\varepsilon}
+		\end{cases} \: ,
+		\label{eq:p-phase-spectrum-U}
+	\end{equation}
+	where $\Theta [ U(\mathbf{r}^{\dagger}) ]$ denotes the phase spectrum of $U$ (Appendix B, equation \ref{eq:potential-U-phase-spectrum}).
+	\label{def:eql-min-phase}
+\end{definition}
+\begin{proposition}
+	\label{prop:minimum-phase-change-layers}
+	An equivalent layer $p_{\varepsilon}$ having minimum phase changes (Definition \ref{def:eql-min-phase})
+	depends only on the spatial distribution of the true sources and not on the particular observed 
+	potential field $d^{o}$.
+\end{proposition}
+\begin{proof}
+	It follows from equations \ref{eq:p-phase-spectrum-U} and definition of phase spectrum that 
+	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ must be the product of a real function and
+	$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$.
+	From equations \ref{eq:potential-U-epsilon-Fourier-layer} and \ref{eq:p-Fourier}, we can verify that 
+	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ is in fact the product of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ 
+	and a term $\left( \nicefrac{\alpha_{d}}{\alpha_{a}} \right) k \, e^{\, k \, (z''_{0} - z^{\dagger}_{0})}$. 
+	Since $\nicefrac{\alpha_{d}}{\alpha_{a}}$ is the only term that can be a complex function, we conclude that 
+	the imposed condition can only be satisfied for the case in which $\alpha_{a} = \alpha_{r} \, \alpha_{d}$, 
+	where $\alpha_{r}$ is a generic real function satisfying $\alpha_{r} \ne 0$ for $0 < k \le k_{\varepsilon}$.
+	It can then be verified that, in this case, \ref{eq:kernel-a-Fourier} assumes the form
+	\begin{equation}
+		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] =
+		\alpha_{r} \, \alpha_{d} \, 
+		\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]
+		\label{eq:kernel-a-Fourier-min-phase}
+	\end{equation}
+	and gives rise to an equivalent layer
+	\begin{equation}
+		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
+		\begin{cases}
+			\tfrac{k}{\alpha_{r}} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+			e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+			\quad 0 < k \le k_{\varepsilon} \\
+			0 & , \quad k > k_{\varepsilon}
+		\end{cases} \: ,
+		\label{eq:p-Fourier-min-phase}
+	\end{equation}
+	which is the product of a real function and $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$.
+	Since $\alpha_{r}$ does not depend on $\alpha_{d}$, $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ does not 
+	depend on $\alpha_{d}$ as well. This implies that the phase spectrum of $p_{\varepsilon}$ coincides 
+	with that of potential $U$ up to the truncating wavenumber $k_{\varepsilon}$, thereby corresponding to the 
+	phase spectrum associated with the spatial distribution of the true sources up to the same $k_{\varepsilon}$.
+\end{proof}
+
+Equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) may present intricate 
+spatial domain representations, dictated by the particular form of the real function $\alpha_{r}$
+(equations \ref{eq:kernel-a-Fourier-min-phase} and \ref{eq:p-Fourier-min-phase}).
+Such layers give raise to potential-field transformations (equation \ref{eq:transformed-field-continuous-layer-Fourier})
+defined by $\alpha_{t} = \alpha_{r} \, \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), which may also
+have non-trivial representations in the space domain.
+
+\subsection{Neumann's equivalent layers}
+
+\begin{definition}
+	An equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) is called Neumann's equivalent 
+	layer if it has the following form in the Fourier domain
+	\begin{equation}
+		\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
+		\begin{cases}
+			k \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] 
+			e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+			\quad 0 < k \le k_{\varepsilon} \\
+			0 & , \quad k > k_{\varepsilon}
+		\end{cases} \: .
+		\label{eq:p-Fourier-Neumann}
+	\end{equation}
+	\label{def:eql-Neumann}
+\end{definition}
+\begin{proposition}
+	All Neumann's equivalent layers have minimum phase changes.
+	\label{prop:eql-Neumann}
+\end{proposition}
+\begin{proof}
+	Comparing equation \ref{eq:U-Dirichlet-Neumann-Fourier}, \ref{eq:Psi-Fourier}, \ref{eq:p-Fourier} and 
+	\ref{eq:p-Fourier-Neumann}, we get that $\alpha_{a} = \alpha_{d}$. 
+	This condition implies that 
+	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ is a particular case of equation \ref{eq:p-Fourier-min-phase},
+	with $\alpha_{r} = 1$. Consequently, Neumann's equivalent layers have minimum phase changes
+	according to Definition \ref{def:eql-min-phase}.
+\end{proof}
+
+The predicted potential field $d_{\varepsilon}$ (equation \ref{eq:predicted-data-continuous-layer}) 
+due to Neumann's equivalent layers (Definition \ref{def:eql-Neumann}) assumes the form
+\begin{equation}
+	d_{\varepsilon}(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	p_{\varepsilon}(\mathbf{r}'') \: D_{d} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad \forall z < z''_{0} \: ,
+	\label{eq:predicted-data-Neumann-layer}
+\end{equation}
+where $D_{d}$ is the same space-domain differential operator associated with
+the observed potential field data $d^{o}$ (equation \ref{eq:observed-data-space}).
+As a consequence, Neumann's equivalent layers (Definition \ref{def:eql-Neumann}) preserve the physical
+relationship between the observed potential field and the true sources.
+It means that, if the observed potential field $d^{o}$ is the $x$-component of the 
+gravitational attraction due to the true sources, the predicted potential field $d_{\varepsilon}$  
+represents the $x$-component of the gravitational attraction due to the planar equivalent layer, for example.
+The same is valid for any other potential field.
+
+Any particular Neumann's layer $\tilde{p}_{\varepsilon}$ yields transformed potential 
+fields (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
+defined by $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}) in the Fourier domain. 
+Hence, the corresponding transformed fields $f_{\varepsilon}$ in the space domain 
+(equation \ref{eq:transformed-field-continuous-layer}) assume the simple form
+\begin{equation}
+	f_{\varepsilon}(\mathbf{r})
+	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\tilde{p}_{\varepsilon}(\mathbf{r}'') \: D_{f} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
+	\: , \quad \forall z < z''_{0} \: ,
+	\label{eq:transformed-field-continuous-layer-Neumann}
+\end{equation}
+where $D_{f}$ is the space-domain representation of the differential operator $\alpha_{f}$ 
+associated with the desired transformed field $f$ (equation \ref{eq:transformed-field-space}).
+
+It follows immediately from equation \ref{eq:p-Fourier-Neumann} that Neumann's equivalent layers approximate 
+the vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) 
+on the layer plane $z''_{0}$.
+For the cases in which the observed potential field $d^{o}$ represents gravity data, 
+$p_{\varepsilon}$ approximates the gravity disturbance (or vertical component of the gravitational
+attraction) due to the true sources on the layer plane $\mathcal{S}''$.
+If $d^{o}$ represents magnetic data produced by sources with constant total magnetization direction, 
+then $p_{\varepsilon}$ approximates the pseudogravity 
+anomaly \citep[][ p. 345]{blakely1996} due to the true sources on $\mathcal{S}''$.
+In this case, $p_{\varepsilon}$ is strictly positive because it is defined in terms of a strictly positive 
+function $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space}) representing the 
+total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
+within the sources.
+This result is in perfect agreement with that deduced by \citet{reis_etal2020} for
+the particular case in which the observed potential field $d^{o}$ is
+the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
+
+It is widely known that integrating the potential field $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
+(equation \ref{eq:potential-U-1st-deriv-space}) on a horizontal plane above the causative sources
+gives their total mass (or total dipole moment), according to the
+Gauss' Theorem \citep[e.g.,][]{hammer1945, lafehr1965, bhattacharyya1967}. 
+Furthermore, \citet{medeiros-silva1995a} show that the horizontal first-order moments, second-order moment $xy$, 
+difference between the second-order moments $xx$ and $yy$, as well as the horizontal coordinates of the sources center of mass
+(or center of dipole moment) of the true sources can also be estimated from the $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$
+that they produce on a horizontal plane above them.
+Thus, all these parameters of the true sources can be directly estimated from 
+Neumann's equivalent layers $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}) because
+they approximate the field $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) 
+on $\mathcal{S}''$.
