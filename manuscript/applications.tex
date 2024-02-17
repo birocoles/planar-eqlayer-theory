@@ -65,15 +65,18 @@ We call attention to the fact that
 \citet{silva1986} cites the work of \citet{roy1962} to justify that ``the magnetic 
 field due to arbitrary sources can be exactly fitted by the magnetic field due to a horizontal equivalent
 layer of dipoles''. 
-However, \citeauthor{roy1962} did not discuss the existence of a dipole layer that fits the observed total-field 
-anomaly data and retrieves the RTP anomaly 
-but presented a general outline to deduce the solutions of the Dirichlet's and Neumann's problems on a plane 
+However, \citeauthor{roy1962} neither discussed the existence of a dipole layer that fits the observed total-field 
+anomaly data nor its use to retrieve the RTP anomaly, but 
+presented a general outline to deduce the solutions of the Dirichlet's and Neumann's problems on a plane 
 located above the sources (equation \ref{eq:U-Dirichlet-Neumann}).
 In other words, the two-step approach proposed by \citet{silva1986}, which is widely accepted by the scientific community 
 and we know to be correct from practice 
 \citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}, 
-is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work.
-Here, we provide a theoretical explanation for this well-established approach.
+is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work. 
+It also important to point out that the mathematical equivalence between the space-domain approach to compute the 
+RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
+total-field anomaly data \citep[e.g., ][ p. 331]{blakely1996} have never been clearly established in the literature.
+Here, we provide a general approach aiming at filling these theoretical gaps.
 
 Consider that (i) the observed potential field $d^{o}$ 
 is satisfactorily described by the directional derivative $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
@@ -109,66 +112,76 @@ It can also be easily verified that the same $p_{\varepsilon}$ given by equation
 observed potential field is the magnetic scalar potential. In this case, $\alpha_{d}$ and $\alpha_{a}$ are defined
 without the term $\alpha(1, \hat{\mathbf{u}})$.
 
-\begin{proposition}
-	An equivalent layer $p_{\varepsilon}$ of dipoles defined in terms of magnetic data produced 
-	by sources with constant total-magnetization direction is a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) 
-	if and only if its constant magnetization direction is equal to that of the true sources.
-	\label{prop:eql-Neumann-dipoles}
-\end{proposition}
-\begin{proof}
-	In the case of a Neumann’s equivalent layer, equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} 
-	yield that $\alpha_{a} = \alpha_{d}$. 
-	If the observed potential field is the scalar magnetic potential, then the corresponding
-	differential operators (cf. equation \ref{eq:diff-operators-generic}) imply $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}})$
-	and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$, where $\hat{\mathbf{v}}$ and $\hat{\mathbf{h}}$ 
-	are fixed unit vectors.
-	In particular, $\hat{\mathbf{v}}$ is the same direction as that defining the sources
-	total magnetization. The equality of these coefficients yields that 
-	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top}\mathbf{k} = 0$ (cf. again equation \ref{eq:diff-operators-generic}). 
-	If the directions were different, i.e., if $\hat{\mathbf{h}} \ne \hat{\mathbf{v}}$, then the latter would imply that
-	$\mathtt{i} k_{x}$, $\mathtt{i} k_{y}$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ are linearly dependent, which is a contradiction. 
-	Thus, the constant magnetization direction must be equal to that defining the total magnetization of the sources.
-	
-	\noindent If the observed potential field is a component of the magnetic induction field along a given
-	constant direction defined by the unit vector $\hat{\mathbf{u}}$, then we have that 
-	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{v}})$ and 
-	$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{h}})$. 
-	The same argument as before yields that it must hold $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
-	leading to the desired conclusion.
-	
-	\noindent Vice-versa, assuming $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ leads to $\alpha_{a} = \alpha_{d}$.
-	Equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} then imply that
-	the equivalent layer under consideration must be a Neumann’s equivalent layer.
-\end{proof}
+%\begin{proposition}
+%	An equivalent layer $p_{\varepsilon}$ of dipoles defined in terms of magnetic data produced 
+%	by sources with constant total-magnetization direction is a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) 
+%	if and only if its constant magnetization direction is equal to that of the true sources.
+%	\label{prop:eql-Neumann-dipoles}
+%\end{proposition}
+%\begin{proof}
+%	In the case of a Neumann’s equivalent layer, equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} 
+%	yield that $\alpha_{a} = \alpha_{d}$. 
+%	If the observed potential field is the scalar magnetic potential, then the corresponding
+%	differential operators (cf. equation \ref{eq:diff-operators-generic}) imply $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}})$
+%	and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$, where $\hat{\mathbf{v}}$ and $\hat{\mathbf{h}}$ 
+%	are fixed unit vectors.
+%	In particular, $\hat{\mathbf{v}}$ is the same direction as that defining the sources
+%	total magnetization. The equality of these coefficients yields that 
+%	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top}\mathbf{k} = 0$ (cf. again equation \ref{eq:diff-operators-generic}). 
+%	If the directions were different, i.e., if $\hat{\mathbf{h}} \ne \hat{\mathbf{v}}$, then the latter would imply that
+%	$\mathtt{i} k_{x}$, $\mathtt{i} k_{y}$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ are linearly dependent, which is a contradiction. 
+%	Thus, the constant magnetization direction must be equal to that defining the total magnetization of the sources.
+%	
+%	\noindent If the observed potential field is a component of the magnetic induction field along a given
+%	constant direction defined by the unit vector $\hat{\mathbf{u}}$, then we have that 
+%	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{v}})$ and 
+%	$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{h}})$. 
+%	The same argument as before yields that it must hold $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
+%	leading to the desired conclusion.
+%	
+%	\noindent Vice-versa, assuming $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ leads to $\alpha_{a} = \alpha_{d}$.
+%	Equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} then imply that
+%	the equivalent layer under consideration must be a Neumann’s equivalent layer.
+%\end{proof}
 
 We can now explain the two-step approach proposed by \citet{silva1986} from a theoretical point of view. 
-The first step consists in defining a Neumann's equivalent layer $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}) in the 
-Fourier domain with $\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ 
-(equations \ref{eq:observed-data-Fourier}, \ref{eq:diff-operators-generic} and \ref{eq:kernel-a-Fourier}). 
-The second step is equivalent to 
-compute the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) defined in the Fourier domain 
+The first step consists in setting a planar layer of dipoles by using 
+$\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ 
+(equations \ref{eq:observed-data-Fourier}, \ref{eq:diff-operators-generic} and \ref{eq:kernel-a-Fourier})
+in equation \ref{eq:p-Fourier-dipoles}. In this case, it can be shown that we obtain 
+a Neumann's equivalent layer $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}).
+The second step of \citeauthor{silva1986}'s approach consists in using the predefined Neumann's layer to compute 
+the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 In this case, it can be verified from equations \ref{eq:diff-operators-generic} and \ref{eq:transformed-field-continuous-layer-single-step} 
 that the computed transformed field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) 
 approximates the RTP anomaly.
 
-Besides, our theoretical formulation offers the theoretical link between the RTP in the space domain, 
+We can also investigate the theoretical link between the RTP in the space domain, 
 via equivalent-layer technique, and in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
 As we have already discussed, the transformed field $f_{\varepsilon}$ computed via \ref{eq:transformed-field-continuous-layer-Fourier} 
 from a previously defined equivalent layer $\tilde{p}_{\varepsilon}$ can also be directly 
-computed from the observed potential field $d^{o}$ according to equation \ref{eq:transformed-field-continuous-layer-single-step}, 
+computed from the observed potential field $d^{o}$ via equation \ref{eq:transformed-field-continuous-layer-single-step}, 
 in terms of the ratio $\nicefrac{\alpha_{f}}{\alpha_{d}}$.
 To compute the RTP, we set $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equations \ref{eq:observed-data-Fourier} 
 and \ref{eq:diff-operators-generic}) and $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equation \ref{eq:diff-operators-generic}).
 By using these specific $\alpha_{d}$ and $\alpha_{f}$, setting $z^{\ddagger}_{0} = z^{\dagger}_{0}$ and letting $k_{\varepsilon}$ goes to infinity 
 in equation \ref{eq:transformed-field-continuous-layer-single-step}, we finally deduce the expression representing the
 classical approach to compute the RTP in the Fourier domain \citep[e.g., ][ p. 331]{blakely1996}.
-This theoretical link between the space- and Fourier-domain approaches to compute the RTP 
-gives, for the first time, the reason by which the equivalent-layer technique ultimately suffers the same instability as 
-the Fourier-domain RTP operator at low latitudes, as have already been pointed out by \citet{li_etal2014}.
+We would like to stress two important aspects of this result. The first concerns the theoretical link 
+between the space- and Fourier-domain approaches to compute the RTP. To the authors knowledge, this link have never been fully 
+detailed in the literature.
+The second important aspect of our theoretical approach is that it provides the 
+reason by which the equivalent-layer technique ultimately suffers the same instability as 
+the Fourier-domain RTP operator at low latitudes. In this case, the estimated equivalent layer of dipoles 
+present striations, as have already been pointed out by \citet{li_etal2014}. 
+These artifacts are directly related to the term 
+$\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)}$ 
+in equation \ref{eq:p-Fourier-dipoles}. This term produces, in the equivalent layer of dipoles, the same 
+numerical instability caused by the term $\nicefrac{\alpha_{f}}{\alpha_{d}}$ in equation \ref{eq:transformed-field-Fourier},
+which is the base of the classical approach to compute the RTP in the Fourier domain \citep[e.g., ][ p. 331]{blakely1996}.
 
-PAREI AQUI
 
 \subsection{Generalized equivalent sources}
 
