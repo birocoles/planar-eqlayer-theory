@@ -31,7 +31,7 @@ a space domain representation of $U_{\varepsilon}$ given by
 	D(\ell, \hat{\mathbf{z}}) U_{\varepsilon}(\mathbf{r}'') \:\:
 	D(1-\ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'') 
 	\:\: d\mathcal{S}'' \: , 
-	\quad \forall z < z^{t}_{0} \: , \quad \forall z < z''_{0} \: ,
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: ,
 	\quad \ell \in \{ 0, 1 \} \: ,
 	\label{eq:potential-U-epsilon-space}
 \end{equation}
@@ -98,7 +98,7 @@ $\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we get
 pointwise and, consequently, that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} U_{\varepsilon}(\mathbf{r}) = 
-	U(\mathbf{r}) \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-potential-U-epsilon-space}
 \end{equation}
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
@@ -162,16 +162,16 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 		\begin{split}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert 
-		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+		d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
 		\vert^{2} 
 		\: d\mathcal{S}^{\dagger} = 
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: d k_{x} \, d k_{y} \\
 		= \int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
+		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
 		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: k \: d k \, d \theta \: .
@@ -180,16 +180,16 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 	\end{equation}
 	Since $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \, k$ is square integrable on $\mathcal{S}^{\dagger}$, we may choose 
 	a finite but sufficiently large $k_{\varepsilon} < \infty$ such that 
-	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
 	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	\le \varepsilon$. This leads to the conclusion that $p_{\varepsilon}$ is a continuous equivalent layer. 
 	If the layer plane is above the sources (i.e., if $z''_{0} < z^{t}_{0}$), then both 
 	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable
 	even for the choice $k_{\varepsilon} = \infty$. Then, in that case, 
-	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
 	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	= 0$ and $p_{\varepsilon}$ yields a predicted field $d_{\varepsilon}$ that exactly reproduces the observed field $d^{o}$ 
 	on $\mathcal{S}^{\dagger}$.
 \end{proof}
@@ -204,7 +204,7 @@ However, it is possible to combine the upper bounds defined in Appendix A
 with the right-hand side of equation \ref{eq:Plancherel} to show that
 \begin{equation}
 	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	\le \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
 	\label{eq:Plancherel-epsilon}
 \end{equation}
@@ -252,17 +252,17 @@ on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$.
 Namely, it follows from equation \ref{eq:potential-U-Fourier} that
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger})
+	\vert d^{o}(\mathbf{r}^{\ddagger}) - d_{\varepsilon}(\mathbf{r}^{\ddagger})
 	\vert^{2} \: d\mathcal{S}^{\ddagger} \le
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+	\vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
 	\vert^{2} \: d\mathcal{S}^{\dagger} \: ,
 	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
 	\label{eq:error-bound-upper-planes}
 \end{equation}
 Thus, if $p_{\varepsilon}$ produces a $d_{\varepsilon}$ satisfying 
-$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
 \vert^{2} \: d\mathcal{S}^{\dagger} \le \varepsilon$, then it automatically holds that 
-$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger}) 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\ddagger}) - d_{\varepsilon}(\mathbf{r}^{\ddagger}) 
 \vert^{2} \: d\mathcal{S}^{\ddagger} \le \varepsilon$.
 

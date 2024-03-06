@@ -7,22 +7,24 @@ The main geometric objects used along the present work are shown in Figure \ref{
 We consider a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
 We also assume to have a set of 3D gravity or magnetic sources with top at the vertical coordinate $z^{t}_{0}$, 
-located in the subsurface over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$, where 
-$\mathcal{V} \subset \mathbb{R}^{3}$ is a \textit{regular region} with boundary
-$\partial \mathcal{V}$. 
-Some important properties of $\mathcal{V}$ in this case is that it is an open connected set of points 
-and $\partial \mathcal{V}$ is a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+over a domain $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$ 
+defined by the union of $\mathcal{V} \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}$,
+where $\mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}_{\nu}$ is a finite collection of $N_{\nu}$ 
+disjoint \textit{regular regions} $\overline{\mathcal{V}}_{\nu}$, each one with a boundary $\partial \mathcal{V}_{\nu}$,
+so that $\partial \mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}_{\nu}$.
+Some important properties are that each $\mathcal{V}_{\nu}$ is an open connected set of points with boundary 
+$\partial \mathcal{V}_{\nu}$ defined by a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
 Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
 
 We also consider to have potential field observations at generic points 
 $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ or at a finite set of points 
 $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}}$, $i \in \{ 1, \dots, N \}$, 
-located above the sources, i.e., with vertical coordinates satisfying $\forall z < z^{t}_{0}$ and 
-$\forall z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
+located above the sources, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and 
+$z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
 
 Specific horizontal surfaces are defined by $\mathcal{S}$, with a particular superscript symbol. 
 The horizontal surface $\mathcal{S}''$, for example, is defined at a vertical coordinate $z''_{0}$ below the 
-observation points, so that $\forall z < z''_{0}$ and $\forall z_{i} < z''_{0}$. 
+observation points, so that $ z < z''_{0}$ and $ z_{i} < z''_{0}$. 
 The subscript ``$0$'' indicates that the corresponding vertical coordinate is constant. 
 Points and elements of area on a given horizontal surface are defined by using the corresponding superscript symbol. 
 For example, we define the element of area $d\mathcal{S}'' = dx''dy''$, generic points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
@@ -120,8 +122,7 @@ $\nabla$ is the vector differential operator nabla \citep[e.g.,][ p. 179]{kaplan
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \citep{pedersen1978}.
 The differential operator $D$ (equation \ref{eq:diff-operators-generic})
-has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}, for example, where the suggested
-dot product and exponentiation actually leads to a differentiation.
+has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}.
 
 By combining successive applications of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 with properly chosen $\ell$ and $\hat{\mathbf{u}}$, we may define differential operators that 
@@ -254,7 +255,7 @@ Because of these properties, we have that
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	D(\ell, \hat{\mathbf{z}}) U(\mathbf{r}'') \:\: 
 	D(1 - \ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
-	\: d\mathcal{S}'' \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
+	\: d\mathcal{S}'' \: , \quad  z < z''_{0} < z^{t}_{0} \: ,
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
