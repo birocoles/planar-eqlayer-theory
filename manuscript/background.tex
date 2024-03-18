@@ -42,7 +42,7 @@ $x$ and $y$ directions, respectively, is conveniently omitted to simplify the no
 \subsection{Potential fields due to 3D sources}
 \label{sec:potential_fields_3D_sources}
 
-We define the potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
+We define the potential field data $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
 $\mathbf{r}$ (Figure \ref{fig:geometry}) by
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
@@ -71,7 +71,7 @@ we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and b
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-The Fourier transform of the potential field $d^{o}$ (equation \ref{eq:observed-data-space}) 
+The Fourier transform of the potential field data $d^{o}$ (equation \ref{eq:observed-data-space}) 
 on a horizontal surface above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
@@ -101,7 +101,7 @@ $U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, with $k = 
 	\label{eq:sigma-Fourier}
 \end{equation}
 is the Fourier transform of $\sigma(\mathbf{r}')$ 
-(equation \ref{eq:potential-U-space}) on the horizontal plane at the vertical
+(the sources physical property) on the horizontal plane at the vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
 In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
@@ -224,7 +224,7 @@ is commonly used to approximate the \textit{total-field anomaly} produced by 3D 
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 Because of that, we use the term \textit{approximated total-field anomaly} to denote this 
-potential field throughout the manuscript.
+potential field throughout the article.
 Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}) can be used to define (i) the  
 \textit{Cartesian components of the magnetic induction field} produced due to the 3D
@@ -362,11 +362,9 @@ in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a plan
 located above the sources, at $z^{\dagger}_{0}$. 
 The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
 transform of \ref{eq:field-transformation-Fourier}.
-For the sake of simplicity, we have opted for defining the fields $d^{o}$ and $f$ at the same points in equation 
-\ref{eq:field-transformation-Fourier}.
-However, it is important to stress that, depending on the 
-geophysical application, $f$ may be estimated at points different from those at which the observations are 
-placed.
+For simplicity, both fields $d^o$ and $f$ are defined at the same points in equation \ref{eq:field-transformation-Fourier}, 
+although it's worth noting that, in certain geophysical contexts, $f$ may be estimated at different locations from 
+where potential-field data were measured.
 
 The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
 space domain to compute potential-field transformations. What follows aims at discussing the well-established 
