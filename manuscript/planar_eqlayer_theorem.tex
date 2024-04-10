@@ -198,10 +198,31 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 
 The above theorem guarantees the existence of an approximate equivalent layer, even if
 the layer crosses the sources, i.e., if $z''_{0} > z^{t}_{0}$.
-But it does not provide any guidance on the particular choice of the truncating wave number $k_{\varepsilon}$ 
-for the construction of $p_{\varepsilon}$.
-However, it is possible to combine the upper bounds defined in Appendix A 
-with the right-hand side of equation \ref{eq:Plancherel} to show that
+But it does not provide any guidance on the particular choice of the truncating wavenumber $k_{\varepsilon}$ 
+for the construction of $p_{\varepsilon}$, with a given accuracy level $\varepsilon$ (Definition \ref{def:continuous-eqlayer}).
+Here, we present a connection between $k_{\varepsilon}$ and $\varepsilon$ by combining the 
+upper bounds defined in Appendix A with the right-hand side of equation \ref{eq:Plancherel}.
+We start by using the upper bound for $\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ 
+(equation \ref{eq:observed-data-spectrum-bound}) and defining an upper bound for $\vert \alpha_{d} \vert$ 
+according to equation \ref{eq:alpha-upper-bound} to obtain:
+\begin{equation}
+	\begin{split}
+		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		\: k \: d k \, d \theta 
+		&\le \int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+		\vert \alpha_{d} \vert^{2} \, \Omega^{2} \, \left( \tfrac{e^{- \Delta z \, k }}{k} \right)^{2}
+		\: k \: d k \, d \theta \\
+		&\le \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
+		\int\limits_{k_{\varepsilon}}^{\infty}
+		k^{2q - 1} \: e^{- 2 \, \Delta z \, k } \: (2 \, \Delta z)^{2q}
+		\: k \: d k
+	\end{split} \: ,
+	\label{eq:aux1-epsilon}
+\end{equation}
+with $\Omega$ given by equation \ref{eq:Omega}.
+Finally, we use the new variable $t = 2 \, \Delta z \, k$ to rewrite the integrand on the second line of equation 
+\ref{eq:aux1-epsilon} and get
 \begin{equation}
 	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
 	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
@@ -215,8 +236,7 @@ where
 	\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
 	\label{eq:epsilon}
 \end{equation}
-is a real function depending on $\Omega$ (Apendix A, equation \ref{eq:Omega}) and the Incomplete Gamma function 
-\citep[][ p. 899]{gradshteyn_ryzhik2007}
+is a real function depending on the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}
 \begin{equation}
 	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
 	\int\limits_{k_{\varepsilon}}^{\infty}
@@ -224,11 +244,13 @@ is a real function depending on $\Omega$ (Apendix A, equation \ref{eq:Omega}) an
 	\: d k \: ,
 	\label{eq:incomplete-Gamma-function}
 \end{equation}
-with $q$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}). 
+with $q = \ell + m + n$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}). 
 According to equation \ref{eq:epsilon}, if we have some a priori bounds 
 on the physical-property distribution and position of the true sources, we get a connection between the choice of 
 $k_{\varepsilon}$ and the desired accuracy level $\varepsilon$. 
 This can potentially support an estimation of the truncating wave number $k_{\varepsilon}$.
+
+PAREI AQUI
 
 \subsubsection{Remark 2}
 
