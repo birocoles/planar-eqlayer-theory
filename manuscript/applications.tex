@@ -4,7 +4,7 @@ In the present section, we discuss the implications and relations of our
 theoretical results to well-established empirical approaches commonly found 
 in the geophysical literature about the equivalent-layer technique.
 
-\subsection{Application to gravity-gradient data}
+\subsection{Joint processing of gravity-gradient data}
 
 The common approach to jointly process gravity-gradient data 
 \cite[e.g.,][]{boggs-dransfield2004,barnes_lumley2011, martinez_li_2016} or to convert gravity disturbance data into the 
@@ -43,40 +43,21 @@ gradient data via equivalent-layer technique can be theoretically explained as a
 a particular Neumann's equivalent layer (Definition \ref{def:eql-Neumann}).
 
 
-\subsection{Classical RTP}
+\subsection{The existence of a planar dipole layer}
+
 
 A predominant trend in previous studies utilizing a planar equivalent layer of dipoles for magnetic-field transformations 
 is to treat the layer as a purely mathematical abstraction employed for processing total-field anomaly data, 
 a perspective exemplified by the remarks of \citet{pedersen1989} concerning the research of 
 \citet{bhattacharyya_chan1977}.
-Relatively few studies \citep[e.g.,][]{pedersen1991, li_etal2014, reis_etal2020} have addressed the theoretical 
+Specifically, Pedersen pointed out that the first fundamental existence theorem for the Dirichlet's 
+problem does not postulate that a general solution can be written as a layer of dipoles magnetized along its 
+normal direction. In essence, Pedersen underscored that a dipole layer lacks physical significance.
+In response, Chan affirmed that such a layer was employed solely to address an integral equation, i.e., 
+as a purely mathematical solution.
+Since then, relatively few studies \citep[e.g.,][]{pedersen1991, li_etal2014, reis_etal2020} have addressed the theoretical 
 properties of a planar layer of dipoles capable of accurately reproducing total-field anomaly data.
-
-Let us consider, for example, the common two-step approach to compute the RTP in the space domain, 
-from total-field anomaly data, according to the pioneer work of \citet{silva1986}.
-In this common approach, 
-the first step consists in estimating the magnetic-moment intensity distribution on a planar layer 
-with constant magnetization direction equal to that of the true sources.
-The second step consists in computing the $z$-component of the magnetic induction field due 
-to the estimated layer by setting its magnetization along the vertical direction.
-It is usually verified a posteriori that this computed field approximates the true RTP anomaly.
-
-We call attention to the fact that 
-\citet{silva1986} cites the work of \citet{roy1962} to justify that ``the magnetic 
-field due to arbitrary sources can be exactly fitted by the magnetic field due to a horizontal equivalent
-layer of dipoles''. 
-However, \citeauthor{roy1962} neither discussed the existence of a dipole layer that fits the observed total-field 
-anomaly data nor its use to retrieve the RTP anomaly, but 
-presented a general outline to deduce the solutions of the Dirichlet's and Neumann's problems on a plane 
-located above the sources (equation \ref{eq:U-Dirichlet-Neumann}).
-In other words, the two-step approach proposed by \citet{silva1986}, which is widely accepted by the scientific community 
-and we know to be correct from practice 
-\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}, 
-is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work. 
-It also important to point out that the mathematical equivalence between the space-domain approach to compute the 
-RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
-total-field anomaly data \citep[e.g., ][ p. 331]{blakely1996} have never been clearly established in the literature.
-Here, we provide a general approach aiming at filling these theoretical gaps.
+Here, we use our theoretical approach to deduce the existence of equivalent layers formed by dipoles.
 
 Consider that (i) the observed potential field $d^{o}$ 
 is satisfactorily described by the directional derivative $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
@@ -111,6 +92,40 @@ It can also be easily verified that the same $p_{\varepsilon}$ given by equation
 \ref{eq:p-Fourier-dipoles} can be equally deduced if we consider that the 
 observed potential field is the magnetic scalar potential. In this case, $\alpha_{d}$ and $\alpha_{a}$ are defined
 without the term $\alpha(1, \hat{\mathbf{u}})$.
+
+PAREI AQUI
+
+
+\subsection{Computing the RTP by using a dipole layer}
+
+
+Let us consider, for example, the common two-step approach to compute the RTP in the space domain, 
+from total-field anomaly data, according to the pioneer work of \citet{silva1986}.
+In this common approach, 
+the first step consists in estimating the magnetic-moment intensity distribution on a planar layer 
+with constant magnetization direction equal to that of the true sources.
+The second step consists in computing the $z$-component of the magnetic induction field due 
+to the estimated layer by setting its magnetization along the vertical direction.
+It is usually verified a posteriori that this computed field approximates the true RTP anomaly.
+
+We call attention to the fact that 
+\citet{silva1986} cites the work of \citet{roy1962} to justify that ``the magnetic 
+field due to arbitrary sources can be exactly fitted by the magnetic field due to a horizontal equivalent
+layer of dipoles''. 
+However, \citeauthor{roy1962} neither discussed the existence of a dipole layer that fits the observed total-field 
+anomaly data nor its use to retrieve the RTP anomaly, but 
+presented a general outline to deduce the solutions of the Dirichlet's and Neumann's problems on a plane 
+located above the sources (equation \ref{eq:U-Dirichlet-Neumann}).
+In other words, the two-step approach proposed by \citet{silva1986}, which is widely accepted by the scientific community 
+and we know to be correct from practice 
+\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}, 
+is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work. 
+It also important to point out that the mathematical equivalence between the space-domain approach to compute the 
+RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
+total-field anomaly data \citep[e.g., ][ p. 331]{blakely1996} have never been clearly established in the literature.
+Here, we provide a general approach aiming at filling these theoretical gaps.
+
+
 
 %\begin{proposition}
 %	An equivalent layer $p_{\varepsilon}$ of dipoles defined in terms of magnetic data produced 

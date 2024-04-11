@@ -220,9 +220,10 @@ according to equation \ref{eq:alpha-upper-bound} to obtain:
 	\end{split} \: ,
 	\label{eq:aux1-epsilon}
 \end{equation}
-with $\Omega$ given by equation \ref{eq:Omega}.
-Finally, we use the new variable $t = 2 \, \Delta z \, k$ to rewrite the integrand on the second line of equation 
-\ref{eq:aux1-epsilon} and get
+with $\Omega$ given by equation \ref{eq:Omega} and $q = \ell + m + n$ being the order of the 
+differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}).
+Then we rewrite the last integral in equation \ref{eq:aux1-epsilon} by using 
+a new variable $t = 2 \, \Delta z \, k$ to get
 \begin{equation}
 	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
 	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
@@ -238,25 +239,22 @@ where
 \end{equation}
 is a real function depending on the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}
 \begin{equation}
-	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
-	\int\limits_{k_{\varepsilon}}^{\infty}
-	e^{- 2 \, \Delta z \, k } \, k^{2q-1} \, (2 \, \Delta z)^{2q} 
-	\: d k \: ,
+	\Gamma(\beta \: , \: t_{\varepsilon}) = 
+	\int\limits_{t_{\varepsilon}}^{\infty}
+	e^{- t } \, k^{\beta-1} \: d t \: ,
 	\label{eq:incomplete-Gamma-function}
 \end{equation}
-with $q = \ell + m + n$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}). 
+with $dt = 2 \, \Delta z \, dk$, $\beta = 2 \, q$ and $t_{\varepsilon} = 2 \, \Delta z \, k_{\varepsilon}$.
 According to equation \ref{eq:epsilon}, if we have some a priori bounds 
 on the physical-property distribution and position of the true sources, we get a connection between the choice of 
 $k_{\varepsilon}$ and the desired accuracy level $\varepsilon$. 
-This can potentially support an estimation of the truncating wave number $k_{\varepsilon}$.
-
-PAREI AQUI
+This can potentially support an estimation of the truncating wavenumber $k_{\varepsilon}$.
 
 \subsubsection{Remark 2}
 
 The truncating wavenumber $k_{\varepsilon}$ plays a central role in the planar equivalent-layer theorem 
 (Theorem \ref{theorem:planar-eqlayer-theorem}).
-We would like to highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
+We highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
 practical situations. In fact, obtaining a discrete equivalent layer (Definition \ref{def:discrete-eqlayer}) 
 does not strictly imply a truncation of the wavenumber at some maximal $k_{\varepsilon}$, 
 but it leads to an exponentially fast decay at sufficiently large wavenumbers. 
@@ -269,7 +267,7 @@ the equivalent-layer technique applicably even when the layer plane crosses the 
 
 The equivalent layer from Theorem \ref{theorem:planar-eqlayer-theorem} leads to a predicted 
 potential field that does not satisfy
-the error bound \ref{eq:epsilon-bound-data} only on the surface $\mathcal{S}^{\dagger}$, but also 
+the error bound $\varepsilon$ (equation \ref{eq:epsilon-bound-data}) only on the surface $\mathcal{S}^{\dagger}$, but also 
 on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$. 
 Namely, it follows from equation \ref{eq:potential-U-Fourier} that
 \begin{equation}
