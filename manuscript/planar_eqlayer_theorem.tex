@@ -31,7 +31,7 @@ a space domain representation of $U_{\varepsilon}$ given by
 	D(\ell, \hat{\mathbf{z}}) U_{\varepsilon}(\mathbf{r}'') \:\:
 	D(1-\ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'') 
 	\:\: d\mathcal{S}'' \: , 
-	\quad \forall z < z^{t}_{0} \: , \quad \forall z < z''_{0} \: ,
+	\quad z < z^{t}_{0} \: , \quad z < z''_{0} \: ,
 	\quad \ell \in \{ 0, 1 \} \: ,
 	\label{eq:potential-U-epsilon-space}
 \end{equation}
@@ -83,7 +83,7 @@ In this case, we obtain an approximating potential $U_{\varepsilon}$ that coinci
 potential $U$ up to the truncating wavenumber $k_{\varepsilon}$ 
 (equation \ref{eq:potential-U-epsilon-Fourier-dagger2}). 
 At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
-goes to infinite in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which 
+go to infinity in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which 
 $\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we get 
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
@@ -98,7 +98,7 @@ $\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we get
 pointwise and, consequently, that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} U_{\varepsilon}(\mathbf{r}) = 
-	U(\mathbf{r}) \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
 	\label{eq:lim-kepsilon-potential-U-epsilon-space}
 \end{equation}
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
@@ -162,16 +162,16 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 		\begin{split}
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert 
-		d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+		d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
 		\vert^{2} 
 		\: d\mathcal{S}^{\dagger} = 
 		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: d k_{x} \, d k_{y} \\
 		= \int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
+		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
 		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
 		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
 		\: k \: d k \, d \theta \: .
@@ -180,16 +180,14 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 	\end{equation}
 	Since $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \, k$ is square integrable on $\mathcal{S}^{\dagger}$, we may choose 
 	a finite but sufficiently large $k_{\varepsilon} < \infty$ such that 
-	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
-	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	$\int_{0}^{2\pi} \int_{k_{\varepsilon}}^{\infty} \vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	\le \varepsilon$. This leads to the conclusion that $p_{\varepsilon}$ is a continuous equivalent layer. 
 	If the layer plane is above the sources (i.e., if $z''_{0} < z^{t}_{0}$), then both 
 	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable
 	even for the choice $k_{\varepsilon} = \infty$. Then, in that case, 
-	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
 	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	= 0$ and $p_{\varepsilon}$ yields a predicted field $d_{\varepsilon}$ that exactly reproduces the observed field $d^{o}$ 
 	on $\mathcal{S}^{\dagger}$.
 \end{proof}
@@ -198,13 +196,35 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 
 The above theorem guarantees the existence of an approximate equivalent layer, even if
 the layer crosses the sources, i.e., if $z''_{0} > z^{t}_{0}$.
-But it does not provide any guidance on the particular choice of the truncating wave number $k_{\varepsilon}$ 
-for the construction of $p_{\varepsilon}$.
-However, it is possible to combine the upper bounds defined in Appendix A 
-with the right-hand side of equation \ref{eq:Plancherel} to show that
+But it does not provide any guidance on the particular choice of the truncating wavenumber $k_{\varepsilon}$ 
+for the construction of $p_{\varepsilon}$, with a given accuracy level $\varepsilon$ (Definition \ref{def:continuous-eqlayer}).
+Here, we present a connection between $k_{\varepsilon}$ and $\varepsilon$ by combining the 
+upper bounds defined in Appendix A with the right-hand side of equation \ref{eq:Plancherel}.
+We start by using the upper bound for $\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ 
+(equation \ref{eq:observed-data-spectrum-bound}) and defining an upper bound for $\vert \alpha_{d} \vert$ 
+according to equation \ref{eq:alpha-upper-bound} to obtain:
+\begin{equation}
+	\begin{split}
+		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
+		\: k \: d k \, d \theta 
+		&\le \int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
+		\vert \alpha_{d} \vert^{2} \, \Omega^{2} \, \left( \tfrac{e^{- \Delta z \, k }}{k} \right)^{2}
+		\: k \: d k \, d \theta \\
+		&\le \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
+		\int\limits_{k_{\varepsilon}}^{\infty}
+		k^{2q - 1} \: e^{- 2 \, \Delta z \, k } \: (2 \, \Delta z)^{2q}
+		\: k \: d k
+	\end{split} \: ,
+	\label{eq:aux1-epsilon}
+\end{equation}
+with $\Omega$ given by equation \ref{eq:Omega} and $q = \ell + m + n$ being the order of the 
+differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}).
+Then we rewrite the last integral in equation \ref{eq:aux1-epsilon} by using 
+a new variable $t = 2 \, \Delta z \, k$ to get
 \begin{equation}
 	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	\le \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
 	\label{eq:Plancherel-epsilon}
 \end{equation}
@@ -215,26 +235,24 @@ where
 	\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
 	\label{eq:epsilon}
 \end{equation}
-is a real function depending on $\Omega$ (Apendix A, equation \ref{eq:Omega}) and the Incomplete Gamma function 
-\citep[][ p. 899]{gradshteyn_ryzhik2007}
+is a real function depending on the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}
 \begin{equation}
-	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) = 
-	\int\limits_{k_{\varepsilon}}^{\infty}
-	e^{- 2 \, \Delta z \, k } \, k^{2q-1} \, (2 \, \Delta z)^{2q} 
-	\: d k \: ,
+	\Gamma(\beta \: , \: t_{\varepsilon}) = 
+	\int\limits_{t_{\varepsilon}}^{\infty}
+	e^{- t } \, k^{\beta-1} \: d t \: ,
 	\label{eq:incomplete-Gamma-function}
 \end{equation}
-with $q$ being the order of the differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}). 
+with $dt = 2 \, \Delta z \, dk$, $\beta = 2 \, q$ and $t_{\varepsilon} = 2 \, \Delta z \, k_{\varepsilon}$.
 According to equation \ref{eq:epsilon}, if we have some a priori bounds 
 on the physical-property distribution and position of the true sources, we get a connection between the choice of 
 $k_{\varepsilon}$ and the desired accuracy level $\varepsilon$. 
-This can potentially support an estimation of the truncating wave number $k_{\varepsilon}$.
+This can potentially support an estimation of the truncating wavenumber $k_{\varepsilon}$.
 
 \subsubsection{Remark 2}
 
 The truncating wavenumber $k_{\varepsilon}$ plays a central role in the planar equivalent-layer theorem 
 (Theorem \ref{theorem:planar-eqlayer-theorem}).
-We would like to highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
+We highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
 practical situations. In fact, obtaining a discrete equivalent layer (Definition \ref{def:discrete-eqlayer}) 
 does not strictly imply a truncation of the wavenumber at some maximal $k_{\varepsilon}$, 
 but it leads to an exponentially fast decay at sufficiently large wavenumbers. 
@@ -247,22 +265,22 @@ the equivalent-layer technique applicably even when the layer plane crosses the 
 
 The equivalent layer from Theorem \ref{theorem:planar-eqlayer-theorem} leads to a predicted 
 potential field that does not satisfy
-the error bound \ref{eq:epsilon-bound-data} only on the surface $\mathcal{S}^{\dagger}$, but also 
+the error bound $\varepsilon$ (equation \ref{eq:epsilon-bound-data}) only on the surface $\mathcal{S}^{\dagger}$, but also 
 on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$. 
 Namely, it follows from equation \ref{eq:potential-U-Fourier} that
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger})
+	\vert d^{o}(\mathbf{r}^{\ddagger}) - d_{\varepsilon}(\mathbf{r}^{\ddagger})
 	\vert^{2} \: d\mathcal{S}^{\ddagger} \le
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-	\vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger})
+	\vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
 	\vert^{2} \: d\mathcal{S}^{\dagger} \: ,
 	\quad z^{\ddagger}_{0} < z^{\dagger}_{0} \: .
 	\label{eq:error-bound-upper-planes}
 \end{equation}
 Thus, if $p_{\varepsilon}$ produces a $d_{\varepsilon}$ satisfying 
-$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d(\mathbf{r}^{\dagger}) 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
 \vert^{2} \: d\mathcal{S}^{\dagger} \le \varepsilon$, then it automatically holds that 
-$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\ddagger}) - d(\mathbf{r}^{\ddagger}) 
+$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\ddagger}) - d_{\varepsilon}(\mathbf{r}^{\ddagger}) 
 \vert^{2} \: d\mathcal{S}^{\ddagger} \le \varepsilon$.
 

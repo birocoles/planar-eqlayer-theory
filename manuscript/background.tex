@@ -7,26 +7,28 @@ The main geometric objects used along the present work are shown in Figure \ref{
 We consider a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
 We also assume to have a set of 3D gravity or magnetic sources with top at the vertical coordinate $z^{t}_{0}$, 
-located in the subsurface over $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$, where 
-$\mathcal{V} \subset \mathbb{R}^{3}$ is a \textit{regular region} with boundary
-$\partial \mathcal{V}$. 
-Some important properties of $\mathcal{V}$ in this case is that it is an open connected set of points 
-and $\partial \mathcal{V}$ is a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+over a domain $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$ 
+defined by the union of $\mathcal{V} \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}$,
+where $\mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}_{\nu}$ is a finite collection of $N_{\nu}$ 
+disjoint \textit{regular regions} $\overline{\mathcal{V}}_{\nu}$, each one with a boundary $\partial \mathcal{V}_{\nu}$,
+so that $\partial \mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}_{\nu}$.
+Some important properties are that each $\mathcal{V}_{\nu}$ is an open connected set of points with boundary 
+$\partial \mathcal{V}_{\nu}$ defined by a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
 Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
 
 We also consider to have potential field observations at generic points 
 $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ or at a finite set of points 
 $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}}$, $i \in \{ 1, \dots, N \}$, 
-located above the sources, i.e., with vertical coordinates satisfying $\forall z < z^{t}_{0}$ and 
-$\forall z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
+located above the sources, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and 
+$z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
 
-Specific horizontal surfaces are defined by $\mathcal{S}$, with a particular superscript symbol. 
+Specific horizontal surfaces are denoted by $\mathcal{S}$, with a particular superscript symbol. 
 The horizontal surface $\mathcal{S}''$, for example, is defined at a vertical coordinate $z''_{0}$ below the 
-observation points, so that $\forall z < z''_{0}$ and $\forall z_{i} < z''_{0}$. 
+observation points, so that $ z < z''_{0}$ and $ z_{i} < z''_{0}$. 
 The subscript ``$0$'' indicates that the corresponding vertical coordinate is constant. 
-Points and elements of area on a given horizontal surface are defined by using the corresponding superscript symbol. 
-For example, we define the element of area $d\mathcal{S}'' = dx''dy''$, generic points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
-and also a finite set of points $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top} \in \mathcal{S}''$,
+Points and elements of area on a given horizontal surface are denoted by using the corresponding superscript symbol. 
+For example, we denote the element of area by $d\mathcal{S}'' = dx''dy''$, generic points by $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
+and also a finite set of points by $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top} \in \mathcal{S}''$,
 $j \in \{ 1, \dots, M \}$.
 
 Finally, all Fourier transforms computed here are defined on horizontal surfaces, with respect to the 
@@ -40,7 +42,7 @@ $x$ and $y$ directions, respectively, is conveniently omitted to simplify the no
 \subsection{Potential fields due to 3D sources}
 \label{sec:potential_fields_3D_sources}
 
-We define the potential field $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
+We define the potential field data $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
 $\mathbf{r}$ (Figure \ref{fig:geometry}) by
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
@@ -69,7 +71,7 @@ we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and b
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
 $\mathbf{r}' \in \overline{\mathcal{V}}$.
 
-The Fourier transform of the potential field $d^{o}$ (equation \ref{eq:observed-data-space}) 
+The Fourier transform of the potential field data $d^{o}$ (equation \ref{eq:observed-data-space}) 
 on a horizontal surface above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
@@ -99,7 +101,7 @@ $U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, with $k = 
 	\label{eq:sigma-Fourier}
 \end{equation}
 is the Fourier transform of $\sigma(\mathbf{r}')$ 
-(equation \ref{eq:potential-U-space}) on the horizontal plane at the vertical
+(the sources physical property) on the horizontal plane at the vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
 In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
@@ -120,8 +122,7 @@ $\nabla$ is the vector differential operator nabla \citep[e.g.,][ p. 179]{kaplan
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \citep{pedersen1978}.
 The differential operator $D$ (equation \ref{eq:diff-operators-generic})
-has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}, for example, where the suggested
-dot product and exponentiation actually leads to a differentiation.
+has a symbolic form based on that used by \citet[][ p. 179]{kaplan2002}.
 
 By combining successive applications of $D(\ell, \hat{\mathbf{u}})$ (equation \ref{eq:diff-operators-generic})
 with properly chosen $\ell$ and $\hat{\mathbf{u}}$, we may define differential operators that 
@@ -223,7 +224,7 @@ is commonly used to approximate the \textit{total-field anomaly} produced by 3D 
 where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources.
 Because of that, we use the term \textit{approximated total-field anomaly} to denote this 
-potential field throughout the manuscript.
+potential field throughout the article.
 Note that, in this case, $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}) can be used to define (i) the  
 \textit{Cartesian components of the magnetic induction field} produced due to the 3D
@@ -254,7 +255,7 @@ Because of these properties, we have that
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
 	D(\ell, \hat{\mathbf{z}}) U(\mathbf{r}'') \:\: 
 	D(1 - \ell, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'')
-	\: d\mathcal{S}'' \: , \quad \forall z < z''_{0} < z^{t}_{0} \: ,
+	\: d\mathcal{S}'' \: , \quad  z < z''_{0} < z^{t}_{0} \: ,
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
@@ -361,11 +362,9 @@ in terms of the observed potential field $d^{o}(\mathbf{r}^{\dagger})$ on a plan
 located above the sources, at $z^{\dagger}_{0}$. 
 The transformed field $f$ in the space domain is obtained by simply computing the inverse Fourier 
 transform of \ref{eq:field-transformation-Fourier}.
-For the sake of simplicity, we have opted for defining the fields $d^{o}$ and $f$ at the same points in equation 
-\ref{eq:field-transformation-Fourier}.
-However, it is important to stress that, depending on the 
-geophysical application, $f$ may be estimated at points different from those at which the observations are 
-placed.
+For simplicity, both fields $d^o$ and $f$ are defined at the same points in equation \ref{eq:field-transformation-Fourier}, 
+although it's worth noting that, in certain geophysical contexts, $f$ may be estimated at different locations from 
+where potential-field data were measured.
 
 The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
 space domain to compute potential-field transformations. What follows aims at discussing the well-established 

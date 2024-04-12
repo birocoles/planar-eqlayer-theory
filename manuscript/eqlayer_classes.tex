@@ -31,7 +31,7 @@ In this case, the corresponding predicted field (equation \ref{eq:predicted-data
 	d_{\varepsilon}(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p_{\varepsilon}(\mathbf{r}'') \: \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad \forall z < z''_{0} \: .
+	\: , \quad z < z''_{0} \: .
 	\label{eq:predicted-data-Dirichlet-layer}
 \end{equation}
 From the physical point of view, this $d_{\varepsilon}$ is analogous
@@ -107,8 +107,9 @@ from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-c
 	which is the product of a real function and $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$.
 	Since $\alpha_{r}$ does not depend on $\alpha_{d}$, $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ does not 
 	depend on $\alpha_{d}$ as well. This implies that the phase spectrum of $p_{\varepsilon}$ coincides 
-	with that of potential $U$ up to the truncating wavenumber $k_{\varepsilon}$, thereby corresponding to the 
-	phase spectrum associated with the spatial distribution of the true sources up to the same $k_{\varepsilon}$.
+	with that of potential $U$ up to the truncating wavenumber $k_{\varepsilon}$, thereby corresponding to an approximation 
+	of the phase spectrum associated with the spatial distribution of the (shallow parts of the) true sources up to the 
+	same $k_{\varepsilon}$, according to Appendix B.
 \end{proof}
 
 Equivalent layers having minimum phase changes (Definition \ref{def:eql-min-phase}) may present intricate 
@@ -140,9 +141,8 @@ have non-trivial representations in the space domain.
 	\label{prop:eql-Neumann}
 \end{proposition}
 \begin{proof}
-	Comparing equation \ref{eq:U-Dirichlet-Neumann-Fourier}, \ref{eq:Psi-Fourier}, \ref{eq:p-Fourier} and 
-	\ref{eq:p-Fourier-Neumann}, we get that $\alpha_{a} = \alpha_{d}$. 
-	This condition implies that 
+	Equation \ref{eq:p-Fourier-Neumann} is directly obtained from \ref{eq:p-Fourier}, by using 
+	$\alpha_{a} = \alpha_{d}$. It can be easily verified that, in this case, 
 	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ is a particular case of equation \ref{eq:p-Fourier-min-phase},
 	with $\alpha_{r} = 1$. Consequently, Neumann's equivalent layers have minimum phase changes
 	according to Definition \ref{def:eql-min-phase}.
@@ -154,7 +154,7 @@ due to Neumann's equivalent layers (Definition \ref{def:eql-Neumann}) assumes th
 	d_{\varepsilon}(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	p_{\varepsilon}(\mathbf{r}'') \: D_{d} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad \forall z < z''_{0} \: ,
+	\: , \quad z < z''_{0} \: ,
 	\label{eq:predicted-data-Neumann-layer}
 \end{equation}
 where $D_{d}$ is the same space-domain differential operator associated with
@@ -175,7 +175,7 @@ Hence, the corresponding transformed fields $f_{\varepsilon}$ in the space domai
 	f_{\varepsilon}(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
 	\tilde{p}_{\varepsilon}(\mathbf{r}'') \: D_{f} \Psi(\mathbf{r}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad \forall z < z''_{0} \: ,
+	\: , \quad z < z''_{0} \: ,
 	\label{eq:transformed-field-continuous-layer-Neumann}
 \end{equation}
 where $D_{f}$ is the space-domain representation of the differential operator $\alpha_{f}$ 
