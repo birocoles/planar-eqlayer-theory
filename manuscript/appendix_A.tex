@@ -1,30 +1,11 @@
 \append{Some useful upper bounds}
 \label{app:upper-bounds}
 
-We present here an upper bound for the squared absolute value of 
-$\alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}})$,
-that is defined by equation \ref{eq:diff-operators-generic} using $\ell, m , n \in \{0, 1, 2\}$
-and constant unit vectors $\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$ and $\hat{\mathbf{w}}$. 
-To do this, we first convert the wavenumber $k_{x}$ and $k_{y}$ to polar coordinates 
-$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$
-to show that
-\begin{equation}
-	\begin{split}
-		\vert \alpha(\ell,\hat{\mathbf{u}}) \, \alpha(m,\hat{\mathbf{v}}) \, \alpha(n,\hat{\mathbf{w}}) \vert^{2} 
-		&= \vert (\mathbf{k} \cdot \hat{\mathbf{u}})^{\ell} \, (\mathbf{k} \cdot \hat{\mathbf{v}})^{m} \, (\mathbf{k} \cdot \hat{\mathbf{w}})^{n} \vert^{2} \\
-		&= \left[ (\mathbf{k} \cdot \hat{\mathbf{u}})^{2} \right]^{\ell} \left[ (\mathbf{k} \cdot \hat{\mathbf{v}})^{2} \right]^{m} 
-		\left[ (\mathbf{k} \cdot \hat{\mathbf{w}})^{2} \right]^{n} \\
-		&\le \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{\ell} \left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{m} 
-		\left[ k_{x}^{2} + k_{y}^{2} + k^{2} \right]^{n} \\
-		&\le 2^{q} k^{2 \, q} \: , \quad q = \ell+m+n \: ,
-		\quad \ell, m , n \in \{0, 1, 2\} \: .
-	\end{split}
-\label{eq:alpha-upper-bound}
-\end{equation}
-
-We are also interested in defining an upper bound for the absolute value
-of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (equation \ref{eq:potential-U-Fourier}), 
-i.e., for the amplitude spectrum of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}). 
+Here we define upper bounds for the absolute values
+of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
+(equations \ref{eq:potential-U-Fourier} and \ref{eq:observed-data-Fourier}), 
+i.e., for the amplitude spectra of $U(\mathbf{r})$ and $d^{o}(\mathbf{r})$ 
+(equations \ref{eq:potential-U-space} and \ref{eq:observed-data-space}). 
 To do this, we have adapted the approach presented by
 \citet{bhattacharyya1967} to define an upper bound for the amplitude spectrum of 
 $\tfrac{\partial}{\partial z} U(\mathbf{r})$. 

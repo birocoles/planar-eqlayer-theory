@@ -17,19 +17,18 @@ accurately reproduce the corresponding field components produced by the true sou
 We provide the theoretical background for these potential-field transformations.
 
 Let us consider, for example, the common two-step approach to convert gravity-disturbance into gravity
-gradient data. The first step consists in obtaining a particular equivalent layer $\tilde{p}_{\varepsilon}$ 
+gradient data. The first step consists in obtaining a particular equivalent layer $p_{\varepsilon}$ 
 by considering that the observed potential field $d^{o}$ is given by $\tfrac{\partial}{\partial z} U(\mathbf{r})$ 
 (equation \ref{eq:potential-U-1st-deriv-space}) and that the kernel function 
 $a(\mathbf{r}, \mathbf{r}'')$ is the vertical derivative of $\Psi$ (equation \ref{eq:Psi}).
-The second step consists in using $\tilde{p}_{\varepsilon}$ to compute the gradient components.
+The second step consists in using $p_{\varepsilon}$ to compute the gradient components.
 The $uv$-component of the gradient tensor is computed by setting $D_{f} \equiv \tfrac{\partial^{2}}{\partial u \, \partial v}$
 (equations \ref{eq:potential-U-2nd-deriv-space} and \ref{eq:transformed-field-continuous-layer-Neumann}),
 where $u, v \in \{ x, y, z \}$.
 
-Note that the first step consists in defining an equivalent layer $p_{\varepsilon}$ 
-(equation \ref{eq:p-Fourier}) by setting $\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}})$ 
-(equations \ref{eq:observed-data-Fourier}, \ref{eq:diff-operators-generic} and \ref{eq:kernel-a-Fourier}).
-By Definition \ref{def:eql-Neumann}, this particular $p_{\varepsilon}$ is a Neumann's equivalent layer,
+Note that the first step consists in defining an equivalent layer 
+by setting $\alpha_{d} = \alpha_{a} \equiv \alpha(1, \hat{\mathbf{z}})$ in equation \ref{eq:p-Fourier}.
+According to Definition \ref{def:eql-Neumann}, this particular $p_{\varepsilon}$ is a Neumann's equivalent layer,
 which naturally preserves the physical relationship with the true sources.
 The second step of the common approach corresponds to 
 compute transformed fields $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
@@ -79,13 +78,8 @@ $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$
 in the Fourier domain:
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
-	\begin{cases}
-		k \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
-		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \\
-		0 & , \quad k > k_{\varepsilon} 
-	\end{cases} \: .
+	k \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
+	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] \: .
 	\label{eq:p-Fourier-dipoles}
 \end{equation}
 This particular equivalent layer represents a planar layer of dipoles with constant magnetization direction
@@ -122,7 +116,7 @@ In other words, the two-step approach proposed by \citet{silva1986}, which is wi
 and we know to be correct from practice 
 \citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}, 
 is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work. 
-It also important to point out that the mathematical equivalence between the space-domain approach to compute the 
+It is also important to point out that the mathematical equivalence between the space-domain approach to compute the 
 RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
 total-field anomaly data \citep[e.g., ][ p. 331]{blakely1996} have never been clearly established in the literature.
 Here, we provide a general approach aiming at filling these theoretical gaps.
@@ -163,8 +157,9 @@ From a theoretical point of view, the two-step approach to compute the RTP in th
 consists in first setting a planar layer of dipoles according to equation \ref{eq:p-Fourier-dipoles}, 
 by considering the unit vector $\hat{\mathbf{h}}$ equal to $\hat{\mathbf{v}}$, which defines 
 the constant total-magnetization direction of the true sources.
-In this case, the $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ given by equation \ref{eq:p-Fourier-dipoles} 
-is a Neumann's equivalent layer $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}).
+In this case, the ratio $\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} = 1$ 
+and we can easily verify that the $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ given by 
+equation \ref{eq:p-Fourier-dipoles} is a Neumann's equivalent layer $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}).
 The second step to compute the RTP consists in using the predefined Neumann's layer to compute 
 the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
@@ -176,13 +171,15 @@ approximates the RTP anomaly.
 We can also investigate the theoretical link between the RTP in the space domain, 
 via equivalent-layer technique, and in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
 As we have already discussed, the transformed field $f_{\varepsilon}$ computed via \ref{eq:transformed-field-continuous-layer-Fourier} 
-from a previously defined equivalent layer $\tilde{p}_{\varepsilon}$ can also be directly 
-computed from the observed potential field $d^{o}$ via equation \ref{eq:transformed-field-continuous-layer-single-step}, 
+from a previously defined equivalent layer $p_{\varepsilon}$ can also be directly 
+computed from the observed potential field $d^{o}$ (equation \ref{eq:transformed-field-continuous-layer-1-single-step}
+or \ref{eq:transformed-field-continuous-layer-2-single-step}), 
 in terms of the ratio $\nicefrac{\alpha_{f}}{\alpha_{d}}$.
 To compute the RTP, we set $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ 
 and $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equation \ref{eq:diff-operators-generic}).
-By using these specific $\alpha_{d}$ and $\alpha_{f}$, setting $z^{\ddagger}_{0} = z^{\dagger}_{0}$ and letting $k_{\varepsilon}$ goes to infinity 
-in equation \ref{eq:transformed-field-continuous-layer-single-step}, we get 
+By using these specific $\alpha_{d}$ and $\alpha_{f}$, setting $z^{\ddagger}_{0} = z^{\dagger}_{0}$ and 
+(i) letting $k_{\varepsilon}$ goes to infinity in equation \ref{eq:transformed-field-continuous-layer-1-single-step} or
+(ii) letting $\mu_{\varepsilon}$ goes to zero in equation \ref{eq:transformed-field-continuous-layer-2-single-step}, we get 
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
 	\tfrac{k^{2}}{\left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)} \, 
@@ -218,12 +215,7 @@ Besides, according to equations \ref{eq:p-Fourier}--\ref{eq:kernel-a-Fourier}, w
 $\alpha_{a} = 1$ and 
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
-	\begin{cases}
-		k \, \alpha_{d} \, \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \\
-		0 & , \quad k > k_{\varepsilon} 
-	\end{cases} \: ,
+	k \, \alpha_{d} \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]  \: ,
 	\label{eq:p-Fourier-generalized-eqs}
 \end{equation}
 which approximates the vertical derivative of the observed potential field on the layer plane. 
@@ -271,13 +263,8 @@ where the term $\nicefrac{1}{k^{2}}$ represents the double integration along the
 $p_{\varepsilon}$ assumes the following form in the Fourier domain:
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
-	\begin{cases}
-		k^{3} \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
-		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \\
-		0 & , \quad k > k_{\varepsilon} 
-	\end{cases} \: .
+	k^{3} \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
+	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] \: .
 	\label{eq:p-Fourier-guspi}
 \end{equation}
 The second step consists in computing $f_{\varepsilon}$ in the Fourier domain (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 

@@ -16,32 +16,90 @@
 	\label{fig:geometry}
 }
 
-%\tabl{example}{Some relevant potential fields for geophysical applications.
-%}{
-%	\begin{center}
-%		\begin{tabular}{|c|c|c|c|}
-%			\hline
-%			%\multicolumn{3}{|c|}{Table Example} \\
-%			$\ell$ & $\hat{\mathbf{u}}$ & $\hat{\mathbf{v}}$ & $D(\ell,)$
-%			\hline
-%			migration\rule[-2ex]{0ex}{5ex} & 
-%			$\omega \rightarrow k_z$ & 
-%			$k_y^2+k-z^2\cos^2 \psi=4\omega^2/v^2$ \\
-%			\hline
-%			\parbox{1in}{zero-offset\\diffraction}\rule[-4ex]{0ex}{8ex} &
-%			$k_z\rightarrow\omega_0$ &
-%			$k_y^2+k_z^2=4\omega_0^2/v^2$ \\
-%			\hline
-%			DMO+NMO\rule[-2ex]{0in}{5ex} & $\omega\rightarrow\omega_0$ & 
-%			$\frac{1}{4}
-%			v^2k_y^2\sin^2\psi+\omega_0^2\cos^2\psi=\omega^2$ \\
-%			\hline
-%			radial DMO\rule[-2ex]{0in}{5ex} & $\omega\rightarrow\omega_s$ &
-%			$\frac{1}{4}v^2k_y^2\sin^2\psi+\omega_s^2=\omega^2$\\
-%			\hline
-%			radial NMO\rule[-2ex]{0in}{5ex} & $\omega_s\rightarrow\omega_0$ &
-%			$\omega_0\cos\psi=\omega_s$\\
-%			\hline
-%		\end{tabular}
-%	\end{center}
-%}
+\plot{model_view_1.png}{width=0.8\textwidth}{
+	{Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.}
+	\label{fig:model}
+}
+
+\plot{discrete_layers.png}{width=0.8\textwidth}{
+	{
+		Discrete equivalent layers estimated by running Algorithm \ref{alg:numerical-eqlayer}.
+		(a) Computed layer having the constant magnetization direction equal to that of the 
+		model shown in Figure \ref{fig:model}.
+		(b) Computed layer having the constant magnetization direction different from that of the 
+		model shown in Figure \ref{fig:model}.
+		All values are in $\mu$T m.	
+		The black line represents the projection of the model on the $xy$ plane.	
+	}
+	\label{fig:discrete-layers}
+}
+
+\plot{Neumann_bx_by_bz.png}{width=0.8\textwidth}{
+	{
+		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
+		layer shown in Figure \ref{fig:discrete-layers}a.
+		(a), (d) and (g) show the potential fields produced by the discrete layer.
+		(b), (e) and (h) show the potential fields produced by the model.
+		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
+		The upper, middle and bottom rows show the $x$-, $y$- and $z$-components of the 
+		magnetic induction field, respectively. All values are in nT.
+		The black line represents the projection of the model on the $xy$ plane.	
+	}
+	\label{fig:Neumann-bx-by-bz}
+}
+
+\plot{Neumann_atfa_b_rtp.png}{width=0.8\textwidth}{
+	{
+		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
+		layer shown in Figure \ref{fig:discrete-layers}a.
+		(a), (d) and (g) show the potential fields produced by the discrete layer.
+		(b), (e) and (h) show the potential fields produced by the model.
+		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
+		The upper, middle and bottom rows show the approximated total-field anomaly, amplitude of 
+		magnetic induction field and RTP anomaly, respectively. All values are in nT.
+		The black line represents the projection of the model on the $xy$ plane.		
+	}
+	\label{fig:Neumann-atfa-b-rtp}
+}
+
+\plot{generic_bx_by_bz.png}{width=0.8\textwidth}{
+	{
+		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
+		layer shown in Figure \ref{fig:discrete-layers}b.
+		(a), (d) and (g) show the potential fields produced by the discrete layer.
+		(b), (e) and (h) show the potential fields produced by the model.
+		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
+		The upper, middle and bottom rows show the $x$-, $y$- and $z$-components of the 
+		magnetic induction field, respectively. All values are in nT.
+		The black line represents the projection of the model on the $xy$ plane.	
+	}
+	\label{fig:dipole-bx-by-bz}
+}
+
+\plot{generic_atfa_b_rtp.png}{width=0.8\textwidth}{
+	{
+		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
+		layer shown in Figure \ref{fig:discrete-layers}b.
+		(a), (d) and (g) show the potential fields produced by the discrete layer.
+		(b), (e) and (h) show the potential fields produced by the model.
+		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
+		The upper, middle and bottom rows show the approximated total-field anomaly, amplitude of 
+		magnetic induction field and RTP anomaly, respectively. All values are in nT.
+		The black line represents the projection of the model on the $xy$ plane.		
+	}
+	\label{fig:dipole-atfa-b-rtp}
+}
+
+\plot{generic_rtp_fixed.png}{width=0.8\textwidth}{
+	{
+		RTP anomalies produced by the model shown in Figure \ref{fig:model} and by the discrete 
+		layer shown in Figure \ref{fig:discrete-layers}b, after correction.
+		(a) shows the fixed RTP anomaly produced by the discrete layer.
+		(b) shows the RTP anomaly produced by the model.
+		(c) shows the difference between the RTP anomalies produced by the layer and the model.
+		All values are in nT.
+		The black line represents the projection of the model on the $xy$ plane.		
+	}
+	\label{fig:dipole-rtp-fixed}
+}
+
