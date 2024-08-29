@@ -1,0 +1,169 @@
+\section{Numerical simulations}
+\label{eq:numerical_simulations}
+
+To illustrate some of our theoretical results, we compute discrete equivalent layers 
+$\mathbf{p}_{\epsilon}$ (equation \ref{eq:predicted-data-discrete-layer}) by numerically 
+evaluating $p_{\varepsilon}(\mathbf{r}'')$ according to the Algorithm \ref{alg:numerical-eqlayer},
+where $p_{\varepsilon}(\mathbf{r}'')$ represents $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ 
+(equation \ref{eq:p-Fourier}) in the space domain. 
+In our tests, we have only computed planar layers of dipoles according to equation 
+\ref{eq:p-Fourier-dipoles}.
+
+\subsection{General setting}
+
+We have simulated a magnetic source composed of $1241$ horizontally juxtaposed rectangular prisms. 
+The prisms extend along the $x$-direction from $\approx -3601$ to $4900$ m and 
+along the $y$-direction from $\approx -3000.3$ to $\approx 5800.2$ m (Figure \ref{fig:model}). 
+Each prism has horizontal side lengths of approximately $256.4$ m in the $x$-direction 
+and $204.1$ m in the $y$-direction, with thicknesses ranging from $0$ m to $600$ m. 
+The top of the model varies from $0$ to $300$ m, while the bottom ranges from $300$ to $600$ m.
+Hence, the plane $z^{t}_{0} = 0$ m defines the top of the model.
+The model has a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space}) 
+varying from $2$ to $3$ A/m according to a uniform distribution and a constant direction with inclination 
+$-10.2^{\circ}$ and declination $-19.8^{\circ}$. With these inclination and declination values, we have computed 
+a unit vector $\hat{\mathbf{v}}$.
+We also consider that the main geomagnetic field has a constant direction with inclination $-30^{\circ}$ and 
+declination $-19^{\circ}$ throughout the simulated area. We used these inclination and declination values 
+to compute a unit vector $\hat{\mathbf{u}}$.
+
+Then we have computed the vertical derivative of the potential $U$ (equation \ref{eq:potential-U-space}) produced by
+the simulated sources (not shown) at a regularly spaced grid of $N_{x} \times N_{y}$ points along the $x$ and $y$ directions,
+respectively, with $N_{x} = 400$ and $N_{y} = 330$, on a vertical plane at $z^{\dagger}_{0} = -150$ m.
+These potential-field data were computed according to the step 1 of Algorithm \ref{alg:numerical-eqlayer}
+and represents the term $k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ]$ of equation \ref{eq:p-Fourier} 
+in the space domain.
+We have used closed expressions of the gravitational potential and its derivatives produced by the 3D right rectangular 
+prism derived by \cite{Nagyetal2000}, \cite{Nagyetal2002}  and \cite{Fukushima2020}.
+
+We have set an initial discrete equivalent layer formed by a regular grid of $N_{x} \times N_{y}$ points
+on a vertical plane that crosses the model at $z''_{0} = 200$ m (step 2 of Algorithm \ref{alg:numerical-eqlayer}).
+Next, we have estimated the initial discrete equivalent layer $\check{\mathbf{p}}_{\epsilon}$ 
+(step 3 of Algorithm \ref{alg:numerical-eqlayer}) by applying the method proposed by 
+\citet{takahashi-etal2020, takahashi-etal2022}
+because the matrix $\mathbf{A}$ in our case has a Block-Toeplitz Toeplitz-Block (BTTB) structure.
+This method estimates the equivalent layer by using the Conjugate Gradient Least Squares (CGLS) 
+algorithm, which naturally imposes some degree of smoothness on solutions obtained by running 
+few iterations \citep[][ p. 166]{aster_etal2019}.
+In fact, our initial discrete equivalent layer $\check{\mathbf{p}}_{\epsilon}$ was obtained with 
+only $100$ iterations, which is very small compared to the total number of data ($N = 132,000$).
+
+Steps 4 and 8 are computed by using the Fast Fourier Transform with linear padding to 
+minimize border effects.
+The matrices $\boldsymbol{\mathcal{A}}_{v}$ and $\boldsymbol{\mathcal{A}}_{h}$ computed at the steps 6 and 7 
+represent the terms $\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
+$\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)$ in equation \ref{eq:p-Fourier-dipoles}.
+
+\subsection{Discrete equivalent layers of dipoles}
+
+We have run the Algorithm \ref{alg:numerical-eqlayer} by using the general setting to compute two planar layers
+os dipoles. The first layer has a constant magnetization direction equal to that of the model
+(Figure \ref{fig:discrete-layers}a). 
+To estimate this layer, we have used a unit vector $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ in Algorithm \ref{alg:numerical-eqlayer}.
+To compute the second layer (Figure \ref{fig:discrete-layers}b), we have only set a different unit vector $\hat{\mathbf{h}}$ 
+with an arbitrary direction defined by inclination $40^{\circ}$ and declination $5^{\circ}$.
+As we can see, the first layer (Figure \ref{fig:discrete-layers}a) has an all positive magnetic moment distribution, 
+with maxima located right above the model.
+On the other hand, Figure \ref{fig:discrete-layers}b shows that the layer obtained by using an arbitrary 
+magnetization direction presents positive and negative values that do not delineate the boundaries of the
+model.
+
+We have computed the $x$, $y$, and $z$ components of the magnetic induction field produced by 
+each discrete layer, as well as the amplitude of the magnetic induction, the approximated total-field 
+and RTP anomalies (Figures \ref{fig:Neumann-bx-by-bz}--\ref{fig:dipole-atfa-b-rtp}).
+All these potential fields were computed at the same points $\mathbf{r}^{\dagger}_{i}$ defined at the 
+step 1 of Algorithm \ref{alg:numerical-eqlayer}.
+To compute the $x$, $y$, and $z$ components of the magnetic induction field and the the approximated 
+total-field anomaly, we have multiplied the layers by matrices $\mathbf{A}$ (equation \ref{eq:predicted-data-discrete-layer}) 
+having elements $a_{ij} = \hat{\mathbf{t}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j}) \, \hat{\mathbf{h}}$,
+with unit vectors $\hat{\mathbf{t}}$ equal to, respectively, $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$, 
+$\hat{\mathbf{z}}$ and $\hat{\mathbf{u}}$, 
+where $\hat{\mathbf{u}}$ defines the constant direction of the simulated main field and 
+$\mathbf{H}_{\Psi}$ is the Hessian of function $\Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$
+(equation \ref{eq:Psi}).
+The RTP anomaly produced by the layers were computed by using a matrix $\mathbf{A}$ 
+having elements $a_{ij} = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$.
+We have also computed the $x$, $y$, and $z$ components of the magnetic induction field,
+it amplitude, the approximated total-field and RTP anomalies produced by the model at points 
+$\mathbf{r}^{\dagger}_{i}$ (step 1 of Algorithm \ref{alg:numerical-eqlayer}) for comparison 
+(Figures \ref{fig:Neumann-bx-by-bz}--\ref{fig:dipole-atfa-b-rtp}). 
+We have also used the closed expressions derived by \cite{Nagyetal2000}, \cite{Nagyetal2002} and \cite{Fukushima2020}
+to compute these potential fields due to the model.
+
+We can see in Figures \ref{fig:Neumann-bx-by-bz} and \ref{fig:Neumann-atfa-b-rtp}, the potential fields
+produced by the layer shown in Figure \ref{fig:discrete-layers}a reproduce all potential field data produced by the
+model, exhibiting small differences with short wavelength. 
+These results are explained by the fact that the layer shown in Figure \ref{fig:discrete-layers}a is a 
+Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) defined with $\alpha_{a} = \alpha_{d}$,
+where $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$ (equation \ref{eq:diff-operators-generic}), 
+with $\hat{\mathbf{h}} = \hat{\mathbf{v}}$. 
+Besides, all transformed fields (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
+were computed by using the correct differential operators $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}).
+
+Figures \ref{fig:dipole-bx-by-bz} and \ref{fig:dipole-atfa-b-rtp}a--f also show that the 
+$x$, $y$ and $z$ components of the magnetic induction field, its amplitude and the approximated total-field 
+anomaly produced by the layer shown in Figure \ref{fig:discrete-layers}b also reproduce the corresponding 
+potential fields yielded by the model, but with considerably higher border effects.
+However, Figures \ref{fig:dipole-atfa-b-rtp}g--i shows that the RTP anomaly produced by the 
+layer do not retrieve that yielded by the model, showing significantly large differences.
+The layer shown in Figure \ref{fig:discrete-layers}b is defined with $\alpha_{a} \ne \alpha_{d}$,
+where $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{h}})$, 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}), 
+with $\hat{\mathbf{h}} \ne \hat{\mathbf{v}}$. 
+However, all transformed fields (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
+were computed by using the correct differential operators $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}),
+except the RTP anomaly. 
+We have used $\alpha_{t} \equiv \alpha_{f}$, with $\alpha_{f} \equiv (2, \hat{\mathbf{z}})$ (equation \ref{eq:diff-operators-generic}), 
+but the correct is $\alpha_{t} \equiv \left(\tfrac{\alpha_{a}}{\alpha_{d}}\right) \alpha_{f}$.
+To fix the RTP shown in Figure \ref{fig:dipole-atfa-b-rtp}g we could 
+(i) transform it to the Fourier domain;
+(ii) multiply the transformed field element-wise by $\left( \boldsymbol{\mathcal{A}}_{h} \oslash \boldsymbol{\mathcal{A}}_{v} \right)$, 
+where $\boldsymbol{\mathcal{A}}_{h}$ and $\boldsymbol{\mathcal{A}}_{v}$ are defined at step 6 of Algorithm \ref{alg:numerical-eqlayer}; and
+(iii) transforming the resultant field back to the space domain.
+This procedure introduces the missing $\left(\tfrac{\alpha_{a}}{\alpha_{d}}\right)$ in the 
+differential operator $\alpha_{t}$ and leads to the ``fixed'' RTP anomaly shown in Figure 
+\ref{fig:dipole-rtp-fixed}a. The differences (Figure Figure \ref{fig:dipole-rtp-fixed}c) between this new RTP anomaly and 
+that produced by the model (Figure \ref{fig:dipole-rtp-fixed}b) are now very small, despite of the visible 
+border effects.
+
+
+\begin{algorithm}
+	%\SetAlgoLined
+	\Input{
+		Simulate magnetic sources with top at $z^{t}_{0}$ and constant total magnetization direction defined by a
+		unit vector 
+		$\hat{\mathbf{v}} = \left[ \hat{v}_{x} \:\: \hat{v}_{y} \:\: \hat{v}_{z} \right]^{\top}$.
+		Define a constant direction defined by a unit vector
+		$\hat{\mathbf{h}} = \left[ \hat{h}_{x} \:\: \hat{h}_{y} \:\: \hat{h}_{z} \right]^{\top}$.
+	}
+	Compute an observed data vector $\mathbf{d}^{o}$ (Definition \ref{def:discrete-eqlayer}) 
+	whose $i$-th element is the potential field 
+	$d^{o}_{i} \equiv \tfrac{\partial}{\partial z}U(\mathbf{r}_{i})$ 
+	due to the synthetic sources at a regular grid of $N_{x} \times N_{y}$ points 
+	$\mathbf{r}^{\dagger}_{i} = (x_{i}, y_{i}, z^{\dagger}_{0})^{\top}$ 
+	located above them, i.e., with $z^{\dagger}_{0} < z^{t}_{0}$, $i \in \{1, \dots, N = N_{x} \, N_{y}\}$\;
+	Define a regular grid of $N_{x} \times N_{y}$ of points $\mathbf{r}''_{j} = (x_{j}, y_{j}, z''_{0})^{\top}$ on the layer
+	plane with constant vertical coordinate $z''_{0}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$, so that there is 
+	one point $\mathbf{r}''_{j}$ right below a point $\mathbf{r}^{\dagger}_{i}$\;
+	Estimate an initial discrete equivalent layer $\check{\mathbf{p}}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer})  
+	by considering that the matrix $\mathbf{A}$ has elements 
+	$a_{ij} \equiv \tfrac{\partial}{\partial z} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$\;
+	Rearrange $\check{\mathbf{p}}_{\epsilon}$ into an $N_{x} \times N_{y}$ matrix $\check{\mathbf{P}}_{\epsilon}$ and
+	compute its 2D Fourier transform $\check{\boldsymbol{\mathcal{P}}}_{\epsilon}$\;
+	Compute matrices $\boldsymbol{\mathcal{K}}_{x}$, $\boldsymbol{\mathcal{K}}_{y}$ and 
+	$\boldsymbol{\mathcal{K}}_{z}$ containing the discrete wavenumbers $k_{x}$, $k_{y}$ and $k$, respectively\;
+	Compute 
+	$\boldsymbol{\mathcal{A}}_{v} = \hat{v}_{z} \, \boldsymbol{\mathcal{K}}_{z} + \mathtt{i} \left( 
+	\hat{v}_{x} \, \boldsymbol{\mathcal{K}}_{x} + \hat{v}_{y} \, \boldsymbol{\mathcal{K}}_{y} \right)$ and
+	$\boldsymbol{\mathcal{A}}_{h} = \hat{h}_{z} \, \boldsymbol{\mathcal{K}}_{z} + \mathtt{i} \left( 
+	\hat{h}_{x} \, \boldsymbol{\mathcal{K}}_{x} + \hat{h}_{y} \, \boldsymbol{\mathcal{K}}_{y} \right)$\;
+	Compute $\boldsymbol{\mathcal{P}}_{\epsilon} = \check{\boldsymbol{\mathcal{P}}}_{\epsilon} \circ 
+	\left( \boldsymbol{\mathcal{A}}_{v} \oslash \boldsymbol{\mathcal{A}}_{h} \right)$\;
+	Compute the 2D Inverse Fourier transform of $\boldsymbol{\mathcal{P}}_{\epsilon}$ to obtain a matrix 
+	$\mathbf{P}_{\epsilon}$ containing the elements of the final discrete equivalent layer $\mathbf{p}_{\epsilon}$.
+	\caption{
+		Algorithm for computing a discrete equivalent layer by numerically evaluating equation \ref{eq:p-Fourier}.
+		The symbols $\mathtt{i}$, $\circ$ and $\oslash$ represent the imaginary unit, element-wise multiplication
+		and element-wise division, respectively.
+	}
+	\label{alg:numerical-eqlayer}
+\end{algorithm}

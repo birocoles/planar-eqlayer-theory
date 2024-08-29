@@ -3,28 +3,14 @@
 
 \subsection{Modified Dirichlet's and Neumann's problems on a plane}
 
-We start from the classical solutions for the Dirichlet’s and Neumann’s problems 
-(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) on a plane.
-These solutions apply specifically to scenarios where the horizontal surface 
+The classical solutions for the Dirichlet’s and Neumann’s problems 
+(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) on a plane 
+apply specifically to scenarios where the horizontal surface 
 $\mathcal{S}''$ is positioned above the sources. Now, let's broaden our scope and eliminate 
 this limitation, allowing $\mathcal{S}''$ to intersect the sources. 
-Then we consider an approximating potential $U_{\varepsilon}$ whose Fourier transform 
-on $\mathcal{S}''$ is given by
-\begin{equation}
-	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
-	\begin{cases}
-		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
-		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
-		\quad 0 < k \le k_{\varepsilon} \\
-		0 & , \quad k > k_{\varepsilon} 
-	\end{cases} \: ,
-	\label{eq:potential-U-epsilon-Fourier-layer}
-\end{equation}
-where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and 
-$\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ is defined on the horizontal surface $\mathcal{S}^{\dagger}$ 
-located above the sources, i.e., with $z^{\dagger}_{0} < z^{t}_{0}$. 
-Consider also that the inverse Fourier transform of \ref{eq:potential-U-epsilon-Fourier-layer} leads to 
-a space domain representation of $U_{\varepsilon}$ given by 
+We start by considering an auxiliary potential $U_{\varepsilon}$ that approximates $U$ (equation \ref{eq:potential-U-space})
+at points $\mathbf{r} \notin \overline{\mathcal{V}}$ outside the sources, is square integrable on the surface 
+$\mathcal{S}''$ and has a space domain representation given by 
 \begin{equation}
 	U_{\varepsilon}(\mathbf{r}) = 
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
@@ -38,21 +24,10 @@ a space domain representation of $U_{\varepsilon}$ given by
 where $D$ is the space-domain differential operator 
 defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
 $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
-
-Note that $U_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-space}) approximates the potential field obtained by 
-computing the downward continuation of $U$ (equation \ref{eq:potential-U-space}) 
-to points $\mathbf{r}'' \in \mathcal{S}''$ that may be located inside the sources. 
-It is well-known, however, that downward continuation can only be computed at 
-source-free points, where the Laplace's equation applies. This means that the
-continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
-presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
-prevent $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ to be square integrable.
-The truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-layer}) 
-overcomes this problem, as suggested by \citet{bhattacharyya1967},
-and guarantees that the Fourier-convolution theorem 
+We also consider that the Fourier-convolution theorem 
 can be applied to the auxiliary potential $U_{\varepsilon}$
 (equation \ref{eq:potential-U-epsilon-space}) on the horizontal surface $\mathcal{S}^{\dagger}$ above
-the sources, so that
+the sources (i.e., with $z^{\dagger}_{0} < z^{t}_{0}$), so that
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
 	= k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \:
@@ -61,8 +36,21 @@ the sources, so that
 	\quad z^{\dagger}_{0} < z^{t}_{0} \: .
 	\label{eq:potential-U-epsilon-Fourier-dagger}
 \end{equation}
-We get by substituting \ref{eq:Psi-Fourier} and \ref{eq:potential-U-epsilon-Fourier-layer} into 
-\ref{eq:potential-U-epsilon-Fourier-dagger} that
+Using the definition of $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:Psi-Fourier})
+in equation \ref{eq:potential-U-epsilon-Fourier-dagger}, we conclude that $U_{\varepsilon}(\mathbf{r}'')$ 
+must satisfy
+\begin{equation}
+	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] = 
+	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] \, e^{\, k \, (z''_{0} - z^{\dagger}_{0})} \: .
+	\label{eq:potential-U-epsilon-Fourier-layer}
+\end{equation}
+Now we present two possible approaches to define an auxiliary potential $U_{\varepsilon}$ that satisfies the 
+conditions above and lead to modified Dirichlet’s and Neumann’s problems that can be applied to 
+the case in which $\mathcal{S}''$ cross the sources.
+
+\subsubsection{Approach 1: Truncating wavenumber}
+
+Let $U_{\varepsilon}$ be given by
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
 	\begin{cases}
@@ -70,38 +58,114 @@ We get by substituting \ref{eq:Psi-Fourier} and \ref{eq:potential-U-epsilon-Four
 		, \quad 0 < k \le k_{\varepsilon} \\
 		0 & , \quad k > k_{\varepsilon} 
 	\end{cases} \: ,
-	\label{eq:potential-U-epsilon-Fourier-dagger2}
+	\label{eq:potential-U-epsilon-Fourier-dagger-1}
 \end{equation}
-which shows that the Fourier transforms of 
-$U$ (equation \ref{eq:potential-U-Fourier}) and $U_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-space}) 
-on the horizontal surface $\mathcal{S}^{\dagger}$ above the sources coincide up to the truncating wavenumber $k_{\varepsilon}$.
+where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and 
+$\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ is defined on the horizontal surface $\mathcal{S}^{\dagger}$ 
+located above the sources, i.e., with $z^{\dagger}_{0} < z^{t}_{0}$. 
+As we can see, this definition of $U_{\varepsilon}$ 
+(i) imposes that its Fourier transform coincides with 
+that of $U$ (equation \ref{eq:potential-U-Fourier}) on the horizontal surface $\mathcal{S}^{\dagger}$ 
+up to the truncating wavenumber $k_{\varepsilon}$; 
+(ii) represents a smooth version of $U$ on $\mathcal{S}^{\dagger}$; and
+(ii) leads to a square integrable function on $\mathcal{S}^{\dagger}$ because 
+$U$ is square integrable on $\mathcal{S}^{\dagger}$ (Appendix A).
+Then we obtain from equation \ref{eq:potential-U-epsilon-Fourier-layer} that 
+\begin{equation}
+	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
+	\begin{cases}
+		\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] 
+		e^{\, k \, (z''_{0} - z^{\dagger}_{0})} & , 
+		\quad 0 < k \le k_{\varepsilon} \\
+		0 & , \quad k > k_{\varepsilon} 
+	\end{cases} \: ,
+	\label{eq:potential-U-epsilon-Fourier-layer-1}
+\end{equation}
+which approximates the potential field obtained by 
+computing the downward continuation of $U$ (equation \ref{eq:potential-U-space}) 
+to points $\mathbf{r}'' \in \mathcal{S}''$ that may be located inside the sources. 
+It is well-known, however, that downward continuation can only be computed at 
+source-free points, where the Laplace's equation applies. This means that the
+continuation plane is limited by the top $z^{t}_{0}$ of the sources, otherwise the continued field 
+presents an oscillatory character \citep[e.g.,][]{roy1967, fedi_florio2002} that may
+prevent $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$ to be square integrable.
+The truncating wavenumber $k_{\varepsilon}$ used to define $U_{\varepsilon}$ according to equation 
+\ref{eq:potential-U-epsilon-Fourier-layer-1} overcomes this problem, as suggested by \citet{bhattacharyya1967},
+and guarantees that the Fourier-convolution theorem can be applied to equation \ref{eq:potential-U-epsilon-space} 
+for obtaining equation \ref{eq:potential-U-epsilon-Fourier-dagger}.
 
-We have just specified the Dirichlet's and Neumann's problems 
-(equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}) in terms of a truncating wavenumber 
-$k_{\varepsilon}$ with the purpose of expanding their applicability to the case in which the horizontal surface $\mathcal{S}''$ cross the sources. 
-In this case, we obtain an approximating potential $U_{\varepsilon}$ that coincides with the true 
-potential $U$ up to the truncating wavenumber $k_{\varepsilon}$ 
-(equation \ref{eq:potential-U-epsilon-Fourier-dagger2}). 
 At last, it can be easily verified that, if we let the truncating wavenumber $k_{\varepsilon}$ 
-go to infinity in equation \ref{eq:potential-U-epsilon-Fourier-layer} for the case in which 
+go to infinity in equation \ref{eq:potential-U-epsilon-Fourier-layer-1} for the case in which 
 $\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we get 
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
-	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-layer}
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-layer-1}
 \end{equation}
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] = 
 	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
-	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-dagger}
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-dagger-1}
 \end{equation}
 pointwise and, consequently, that
 \begin{equation}
 	\lim_{k_{\varepsilon}\to\infty} U_{\varepsilon}(\mathbf{r}) = 
 	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
-	\label{eq:lim-kepsilon-potential-U-epsilon-space}
+	\label{eq:lim-kepsilon-potential-U-epsilon-space-1}
 \end{equation}
 which is in perfect agreement with the solutions of the Dirichlet's and Neumann's
+problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
+
+\subsubsection{Approach 2: Tikhonov regularization}
+
+We may also define $U_{\varepsilon}$ as the following smooth approximation of $U$ on $\mathcal{S}^{\dagger}$:
+\begin{equation}
+	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
+	\tfrac{1}{1 + \mu_{\varepsilon} \, k^{2} \, e^{\, k \, (z''_{0} - z^{\dagger}_{0})}} \; 
+	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
+	\label{eq:potential-U-epsilon-Fourier-dagger-2}
+\end{equation}
+where $\mu_{\varepsilon}$ is a fixed positive regularization parameter imposing smoothness on $U$ 
+according to \citet{pasteka_etal2012}. 
+Again, this proposed definition of $U_{\varepsilon}$ 
+(i) represents a smooth version of $U$ on $\mathcal{S}^{\dagger}$ and
+(ii) leads to a square integrable function on $\mathcal{S}^{\dagger}$.
+Next, we obtain from equation \ref{eq:potential-U-epsilon-Fourier-layer} that 
+\begin{equation}
+	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
+	\tfrac{e^{\, k \, (z''_{0} - z^{\dagger}_{0})}}{1 + \mu_{\varepsilon} \, k^{2} \, e^{\, k \, (z''_{0} - z^{\dagger}_{0})}} \; 
+	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: .
+	\label{eq:potential-U-epsilon-Fourier-layer-2}
+\end{equation}
+The alternative definition of $U_{\varepsilon}$ given by equation \ref{eq:potential-U-epsilon-Fourier-dagger-2} 
+also leads to an approximation of the potential field obtained by 
+computing the downward continuation of $U$ (equation \ref{eq:potential-U-space}) 
+to points $\mathbf{r}'' \in \mathcal{S}''$ that may be located inside the sources. 
+In this case, however, is the regularization parameter $\mu_{\varepsilon}$ that forces  
+$U_{\varepsilon}$ to be square integrable on $\mathcal{S}''$ and guarantees that the 
+Fourier-convolution theorem can be applied to equation \ref{eq:potential-U-epsilon-space} 
+for obtaining equation \ref{eq:potential-U-epsilon-Fourier-dagger}.
+
+Finally, if we let the $\mu_{\varepsilon}$ 
+goes to zero in equation \ref{eq:potential-U-epsilon-Fourier-layer-2} for the case in which 
+$\mathcal{S}''$ is located above the sources, at $z''_{0} < z^{t}_{0}$, we obtain once more that 
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}'') \right] \: , \quad z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-layer-2}
+\end{equation}
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right] = 
+	\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right] \: , \quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-U-epsilon-Fourier-dagger-2}
+\end{equation}
+pointwise and, consequently, that
+\begin{equation}
+	\lim_{k_{\varepsilon}\to\infty} U_{\varepsilon}(\mathbf{r}) = 
+	U(\mathbf{r}) \: , \quad z < z''_{0} < z^{t}_{0} \: ,
+	\label{eq:lim-kepsilon-potential-U-epsilon-space-2}
+\end{equation}
+which is also in perfect agreement with the solutions of the Dirichlet's and Neumann's
 problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
 \subsection{The planar equivalent-layer theorem}
@@ -123,11 +187,16 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 		\mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \: ,
 		\label{eq:p-Fourier}
 	\end{equation}
-	where $U_{\varepsilon}(\mathbf{r}'')$ is defined as in \ref{eq:potential-U-epsilon-Fourier-layer}, 
-	for a given truncating wavenumber $k_{\varepsilon}$, and $\alpha_{a}$ is a differential operator 
-	defined in the Fourier domain in terms of $\alpha$ (equation \ref{eq:diff-operators-generic}).
+	where $\alpha_{a}$ is a differential operator 
+	defined in the Fourier domain in terms of $\alpha$ (equation \ref{eq:diff-operators-generic}) and
+	$U_{\varepsilon}(\mathbf{r}'')$ is defined as in \ref{eq:potential-U-epsilon-Fourier-layer-1},
+	for a given truncating wavenumber $k_{\varepsilon}$, or as in \ref{eq:potential-U-epsilon-Fourier-layer-2},
+	for a given regularization parameter $\mu_{\varepsilon}$. 
+	
 	Note that there is an equivalent layer $p_{\varepsilon}$ for each particular $\alpha_{a}$.
-	For any finite choice of $0 < k_{\varepsilon} < \infty$, both $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ 
+	For any finite choice of $0 < k_{\varepsilon} < \infty$ or $0 < \mu_{\varepsilon} < \infty$
+	(equations \ref{eq:potential-U-epsilon-Fourier-layer-1} and \ref{eq:potential-U-epsilon-Fourier-layer-2}), 
+	both $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ 
 	and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable and, consequently, it is possible to
 	apply the Fourier-convolution theorem to \ref{eq:predicted-data-continuous-layer} and obtain
 	\begin{equation}
@@ -142,10 +211,42 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 		\mathcal{F} [ a(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = \alpha_{a} \, \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
 		\label{eq:kernel-a-Fourier}
 	\end{equation}
-	with $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
+	with $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ and 
+	$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}}$ 
 	defining a point on the horizontal surface $\mathcal{S}^{\dagger}$ above the sources, at $z^{\dagger}_{0} < z''_{0}$.
-	By considering that the kernel function is given by $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$
-	and using \ref{eq:observed-data-Fourier} and \ref{eq:Psi-Fourier}, we find that $d_{\varepsilon}$ satisfies
+	By substituting equations \ref{eq:observed-data-Fourier}, \ref{eq:Psi-Fourier} and \ref{eq:kernel-a-Fourier} 
+	into \ref{eq:predicted-data-continuous-layer-Fourier} and comparing the result with equations 
+	\ref{eq:potential-U-epsilon-Fourier-layer-1} and \ref{eq:potential-U-epsilon-Fourier-layer-2}, 
+	we find that $d_{\varepsilon}$ satisfies
+	\begin{equation}
+		\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
+		\alpha_{d} \,
+		\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ] \: .
+		\label{eq:predicted-data-continuous-layer-epsilon-Fourier}
+	\end{equation}
+
+	From Plancherel's theorem \citep[][ p. 119]{bracewell1999} and use of polar coordinates 
+	$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$,
+	we get
+	\begin{equation}
+		\begin{split}
+			\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+			\vert 
+			d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
+			\vert^{2} 
+			\: d\mathcal{S}^{\dagger} = 
+			\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
+			\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+			d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} 
+			\: d k_{x} \, d k_{y} \\
+			= \int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
+			\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
+			d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \: d k \, d \theta \: .
+		\end{split}
+		\label{eq:Plancherel}
+	\end{equation}
+	If we consider that the auxiliary potential $U_{\varepsilon}$ is defined by equation \ref{eq:potential-U-epsilon-Fourier-dagger-1},
+	we obtain that 
 	\begin{equation}
 		\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
 		\begin{cases}
@@ -153,40 +254,25 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 			, \quad 0 < k \le k_{\varepsilon} \\
 			0 & , \quad k > k_{\varepsilon} 
 		\end{cases} \: .
-		\label{eq:predicted-data-continuous-layer-Fourier2}
+		\label{eq:predicted-data-continuous-layer-epsilon-Fourier-1}
 	\end{equation}
-	From Plancherel's theorem \citep[][ p. 119]{bracewell1999} and use of polar coordinates 
-	$k_{x} = k \, \cos\theta$, $k_{y} = k \, \sin\theta$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$,
+	If we now consider that $U_{\varepsilon}$ is given by equation \ref{eq:potential-U-epsilon-Fourier-dagger-2},
 	we get
 	\begin{equation}
-		\begin{split}
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert 
-		d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger})
-		\vert^{2} 
-		\: d\mathcal{S}^{\dagger} = 
-		\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} 
-		\: d k_{x} \, d k_{y} \\
-		= \int\limits_{0}^{2\pi} \int\limits_{0}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [
-		d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta =
-		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
-		\: k \: d k \, d \theta \: .
-		\end{split}
-		\label{eq:Plancherel}
+		\mathcal{F} [ d_{\varepsilon}(\mathbf{r}^{\dagger}) ] = 
+		\tfrac{1}{1 + \mu_{\varepsilon} \, k^{2} \, e^{\, k \, (z''_{0} - z^{\dagger}_{0})}} \; 
+		\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \: .
+		\label{eq:predicted-data-continuous-layer-epsilon-Fourier-2}
 	\end{equation}
-	Since $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \, k$ is square integrable on $\mathcal{S}^{\dagger}$, we may choose 
-	a finite but sufficiently large $k_{\varepsilon} < \infty$ such that 
-	$\int_{0}^{2\pi} \int_{k_{\varepsilon}}^{\infty} \vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
-	\le \varepsilon$. This leads to the conclusion that $p_{\varepsilon}$ is a continuous equivalent layer. 
-	If the layer plane is above the sources (i.e., if $z''_{0} < z^{t}_{0}$), then both 
+	By noting that using a finite but sufficiently large $0 < k_{\varepsilon} < \infty$ in equation 
+	\ref{eq:predicted-data-continuous-layer-epsilon-Fourier-1} or a finite $0 < \mu_{\varepsilon} < \infty$ in 
+	equation \ref{eq:predicted-data-continuous-layer-epsilon-Fourier-2} lead to  
+	$\int_{0}^{2\pi} \int_{0}^{\infty} \vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta \le \varepsilon$ in equation \ref{eq:Plancherel}, we conclude that $p_{\varepsilon}$ (equation \ref{eq:p-Fourier})
+	is a continuous equivalent layer according to Definition \ref{def:continuous-eqlayer}. 
+	Besides, if the layer plane is above the sources (i.e., if $z''_{0} < z^{t}_{0}$), then both 
 	$\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ and $p_{\varepsilon}(\mathbf{r}'')$ are square-integrable
-	even for the choice $k_{\varepsilon} = \infty$. Then, in that case, 
-	$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \vert d^{o}(\mathbf{r}^{\dagger}) - d_{\varepsilon}(\mathbf{r}^{\dagger}) 
-	\vert^{2} \: d\mathcal{S}^{\dagger} = \int_{0}^{2\pi} \int_{0}^{\infty} 
+	even for the choice $k_{\varepsilon} = \infty$ or $\mu_{\varepsilon} = 0$. Then, in that case, 
+	$\int_{0}^{2\pi} \int_{0}^{\infty} 
 	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
 	= 0$ and $p_{\varepsilon}$ yields a predicted field $d_{\varepsilon}$ that exactly reproduces the observed field $d^{o}$ 
 	on $\mathcal{S}^{\dagger}$.
@@ -194,71 +280,23 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 	
 \subsubsection{Remark 1}
 
-The above theorem guarantees the existence of an approximate equivalent layer, even if
-the layer crosses the sources, i.e., if $z''_{0} > z^{t}_{0}$.
-But it does not provide any guidance on the particular choice of the truncating wavenumber $k_{\varepsilon}$ 
-for the construction of $p_{\varepsilon}$, with a given accuracy level $\varepsilon$ (Definition \ref{def:continuous-eqlayer}).
-Here, we present a connection between $k_{\varepsilon}$ and $\varepsilon$ by combining the 
-upper bounds defined in Appendix A with the right-hand side of equation \ref{eq:Plancherel}.
-We start by using the upper bound for $\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ 
-(equation \ref{eq:observed-data-spectrum-bound}) and defining an upper bound for $\vert \alpha_{d} \vert$ 
-according to equation \ref{eq:alpha-upper-bound} to obtain:
-\begin{equation}
-	\begin{split}
-		\int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-		\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert^{2} 
-		\: k \: d k \, d \theta 
-		&\le \int\limits_{0}^{2\pi} \int\limits_{k_{\varepsilon}}^{\infty}
-		\vert \alpha_{d} \vert^{2} \, \Omega^{2} \, \left( \tfrac{e^{- \Delta z \, k }}{k} \right)^{2}
-		\: k \: d k \, d \theta \\
-		&\le \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
-		\int\limits_{k_{\varepsilon}}^{\infty}
-		k^{2q - 1} \: e^{- 2 \, \Delta z \, k } \: (2 \, \Delta z)^{2q}
-		\: k \: d k
-	\end{split} \: ,
-	\label{eq:aux1-epsilon}
-\end{equation}
-with $\Omega$ given by equation \ref{eq:Omega} and $q = \ell + m + n$ being the order of the 
-differential operator $\alpha_{d}$ (equation \ref{eq:diff-operators-generic}).
-Then we rewrite the last integral in equation \ref{eq:aux1-epsilon} to get
-\begin{equation}
-	\int\limits_{0}^{2\pi} \int\limits_{0}^{\infty} 
-	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] - \mathcal{F} [d_{\varepsilon}(\mathbf{r}^{\dagger}) ] \vert^{2} \: k \, dkd\theta 
-	\le \varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) \: ,
-	\label{eq:Plancherel-epsilon}
-\end{equation}
-where
-\begin{equation}
-	\varepsilon(q, k_{\varepsilon}, z^{\dagger}_{0}) = \tfrac{2\pi \, \Omega^{2} \, 3^{q}}{(2 \, \Delta z)^{2q}} \: 
-	\Gamma(2 \, q \: , \: 2 \, \Delta z \, k_{\varepsilon}) \: ,
-	\quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: ,
-	\label{eq:epsilon}
-\end{equation}
-is a real function depending on the Incomplete Gamma function \citep[][ p. 899]{gradshteyn_ryzhik2007}
-\begin{equation}
-	\Gamma(\beta \: , \: t_{\varepsilon}) = 
-	\int\limits_{t_{\varepsilon}}^{\infty}
-	e^{- t } \, k^{\beta-1} \: d t \: ,
-	\label{eq:incomplete-Gamma-function}
-\end{equation}
-with $t = 2 \, \Delta z \, k$, $dt = 2 \, \Delta z \, dk$, $\beta = 2 \, q$ and 
-$t_{\varepsilon} = 2 \, \Delta z \, k_{\varepsilon}$.
-According to equation \ref{eq:epsilon}, if we have some a priori bounds 
-on the physical-property distribution and position of the true sources, we get a connection between the choice of 
-$k_{\varepsilon}$ and the desired accuracy level $\varepsilon$. 
-This can potentially support an estimation of the truncating wavenumber $k_{\varepsilon}$.
+The above theorem guarantees the existence of a planar and continuous equivalent layer, even if
+it crosses the sources, i.e., if $z''_{0} > z^{t}_{0}$.
+But it does not provide any guidance on the particular choice of the 
+truncating wavenumber $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger-1}) or the 
+regularization parameter $\mu_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger-2}) 
+for the construction of $p_{\varepsilon}$, with a given accuracy level 
+$\varepsilon$ (Definition \ref{def:continuous-eqlayer}).
 
 \subsubsection{Remark 2}
 
-The truncating wavenumber $k_{\varepsilon}$ plays a central role in the planar equivalent-layer theorem 
-(Theorem \ref{theorem:planar-eqlayer-theorem}).
-We highlight here that the interpreter typically does not explicitly set $k_{\varepsilon}$ in
-practical situations. In fact, obtaining a discrete equivalent layer (Definition \ref{def:discrete-eqlayer}) 
-does not strictly imply a truncation of the wavenumber at some maximal $k_{\varepsilon}$, 
-but it leads to an exponentially fast decay at sufficiently large wavenumbers. 
+The truncating wavenumber $k_{\varepsilon}$ and the regularization parameter $\mu_{\varepsilon}$ 
+play a central role in the planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}).
 From a theoretical point of view, it might be interesting to study the influence of
-such a discretization and its relation to $k_{\varepsilon}$ in more detail. 
-For practical purposes it seems that this discretization is the predominant factor rendering 
+discretizing continuous equivalent layers and its relation to $k_{\varepsilon}$ and $\mu_{\varepsilon}$. 
+In practical situations, the interpreter usually estimate a ``sufficiently smooth'' discrete equivalent layer 
+that ``satisfactorily'' fit the observed data within a given error level.
+It seems that this discretization and the imposed degree of smoothness are important factors rendering 
 the equivalent-layer technique applicably even when the layer plane crosses the sources.
 
 \subsubsection{Remark 3}
