@@ -37,7 +37,7 @@ $\alpha_{f} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (
 where the unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are given by the canonical base vectors (equation \ref{eq:canonical-base-vector}).
 We can easily get from \ref{eq:diff-operators-generic} that this Fourier-domain operator $\alpha_{f}$ is equivalent to the 
 space-domain operator $D_{f} \equiv \tfrac{\partial^{2}}{\partial u \, \partial v}$.
-Thus, the common two-step approach to convert gravity-disturbance into gravity
+Thus, the common two-step approach to convert gravity disturbance into gravity
 gradient data via equivalent-layer technique can be theoretically explained as an application of 
 a particular Neumann's equivalent layer (Definition \ref{def:eql-Neumann}).
 
@@ -159,7 +159,7 @@ by considering the unit vector $\hat{\mathbf{h}}$ equal to $\hat{\mathbf{v}}$, w
 the constant total-magnetization direction of the true sources.
 In this case, the ratio $\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} = 1$ 
 and we can easily verify that the $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ given by 
-equation \ref{eq:p-Fourier-dipoles} is a Neumann's equivalent layer $p_{\varepsilon}$ (Definition \ref{def:eql-Neumann}).
+equation \ref{eq:p-Fourier-dipoles} assumes the form of a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}).
 The second step to compute the RTP consists in using the predefined Neumann's layer to compute 
 the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) defined in the Fourier domain 
 by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
@@ -197,8 +197,8 @@ the Fourier-domain RTP operator at low latitudes. In this case, the estimated eq
 present striations, as have already been pointed out by \citet{li_etal2014}. 
 In the Fourier domain, these artifacts are directly related to the term 
 $\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)}$ 
-in equation \ref{eq:p-Fourier-dipoles}. This term produces, in the equivalent layer of dipoles, the same 
-numerical instability caused by the term 
+in equation \ref{eq:p-Fourier-dipoles}. This term produces, in the equivalent layer of dipoles, a 
+numerical instability similar to that caused by the term 
 $\nicefrac{k^{2}}{\left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}$ in equation 
 \ref{eq:transformed-field-continuous-layer-single-step-RTP},
 which is the base of the classical approach to compute the RTP in the Fourier domain \citep[e.g., ][ p. 331]{blakely1996}.

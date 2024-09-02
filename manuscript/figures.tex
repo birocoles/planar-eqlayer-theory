@@ -1,105 +1,72 @@
 \renewcommand{\figdir}{figures} % figure directory
 
 \plot{sources}{width=0.8\textwidth}{
-	{2D schematic representation of sources located in subsurface, over the
-	domain $\overline{\mathcal{V}} = \bigcup_{\nu = 1}^{N_{\nu}}$, $N_{\nu} = 2$, 
-	with top limited by the plane $z^{t}_{0}$. 
-	Points within the sources are represented by $\mathbf{r}' = (x', y', z')^{\top}$.
-	The dashed line represents the surface containing the observation points 
-	$\mathbf{r} = (x, y, z)^{\top}$. The thick line represents the Earth's surface.
-	The planar surface $\mathcal{S}^{\dagger}$ containing points 
-	$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ 
-	above the sources is represented by a continuous straight line.
-	The fine dashed lines represent two possible definitions of a horizontal surface $\mathcal{S}''$ 
-	at a constant vertical coordinate $z''_{0}$ satisfying $z''_{0} > z^{t}_{0}$ or $z''_{0} < z^{t}_{0}$. 
+	{
+		2D schematic representation of sources located in subsurface, over the
+		domain $\overline{\mathcal{V}} = \bigcup_{\nu = 1}^{N_{\nu}}$, $N_{\nu} = 2$, 
+		with top limited by the plane $z^{t}_{0}$. 
+		Points within the sources are represented by $\mathbf{r}' = (x', y', z')^{\top}$.
+		The dashed line represents the surface containing the observation points 
+		$\mathbf{r} = (x, y, z)^{\top}$. The thick line represents the Earth's surface.
+		The planar surface $\mathcal{S}^{\dagger}$ containing points 
+		$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ 
+		above the sources is represented by a continuous straight line.
+		The fine dashed lines represent two possible definitions of a horizontal surface $\mathcal{S}''$ 
+		at a constant vertical coordinate $z''_{0}$ satisfying $z''_{0} > z^{t}_{0}$ or $z''_{0} < z^{t}_{0}$. 
 	}
 	\label{fig:geometry}
 }
 
-\plot{model_view_1.png}{width=0.8\textwidth}{
-	{Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.}
+\plot{1_model_view_1.png}{width=0.8\textwidth}{
+	{
+		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.
+	}
 	\label{fig:model}
 }
 
-\plot{discrete_layers.png}{width=0.8\textwidth}{
+\plot{2_simulated_fields.png}{width=0.8\textwidth}{
 	{
-		Discrete equivalent layers estimated by running Algorithm \ref{alg:numerical-eqlayer}.
-		(a) Computed layer having the constant magnetization direction equal to that of the 
-		model shown in Figure \ref{fig:model}.
-		(b) Computed layer having the constant magnetization direction different from that of the 
-		model shown in Figure \ref{fig:model}.
-		All values are in $\mu$T m.	
-		The black line represents the projection of the model on the $xy$ plane.	
+		Potential fields due to the synthetic source (Figure \ref{fig:model}).
+		(a) Approximated total-field anomaly, (b) amplitude of the magnetic induction field, 
+		(c) RTP anomaly, (d), (e), (f) $x$, $y$ and $z$ components of the magnetic induction field,
+		respectively. All values are in nT.	
+		The black line represents the projection of the model on the $xy$ plane.
+		The green and black arrows represent, respectively, the projections of the constant 
+		main field and synthetic source (Figure \ref{fig:model}) magnetization directions onto the plane $xy$.
+	}
+	\label{fig:simulated-fields}
+}
+
+\plot{6_layers.png}{width=0.8\textwidth}{
+	{
+		Estimated discrete layers.
+		(a) Dipole layer (equation \ref{eq:p-Fourier-dipoles}) having a constant magnetization direction $\hat{\mathbf{h}}$
+		equal to that $\hat{\mathbf{v}}$ equal to that of the synthetic source. In this case, the dipole layer is a Neumann's
+		equivalent layer (Definition \ref{def:eql-Neumann}).
+		(b) Dipole layer (equation \ref{eq:p-Fourier-dipoles}) having a constant vertical magnetization direction 
+		$\hat{\mathbf{h}} = \left[ 0 \:\: 0 \:\: 1 \right]^{\top}$.
+		(c) Generic equivalent layer (equation \ref{eq:p-Fourier}) defined by using 
+		$\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
+		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$, where $\hat{\mathbf{u}}$ is the constant direction 
+		of the simulated main field.
 	}
 	\label{fig:discrete-layers}
 }
 
-\plot{Neumann_bx_by_bz.png}{width=0.8\textwidth}{
+\plot{6_data_fits.png}{width=0.4\textwidth}{
 	{
-		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
-		layer shown in Figure \ref{fig:discrete-layers}a.
-		(a), (d) and (g) show the potential fields produced by the discrete layer.
-		(b), (e) and (h) show the potential fields produced by the model.
-		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
-		The upper, middle and bottom rows show the $x$-, $y$- and $z$-components of the 
-		magnetic induction field, respectively. All values are in nT.
-		The black line represents the projection of the model on the $xy$ plane.	
-	}
-	\label{fig:Neumann-bx-by-bz}
-}
-
-\plot{Neumann_atfa_b_rtp.png}{width=0.8\textwidth}{
-	{
-		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
-		layer shown in Figure \ref{fig:discrete-layers}a.
-		(a), (d) and (g) show the potential fields produced by the discrete layer.
-		(b), (e) and (h) show the potential fields produced by the model.
-		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
-		The upper, middle and bottom rows show the approximated total-field anomaly, amplitude of 
-		magnetic induction field and RTP anomaly, respectively. All values are in nT.
-		The black line represents the projection of the model on the $xy$ plane.		
-	}
-	\label{fig:Neumann-atfa-b-rtp}
-}
-
-\plot{generic_bx_by_bz.png}{width=0.8\textwidth}{
-	{
-		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
-		layer shown in Figure \ref{fig:discrete-layers}b.
-		(a), (d) and (g) show the potential fields produced by the discrete layer.
-		(b), (e) and (h) show the potential fields produced by the model.
-		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
-		The upper, middle and bottom rows show the $x$-, $y$- and $z$-components of the 
-		magnetic induction field, respectively. All values are in nT.
-		The black line represents the projection of the model on the $xy$ plane.	
-	}
-	\label{fig:dipole-bx-by-bz}
-}
-
-\plot{generic_atfa_b_rtp.png}{width=0.8\textwidth}{
-	{
-		Potential fields produced by the model shown in Figure \ref{fig:model} and by the discrete 
-		layer shown in Figure \ref{fig:discrete-layers}b.
-		(a), (d) and (g) show the potential fields produced by the discrete layer.
-		(b), (e) and (h) show the potential fields produced by the model.
-		(c), (f) and (i) show the difference between the fields produced by the layer and the model.
-		The upper, middle and bottom rows show the approximated total-field anomaly, amplitude of 
-		magnetic induction field and RTP anomaly, respectively. All values are in nT.
-		The black line represents the projection of the model on the $xy$ plane.		
-	}
-	\label{fig:dipole-atfa-b-rtp}
-}
-
-\plot{generic_rtp_fixed.png}{width=0.8\textwidth}{
-	{
-		RTP anomalies produced by the model shown in Figure \ref{fig:model} and by the discrete 
-		layer shown in Figure \ref{fig:discrete-layers}b, after correction.
-		(a) shows the fixed RTP anomaly produced by the discrete layer.
-		(b) shows the RTP anomaly produced by the model.
-		(c) shows the difference between the RTP anomalies produced by the layer and the model.
+		Residuals between the potential fields due to the estimated discrete equivalent layers (Figure \ref{fig:discrete-layers})
+		and the synthetic source (Figure \ref{fig:model}).
+		The rows from top to bottom contain residuals of the approximated total-field anomaly,
+		amplitude of magnetic induction field, RTP anomaly, $x$, $y$ and $z$ components of the magnetic induction field.
+		The columns from left to right contain the potential fields due to the layers shown, respectively, in Figures
+		\ref{fig:discrete-layers}a, b and c.
 		All values are in nT.
-		The black line represents the projection of the model on the $xy$ plane.		
+		The black arrow represents the projection of the constant 
+		synthetic source (Figure \ref{fig:model}) magnetization direction onto the plane $xy$.
 	}
-	\label{fig:dipole-rtp-fixed}
+	\label{fig:data-fits}
 }
+
+
 
