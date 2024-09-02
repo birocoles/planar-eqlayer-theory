@@ -1,13 +1,13 @@
-\documentclass[manuscript,blind]{geophysics}
+%\documentclass[manuscript,blind]{geophysics}
 %\documentclass[paper,twocolumn,twoside]{geophysics}
-%\documentclass[manuscript,noblind]{geophysics}
+\documentclass[manuscript,noblind]{geophysics}
 
 % An example of defining macros
 \newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
 \newcommand{\rr}[1]{\mbox{\rm #1}}
 
 %% Extra packages
-\usepackage[english,linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+\usepackage[linesnumbered,lined,boxed,ruled,commentsnumbered]{algorithm2e}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -53,13 +53,13 @@ Val\'eria C. F. Barbosa\footnotemark[2], Andr\'e L. A. Reis \footnotemark[3],
 Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
 
 %\footer{Example}
-%\lefthead{Oliveira Jr. et al.}
-%\righthead{Planar equivalent layers}
+\lefthead{Oliveira Jr. et al.}
+\righthead{Planar equivalent layers}
 
 \maketitle
 
 % Main body
-%\include{abstract}
+\include{abstract}
 \include{introduction}
 \include{background}
 \include{discrete_eqlayer}
@@ -67,7 +67,7 @@ Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
 \include{planar_eqlayer_theorem}
 \include{transformations_eqlayer}
 \include{eqlayer_classes}
-\include{applications}
+\include{geophysical_implications}
 \include{numerical_simulations}
 \include{conclusions}
 %\include{aknowledgements}
