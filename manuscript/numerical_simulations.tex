@@ -17,14 +17,14 @@ declination $-19^{\circ}$ throughout the simulated area. We used these inclinati
 to compute a unit vector $\hat{\mathbf{u}}$.
 
 We have set a regular grid of $N_{x} \times N_{y}$ points 
-$\mathbf{r}^{\dagger}_{i} = (x_{i}, y_{i}, z^{\dagger}_{0})^{\top}$, $i \in \{1, \dots, N = N_{x} \, N_{y}\}$,
+$\mathbf{r}^{\dagger}_{i} = (x^{\dagger}_{i}, y^{\dagger}_{i}, z^{\dagger}_{0})^{\top}$, $i \in \{1, \dots, N = N_{x} \, N_{y}\}$,
 located above the synthetic source at $z^{\dagger}_{0} = -150$ m, where $N_{x} = 400$, $N_{y} = 330$.
 Figure \ref{fig:simulated-fields} shows the the potential fields produced by the synthetic source at these points.
 They were computed by using the closed expressions derived by \cite{Nagyetal2000}, \cite{Nagyetal2002} 
 and \cite{Fukushima2020}.
 
 We have also set a regular grid of $N_{x} \times N_{y}$ points 
-$\mathbf{r}''_{j} = (x_{j}, y_{j}, z''_{0})^{\top}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$,
+$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$,
 located at a horizontal plane that crosses the synthetic source at $z''_{0} = 200$ m.
 Each point $\mathbf{r}''_{j}$ of this grid is located right below a point $\mathbf{r}^{\dagger}_{i}$ where we
 have computed the potential fields due to the synthetic source.
@@ -45,15 +45,16 @@ This layer clearly indicates the horizontal position of the synthetic source and
 pseudogravity anomaly due to the synthetic source on the layer plane.
 This is not the case, however, for those layers shown in Figures \ref{fig:discrete-layers}b and c, which 
 exhibit positive and negative values.
-The vertically magnetized dipole layer (Figure \ref{fig:discrete-layers})b is a Dirichlet's equivalent layer 
-(Definition \ref{def:eql-Dirichlet}) that approximates the approximated total-field anomaly due to the 
-synthetic source on the layer plane.
-The layer shown in Figure \ref{fig:discrete-layers}c is a generic layer defined by using 
+The vertically magnetized dipole layer (Figure \ref{fig:discrete-layers}b) is defined by using 
+$\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
+$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) k$ in equation \ref{eq:p-Fourier} and consequently 
+approximates $\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-1st-deriv-space}) on the layer plane.
+From the physical point of view, this quantity represents the negative magnetic scalar 
+potential due to the synthetic source.
+Finally, Figure \ref{fig:discrete-layers}c shows a generic layer defined by using 
 $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
-$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ in equation \ref{eq:p-Fourier}, 
-where $\hat{\mathbf{u}}$ is the constant direction of the simulated main field. 
-It means that this layer approximates the directional derivative of $U$ (equation \ref{eq:potential-U-space}) 
-along the constant magnetization direction $\hat{\mathbf{v}}$ of the synthetic source on the layer plane.
+$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ in equation \ref{eq:p-Fourier}. 
+It means that this layer approximates $\frac{\partial}{\partial z}\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$, which defines the $z$ component of the magnetic induction field due to the synthetic source on the layer plane.
 
 Figure \ref{fig:data-fits} shows the residuals between the transformed fields $\mathbf{f}_{\epsilon}$ 
 (equation \ref{eq:transformed-field-discrete-layer}) due the estimated layers (Figure \ref{fig:discrete-layers})
