@@ -1,6 +1,37 @@
 \renewcommand{\figdir}{figures} % figure directory
 
-\plot{sources}{width=0.8\textwidth}{
+\tabl{example}{This table is specified in the document by \texttt{
+		$\backslash$tabl\{example\}\{This caption.\}\{\ldots\}}.
+}{
+	\begin{center}
+		\begin{tabular}{>{\small}m{0.3\textwidth}>{\smaller}m{0.6\textwidth}}
+			{\large \textbf{Symbol}} & {\large \textbf{Meaning}}  \\
+			\hline
+			$\mathcal{V}_{\nu} \in \mathbb{R}^{3}$ & Regular region in $\mathbb{R}^{3}$. \\
+			$\partial \mathcal{V} \in \mathbb{R}^{3}$ & Boundary of the regular region $\mathcal{V}_{\nu}$. \\
+			$\mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}_{\nu}$ & Finite collection of $N_{\nu}$ 
+			disjoint regular regions $\mathcal{V}_{\nu}$. \\
+			$\partial \mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}_{\nu}$ & 
+			Boundary of $\mathcal{V}$. Finite collection of $N_{\nu}$ boundaries $\partial \mathcal{V}$. \\
+			$\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$  &
+			Domain that is formed by the union of $\mathcal{V} \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}$
+			and contains the set of 3D sources. \\
+			$z^{t}_{0}$ & Constant vertical coordinate defining the top of the sources. \\
+			$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ &
+			Generic point outside the sources. \\
+			$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ &
+			Generic point within the sources. \\
+			$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ & 
+			One element of a finite set of $N$ points above the sources, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}}$, 
+			$i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$. \\
+			$\mathcal{S}''$ & Horizontal surface formed by points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathbb{R}^{3}$
+			with constant vertical coordinate $z''_{0}$. \\
+		\end{tabular}
+	\end{center}
+}
+
+%\plot{sources}{width=0.8\textwidth}{
+\plot{}{width=0.8\textwidth}{
 	{
 		2D schematic representation of sources located in subsurface, over the
 		domain $\overline{\mathcal{V}} = \bigcup_{\nu = 1}^{N_{\nu}} \overline{\mathcal{V}}_{\nu}$, $N_{\nu} = 2$, 
@@ -17,14 +48,16 @@
 	\label{fig:geometry}
 }
 
-\plot{1_model_view_1.png}{width=0.8\textwidth}{
+%\plot{1_model_view_1.png}{width=0.8\textwidth}{
+\plot{}{width=0.8\textwidth}{
 	{
 		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.
 	}
 	\label{fig:model}
 }
 
-\plot{2_simulated_fields.png}{width=0.8\textwidth}{
+%\plot{2_simulated_fields.png}{width=0.8\textwidth}{
+\plot{}{width=0.8\textwidth}{
 	{
 		Potential fields due to the synthetic source (Figure \ref{fig:model}).
 		(a) Approximated total-field anomaly, (b) amplitude of the magnetic induction field, 
@@ -37,7 +70,8 @@
 	\label{fig:simulated-fields}
 }
 
-\plot{6_layers.png}{width=0.8\textwidth}{
+%\plot{6_layers.png}{width=0.8\textwidth}{
+\plot{}{width=0.8\textwidth}{
 	{
 		Estimated discrete layers.
 		(a) Dipole layer (equation \ref{eq:p-Fourier-dipoles}) having a constant magnetization direction $\hat{\mathbf{h}}$
@@ -53,7 +87,8 @@
 	\label{fig:discrete-layers}
 }
 
-\plot{6_data_fits.png}{width=0.4\textwidth}{
+%\plot{6_data_fits.png}{width=0.4\textwidth}{
+\plot{}{width=0.4\textwidth}{
 	{
 		Residuals between the potential fields due to the estimated discrete equivalent layers (Figure \ref{fig:discrete-layers})
 		and the synthetic source (Figure \ref{fig:model}).
