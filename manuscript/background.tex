@@ -7,18 +7,18 @@ The main geometric objects used in the present work are shown in Figure \ref{fig
 We consider a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
 We also assume to have a set of 3D gravity or magnetic sources with top at the vertical coordinate $z^{t}_{0}$ (or below, i.e., with greater $z$), 
-over a domain $\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$ 
-defined by the union of $\mathcal{V} \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}$,
-where $\mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}_{\nu}$ is a finite collection of $N_{\nu}$ 
-disjoint \textit{regular regions} $\mathcal{V}_{\nu}$, each one with a boundary $\partial \mathcal{V}_{\nu}$,
-so that $\partial \mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}_{\nu}$.
-Some important properties are that each $\mathcal{V}_{\nu}$ is an open connected set of points with boundary 
-$\partial \mathcal{V}_{\nu}$ defined by a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
-Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$.
+over a domain $\overline{\mathcal{V}'} = \mathcal{V}' \, \cup \, \partial \mathcal{V}'$ 
+defined by the union of $\mathcal{V}' \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}'$,
+where $\mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}'_{\nu}$ is a finite collection of $N_{\nu}$ 
+disjoint \textit{regular regions} $\mathcal{V}'_{\nu}$, each one with a boundary $\partial \mathcal{V}'_{\nu}$,
+so that $\partial \mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}'_{\nu}$.
+Some important properties are that each $\mathcal{V}'_{\nu}$ is an open connected set of points with boundary 
+$\partial \mathcal{V}'_{\nu}$ defined by a closed and compact surface free of double points \citep[][ p. 22]{freeden_gerhards2012}.
+Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$.
 
 We also consider to have potential field observations at generic points 
-$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ or at a finite set of points 
-$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}}$, $i \in \{ 1, \dots, N \}$, 
+$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}'}$ or at a finite set of points 
+$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}'}$, $i \in \{ 1, \dots, N \}$, 
 located above the sources, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and 
 $z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
 
@@ -46,30 +46,30 @@ We define the potential field data $d^{o}(\mathbf{r})$ produced by the 3D source
 $\mathbf{r}$ (Figure \ref{fig:geometry}) by
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
-	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
 where $D_{d}$ is a space-domain differential operator acting on the potential
 \begin{equation}
-	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}'}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
 	\: d\mathcal{V}' \: , 
-	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
 	\label{eq:potential-U-space}
 \end{equation}
 $d\mathcal{V}' = dx'dy'dz'$ represents a volume element;
 $\kappa$ is a proportionality constant;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
-between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}$
+between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}'$
 and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
-$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ 
+$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$ 
 as the density (contrast) or total-magnetization intensity within the sources.
-We implicitly assume that $\sigma(\mathbf{r}) = 0$ outside $\overline{\mathcal{V}}$.
+We implicitly assume that $\sigma(\mathbf{r}) = 0$ outside $\overline{\mathcal{V}'}$.
 To insure that the first- and second-order partial derivatives of $U$ 
 exist at all points in the $\mathbb{R}^{3}$ space, including those within the sources,
 we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
 that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
-$\mathbf{r}' \in \overline{\mathcal{V}}$.
+$\mathbf{r}' \in \overline{\mathcal{V}'}$.
 
 The Fourier transform of the potential field data $d^{o}$ (equation \ref{eq:observed-data-space}) 
 on a horizontal surface above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
@@ -146,11 +146,11 @@ where
 is the gradient of $U(\mathbf{r})$ (equation \ref{eq:potential-U-space}), with elements
 given by the partial derivatives of first order
 \begin{equation}
-	\tfrac{\partial}{\partial u} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\tfrac{\partial}{\partial u} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}'}
 	\sigma(\mathbf{r}') \: 
 	\tfrac{\partial}{\partial u} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
 	\: d\mathcal{V}' \: , 
-	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad u \in \{ x, y, z \} \: .
+	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: , \quad u \in \{ x, y, z \} \: .
 	\label{eq:potential-U-1st-deriv-space}
 \end{equation}
 The first-order directional derivative (equation \ref{eq:potential-U-oblique-1st-deriv-space})
@@ -190,10 +190,10 @@ $\hat{\mathbf{v}}$, where
 is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of $U$ (equation \ref{eq:potential-U-space}),
 with elements given by the partial derivatives of second order
 \begin{equation}
-	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}}
+	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}'}
 	\sigma(\mathbf{r}') \: 
 	\tfrac{\partial^{2}}{\partial u \, \partial v} \left( \frac{1}{\| \mathbf{r} - \mathbf{r}'\|} \right)
-	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}} \: , \quad u, v \in \{ x, y, z \} \: .
+	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}'} \: , \quad u, v \in \{ x, y, z \} \: .
 	\label{eq:potential-U-2nd-deriv-space}
 \end{equation} 
 It can be easily verified that 
@@ -245,7 +245,7 @@ total-field anomalies into this special anomaly.
 \subsection{Classical Dirichlet's and Neumann's problems on a plane}
 \label{subsec:dirichlet_neumann}
 
-At all points $\mathbf{r} \notin \overline{\mathcal{V}}$ 
+At all points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
 located outside the sources, $U$ (equation
 \ref{eq:potential-U-space}) has continuous partial derivatives of all orders, 
 satisfies the Laplace's equation and is regular at infinity \citep[][ p. 122--124, 217]{kellogg1967}.
@@ -326,7 +326,7 @@ $d^{o}$ (equation \ref{eq:observed-data-space}) to estimate another potential fi
 defined in the space domain by
 \begin{equation}
 	f(\mathbf{r}) = D_{f} \, U(\mathbf{r}) \: , 
-	\quad \mathbf{r} \notin \overline{\mathcal{V}} \: ,
+	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
 	\label{eq:transformed-field-space}
 \end{equation}
 or, in the Fourier domain, 

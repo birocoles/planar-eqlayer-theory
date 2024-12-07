@@ -1,31 +1,73 @@
 \renewcommand{\figdir}{figures} % figure directory
 
-\tabl{example}{This table is specified in the document by \texttt{
-		$\backslash$tabl\{example\}\{This caption.\}\{\ldots\}}.
+\tabl{tab:symbols}{Table of symbols.
 }{
 	\begin{center}
-		\begin{tabular}{>{\small}m{0.3\textwidth}>{\smaller}m{0.6\textwidth}}
-			{\large \textbf{Symbol}} & {\large \textbf{Meaning}}  \\
+		\renewcommand{\arraystretch}{0.6}
+		\begin{tabular}{
+				>{\smaller\raggedleft\arraybackslash}m{0.15\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.35\textwidth}
+				>{\smaller\raggedleft\arraybackslash}m{0.15\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.35\textwidth}
+				}
+			{\small \textbf{Symbol}} & 
+			{\small \textbf{Definition}} & 
+			{\small \textbf{Symbol}} & 
+			{\small \textbf{Definition}} \\
 			\hline
-			$\mathcal{V}_{\nu} \in \mathbb{R}^{3}$ & Regular region in $\mathbb{R}^{3}$. \\
-			$\partial \mathcal{V} \in \mathbb{R}^{3}$ & Boundary of the regular region $\mathcal{V}_{\nu}$. \\
-			$\mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}_{\nu}$ & Finite collection of $N_{\nu}$ 
-			disjoint regular regions $\mathcal{V}_{\nu}$. \\
-			$\partial \mathcal{V} = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}_{\nu}$ & 
-			Boundary of $\mathcal{V}$. Finite collection of $N_{\nu}$ boundaries $\partial \mathcal{V}$. \\
-			$\overline{\mathcal{V}} = \mathcal{V} \, \cup \, \partial \mathcal{V}$  &
-			Domain that is formed by the union of $\mathcal{V} \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}$
-			and contains the set of 3D sources. \\
-			$z^{t}_{0}$ & Constant vertical coordinate defining the top of the sources. \\
-			$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}}$ &
-			Generic point outside the sources. \\
-			$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}}$ &
-			Generic point within the sources. \\
-			$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ & 
-			One element of a finite set of $N$ points above the sources, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}}$, 
-			$i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$. \\
-			$\mathcal{S}''$ & Horizontal surface formed by points $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathbb{R}^{3}$
-			with constant vertical coordinate $z''_{0}$. \\
+			$\mathcal{V}'_{\nu}$ & 
+			Regular region in $\mathbb{R}^{3}$, i.e., $\mathcal{V}'_{\nu} \subset \mathbb{R}^{3}$. &
+			$\partial \mathcal{V}'$ & 
+			Boundary of the regular region $\mathcal{V}'_{\nu}$. \\
+			
+			$\mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}'_{\nu}$ & 
+			Finite collection of $N_{\nu}$ disjoint regular regions $\mathcal{V}'_{\nu}$. &
+			$\partial \mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}'_{\nu}$ & 
+			Boundary of $\mathcal{V}'$. Finite collection of $N_{\nu}$ boundaries $\partial \mathcal{V}'$. \\
+			
+			$\overline{\mathcal{V}'} = \mathcal{V}' \, \cup \, \partial \mathcal{V}'$  &
+			Domain that is formed by the union of $\mathcal{V}' \subset \mathbb{R}^{3}$ and its boundary $\partial \mathcal{V}'$
+			and contains the set of 3D sources. &
+			$z^{t}_{0}$ & 
+			Constant vertical coordinate defining the top of the sources. \\
+			
+			$\mathbf{r}'$ &
+			Generic point $\mathbf{r}' = (x', y', z')^{\top}$ within the sources, i.e, $\mathbf{r}' \in \overline{\mathcal{V}'}$. &
+			$\sigma(\mathbf{r}')$ & 
+			Scalar function representing the density (contrast) or total-magnetization intensity within the sources. \\
+			
+			$\mathcal{S}''$ & 
+			Horizontal surface at the constant vertical coordinate $z''_{0}$. &
+			$\mathbf{r}''$ &
+			Generic point $\mathbf{r}'' = (x'', y'', z''_{0})^{\top}$ on $\mathcal{S}''$, i.e, $\mathbf{r}'' \in \mathcal{S}''$. \\
+			
+			$\mathbf{r}''_{j}$ & 
+			One element of a finite set of $M$ points $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{o})^{\top}$ 
+			on $\mathcal{S}''$, i.e., $\mathbf{r}''_{j} \in \mathcal{S}''$, 
+			$j \in \{ 1, \dots, M \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$. &
+			$\mathbf{r}$ &
+			Generic point $\mathbf{r} = (x, y, z)^{\top}$ located above the sources and the surface $\mathcal{S}''$, i.e., 
+			$\mathbf{r} \notin \overline{\mathcal{V}'}$, with vertical coordinates satisfying $z < z^{t}_{0}$ and $z < z''_{0}$. \\
+			
+			$\mathbf{r}_{i}$ & 
+			One element of a finite set of $N$ points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ 
+			located above the sources and the surface $\mathcal{S}''$, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}'}$, 
+			$i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$ and $z_{i} < z''_{0}$. &
+			$\mathcal{S}^{\dagger}$ & 
+			Horizontal surface located above the sources and the surface $\mathcal{S}''$, 
+			at a constant vertical coordinate $z^{\dagger}_{0}$ satisfying $z^{\dagger}_{0} < z^{t}_{0}$ and $z^{\dagger}_{0} < z''_{0}$. \\
+			
+			$\mathbf{r}^{\dagger}$ &
+			Generic point $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ on $\mathcal{S}^{\dagger}$, 
+			i.e, $\mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger}$. &
+			$\mathcal{S}^{\ddagger}$ & 
+			Horizontal surface located above the sources and the surface $\mathcal{S}''$, 
+			at a constant vertical coordinate $z^{\ddagger}_{0}$ satisfying $z^{\ddagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z''_{0}$. \\
+			
+			$\mathbf{r}^{\ddagger}$ &
+			Generic point $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top}$ on $\mathcal{S}^{\ddagger}$, 
+			i.e, $\mathbf{r}^{\ddagger} \in \mathcal{S}^{\ddagger}$. &
+			$\mathcal{F} [ g(\mathbf{r}^{\dagger}) ]$ &
+			Two-dimensional Fourier transform of a generic scalar function $g(\mathbf{r}^{\dagger})$ with respect to
+			the spatial coordinates $x$ and $y$, on a horizontal surface $\mathcal{S}^{\dagger}$. \\
 		\end{tabular}
 	\end{center}
 }
@@ -34,7 +76,7 @@
 \plot{}{width=0.8\textwidth}{
 	{
 		2D schematic representation of sources located in subsurface, over the
-		domain $\overline{\mathcal{V}} = \bigcup_{\nu = 1}^{N_{\nu}} \overline{\mathcal{V}}_{\nu}$, $N_{\nu} = 2$, 
+		domain $\overline{\mathcal{V}'} = \bigcup_{\nu = 1}^{N_{\nu}} \overline{\mathcal{V}'}_{\nu}$, $N_{\nu} = 2$, 
 		with top limited by the plane $z^{t}_{0}$. 
 		Points within the sources are represented by $\mathbf{r}' = (x', y', z')^{\top}$.
 		The dashed line represents the surface containing the observation points 
