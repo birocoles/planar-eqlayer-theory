@@ -1,0 +1,96 @@
+\tabl{symbols}{Table of symbols.
+}{
+	\begin{center}
+		\renewcommand{\arraystretch}{0.6}
+		\begin{tabular}{
+				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
+				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
+			}
+			{\small \textbf{Symbol}} & 
+			{\small \textbf{Definition}} & 
+			{\small \textbf{Symbol}} & 
+			{\small \textbf{Definition}} \\
+			\hline
+			$\mathcal{V}'_{\nu}$ & 
+			Regular region: Open, connected subset of $\mathbb{R}^{3}$, with boundary defined by a closed and compact 
+			surface $\partial \mathcal{V}'$ free of double points \citep[][ p. 22]{freeden_gerhards2012}. &
+			$\overline{\mathcal{V}'}$ & 
+			Closed region defined as the union of a finite collection of $N_{\nu}$ disjoint regular regions $\mathcal{V}'_{\nu}$ 
+			and their respective boundaries $\partial\mathcal{V}'_{\nu}$, i.e., 
+			$\overline{\mathcal{V}'} = \mathcal{V}' \cup \partial\mathcal{V}'$, where 
+			$\mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}'_{\nu}$ and 
+			$\partial \mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}'_{\nu}$. 
+			We consider that $\overline{\mathcal{V}'}$ contains the sources. \\
+			
+			$z^{t}_{0}$ and $\mathbf{r}'$ &
+			Constant vertical coordinate defining the top of the sources and 
+			generic point $\mathbf{r}' = (x', y', z')^{\top}$ within the sources, i.e, $\mathbf{r}' \in \overline{\mathcal{V}'}$. &
+			$\sigma(\mathbf{r}')$ & 
+			Piecewise continuous, integrable and bounded function that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} 
+			at all points $\mathbf{r}' \in \overline{\mathcal{V}'}$ and is zero at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$.
+			We assume that this function represents the density (contrast) or total-magnetization intensity within the sources. \\
+			
+			$\mathcal{S}''$ & 
+			Horizontal surface located at a constant vertical coordinate $z''_{0}$ that may cross the sources. This surface
+			is used to define all equivalent layers in the present work. &
+			$\mathbf{r}''$ &
+			Generic point $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$. \\
+			
+			$\mathbf{r}''_{j}$ & 
+			Specific element of a finite set of $M$ points 
+			$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{o})^{\top} \in \mathcal{S}''$, $j \in \{ 1, \dots, M \}$. 
+			These points define the locations of equivalent sources on $\mathcal{S}''$. &
+			$\mathbf{r}$ &
+			Generic point $\mathbf{r} = (x, y, z)^{\top}$ outside the sources ($\mathbf{r} \notin \overline{\mathcal{V}'}$). 
+			It is also used to define generic observation points with potential-field data located above the sources and the surface 
+			$\mathcal{S}''$, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and $z < z''_{0}$. \\
+			
+			$\mathbf{r}_{i}$ & 
+			Specific element of a finite set of $N$ observation points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ 
+			located above the sources and the surface $\mathcal{S}''$, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}'}$, 
+			$i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$ and $z_{i} < z''_{0}$. 
+			We consider that these points contain potential-field data.	&
+			$\mathcal{S}^{\dagger}$ and $\mathcal{S}^{\ddagger}$ & 
+			Horizontal surfaces located at constant vertical coordinates $z^{\dagger}_{0}$ and $z^{\ddagger}_{0}$, respectively, 
+			above the sources and the surface $\mathcal{S}''$, i.e., 
+			with $z^{\dagger}_{0} < z^{t}_{0}$, $z^{\dagger}_{0} < z''_{0}$, 
+			$z^{\ddagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z''_{0}$. \\
+			
+			$\mathbf{r}^{\dagger}$ and $\mathbf{r}^{\ddagger}$ &
+			Generic points $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$ 
+			and $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top} \in \mathcal{S}^{\ddagger}$,
+			both located above the sources and the surface $\mathcal{S}''$. &
+			$k_{x}$, $k_{y}$, $k$ and $\mathbf{k}$ &
+			The first two variables represent the wavenumbers along the $x$ and $y$ directions, respectively, 
+			while $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
+			\citep{pedersen1978}, with $\mathtt{i}$ representing the imaginary unit. \\
+			
+			$\mathbf{r}^{\ddagger}_{k}$ & 
+			Specific element of a finite set of $L$ points 
+			$\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{o})^{\top} \in \mathcal{S}^{\ddagger}$, 
+			$k \in \{ 1, \dots, L \}$. &
+			$U$ and $U_{\varepsilon}$ & 
+			Newtonian potential produced by the true sources at points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
+			(equation \ref{eq:potential-U-space}) and smooth approximation for $U$ at points located above the sources
+			(equation \ref{eq:potential-U-epsilon-space}). \\
+			
+			$\mathcal{F} [ \cdot ]$ &
+			Two-dimensional Fourier transform of a generic scalar function computed on a horizontal plane, with respect to
+			the spatial coordinates $x$ and $y$. To simplify the notation, we conveniently omit the dependence of 
+			$\mathcal{F} [ \cdot ]$ on the wavenumbers $k_{x}$ and $k_{y}$. &
+			$D_{g}$ and $\alpha_{g}$ &
+			Space- and Fourier-domain representations of the differential operator acting on a given function to produce
+			a generic function $g$. For example, $g(\cdot) = D_{g} U(\cdot)$ in the space domain and 
+			$\mathcal{F} [ g(\cdot) ] = \alpha_{g} \mathcal{F} [ U(\cdot) ]$ in the Fourier domain. 
+			$D_{g}$ and $\alpha_{g}$ are usually defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). \\
+			
+			$k_{\varepsilon}$ and $\mu_{\varepsilon}$ &
+			Fixed truncating wavenumber and fixed positive regularization parameter defining the approximating potential 
+			$U_{\varepsilon}$ according to equations \ref{eq:potential-U-epsilon-Fourier-dagger-1} and 
+			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. &
+			$\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$ and $\hat{\mathbf{h}}$ &
+			Constant unit vectors used in the present work.			
+		\end{tabular}
+	\end{center}
+	\label{tbl:symbols}
+}
