@@ -21,19 +21,20 @@ $\mathcal{S}''$ and has a space domain representation given by
 	\quad \ell \in \{ 0, 1 \} \: ,
 	\label{eq:potential-U-epsilon-space}
 \end{equation}
-where $D$ is the space-domain differential operator 
+where $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}'}$; 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Table \ref{tbl:symbols}) and 
+$D$ is the space-domain differential operator 
 defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
 $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
 We also consider that the Fourier-convolution theorem 
 can be applied to the auxiliary potential $U_{\varepsilon}$
 (equation \ref{eq:potential-U-epsilon-space}) on the horizontal surface $\mathcal{S}^{\dagger}$ above
-the sources (i.e., with $z^{\dagger}_{0} < z^{t}_{0}$), so that
+the sources (Table \ref{tbl:symbols}), so that
 \begin{equation}
 	\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]
 	= k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \:
 	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] \: ,
-	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: .
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: .
 	\label{eq:potential-U-epsilon-Fourier-dagger}
 \end{equation}
 Using the definition of $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ]$ (equation \ref{eq:Psi-Fourier})
@@ -62,7 +63,7 @@ Let $U_{\varepsilon}$ be given by
 \end{equation}
 where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber and 
 $\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$ is defined on the horizontal surface $\mathcal{S}^{\dagger}$ 
-located above the sources, i.e., with $z^{\dagger}_{0} < z^{t}_{0}$. 
+located above the sources (Table \ref{tbl:symbols}). 
 As we can see, this definition of $U_{\varepsilon}$ 
 (i) imposes that its Fourier transform coincides with 
 that of $U$ (equation \ref{eq:potential-U-Fourier}) on the horizontal surface $\mathcal{S}^{\dagger}$ 
@@ -212,8 +213,7 @@ problems (equations \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann
 		\label{eq:kernel-a-Fourier}
 	\end{equation}
 	with $a(\mathbf{r}, \mathbf{r}'') = D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ and 
-	$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \notin \overline{\mathcal{V}'}$ 
-	defining a point on the horizontal surface $\mathcal{S}^{\dagger}$ above the sources, at $z^{\dagger}_{0} < z''_{0}$.
+	$\mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger}$ (Table \ref{tbl:symbols}).
 	By substituting equations \ref{eq:observed-data-Fourier}, \ref{eq:Psi-Fourier} and \ref{eq:kernel-a-Fourier} 
 	into \ref{eq:predicted-data-continuous-layer-Fourier} and comparing the result with equations 
 	\ref{eq:potential-U-epsilon-Fourier-layer-1} and \ref{eq:potential-U-epsilon-Fourier-layer-2}, 
@@ -304,7 +304,7 @@ the equivalent-layer technique applicably even when the layer plane crosses the 
 The equivalent layer from Theorem \ref{theorem:planar-eqlayer-theorem} leads to a predicted 
 potential field that does not satisfy
 the error bound $\varepsilon$ (equation \ref{eq:epsilon-bound-data}) only on the surface $\mathcal{S}^{\dagger}$, but also 
-on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$. 
+on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$ (Table \ref{tbl:symbols}). 
 Namely, it follows from equation \ref{eq:potential-U-Fourier} that
 \begin{equation}
 	\int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty}

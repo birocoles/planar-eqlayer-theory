@@ -1,51 +1,24 @@
 \section{General background}
 \label{sec:background}
 
-\subsection{Preliminary notational and geometric definitions}
+\subsection{Potential fields due to 3D sources}
+\label{sec:potential_fields_3D_sources}
 
 The main geometric objects used in the present work are defined in Figure \ref{fig:geometry} and 
-Table \ref{tbl:symbols}.
+Table \ref{tbl:symbols}. Symbols that are not explicitly defined in text are defined in Table \ref{tbl:symbols}.
 We consider a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively. 
 We also assume to have a set of 3D gravity or magnetic sources with top at the vertical coordinate $z^{t}_{0}$ 
 (or below, i.e., with greater $z$), over a region $\overline{\mathcal{V}'}$ in the subsurface (Table \ref{tbl:symbols}).
 
-Generic points inside the sources are represented by $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$.
-
-We also consider to have potential field observations at generic points 
-$\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}'}$ or at a finite set of points 
-$\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top} \notin \overline{\mathcal{V}'}$, $i \in \{ 1, \dots, N \}$, 
-located above the sources, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and 
-$z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
-
-Specific horizontal surfaces are denoted by $\mathcal{S}$, with a particular superscript symbol. 
-The horizontal surface $\mathcal{S}''$, for example, is defined at a vertical coordinate $z''_{0}$ below the 
-observation points, so that $ z < z''_{0}$ and $ z_{i} < z''_{0}$. 
-The subscript ``$0$'' indicates that the corresponding vertical coordinate is constant. 
-Points and elements of area on a given horizontal surface are denoted by using the corresponding superscript symbol. 
-For example, we denote the element of area by $d\mathcal{S}'' = dx''dy''$, generic points by $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ 
-and also a finite set of points by $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top} \in \mathcal{S}''$,
-$j \in \{ 1, \dots, M \}$.
-
-Finally, all Fourier transforms computed here are defined on horizontal surfaces, with respect to the 
-spatial coordinates along the horizontal directions. For example, $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$
-indicates the two-dimensional Fourier transform of a scalar function $U(\mathbf{r}^{\dagger})$ with respect to
-the spatial coordinates $x$ and $y$, on a horizontal surface $\mathcal{S}^{\dagger}$ formed by points  
-$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$, i.e. by $\mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger}$.
-Besides, the dependence of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ on the wavenumbers $k_{x}$ and $k_{y}$ associated with 
-$x$ and $y$ directions, respectively, is conveniently omitted to simplify the notation.
-
-\subsection{Potential fields due to 3D sources}
-\label{sec:potential_fields_3D_sources}
-
-We define the potential field data $d^{o}(\mathbf{r})$ produced by the 3D sources at observation points 
-$\mathbf{r}$ (Figure \ref{fig:geometry}) by
+Let $d^{o}(\mathbf{r})$ defines the potential field data produced by the 3D sources at observation points 
+$\mathbf{r}$ (Figure \ref{fig:geometry}) as follows
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
 	\label{eq:observed-data-space}
 \end{equation}
-where $D_{d}$ is a space-domain differential operator acting on the potential
+where $D_{d}$ is a space-domain differential operator acting on the Newtonian potential
 \begin{equation}
 	U(\mathbf{r}) = \kappa \iiint\limits_{\mathcal{V}'}
 	\sigma(\mathbf{r}') \: \frac{1}{\| \mathbf{r} - \mathbf{r}'\|}
@@ -57,23 +30,15 @@ $d\mathcal{V}' = dx'dy'dz'$ represents a volume element;
 $\kappa$ is a proportionality constant;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}'$
-and $\sigma(\mathbf{r}')$ is a scalar function defined at points 
-$\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$ 
-as the density (contrast) or total-magnetization intensity within the sources.
-We implicitly assume that $\sigma(\mathbf{r}) = 0$ outside $\overline{\mathcal{V}'}$.
-To insure that the first- and second-order partial derivatives of $U$ 
-exist at all points in the $\mathbb{R}^{3}$ space, including those within the sources,
-we impose that $\sigma(\mathbf{r}')$ is a piecewise continuous, integrable and bounded function
-that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} at all points
-$\mathbf{r}' \in \overline{\mathcal{V}'}$.
+and $\sigma(\mathbf{r}')$ is a scalar function representing 
+the density (contrast) or total-magnetization intensity within the sources (Table \ref{tbl:symbols}).
 
 The Fourier transform of the potential field data $d^{o}$ (equation \ref{eq:observed-data-space}) 
-on a horizontal surface above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
+on a horizontal surface $\mathcal{S}^{\dagger}$ above the sources is given by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
 	\alpha_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
 	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:observed-data-Fourier}
 \end{equation}
 where 
@@ -84,11 +49,10 @@ where
 	\frac{e^{- k \, (z' - z^{\dagger}_{0})}}{k}
 	\: dz' \: , 
 	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:potential-U-Fourier}
 \end{equation}
 is the Fourier transform of the Newtonian potential 
-$U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, and
+$U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ ,
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
 	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -241,10 +205,10 @@ total-field anomalies into this special anomaly.
 \subsection{Classical Dirichlet's and Neumann's problems on a plane}
 \label{subsec:dirichlet_neumann}
 
-At all points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
-located outside the sources, $U$ (equation
-\ref{eq:potential-U-space}) has continuous partial derivatives of all orders, 
-satisfies the Laplace's equation and is regular at infinity \citep[][ p. 122--124, 217]{kellogg1967}.
+Due to the properties imposed on $\sigma(\mathbf{r}')$ (Table \ref{tbl:symbols}), the potential 
+$U$ (equation \ref{eq:potential-U-space}) has continuous partial derivatives of all orders, 
+satisfies the Laplace's equation at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
+located outside the sources, as well as is regular at infinity \citep[][ p. 122--124, 217]{kellogg1967}.
 Because of these properties, we have that
 \begin{equation}
 	U(\mathbf{r}) = 
@@ -255,7 +219,9 @@ Because of these properties, we have that
 	\quad \ell \in \{0, 1\} \: ,
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
-where $D(\ell, \hat{\mathbf{u}})$ is the space-domain differential operator 
+where $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}'}$; 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Table \ref{tbl:symbols}); 
+$D(\ell, \hat{\mathbf{u}})$ is the space-domain differential operator 
 defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
 $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}) and 
 \begin{equation}
@@ -302,14 +268,15 @@ on a horizontal surface $\mathcal{S}^{\dagger}$ above the sources, we find that
 	\quad z^{\dagger}_{0} < z''_{0} < z^{t}_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:U-Dirichlet-Neumann-Fourier}
 \end{equation}
-where 
+where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$; 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Table \ref{tbl:symbols}) and
 \begin{equation}
 	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
 	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
 	\: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Psi-Fourier}
 \end{equation}
-is defined according to \citet[][ p. 275]{blakely1996}, with $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$.
+is defined according to \citet[][ p. 275]{blakely1996}.
 We get from equation \ref{eq:diff-operators-generic} that the term $k$ in equation \ref{eq:U-Dirichlet-Neumann-Fourier} represents,
 in the Fourier domain, the combined effect of the space-domain differential operators $D(\ell, \hat{\mathbf{z}})$ and 
 $D(1-\ell, \hat{\mathbf{z}})$.
@@ -330,7 +297,6 @@ or, in the Fourier domain,
 	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
 	\alpha_{f} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
 	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: ,
 	\label{eq:transformed-field-Fourier}
 \end{equation}
 where $D_{f}$ is a space-domain differential operator acting on $U$ (equation \ref{eq:potential-U-space}) and
@@ -349,8 +315,7 @@ and manipulating the Fourier domain solution of the Dirichlet's and Neumann's pr
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] \: , 
-	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
-	\quad z^{\dagger}_{0} < z^{t}_{0} \: .
+	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: .
 	\label{eq:field-transformation-Fourier}
 \end{equation}
 Equation \ref{eq:field-transformation-Fourier} defines a single-step potential-field transformation 

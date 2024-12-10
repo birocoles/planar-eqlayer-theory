@@ -29,12 +29,12 @@ partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the 
 $D$ (equation \ref{eq:diff-operators-generic}). 
 The main assumption in Definition \ref{def:discrete-eqlayer} is that $d^{o}_{i}$ can be approximated 
 within a given accuracy $\epsilon$ by the potential field produced by a discrete and finite set of $M$ 
-virtual sources such as monopoles (or point masses) or dipoles, for example, with 
+virtual sources such as monopoles (or point masses) or dipoles with 
 constant and unknown physical property $p_{j}$ (e.g., mass, magnetic-moment intensity). 
 These virtual sources are usually called \textit{equivalent sources}.
 Here, we limit ourselves to the particular case in which they are disposed on a 
 horizontal surface $\mathcal{S}''$ that is located below the potential-field data and
-may cross the sources. 
+may cross the sources (Table \ref{tbl:symbols}). 
 We emphasize that Definition \ref{def:discrete-eqlayer} presumes a planar equivalent layer formed 
 by punctual equivalent sources that satisfies the data fit criterion given by equation \ref{eq:epsilon-bound-data-discrete}, 
 but these premises are certainly open to adjustments if necessary.
@@ -48,12 +48,12 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
-at a point $\mathbf{r}^{\ddagger}_{k}$ above $\mathcal{S}''$ and $\mathbf{T}$ is an 
-$L \times M$ matrix whose element $t_{kj}$ defines the transformed
+at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Table \ref{tbl:symbols})
+and $\mathbf{T}$ is an $L \times M$ matrix whose element $t_{kj}$ defines the transformed
 potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
 $j \in \{ 1, \dots, M \}$. 
 We have defined the transformed potential field $f_{k}$ at arbitrary points 
-$\mathbf{r}^{\ddagger}_{k} \notin \overline{\mathcal{V}'}$ above $\mathcal{S}''$, however they 
+$\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$, however they 
 can coincide with those at which the observed potential field is measured. 
 
 From the physical point of view, the product of the $j$-th element $p_{j}$ of $\mathbf{p}_{\epsilon}$ 
