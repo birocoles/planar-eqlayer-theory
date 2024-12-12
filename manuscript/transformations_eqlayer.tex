@@ -1,11 +1,11 @@
-\section{Potential-field transformations via equivalent-layer technique}
+\section{Unified approach for potential-field transformations}
 
 Note that, given a particular equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
 defined as a square-integrable function by equation \ref{eq:p-Fourier}, in terms of specific $\alpha_{d}$ and $\alpha_{a}$, 
 it is theoretically possible 
 to compute any potential field transformation (equation \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}).
 This can be verified by first noting that applying the Fourier-convolution theorem to \ref{eq:transformed-field-continuous-layer} 
-on a planar surface $\mathcal{S}^{\ddagger}$ (Table \ref{tbl:symbols}) gives
+on a planar surface $\mathcal{S}^{\ddagger}$ (Figure \ref{fig:modified-BVP}) gives
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
 	\mathcal{F} \left[ p_{\varepsilon}(\mathbf{r}'') \right]
@@ -25,13 +25,13 @@ Then we set
 	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} \: ,
 	\label{eq:alpha-t-generic}
 \end{equation}
-where $\alpha_{f}$ is the differential operator associated with the desired transformed field $f$ (equation \ref{eq:transformed-field-Fourier}).
+where $\alpha_{f}$ is the differential operator associated with the desired potential field $f$ (equation \ref{eq:transformed-field-Fourier}).
 In this case, we get from equations \ref{eq:Psi-Fourier}, \ref{eq:p-Fourier}  and \ref{eq:kernel-t-Fourier} 
 that the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
 is given by:
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ] =
-	\alpha_{f} \, k \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]
+	\alpha_{f} \, k \, \mathcal{F} [ U_{\varepsilon}(\mathbf{r}'') ] \: 
 	\mathcal{F} [ \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'') ] \: , 
 	\quad \mathbf{r}^{\ddagger} \in \mathcal{S}^{\ddagger} \: ,
 	\quad \mathbf{r}'' \in \mathcal{S}'' \: .
@@ -57,7 +57,8 @@ or
 \end{equation}
 if the auxiliary potential $U_{\varepsilon}$ is defined by equation \ref{eq:potential-U-epsilon-Fourier-dagger-2}.
 In both cases, we can see that the transformed field $f_{\varepsilon}$ yielded by the equivalent layer 
-is a smooth approximation of that produced by the true sources on the planar surface $\mathcal{S}^{\ddagger}$.
+is a smooth approximation of that produced by the true sources on the planar surface $\mathcal{S}^{\ddagger}$
+(Figure \ref{fig:modified-BVP}).
 
 In the context of the equivalent-layer technique, a potential-field transformation is generally defined
 in the space domain, by following two steps. The first consists in obtaining a particular layer $p_{\varepsilon}$ 
@@ -104,5 +105,3 @@ These results establish a theoretical link between potential-field transformatio
 equivalent-layer technique and those commonly made via Fourier transform of the observed data.
 This link explains, for example, why potential-field transformations made via equivalent-layer technique may suffer from the same 
 numerical problems generally associated with those computed via Fourier transform of the observed potential-field data.
-
-PAREI AQUI

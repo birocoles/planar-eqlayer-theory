@@ -3,8 +3,9 @@
 
 \begin{definition}[\textbf{Discrete equivalent layer}]
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
-	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i}$, 
-	$i \in \{1, \dots, N\}$, above a horizontal surface $\mathcal{S}''$. Besides, consider an $N \times M$ 
+	are the potential-field data $d^{o}_{i}$ at observation points $\mathbf{r}_{i}$ outside the sources, 
+	$i \in \{1, \dots, N\}$, above a horizontal surface $\mathcal{S}''$ with constant vertical 
+	coordinate $z''_{0}$. Besides, consider an $N \times M$ 
 	matrix $\mathbf{A}$ with element $a_{ij}$ defined by a harmonic function that depends only on $\mathbf{r}_{i}$ 
 	and $\mathbf{r}''_{j} \in \mathcal{S}''$, $j \in \{1, \dots, M\}$, and
 	vanishes as the distance $\| \mathbf{r}_{i} - \mathbf{r}''_{j} \|_{2}$ increases. 
@@ -27,14 +28,13 @@ and the elements of $\mathbf{A}$ are usually defined by
 $a_{ij} \equiv D_{a} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, which represents a 
 partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}). 
+It is important to bear in mind that the horizontal surface $\mathcal{S}''$ in Definition \ref{def:discrete-eqlayer} 
+may cross the sources, as illustrated in Figure \ref{fig:modified-BVP}.
 The main assumption in Definition \ref{def:discrete-eqlayer} is that $d^{o}_{i}$ can be approximated 
 within a given accuracy $\epsilon$ by the potential field produced by a discrete and finite set of $M$ 
 virtual sources such as monopoles (or point masses) or dipoles with 
 constant and unknown physical property $p_{j}$ (e.g., mass, magnetic-moment intensity). 
 These virtual sources are usually called \textit{equivalent sources}.
-Here, we limit ourselves to the particular case in which they are disposed on a 
-horizontal surface $\mathcal{S}''$ that is located below the potential-field data and
-may cross the sources (Table \ref{tbl:symbols}). 
 We emphasize that Definition \ref{def:discrete-eqlayer} presumes a planar equivalent layer formed 
 by punctual equivalent sources that satisfies the data fit criterion given by equation \ref{eq:epsilon-bound-data-discrete}, 
 but these premises are certainly open to adjustments if necessary.
@@ -48,13 +48,15 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
-at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Table \ref{tbl:symbols})
-and $\mathbf{T}$ is an $L \times M$ matrix whose element $t_{kj}$ defines the transformed
-potential field due to the $j$-th equivalent source, with $k \in \{ 1, \dots, L \}$ and
-$j \in \{ 1, \dots, M \}$. 
+at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Figure \ref{fig:modified-BVP})
+and $\mathbf{T}$ is an $L \times M$ matrix whose element $t_{kj} \equiv D_{t} \Psi(\mathbf{r}^{\ddagger}_{k}, \mathbf{r}''_{j})$,
+$k \in \{ 1, \dots, L \}$, $j \in \{ 1, \dots, M \}$, 
+is commonly defined by a partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{t}$ given by the 
+space-domain differential operator $D$ (equation \ref{eq:diff-operators-generic}).
+The element $t_{kj}$ represents the transformed potential field due to the $j$-th equivalent source. 
 We have defined the transformed potential field $f_{k}$ at arbitrary points 
 $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$, however they 
-can coincide with those at which the observed potential field is measured. 
+can be defined at any place any place above $\mathcal{S}''$, including the observation points. 
 
 From the physical point of view, the product of the $j$-th element $p_{j}$ of $\mathbf{p}_{\epsilon}$ 
 and the harmonic function $a_{ij}$ representing the element $ij$ of matrix $\mathbf{A}$ 
@@ -64,7 +66,7 @@ For example, if $\mathbf{d}^{o}$ contains gravity disturbance data
 \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, then
 $p_{j} \, a_{ij}$ commonly defines the vertical component of the gravitational attraction
 produced at $\mathbf{r}_{i}$ by a monopole located at
-$\mathbf{r}''_{j}$, with mass $p_{j}$. 
+$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:modified-BVP}), with mass $p_{j}$. 
 This is the pioneer approach presented by \cite{dampney1969} for 
 processing gravity data.
 For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data 
@@ -72,7 +74,7 @@ For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data
 following \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
 that it represents a magnetic induction field component 
 produced at the $i$-th observation point by a dipole located at 
-$\mathbf{r}''_{j} \in \mathcal{S}''$, with magnetic moment intensity $p_{j}$.
+$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:modified-BVP}), with magnetic moment intensity $p_{j}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the

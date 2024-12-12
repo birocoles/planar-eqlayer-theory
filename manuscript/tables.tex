@@ -1,7 +1,7 @@
 \tabl{symbols}{Table of symbols.
 }{
 	\begin{center}
-		\renewcommand{\arraystretch}{0.6}
+		\renewcommand{\arraystretch}{0.4}
 		\begin{tabular}{
 				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
 				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
@@ -17,11 +17,9 @@
 			$\overline{\mathcal{V}'}$ & 
 			Closed region defined as the union of a finite collection of $N_{\nu}$ disjoint regular regions $\mathcal{V}'_{\nu}$ 
 			and their respective boundaries $\partial\mathcal{V}'_{\nu}$, i.e., 
-			$\overline{\mathcal{V}'} = \mathcal{V}' \cup \partial\mathcal{V}'$, where 
-			$\mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \mathcal{V}'_{\nu}$ and 
-			$\partial \mathcal{V}' = \bigcup_{\nu = 1}^{N_{\nu}} \partial\mathcal{V}'_{\nu}$. 
+			$\overline{\mathcal{V}'} = \bigcup_{\nu = 1}^{N_{\nu}} \overline{\mathcal{V}'_{\nu}}$, where
+			$\overline{\mathcal{V}'_{\nu}} = \mathcal{V}'_{\nu} \cup \partial\mathcal{V}'_{\nu}$.
 			We consider that $\overline{\mathcal{V}'}$ contains the sources. \\
-			
 			$z^{t}_{0}$ and $\mathbf{r}'$ &
 			Constant vertical coordinate defining the top of the sources and 
 			generic point $\mathbf{r}' = (x', y', z')^{\top}$ within the sources, i.e, $\mathbf{r}' \in \overline{\mathcal{V}'}$. &
@@ -29,13 +27,11 @@
 			Piecewise continuous, integrable and bounded function that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} 
 			at all points $\mathbf{r}' \in \overline{\mathcal{V}'}$ and is zero at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$.
 			We assume that this function represents the density (contrast) or total-magnetization intensity within the sources. \\
-			
 			$\mathcal{S}''$ & 
 			Horizontal surface located at a constant vertical coordinate $z''_{0}$ that may cross the sources. This surface
 			is used to define all equivalent layers in the present work. &
 			$\mathbf{r}''$ &
 			Generic point $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$. \\
-			
 			$\mathbf{r}''_{j}$ & 
 			Specific element of a finite set of $M$ points 
 			$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{o})^{\top} \in \mathcal{S}''$, $j \in \{ 1, \dots, M \}$. 
@@ -44,7 +40,6 @@
 			Generic point $\mathbf{r} = (x, y, z)^{\top}$ outside the sources ($\mathbf{r} \notin \overline{\mathcal{V}'}$). 
 			It is also used to define generic observation points with potential-field data located above the sources and the surface 
 			$\mathcal{S}''$, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and $z < z''_{0}$. \\
-			
 			$\mathbf{r}_{i}$ & 
 			Specific element of a finite set of $N$ observation points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ 
 			located above the sources and the surface $\mathcal{S}''$, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}'}$, 
@@ -55,41 +50,68 @@
 			above the sources and the surface $\mathcal{S}''$, i.e., 
 			with $z^{\dagger}_{0} < z^{t}_{0}$, $z^{\dagger}_{0} < z''_{0}$, 
 			$z^{\ddagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z''_{0}$. \\
-			
 			$\mathbf{r}^{\dagger}$ and $\mathbf{r}^{\ddagger}$ &
 			Generic points $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$ 
 			and $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top} \in \mathcal{S}^{\ddagger}$,
 			both located above the sources and the surface $\mathcal{S}''$. &
-			$k_{x}$, $k_{y}$, $k$ and $\mathbf{k}$ &
-			The first two variables represent the wavenumbers along the $x$ and $y$ directions, respectively, 
-			while $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
-			\citep{pedersen1978}, with $\mathtt{i}$ representing the imaginary unit. \\
-			
 			$\mathbf{r}^{\ddagger}_{k}$ & 
 			Specific element of a finite set of $L$ points 
 			$\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{o})^{\top} \in \mathcal{S}^{\ddagger}$, 
-			$k \in \{ 1, \dots, L \}$. &
-			$U$ and $U_{\varepsilon}$ & 
-			Newtonian potential produced by the true sources at points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
-			(equation \ref{eq:potential-U-space}) and smooth approximation for $U$ at points located above the sources
-			(equation \ref{eq:potential-U-epsilon-space}). \\
-			
+			$k \in \{ 1, \dots, L \}$. \\
+			$k_{x}$, $k_{y}$, $k$ and $\mathbf{k}$ &
+			The first two variables represent the wavenumbers along the $x$ and $y$ directions, respectively, 
+			while $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
+			\citep{pedersen1978}, with $\mathtt{i}$ representing the imaginary unit. &
 			$\mathcal{F} [ \cdot ]$ &
 			Two-dimensional Fourier transform of a generic scalar function computed on a horizontal plane, with respect to
 			the spatial coordinates $x$ and $y$. To simplify the notation, we conveniently omit the dependence of 
-			$\mathcal{F} [ \cdot ]$ on the wavenumbers $k_{x}$ and $k_{y}$. &
-			$D_{g}$ and $\alpha_{g}$ &
-			Space- and Fourier-domain representations of the differential operator acting on a given function to produce
-			a generic function $g$. For example, $g(\cdot) = D_{g} U(\cdot)$ in the space domain and 
-			$\mathcal{F} [ g(\cdot) ] = \alpha_{g} \mathcal{F} [ U(\cdot) ]$ in the Fourier domain. 
-			$D_{g}$ and $\alpha_{g}$ are usually defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). \\
-			
+			$\mathcal{F} [ \cdot ]$ on the wavenumbers $k_{x}$ and $k_{y}$. \\
+			$U$ and $U_{\varepsilon}$ & 
+			Harmonic functions representing, respectively, the Newtonian potential produced by the true 
+			sources (equation \ref{eq:potential-U-space}) and a smooth approximation for $U$ 
+			(equation \ref{eq:potential-U-epsilon-space}). &
+%			$D_{g}$ and $\alpha_{g}$ &
+%			Space- and Fourier-domain representations of the differential operator acting on a given function to produce
+%			a generic function $g$. For example, $g(\cdot) = D_{g} U(\cdot)$ in the space domain and 
+%			$\mathcal{F} [ g(\cdot) ] = \alpha_{g} \mathcal{F} [ U(\cdot) ]$ in the Fourier domain. 
+%			$D_{g}$ and $\alpha_{g}$ are usually defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). \\
 			$k_{\varepsilon}$ and $\mu_{\varepsilon}$ &
 			Fixed truncating wavenumber and fixed positive regularization parameter defining the approximating potential 
 			$U_{\varepsilon}$ according to equations \ref{eq:potential-U-epsilon-Fourier-dagger-1} and 
-			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. &
-			$\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$ and $\hat{\mathbf{h}}$ &
-			Constant unit vectors used in the present work.			
+			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. \\
+			$d^{o}$ and $f$ &
+			Harmonic functions representing potential field produced by the true sources outside them 
+			(equations \ref{eq:observed-data-space} and \ref{eq:transformed-field-space}). The first represents the observed potential field. &
+			$\mathbf{d}^{o}$ and $\mathbf{f}$ &
+			Vectors whose elements are the functions $d^{o}$ and $f$ evaluated at a finite set of points outside the sources. \\
+			$\mathbf{p}_{\epsilon}$ &
+			Discrete equivalent layer according to Definition \ref{def:discrete-eqlayer}. &
+			$\mathbf{d}_{\epsilon}$ and $\mathbf{f}_{\epsilon}$ &
+			Vectors whose elements are, respectively, the predicted and transformed potential fields produced by the discrete 
+			equivalent layer $\mathbf{p}_{\epsilon}$. \\
+			$p_{\varepsilon}$ &
+			Continuous equivalent layer according to Definition \ref{def:continuous-eqlayer}. &
+			$d_{\varepsilon}$ and $f_{\varepsilon}$ &
+			Harmonic functions representing, respectively, the predicted and transformed potential fields produced by the 
+			continuous equivalent layer $p_{\varepsilon}$. \\
+			$D_{d}$ and $\alpha_{d}$ &
+			Space- and Fourier-domain operators that act on potentials $U$ and $U_{\varepsilon}$ to define the potential 
+			fields $d^{o}$ and $d_{\varepsilon}$ (equations \ref{eq:observed-data-space}, \ref{eq:observed-data-Fourier} 
+			and \ref{eq:predicted-data-continuous-layer-epsilon-Fourier}). &
+			$D_{a}$ and $\alpha_{a}$ &
+			Space- and Fourier-domain operators that act on the inverse distance function $\Psi$ (equations \ref{eq:Psi} and \ref{eq:Psi-Fourier}) 
+			to define the elements of $\mathbf{A}$ (equations \ref{eq:predicted-data-discrete-layer}) and the kernel $a$ 
+			(equations \ref{eq:predicted-data-continuous-layer} and \ref{eq:kernel-a-Fourier}). \\
+			$D_{f}$ and $\alpha_{f}$ &
+			Space- and Fourier-domain operators that act on potentials $U$ and $U_{\varepsilon}$ to define the potential 
+			fields $f$ and $f_{\varepsilon}$ (equations \ref{eq:transformed-field-space}, \ref{eq:transformed-field-Fourier} 
+			and \ref{eq:transformed-field-continuous-layer-single-step}). &
+			$D_{t}$ and $\alpha_{t}$ &
+			Space- and Fourier-domain operators that act on the inverse distance function $\Psi$ (equations \ref{eq:Psi} and \ref{eq:Psi-Fourier}) 
+			to define the elements of $\mathbf{T}$ (equations \ref{eq:transformed-field-discrete-layer}) and the kernel $t$ 
+			(equations \ref{eq:transformed-field-continuous-layer}, \ref{eq:kernel-t-Fourier} and \ref{eq:alpha-t-generic}). \\
+			$\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$, $\hat{\mathbf{h}}$, $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ and $\hat{\mathbf{z}}$ &
+			Constant unit vectors. The last three define the canonical basis (equation \ref{eq:canonical-base-vector}).
 		\end{tabular}
 	\end{center}
 	\label{tbl:symbols}
