@@ -1,17 +1,43 @@
 \section{General background}
 \label{sec:background}
 
+\subsection{Preliminary notational and geometric definitions}
+\label{sec:preliminaries}
+
+These main symbols used throughout the present work are shown in Table \ref{tbl:symbols} 
+and also in Figures \ref{fig:classical_BVP} and \ref{fig:modified-BVP}.
+Some of them are briefly described in the present subsection.
+
+Let a set of 3D gravity or magnetic sources be defined over a closed region 
+$\overline{\mathcal{V}'}$ located in the subsurface, with top limited by the vertical coordinate $z^{t}_{0}$ 
+and scalar physical property distribution $\sigma(\mathbf{r}')$, $\mathbf{r}' \in \overline{\mathcal{V}'}$, 
+referred to a topocentric Cartesian coordinate system with axes 
+$x$, $y$, and $z$ pointing to north, east and down, respectively 
+
+We also consider to have potential field observations at generic points 
+$\mathbf{r} \notin \overline{\mathcal{V}'}$ or at a finite set of points 
+$\mathbf{r}_{i} \notin \overline{\mathcal{V}'}$, $i \in \{ 1, \dots, N \}$, 
+located above the sources, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and 
+$z_{i} < z^{t}_{0}$. These points are conveniently called \textit{observation points}.
+
+Specific horizontal surfaces are denoted by $\mathcal{S}$, with a particular superscript symbol. 
+Points and elements of area on a given horizontal surface are denoted by using the corresponding superscript symbol. 
+The constant vertical coordinate associated with a given horizontal surface is defined by using the 
+corresponding superscript symbol and subscript ``$0$''. 
+The particular surface $\mathcal{S}''$ with constant vertical coordinate $z''_{0}$ is used to define all
+planar equivalent layers presented throughout the present work.
+
+Finally, we use the symbol $\mathcal{F} [ \cdot ]$ to denote the two-dimensional Fourier transform of a generic scalar 
+function computed on a horizontal surface, with respect to the spatial coordinates $x$ and $y$. 
+To simplify the notation, we conveniently omit the dependence of $\mathcal{F} [ \cdot ]$ on the 
+wavenumbers $k_{x}$ and $k_{y}$.
+
+
 \subsection{Potential fields due to 3D sources}
 \label{sec:potential_fields_3D_sources}
 
-Consider a topocentric Cartesian coordinate system with axes 
-$x$, $y$, and $z$ pointing to north, east and down, respectively. 
-Consider also a set of 3D gravity or magnetic sources over a region $\overline{\mathcal{V}'}$ 
-located in the subsurface, with top at the vertical coordinate $z^{t}_{0}$ (Table \ref{tbl:symbols}). 
-It means that the top of the sources is located at a vertical coordinate $z \ge z^{t}_{0}$, 
-as illustrated in Figure \ref{fig:classical_BVP}. 
-To help readers with the subsequent developments, we include the main symbols defined throughout 
-the present work in Table \ref{tbl:symbols}.
+
+
 
 Let $d^{o}(\mathbf{r})$ be the potential field data produced by the 3D sources at observation points 
 $\mathbf{r}$ (Figure \ref{fig:classical_BVP}) as follows
@@ -32,7 +58,7 @@ $d\mathcal{V}' = dx'dy'dz'$ represents a volume element;
 $\kappa$ is a proportionality constant;
 $\tfrac{1}{\| \mathbf{r} - \mathbf{r}' \|}$ is the inverse distance function
 between the observation point $\mathbf{r}$ and a point $\mathbf{r}' \in \mathcal{V}'$
-and $\sigma(\mathbf{r}')$ is a scalar function representing 
+and $\sigma(\mathbf{r}')$ is the scalar function representing 
 the density (contrast) or total-magnetization intensity within the sources (Table \ref{tbl:symbols}).
 
 The Fourier transform of the potential field data $d^{o}$ (equation \ref{eq:observed-data-space}) 

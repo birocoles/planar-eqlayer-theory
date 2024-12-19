@@ -46,7 +46,7 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 	\mathbf{f}_{\epsilon} = \mathbf{T} \, \mathbf{p}_{\epsilon} \: ,
 	\label{eq:transformed-field-discrete-layer} 
 \end{equation}
-where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element $f_{k}$ approximates 
+where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
 at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Figure \ref{fig:modified-BVP})
 and $\mathbf{T}$ is an $L \times M$ matrix whose element $t_{kj} \equiv D_{t} \Psi(\mathbf{r}^{\ddagger}_{k}, \mathbf{r}''_{j})$,
@@ -54,7 +54,7 @@ $k \in \{ 1, \dots, L \}$, $j \in \{ 1, \dots, M \}$,
 is commonly defined by a partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{t}$ given by the 
 space-domain differential operator $D$ (equation \ref{eq:diff-operators-generic}).
 The element $t_{kj}$ represents the transformed potential field due to the $j$-th equivalent source. 
-We have defined the transformed potential field $f_{k}$ at arbitrary points 
+We have defined the transformed potential field at arbitrary points 
 $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$, however they 
 can be defined at any place any place above $\mathcal{S}''$, including the observation points. 
 
@@ -87,3 +87,10 @@ conveniently chosen according to the characteristics of the problem.
 We mathematically confirm this independence some sections later and also show how 
 the particular form of predefined harmonic functions $a_{ij}$ affect the subsequent 
 potential-field transformations.
+
+In practical applications, the interpreter estimates a discrete equivalent layer $\mathbf{p}_{\epsilon}$ 
+that fit the observed data $\mathbf{d}^{o}$ according to Definition \ref{def:discrete-eqlayer} and then 
+uses the estimated layer to subsequently compute a transformed potential field $\mathbf{f}_{\epsilon}$ 
+(equation \ref{eq:transformed-field-discrete-layer}).
+What follows aims at first defining continuous equivalent layers on a horizontal plane. Then we leverage 
+the properties of continuous layers to gain deeper insights about the corresponding discrete layers.
