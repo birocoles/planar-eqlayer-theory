@@ -1,57 +1,43 @@
 \renewcommand{\figdir}{figures} % figure directory
 
-\plot{classical_BVP}{width=0.8\textwidth}{
-		{
-			2D schematic representation of a vertical $yz$ plane crossing the sources (represented in dark gray),
-			with $x$ axis pointing inward the page (represented by the ``$\otimes$" symbol).
-			The sources are located in the subsurface (represented in light gray), over a 
-			closed region $\overline{\mathcal{V}'}$ formed by $N_{\nu} = 2$ disjoint closed regions 
-			$\overline{\mathcal{V}'_{\nu}}$, $\nu \in \{1, 2\}$, with top limited by the plane $z^{t}_{0}$. 
-			The fine dashed line represents a horizontal surface $\mathcal{S}''$ located 
-			at $z''_{0} < z^{t}_{0}$, above the sources.
-			The medium dashed line represents the surface containing the observation points 
-			$\mathbf{r}$, all above $\mathcal{S}''$.
-			The long dashed line represents a planar surface $\mathcal{S}^{\dagger}$ located 
-			at $z^{\dagger}_{0} < z''_{0}$.
-		}
-		\label{fig:classical-BVP}
-	}
-
-\plot{modified_BVP}{width=0.8\textwidth}{
+\plot{Figure1}{width=0.8\textwidth}{
 	{
 		2D schematic representation of a vertical $yz$ plane crossing the sources (represented in dark gray),
 		with $x$ axis pointing inward the page (represented by the ``$\otimes$" symbol).
 		The sources are located in the subsurface (represented in light gray), over a 
 		closed region $\overline{\mathcal{V}'}$ formed by $N_{\nu} = 2$ disjoint closed regions 
 		$\overline{\mathcal{V}'_{\nu}}$, $\nu \in \{1, 2\}$, with top limited by the plane $z^{t}_{0}$. 
-		The fine dashed line represents a horizontal surface $\mathcal{S}''$ that cross the sources 
-		at $z''_{0} > z^{t}_{0}$.
+		The fine dashed lines represent two possible horizontal surfaces $\mathcal{S}''$, one located 
+		at $z''_{0} < z^{t}_{0}$, above the sources, and another at $z''_{0} > z^{t}_{0}$, crossing the sources.
 		The medium dashed line represents the surface containing the observation points 
 		$\mathbf{r}$, all above $\mathcal{S}''$.
 		The long dashed line represents a planar surface $\mathcal{S}^{\dagger}$ located 
 		at $z^{\dagger}_{0} < z''_{0}$.
+		Finally, the dashed-dot line represents a planar surface $\mathcal{S}^{\ddagger}$ located 
+		at $z^{\ddagger}_{0} < z^{\dagger}_{0}$.
 	}
-	\label{fig:modified-BVP}
+	\label{fig:Figure1}
 }
 
-\plot{1_model_view_1.png}{width=0.8\textwidth}{
+
+\plot{Figure2}{width=0.8\textwidth}{
 	{
 		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.
 	}
-	\label{fig:model}
+	\label{fig:Figure2}
 }
 
-\plot{2_simulated_fields.png}{width=0.8\textwidth}{
+\plot{Figure3}{width=0.8\textwidth}{
 	{
-		Potential fields due to the synthetic source (Figure \ref{fig:model}).
+		Potential fields due to the synthetic source (Figure \ref{fig:Figure2}).
 		(a) Approximated total-field anomaly, (b) amplitude of the magnetic induction field, 
 		(c) RTP anomaly, (d), (e), (f) $x$, $y$ and $z$ components of the magnetic induction field,
 		respectively. All values are in nT.	
 		The black line represents the projection of the model on the $xy$ plane.
 		The green and black arrows represent, respectively, the projections of the constant 
-		main field and synthetic source (Figure \ref{fig:model}) magnetization directions onto the plane $xy$.
+		main field and synthetic source (Figure \ref{fig:Figure2}) magnetization directions onto the plane $xy$.
 	}
-	\label{fig:simulated-fields}
+	\label{fig:Figure3}
 }
 
 \plot{6_layers.png}{width=0.8\textwidth}{

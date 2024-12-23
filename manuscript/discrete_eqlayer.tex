@@ -1,5 +1,18 @@
-\section{Discrete equivalent layers}
-\label{eq:discrete_eqlayer}
+\section{Planar equivalent layers}
+\label{eq:planar_eqlayer}
+
+In practical applications, the interpreter estimates a discrete equivalent layer $\mathbf{p}_{\epsilon}$ 
+that fits the observed data $\mathbf{d}^{o}$ according to Definition \ref{def:discrete-eqlayer} and then 
+uses the estimated layer to subsequently compute a transformed potential field $\mathbf{f}_{\epsilon}$ 
+(equation \ref{eq:transformed-field-discrete-layer}).
+All studies found in the literature assume that the equivalent layer is defined in a source-free region, where  
+Laplace’s equation is obeyed. Consequently, all those studies presume that the equivalent layer 
+does not cross the true sources. This condition cannot be guaranteed in practical applications, where 
+the interpreter usually does not know the true sources position in the subsurface.
+What follows aims at investigating the underlying assumptions and providing the theoretical background 
+that support all equivalent-layer methods.
+Our approach consists in first defining continuous equivalent layers on a horizontal plane and then leveraging 
+their properties to gain deeper insights about the corresponding discrete layers.
 
 \begin{definition}[\textbf{Discrete equivalent layer}]
 	Let us assume to have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ whose elements 
@@ -29,7 +42,7 @@ $a_{ij} \equiv D_{a} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, which represents a
 partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}). 
 It is important to bear in mind that the horizontal surface $\mathcal{S}''$ in Definition \ref{def:discrete-eqlayer} 
-may cross the sources, as illustrated in Figure \ref{fig:modified-BVP}.
+may cross the sources, as illustrated in Figure \ref{fig:Figure1}.
 The main assumption in Definition \ref{def:discrete-eqlayer} is that $d^{o}_{i}$ can be approximated 
 within a given accuracy $\epsilon$ by the potential field produced by a discrete and finite set of $M$ 
 virtual sources such as monopoles (or point masses) or dipoles with 
@@ -48,7 +61,7 @@ interpolation or reduction to the pole, for example, can be computed as follows:
 \end{equation}
 where $\mathbf{f}_{\epsilon}$ is an $L \times 1$ vector whose $k$-th element approximates 
 the transformed potential field $f(\mathbf{r}^{\ddagger}_{k})$ (equation \ref{eq:transformed-field-space}) 
-at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Figure \ref{fig:modified-BVP})
+at a point $\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Figure \ref{fig:Figure1})
 and $\mathbf{T}$ is an $L \times M$ matrix whose element $t_{kj} \equiv D_{t} \Psi(\mathbf{r}^{\ddagger}_{k}, \mathbf{r}''_{j})$,
 $k \in \{ 1, \dots, L \}$, $j \in \{ 1, \dots, M \}$, 
 is commonly defined by a partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{t}$ given by the 
@@ -66,7 +79,7 @@ For example, if $\mathbf{d}^{o}$ contains gravity disturbance data
 \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}, then
 $p_{j} \, a_{ij}$ commonly defines the vertical component of the gravitational attraction
 produced at $\mathbf{r}_{i}$ by a monopole located at
-$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:modified-BVP}), with mass $p_{j}$. 
+$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:Figure1}), with mass $p_{j}$. 
 This is the pioneer approach presented by \cite{dampney1969} for 
 processing gravity data.
 For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data 
@@ -74,7 +87,7 @@ For the case in which $\mathbf{d}^{o}$ contains total-field anomaly data
 following \cite{emilia1973} and defining the term $p_{j} \, a_{ij}$ such
 that it represents a magnetic induction field component 
 produced at the $i$-th observation point by a dipole located at 
-$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:modified-BVP}), with magnetic moment intensity $p_{j}$.
+$\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \ref{fig:Figure1}), with magnetic moment intensity $p_{j}$.
 
 Note that, in the examples presented above, the physical relationship 
 between the observed potential field data and their true sources is the
@@ -87,16 +100,3 @@ conveniently chosen according to the characteristics of the problem.
 We mathematically confirm this independence some sections later and also show how 
 the particular form of predefined harmonic functions $a_{ij}$ affect the subsequent 
 potential-field transformations.
-
-In practical applications, the interpreter estimates a discrete equivalent layer $\mathbf{p}_{\epsilon}$ 
-that fits the observed data $\mathbf{d}^{o}$ according to Definition \ref{def:discrete-eqlayer} and then 
-uses the estimated layer to subsequently compute a transformed potential field $\mathbf{f}_{\epsilon}$ 
-(equation \ref{eq:transformed-field-discrete-layer}).
-All studies found in the literature assume that the equivalent layer is defined in a source-free region, where  
-Laplace’s equation is obeyed. Consequently, all those studies presume that the equivalent layer 
-does not cross the true sources. This condition cannot be guaranteed in practical applications, where 
-the interpreter usually does not know the true sources position in the subsurface.
-What follows aims at investigating the underlying assumptions and providing the theoretical background 
-that support all equivalent-layer methods.
-Our approach consists in first defining continuous equivalent layers on a horizontal plane and then leveraging 
-their properties to gain deeper insights about the corresponding discrete layers.

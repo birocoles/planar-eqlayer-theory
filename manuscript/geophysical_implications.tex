@@ -17,7 +17,7 @@ accurately reproduce the corresponding field components produced by the true sou
 We provide the theoretical background for these potential-field transformations.
 
 Let us consider, for example, the common two-step approach to convert gravity-disturbance into gravity
-gradient data. The first step consists in obtaining a particular equivalent layer $p_{\varepsilon}$ 
+gradient data (Table \ref{tbl:Table2}). The first step consists in obtaining a particular equivalent layer $p_{\varepsilon}$ 
 by considering that the observed potential field $d^{o}$ is given by $\tfrac{\partial}{\partial z} U(\mathbf{r})$ 
 (equation \ref{eq:potential-U-1st-deriv-space}) and that the kernel function 
 $a(\mathbf{r}, \mathbf{r}'')$ is the vertical derivative of $\Psi$ (equation \ref{eq:Psi}).
@@ -46,7 +46,7 @@ a particular Neumann's equivalent layer (Definition \ref{def:eql-Neumann}).
 
 
 A predominant trend in previous studies utilizing a planar equivalent layer of dipoles for magnetic-field transformations 
-is to treat the layer as a purely mathematical abstraction employed for processing total-field anomaly data, 
+is to treat the layer as a purely mathematical abstraction employed for processing total-field anomaly data (Table \ref{tbl:Table2}), 
 a perspective exemplified by the remarks of \citet{pedersen1989} concerning the research of 
 \citet{bhattacharyya_chan1977}.
 Specifically, Pedersen pointed out that the first fundamental existence theorem for the Dirichlet's 
@@ -62,12 +62,12 @@ This inquiry usually aims to discern the physical significance and possible link
 with boundary problems of potential theory.
 
 Here, we leverage a theoretical approach to infer, for the first time, the existence of 
-planar dipole layers capable of accurately reproducing total-field anomaly data 
+planar dipole layers capable of accurately reproducing total-field anomaly data (Table \ref{tbl:Table2})
 within the purview of applied geophysics. 
 We first consider that (i) the observed potential field $d^{o}$ 
 is satisfactorily described by the directional derivative $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
-field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources, and (ii)
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources  (Table \ref{tbl:Table2}), and (ii)
 the kernel is $a(\mathbf{r}, \mathbf{r}'') = \hat{\mathbf{u}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}, \mathbf{r}'') \, \hat{\mathbf{h}}$,
 where $\mathbf{H}_{\Psi}$ is the Hessian matrix \citep[e.g.,][ p. 158]{kaplan2002} of
 function $\Psi$ (equation \ref{eq:Psi}) and $\hat{\mathbf{h}}$ is a constant unit vector not necessarily equal to 
@@ -87,10 +87,11 @@ $\hat{\mathbf{h}}$ and was deduced by considering
 that $\hat{\mathbf{u}}$ is a unit vector having the same constant direction of the main geomagnetic field at the study area.
 However, it can be easily verified that the same equivalent layer can also be deduced by considering that $\hat{\mathbf{u}}$ is one of the
 canonical base vectors $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ or $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
-In this case, the observed potential field represents a Cartesian component of the magnetic induction field.
+In this case, the observed potential field represents a Cartesian component of the magnetic induction field  (Table \ref{tbl:Table2}).
 It can also be easily verified that the same $p_{\varepsilon}$ given by equation 
 \ref{eq:p-Fourier-dipoles} can be equally deduced if we consider that the 
-observed potential field is the magnetic scalar potential. In this case, $\alpha_{d}$ and $\alpha_{a}$ are defined
+observed potential field is the magnetic scalar potential  (Table \ref{tbl:Table2}). 
+In this case, $\alpha_{d}$ and $\alpha_{a}$ are defined
 without the term $\alpha(1, \hat{\mathbf{u}})$.
 
 
@@ -98,12 +99,12 @@ without the term $\alpha(1, \hat{\mathbf{u}})$.
 
 
 According to the pioneer work of \citet{silva1986}, which is widely followed in applied geophysics, 
-the RTP in the space domain is calculated from total-field anomaly data in two steps.
+the RTP in the space domain is calculated from total-field anomaly data (Table \ref{tbl:Table2}) in two steps.
 The first consists in estimating the magnetic-moment intensity distribution on a planar layer 
 of dipoles (or doublets) with constant magnetization direction equal to that of the true sources.
 The second step consists in computing the $z$-component of the magnetic induction field due 
 to the estimated layer by setting its magnetization along the vertical direction.
-It is usually verified a posteriori that this computed field approximates the true RTP anomaly.
+It is usually verified a posteriori that this computed field approximates the true RTP anomaly (Table \ref{tbl:Table2}).
 
 We call attention to the fact that \citet{silva1986} cites the work of \citet{roy1962} to justify that ``the magnetic 
 field due to arbitrary sources can be exactly fitted by the magnetic field due to a horizontal equivalent
@@ -114,7 +115,7 @@ presented a general outline to deduce the solutions of the Dirichlet's and Neuma
 located above the sources (equation \ref{eq:U-Dirichlet-Neumann}).
 In other words, the two-step approach proposed by \citet{silva1986}, which is widely accepted by the scientific community 
 and we know to be correct from practice 
-\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022}, 
+\citep[e.g., ][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022, piauilino_etal2024}, 
 is an empirical generalization of the \citeauthor{roy1962}'s (\citeyear{roy1962}) work. 
 It is also important to point out that the mathematical equivalence between the space-domain approach to compute the 
 RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
@@ -166,7 +167,7 @@ by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 In this case, it can be verified from equations \ref{eq:diff-operators-generic} and \ref{eq:transformed-field-continuous-layer-single-step} 
 that the computed transformed field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) 
-approximates the RTP anomaly.
+approximates the RTP anomaly  (Table \ref{tbl:Table2}).
 
 We can also investigate the theoretical link between the RTP in the space domain, 
 via equivalent-layer technique, and in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
@@ -225,7 +226,7 @@ Such layers produce to potential-field transformations (equations \ref{eq:transf
 This strategy, called \textit{generalized equivalent sources}, was proposed by \citet{cordell1992} and recently adapted by 
 \citet{soler_uieda2021} to perform gravity-data processing. 
 Those authors considered only the particular case in which the observed potential field $d^{o}$ is gravity disturbance data 
-$\tfrac{\partial}{\partial z} U(\mathbf{r})$ (equation \ref{eq:observed-data-space}), 
+$\tfrac{\partial}{\partial z} U(\mathbf{r})$  (Table \ref{tbl:Table2}), 
 with $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ (equations \ref{eq:observed-data-Fourier}, 
 \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 In this particular case, equation \ref{eq:p-Fourier-generalized-eqs} leads to an equivalent layer that 
@@ -241,7 +242,7 @@ The first step consists in obtaining an equivalent layer by considering that (i)
 is satisfactorily described by the directional derivative 
 $\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$ 
 (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
-field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources, and (ii)
+field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the sources  (Table \ref{tbl:Table2}), and (ii)
 the kernel function is given by 
 \begin{equation}
 	a(\mathbf{r}, \mathbf{r}'') = \tfrac{\left( z''_{0} - z \right)}{2 \, \pi} \, 
@@ -252,7 +253,7 @@ the kernel function is given by
 which represents the double integral of the function $\Psi$ (equation \ref{eq:Psi}) 
 along the vertical direction $z$.
 The second step of the alternative approach proposed by \citet{guspi_novara2009} computes the RTP anomaly 
-by setting $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) with 
+(Table \ref{tbl:Table2}) by setting $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) with 
 $t(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$ (equation \ref{eq:Psi}).
 
 Note that the first step consists in obtaining an equivalent layer $p_{\varepsilon}$ defined by 
@@ -270,8 +271,8 @@ $p_{\varepsilon}$ assumes the following form in the Fourier domain:
 The second step consists in computing $f_{\varepsilon}$ in the Fourier domain (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
 by using $\alpha_{t} = 1$ (equation \ref{eq:alpha-t-generic}).
 In this case, it can be verified that the transformed potential field $\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\ddagger}) ]$ 
-(equation \ref{eq:transformed-field-continuous-layer-Fourier}) actually approximates the RTP anomaly for the particular case 
-in which $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
+(equation \ref{eq:transformed-field-continuous-layer-Fourier}) actually approximates the RTP anomaly  (Table \ref{tbl:Table2}) 
+for the particular case in which $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
 i.e., for the case in which the constant magnetization direction of the equivalent layer coincides with that of the true sources.
 This result shows the effectiveness of our approach in providing the theoretical background not only for classical 
 equivalent-layer methods, but also for unconventional ones.

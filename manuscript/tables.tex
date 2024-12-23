@@ -1,10 +1,12 @@
-\tabl{symbols}{Table of symbols.
+\tabl{Table1}{Table of symbols.
 }{
 	\begin{center}
 		\renewcommand{\arraystretch}{0.4}
 		\begin{tabular}{
-				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
-				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
+				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}
+				>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
+				>{\smaller\raggedleft\arraybackslash}m{0.18\textwidth}
+				>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.32\textwidth}
 			}
 			{\small \textbf{Symbol}} & 
 			{\small \textbf{Definition}} & 
@@ -116,5 +118,55 @@
 			Constant unit vectors. The last three define the canonical basis (equation \ref{eq:canonical-base-vector}).
 		\end{tabular}
 	\end{center}
-	\label{tbl:symbols}
+	\label{tbl:Table1}
+}
+
+
+\tabl{Table2}{Relevant potential fields for geophysical applications.
+}{
+	\begin{center}
+		\renewcommand{\arraystretch}{0.8}
+		\begin{tabular}{
+				>{\small\centering}m{0.15\textwidth}
+				>{\smaller\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.25\textwidth}
+				>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.60\textwidth}
+			}
+			{\small \textbf{Symbol}} & 
+			{\small \textbf{Potential field}} & 
+			{\small \textbf{Brief description}} \\
+			\hline
+			$U$ & 
+			Newtonian potential &
+			In gravity applications, $U$ (equation \ref{eq:potential-U-space}) represents the gravitational potential. 
+			In magnetic applications, it represents an auxiliary potential whose first directional derivative along the 
+			constant magnetization direction of the sources gives the magnetic scalar potential. \\
+			$\tfrac{\partial}{\partial u} U(\mathbf{r})$ &
+			(Pseudo)gravitational attraction component &
+			In gravity applications, it represents the first derivative of the gravitational potential along a Cartesian direction 
+			$u \in \{ x, y, z \}$ (equation \ref{eq:potential-U-1st-deriv-space}). The vertical component $\tfrac{\partial}{\partial z} U$ 
+			is called gravity disturbance \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}. In magnetic applications, the vertical 
+			component represents the pseudogravity anomaly \citep[][ p. 345]{blakely1996}. \\
+			$\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r})$ &
+			Gravitational tensor component or RTP anomaly &
+			Second derivative of $U$ along the Cartesian directions $u, v \in \{ x, y, z \}$ (equation \ref{eq:potential-U-2nd-deriv-space}). 
+			In gravity applications, the second derivative represents a component of the gravitational tensor.
+			In magnetic applications, the particular second derivative $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ along the vertical 
+			direction represents the RTP anomaly. \\
+			$\nabla U(\mathbf{r})^{\top} \hat{\mathbf{v}}$ &
+			Magnetic scalar potential &
+			Directional derivative of $U$ along the constant magnetization direction $\hat{\mathbf{v}}$ of the sources 
+			(equation \ref{eq:potential-U-oblique-1st-deriv-space}), where $\nabla U(\mathbf{r})$ is the gradient of 
+			$U$ (equation \ref{eq:potential-U-grad-space}). \\
+			$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ &
+			Magnetic induction field component &
+			Directional derivative of $U$ along $\hat{\mathbf{v}}$, the constant magnetization direction of the sources, 
+			and $\hat{\mathbf{u}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\mathbf{H}_{U}$ is the 
+			Hessian of $U$ (equation \ref{eq:potential-U-Hessian}). For the case in which 
+			$\hat{\mathbf{u}}$ is $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ or $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}),
+			the directional derivative represents a Cartesian component of the magnetic induction field. 
+			For the case in which $\hat{\mathbf{u}}$ is the constant direction of the main field, the directional derivative 
+			represents the approximated total-field anomaly \cite[e.g., ][ p. 179]{blakely1996}. \\
+		\end{tabular}
+	\end{center}
+	\label{tbl:Table2}
 }
