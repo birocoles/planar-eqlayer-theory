@@ -1,71 +1,157 @@
 \section{Numerical simulations}
 \label{eq:numerical_simulations}
 
-We have simulated a magnetic source composed of $1241$ horizontally juxtaposed rectangular prisms. 
+\subsection{General setup}
+
+We present three numerical tests illustrating planar equivalent layers that intersect a simulated 
+magnetic source at the same horizontal plane.
+Each test involves defining three versions of a predefined equivalent layer by following three different approaches.
+Here we define the general setup for all tests.
+
+\subsubsection{Synthetic magnetic source}
+
+We have simulated a magnetic source composed of $1241$ horizontally juxtaposed rectangular prisms
+(Figure \ref{fig:Figure2}). 
 The prisms extend along the $x$-direction from $\approx -3601$ to $4900$ m and 
-along the $y$-direction from $\approx -3000.3$ to $\approx 5800.2$ m (Figure \ref{fig:model}). 
+along the $y$-direction from $\approx -3000.3$ to $\approx 5800.2$ m. 
 Each prism has horizontal side lengths of approximately $256.4$ m in the $x$-direction 
 and $204.1$ m in the $y$-direction, with thicknesses ranging from $0$ m to $600$ m. 
-The top of the model varies from $0$ to $300$ m, while the bottom ranges from $300$ to $600$ m.
-Hence, the plane $z^{t}_{0} = 0$ m defines the top of the model.
-The model has a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (Table \ref{tbl:Table1}) 
-varying from $2$ to $3$ A/m according to a uniform distribution and a constant direction with inclination 
-$-10.2^{\circ}$ and declination $-19.8^{\circ}$. With these inclination and declination values, we have computed 
-a unit vector $\hat{\mathbf{v}}$.
-We also consider that the main geomagnetic field has a constant direction with inclination $-30^{\circ}$ and 
-declination $-19^{\circ}$ throughout the simulated area. We used these inclination and declination values 
-to compute a unit vector $\hat{\mathbf{u}}$.
 
-We have set a regular grid of $N_{x} \times N_{y}$ points 
+The top of the source is delimited by the plane $z^{t}_{0} = 0$ m and varies 
+from $0$ to $300$ m, while its bottom ranges from $300$ to $600$ m.
+The source has a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (Table \ref{tbl:Table1}) 
+varying from $2$ to $3$ A/m according to a uniform distribution and a constant direction defined by the 
+unit vector $\hat{\mathbf{v}}$, with inclination $-10.2^{\circ}$ and declination $-19.8^{\circ}$. 
+We also consider that the main geomagnetic field has a constant direction given by the unit vector $\hat{\mathbf{u}}$,
+with inclination $-30^{\circ}$ and declination $-19^{\circ}$. 
+
+\subsubsection{Synthetic potential fields}
+
+We have set a regular grid of $N_{x} \times N_{y}$ observation points 
 $\mathbf{r}^{\dagger}_{i} = (x^{\dagger}_{i}, y^{\dagger}_{i}, z^{\dagger}_{0})^{\top}$, $i \in \{1, \dots, N = N_{x} \, N_{y}\}$,
-located above the synthetic source at $z^{\dagger}_{0} = -150$ m, where $N_{x} = 400$, $N_{y} = 330$.
-Figure \ref{fig:simulated-fields} shows the the potential fields produced by the synthetic source at these points.
-They were computed by using the closed expressions derived by \cite{Nagyetal2000}, \cite{Nagyetal2002} 
+where $N_{x} = 400$, $N_{y} = 330$. 
+The points are located on a planar surface $\mathcal{S}^{\dagger}$ (Figure \ref{fig:Figure1}) above the magnetic source
+(Figure \ref{fig:Figure2}), at $z^{\dagger}_{0} = -150$ m.
+Figure \ref{fig:Figure3} shows the potential fields (Table \ref{tbl:Table2}) produced by the magnetic source at 
+the simulated grid of observation points.
+The potential fields were computed by using the closed expressions derived by \cite{Nagyetal2000}, \cite{Nagyetal2002} 
 and \cite{Fukushima2020}.
 
-We have also set a regular grid of $N_{x} \times N_{y}$ points 
+In our three tests, we consider that the observed potential field $d^{o}$ (equations \ref{eq:observed-data-space} and \ref{eq:observed-data-Fourier}) 
+is the approximated total-field anomaly (Figure \ref{fig:Figure3}a), which means that 
+$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$ (equation \ref{eq:diff-operators-generic}).
+
+\subsubsection{Equivalent layers layout}
+
+In all tests, we define discrete equivalent layers on the same planar surface $\mathcal{S}''$ (Figure \ref{fig:Figure1}), 
+that intersects the source (Figure \ref{fig:Figure2}) at $z''_{0} = 200$ m.
+All layers are composed of punctual equivalent sources arranged on a regular grid of $N_{x} \times N_{y}$ points 
 $\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$,
-located at a horizontal plane that crosses the synthetic source at $z''_{0} = 200$ m.
-Each point $\mathbf{r}''_{j}$ of this grid is located right below a point $\mathbf{r}^{\dagger}_{i}$ where we
-have computed the potential fields due to the synthetic source.
-Then we have estimated three discrete equivalent layers $\mathbf{p}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
-formed by equivalent sources located at the points $\mathbf{r}''_{j}$.
-All layers (Figure \ref{fig:discrete-layers}) were estimated by applying the method proposed by 
-\citet{takahashi-etal2020, takahashi-etal2022} because,
-in our tests, the spatial configuration of the points $\mathbf{r}^{\dagger}_{i}$ and $\mathbf{r}''_{j}$ leads to 
-matrices $\mathbf{A}$ having a Block-Toeplitz Toeplitz-Block (BTTB) structure.
-This method estimates a discrete equivalent layer by using the Conjugate Gradient Least Squares (CGLS) 
-algorithm, which naturally imposes some degree of smoothness on solutions obtained by running 
-few iterations \citep[][ p. 166]{aster_etal2019}.
-In fact, all layers were obtained with only $100$ iterations of the CGLS method, 
+so that each point $\mathbf{r}''_{j}$ is located right below an observation point $\mathbf{r}^{\dagger}_{i}$.
+
+\subsection{Tests}
+
+Our three tests involve determining planar equivalent layers that intersect the simulated magnetic 
+source at the same planar surface $\mathcal{S}''$.
+Each test consists in first specifying the equivalent layer type by setting the operators $\alpha_{a}$ and $D_{a}$ 
+via equation \ref{eq:diff-operators-generic}.
+They act on the scaled inverse distance function $\Psi$ 
+(equations \ref{eq:Psi} and \ref{eq:Psi-Fourier}) in the space and Fourier domains,
+respectively, to define the elements $a_{ij}$ of matrix $\mathbf{A}$ (Definition \ref{def:discrete-eqlayer}) and 
+the kernel function $a(\mathbf{r}, \mathbf{r}'')$ (Definition \ref{def:continuous-eqlayer}).
+The second step of each test is determining three versions of the predefined equivalent layer 
+on the planar surface $\mathcal{S}''$ by following three different approaches.
+
+\subsubsection{Approach 1}
+
+The first approach involves solving a linear inverse problem to estimate a discrete equivalent layer 
+$\mathbf{p}_{\epsilon}$ leading to a predicted data $\mathbf{d}_{\epsilon}$ close to the observed 
+data $\mathbf{d}^{o}$ (Definition \ref{def:discrete-eqlayer}).
+In this case, the discrete layer is totally defined in the space domain, by following the classical approach
+found in the literature.
+
+In this case, we apply the method proposed by \citet{takahashi-etal2020, takahashi-etal2022} 
+because the spatial configuration of the simulated equivalent sources and observation points leads to 
+matrices $\mathbf{A}$ (Definition \ref{def:discrete-eqlayer}) having a Block-Toeplitz Toeplitz-Block (BTTB) structure.
+This method estimates $\mathbf{p}_{\epsilon}$ by using the Conjugate Gradient Least Squares (CGLS) algorithm, 
+which naturally imposes some degree of smoothness when run few iterations \citep[][ p. 166]{aster_etal2019}.
+In fact, the discrete layers estimated here were obtained with only $100$ iterations of the CGLS method, 
 which is very small compared to the total number of equivalent sources ($N = 132,000$).
-As we can see in Figure \ref{fig:discrete-layers}a, the estimated Neumann's equivalent layer has an 
-all positive magnetic moment distribution, with maxima located right above the synthetic source.
-This layer clearly indicates the horizontal position of the synthetic source and approximates the 
+
+\subsubsection{Approaches 2 and 3}
+
+The second and third approaches to define a given equivalent layer are developed in the Fourier domain 
+and bypass the need to solve a linear inverse problem. Instead, they directly approximate the continuous 
+equivalent layer $p_{\varepsilon}$ defined by equation \ref{eq:p-Fourier}. The objective is to demonstrate 
+that the theoretical framework established here for continuous equivalent layers is consistent with the 
+classical space-domain approach, which involves solving a linear inverse problem.
+
+In both approaches, we compute discrete layers according to the following steps.
+We start by computing the pseudogravity anomaly (Table \ref{tbl:Table2}) due to the synthetic source 
+at the simulated grid of observation points $\mathbf{r}^{\dagger}_{i}$ located above the synthetic source (Figure \ref{fig:Figure2}), 
+on the planar surface $\mathcal{S}^{\dagger}$ at $z^{\dagger}_{0} = -150$ m.
+The pseudogravity anomaly is defined by $k \, \mathcal{F}\left[ U(\mathbf{r}^{\dagger}) \right]$ in the Fourier domain,
+where $\mathcal{F}\left[ U(\mathbf{r}^{\dagger}) \right]$ is given by equation \ref{eq:potential-U-Fourier}.
+Then we numerically compute the term $k \, \mathcal{F}\left[ U_{\varepsilon}(\mathbf{r}'') \right]$ (equation \ref{eq:p-Fourier}).
+The difference between approaches 2 and 3 is the way we numerically compute $\mathcal{F}\left[ U_{\varepsilon}(\mathbf{r}'') \right]$.
+In approach 2, we use the equation 
+\ref{eq:potential-U-epsilon-Fourier-layer-1}, with a given truncating wavenumber $k_{\varepsilon}$.
+In approach 3, the term $\mathcal{F}\left[ U_{\varepsilon}(\mathbf{r}'') \right]$ is computed by using equation 
+\ref{eq:potential-U-epsilon-Fourier-layer-2}, with a given regularization parameter $\mu_{\varepsilon}$.
+In both approaches, we obtain a discrete equivalent layer $\mathbf{p}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer})
+in the space domain by numerically evaluating the inverse Fourier transform of equation \ref{eq:p-Fourier}, 
+using the predefined operators $\alpha_{d}$ and $\alpha_{a}$.
+
+\subsection{Results}
+
+Our first test defines a planar equivalent layer by using $\alpha_{a} = \alpha_{d}$ (equation \ref{eq:p-Fourier}), 
+which results in continuous equivalent layers $p_{\varepsilon}$ 
+(Definition \ref{def:continuous-eqlayer}) that approximate $\nicefrac{\partial U(\mathbf{r}'')}{\partial z}$ (equation \ref{eq:potential-U-oblique-1st-deriv-space}) on the layer plane.
+Such $p_{\varepsilon}$ are Neumann's equivalent layer (Definition \ref{def:eql-Neumann}).
+
+Figures \ref{fig:Figure4}a--c show the Neumann's layers obtained from approaches 1--3, respectively.
+As we can see, these layers have an all positive magnetic moment distribution, 
+with maxima located right above the synthetic source.
+These layers clearly indicate the horizontal position of the synthetic source and approximates the 
 pseudogravity anomaly due to the synthetic source on the layer plane.
-This is not the case, however, for those layers shown in Figures \ref{fig:discrete-layers}b and c, which 
-exhibit positive and negative values.
-The vertically magnetized dipole layer (Figure \ref{fig:discrete-layers}b) is defined by using 
-$\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
-$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) k$ in equation \ref{eq:p-Fourier} and consequently 
-approximates $\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$ (equation \ref{eq:potential-U-oblique-1st-deriv-space}) on the layer plane.
-From the physical point of view, this quantity represents the negative magnetic scalar 
+
+PAREI AQUI
+
+
+COLOCAR DETALHES DOS TESTES EM UMA TABELA, LEGENDA DA FIGURA OU SÓ NO TEXTO?
+
+FALAR DOS DADOS PREDITOS APENAS NO ÚLTIMO PARÁGRAFO, QUANDO FALAR DE FIGURA 6? LÁ É NECESSÁRIO MENCIONAR
+QUE OS DADOS PREDITOS PELAS CAMADAS OBTIDAS NOS APPROACHES 2 E 3 ESTÃO EM UM MATERIAL SUPLEMENTAR.
+
+The second class is defined by using $\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) k$ 
+in equation \ref{eq:p-Fourier} and consequently results in continuous layers $p_{\varepsilon}$ 
+(Definition \ref{def:continuous-eqlayer}) that approximate $\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$ 
+(equation \ref{eq:potential-U-oblique-1st-deriv-space}) on the layer plane.
+From the physical point of view, such layers represent the negative magnetic scalar 
 potential due to the synthetic source (Table \ref{tbl:Table2}).
-Finally, Figure \ref{fig:discrete-layers}c shows a generic layer defined by using 
+
+Finally, we consider the equivalent layer class 
+Figure \ref{fig:Figure4}c shows a generic layer defined by using 
 $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
 $\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ in equation \ref{eq:p-Fourier}. 
 It means that this layer approximates $\frac{\partial}{\partial z}\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$, which defines the $z$ component of the magnetic induction field due to the synthetic source on the layer plane.
 
-Figure \ref{fig:data-fits} shows the residuals between the transformed fields $\mathbf{f}_{\epsilon}$ 
-(equation \ref{eq:transformed-field-discrete-layer}) due the estimated layers (Figure \ref{fig:discrete-layers})
-and the simulated fields due to the synthetic source (Figure \ref{fig:model}) at the points 
+
+
+This is not the case, however, for those layers shown in Figures \ref{fig:Figure4}b and c, which 
+exhibit positive and negative values.
+
+
+Figure \ref{fig:Figure6} shows the residuals between the transformed fields $\mathbf{f}_{\epsilon}$ 
+(equation \ref{eq:transformed-field-discrete-layer}) due the estimated layers (Figure \ref{fig:Figure4})
+and the simulated fields due to the synthetic source (Figure \ref{fig:Figure2}) at the points 
 $\mathbf{r}^{\dagger}_{i}$ on the plane $z^{\dagger}_{0} = -150$ m.
-As we can see, the corresponding residuals for the RTP anomalies (Figures \ref{fig:data-fits}g, h and i) 
+As we can see, the corresponding residuals for the RTP anomalies (Figures \ref{fig:Figure6}g, h and i) 
 present some trends along the constant magnetization direction of the synthetic source. 
 These trends are caused by the relatively low inclination $-10.2^{\circ}$ of the synthetic source magnetization.
 
 To compute the approximated total-field anomaly and the $x$, $y$ and $z$ components of the magnetic induction field 
-due to the Neumann's layer (Figure \ref{fig:discrete-layers}a), 
+due to the Neumann's layer (Figure \ref{fig:Figure4}a), 
 we have used matrices $\mathbf{T}$ (equation \ref{eq:transformed-field-discrete-layer}) 
 having elements $t_{ij} = \hat{\mathbf{t}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j}) \, \hat{\mathbf{h}}$,
 with unit vectors $\hat{\mathbf{t}}$ equal to, respectively, $\hat{\mathbf{u}}$, $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ and
@@ -76,7 +162,7 @@ To compute the RTP anomaly, we have used a matrix $\mathbf{T}$
 having elements $t_{ij} = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$.
 
 The approximated total-field anomaly and $x$, $y$ and $z$ components of the magnetic induction field 
-due to the vertically magnetized layer (Figure \ref{fig:discrete-layers}b) were computed 
+due to the vertically magnetized layer (Figure \ref{fig:Figure4}b) were computed 
 by following the same approach for the Neumann's layer. 
 The RTP, however, was computed differently, by following two steps. 
 The first step was defined in the space domain and involved multiplying the estimated discrete layer 
@@ -88,7 +174,7 @@ in the Fourier domain, where $\mathbf{v}$ defines the constant magnetization dir
 This second step is necessary to include the factor $\nicefrac{\alpha_{a}}{\alpha_{d}}$ into the operator 
 $\alpha_{t}$ associated with the transformed field (equation \ref{eq:alpha-t-generic}).
 
-The estimated discrete layer shown in Figure \ref{fig:discrete-layers}c does not represent the conventional 
+The estimated discrete layer shown in Figure \ref{fig:Figure4}c does not represent the conventional 
 equivalent-layer approach applied to magnetic data processing.
 Because of that, it leads to potential-field transformations that are not commonly 
 found in the literature about equivalent-layer methods.
@@ -100,7 +186,7 @@ The $x$, $y$ and $z$ components of the magnetic induction field were computed by
 having elements $t_{ij} = \tfrac{\partial}{\partial x} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$, 
 $t_{ij} = \tfrac{\partial}{\partial y} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$ and 
 $t_{ij} = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$, respectively.
-To compute the RTP anomaly due to the generic layer shown in Figure \ref{fig:discrete-layers}c, we performed two steps. 
+To compute the RTP anomaly due to the generic layer shown in Figure \ref{fig:Figure4}c, we performed two steps. 
 The first step was defined in the space domain and involved multiplying the estimated discrete layer 
 by a matrix $\mathbf{T}$ 
 having elements $t_{ij} = \tfrac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}^{\dagger}_{i}, \mathbf{r}''_{j})$,
@@ -110,9 +196,9 @@ in the Fourier domain, where $\mathbf{v}$ defines the constant magnetization dir
 This second step is necessary to include the factor $\nicefrac{\alpha_{a}}{\alpha_{d}}$ into the operator 
 $\alpha_{t}$ associated with the transformed field (equation \ref{eq:alpha-t-generic}).
 
-These results show that all estimated layers (Figure \ref{fig:discrete-layers}) yield transformed potential 
+These results show that all estimated layers (Figure \ref{fig:Figure4}) yield transformed potential 
 fields $\mathbf{f}_{\epsilon}$ (equation \ref{eq:transformed-field-discrete-layer}) that are very close to the 
-corresponding fields due to the synthetic source (Figure \ref{fig:simulated-fields}).
+corresponding fields due to the synthetic source (Figure \ref{fig:Figure3}).
 These results also illustrate the fact that potential-field transformations can be computed with any equivalent layer
 if $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}) is properly set.
 It means that the reduction to the pole, for example, is not a potential field transformation that can only be 

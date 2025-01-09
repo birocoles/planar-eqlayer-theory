@@ -22,14 +22,17 @@
 
 \plot{Figure2}{width=0.8\textwidth}{
 	{
-		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms.
+		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms. 
+		The model have a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (Table \ref{tbl:Table1}) 
+		varying uniformly from $2$ to $3$ A/m and a constant direction with inclination 
+		$-10.2^{\circ}$ and declination $-19.8^{\circ}$.
 	}
 	\label{fig:Figure2}
 }
 
 \plot{Figure3}{width=0.8\textwidth}{
 	{
-		Potential fields due to the synthetic source (Figure \ref{fig:Figure2}).
+		Potential fields (Table \ref{tbl:Table2}) due to the synthetic source (Figure \ref{fig:Figure2}).
 		(a) Approximated total-field anomaly, (b) amplitude of the magnetic induction field, 
 		(c) RTP anomaly, (d), (e), (f) $x$, $y$ and $z$ components of the magnetic induction field,
 		respectively. All values are in nT.	
@@ -40,34 +43,38 @@
 	\label{fig:Figure3}
 }
 
-\plot{6_layers.png}{width=0.8\textwidth}{
+\plot{Figure4}{width=0.8\textwidth}{
 	{
 		Estimated discrete layers.
-		(a) Dipole layer (equation \ref{eq:p-Fourier-dipoles}) having a constant magnetization direction $\hat{\mathbf{h}}$
-		equal to that $\hat{\mathbf{v}}$ of the synthetic source. In this case, the dipole layer is a Neumann's
-		equivalent layer (Definition \ref{def:eql-Neumann}).
-		(b) Dipole layer (equation \ref{eq:p-Fourier-dipoles}) having a constant vertical magnetization direction 
-		$\hat{\mathbf{h}} = \hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}).
-		(c) Generic equivalent layer (equation \ref{eq:p-Fourier}) defined by using 
-		$\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and
-		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$, where $\hat{\mathbf{u}}$ is the constant direction 
-		of the simulated main field.
+		The first, second and third columns contain the results obtained from approaches 1--3, respectively.
+		The first, second and third rows show, respectively, the estimated layers with $\alpha_{a} = \alpha_{d}$, 
+		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) k$ and 
+		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ (equation \ref{eq:p-Fourier}). 
+		For all layers, we consider 
+		$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$.
 	}
-	\label{fig:discrete-layers}
+	\label{fig:Figure4}
 }
 
-\plot{6_data_fits.png}{width=0.47\textwidth}{
+\plot{Figure5}{width=0.8\textwidth}{
 	{
-		Residuals between the potential fields due to the estimated discrete equivalent layers (Figure \ref{fig:discrete-layers})
-		and the synthetic source (Figure \ref{fig:model}).
+		Differences between estimated equivalent layers.
+	}
+	\label{fig:Figure5}
+}
+
+\plot{Figure6}{width=0.47\textwidth}{
+	{
+		Residuals between the potential fields due to the estimated discrete equivalent layers shown in Figures 
+		\ref{fig:Figure4}a--c and the synthetic source (Figure \ref{fig:Figure2}).
 		The rows from top to bottom contain residuals of the approximated total-field anomaly,
 		amplitude of magnetic induction field, RTP anomaly, $x$, $y$ and $z$ components of the magnetic induction field.
 		The columns from left to right contain the potential fields due to the layers shown, respectively, in Figures
-		\ref{fig:discrete-layers}a, b and c.
+		\ref{fig:Figure4}a, b and c.
 		All values are in nT.
 		The black arrow represents the projection of the constant 
-		synthetic source (Figure \ref{fig:model}) magnetization direction onto the plane $xy$.
+		synthetic source (Figure \ref{fig:Figure2}) magnetization direction onto the plane $xy$.
 	}
-	\label{fig:data-fits}
+	\label{fig:Figure6}
 }
 

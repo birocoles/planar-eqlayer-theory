@@ -28,50 +28,51 @@
 			$\sigma(\mathbf{r}')$ & 
 			Piecewise continuous, integrable and bounded function that satisfies some Hölder condition \citep[][ p. 152]{kellogg1967} 
 			at all points $\mathbf{r}' \in \overline{\mathcal{V}'}$ and is zero at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$.
-			We assume that this function represents the density (contrast) or total-magnetization intensity within the sources. \\
-			$\mathcal{S}''$ & 
-			Horizontal surface located at a constant vertical coordinate $z''_{0}$ that may cross the sources. This surface
-			is used to define all equivalent layers in the present work. &
-			$\mathbf{r}''$ &
-			Generic point $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$. \\
+			This function represents the density (contrast) or total-magnetization intensity within the sources. \\
+			$\mathcal{S}''$ and $\mathbf{r}''$ & 
+			The first variable represents a horizontal surface located at a constant vertical coordinate $z''_{0}$ that may cross 
+			the sources. This surface is used to define all equivalent layers in the present work. 
+			The second variable defines a generic point $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$. &
 			$\mathbf{r}''_{j}$ & 
 			Specific element of a finite set of $M$ points 
 			$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{o})^{\top} \in \mathcal{S}''$, $j \in \{ 1, \dots, M \}$. 
-			These points define the locations of equivalent sources on $\mathcal{S}''$. &
+			These points define the locations of equivalent sources on $\mathcal{S}''$. \\
 			$\mathbf{r}$ &
 			Generic point $\mathbf{r} = (x, y, z)^{\top}$ outside the sources ($\mathbf{r} \notin \overline{\mathcal{V}'}$). 
 			It is also used to define generic observation points with potential-field data located above the sources and the surface 
-			$\mathcal{S}''$, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and $z < z''_{0}$. \\
-			$\mathbf{r}_{i}$ & 
-			Specific element of a finite set of $N$ observation points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ 
-			located above the sources and the surface $\mathcal{S}''$, i.e., $\mathbf{r}_{i} \notin \overline{\mathcal{V}'}$, 
-			$i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying $z_{i} < z^{t}_{0}$ and $z_{i} < z''_{0}$. 
-			We consider that these points contain potential-field data.	&
+			$\mathcal{S}''$, i.e., with vertical coordinates satisfying $z < z^{t}_{0}$ and $z < z''_{0}$. &
+			$\mathbf{r}_{i}$ and $\mathbf{r}^{\dagger}_{i}$ & 
+			Specific elements of two finite sets of $N$ observation points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ and 
+			$\mathbf{r}^{\dagger}_{i} = (x^{\dagger}_{i}, y^{\dagger}_{i}, z^{\dagger}_{0})^{\top}$ 
+			located above the sources and the surface $\mathcal{S}''$, i.e., $\mathbf{r}_{i}, \mathbf{r}^{\dagger}_{i} \notin \overline{\mathcal{V}'}$, 
+			$\mathbf{r}^{\dagger}_{i} \in \mathcal{S}^{\dagger}$, $i \in \{ 1, \dots, N \}$, with vertical coordinates satisfying 
+			$z_{i} < z^{t}_{0}$, $z_{i} < z''_{0}$, $z^{\dagger}_{0} < z^{t}_{0}$ and $z^{\dagger}_{0} < z''_{0}$. 
+			We consider that these points contain potential-field data.	\\
 			$\mathcal{S}^{\dagger}$ and $\mathcal{S}^{\ddagger}$ & 
 			Horizontal surfaces located at constant vertical coordinates $z^{\dagger}_{0}$ and $z^{\ddagger}_{0}$, respectively, 
 			above the sources and the surface $\mathcal{S}''$, i.e., 
 			with $z^{\dagger}_{0} < z^{t}_{0}$, $z^{\dagger}_{0} < z''_{0}$, 
-			$z^{\ddagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z''_{0}$. \\
+			$z^{\ddagger}_{0} < z^{t}_{0}$ and $z^{\ddagger}_{0} < z''_{0}$. &
 			$\mathbf{r}^{\dagger}$ and $\mathbf{r}^{\ddagger}$ &
 			Generic points $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$ 
 			and $\mathbf{r}^{\ddagger} = (x^{\ddagger}, y^{\ddagger}, z^{\ddagger}_{0})^{\top} \in \mathcal{S}^{\ddagger}$,
-			both located above the sources and the surface $\mathcal{S}''$. &
+			both located above the sources and the surface $\mathcal{S}''$. \\
 			$\mathbf{r}^{\ddagger}_{k}$ & 
-			Specific element of a finite set of $L$ points 
+			Specific element of a finite set of points 
 			$\mathbf{r}^{\ddagger}_{k} = (x^{\ddagger}_{k}, y^{\ddagger}_{k}, z^{\ddagger}_{o})^{\top} \in \mathcal{S}^{\ddagger}$, 
-			$k \in \{ 1, \dots, L \}$. \\
+			$k \in \{ 1, \dots, L \}$. These points are primarily used to define potential-field transformations. &
 			$k_{x}$, $k_{y}$, $k$ and $\mathbf{k}$ &
 			The first two variables represent the wavenumbers along the $x$ and $y$ directions, respectively, 
 			while $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
-			\citep{pedersen1978}, with $\mathtt{i}$ representing the imaginary unit. &
+			\citep{pedersen1978}, with $\mathtt{i}$ representing the imaginary unit. \\
 			$\mathcal{F} [ \cdot ]$ &
 			Two-dimensional Fourier transform of a generic scalar function computed on a horizontal plane, with respect to
 			the spatial coordinates $x$ and $y$. To simplify the notation, we conveniently omit the dependence of 
-			$\mathcal{F} [ \cdot ]$ on the wavenumbers $k_{x}$ and $k_{y}$. \\
+			$\mathcal{F} [ \cdot ]$ on the wavenumbers $k_{x}$ and $k_{y}$. &
 			$U$ and $U_{\varepsilon}$ & 
 			Harmonic functions representing, respectively, the Newtonian potential produced by the true 
 			sources (equation \ref{eq:potential-U-space}) and a smooth approximation for $U$ 
-			(equation \ref{eq:potential-U-epsilon-space}). &
+			(equation \ref{eq:potential-U-epsilon-space}). \\
 %			$D_{g}$ and $\alpha_{g}$ &
 %			Space- and Fourier-domain representations of the differential operator acting on a given function to produce
 %			a generic function $g$. For example, $g(\cdot) = D_{g} U(\cdot)$ in the space domain and 
@@ -80,20 +81,19 @@
 			$k_{\varepsilon}$ and $\mu_{\varepsilon}$ &
 			Fixed truncating wavenumber and fixed positive regularization parameter defining the approximating potential 
 			$U_{\varepsilon}$ according to equations \ref{eq:potential-U-epsilon-Fourier-dagger-1} and 
-			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. \\
+			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. &
 			$d^{o}$ and $f$ &
 			Harmonic functions representing potential field produced by the true sources outside them 
-			(equations \ref{eq:observed-data-space} and \ref{eq:transformed-field-space}). The first represents the observed potential field. &
+			(equations \ref{eq:observed-data-space} and \ref{eq:transformed-field-space}). The first represents the observed potential field. \\
 			$\mathbf{d}^{o}$ &
 			Observed data vector whose $i$-th element $d^{o}_{i}$ is the function $d^{o}$ evaluated at the observation point $\mathbf{r}_{i}$ 
-			(Definition \ref{def:discrete-eqlayer}). \\
-			$\mathbf{p}_{\epsilon}$ &
-			Discrete equivalent layer (Definition \ref{def:discrete-eqlayer}). &
+			(Definition \ref{def:discrete-eqlayer}). &
+			$\mathbf{p}_{\epsilon}$ and $p_{\varepsilon}$ &
+			Discrete and continuous equivalent layers (Definitions \ref{def:discrete-eqlayer} and \ref{def:continuous-eqlayer}). \\
 			$\mathbf{d}_{\epsilon}$ and $\mathbf{f}_{\epsilon}$ &
 			Vectors whose elements are, respectively, the predicted and transformed potential fields produced by the discrete 
-			equivalent layer $\mathbf{p}_{\epsilon}$ (equations \ref{eq:predicted-data-discrete-layer} and \ref{eq:transformed-field-discrete-layer}). \\
-			$p_{\varepsilon}$ &
-			Continuous equivalent layer (Definition \ref{def:continuous-eqlayer}). &
+			equivalent layer $\mathbf{p}_{\epsilon}$ (equations \ref{eq:predicted-data-discrete-layer} and 
+			\ref{eq:transformed-field-discrete-layer}). &
 			$d_{\varepsilon}$ and $f_{\varepsilon}$ &
 			Harmonic functions representing, respectively, the predicted and transformed potential fields produced by the 
 			continuous equivalent layer $p_{\varepsilon}$ (equations \ref{eq:predicted-data-continuous-layer} and 
@@ -144,14 +144,14 @@
 			(Pseudo)gravitational attraction component &
 			In gravity applications, it represents the first derivative of the gravitational potential along a Cartesian direction 
 			$u \in \{ x, y, z \}$ (equation \ref{eq:potential-U-1st-deriv-space}). The vertical component $\tfrac{\partial}{\partial z} U$ 
-			is called gravity disturbance \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}. In magnetic applications, the vertical 
-			component represents the pseudogravity anomaly \citep[][ p. 345]{blakely1996}. \\
+			is called \textit{gravity disturbance} \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}. In magnetic applications, the vertical 
+			component represents the \textit{pseudogravity anomaly} \citep[][ p. 345]{blakely1996}. \\
 			$\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r})$ &
 			Gravitational tensor component or RTP anomaly &
 			Second derivative of $U$ along the Cartesian directions $u, v \in \{ x, y, z \}$ (equation \ref{eq:potential-U-2nd-deriv-space}). 
-			In gravity applications, the second derivative represents a component of the gravitational tensor.
+			In gravity applications, the second derivative represents a component of the \textit{gravitational tensor}.
 			In magnetic applications, the particular second derivative $\tfrac{\partial^{2}}{\partial z^{2}} U(\mathbf{r})$ along the vertical 
-			direction represents the RTP anomaly. \\
+			direction represents the \textit{RTP anomaly}. \\
 			$\nabla U(\mathbf{r})^{\top} \hat{\mathbf{v}}$ &
 			Magnetic scalar potential &
 			Directional derivative of $U$ along the constant magnetization direction $\hat{\mathbf{v}}$ of the sources 
@@ -165,7 +165,7 @@
 			$\hat{\mathbf{u}}$ is $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ or $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}),
 			the directional derivative represents a Cartesian component of the magnetic induction field. 
 			For the case in which $\hat{\mathbf{u}}$ is the constant direction of the main field, the directional derivative 
-			represents the approximated total-field anomaly \cite[e.g., ][ p. 179]{blakely1996}. \\
+			represents the \textit{approximated total-field anomaly} \cite[e.g., ][ p. 179]{blakely1996}. \\
 		\end{tabular}
 	\end{center}
 	\label{tbl:Table2}
