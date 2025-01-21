@@ -15,7 +15,7 @@
 			\hline
 			$\mathcal{V}'_{\nu}$ & 
 			Regular region: Open, connected subset of $\mathbb{R}^{3}$, with boundary defined by a closed and compact 
-			surface $\partial \mathcal{V}'$ free of double points \citep[][ p. 22]{freeden_gerhards2012}. &
+			surface $\partial \mathcal{V}'_{\nu}$ free of double points \citep[][ p. 22]{freeden_gerhards2012}. &
 			$\overline{\mathcal{V}'}$ & 
 			Closed region defined as the union of a finite collection of $N_{\nu}$ disjoint regular regions $\mathcal{V}'_{\nu}$ 
 			and their respective boundaries $\partial\mathcal{V}'_{\nu}$, i.e., 
@@ -83,7 +83,7 @@
 			$U_{\varepsilon}$ according to equations \ref{eq:potential-U-epsilon-Fourier-dagger-1} and 
 			\ref{eq:potential-U-epsilon-Fourier-dagger-2}, respectively. &
 			$d^{o}$ and $f$ &
-			Harmonic functions representing potential field produced by the true sources outside them 
+			Harmonic functions representing potential fields produced by the true sources at points outside them 
 			(equations \ref{eq:observed-data-space} and \ref{eq:transformed-field-space}). The first represents the observed potential field. \\
 			$\mathbf{d}^{o}$ &
 			Observed data vector whose $i$-th element $d^{o}_{i}$ is the function $d^{o}$ evaluated at the observation point $\mathbf{r}_{i}$ 
@@ -91,11 +91,11 @@
 			$\mathbf{p}_{\epsilon}$ and $p_{\varepsilon}$ &
 			Discrete and continuous equivalent layers (Definitions \ref{def:discrete-eqlayer} and \ref{def:continuous-eqlayer}). \\
 			$\mathbf{d}_{\epsilon}$ and $\mathbf{f}_{\epsilon}$ &
-			Vectors whose elements are, respectively, the predicted and transformed potential fields produced by the discrete 
+			Vectors whose elements are, respectively, the predicted and transformed potential fields produced by a discrete 
 			equivalent layer $\mathbf{p}_{\epsilon}$ (equations \ref{eq:predicted-data-discrete-layer} and 
 			\ref{eq:transformed-field-discrete-layer}). &
 			$d_{\varepsilon}$ and $f_{\varepsilon}$ &
-			Harmonic functions representing, respectively, the predicted and transformed potential fields produced by the 
+			Harmonic functions representing, respectively, the predicted and transformed potential fields produced by a 
 			continuous equivalent layer $p_{\varepsilon}$ (equations \ref{eq:predicted-data-continuous-layer} and 
 			\ref{eq:transformed-field-continuous-layer}). \\
 			$D_{d}$ and $\alpha_{d}$ &
@@ -104,7 +104,7 @@
 			and \ref{eq:predicted-data-continuous-layer-epsilon-Fourier}). &
 			$D_{a}$ and $\alpha_{a}$ &
 			Space- and Fourier-domain operators that act on the inverse distance function $\Psi$ (equations \ref{eq:Psi} and \ref{eq:Psi-Fourier}) 
-			to define the elements of $\mathbf{A}$ (equations \ref{eq:predicted-data-discrete-layer}) and the kernel $a$ 
+			to define the elements of $\mathbf{A}$ (equation \ref{eq:predicted-data-discrete-layer}) and the kernel $a$ 
 			(equations \ref{eq:predicted-data-continuous-layer} and \ref{eq:kernel-a-Fourier}). \\
 			$D_{f}$ and $\alpha_{f}$ &
 			Space- and Fourier-domain operators that act on potentials $U$ and $U_{\varepsilon}$ to define the potential 
@@ -112,7 +112,7 @@
 			and \ref{eq:transformed-field-continuous-layer-single-step}). &
 			$D_{t}$ and $\alpha_{t}$ &
 			Space- and Fourier-domain operators that act on the inverse distance function $\Psi$ (equations \ref{eq:Psi} and \ref{eq:Psi-Fourier}) 
-			to define the elements of $\mathbf{T}$ (equations \ref{eq:transformed-field-discrete-layer}) and the kernel $t$ 
+			to define the elements of $\mathbf{T}$ (equation \ref{eq:transformed-field-discrete-layer}) and the kernel $t$ 
 			(equations \ref{eq:transformed-field-continuous-layer}, \ref{eq:kernel-t-Fourier} and \ref{eq:alpha-t-generic}). \\
 			$\hat{\mathbf{u}}$, $\hat{\mathbf{v}}$, $\hat{\mathbf{h}}$, $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ and $\hat{\mathbf{z}}$ &
 			Constant unit vectors. The last three define the canonical basis (equation \ref{eq:canonical-base-vector}).
@@ -141,9 +141,9 @@
 			In magnetic applications, it represents an auxiliary potential whose first directional derivative along the 
 			constant magnetization direction of the sources gives the magnetic scalar potential. \\
 			$\tfrac{\partial}{\partial u} U(\mathbf{r})$ &
-			(Pseudo)gravitational attraction component &
-			In gravity applications, it represents the first derivative of the gravitational potential along a Cartesian direction 
-			$u \in \{ x, y, z \}$ (equation \ref{eq:potential-U-1st-deriv-space}). The vertical component $\tfrac{\partial}{\partial z} U$ 
+			Gravitational attraction component or pseudogravity anomaly &
+			First derivative of $U$ along the Cartesian directions $u \in \{ x, y, z \}$ (equation \ref{eq:potential-U-1st-deriv-space}). 
+			In gravity applications, the vertical component $\tfrac{\partial}{\partial z} U$ 
 			is called \textit{gravity disturbance} \cite[e.g.,][ p. 93]{hofmann-wellenhof-moritz2005}. In magnetic applications, the vertical 
 			component represents the \textit{pseudogravity anomaly} \citep[][ p. 345]{blakely1996}. \\
 			$\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r})$ &

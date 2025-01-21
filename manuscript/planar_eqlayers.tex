@@ -10,9 +10,8 @@ are often unknown, making this condition difficult to guarantee.
 Empirical evidence suggests that equivalent-layer methods can still perform effectively 
 when the layer intersects the sources \citep[e.g.,][]{gonzalez_etal2022}.
 
-In this section, we formally define two types of equivalent layers on a horizontal surface $\mathcal{S}''$, 
-which may either lie above or intersect the sources (Figure \ref{fig:Figure1}). 
-These are the \textit{discrete equivalent layer} and the \textit{continuous equivalent layer}. 
+In this section, we formally define \textit{discrete equivalent layers} and \textit{continuous equivalent layers} 
+on a horizontal surface $\mathcal{S}''$ that may either lie above or intersect the sources (Figure \ref{fig:Figure1}). 
 Notably, any discrete equivalent layer can be constructed by discretizing a continuous equivalent layer.
 Our goal is to leverage the properties of continuous layers to gain deeper insights into their discrete counterparts, 
 which will be explored in detail in subsequent sections.
@@ -40,8 +39,8 @@ which will be explored in detail in subsequent sections.
 \end{definition}
 
 In Definition \ref{def:discrete-eqlayer}, $\mathbf{d}_{\epsilon}$ is the predicted data vector whose 
-$i$-th element represents the potential field due to $\mathbf{p}_{\epsilon}$ at the observation point $\mathbf{r}_{i}$ 
-and the elements of $\mathbf{A}$ are usually defined by 
+$i$-th element represents the potential field due to $\mathbf{p}_{\epsilon}$ at the observation point $\mathbf{r}_{i}$. 
+Besides, the elements of $\mathbf{A}$ are usually defined by 
 $a_{ij} \equiv D_{a} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, which represents a 
 partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{a}$ given by the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}). 
@@ -71,8 +70,8 @@ $k \in \{ 1, \dots, L \}$, $j \in \{ 1, \dots, M \}$,
 is commonly defined by a partial derivative of $\Psi$ (equation \ref{eq:Psi}), with $D_{t}$ given by the 
 space-domain differential operator $D$ (equation \ref{eq:diff-operators-generic}).
 The element $t_{kj}$ represents the transformed potential field due to the $j$-th equivalent source. 
-We have defined the transformed potential field at arbitrary points 
-$\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$, however they 
+We have defined the transformed potential field at points 
+$\mathbf{r}^{\ddagger}_{k} \in \mathcal{S}^{\ddagger}$ above $\mathcal{S}''$ (Figure \ref{fig:Figure1}), however they 
 can be defined at any place any place above $\mathcal{S}''$, including the observation points. 
 
 From the physical point of view, the product of the $j$-th element $p_{j}$ of $\mathbf{p}_{\epsilon}$ 
@@ -112,7 +111,7 @@ potential-field transformations.
 	$\mathcal{S}''$, at a constant vertical coordinate $z^{\dagger}_{0}$, 
 	and does not cross the sources and (ii) a harmonic kernel 
 	$a(\mathbf{r}, \mathbf{r}'')$ that depends only on $\mathbf{r}$ and $\mathbf{r}'' \in \mathcal{S}''$, as well as 
-	vanishes as the distance $\| \mathbf{r} - \mathbf{r}'' \|$ increases. 
+	vanishes as the distance $\| \mathbf{r} - \mathbf{r}'' \|_{2}$ increases. 
 	Then, for a chosen accuracy $\varepsilon > 0$, we may call $p_{\varepsilon}(\mathbf{r}'')$ 
 	a \underline{continuous equivalent layer} if its predicted potential field 
 	\begin{equation}
@@ -138,8 +137,8 @@ potential-field transformations.
 \end{definition}
 
 In Definition \ref{def:continuous-eqlayer}, $p_{\varepsilon}(\mathbf{r}'')$ represents a continuous 
-physical-property distribution that extends to infinity along the horizontal directions and 
-the kernel function $a(\mathbf{r}, \mathbf{r}'')$ is usually defined by $D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ 
+physical-property distribution that extends to infinity along the horizontal directions. 
+Moreover, the kernel function $a(\mathbf{r}, \mathbf{r}'')$ is usually defined by $D_{a} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 as a generic partial derivative of $\Psi$ (equation \ref{eq:Psi}),
 where $D_{a}$ is set in terms of the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}).
@@ -156,11 +155,13 @@ $p_{\varepsilon}(\mathbf{r}'')$ leads to a transformed potential field given by:
 	\quad \mathbf{r}'' \in \mathcal{S}'' \: ,
 	\label{eq:transformed-field-continuous-layer}
 \end{equation}
-where $\mathbf{r}^{\ddagger} \in \mathcal{S}^{\ddagger}$ are points located above $\mathcal{S}''$ (Figure \ref{fig:Figure1}), 
-but that can eventually coincide with those containing the observed potential field; 
+where $\mathbf{r}^{\ddagger}$ are points defined on a planar surface $\mathcal{S}^{\ddagger}$ located above $\mathcal{S}''$ (Figure \ref{fig:Figure1}); 
 $f_{\varepsilon}(\mathbf{r}^{\ddagger})$ is a transformed field that approximates 
 $f(\mathbf{r}^{\ddagger})$ (equations \ref{eq:transformed-field-space}); and
 $t(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ is the transformation kernel,
 which is usually defined by $D_{t} \Psi(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ as a generic partial 
 derivative of the potential function $\Psi$
 (equation \ref{eq:Psi}), with $D_{t}$ given in terms of $D$ (equation \ref{eq:diff-operators-generic}).
+In equation \ref{eq:transformed-field-continuous-layer}, we define $\mathbf{r}^{\ddagger}$ on 
+a planar surface $\mathcal{S}^{\ddagger}$ located above $\mathcal{S}''$ (Figure \ref{fig:Figure1}), but this is not a 
+restriction. They can coincide with the observation points or be arbitrarily defined above $\mathcal{S}''$, for example.

@@ -16,7 +16,7 @@ This implies that the gravitational potential and its spatial derivatives attrib
 accurately reproduce the corresponding field components produced by the true sources.
 We provide the theoretical background for these potential-field transformations.
 
-Let us consider, for example, the common two-step approach to convert gravity-disturbance into gravity
+Let us consider, for example, the common two-step approach to convert gravity disturbance into gravity
 gradient data (Table \ref{tbl:Table2}). The first step consists in obtaining a particular equivalent layer $p_{\varepsilon}$ 
 by considering that the observed potential field $d^{o}$ is given by $\tfrac{\partial}{\partial z} U(\mathbf{r})$ 
 (equation \ref{eq:potential-U-1st-deriv-space}) and that the kernel function 
@@ -122,38 +122,6 @@ RTP via equivalent-layer technique and the classical approach directly using the
 total-field anomaly data \citep[e.g., ][ p. 331]{blakely1996} have never been clearly established in the literature.
 Here, we provide a general approach aiming at filling these theoretical gaps.
 
-%\begin{proposition}
-%	An equivalent layer $p_{\varepsilon}$ of dipoles defined in terms of magnetic data produced 
-%	by sources with constant total-magnetization direction is a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}) 
-%	if and only if its constant magnetization direction is equal to that of the true sources.
-%	\label{prop:eql-Neumann-dipoles}
-%\end{proposition}
-%\begin{proof}
-%	In the case of a Neumann’s equivalent layer, equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} 
-%	yield that $\alpha_{a} = \alpha_{d}$. 
-%	If the observed potential field is the scalar magnetic potential, then the corresponding
-%	differential operators (cf. equation \ref{eq:diff-operators-generic}) imply $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{v}})$
-%	and $\alpha_{a} \equiv \alpha(1, \hat{\mathbf{h}})$, where $\hat{\mathbf{v}}$ and $\hat{\mathbf{h}}$ 
-%	are fixed unit vectors.
-%	In particular, $\hat{\mathbf{v}}$ is the same direction as that defining the sources
-%	total magnetization. The equality of these coefficients yields that 
-%	$(\hat{\mathbf{v}} - \hat{\mathbf{h}})^{\top}\mathbf{k} = 0$ (cf. again equation \ref{eq:diff-operators-generic}). 
-%	If the directions were different, i.e., if $\hat{\mathbf{h}} \ne \hat{\mathbf{v}}$, then the latter would imply that
-%	$\mathtt{i} k_{x}$, $\mathtt{i} k_{y}$ and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ are linearly dependent, which is a contradiction. 
-%	Thus, the constant magnetization direction must be equal to that defining the total magnetization of the sources.
-%	
-%	\noindent If the observed potential field is a component of the magnetic induction field along a given
-%	constant direction defined by the unit vector $\hat{\mathbf{u}}$, then we have that 
-%	$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{v}})$ and 
-%	$\alpha_{a} \equiv \alpha(1, \hat{\mathbf{u}}) \alpha(1, \hat{\mathbf{h}})$. 
-%	The same argument as before yields that it must hold $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, 
-%	leading to the desired conclusion.
-%	
-%	\noindent Vice-versa, assuming $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ leads to $\alpha_{a} = \alpha_{d}$.
-%	Equations \ref{eq:p-Fourier} and \ref{eq:p-Fourier-Neumann} then imply that
-%	the equivalent layer under consideration must be a Neumann’s equivalent layer.
-%\end{proof}
-
 From a theoretical point of view, the two-step approach to compute the RTP in the space domain 
 consists in first setting a planar layer of dipoles according to equation \ref{eq:p-Fourier-dipoles}, 
 by considering the unit vector $\hat{\mathbf{h}}$ equal to $\hat{\mathbf{v}}$, which defines 
@@ -167,7 +135,9 @@ by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with
 $\alpha_{f} \equiv \alpha(2, \hat{\mathbf{z}})$ (equations \ref{eq:diff-operators-generic} and \ref{eq:canonical-base-vector}).
 In this case, it can be verified from equations \ref{eq:diff-operators-generic} and \ref{eq:transformed-field-continuous-layer-single-step} 
 that the computed transformed field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) 
-approximates the RTP anomaly  (Table \ref{tbl:Table2}).
+approximates the RTP anomaly  (Table \ref{tbl:Table2}). 
+As we have just shown here, for the first time, the classical approach of \citet{silva1986} to compute the RTP in the 
+space domain can be formally explained in terms of a Neumann's equivalent layer (Definition \ref{def:eql-Neumann}). 
 
 We can also investigate the theoretical link between the RTP in the space domain, 
 via equivalent-layer technique, and in the Fourier domain, via classical approach \citep[e.g., ][ p. 331]{blakely1996}. 
@@ -220,7 +190,7 @@ $\alpha_{a} = 1$ and
 	\label{eq:p-Fourier-generalized-eqs}
 \end{equation}
 which approximates the vertical derivative of the observed potential field on the layer plane. 
-Such layers produce to potential-field transformations (equations \ref{eq:transformed-field-continuous-layer} and 
+Such layers produce potential-field transformations (equations \ref{eq:transformed-field-continuous-layer} and 
 \ref{eq:transformed-field-continuous-layer-Fourier}) defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{\alpha_{d}}$ (equation \ref{eq:alpha-t-generic}).
 
 This strategy, called \textit{generalized equivalent sources}, was proposed by \citet{cordell1992} and recently adapted by 

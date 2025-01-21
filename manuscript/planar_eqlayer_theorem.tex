@@ -321,14 +321,15 @@ discretizing continuous equivalent layers and its relation to $k_{\varepsilon}$ 
 In practical situations, the interpreter usually estimate a ``sufficiently smooth'' discrete equivalent layer 
 that ``satisfactorily'' fit the observed data within a given error level. 
 It seems that this discretization and the imposed degree of smoothness are important factors rendering 
-the equivalent-layer technique applicably even when the layer plane crosses the sources.
+the equivalent-layer technique even when the layer plane crosses the sources.
 We implicitly assume that the estimated discrete layer $\mathbf{p}{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
-approximates the corresponding continuous layer $p{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
-as the discretization becomes increasingly finer.
+approximates the corresponding continuous layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
+as the discretization becomes increasingly finer. 
+This assumption is confirmed by the numerical tests we present later.
 
 \subsubsection{Remark 3}
 
-The equivalent layer from Theorem \ref{theorem:planar-eqlayer-theorem} leads to a predicted 
+Any continuous equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) leads to a predicted 
 potential field that does not satisfy
 the error bound $\varepsilon$ (equation \ref{eq:epsilon-bound-data}) only on the surface $\mathcal{S}^{\dagger}$, but also 
 on any $\mathcal{S}^{\ddagger}$ with $z^{\ddagger}_{0} < z^{\dagger}_{0}$ (Figure \ref{fig:Figure1}). 
