@@ -3,11 +3,12 @@
 
 \begin{definition}[\textbf{Continuous equivalent layer}]
 	Let us assume to have an observed potential field $d^{o}(\mathbf{r})$ defined above 
-	a horizontal surface $\mathcal{S}''$. 
+	a horizontal surface $\mathcal{S}''$ with constant vertical coordinate $z''_{0}$. 
 	Besides, consider (i) a horizontal surface $\mathcal{S}^{\dagger}$ that is located above 
-	$\mathcal{S}''$ and does not cross the sources and (ii) a harmonic kernel 
+	$\mathcal{S}''$, at a constant vertical coordinate $z^{\dagger}_{0}$, 
+	and does not cross the sources and (ii) a harmonic kernel 
 	$a(\mathbf{r}, \mathbf{r}'')$ that depends only on $\mathbf{r}$ and $\mathbf{r}'' \in \mathcal{S}''$, as well as 
-	vanishes as the distance $\| \mathbf{r} - \mathbf{r}'' \|_{2}$ increases. 
+	vanishes as the distance $\| \mathbf{r} - \mathbf{r}'' \|$ increases. 
 	Then, for a chosen accuracy $\varepsilon > 0$, we may call $p_{\varepsilon}(\mathbf{r}'')$ 
 	a \underline{continuous equivalent layer} if its predicted potential field 
 	\begin{equation}
@@ -23,9 +24,12 @@
 		\vert d^{o}(\mathbf{r}^{\dagger}) - 
 		d_{\varepsilon}(\mathbf{r}^{\dagger}) \vert^{2}
 		\:\: d\mathcal{S}^{\dagger} \le \varepsilon \: ,
-		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: .
+		\quad z^{\dagger}_{0} < z^{t}_{0} \: , \quad z^{\dagger}_{0} < z''_{0} \: ,
 		\label{eq:epsilon-bound-data}
-		\end{equation}
+	\end{equation}
+	where $\mathbf{r} = (x, y, z)^{\top}$, 
+	$\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$ 
+	and $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$.
 	\label{def:continuous-eqlayer}
 \end{definition}
 
@@ -35,18 +39,21 @@ the kernel function $a(\mathbf{r}, \mathbf{r}'')$ is usually defined by $D_{a} \
 as a generic partial derivative of $\Psi$ (equation \ref{eq:Psi}),
 where $D_{a}$ is set in terms of the space-domain differential operator 
 $D$ (equation \ref{eq:diff-operators-generic}).
+It is important to stress here that the horizontal surface $\mathcal{S}''$ in Definition \ref{def:continuous-eqlayer} 
+may cross the sources, according to Figure \ref{fig:Figure1}.
 
 Similarly to the discrete case (equation \ref{eq:transformed-field-discrete-layer}), a particular continuous equivalent layer 
 $p_{\varepsilon}(\mathbf{r}'')$ leads to a transformed potential field given by:
 \begin{equation}
 	f_{\varepsilon}(\mathbf{r}^{\ddagger})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
-	p_{\varepsilon}(\mathbf{r}'') \, t(\mathbf{r}^{\ddagger}, \mathbf{r}'') \:\: d\mathcal{S}''
-	\: , \quad z^{\ddagger} < z''_{0} \: ,
+	p_{\varepsilon}(\mathbf{r}'') \, t(\mathbf{r}^{\ddagger}, \mathbf{r}'') \:\: d\mathcal{S}'' \: , 
+	\quad \mathbf{r}^{\ddagger} \in \mathcal{S}^{\ddagger} \: ,
+	\quad \mathbf{r}'' \in \mathcal{S}'' \: ,
 	\label{eq:transformed-field-continuous-layer}
 \end{equation}
-where $\mathbf{r}^{\ddagger} \notin \overline{\mathcal{V}}$ are points located above 
-$\mathcal{S}''$, but that can eventually coincide with those containing the observed potential field; 
+where $\mathbf{r}^{\ddagger} \in \mathcal{S}^{\ddagger}$ are points located above $\mathcal{S}''$ (Figure \ref{fig:Figure1}), 
+but that can eventually coincide with those containing the observed potential field; 
 $f_{\varepsilon}(\mathbf{r}^{\ddagger})$ is a transformed field that approximates 
 $f(\mathbf{r}^{\ddagger})$ (equations \ref{eq:transformed-field-space}); and
 $t(\mathbf{r}^{\ddagger}, \mathbf{r}'')$ is the transformation kernel,

@@ -1,6 +1,18 @@
 \section{Equivalent layer classes}
 \label{sec:eqlayer_classes}
 
+According to the Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}), 
+it is possible to define different planar equivalent layers $p_{\varepsilon}(\mathbf{r}'')$, 
+$\mathbf{r}'' \in \mathcal{S}''$ (Figure \ref{fig:Figure1}), 
+satisfying the conditions imposed by Definition \ref{def:continuous-eqlayer}.
+Specifically, different equivalent layers $p_{\varepsilon}(\mathbf{r}'')$ can be defined
+on the same horizontal surface $\mathcal{S}''$, for the same potential field data $d^{o}$, 
+by using different combinations of $\alpha_{d}$ and $\alpha_{a}$ in equation \ref{eq:p-Fourier}. 
+The horizontal surface $\mathcal{S}''$ may be located above the sources 
+or intersect them (Figure \ref{fig:Figure1}).
+Here we show different classes of equivalent layers, discuss their applicability and define how they 
+can be used to perform potential-field transformations.
+
 \subsection{Dirichlet's equivalent layers}
 
 \begin{definition}
@@ -90,7 +102,7 @@ from its counterpart in the Fourier domain (equation \ref{eq:transformed-field-c
 	which is the product of a real function and $\mathcal{F} [ U_{\varepsilon}(\mathbf{r}^{\dagger}) ]$.
 	Since $\alpha_{r}$ does not depend on $\alpha_{d}$, $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ does not 
 	depend on $\alpha_{d}$ as well. This implies that the phase spectrum of $p_{\varepsilon}$ approximates that 
-	of potential $U$ (Appendix B), thereby corresponding to an approximation 
+	of the potential $U$ (Appendix B), thereby corresponding to an approximation 
 	of the phase spectrum associated with the spatial distribution of the (shallow parts of the) true sources.
 \end{proof}
 
@@ -146,8 +158,8 @@ The same is valid for any other potential field.
 Any particular Neumann's layer $p_{\varepsilon}$ yields transformed potential 
 fields (equation \ref{eq:transformed-field-continuous-layer-Fourier}) 
 defined by $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}) in the Fourier domain. 
-Hence, the corresponding transformed fields $f_{\varepsilon}$ in the space domain 
-(equation \ref{eq:transformed-field-continuous-layer}) assume the simple form
+Hence, the corresponding transformed field $f_{\varepsilon}$ in the space domain 
+(equation \ref{eq:transformed-field-continuous-layer}) assumes the simple form
 \begin{equation}
 	f_{\varepsilon}(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -160,7 +172,7 @@ associated with the desired transformed field $f$ (equation \ref{eq:transformed-
 
 It follows immediately from equation \ref{eq:p-Fourier-Neumann} that Neumann's equivalent layers approximate 
 the vertical derivative $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ (equation \ref{eq:potential-U-1st-deriv-space}) 
-on the layer plane $z''_{0}$.
+on the layer plane $\mathcal{S}''$.
 For the cases in which the observed potential field $d^{o}$ represents gravity data, 
 $p_{\varepsilon}$ approximates the gravity disturbance (or vertical component of the gravitational
 attraction) due to the true sources on the layer plane $\mathcal{S}''$.
@@ -169,11 +181,11 @@ then $p_{\varepsilon}$ approximates the pseudogravity
 anomaly \citep[][ p. 345]{blakely1996} due to the true sources on $\mathcal{S}''$.
 In this case, $p_{\varepsilon}$ is strictly positive because it is defined in terms of a strictly positive 
 function $\sigma(\mathbf{r}')$ (equation \ref{eq:potential-U-space}) representing the 
-total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}$ 
+total-magnetization intensity at all points $\mathbf{r}' = (x', y', z')^{\top} \in \mathcal{V}'$ 
 within the sources.
 This result is in perfect agreement with that deduced by \citet{reis_etal2020} for
 the particular case in which the observed potential field $d^{o}$ is
-the approximated total-field anomaly (equation \ref{eq:potential-U-oblique-2nd-deriv-space}).
+the approximated total-field anomaly (Table \ref{tbl:Table2}).
 
 It is widely known that integrating the potential field $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
 (equation \ref{eq:potential-U-1st-deriv-space}) on a horizontal plane above the causative sources

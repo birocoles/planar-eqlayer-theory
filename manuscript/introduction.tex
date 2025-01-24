@@ -36,7 +36,8 @@ However, other field transformations that have been successfully used in practic
 such as joint processing of gravity-gradient data 
 \cite[e.g.,][]{barnes_lumley2011} or conversion of gravity disturbance data into the 
 gravity-gradient tensor \cite[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023}, are 
-empirical generalizations commonly assumed to be true without any mathematical proof.
+empirical generalizations often assumed to be valid under the so-called 
+\textit{equivalent-layer principle}, despite the lack of mathematical proof.
 
 Most of the well-known equivalent-layer methods for magnetic data processing are 
 empirical generalizations of the \textit{Neumann's problem} or the \textit{second boundary value problem of potential 
@@ -44,8 +45,7 @@ theory} \cite[][ p. 246]{kellogg1967}.
 These methods usually presume, without any proof, the existence of an equivalent layer of dipoles located above 
 the sources that can be used to reduce magnetic data to the pole 
 \citep[e.g.,][]{emilia1973, bhattacharyya_chan1977, silva1986, leao-silva_1989, oliveirajr_etal2013, 
-li_etal2014, oliveirajr_etal2015, ribeiro_filho_etal2020, reis_etal2020, li-etal2021, takahashi-etal2022}, 
-for example. 
+li_etal2014, oliveirajr_etal2015, ribeiro_filho_etal2020, reis_etal2020, li-etal2021, takahashi-etal2022, piauilino_etal2025}. 
 Up to now, far too little attention has been paid to the theoretical aspects related to the existence of
 a planar equivalent layer of dipoles or its relationship with a boundary value
 problem of potential theory in applied geophysics.
@@ -77,7 +77,7 @@ empirical generalizations by which most of the studies found in the geophysical 
 existence of equivalent layers allowing computing potential-field transformations. 
 There have been no attempts to establish the theoretical background explaining, for example,
 the existence of a planar layer of monopoles that simultaneously fit the gravitational  potential and 
-its spatial derivatives of first and second order; 
+its spatial derivatives of first and second orders; 
 the existence of a planar layer of dipoles that simultaneously fit the magnetic scalar potential and
 induction field components due to arbitrarily magnetized sources; or the existence of 
 equivalent layers that cross the sources.
@@ -117,5 +117,13 @@ to the case in which the sources have a nonuniform total-magnetization direction
 (iii) impact on potential-field transformations of planar non-null physical-property distributions that produce
 no field, i.e., the annihilators \citep[][ p. 66]{parker1994} or silent sources
 \citep{baratchart2013, baratchart_etal2021}; and also 
-(iv) relationship between particular planar equivalent layers and the true 3D sources.
-A detailed discussion of potential practical applications of results presented here is beyond the scope of this paper. 
+(iv) the relationship between particular planar equivalent layers and the true 3D sources.
+
+We emphasize that computational aspects of the equivalent-layer technique are not addressed in this work. 
+For a comprehensive discussion on the advantages and disadvantages of different equivalent-layer methods, 
+the primary algorithms, associated computational costs and applications to field data, 
+we refer readers to the work of \citet{oliveirajr_etal2023}. 
+Additionally, we note that an in-depth exploration of potential practical applications of the results presented 
+here is beyond the scope of this study. Our primary objective is to address and resolve theoretical gaps in 
+the existing literature, thereby advancing the understanding of why the equivalent-layer technique has been 
+so effectively applied in potential-field transformations.
