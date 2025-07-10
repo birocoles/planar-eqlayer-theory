@@ -312,6 +312,13 @@ regularization parameter $\mu_{\varepsilon}$ (equation \ref{eq:potential-U-epsil
 for the construction of $p_{\varepsilon}$, with a given accuracy level 
 $\varepsilon$ (Definition \ref{def:continuous-eqlayer}).
 
+The absence of a rule to construct $k_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger-1}) or 
+$\mu_{\varepsilon}$ (equation \ref{eq:potential-U-epsilon-Fourier-dagger-2}) in the 
+Planar equivalent-layer theorem (Theorem \ref{theorem:planar-eqlayer-theorem}) may be a little disconcerting 
+at first sight, but this is very common in mathematical analysis. 
+Our theorem is a nonconstructive existence statement \citep[e.g., ][ p. 200]{tao_2016}, such as the well-known
+Intermediate Value Theorem from calculus, for example.
+
 \subsubsection{Remark 2}
 
 The truncating wavenumber $k_{\varepsilon}$ and the regularization parameter $\mu_{\varepsilon}$ 
@@ -322,7 +329,7 @@ In practical situations, the interpreter usually estimate a ``sufficiently smoot
 that ``satisfactorily'' fit the observed data within a given error level. 
 It seems that this discretization and the imposed degree of smoothness are important factors rendering 
 the equivalent-layer technique even when the layer plane crosses the sources.
-We implicitly assume that the estimated discrete layer $\mathbf{p}{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
+We implicitly assume that the estimated discrete layer $\mathbf{p}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
 approximates the corresponding continuous layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
 as the discretization becomes increasingly finer. 
 This assumption is confirmed by the numerical tests we present later.

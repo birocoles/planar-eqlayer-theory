@@ -62,6 +62,21 @@
 
 \plot{Figure5}{width=0.8\textwidth}{
 	{
+		Estimated discrete layers.
+		Root Mean Square Error (RMSE) produced by discrete equivalent layers obtained by using 
+		different tentative values of truncating wavenumber $k_{\varepsilon}$ 
+		(equation \ref{eq:potential-U-epsilon-Fourier-layer-1}) and regularization parameter $\mu_{\varepsilon}$
+		(equation \ref{eq:potential-U-epsilon-Fourier-layer-2}). The RMSE is defined by
+		$\sqrt{\nicefrac{\| \mathbf{d}^{o} - \mathbf{d}_{\epsilon}\|^{2}_{2}}{N}}$, where 
+		$\mathbf{d}^{o}$ is the approximated total-field anomaly shown in Figure \ref{fig:Figure3}a and
+		$\mathbf{d}_{\epsilon}$ is the approximated total-field anomaly predicted by the 
+		corresponding equivalent layer.
+	}
+	\label{fig:Figure5}
+}
+
+\plot{Figure6}{width=0.8\textwidth}{
+	{
 		Comparison between estimated equivalent layers shown in Figure \ref{fig:Figure4}.
 		Difference between the layers shown in Figures
 		(a) \ref{fig:Figure4}d and a; 
@@ -74,10 +89,10 @@
 		The green and black arrows represent, respectively, the projections of the constant 
 		main field and synthetic source (Figure \ref{fig:Figure2}) magnetization directions onto the plane $xy$.
 	}
-	\label{fig:Figure5}
+	\label{fig:Figure6}
 }
 
-\plot{Figure6}{width=0.4\textwidth}{
+\plot{Figure7}{width=0.4\textwidth}{
 	{
 		Residuals between the potential fields due to the synthetic source (Figure \ref{fig:Figure2}) and
 		those produced by the estimated layers shown in Figures \ref{fig:Figure4}a--c.
@@ -90,6 +105,6 @@
 		The green and black arrows represent, respectively, the projections of the constant 
 		main field and synthetic source (Figure \ref{fig:Figure2}) magnetization directions onto the plane $xy$.
 	}
-	\label{fig:Figure6}
+	\label{fig:Figure7}
 }
 
