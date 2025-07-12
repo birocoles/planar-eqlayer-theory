@@ -108,3 +108,37 @@
 	\label{fig:Figure7}
 }
 
+\plot{Figure8}{width=0.8\textwidth}{
+	{
+		Application to field data.
+		(a) Location of the study area (blue dot).
+		(b) Vertical coordinate of the terrain model.
+		(c) Observed total-field anomaly data.
+		The horizontal coordinates are defined in UTM projection referred to the central meridian 51°W.
+		The vertical coordinates are referred to the WGS84 ellipsoid.
+	}
+	\label{fig:Figure8}
+}
+
+\plot{Figure9}{width=0.8\textwidth}{
+	{
+		Application to field data.
+		(a) Estimated equivalent layer obtained with $\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ 
+		(equation \ref{eq:p-Fourier}).
+		(b) Residuals between the observed total-field anomaly (Figure \ref{fig:Figure8}c) and the predicted
+		total-field anomaly. The inset contains the histogram of the normalized residuals.
+		The normalization consists in removing the mean ($\mu$) and dividing the result by the standard deviation ($\sigma$) of the 
+		original residual values.
+		(c) Predicted total-gradient of the magnetic induction $z$-component.
+		(d) Root Mean Square Error (RMSE) produced by discrete equivalent layers obtained along the  
+		iterations of the Conjugate Gradient Normal equation Residual (CGNR) method \citep[][ sec. 11.3]{golub-vanloan2013}.
+		The RMSE is defined by
+		$\sqrt{\nicefrac{\| \mathbf{d}^{o} - \mathbf{d}_{\epsilon}\|^{2}_{2}}{N}}$, where 
+		$\mathbf{d}^{o}$ is the observed total-field anomaly (Figure \ref{fig:Figure8}c) and
+		$\mathbf{d}_{\epsilon}$ is the predicted total-field anomaly.
+		The horizontal coordinates are defined in UTM projection referred to the central meridian 51°W.
+		The vertical coordinates are referred to the WGS84 ellipsoid.
+	}
+	\label{fig:Figure9}
+}
+
