@@ -2,27 +2,109 @@
 \label{eq:field_data}
 
 We have applied the equivalent-layer technique to the Registro do Araguaia anomaly 
-\citep{dutra_etal_2012, marangoni_mantovani_2013, dutra_etal_2014}, which is one the most prominent anomalies
-over the NW portion of the Goiás Alkaline Province (GAP), Brazil \citep{junqueira-brod_etal_2005}. 
-According to \citet{dutra_etal_2012}, there are no outcrops or any geological feature associated with 
-this anomaly and the region is totally covered by quaternary sediments from the Araguaia River.
-The GAP is a result of maﬁc-alkalic magmatism that occurred in the Late Cretaceous. Their intrusions 
-penetrate the Bras{\'i}lia Belt basement and the Goi{\'a}s Magmatic Arch, as well as intrude and 
-overlie basalts and sedimentary rocks from the northern border of the Paran{\'a} Basin.
-\citet{dutra_etal_2014} consider that the source of Registro do Araguaia anomaly is one of the most 
-important magma feeders for the GAP intrusions. 
-They propose that this anomaly and its NE-SW lineament may be the main locus for magma conduit at the 
-southern end of the Transbrasiliano Lineament.
+\citep{dutra_etal_2012, marangoni_mantovani_2013, dutra_etal_2014}, which is one the most 
+prominent anomalies over the NW portion of the Goiás Alkaline Province (GAP), Brazil 
+\citep{junqueira-brod_etal_2005}. 
+According to \citet{dutra_etal_2012}, there are no outcrops or any geological feature 
+indicating the source of this anomaly and the region is totally covered by quaternary 
+sediments from the Araguaia River.
+The GAP is a result of maﬁc-alkalic magmatism that occurred in the Late Cretaceous. Their 
+intrusions penetrate the Bras{\'i}lia Belt basement and the Goi{\'a}s Magmatic Arch, as well 
+as intrude and overlie basalts and sedimentary rocks from the northern border of the 
+Paran{\'a} Basin.
+\citet{dutra_etal_2014} consider that the source of Registro do Araguaia anomaly is one of the 
+most important magma feeders for the GAP intrusions. 
+They propose that this anomaly and its NE-SW lineament may be the main locus for magma conduit 
+at the southern end of the Transbrasiliano Lineament.
+In fact, this lineament and the Bom Jardim de Goiás Arch are recognized as the major 
+Precambrian structures related with the ascent of the Cretaceous alkaline magmas of GAP 
+\citep[][ p. 263]{brod_etal2005}.
 
-Figure \ref{fig:Figure8} shows the location, terrain surface and Registro do Araguaia total-field anomaly.
-The airborne data have N-S flight lines and E-W tight lines spaced from 0.5 km and 5.0 km, respectively. 
-The airborne survey covered an area of approximately $58,834$ km$^{2}$ in the Goiás state, central Brazil,
-from the beginning of July to the end of September 2004. 
-In the study area, there are $480,830$ observation points with vertical coordinates varying from 
-$-616.60$ m to $-358.41$ m, with average at $-426.43$ m and standard deviation $30.53$ m.
+Figure \ref{fig:Figure8} shows the location, terrain surface and Registro do Araguaia 
+total-field anomaly.
+The airborne data have N-S flight lines and E-W tight lines spaced from 0.5 km and 5.0 km, 
+respectively. 
+The airborne survey covered an area of approximately $58,834$ km$^{2}$ in the Goiás state, 
+central Brazil, from the beginning of July to the end of September 2004. 
+In the study area, there are $480,830$ observation points with vertical coordinates varying 
+from $-616.60$ m to $-358.41$ m, with average at $-426.43$ m and standard deviation $30.53$ m.
 
-We have set a discrete equivalent layer on the horizontal surface $\mathcal{S}''$ at $z''_{0} = 291.10$ m, 
-composed of punctual equivalent sources arranged on a regular grid of $N_{x} \times N_{y}$ points 
-$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$, with 
-$N_{x} = 150$ and $N_{y} = 80$.
+To reduce effect of over sampling along flight and tight lines, we applied a block-averaging
+approach similar to that proposed by \citet{soler_uieda2021}. 
+We have first dividing the survey area into a regular grid of adjacent 
+horizontal blocks along the $x$ and $y$ direction, respectively. 
+To the horizontal center of each block, we assign the averaged total-field anomaly and
+vertical coordinate of the observation points within the corresponding block.
+The result is a new dataset with $N = 12,000$ averaged total-field anomaly and vertical 
+coordinates values distributed at points $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$, 
+$i \in \{1, \dots, N = N_{x} \, N_{y}\}$, where $N_{x} = 150$, $N_{y} = 80$, with constant  
+horizontal spacing $dx = 297.64$ m and $dy = 475.41$ m along the $x$ and $y$ directions, 
+respectively. 
+In this case, we have an $N \times 1$ observed data vector $\mathbf{d}^{o}$ 
+(Definition \ref{def:discrete-eqlayer}) with $i$-th element $d^{o}_{i}$ given by the 
+averaged total-field anomaly at the point $\mathbf{r}_{i} = (x_{i}, y_{i}, z_{i})^{\top}$ 
+and $D_{d} = D(1, \hat{\mathbf{u}})\, D(1, \hat{\mathbf{v}})$ 
+(equations \ref{eq:observed-data-space} and \ref{eq:diff-operators-generic}), where 
+$\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are unit vectors defining the presumed constant 
+directions of the main field at the study area and of the total magnetization of the true 
+sources, respectively.
+
+We have set a discrete equivalent layer composed of punctual equivalent sources arranged on 
+a regular grid of $N_{x} \times N_{y}$ points 
+$\mathbf{r}''_{j} = (x''_{j}, y''_{j}, z''_{0})^{\top}$, $j \in \{1, \dots, M = N_{x} \, N_{y}\}$, so that each point $\mathbf{r}''_{j}$ is located right below a point  
+$\mathbf{r}_{i}$, on the horizontal surface $\mathcal{S}''$ with constant vertical coordinate 
+$z''_{0} = 291.10$ m. This value was set as the median of averaged vertical coordinates $z_{i}$
+plus $1.5 \: dy$. 
+
+We define the elements $a_{ij}$ of matrix $\mathbf{A}$ (Definition \ref{def:discrete-eqlayer}) 
+by using the differential operator $D_{a} = D(1, \hat{\mathbf{u}})$ 
+(equation \ref{eq:diff-operators-generic}) in the space domain, where $\hat{\mathbf{u}}$ is 
+a unit vector with inclination $-18.44^{\circ}$ and declination $-18.17^{\circ}$ equal to 
+those of the main field at the study area. 
+In this case, the equivalent layer approximates the 
+$z$ component  $\frac{\partial}{\partial z}\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}}$
+of the magnetic induction field (Table \ref{tbl:Table2}) due to the true sources on the 
+horizontal surface $\mathcal{S}''$.
+
+Figure \ref{fig:Figure9}a shows the estimated equivalent layer $\mathbf{p}_{\epsilon}$ 
+obtained by iteratively solving a linear inverse problem in the space domain via 
+Conjugate Gradient Normal equation Residual (CGNR) method 
+\citep[][ sec. 11.3]{golub-vanloan2013}. 
+The estimated discrete layer $\mathbf{p}_{\epsilon}$ produces a predicted potential 
+field $\mathbf{d}_{\epsilon}$ (equation \ref{eq:predicted-data-discrete-layer}) that 
+satisfactorily fit the averaged total-field anomaly in $\mathbf{d}^{o}$, as we can see 
+in the residuals shown in Figure \ref{fig:Figure9}b. The convergence curve along the 
+iterations of the CGNR method is shown in Figure \ref{fig:Figure9}d.
+
+Using the estimated layer $\mathbf{p}{\epsilon}$, we computed a transformed potential field 
+$\mathbf{f}{\epsilon}$ representing the total gradient of the $z$ component of the magnetic 
+induction field generated by the true sources (Table~\ref{tbl:Table2}), that is, the field 
+$\| \frac{\partial}{\partial z}\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}} \|_{2}$ 
+(Figure \ref{fig:Figure9}c).
+To construct $\mathbf{f}{\epsilon}$, we first derived three intermediate transformed fields: 
+$\mathbf{f}^{x}{\epsilon}$, $\mathbf{f}^{y}{\epsilon}$, and $\mathbf{f}^{z}{\epsilon}$ 
+(equation~\ref{eq:transformed-field-discrete-layer}). Each vector $\mathbf{f}^{u}_{\epsilon}$ 
+($u \in {x, y, z}$) is $N \times 1$ and its $i$-th element approximates the 
+$u$-derivative 
+$\frac{\partial}{\partial u} \left[ \frac{\partial}{\partial z}\nabla U(\mathbf{r}'')^{\top} \hat{\mathbf{v}} \right]$ 
+evaluated at the point $\mathbf{r}_{i}$.
+For example, to compute $\mathbf{f}^{x}_{\epsilon}$, we defined an $N \times M$ transformation 
+matrix $\mathbf{T}^{x}$ whose elements are given by 
+$t^{x}_{ij} \equiv D_{t} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, 
+where $D_{t} = D(1,\hat{\mathbf{x}}) , D(1,\hat{\mathbf{z}})$ 
+(equation~\ref{eq:diff-operators-generic}), resulting in
+$t^{x}_{ij} \equiv \frac{\partial^{2}}{\partial xz} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$. 
+Similarly, the matrices for $\mathbf{f}^{y}_{\epsilon}$ and $\mathbf{f}^{z}_{\epsilon}$ have elements $t^{y}_{ij} = \frac{\partial^{2}}{\partial y \partial z} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$ and $t^{z}_{ij} = \frac{\partial^{2}}{\partial z^{2}} \Psi(\mathbf{r}_{i}, \mathbf{r}''_{j})$, respectively.
+Finally, the transformed potential field $\mathbf{f}_{\epsilon}$ was obtained by computing the square root of the sum of the squares of the elements of $\mathbf{f}^{x}_{\epsilon}$, $\mathbf{f}^{y}_{\epsilon}$, and $\mathbf{f}^{z}_{\epsilon}$ at each observation point.
+
+The computed $\mathbf{f}_{\epsilon}$ shown in Figure \ref{fig:Figure9}c suggests a complex 
+magnetic source. The strong red values indicate shallow portions of the source, which 
+seems to be located over a nearly circular and deeper body. 
+It seems that this complex source is located at the intersection of linear geological 
+structures having nearly NW-SE and NE-SW orientations. 
+These directions coincide with major lineaments in continental scale, which represent 
+zones of crustal weakness that were possibly reactivated in the Cretaceous by the alkaline 
+magmatism around the Paraná Basin, including that present in the GAP 
+\citep{marangoni_mantovani_2013}.
+
 
