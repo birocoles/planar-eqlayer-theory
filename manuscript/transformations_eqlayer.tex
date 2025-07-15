@@ -1,9 +1,11 @@
 \section{Unified approach for potential-field transformations}
 
-Note that, given a particular equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
+Given a particular equivalent layer $p_{\varepsilon}$ (Definition \ref{def:continuous-eqlayer}) 
 defined as a square-integrable function by equation \ref{eq:p-Fourier}, in terms of specific $\alpha_{d}$ and $\alpha_{a}$, 
-it is theoretically possible 
-to compute any potential field transformation (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}).
+it is theoretically possible to compute any potential field transformation (equations \ref{eq:transformed-field-space} and 
+\ref{eq:transformed-field-Fourier}).
+It means that, contrarily to the common sense, we do not need to use a planar layer of dipoles to compute the RTP anomaly from 
+the approximated total-field anomaly. In fact, even a layer of monopoles can be used to perform this potential-field transformation. 
 This can be verified by first noting that applying the Fourier-convolution theorem to \ref{eq:transformed-field-continuous-layer} 
 on a planar surface $\mathcal{S}^{\ddagger}$ (Figure \ref{fig:Figure1}) gives
 \begin{equation}
@@ -58,7 +60,10 @@ or
 if the auxiliary potential $U_{\varepsilon}$ is defined by equation \ref{eq:potential-U-epsilon-Fourier-dagger-2}.
 In both cases, we can see that the transformed field $f_{\varepsilon}$ yielded by the equivalent layer 
 is a smooth approximation of that produced by the true sources on the planar surface $\mathcal{S}^{\ddagger}$
-(Figure \ref{fig:Figure1}).
+(Figure \ref{fig:Figure1}). Note that, to obtain a correct potential-field transformation leading to an $f_{\varepsilon}$ 
+that approximates $f$, we need to correctly set the operator $\alpha_{t}$ (equation \ref{eq:alpha-t-generic}), 
+regardless of the equivalent layer type defined by $\alpha_{a}$.
+
 
 In the context of the equivalent-layer technique, a potential-field transformation is generally defined
 in the space domain, by following two steps. The first consists in obtaining a particular layer $p_{\varepsilon}$ 
