@@ -21,19 +21,7 @@ Xinpeng Huang<sup>2</sup>
 
 ## Abstract
 
-We present a comprehensive theoretical framework for potential-field transformations using planar equivalent layers, 
-a technique empirically developed since the 1960s in applied geophysics. Our objective is to replace the widely 
-accepted equivalent-layer principle -- which is primarily based on empirical generalizations -- 
-with a more rigorous theoretical foundation. We introduce and mathematically prove the *planar equivalent-layer theorem*, 
-which establishes the existence of continuous planar layers that can accurately reproduce potential-field data within 
-a predefined error level. This is achieved by modifying the solutions of Dirichlet's and Neumann's problems on 
-planar surfaces intersecting the sources. Our findings address and resolve theoretical gaps in existing 
-equivalent-layer methods and demonstrate that planar equivalent 
-layers are not merely mathematical constructs but have tangible physical significance related to boundary value 
-problems in potential theory. Additionally, we establish a theoretical connection between potential-field 
-transformations made via equivalent layers and those commonly derived from the Fourier transform of observed 
-potential-field data. This work advances the understanding of why the equivalent-layer 
-technique has been effectively applied in potential-field transformations.
+We present a comprehensive theoretical framework for potential-field transformations using planar equivalent layers, a technique empirically developed since the 1960s in applied geophysics. We aim to replace the widely accepted equivalent-layer principle -- primarily based on empirical generalizations -- with a more rigorous theoretical foundation. We introduce and mathematically prove the *planar equivalent-layer theorem*, which establishes the existence of continuous planar layers that can accurately reproduce potential-field data within a predefined error level, even for layers that cross the true sources. We present closed-form expressions for planar equivalent layers by modifying the solutions of Dirichlet’s and Neumann’s problems and demonstrate that planar equivalent layers are not merely mathematical constructs, but have tangible physical significance related to boundary value problems in potential theory. Using our closed-form expressions, we mathematically show the equivalence between potential-field transformations made via equivalent-layer technique and those commonly derived from the Fourier transform of observed potential-field data. Moreover, we define different classes of equivalent layers and their relationships with the observed potential-field data, true sources and the desired potential-field transformation. Our work advances the understanding of why the equivalent-layer technique has been effectively applied in potential-field transformations.
 
 
 ## Numerical simulations
