@@ -1,4 +1,4 @@
-# Theoretical aspects on planar equivalent layers
+# Potential-field theoretical insights on planar equivalent layers
 
 by Vanderlei C. Oliveira Jr<sup>1</sup>, 
 Christian Gerhards<sup>2</sup>, 
