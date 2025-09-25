@@ -1,4 +1,4 @@
-# Theoretical aspects on planar equivalent layers
+# Potential-field theoretical insights on planar equivalent layers
 
 by Vanderlei C. Oliveira Jr<sup>1</sup>, 
 Christian Gerhards<sup>2</sup>, 
@@ -14,7 +14,7 @@ Xinpeng Huang<sup>2</sup>
 
 <sup>3</sup> Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil
 
-![](manuscript/figures/sources.png)
+![](manuscript/figures/Figure1.png)
 
 *2D schematic representation of sources located in subsurface and the geometrical aspects of our work.*
 
