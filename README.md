@@ -3,7 +3,7 @@
 by Vanderlei C. Oliveira Jr<sup>1</sup>, 
 Christian Gerhards<sup>2</sup>, 
 Valéria C. F. Barbosa<sup>1</sup>, 
-André L. A. Reis<sup>3</sup>, 
+André L. A. Reis<sup>1, 3</sup>, 
 Edson F. Luza<sup>1</sup> and 
 Xinpeng Huang<sup>2</sup>
 
