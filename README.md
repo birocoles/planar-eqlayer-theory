@@ -14,7 +14,7 @@ Xinpeng Huang<sup>2</sup>
 
 <sup>3</sup> Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil
 
-![](manuscript/figures/sources.png)
+![](manuscript/figures/Figure1.png)
 
 *2D schematic representation of sources located in subsurface and the geometrical aspects of our work.*
 
