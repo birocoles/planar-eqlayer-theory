@@ -1,0 +1,90 @@
+%\documentclass[manuscript,blind]{geophysics}
+%\documentclass[paper,twocolumn,twoside]{geophysics}
+\documentclass[manuscript,noblind]{geophysics}
+
+% An example of defining macros
+\newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
+\newcommand{\rr}[1]{\mbox{\rm #1}}
+
+%% Extra packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{array}
+\usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+
+% replace the term "Input" by "Initialization" in algorithms
+\SetKwInOut{Input}{Initialization}
+
+%% For creating theorems, corollaries, lemmas and definitions
+%% source: https://www.overleaf.com/learn/latex/Theorems_and_proofs
+%\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}[theorem]
+%\newtheorem{lemma}{Lemma}
+%\theoremstyle{definition}%
+\newtheorem{definition}{Definition}
+
+%% Define the QED symbol as a black square
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% for creating tables
+%\usepackage{booktabs}
+%\usepackage{array}
+
+\begin{document}
+\title{Planar equivalent layers: Part 2 -- Geophysical implications and applications}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+
+\ms{GEO-2024XXXX} % manuscript number
+
+\address{
+	\footnotemark[1] Corresponding author: vanderlei@on.br
+	\footnotemark[2] Observat\'orio Nacional, Rio de Janeiro, Brazil\\
+	\footnotemark[3] Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil\\
+	\footnotemark[4] TU Bergakademie Freiberg, Institute of Geophysics and Geoinformatics, Freiberg, Germany
+}
+\author{Vanderlei C. Oliveira Jr.\footnotemark[2]\footnotemark[1], Christian Gerhards\footnotemark[4]
+Val\'eria C. F. Barbosa\footnotemark[2], Andr\'e L. A. Reis \footnotemark[2]\footnotemark[3],
+Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
+
+%\footer{Example}
+%\lefthead{Oliveira Jr. et al.}
+\righthead{Planar equivalent layers: Part 2}
+
+\maketitle
+
+% Main body
+\include{abstract2}
+\include{introduction2}
+\include{planar_eqlayers_discrete}
+\include{numerical_simulations}
+\include{field_data}
+\include{conclusions2}
+%\include{aknowledgements}
+
+\clearpage
+
+%\include{algorithms}
+\include{tables}
+\include{figures}
+
+\clearpage
+
+% Appendices
+%\appendix
+
+\clearpage
+
+% References
+\bibliographystyle{seg}  % style file is seg.bst
+\bibliography{references}
+
+\clearpage
+
+\end{document}
