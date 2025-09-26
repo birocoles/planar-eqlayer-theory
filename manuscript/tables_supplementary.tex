@@ -1,0 +1,34 @@
+% Redefine Table number style
+\renewcommand\thetable{S\arabic{table}}
+
+\tabl{TableS1}{Relevant potential fields for geophysical applications.
+}{
+	\begin{center}
+		\renewcommand{\arraystretch}{0.8}
+%		\begin{tabular}{
+%			>{\smaller\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.12\textwidth}
+%			>{\small\centering}m{0.60\textwidth}
+%			>{\smaller\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.12\textwidth}
+%			>{\smaller\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.12\textwidth}
+%		}
+%		{\small \textbf{Figure}} & 
+%		{\small $\alpha_{a}$ (equation \ref{eq:diff-operators-generic})} & 
+%		{\small \textbf{Approach}} & 
+%		{\small \textbf{Test}} \\
+%		\hline
+		\begin{tabular}{
+				>{\smaller\center\arraybackslash}m{0.12\textwidth}
+				>{\setlength{\baselineskip}{0.5\baselineskip}\center\arraybackslash}m{0.64\textwidth}
+				>{\smaller\center\arraybackslash}m{0.12\textwidth}
+				>{\setlength{\baselineskip}{0.5\baselineskip}\center\arraybackslash}m{0.12\textwidth}
+			}
+			{\small \textbf{Figure}} & 
+			{\small $\alpha_{a}$ (equation \ref{eq:diff-operators-generic})} & 
+			{\small \textbf{Approach}} & 
+			{\small \textbf{Test}} \\
+			\hline
+		\ref{S-fig:FigureS1} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 1 & 1 \\
+		\end{tabular}
+	\end{center}
+	\label{S-tbl:TableS1}
+}
