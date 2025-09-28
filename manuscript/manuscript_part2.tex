@@ -14,6 +14,29 @@
 \usepackage{array}
 \usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
 
+% To cite objects defined in external .tex files
+\usepackage{xr} 
+
+% Define the external .tex file.
+% 'P1-' is the prefix we'll use in references.
+% 'manuscript_part1' is the filename (manuscript_part1.aux must exist!)
+\externaldocument[P1-]{manuscript_part1}
+
+\makeatletter
+% Define a new command for general cross-referencing to Part 1.
+% We name it \partoneref for simplicity.
+\newcommand{\partoneref}[1]{%
+	% Check if the label exists in the external file (with the P1- prefix)
+	\@ifundefined{r@P1-#1}{%
+		% If not found externally, assume it's a local label (in Part 2).
+		\ref{#1}%
+	}{%
+		% If found externally, print the reference with the ".1" suffix.
+		\ref{P1-#1}.1%
+	}%
+}
+\makeatother
+
 % replace the term "Input" by "Initialization" in algorithms
 \SetKwInOut{Input}{Initialization}
 
@@ -37,7 +60,7 @@
 %\usepackage{array}
 
 \begin{document}
-\title{Planar equivalent layers: Part 2 -- Geophysical implications and applications}
+\title{Planar equivalent layers for potential fields: Part 2 -- Geophysical implications and applications}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}} 
 
@@ -62,6 +85,7 @@ Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
 % Main body
 \include{abstract2}
 \include{introduction2}
+\include{geophysical_implications}
 \include{planar_eqlayers_discrete}
 \include{numerical_simulations}
 \include{field_data}
