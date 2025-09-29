@@ -1,4 +1,4 @@
-\section{Planar equivalent layers}
+\section{Discrete equivalent layers on a plane}
 \label{eq:planar_eqlayer}
 
 Consider a continuous equivalent layer $p_{\varepsilon}(\mathbf{r}'')$ (Definition \partoneref{def:continuous-eqlayer})  
@@ -86,14 +86,29 @@ that it represents the approximated total-field anomaly (Table \partoneref{tbl:T
 produced at the $i$-th observation point by a dipole located at 
 $\mathbf{r}''_{j} \in \mathcal{S}''$ (Figure \partoneref{fig:Figure1}), with magnetic moment intensity $p_{j}$.
 
-Note that, in the examples presented above, the physical relationship 
-between the observed potential-field data and their true sources is the
-same as that between the data and the equivalent sources.
-However, many authors 
-\cite[e.g.,][]{cordell1992, guspi_novara2009, li_etal2014, soler_uieda2021} 
-have proposed equivalent-layer methods by assuming without any proof that the harmonic functions $a_{ij}$ are 
-independent of the nature of the observed potential-field data and can be 
-conveniently chosen according to the characteristics of the problem.
-We mathematically confirm this independence some sections later and also show how 
-the particular form of predefined harmonic functions $a_{ij}$ affect the subsequent 
-potential-field transformations.
+Note that, in the examples above, the physical relationship between the observed potential-field data and 
+their true sources is the same as that between the data and the equivalent sources. Nevertheless, several 
+authors \cite[e.g.,][]{cordell1992, guspi_novara2009, li_etal2014, soler_uieda2021} have proposed 
+equivalent-layer methods by assuming -- without proof -- that the harmonic functions $a_{ij}$ are independent 
+of the type of observed potential-field data and can be conveniently chosen according to the problem 
+at hand. Our theoretical results presented in the companion paper (Part 1) confirm this independence.
+
+According to equation \partoneref{eq:p-Fourier}, given the differential operator $\alpha_{d}$ 
+associated with the observed potential-field data 
+(equations \partoneref{eq:observed-data-Fourier} and \partoneref{eq:diff-operators-generic}), we may define 
+different equivalent layers $p_{\varepsilon}$ by selecting the differential operator $\alpha_{a}$ that 
+acts on the kernel function $a$ in the Fourier domain 
+(equations \partoneref{eq:diff-operators-generic} and \partoneref{eq:kernel-a-Fourier}). In the particular case 
+where $\alpha_{a} = \alpha_{d}$, we obtain a Neumann's equivalent layer (Definition \partoneref{def:eql-Neumann}), 
+which preserves the physical relationship between the observed data and the true sources. For example, if 
+the observed data correspond to the $y$-component of the magnetic induction field of the true sources, 
+then the potential field predicted by the equivalent layer is also the $y$-component of the magnetic induction field of 
+the equivalent sources.
+
+By contrast, if $\alpha_{a} \ne \alpha_{d}$, the predicted data from the equivalent layer differ from 
+the observed data, and the physical relationship between the observed field and its true sources is 
+not preserved. From this reasoning, we conclude that the kernel function defining continuous or discrete 
+equivalent layers (Definitions \partoneref{eq:predicted-data-continuous-layer} and \partoneref{def:discrete-eqlayer}) 
+is independent of the nature of the observed potential-field data. In the next section, we numerically confirm 
+this independence and further show how the specific choice of predefined harmonic functions $a_{ij}$ 
+affects subsequent potential-field transformations.
