@@ -1,0 +1,88 @@
+\documentclass[manuscript,blind]{geophysics}
+%\documentclass[paper,twocolumn,twoside]{geophysics}
+%\documentclass[manuscript,noblind]{geophysics}
+
+%% Extra packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{array}
+\usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+\usepackage[skip=5pt]{caption}
+
+% To cite objects defined in external .tex files
+\usepackage{xr} 
+
+% Define external .tex files
+\externaldocument[P1-]{manuscript_part1}
+\externaldocument[P2-]{manuscript_part2}
+
+\makeatletter
+% Define a new command for general cross-referencing to Part 1.
+% We name it \partoneref for simplicity.
+\newcommand{\partoneref}[1]{%
+	% Check if the label exists in the external file (with the P1- prefix)
+	\@ifundefined{r@P1-#1}{%
+		% If not found externally, assume it's a local label (in supplementary material).
+		\ref{#1}%
+	}{%
+		% If found externally, print the reference with the ".1" suffix.
+		\ref{P1-#1}.1%
+	}%
+}
+\makeatother
+
+\makeatletter
+% Define a new command for general cross-referencing to Part 2.
+% We name it \partoneref for simplicity.
+\newcommand{\parttworef}[1]{%
+	% Check if the label exists in the external file (with the P2- prefix)
+	\@ifundefined{r@P2-#1}{%
+		% If not found externally, assume it's a local label (in supplementary material).
+		\ref{#1}%
+	}{%
+		% If found externally, print the reference with the ".2" suffix.
+		\ref{P2-#1}.2%
+	}%
+}
+\makeatother
+
+% Define space between figure/tables and the corresponding caption
+\captionsetup{belowskip=5pt}
+
+
+\begin{document}
+\title{Planar equivalent layers for potential fields (Supplementary material)}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+
+
+\address{
+	\footnotemark[1] Corresponding author: vanderlei@on.br
+	\footnotemark[2] Observat\'orio Nacional, Rio de Janeiro, Brazil\\
+	\footnotemark[3] Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil\\
+	\footnotemark[4] TU Bergakademie Freiberg, Institute of Geophysics and Geoinformatics, Freiberg, Germany
+}
+\author{Vanderlei C. Oliveira Jr.\footnotemark[2]\footnotemark[1], Christian Gerhards\footnotemark[4]
+Val\'eria C. F. Barbosa\footnotemark[2], Andr\'e L. A. Reis \footnotemark[2]\footnotemark[3],
+Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
+
+%\footer{Example}
+\righthead{Planar equivalent layers (supp. material)}
+
+\maketitle
+
+% Main body
+\include{abstract_supplementary}
+\include{numerical_simulations_supplementary}
+
+\clearpage
+
+%\include{algorithms}
+\include{tables_supplementary}
+\include{figures_supplementary}
+
+\clearpage
+
+\end{document}

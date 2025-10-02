@@ -1,6 +1,6 @@
-%\documentclass[manuscript,blind]{geophysics}
+\documentclass[manuscript,blind]{geophysics}
 %\documentclass[paper,twocolumn,twoside]{geophysics}
-\documentclass[manuscript,noblind]{geophysics}
+%\documentclass[manuscript,noblind]{geophysics}
 
 % An example of defining macros
 \newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
@@ -13,6 +13,29 @@
 \usepackage{nicefrac}
 \usepackage{array}
 \usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+
+% To cite objects defined in external .tex files
+\usepackage{xr} 
+
+% Define the external .tex file.
+% 'P1-' is the prefix we'll use in references.
+% 'manuscript_part1' is the filename (manuscript_part1.aux must exist!)
+\externaldocument[P1-]{manuscript_part1}
+
+\makeatletter
+% Define a new command for general cross-referencing to Part 1.
+% We name it \partoneref for simplicity.
+\newcommand{\partoneref}[1]{%
+	% Check if the label exists in the external file (with the P1- prefix)
+	\@ifundefined{r@P1-#1}{%
+		% If not found externally, assume it's a local label (in Part 2).
+		\ref{#1}%
+	}{%
+		% If found externally, print the reference with the ".1" suffix.
+		\ref{P1-#1}.1%
+	}%
+}
+\makeatother
 
 % replace the term "Input" by "Initialization" in algorithms
 \SetKwInOut{Input}{Initialization}
@@ -37,7 +60,7 @@
 %\usepackage{array}
 
 \begin{document}
-\title{Potential-field theoretical insights on planar equivalent layers}
+\title{Planar equivalent layers for potential fields: Part 2 -- Geophysical implications and applications}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}} 
 
@@ -55,36 +78,34 @@ Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
 
 %\footer{Example}
 %\lefthead{Oliveira Jr. et al.}
-\righthead{Planar equivalent layers}
+\righthead{Planar equivalent layers: Part 2}
 
 \maketitle
 
 % Main body
-\include{abstract}
-\include{introduction}
-\include{background}
-\include{planar_eqlayers}
-\include{planar_eqlayer_theorem}
-\include{transformations_eqlayer}
-\include{eqlayer_classes}
+\include{abstract2}
+\include{introduction2}
 \include{geophysical_implications}
+\include{planar_eqlayers_discrete}
 \include{numerical_simulations}
 \include{field_data}
-\include{conclusions}
-%\include{aknowledgements}
+\include{conclusions2}
+
+%\section{Acknowledgments}
+%
+%This study was financed by the Brazilian agencies FAPERJ (grant nos. E-26 202.729/2018 and 26/202.582/2019) 
+%and CNPq (grant nos. 315768/2020-7 and 309624/2021-5). The authors thank the Geological Survey of Brazil  
+%for providing the field data, as well as the editors and reviewers who contributed to this work.
 
 \clearpage
 
 %\include{algorithms}
-\include{tables}
-\include{figures}
+\include{figures2}
 
 \clearpage
 
 % Appendices
 %\appendix
-\include{appendix_A}
-\include{appendix_B}
 
 \clearpage
 

@@ -1,31 +1,10 @@
-\renewcommand{\figdir}{figures} % figure directory
-
-\plot{Figure1}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
-	{
-		2D schematic representation of a vertical $yz$ plane crossing the sources (represented in dark gray),
-		with $x$ axis pointing inward the page (represented by the ``$\otimes$" symbol).
-		The sources are located in the subsurface (represented in light gray), over a 
-		closed region $\overline{\mathcal{V}'}$ formed by $N_{\nu} = 2$ disjoint closed regions 
-		$\overline{\mathcal{V}'_{\nu}}$, $\nu \in \{1, 2\}$, with top limited by the plane $z^{t}_{0}$. 
-		The fine dashed lines represent two possible horizontal surfaces $\mathcal{S}''$, one located 
-		at $z''_{0} < z^{t}_{0}$, above the sources, and another at $z''_{0} > z^{t}_{0}$, crossing the sources.
-		The medium dashed line represents the surface containing the observation points 
-		$\mathbf{r}$, all above $\mathcal{S}''$.
-		The long dashed line represents a planar surface $\mathcal{S}^{\dagger}$ located 
-		at $z^{\dagger}_{0} < z''_{0}$.
-		Finally, the dashed-dot line represents a planar surface $\mathcal{S}^{\ddagger}$ located 
-		at $z^{\ddagger}_{0} < z^{\dagger}_{0}$.
-	}
-	\label{fig:Figure1}
-}
-
+% Define figure directory
+\renewcommand{\figdir}{figures}
 
 \plot{Figure2}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Simulated magnetic source formed by horizontally juxtaposed rectangular prisms. 
-		The model have a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (Table \ref{tbl:Table1}) 
+		The model have a pseudo-random total-magnetization intensity $\sigma(\mathbf{r}')$ (Table \partoneref{tbl:Table1}) 
 		varying uniformly from $2$ to $3$ A/m and a constant direction with inclination 
 		$-10.2^{\circ}$ and declination $-19.8^{\circ}$.
 	}
@@ -33,9 +12,8 @@
 }
 
 \plot{Figure3}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
-		Potential fields (Table \ref{tbl:Table2}) due to the synthetic source (Figure \ref{fig:Figure2}).
+		Potential fields (Table \partoneref{tbl:Table2}) due to the synthetic source (Figure \ref{fig:Figure2}).
 		(a) Approximated total-field anomaly, (b) amplitude of the magnetic induction field, 
 		(c) RTP anomaly, (d), (e), (f) $x$, $y$ and $z$ components of the magnetic induction field,
 		respectively. All values are in nT.	
@@ -47,16 +25,15 @@
 }
 
 \plot{Figure4}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Estimated discrete layers.
+		For all layers, we consider 
+		$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$.
 		The first, second and third columns contain the results obtained from each numerical test, 
 		by using, respectively, $\alpha_{a} = \alpha_{d}$, 
 		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) k$ and 
-		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ (equation \ref{eq:p-Fourier}). 
+		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ (equation \partoneref{eq:p-Fourier}). 
 		The first, second and third rows show, respectively, the layers estimated by following approaches 1--3.
-		For all layers, we consider 
-		$\alpha_{d} \equiv \alpha(1, \hat{\mathbf{u}}) \, \alpha(1, \hat{\mathbf{v}})$.
 		The black line represents the projection of the model on the $xy$ plane.
 		The green and black arrows represent, respectively, the projections of the constant 
 		main field and synthetic source (Figure \ref{fig:Figure2}) magnetization directions onto the plane $xy$.
@@ -65,13 +42,12 @@
 }
 
 \plot{Figure5}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Estimated discrete layers.
 		Root Mean Square Error (RMSE) produced by discrete equivalent layers obtained by using 
 		different tentative values of truncating wavenumber $k_{\varepsilon}$ 
-		(equation \ref{eq:potential-U-epsilon-Fourier-layer-1}) and regularization parameter $\mu_{\varepsilon}$
-		(equation \ref{eq:potential-U-epsilon-Fourier-layer-2}). The RMSE is defined by
+		(equation \partoneref{eq:potential-U-epsilon-Fourier-layer-1}) and regularization parameter $\mu_{\varepsilon}$
+		(equation \partoneref{eq:potential-U-epsilon-Fourier-layer-2}). The RMSE is defined by
 		$\sqrt{\nicefrac{\| \mathbf{d}^{o} - \mathbf{d}_{\epsilon}\|^{2}_{2}}{N}}$, where 
 		$\mathbf{d}^{o}$ is the approximated total-field anomaly shown in Figure \ref{fig:Figure3}a and
 		$\mathbf{d}_{\epsilon}$ is the approximated total-field anomaly predicted by the 
@@ -81,7 +57,6 @@
 }
 
 \plot{Figure6}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Comparison between estimated equivalent layers shown in Figure \ref{fig:Figure4}.
 		Difference between the layers shown in Figures
@@ -99,13 +74,12 @@
 }
 
 \plot{Figure7}{width=0.4\textwidth}{
-%\plot{}{width=0.4\textwidth}{
 	{
 		Residuals between the potential fields due to the synthetic source (Figure \ref{fig:Figure2}) and
 		those produced by the estimated layers shown in Figures \ref{fig:Figure4}a--c.
 		The rows from top to bottom contain residuals of the approximated total-field anomaly,
 		amplitude of magnetic induction field, RTP anomaly, $x$, $y$ and $z$ components of the magnetic induction field 
-		(Table \ref{tbl:Table2}). 
+		(Table \partoneref{tbl:Table2}). 
 		The columns from left to right contain the potential fields due to the layers shown, respectively, in Figures
 		\ref{fig:Figure4}a--c. All values are in nT.
 		The black line represents the projection of the model on the $xy$ plane.
@@ -116,7 +90,6 @@
 }
 
 \plot{Figure8}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Application to field data.
 		(a) Location of the study area (blue dot).
@@ -129,12 +102,11 @@
 }
 
 \plot{Figure9}{width=0.8\textwidth}{
-%\plot{}{width=0.8\textwidth}{
 	{
 		Application to field data.
 		(a) Estimated equivalent layer obtained with 
 		$\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)$ 
-		(equation \ref{eq:p-Fourier}).
+		(equation \partoneref{eq:p-Fourier}).
 		(b) Residuals between the observed total-field anomaly (Figure \ref{fig:Figure8}c) and the predicted
 		total-field anomaly. The inset contains the histogram of the normalized residuals.
 		The normalization consists in removing the mean ($\mu$) and dividing the result by the standard deviation ($\sigma$) of the 
@@ -151,4 +123,3 @@
 	}
 	\label{fig:Figure9}
 }
-
