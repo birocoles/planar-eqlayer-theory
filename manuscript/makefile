@@ -11,15 +11,13 @@ all:
 
 # Convert and rename figures
 figs:
-	convert figures/Figure1.png -colorspace CMYK -units PixelsPerInch figures/Figure1.tiff
-	convert figures/Figure2.png -colorspace CMYK -units PixelsPerInch figures/Figure2.tiff
-	convert figures/Figure3.png -colorspace CMYK -units PixelsPerInch figures/Figure3.tiff
-	convert figures/Figure4.png -colorspace CMYK -units PixelsPerInch figures/Figure4.tiff
-	convert figures/Figure5.png -colorspace CMYK -units PixelsPerInch figures/Figure5.tiff
-	convert figures/Figure6.png -colorspace CMYK -units PixelsPerInch figures/Figure6.tiff
-	convert figures/Figure7.png -colorspace CMYK -units PixelsPerInch figures/Figure7.tiff
-	convert figures/Figure8.png -colorspace CMYK -units PixelsPerInch figures/Figure8.tiff
-	convert figures/Figure9.png -colorspace CMYK -units PixelsPerInch figures/Figure9.tiff
+	convert figures/Figure1_1.png -colorspace CMYK -units PixelsPerInch figures/Figure1_1.tiff
+	convert figures/Figure2_1.png -colorspace CMYK -units PixelsPerInch figures/Figure2_1.tiff
+	convert figures/Figure2_2.png -colorspace CMYK -units PixelsPerInch figures/Figure2_2.tiff
+	convert figures/Figure2_3.png -colorspace CMYK -units PixelsPerInch figures/Figure2_3.tiff
+	convert figures/Figure2_4.png -colorspace CMYK -units PixelsPerInch figures/Figure2_4.tiff
+	convert figures/Figure2_5.png -colorspace CMYK -units PixelsPerInch figures/Figure2_5.tiff
+	convert figures/Figure2_6.png -colorspace CMYK -units PixelsPerInch figures/Figure2_6.tiff
 
 # Show the DPI of each tiff-converted figure
 dpi:

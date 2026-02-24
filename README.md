@@ -14,7 +14,7 @@ Xinpeng Huang<sup>2</sup>
 
 <sup>3</sup> Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil
 
-![](manuscript/figures/Figure1.png)
+![](manuscript/figures/Figure1_1.png)
 
 *2D schematic representation of sources located in subsurface and the geometrical aspects of our work.*
 
@@ -113,4 +113,4 @@ to the authors. See `LICENSE.md` for the full license text.
 
 The manuscript text is not open source. The authors reserve the rights to the
 article content, which is currently submitted for publication in the
-GEOPHYSICS.
+Journal of Geophysical Research: Solid Earth.

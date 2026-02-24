@@ -1,88 +1,627 @@
-\documentclass[manuscript,blind]{geophysics}
-%\documentclass[paper,twocolumn,twoside]{geophysics}
-%\documentclass[manuscript,noblind]{geophysics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
+% Modified December 2018
+%
+% This template includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements.
+%
+% FOR FIGURES, DO NOT USE \psfrag
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% IMPORTANT NOTE:
+%
+% SUPPORTING INFORMATION DOCUMENTATION IS NOT COPYEDITED BEFORE PUBLICATION.
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+% Choose the journal abbreviation for the journal you are
+% submitting to:
 
-%% Extra packages
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{nicefrac}
-\usepackage{array}
-\usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
-\usepackage[skip=5pt]{caption}
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH (use for all of them)
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+% sw    SPACE WEATHER
+% ms    JAMES
+% ef    EARTH'S FUTURE
+%
+%
+%
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below.)
 
-% To cite objects defined in external .tex files
-\usepackage{xr} 
+\documentclass[draft,jgrga]{agutexSI2019}
 
-% Define external .tex files
-\externaldocument[P1-]{manuscript_part1}
-\externaldocument[P2-]{manuscript_part2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  SUPPORTING INFORMATION TEMPLATE
+%
+%% ------------------------------------------------------------------------ %%
+%
+%
+%Please use this template when formatting and submitting your Supporting Information.
 
-\makeatletter
-% Define a new command for general cross-referencing to Part 1.
-% We name it \partoneref for simplicity.
-\newcommand{\partoneref}[1]{%
-	% Check if the label exists in the external file (with the P1- prefix)
-	\@ifundefined{r@P1-#1}{%
-		% If not found externally, assume it's a local label (in supplementary material).
-		\ref{#1}%
-	}{%
-		% If found externally, print the reference with the ".1" suffix.
-		\ref{P1-#1}.1%
-	}%
-}
-\makeatother
+%This template serves as both a “table of contents” for the supporting information for your article and as a summary of files.
+%
+%
+%OVERVIEW
+%
+%Please note that all supporting information will be peer reviewed with your manuscript. It will not be copyedited if the paper is accepted.
+%In general, the purpose of the supporting information is to enable authors to provide and archive auxiliary information such as data tables, method information, figures, video, or computer software, in digital formats so that other scientists can use it.
+%The key criteria are that the data:
+% 1. supplement the main scientific conclusions of the paper but are not essential to the conclusions (with the exception of
+%    including %data so the experiment can be reproducible);
+% 2. are likely to be usable or used by other scientists working in the field;
+% 3. are described with sufficient precision that other scientists can understand them, and
+% 4. are not exe files.
+%
+%USING THIS TEMPLATE
+%
+%***All references should be included in the reference list of the main paper so that they can be indexed, linked, and counted as citations.  The reference section does not count toward length limits.
+%
+%All Supporting text and figures should be included in this document. Insert supporting information content into each appropriate section of the template. To add additional captions, simply copy and paste each sample as needed.
 
-\makeatletter
-% Define a new command for general cross-referencing to Part 2.
-% We name it \partoneref for simplicity.
-\newcommand{\parttworef}[1]{%
-	% Check if the label exists in the external file (with the P2- prefix)
-	\@ifundefined{r@P2-#1}{%
-		% If not found externally, assume it's a local label (in supplementary material).
-		\ref{#1}%
-	}{%
-		% If found externally, print the reference with the ".2" suffix.
-		\ref{P2-#1}.2%
-	}%
-}
-\makeatother
+%Tables may be included, but can also be uploaded separately, especially if they are larger than 1 page, or if necessary for retaining table formatting. Data sets, large tables, movie files, and audio files should be uploaded separately. Include their captions in this document and list the file name with the caption. You will be prompted to upload these files on the Upload Files tab during the submission process, using file type “Supporting Information (SI)”
 
-% Define space between figure/tables and the corresponding caption
-\captionsetup{belowskip=5pt}
+%IMPORTANT NOTE ON FIGURES AND TABLES
+% Placeholders for figures and tables appear after the \end{article} command, after references.
+% DO NOT USE \psfrag or \subfigure commands.
+%
+ \usepackage{graphicx}
+ 
+ % To cite objects defined in external .tex files
+ \usepackage{xr} 
+ 
+ \usepackage{nicefrac}
+ 
+ % Define external .tex files
+ \externaldocument[M-]{planar_eql_part2}
+ 
+ % Define a new command for general cross-referencing to the main text.
+ % We name it \mainref for simplicity.
+ \newcommand{\mainref}[1]{\ref{M-#1}}
+%
+%  Uncomment the following command to allow illustrations to print
+%   when using Draft:
+ \setkeys{Gin}{draft=false}
+%
+% You may need to use one of these options for graphicx depending on the driver program you are using. 
+%
+% [xdvi], [dvipdf], [dvipsone], [dviwindo], [emtex], [dviwin],
+% [pctexps],  [pctexwin],  [pctexhp],  [pctex32], [truetex], [tcidvi],
+% [oztex], [textures]
+%
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  ENTER PREAMBLE
+%
+%% ------------------------------------------------------------------------ %%
 
+% Author names in capital letters:
+%\authorrunninghead{BALES ET AL.}
+
+% Shorter version of title entered in capital letters:
+%\titlerunninghead{SHORT TITLE}
+
+%Corresponding author mailing address and e-mail address:
+%\authoraddr{Corresponding author: A. B. Smith,
+%Department of Hydrology and Water Resources, University of
+%Arizona, Harshbarger Building 11, Tucson, AZ 85721, USA.
+%(a.b.smith@hwr.arizona.edu)}
 
 \begin{document}
-\title{Planar equivalent layers for potential fields (Supplementary material)}
 
-\renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+%% ------------------------------------------------------------------------ %%
+%
+%  TITLE
+%
+%% ------------------------------------------------------------------------ %%
+
+%\includegraphics{agu_pubart-white_reduced.eps}
 
 
-\address{
-	\footnotemark[1] Corresponding author: vanderlei@on.br
-	\footnotemark[2] Observat\'orio Nacional, Rio de Janeiro, Brazil\\
-	\footnotemark[3] Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil\\
-	\footnotemark[4] TU Bergakademie Freiberg, Institute of Geophysics and Geoinformatics, Freiberg, Germany
+\title{Supporting Information for ``Planar equivalent layers for potential fields: 2. Geophysical implications and applications''}
+%
+% e.g., \title{Supporting Information for "Terrestrial ring current:
+% Origin, formation, and decay $\alpha\beta\Gamma\Delta$"}
+%
+%DOI: 10.1002/%insert paper number here%
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
+
+\authors{%
+	Vanderlei C. Oliveira Jr.\affil{1}, Christian Gerhards\affil{3},
+	Val\'eria C. F. Barbosa\affil{1}, Andr\'e L. A. Reis \affil{1}\affil{2},
+	Edson F. Luza\affil{1}, and Xinpeng Huang\affil{3}
 }
-\author{Vanderlei C. Oliveira Jr.\footnotemark[2]\footnotemark[1], Christian Gerhards\footnotemark[4]
-Val\'eria C. F. Barbosa\footnotemark[2], Andr\'e L. A. Reis \footnotemark[2]\footnotemark[3],
-Edson F. Luza\footnotemark[2], Xinpeng Huang\footnotemark[4]}
 
-%\footer{Example}
-\righthead{Planar equivalent layers (supp. material)}
 
-\maketitle
+% \affiliation{1}{First Affiliation}
+% \affiliation{2}{Second Affiliation}
+% \affiliation{3}{Third Affiliation}
+% \affiliation{4}{Fourth Affiliation}
 
-% Main body
-\include{abstract_supplementary}
-\include{numerical_simulations_supplementary}
+\affiliation{1}{Observat\'orio Nacional, Rio de Janeiro, Brazil}
+\affiliation{2}{Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil}
+\affiliation{3}{TU Bergakademie Freiberg, Institute of Geophysics and Geoinformatics, Freiberg, Germany}
+%(repeat as many times as is necessary)
 
-\clearpage
 
-%\include{algorithms}
-\include{tables_supplementary}
-\include{figures_supplementary}
 
-\clearpage
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  BEGIN ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% The body of the article must start with a \begin{article} command
+%
+% \end{article} must follow the references section, before the figures
+%  and tables.
+
+\begin{article}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+
+
+\noindent\textbf{Contents of this file}
+%%%Remove or add items as needed%%%
+\begin{enumerate}
+%\item Text S1 to Sx
+\item Table S1
+\item Figures S1 to S20
+%if Tables are larger than 1 page, upload as separate excel file
+\end{enumerate}
+%\noindent\textbf{Additional Supporting Information (Files uploaded separately)}
+%\begin{enumerate}
+%\item Captions for Datasets S1 to Sx
+%\item Captions for large Tables S1 to Sx (if larger than 1 page, upload as separate excel file)
+%\item Captions for Movies S1 to Sx
+%\item Captions for Audio S1 to Sx
+%\end{enumerate}
+
+\noindent\textbf{Introduction}
+%Type or paste your text here. The introduction gives a brief overview of the supporting information. You should include information %about as many of the following as possible (when appropriate):
+% 1. a general overview of the kind of data files;
+% 2. information about when and how the data were collected or created;
+% 3. a general description of processing steps used;
+% 4. any known imperfections or anomalies in the data.
+
+This is a supplementary material for the scientific paper 
+``Planar equivalent layers for potential fields: 2. Geophysical implications and 
+applications''. 
+Figures and Tables defined here are identified with a capital ``S" (for example, Figure S1). 
+Those defined in the original paper are cited with their corresponding labels and numbers.
+
+In the present supplementary material, we compare the estimated equivalent layers shown 
+in Figure \mainref{fig:Figure4} and those produced by the simulated magnetic source (Figure
+\mainref{fig:Figure2}), as well as their corresponding approximated total-field anomaly 
+(\textbf{atfa}), amplitude of magnetic induction field (\textbf{b}), RTP anomaly 
+(\textbf{rtp}) and Cartesian components of the magnetic induction field 
+(\textbf{bx}, \textbf{by} and \textbf{bz}).
+
+Table \ref{S-tbl:TableS1} specifies the equivalent layers associated 
+with Figures \ref{S-fig:FigureS3}--\ref{S-fig:FigureS20}.
+
+Figure \ref{S-fig:FigureS1} shows curves of the data fit (root mean square error) produced by
+discrete layers obtained by using different tentative values of truncating wavenumber
+$k_{\varepsilon}$ (equation \mainref{eq:potential-U-epsilon-Fourier-layer-1}) and  
+regularization parameter $\mu_{\varepsilon}$
+(equation \mainref{eq:potential-U-epsilon-Fourier-layer-2}). 
+These curves were used to set the $k_{\varepsilon}$ and $\mu_{\varepsilon}$ values associated
+with the discrete layers shown in Figures \mainref{fig:Figure4}d--i.
+
+In Figures \ref{S-fig:FigureS3}--\ref{S-fig:FigureS20}, the black line represents the 
+projection of the model on the $xy$ plane. The green and black arrows represent, respectively, 
+the projections of the constant main field and synthetic source (Figure \mainref{fig:Figure2}) 
+magnetization directions onto the plane $xy$. In these Figures, the fields produced by the 
+equivalent layers are referred as ``predicted fields''. Those produced by the magnetic source 
+(Figure \mainref{fig:Figure2}) are referred as ``simulated fields''. The simulated fields are 
+those shown in Figure \mainref{fig:Figure3}.
+
+%\newpage
+
+%Delete all unused file types below. Copy/paste for multiples of each file type as needed.
+%\noindent\textbf{Text S1.}
+%Type or paste text here. This should be additional explanatory text, such as: extended descriptions of results, full details of models, extended lists of acknowledgements etc.  It should not be additional discussion, analysis, interpretation or critique. It should not be an additional scientific experiment or paper.
+%
+
+
+
+%% ------------------------------------------------------------------------ %%
+%%  REFERENCE LIST AND TEXT CITATIONS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+%
+% \bibliography{<name of your .bib file>} do not specify file extension
+%
+% no need to specify bibliographystyle
+%
+% Note that ALL references in this supporting information file must also be referenced in the primary manuscript
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if you get an error about newblock being undefined, uncomment this line:
+%\newcommand{\newblock}{}
+
+% \bibliography{ uncomment this line and enter the name of your bibtex file here } 
+
+
+
+
+%Reference citation instructions and examples:
+%
+% Please use ONLY \cite and \citeA for reference citations.
+% \cite for parenthetical references
+% ...as shown in recent studies (Simpson et al., 2019)
+% \citeA for in-text citations
+% ...Simpson et al (2019) have shown...
+% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
+%
+%
+%...as shown by \citeA{jskilby}.
+%...as shown by \citeA{lewin76}, \citeA{carson86}, \citeA{bartoldy02}, and \citeA{rinaldi03}.
+%...has been shown \cite<e.g.,>{jskilbye}.
+%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
+%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
+%
+% apacite uses < > for prenotes, not [ ]
+% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
+%
+
+%% ------------------------------------------------------------------------ %%
+%
+%  END ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+\end{article}
+
+% Copy/paste for multiples of each file type as needed.
+
+% enter figures and tables below here: %%%%%%%
+%
+%
+%
+%
+% EXAMPLE FIGURES
+% ---------------
+% If you get an error about an unknown bounding box, try specifying the width and height of the figure with the natwidth and natheight options.
+% \begin{figure}
+%\setfigurenum{S1} %%You can change number for each figure if you want, not required. "S" prepended automatically.
+% \noindent\includegraphics[natwidth=800px,natheight=600px]{samplefigure.eps}
+%\caption{caption}
+%\label{epsfiguresample}
+%\end{figure}
+%
+%
+% Giving latex a width will help it to scale the figure properly. A simple trick is to use \textwidth. Try this if large figures run off the side of the page.
+% \begin{figure}
+% \noindent\includegraphics[width=\textwidth]{anothersample.png}
+%\caption{caption}
+%\label{pngfiguresample}
+%\end{figure}
+%
+%
+%\begin{figure}
+%\noindent\includegraphics[width=\textwidth]{athirdsample.pdf}
+%\caption{A pdf test figure}
+%\label{pdffiguresample}
+%\end{figure}
+%
+% PDFLatex does not seem to be able to process EPS figures. You may want to try the epstopdf package.
+%
+%
+% ---------------
+% EXAMPLE TABLE
+%
+%\begin{table}
+%\settablenum{S1} %%Change number for each table
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\centering
+%\begin{tabular}{l c}
+%\hline
+% Run  & Time (min)  \\
+%\hline
+%  $l1$  & 260   \\
+%  $l2$  & 300   \\
+%  $l3$  & 340   \\
+%  $h1$  & 270   \\
+%  $h2$  & 250   \\
+%  $h3$  & 380   \\
+%  $r1$  & 370   \\
+%  $r2$  & 390   \\
+%\hline
+%\end{tabular}
+%\tablenotetext{a}{Footnote text here.}
+%\end{table}
+% ---------------
+%
+% EXAMPLE LARGE TABLE (UPLOADED SEPARATELY)
+%\begin{table}
+%\settablenum{S1} %%Change number for each table
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\end{table}
+
+\begin{table}
+	\caption{%
+		Parameters of the corresponding equivalent layers associated with Figures 
+		\ref{S-fig:FigureS1}--\ref{S-fig:FigureS18}. 
+		The unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ define the constant 
+		directions of the simulated main field and source magnetization, respectively,
+		$\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$,
+		$k_{x}$ and $k_{y}$ and represent the wavenumbers along the $x$ and $y$
+		directions, $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $\mathtt{i}$ is the imaginary 
+		unit.
+	}
+	\begin{center}
+		\begin{tabular}{cccc}
+			{\small \textbf{Figure}} & 
+			{\small $\alpha_{a}$ (equation \mainref{eq:diff-operators-generic})} & 
+			{\small \textbf{Approach}} & 
+			{\small \textbf{Test}} \\
+			\hline
+			\ref{S-fig:FigureS1} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 1 & 1 \\
+			\ref{S-fig:FigureS2} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 1 & 1 \\
+			\ref{S-fig:FigureS3} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 2 & 1 \\
+			\ref{S-fig:FigureS4} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 2 & 1 \\
+			\ref{S-fig:FigureS5} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 3 & 1 \\
+			\ref{S-fig:FigureS6} & $\alpha(1, \hat{\mathbf{u}})\alpha(1, \hat{\mathbf{v}})$ & 3 & 1 \\
+			\ref{S-fig:FigureS7} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 1 & 2 \\
+			\ref{S-fig:FigureS8} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 1 & 2 \\
+			\ref{S-fig:FigureS9} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 2 & 2 \\
+			\ref{S-fig:FigureS10} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 2 & 2 \\
+			\ref{S-fig:FigureS11} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 3 & 2 \\
+			\ref{S-fig:FigureS12} & $\left(\mathbf{k}^{\top}\hat{\mathbf{u}} \right) k$ & 3 & 2 \\
+			\ref{S-fig:FigureS13} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 1 & 3 \\
+			\ref{S-fig:FigureS14} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 1 & 3 \\
+			\ref{S-fig:FigureS15} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 2 & 3 \\
+			\ref{S-fig:FigureS16} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 2 & 3 \\
+			\ref{S-fig:FigureS17} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 3 & 3 \\
+			\ref{S-fig:FigureS18} & $\mathbf{k}^{\top}\hat{\mathbf{u}}$ & 3 & 3
+		\end{tabular}
+	\end{center}
+	\label{S-tbl:TableS1}
+\end{table}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S1.png}
+	\caption{%
+		Estimated discrete layers.
+		Root Mean Square Error (RMSE) produced by discrete equivalent layers obtained by using 
+		different tentative values of truncating wavenumber $k_{\varepsilon}$ 
+		(equation \mainref{eq:potential-U-epsilon-Fourier-layer-1}) and regularization parameter $\mu_{\varepsilon}$
+		(equation \mainref{eq:potential-U-epsilon-Fourier-layer-2}). The RMSE is defined by
+		$\sqrt{\nicefrac{\| \mathbf{d}^{o} - \mathbf{d}_{\epsilon}\|^{2}_{2}}{N}}$, where 
+		$\mathbf{d}^{o}$ is the approximated total-field anomaly shown in Figure \mainref{fig:Figure3}a and
+		$\mathbf{d}_{\epsilon}$ is the approximated total-field anomaly predicted by the 
+		corresponding equivalent layer.
+		The blue dots in (a)--(f) represent the $k_{\varepsilon}$ and $\mu_{\varepsilon}$ 
+		values used to obtain the discrete layers shown in Figures 
+		\mainref{fig:Figure4}d--i, respectively.
+	}
+	\label{S-fig:FigureS1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S2.png}
+	\caption{%
+		Comparison between estimated equivalent layers shown in Figure \mainref{fig:Figure4}.
+		Difference between the layers shown in Figures
+		(a) \mainref{fig:Figure4}d and a; 
+		(b) \mainref{fig:Figure4}e and b; 
+		(c) \mainref{fig:Figure4}f and c; 
+		(d) \mainref{fig:Figure4}g and a;
+		(e) \mainref{fig:Figure4}h and b;
+		(f) \mainref{fig:Figure4}i and c.
+		The black line represents the projection of the model on the $xy$ plane.
+		The green and black arrows represent, respectively, the projections of the constant 
+		main field and synthetic source (Figure \mainref{fig:Figure2}) magnetization directions onto the plane $xy$.
+	}
+	\label{S-fig:FigureS2}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S3.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}a.
+	}
+	\label{S-fig:FigureS3}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S4.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}a.
+	}
+	\label{S-fig:FigureS4}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S5.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}d.
+	}
+	\label{S-fig:FigureS5}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S6.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}d.
+	}
+	\label{S-fig:FigureS6}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S7.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}g.
+	}
+	\label{S-fig:FigureS7}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S8.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}g.
+	}
+	\label{S-fig:FigureS8}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S9.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}b.
+	}
+	\label{S-fig:FigureS9}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S10.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}b.
+	}
+	\label{S-fig:FigureS10}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S11.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}e.
+	}
+	\label{S-fig:FigureS11}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S12.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}e.
+	}
+	\label{S-fig:FigureS12}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S13.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}h.
+	}
+	\label{S-fig:FigureS13}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S14.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}h.
+	}
+	\label{S-fig:FigureS14}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S15.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}c.
+	}
+	\label{S-fig:FigureS15}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S16.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}c.
+	}
+	\label{S-fig:FigureS16}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S17.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}f.
+	}
+	\label{S-fig:FigureS17}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S18.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}f.
+	}
+	\label{S-fig:FigureS18}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S19.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}i.
+	}
+	\label{S-fig:FigureS19}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure_S20.png}
+	\caption{%
+		Comparison between the simulated fields and those predicted by the estimated equivalent layer shown in Figure \mainref{fig:Figure4}i.
+	}
+	\label{S-fig:FigureS20}
+\end{figure}
+
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
