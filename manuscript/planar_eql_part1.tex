@@ -164,9 +164,9 @@
 % \end{keypoints}
 
 \begin{keypoints}
-\item potential theory
-\item potential fields
-\item equivalent layer
+\item The study provides a rigorous theoretical foundation for equivalent layers by defining the planar equivalent layer theorem
+\item Continuous planar layers reproduce observed potential field data accurately even when the layer intersects the true sources
+\item The equivalent-layer technique is proven to be mathematically equivalent to potential field transformations computed in the Fourier domain
 \end{keypoints}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,15 +197,17 @@
 \include{abstract1}
 
 \section*{Plain Language Summary}
-For decades, geophysicists have used a powerful but incompletely understood mathematical ``trick"
-called the equivalent-layer technique to process gravity and magnetic survey data, helping to locate 
-underground resources and structures. This study finally provides its rigorous theoretical foundation, 
-proving you can accurately represent complex real-world sources with a simpler, imaginary flat sheet. 
-The new formulas show this long-used practical method is mathematically sound and equivalent to other 
-standard techniques, explaining why it works so well. The research confirms that many different versions 
-of these imaginary layers can produce the same clear gravity and magnetic survey data, giving to the method 
-a firmly grounded scientific basis. This strengthens confidence in its results and provides a clearer guide 
-for its future use in exploration and research.
+For decades, geophysicists have used a powerful but incompletely understood mathematical 
+``trick" called the equivalent-layer technique to process gravity and magnetic survey data, 
+helping to locate underground resources and structures. This study finally provides its 
+rigorous theoretical foundation, proving you can accurately represent complex real-world 
+sources with a simpler, imaginary flat sheet. 
+The new formulas show this long-used practical method is mathematically sound and equivalent 
+to other standard techniques, explaining why it works so well. The research confirms that many 
+different versions of these imaginary layers can produce the same clear gravity and magnetic 
+survey data, giving to the method a firmly grounded scientific basis. This strengthens 
+confidence in its results and provides a clearer guide for its future use in exploration and 
+research.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -315,8 +317,14 @@ for its future use in exploration and research.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Open Research Section}
-This section MUST contain a statement that describes where the data supporting the conclusions can be obtained. Data cannot be listed as ''Available from authors'' or stored solely in supporting information. Citations to archived data should be included in your reference list. Wiley will publish it as a separate section on the paper’s page. Examples and complete information are here:
-https://www.agu.org/Publish with AGU/Publish/Author Resources/Data for Authors
+The Python source code used to produce all results and figures presented in this study is
+available at https://github.com/birocoles/planar-eqlayer-theory and https://doi.org/10
+.5281/zenodo.18509844 under the MIT open-source license.
+This research made use of the following open-source scientific software: 
+NumPy \cite{numpy} and SciPy \cite{scipy} for numerical computing and linear algebra, 
+Matplotlib \cite{matplotlib} and Vedo \cite{vedo} for visualization, and
+gravmag \cite{gravmag} for potential field data processing and modeling.
+
 
 %\section*{As Applicable – Inclusion in Global Research Statement}
 %The Authorship: Inclusion in Global Research policy aims to promote greater equity and transparency in research collaborations. AGU Publications encourage research collaborations between regions, countries, and communities and expect authors to include their local collaborators as co-authors when they meet the AGU Publications authorship criteria (described here: https://www.agu.org/publications/authors/policies\#authorship). Those who do not meet the criteria should be included in the Acknowledgement section. We encourage researchers to consider recommendations from The TRUST CODE - A Global Code of Conduct for Equitable Research Partnerships (https://www.globalcodeofconduct.org/) when conducting and reporting their research, as applicable, and encourage authors to include a disclosure statement pertaining to the ethical and scientific considerations of their research collaborations in an “Inclusion in Global Research Statement’ as a standalone section in the manuscript following the Conclusions section. This can include disclosure of permits, authorizations, permissions and/or any formal agreements with local communities or other authorities, additional acknowledgements of local help received, and/or description of end-users of the research. You can learn more about the policy in this editorial. Example statements can be found in the following published papers: 
@@ -330,7 +338,9 @@ The authors declare there are no conflicts of interest for this manuscript.
 
 
 \acknowledgments
-Enter acknowledgments here. This section is to acknowledge funding, thank colleagues, enter any secondary affiliations, and so on.
+This study was financed by the Brazilian agencies FAPERJ (grant ids E-26 202.729/
+2018 and 26/202.582/2019) and CNPq (grant ids 315768/2020-7 and 309624/2021-5). 
+The authors thank the editors and reviewers who contributed to this work.
 
 
 
