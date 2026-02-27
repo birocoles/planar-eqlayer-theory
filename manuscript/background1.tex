@@ -10,15 +10,15 @@ In this system, let a set of 3D gravity or magnetic sources be defined over a cl
 $\overline{\mathcal{V}'}$ located in the subsurface, with top limited by a vertical 
 coordinate $z^{t}_{0}$.
 The closed region $\overline{\mathcal{V}'}$ is defined as the union of a finite collection of $N_{\nu}$ 
-disjoint regular regions $\mathcal{V}'_{\nu}$ and their respective boundaries $\partial\mathcal{V}'_{\nu}$, i.e., 
+disjoint regular regions $\mathcal{V}'_{\nu}$ and their respective boundaries $\partial\mathcal{V}'_{\nu}$, that is, 
 $\overline{\mathcal{V}'} = \bigcup_{\nu = 1}^{N_{\nu}} \overline{\mathcal{V}'_{\nu}}$, where
 $\overline{\mathcal{V}'_{\nu}} = \mathcal{V}'_{\nu} \cup \partial\mathcal{V}'_{\nu}$.
 Each regular region $\mathcal{V}'_{\nu}$ is an open, connected subset of $\mathbb{R}^{3}$, with boundary 
 defined by a closed and compact surface $\partial \mathcal{V}'_{\nu}$ free of double points 
-\cite<>[p. 22]{freeden_gerhards2012}.
+\citep[][p. 22]{freeden_gerhards2012}.
 
 The potential field produced by the 3D sources at observation points 
-$\mathbf{r} = (x, y, z)^{\top}$ (Figure \ref{fig:Figure1}) is represented by:
+$\mathbf{r} = (x, y, z)^{\top}$ (Fig. \ref{fig:Figure1}) is represented by:
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
@@ -39,7 +39,7 @@ $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$
 and $\sigma$ is the scalar function representing 
 the density (contrast) or total-magnetization intensity within the sources.
 We consider that $\sigma$ is a piecewise continuous, integrable and bounded function that 
-satisfies some Hölder condition \cite<>[p. 152]{kellogg1967} 
+satisfies some Hölder condition \citep[][p. 152]{kellogg1967} 
 at all points $\mathbf{r}' \in \overline{\mathcal{V}'}$ and is zero at all points 
 $\mathbf{r} \notin \overline{\mathcal{V}'}$.
 
@@ -48,10 +48,10 @@ two-dimensional Fourier transform of a generic scalar function computed on a hor
 the spatial coordinates $x$ and $y$. To simplify the notation, we conveniently omit its dependence 
 on the wavenumbers $k_{x}$ and $k_{y}$.
 By using this notation, we define the Fourier transform of the potential field 
-$d^{o}$ (equation \ref{eq:observed-data-space}) at points 
+$d^{o}$ (Eq. \ref{eq:observed-data-space}) at points 
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ 
 on a horizontal surface $\mathcal{S}^{\dagger}$ with constant vertical coordinate $z^{\dagger}_{0}$ above the 
-sources (Figure \ref{fig:Figure1}) by \cite<e.g.,>[]{bhattacharyya1967,gunn1975}:
+sources (Fig. \ref{fig:Figure1}) by \citep[e.g.,][]{bhattacharyya1967,gunn1975}:
 \begin{equation}
 	\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] =
 	\alpha_{d} \, \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \: ,
@@ -69,7 +69,7 @@ where
 	\label{eq:potential-U-Fourier}
 \end{equation}
 is the Fourier transform of the Newtonian potential 
-$U$ (equation \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, 
+$U$ (Eq. \ref{eq:potential-U-space}) on $\mathcal{S}^{\dagger}$, 
 $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, and
 \begin{equation}
 	\mathcal{F} [ \sigma(\mathbf{r}') ] = 
@@ -81,9 +81,9 @@ $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, and
 is the Fourier transform of $\sigma$ on the horizontal plane at the vertical
 coordinate $z'$ and $\mathtt{i}$ represents the imaginary unit.
 
-In equation \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
+In Eq. \ref{eq:observed-data-Fourier}, $\alpha_{d}$ is a function of the 
 wavenumbers $k_{x}$ and $k_{y}$ and represents the differential operator 
-$D_{d}$ (equation \ref{eq:observed-data-space}) in the Fourier domain.
+$D_{d}$ (Eq. \ref{eq:observed-data-space}) in the Fourier domain.
 In the subsequent developments, the relationship that enables the derivation of the Fourier-domain 
 operator $\alpha_{d}$ from its space-domain counterpart $D_{d}$ and vice-versa is given by
 \begin{equation}
@@ -97,11 +97,11 @@ where $\hat{\mathbf{u}}$ is a constant unit vector,
 $\nabla$ is the vector differential operator nabla and 
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \cite{pedersen1978}.
-The differential operator $D$ (equation \ref{eq:diff-operators-generic})
-has a symbolic form based on that used by \citeA<>[p. 179]{kaplan2002}.
+The differential operator $D$ (Eq. \ref{eq:diff-operators-generic})
+has a symbolic form based on that used by \cite[][p. 179]{kaplan2002}.
 
 By combining successive applications of $D$ 
-(equation \ref{eq:diff-operators-generic}) with properly chosen $\ell$ and $\hat{\mathbf{u}}$, 
+(Eq. \ref{eq:diff-operators-generic}) with properly chosen $\ell$ and $\hat{\mathbf{u}}$, 
 we may define differential operators leading to different potential fields commonly used 
 in Geophysics (Table \ref{tbl:Table1}).
 Using $\ell = 1$ leads to $D(0, \hat{\mathbf{u}}) = \alpha(0, \hat{\mathbf{u}}) = 1$ that produces 
@@ -120,7 +120,7 @@ where
 	\tfrac{\partial}{\partial z} U(\mathbf{r}) \right)^{\top}
 	\label{eq:potential-U-grad-space}
 \end{equation}
-is the gradient of $U$ (equation \ref{eq:potential-U-space}), with elements
+is the gradient of $U$ (Eq. \ref{eq:potential-U-space}), with elements
 given by the partial derivatives of first order
 \begin{equation}
 	\tfrac{\partial}{\partial u} U(\mathbf{r}) = \kappa \iiint\limits_{\overline{\mathcal{V}'}}
@@ -130,8 +130,8 @@ given by the partial derivatives of first order
 	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: , \quad u \in \{ x, y, z \} \: .
 	\label{eq:potential-U-1st-deriv-space}
 \end{equation}
-The first-order directional derivative (equation \ref{eq:potential-U-oblique-1st-deriv-space})
-coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U$ (equation \ref{eq:potential-U-1st-deriv-space})
+The first-order directional derivative (Eq. \ref{eq:potential-U-oblique-1st-deriv-space})
+coincides with the partial derivatives of first order $\tfrac{\partial}{\partial u} U$ (Eq. \ref{eq:potential-U-1st-deriv-space})
 for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides with one of the canonical base vectors
 \begin{equation}
 	\hat{\mathbf{x}} = (1,0,0)^{\top} , \quad 
@@ -141,7 +141,7 @@ for the particular case in which the unit vector $\hat{\mathbf{u}}$ coincides wi
 \end{equation}
 For example, $D(1, \hat{\mathbf{z}}) \, U(\mathbf{r}) = \tfrac{\partial}{\partial z} U(\mathbf{r})$.
 
-It can also be verified from equation \ref{eq:diff-operators-generic} that 
+It can also be verified from Eq. \ref{eq:diff-operators-generic} that 
 \begin{equation}
 	D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}}) \, U(\mathbf{r}) = 
 	\hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}} \: ,
@@ -164,7 +164,7 @@ $\hat{\mathbf{v}}$, where
 	\end{bmatrix}
 	\label{eq:potential-U-Hessian}
 \end{equation}
-is the Hessian matrix \cite<e.g.,>[p. 158]{kaplan2002} of $U$ (equation \ref{eq:potential-U-space}),
+is the Hessian matrix \citep[e.g.,][p. 158]{kaplan2002} of $U$ (Eq. \ref{eq:potential-U-space}),
 with elements given by the partial derivatives of second order
 \begin{equation}
 	\tfrac{\partial^{2}}{\partial u \, \partial v} U(\mathbf{r}) = \kappa \iiint\limits_{\overline{\mathcal{V}'}}
@@ -173,21 +173,21 @@ with elements given by the partial derivatives of second order
 	\: d\mathcal{V}' \: , \quad \mathbf{r} \notin \overline{\mathcal{V}'} \: , \quad u, v \in \{ x, y, z \} \: .
 	\label{eq:potential-U-2nd-deriv-space}
 \end{equation} 
-Finally, it can also be verified that the second-order directional derivative given by equation 
+Finally, it can also be verified that the second-order directional derivative given by Eq. 
 \ref{eq:potential-U-oblique-2nd-deriv-space} coincides with the partial derivatives of second order 
-$\tfrac{\partial^{2}}{\partial u \, \partial v} U$ (equation \ref{eq:potential-U-2nd-deriv-space}) for the particular 
+$\tfrac{\partial^{2}}{\partial u \, \partial v} U$ (Eq. \ref{eq:potential-U-2nd-deriv-space}) for the particular 
 cases in which the unit vectors $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are given by the canonical base vectors 
-(equation \ref{eq:canonical-base-vector}). For example,
+(Eq. \ref{eq:canonical-base-vector}). For example,
 $D(1, \hat{\mathbf{x}}) \, D(1, \hat{\mathbf{y}}) \, U(\mathbf{r}) = \tfrac{\partial^{2}}{\partial x \, \partial y} U(\mathbf{r})$.
 
 
 \subsection{Classical Dirichlet's and Neumann's problems on a plane}
 \label{subsec:dirichlet_neumann}
 
-Due to the properties imposed on $\sigma$ (equation \ref{eq:potential-U-space}), the potential 
+Due to the properties imposed on $\sigma$ (Eq. \ref{eq:potential-U-space}), the potential 
 $U$ has continuous partial derivatives of all orders, 
-satisfies the Laplace's equation at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
-located outside the sources, as well as is regular at infinity \cite<>[p. 122--124, 217]{kellogg1967}.
+satisfies the Laplace's Eq. at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$ 
+located outside the sources, as well as is regular at infinity \citep[][p. 122--124, 217]{kellogg1967}.
 Because of these properties, we have that
 \begin{equation}
 	U(\mathbf{r}) = 
@@ -199,10 +199,10 @@ Because of these properties, we have that
 	\label{eq:U-Dirichlet-Neumann}
 \end{equation}
 where $\mathbf{r} = (x, y, z)^{\top} \notin \overline{\mathcal{V}'}$; 
-$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Figure \ref{fig:Figure1}); 
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Fig. \ref{fig:Figure1}); 
 $D(\ell, \hat{\mathbf{z}})$ is the space-domain differential operator 
-defined by equation \ref{eq:diff-operators-generic} in terms of the canonical base vector 
-$\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}) and 
+defined by Eq. \ref{eq:diff-operators-generic} in terms of the canonical base vector 
+$\hat{\mathbf{z}}$ (Eq. \ref{eq:canonical-base-vector}) and 
 \begin{equation}
 	\Psi(\mathbf{r}, \mathbf{r}'') = 
 	\frac{1}{2\pi} \: 
@@ -212,32 +212,32 @@ $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}) and
 \end{equation}
 represents the scaled inverse distance function between $\mathbf{r}$ and $\mathbf{r}''$. 
 Equation \ref{eq:U-Dirichlet-Neumann} is commonly deduced from 
-the \textit{Green's third identity} \cite<>[p. 219]{kellogg1967}, according to
-the general outline presented by \citeA{roy1962}, for example.
+the ``Green's third identity'' \citep[][p. 219]{kellogg1967}, according to
+the general outline presented by \cite{roy1962}, for example.
 
-For $\ell = 0$, equation \ref{eq:U-Dirichlet-Neumann} states that $U$ can be defined
+For $\ell = 0$, Eq. \ref{eq:U-Dirichlet-Neumann} states that $U$ can be defined
 in terms of its values $D(0, \hat{\mathbf{z}}) U(\mathbf{r}'') = U(\mathbf{r}'')$ on a horizontal surface $\mathcal{S}''$ 
-above the sources and represents the solution of the classical \textit{Dirichlet’s problem} or the 
-\textit{first boundary value problem of potential theory} \cite<>[p. 236]{kellogg1967} on a plane, where 
+above the sources and represents the solution of the classical ``Dirichlet’s problem'' or the 
+``first boundary value problem of potential theory'' \citep[][p. 236]{kellogg1967} on a plane, where 
 $D(1, \hat{\mathbf{z}}) \Psi(\mathbf{r}, \mathbf{r}'') = \tfrac{\partial}{\partial z} \Psi(\mathbf{r}, \mathbf{r}'')$ 
 represents the Green's function.
-From the physical point of view, equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$ defines a continuous 
+From the physical point of view, Eq. \ref{eq:U-Dirichlet-Neumann} with $\ell = 0$ defines a continuous 
 layer of monopoles (or vertically-magnetized dipoles) that is located on $\mathcal{S}''$, has 
 physical-property distribution $U(\mathbf{r}'')$ and exactly reproduces the 
 potential field $U$ at any point $\mathbf{r}$ above $\mathcal{S}''$.
 
-On the other hand, equation \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U$ can also
+On the other hand, Eq. \ref{eq:U-Dirichlet-Neumann} for $\ell = 1$ shows that $U$ can also
 be defined in terms of its vertical derivative 
 $D(1, \hat{\mathbf{z}}) U(\mathbf{r}'') = \tfrac{\partial}{\partial z} U(\mathbf{r}'')$ 
-on a horizontal surface $\mathcal{S}''$ above the sources and represents the solution of the classical \textit{Neumann’s problem} or the 
-\textit{second boundary value problem of potential theory} \cite<>[p. 246]{kellogg1967} on a plane, 
+on a horizontal surface $\mathcal{S}''$ above the sources and represents the solution of the classical ``Neumann’s problem'' or the 
+``second boundary value problem of potential theory'' \citep[][p. 246]{kellogg1967} on a plane, 
 with the Green's function given by $D(0, \hat{\mathbf{u}}) \Psi(\mathbf{r}, \mathbf{r}'') = \Psi(\mathbf{r}, \mathbf{r}'')$.
 Equation \ref{eq:U-Dirichlet-Neumann} with $\ell = 1$ can be alternatively interpreted as a planar layer of
 vertically-magnetized dipoles (or monopoles) that is located on $\mathcal{S}''$, has 
 physical-property distribution $\tfrac{\partial}{\partial z} U(\mathbf{r}'')$ and exactly reproduces 
 $U$ at any point $\mathbf{r}$ above $\mathcal{S}''$.
 
-By applying the Fourier-convolution theorem \cite<>[p. 268]{blakely1996} to equation \ref{eq:U-Dirichlet-Neumann} 
+By applying the Fourier-convolution theorem \citep[][p. 268]{blakely1996} to Eq. \ref{eq:U-Dirichlet-Neumann} 
 on a horizontal surface $\mathcal{S}^{\dagger}$ above the sources, we find that
 \begin{equation}
 	\mathcal{F} [ U(\mathbf{r}^{\dagger}) ] = 
@@ -247,20 +247,20 @@ on a horizontal surface $\mathcal{S}^{\dagger}$ above the sources, we find that
 	\label{eq:U-Dirichlet-Neumann-Fourier}
 \end{equation}
 where $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$; 
-$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Figure \ref{fig:Figure1}) and
+$\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ (Fig. \ref{fig:Figure1}) and
 \begin{equation}
 	\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] 
 	= \frac{e^{- k \, (z''_{0} - z^{\dagger}_{0})}}{k}
 	\: , \quad z^{\dagger}_{0} < z''_{0} \: , \quad k \ne 0 \: ,
 	\label{eq:Psi-Fourier}
 \end{equation}
-is defined according to \citeA<>[p. 275]{blakely1996}.
+is defined according to \citep[][p. 275]{blakely1996}.
 
 \subsection{Potential-field transformations}
 \label{subsec:potential_field_transformations}
 
 Several geophysical applications use the observed potential field 
-$d^{o}$ (equation \ref{eq:observed-data-space}) to estimate another potential field 
+$d^{o}$ (Eq. \ref{eq:observed-data-space}) to estimate another potential field 
 defined in the space domain by
 \begin{equation}
 	f(\mathbf{r}) = D_{f} \, U(\mathbf{r}) \: , 
@@ -274,20 +274,20 @@ or, in the Fourier domain,
 	\quad \mathbf{r}^{\dagger} \in \mathcal{S}^{\dagger} \: ,
 	\label{eq:transformed-field-Fourier}
 \end{equation}
-where $\mathcal{S}^{\dagger}$ is a horizontal surface defined above the sources (Figure \ref{fig:Figure1});
-$D_{f}$ is a space-domain differential operator acting on $U$ (equation \ref{eq:potential-U-space}) and
+where $\mathcal{S}^{\dagger}$ is a horizontal surface defined above the sources (Fig. \ref{fig:Figure1});
+$D_{f}$ is a space-domain differential operator acting on $U$ (Eq. \ref{eq:potential-U-space}) and
 $\alpha_{f}$ its corresponding representation in the Fourier domain.
 The differential operators $D_{f}$ and $\alpha_{f}$ associated with the potential field 
-$f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) are commonly
-defined in terms of $D$ and $\alpha$ (equation \ref{eq:diff-operators-generic}). 
-Estimating $f$ (equations \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) from 
-the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) is an operation 
-commonly known in geophysics as \textit{potential-field transformation}.
+$f$ (Eq(s). \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) are commonly
+defined in terms of $D$ and $\alpha$ (Eq. \ref{eq:diff-operators-generic}). 
+Estimating $f$ (Eq(s). \ref{eq:transformed-field-space} and \ref{eq:transformed-field-Fourier}) from 
+the observed potential field $d^{o}$ (Eq. \ref{eq:observed-data-space}) is an operation 
+commonly known in geophysics as ``potential-field transformation''.
 
-A common approach to compute potential-field transformations \cite<e.g.,>[]{gunn1975} 
-consists in using the definition of observed data in the Fourier domain (equation \ref{eq:observed-data-Fourier}) 
+A common approach to compute potential-field transformations \citep[e.g.,][]{gunn1975} 
+consists in using the definition of observed data in the Fourier domain (Eq. \ref{eq:observed-data-Fourier}) 
 and manipulating the Fourier domain solution of the Dirichlet's and Neumann's problems 
-(equation \ref{eq:U-Dirichlet-Neumann-Fourier}) to obtain
+(Eq. \ref{eq:U-Dirichlet-Neumann-Fourier}) to obtain
 \begin{equation}
 	\mathcal{F} [ f(\mathbf{r}^{\dagger}) ] =
 	\left( \tfrac{\alpha_{f}}{\alpha_{d}} \right) \, \mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] \: , 
@@ -296,90 +296,91 @@ and manipulating the Fourier domain solution of the Dirichlet's and Neumann's pr
 \end{equation}
 Equation \ref{eq:field-transformation-Fourier} defines a single-step potential-field transformation 
 in terms of the observed potential field $d^{o}$ on a planar surface $\mathcal{S}^{\dagger}$ 
-located above the sources, at $z^{\dagger}_{0}$ (Figure \ref{fig:Figure1}). 
+located above the sources, at $z^{\dagger}_{0}$ (Fig. \ref{fig:Figure1}). 
 The potential field $f$ in the space domain is obtained by simply computing the inverse Fourier 
 transform of \ref{eq:field-transformation-Fourier}.
-For simplicity, both fields $d^o$ and $f$ are defined at the same points in equation \ref{eq:field-transformation-Fourier}, 
+For simplicity, both fields $d^o$ and $f$ are defined at the same points in Eq. \ref{eq:field-transformation-Fourier}, 
 although it's worth noting that, in certain geophysical contexts, $f$ may be estimated at different locations from 
 where potential-field data were measured.
 
-The \textit{equivalent-layer technique} offers an alternative approach that is generally defined in the 
+The ``equivalent-layer technique'' offers an alternative approach that is generally defined in the 
 space domain to compute potential-field transformations. What follows aims at discussing the well-established 
 empirical approaches used in the equivalent-layer technique, as well as discussing the theoretical background 
 supporting them.
 
-\begin{table}
+\begin{table}[h]
 	\caption{Relevant potential fields for geophysical applications.}
-	\begin{center}
 		\renewcommand{\arraystretch}{0.8}
 		\begin{tabular}{%
-				>{\small\centering}m{0.15\textwidth}
-				>{\footnotesize\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.25\textwidth}
-				>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.60\textwidth}
-			}
-			{\small \textbf{Symbol}} & 
-			{\small \textbf{Potential field}} & 
-			{\small \textbf{Brief description}} \\
-			\hline
-			$U$ & 
-			Newtonian potential &
-			In gravity applications, $U$ (equation \ref{eq:potential-U-space}) represents the gravitational potential. 
-			In magnetic applications, it represents an auxiliary potential whose first directional derivative along the 
-			constant magnetization direction of the sources gives the magnetic scalar potential. \\
-			$\tfrac{\partial}{\partial u} U$ &
-			Gravitational attraction component or pseudogravity anomaly &
-			First derivative of $U$ along the Cartesian directions $u \in \{ x, y, z \}$ (equation \ref{eq:potential-U-1st-deriv-space}). 
-			In gravity applications, the vertical component $\tfrac{\partial}{\partial z} U$ 
-			is called \textit{gravity disturbance} \cite<e.g.,>[p. 93]{hofmann-wellenhof-moritz2005}. 
-			The debate around the differences between gravity anomaly and gravity disturbance is beyond the scope of the 
-			present work and has been carried about from a more geodetic than a geophysical point of view 
-			\cite<e.g.,>[]{li2001, fairhead2003, hackney-featherstone2003, hinze2005, vajda-etal2006, vajda-etal2007, vajda-etal2008}. 
-			In magnetic applications, the vertical 
-			component represents the \textit{pseudogravity anomaly} 
-			\cite<>[p. 345]{blakely1996}. \\
-			$\tfrac{\partial^{2}}{\partial u \, \partial v} U$ &
-			Gravitational tensor component or RTP anomaly &
-			Second derivative of $U$ along the Cartesian directions $u, v \in \{ x, y, z \}$ 
-			(equation \ref{eq:potential-U-2nd-deriv-space}). 
-			In gravity applications, the second derivative represents a component of the 
-			\textit{gravitational tensor} \cite<e.g.,>[]{pedersen_rasmussen1990}.
-			In magnetic applications, the particular second derivative 
-			$\tfrac{\partial^{2}}{\partial z^{2}} U$ along the vertical 
-			direction represents the \textit{RTP anomaly}. 
-			Differently from generic total-field anomalies 
-			\cite<e.g.,>[p. 178]{blakely1996}, which have a ``skewed'' pattern 
-			oscillating from negative to positive values and do not have their maxima placed 
-			right above the magnetic sources, the RTP anomaly is easier to interpret 
-			because it is predominantly positive right above the sources and
-			decays to zero towards their boundaries. \citeA{baranov1957} was the first
-			to propose a method, called \textit{reduction to the pole} (RTP), to transform 
-			generic total-field anomalies into this special anomaly. \\
-			$-\nabla U^{\top} \hat{\mathbf{v}}$ &
-			Magnetic scalar potential &
-			Directional derivative of $U$ along the constant magnetization direction $\hat{\mathbf{v}}$ of the sources 
-			(equation \ref{eq:potential-U-oblique-1st-deriv-space}), where $\nabla U$ is the gradient of 
-			$U$ (equation \ref{eq:potential-U-grad-space}). \\
-			$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ &
-			Magnetic induction field component &
-			Directional derivative of $U$ along $\hat{\mathbf{v}}$, the constant magnetization direction of the sources, 
-			and $\hat{\mathbf{u}}$ (equation \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\mathbf{H}_{U}$ is the 
-			Hessian of $U$ (equation \ref{eq:potential-U-Hessian}). For the case in which 
-			$\hat{\mathbf{u}}$ is $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ or $\hat{\mathbf{z}}$ (equation \ref{eq:canonical-base-vector}),
-			the directional derivative represents a Cartesian component of the magnetic induction field. 
-			For the case in which $\hat{\mathbf{u}}$ is the constant direction of the main field, the directional derivative 
-			represents the \textit{approximated total-field anomaly} \cite<e.g.,>[p. 179]{blakely1996}. \\
-			$\| \nabla \left[\nabla U^{\top} \hat{\mathbf{v}}\right] \|_{2}$ &
-			Amplitude of the magnetic induction field &
-			Square root of the sum of the squares of the Cartesian magnetic induction field components. This field, also known as 
-			\textit{amplitude of the anomalous magnetic field} \cite{li_etal2010} or 
-			\textit{amplitude of the magnetic anomaly vector} \cite{hidalgo_gato_etal2021, melo_etal2021}, has a weak dependence on the total-magnetization direction of the
-			true sources. \\
-		\end{tabular}
-	\end{center}
+			>{\small\centering}m{0.15\textwidth}
+			>{\footnotesize\setlength{\baselineskip}{0.5\baselineskip}\centering}m{0.25\textwidth}
+			>{\tiny\setlength{\baselineskip}{0.5\baselineskip}\raggedright\arraybackslash}m{0.60\textwidth}
+		}
+		\toprule%
+		{\small \textbf{Symbol}} & 
+		{\small \textbf{Potential field}} & 
+		{\small \textbf{Brief description}} \\
+		\midrule%
+		$U$ & 
+		Newtonian potential &
+		In gravity applications, $U$ (Eq. \ref{eq:potential-U-space}) represents the gravitational potential. 
+		In magnetic applications, it represents an auxiliary potential whose first directional derivative along the 
+		constant magnetization direction of the sources gives the magnetic scalar potential. \\
+		$\tfrac{\partial}{\partial u} U$ &
+		Gravitational attraction component or pseudogravity anomaly &
+		First derivative of $U$ along the Cartesian directions $u \in \{ x, y, z \}$ (Eq. \ref{eq:potential-U-1st-deriv-space}). 
+		In gravity applications, the vertical component $\tfrac{\partial}{\partial z} U$ 
+		is called ``gravity disturbance'' \citep[e.g.,][p. 93]{hofmann-wellenhof-moritz2005}. 
+		The debate around the differences between gravity anomaly and gravity disturbance is beyond the scope of the 
+		present work and has been carried about from a more geodetic than a geophysical point of view 
+		\citep[e.g.,][]{li2001, fairhead2003, hackney-featherstone2003, hinze2005, vajda-etal2006, vajda-etal2007, vajda-etal2008}. 
+		In magnetic applications, the vertical 
+		component represents the ``pseudogravity anomaly'' 
+		\citep[][p. 345]{blakely1996}. \\
+		$\tfrac{\partial^{2}}{\partial u \, \partial v} U$ &
+		Gravitational tensor component or RTP anomaly &
+		Second derivative of $U$ along the Cartesian directions $u, v \in \{ x, y, z \}$ 
+		(Eq. \ref{eq:potential-U-2nd-deriv-space}). 
+		In gravity applications, the second derivative represents a component of the 
+		``gravitational tensor'' \citep[e.g.,][]{pedersen_rasmussen1990}.
+		In magnetic applications, the particular second derivative 
+		$\tfrac{\partial^{2}}{\partial z^{2}} U$ along the vertical 
+		direction represents the ``RTP anomaly''. 
+		Differently from generic total-field anomalies 
+		\citep[e.g.,][p. 178]{blakely1996}, which have a ``skewed'' pattern 
+		oscillating from negative to positive values and do not have their maxima placed 
+		right above the magnetic sources, the RTP anomaly is easier to interpret 
+		because it is predominantly positive right above the sources and
+		decays to zero towards their boundaries. \cite{baranov1957} was the first
+		to propose a method, called ``reduction to the pole'' (RTP), to transform 
+		generic total-field anomalies into this special anomaly. \\
+		$-\nabla U^{\top} \hat{\mathbf{v}}$ &
+		Magnetic scalar potential &
+		Directional derivative of $U$ along the constant magnetization direction $\hat{\mathbf{v}}$ of the sources 
+		(Eq. \ref{eq:potential-U-oblique-1st-deriv-space}), where $\nabla U$ is the gradient of 
+		$U$ (Eq. \ref{eq:potential-U-grad-space}). \\
+		$\hat{\mathbf{u}}^{\top} \mathbf{H}_{U} \, \hat{\mathbf{v}}$ &
+		Magnetic induction field component &
+		Directional derivative of $U$ along $\hat{\mathbf{v}}$, the constant magnetization direction of the sources, 
+		and $\hat{\mathbf{u}}$ (Eq. \ref{eq:potential-U-oblique-2nd-deriv-space}), where $\mathbf{H}_{U}$ is the 
+		Hessian of $U$ (Eq. \ref{eq:potential-U-Hessian}). For the case in which 
+		$\hat{\mathbf{u}}$ is $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ or $\hat{\mathbf{z}}$ (Eq. \ref{eq:canonical-base-vector}),
+		the directional derivative represents a Cartesian component of the magnetic induction field. 
+		For the case in which $\hat{\mathbf{u}}$ is the constant direction of the main field, the directional derivative 
+		represents the ``approximated total-field anomaly'' \citep[e.g.,][p. 179]{blakely1996}. \\
+		$\| \nabla \left[\nabla U^{\top} \hat{\mathbf{v}}\right] \|_{2}$ &
+		Amplitude of the magnetic induction field &
+		Square root of the sum of the squares of the Cartesian magnetic induction field components. This field, also known as 
+		``amplitude of the anomalous magnetic field'' \citep{li_etal2010} or 
+		``amplitude of the magnetic anomaly vector'' \citep{hidalgo_gato_etal2021, melo_etal2021}, has a weak dependence on 
+		the total-magnetization direction of the
+		true sources. \\
+		\botrule%
+	\end{tabular}
 	\label{tbl:Table1}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\noindent\includegraphics[width=0.8\textwidth]{figures/Figure1_1.png}
 	\caption{%

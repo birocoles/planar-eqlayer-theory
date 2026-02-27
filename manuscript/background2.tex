@@ -5,7 +5,7 @@ $\overline{\mathcal{V}'}$ located in the subsurface, with top limited by a verti
 coordinate $z^{t}_{0}$ in a topocentric Cartesian coordinate system with axes 
 $x$, $y$, and $z$ pointing to north, east and down, respectively.
 The potential field produced by the 3D sources at observation points 
-$\mathbf{r} = (x, y, z)^{\top}$ (Figure \ref{fig:Figure1}) is represented by:
+$\mathbf{r} = (x, y, z)^{\top}$ (Fig.  \ref{fig:Figure1}) is represented by:
 \begin{equation}
 	d^{o}(\mathbf{r}) = D_{d} \, U(\mathbf{r}) \: , 
 	\quad \mathbf{r} \notin \overline{\mathcal{V}'} \: ,
@@ -25,8 +25,8 @@ between the observation point $\mathbf{r}$ and a point
 $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$
 and $\sigma$ is the scalar function representing 
 the density (contrast) or total-magnetization intensity within the sources.
-\citeA{oliveirajr_etal2026} propose the following general formula to define the 
-space-domain differential operator $D_{d}$ (equation \ref{eq:observed-data-space}) 
+\cite{oliveirajr_etal2026_1} propose the following general formula to define the 
+space-domain differential operator $D_{d}$ (Eq. \ref{eq:observed-data-space}) 
 and its corresponding counterpart $\alpha_{d}$ in the Fourier domain:
 \begin{equation}
 	D(\ell, \hat{\mathbf{u}}) = 
@@ -40,12 +40,12 @@ $\nabla$ is the vector differential operator nabla,
 $\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$
 \cite{pedersen1978}, $k_{x}$ and $k_{y}$ and represent the wavenumbers along the $x$ and $y$
 directions and $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$.
-Different potential fields $d^{o}$ (equation \ref{eq:observed-data-space}) can be 
+Different potential fields $d^{o}$ (Eq. \ref{eq:observed-data-space}) can be 
 defined by properly setting $\ell$ and $\hat{\mathbf{u}}$ in the left side of equation
 \ref{eq:diff-operators-generic}. 
 
 Many geophysical applications require computing potential-field transformations that convert the
-observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) into another potential field 
+observed potential field $d^{o}$ (Eq. \ref{eq:observed-data-space}) into another potential field 
 given by
 \begin{equation}
 	f(\mathbf{r}) = D_{f} U(\mathbf{r}) \: , 
@@ -53,11 +53,11 @@ given by
 	\label{eq:transformed-field-space}
 \end{equation}
 where $D_{f}$ is a space-domain differential operator 
-(equation \ref{eq:diff-operators-generic}) acting on $U$ (equation \ref{eq:potential-U-space}).
-The \textit{equivalent-layer technique} is the common approach to compute potential-field transformations
+(Eq. \ref{eq:diff-operators-generic}) acting on $U$ (Eq. \ref{eq:potential-U-space}).
+The ``equivalent-layer technique'' is the common approach to compute potential-field transformations
 in the space domain and this is usually performed in two steps.
-The first consists in estimating a \textit{continuous equivalent layer} $p_{\varepsilon}$ 
-\cite{oliveirajr_etal2026} over a horizontal surface $\mathcal{S}''$ with constant vertical
+The first consists in estimating a ``continuous equivalent layer'' $p_{\varepsilon}$ 
+\cite{oliveirajr_etal2026_1} over a horizontal surface $\mathcal{S}''$ with constant vertical
 coordinate $z''_{0}$, so that the predicted potential field
 \begin{equation}
 	d_{\varepsilon}(\mathbf{r})
@@ -67,9 +67,9 @@ coordinate $z''_{0}$, so that the predicted potential field
 	\label{eq:predicted-data-continuous-layer}
 \end{equation}
 satisfactorily approximates the observed potential field $d^{o}$ 
-(equation \ref{eq:observed-data-space}) within a predefined error level,
+(Eq. \ref{eq:observed-data-space}) within a predefined error level,
 where $D_{a}$ is a space-domain differential operator 
-(equation \ref{eq:diff-operators-generic}) acting on the scaled inverse 
+(Eq. \ref{eq:diff-operators-generic}) acting on the scaled inverse 
 distance function between $\mathbf{r}$ and 
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ given by
 \begin{equation}
@@ -80,7 +80,7 @@ $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ given by
 	\label{eq:Psi}
 \end{equation}
 The second step in the equivalent-layer technique involves using the estimated $p_{\varepsilon}$ 
-(equation \ref{eq:predicted-data-continuous-layer}) to compute the transformed potential field
+(Eq. \ref{eq:predicted-data-continuous-layer}) to compute the transformed potential field
 \begin{equation}
 	f_{\varepsilon}(\mathbf{r})
 	= \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
@@ -89,14 +89,14 @@ The second step in the equivalent-layer technique involves using the estimated $
 	\label{eq:transformed-field-continuous-layer}
 \end{equation}
 where $D_{t}$ is a space-domain differential operator acting on the function 
-$\Psi$ (equation \ref{eq:Psi}).
+$\Psi$ (Eq. \ref{eq:Psi}).
 The underlying assumption in the equivalent-layer technique is that the transformed potential 
-field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) approximates 
-the desired potential field $f$ (equation \ref{eq:transformed-field-space}).
+field $f_{\varepsilon}$ (Eq. \ref{eq:transformed-field-continuous-layer}) approximates 
+the desired potential field $f$ (Eq. \ref{eq:transformed-field-space}).
 
-The planar equivalent-layer theorem formulated and proved by \citeA{oliveirajr_etal2026} 
+The planar equivalent-layer theorem formulated and proved by \cite{oliveirajr_etal2026_1} 
 guarantees the existence of equivalent layers $p_{\varepsilon}$ 
-(equation \ref{eq:predicted-data-continuous-layer}), even 
+(Eq. \ref{eq:predicted-data-continuous-layer}), even 
 if they are defined over a planar surface $\mathcal{S}''$ that intersects the true sources.
 Those authors also proposed a general expression for $p_{\varepsilon}$ in the Fourier domain 
 given by
@@ -111,12 +111,12 @@ where $\mathcal{F} [ \cdot ]$ denotes the two-dimensional Fourier transform comp
 with respect to the spatial coordinates $x$ and $y$, on 
 the horizontal surface $\mathcal{S}''$ with constant vertical coordinate $z''_{0}$;
 $\alpha_{d}$ and $\alpha_{a}$ are the corresponding Fourier-domain 
-representation of the operators $D_{d}$ and $D_{a}$ (equations \ref{eq:observed-data-space}
+representation of the operators $D_{d}$ and $D_{a}$ (Eq(s). \ref{eq:observed-data-space}
 and \ref{eq:predicted-data-continuous-layer}),
 respectively; $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$, where $k_{x}$ and $k_{y}$ represent the 
 wavenumbers along the $x$ and $y$ directions, respectively; and $U_{\varepsilon}$ is an 
-auxiliary potential that approximates $U$ (equation \ref{eq:potential-U-space}).
-\citeA{oliveirajr_etal2026} provided the following two possible expressions to define 
+auxiliary potential that approximates $U$ (Eq. \ref{eq:potential-U-space}).
+\cite{oliveirajr_etal2026_1} provided the following two possible expressions to define 
 $U_{\varepsilon}$ in the Fourier domain:
 \begin{equation}
 	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = 
@@ -136,16 +136,16 @@ where $k_{\varepsilon}$ is a fixed and possibly very large truncating wavenumber
 	\label{eq:potential-U-epsilon-Fourier-layer-2}
 \end{equation}
 where $\mu_{\varepsilon}$ is a fixed positive regularization parameter imposing smoothness on 
-$U$ according to \citeA{pasteka_etal2012}. 
-In equations \ref{eq:potential-U-epsilon-Fourier-layer-1} and 
+$U$ according to \cite{pasteka_etal2012}. 
+In Eq(s). \ref{eq:potential-U-epsilon-Fourier-layer-1} and 
 \ref{eq:potential-U-epsilon-Fourier-layer-2},
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top}$ defines a point on 
 a horizontal surface $\mathcal{S}^{\dagger}$ with constant vertical coordinate 
 $z^{\dagger}_{0}$ located above the horizontal surface $\mathcal{S}''$, outside the sources, 
 i.e., with $z^{\dagger}_{0} < z''_{0}$ and $z^{\dagger}_{0} < z^{t}_{0}$.
 
-\citeA{oliveirajr_etal2026} also show that the layer $p_{\varepsilon}$ leads to a transformed 
-potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) that 
+\cite{oliveirajr_etal2026_1} also show that the layer $p_{\varepsilon}$ leads to a transformed 
+potential field $f_{\varepsilon}$ (Eq. \ref{eq:transformed-field-continuous-layer}) that 
 is defined in the Fourier domain by 
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
@@ -154,20 +154,20 @@ is defined in the Fourier domain by
 	\quad z^{\dagger}_{0} < z''_{0} \: ,
 	\label{eq:transformed-field-continuous-layer-Fourier}
 \end{equation}
-where $\alpha_{t}$ is the Fourier representation of the operator $D_{t}$ (equation \ref{eq:transformed-field-continuous-layer}),
+where $\alpha_{t}$ is the Fourier representation of the operator $D_{t}$ (Eq. \ref{eq:transformed-field-continuous-layer}),
 $\mathbf{r}^{\dagger} = (x^{\dagger}, y^{\dagger}, z^{\dagger}_{0})^{\top} \in \mathcal{S}^{\dagger}$,
 $\mathbf{r}'' = (x'', y'', z''_{0})^{\top} \in \mathcal{S}''$ and
 $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = \nicefrac{e^{-k \, (z''_{0} - z^{\dagger}_{0})}}{k}$ 
-\cite<e.g.,>[p. 275]{blakely1996} is the Fourier transform of $\Psi$ (equation \ref{eq:Psi}).
-According to \citeA{oliveirajr_etal2026}, the transformed potential field $f_{\varepsilon}$ defined in the Fourier
-domain by equation \ref{eq:transformed-field-continuous-layer-Fourier} approximates $f$ 
-(equation \ref{eq:transformed-field-space}) if
+\citep[e.g.,][p. 275]{blakely1996} is the Fourier transform of $\Psi$ (Eq. \ref{eq:Psi}).
+According to \cite{oliveirajr_etal2026_1}, the transformed potential field $f_{\varepsilon}$ defined in the Fourier
+domain by Eq. \ref{eq:transformed-field-continuous-layer-Fourier} approximates $f$ 
+(Eq. \ref{eq:transformed-field-space}) if
 \begin{equation}
 	\alpha_{t} = \left( \tfrac{\alpha_{a}}{\alpha_{d}} \right) \alpha_{f} \: ,
 	\label{eq:alpha-t-generic}
 \end{equation}
 where $\alpha_{f}$ is the Fourier domain representation of the differential operator $D_{f}$ 
-(equation \ref{eq:transformed-field-space}).
+(Eq. \ref{eq:transformed-field-space}).
 
 \begin{figure}
 	\centering

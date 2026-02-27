@@ -2,8 +2,8 @@
 
 \subsection{Equivalent layer vs. physical nature of the observed data}
 
-The general expression proposed by \citeA{oliveirajr_etal2026} to define $p_{\varepsilon}$ in 
-the Fourier domain (equation \ref{eq:p-Fourier}) allows setting different classes of 
+The general expression proposed by \cite{oliveirajr_etal2026_1} to define $p_{\varepsilon}$ in 
+the Fourier domain (Eq. \ref{eq:p-Fourier}) allows setting different classes of 
 equivalent layers.
 In the particular case where $\alpha_{a} = \alpha_{d}$, for example, we obtain a Neumann's 
 equivalent layer, which preserves the physical relationship between the observed data and the 
@@ -15,93 +15,93 @@ such layers to perform potential-field transformations.
 On the other hand, layers $p_{\varepsilon}$ obtained with $\alpha_{a} \ne \alpha_{d}$ do not
 preserve the physical relationship between the observed data and the true sources. 
 This is the general case, for example, of layers obtained with $\alpha_{a} = k$, which are 
-called Dirichlet's equivalent layers \cite{oliveirajr_etal2026}. Such layers are commonly used 
+called Dirichlet's equivalent layers \cite{oliveirajr_etal2026_1}. Such layers are commonly used 
 to perform the continuation of potential-field data. Obviously that Dirichlet's equivalent 
 layers coincide with Neumann's equivalent layers for the particular case in which 
 $\alpha_{d} = k$. 
 
-One important aspect of equation \ref{eq:p-Fourier} is that it provides the theoretical 
+One important aspect of Eq. \ref{eq:p-Fourier} is that it provides the theoretical 
 foundation for common practices that have been empirically proved by several studies: 
 equivalent layers are independent of the physical nature of the observed potential-field data 
 and can be conveniently chosen according to the characteristics of the problem. Many authors 
 have proposed equivalent-layer methods based on this empirical principle
-\cite<e.g.,>[]{cordell1992, guspi_novara2009, li_etal2014, soler_uieda2021}, which is 
+\citep[e.g.,][]{cordell1992, guspi_novara2009, li_etal2014, soler_uieda2021}, which is 
 theoretically justified here for the first time by using the framework proposed by
-\citeA{oliveirajr_etal2026}.
+\cite{oliveirajr_etal2026_1}.
 
 \subsection{Conversion of gravity disturbance into gravity-gradient data}
 
 The common two-step approach to convert 
 gravity disturbance data into the gravity-gradient tensor components
-\cite<e.g.,>[]{piauilino_etal2019_seg, oliveirajr_etal2023} via equivalent-layer 
+\citep[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023} via equivalent-layer 
 technique empirically presumes the existence of a single layer of 
 monopoles that satisfactorily reproduces the gravitational potential and 
 its derivatives of first and second orders, which are represented by the 
 gravity disturbance and gravity-gradient data, respectively. 
-Specifically, the first step in this approach consists in solving equation 
+Specifically, the first step in this approach consists in solving Eq. 
 \ref{eq:predicted-data-continuous-layer} 
 for $p_{\varepsilon}$ by using $D_{a} = \nicefrac{\partial}{\partial z}$, 
 so that the predicted potential field $d_{\varepsilon}$ approximates the observed potential 
-field $d^{o}$ (equation \ref{eq:observed-data-space}).
+field $d^{o}$ (Eq. \ref{eq:observed-data-space}).
 Then, in the second step, the estimated $p_{\varepsilon}$ is used to compute each 
 gravity-gradient component with
-equation \ref{eq:transformed-field-continuous-layer}, where $D_{t}$ is the corresponding 
+Eq. \ref{eq:transformed-field-continuous-layer}, where $D_{t}$ is the corresponding 
 differential operator associated with the gravity-gradient component.
 For example, if the desired component is the $xy$, so 
 $D_{t} = \nicefrac{\partial^{2}}{\partial x \, \partial y}$.
 
 To understand why this approach works, let us first note that 
-the differential operator associated with the observed gravity disturbance data (equation 
+the differential operator associated with the observed gravity disturbance data (Eq. 
 \ref{eq:observed-data-space}) is given by $D_{d} \equiv D(1, \hat{\mathbf{z}}) = 
 \tfrac{\partial}{\partial z}$ in the space domain
-or $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ in the Fourier domain (equation 
+or $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ in the Fourier domain (Eq. 
 \ref{eq:diff-operators-generic}),
 where $\hat{\mathbf{z}} = (0, 0, 1)^{\top}$.
-The first step consists in using $D_{a} = D_{d}$ in equation 
+The first step consists in using $D_{a} = D_{d}$ in Eq. 
 \ref{eq:predicted-data-continuous-layer} and 
 estimating $p_{\varepsilon}$ so that the corresponding predicted potential field 
 $d_{\varepsilon}$ approximates
-the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}).
+the observed potential field $d^{o}$ (Eq. \ref{eq:observed-data-space}).
 In this case, we conclude from equations \ref{eq:diff-operators-generic} and 
 \ref{eq:p-Fourier} that $p_{\varepsilon}$ 
 approximates the vertical derivative $\tfrac{\partial U}{\partial z}$ of $U$
-(equation \ref{eq:potential-U-space}) on the surface $\mathcal{S}''$.
+(Eq. \ref{eq:potential-U-space}) on the surface $\mathcal{S}''$.
 
 The second step to convert gravity disturbance data into gravity-gradient data involves using 
 $p_{\varepsilon}$ to compute the gravity-gradient components, which are represented by the 
-potential field $f$, with specific operators $D_{f}$ (equation 
+potential field $f$, with specific operators $D_{f}$ (Eq. 
 \ref{eq:transformed-field-space}). 
-Since our $p_{\varepsilon}$ (equation \ref{eq:p-Fourier}) is defined with $\alpha_{a} = 
-\alpha_{d}$, it is a Neumann's equivalent layer \cite{oliveirajr_etal2026} and, consequently, 
+Since our $p_{\varepsilon}$ (Eq. \ref{eq:p-Fourier}) is defined with $\alpha_{a} = 
+\alpha_{d}$, it is a Neumann's equivalent layer \cite{oliveirajr_etal2026_1} and, consequently, 
 any transformed potential field $f_{\varepsilon}$ 
-(equation \ref{eq:transformed-field-continuous-layer}) must be defined with $D_{t} = D_{f}$, 
+(Eq. \ref{eq:transformed-field-continuous-layer}) must be defined with $D_{t} = D_{f}$, 
 where $D_{f}$ is the space-domain 
-operator associated with $f$ (equation \ref{eq:transformed-field-space}).
-Consider, for example, that the desired potential field $f$ (equation 
+operator associated with $f$ (Eq. \ref{eq:transformed-field-space}).
+Consider, for example, that the desired potential field $f$ (Eq. 
 \ref{eq:transformed-field-space}) is the gradient 
 component $xy$. This component is defined by  
 $D_{f} \equiv D(1, \hat{\mathbf{x}}) \, D(1, \hat{\mathbf{y}}) = \tfrac{\partial^{2}}{\partial x \, \partial y}$ in the
 space domain, or 
 $\alpha_{f} \equiv \alpha(1, \hat{\mathbf{x}}) \, \alpha(1, \hat{\mathbf{y}}) = \mathrm{i}^{2} \, k_{x} \, k_{y}$
-in the Fourier domain (equation \ref{eq:diff-operators-generic}), where 
+in the Fourier domain (Eq. \ref{eq:diff-operators-generic}), where 
 $\hat{\mathbf{x}} = (1, 0, 0)^{\top}$ and
 $\hat{\mathbf{y}} = (0, 1, 0)^{\top}$.
 In this case, the predicted $xy$ gradient component is obtained by evaluating 
-$f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer-Fourier}) with 
+$f_{\varepsilon}$ (Eq. \ref{eq:transformed-field-continuous-layer-Fourier}) with 
 $D_{t} = \tfrac{\partial^{2}}{\partial x \, \partial y}$.
 The remaining gradient components are evaluated in the same way, by using their corresponding 
 operators $D_{f}$.
 
 Thus, the common two-step approach to convert gravity disturbance into gravity
 gradient data via equivalent-layer technique 
-\cite<e.g.,>[]{piauilino_etal2019_seg, oliveirajr_etal2023} 
+\citep[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023} 
 can be theoretically explained as an application of a particular Neumann's equivalent layer.
 
 \subsection{Joint processing of gravity-gradient data}
 
 Similarly to the previous approach to convert gravity disturbance data into gravity gradient 
 data, the common approach to joint processing gravity gradient data 
-\cite<e.g.,>[]{boggs-dransfield2004,barnes_lumley2011, martinez_li_2016} via equivalent-layer 
+\citep[e.g.,][]{boggs-dransfield2004,barnes_lumley2011, martinez_li_2016} via equivalent-layer 
 technique empirically presumes that a single equivalent layer $p_{\varepsilon}$ can be used to 
 predict all gravity gradient components, i.e., that
 \begin{equation}
@@ -117,29 +117,29 @@ $u, v \in \{x, y, z\}$.
 This approach considers a set of equations defined by \ref{eq:gravity_gradient_layer}, each one
 for a given gravity gradient component $uv$, and simultaneously solves then for the single 
 layer $p_{\varepsilon}$.
-Again, the existence of such layer can be deduced from equation \ref{eq:p-Fourier}, for the 
+Again, the existence of such layer can be deduced from Eq. \ref{eq:p-Fourier}, for the 
 particular case in which 
 $\alpha_{a} = \alpha_{d}$. In this case, $p_{\varepsilon}$ is a Neumann's equivalent layer 
-\cite{oliveirajr_etal2026}.
+\cite{oliveirajr_etal2026_1}.
 Consider, for example, the gravity gradient component $xz$. In this case, 
 the observed potential field is defined by 
 $D_{d} \equiv D(1, \hat{\mathbf{x}}) \, D(1, \hat{\mathbf{z}}) = \tfrac{\partial^{2}}{\partial x \, \partial z}$ in the
 space domain, or 
 $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{x}}) \, \alpha(1, \hat{\mathbf{z}}) = \mathrm{i} \, k_{x} \, k$
-in the Fourier domain (equation \ref{eq:diff-operators-generic}), where 
+in the Fourier domain (Eq. \ref{eq:diff-operators-generic}), where 
 $\hat{\mathbf{x}} = (1, 0, 0)^{\top}$ and
 $\hat{\mathbf{y}} = (0, 0, 1)^{\top}$.
-From equation \ref{eq:p-Fourier}, we conclude that the layer $p_{\varepsilon}$ obtained with 
+From Eq. \ref{eq:p-Fourier}, we conclude that the layer $p_{\varepsilon}$ obtained with 
 $\alpha_{a} = \alpha_{d}$ represents the vertical derivative 
 $\tfrac{\partial U_{\varepsilon}}{\partial z}$ of the auxiliary potential 
-$U_{\varepsilon}$ (equations \ref{eq:potential-U-epsilon-Fourier-layer-1} and 
+$U_{\varepsilon}$ (Eq(s). \ref{eq:potential-U-epsilon-Fourier-layer-1} and 
 \ref{eq:potential-U-epsilon-Fourier-layer-2}) 
 on the surface $\mathcal{S}''$.
 The same conclusion is obtained for any other gravity gradient component defined with a 
 different $uv$, which shows that there exists a single equivalent layer $p_{\varepsilon}$ that 
 simultaneously fits all gravity gradient components.
 We show here that the common approach to joint processing gravity gradient data 
-\cite<e.g.,>[]{boggs-dransfield2004,barnes_lumley2011, martinez_li_2016} can be explained in 
+\citep[e.g.,][]{boggs-dransfield2004,barnes_lumley2011, martinez_li_2016} can be explained in 
 terms of a Neumann's equivalent layer.
 
 \subsection{The existence of a planar dipole layer}
@@ -147,8 +147,8 @@ terms of a Neumann's equivalent layer.
 A predominant trend in previous studies utilizing a planar equivalent layer of dipoles for 
 magnetic-field transformations 
 is to treat the layer as a purely mathematical abstraction employed for processing total-field 
-anomaly data, a perspective exemplified by the remarks of \citeA{pedersen1989} concerning the 
-research of \citeA{bhattacharyya_chan1977}.
+anomaly data, a perspective exemplified by the remarks of \cite{pedersen1989} concerning the 
+research of \cite{bhattacharyya_chan1977}.
 Specifically, Pedersen pointed out that the first fundamental existence theorem for the 
 Dirichlet's problem does not postulate that a general solution can be written as a layer of 
 dipoles magnetized along its 
@@ -163,33 +163,33 @@ dipole layers capable of faithfully reproducing total-field anomaly data.
 This inquiry usually aims to discern the physical significance and possible link of such 
 layers with boundary problems of potential theory.
 
-Here, we leverage the theoretical framework proposed by \citeA{oliveirajr_etal2026} to infer 
+Here, we leverage the theoretical framework proposed by \cite{oliveirajr_etal2026_1} to infer 
 within the purview of applied geophysics, for the first time, the existence of planar dipole 
 layers capable of accurately and simultaneously reproducing the magnetic scalar potential and 
 induction field components along any direction.
-We first consider that the observed potential field $d^{o}$ (equation 
+We first consider that the observed potential field $d^{o}$ (Eq. 
 \ref{eq:observed-data-space}) is satisfactorily described by the differential operator 
 $D_{d} \equiv D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}})$
-(equation \ref{eq:diff-operators-generic}), where $\hat{\mathbf{u}}$ defines the constant 
+(Eq. \ref{eq:diff-operators-generic}), where $\hat{\mathbf{u}}$ defines the constant 
 direction of the main geomagnetic field at the study area and $\hat{\mathbf{v}}$ the constant 
 total-magnetization direction of the true magnetic sources.
-From equation \ref{eq:diff-operators-generic}, we can show that 
+From Eq. \ref{eq:diff-operators-generic}, we can show that 
 (i) $D_{d} = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$,
-where $\mathbf{H}_{U}$ is the Hessian matrix \cite<e.g.,>[p. 158]{kaplan2002} of
-the potential $U$ (equation \ref{eq:potential-U-space}) and (ii) its corresponding 
+where $\mathbf{H}_{U}$ is the Hessian matrix \citep[e.g.,][p. 158]{kaplan2002} of
+the potential $U$ (Eq. \ref{eq:potential-U-space}) and (ii) its corresponding 
 Fourier domain representation is given by 
 $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$.
 
 The common equivalent-layer approach to process total-field anomaly data consists in 
-estimating an equivalent layer $p_{\varepsilon}$ by solving the equation 
+estimating an equivalent layer $p_{\varepsilon}$ by solving the Eq. 
 \ref{eq:predicted-data-continuous-layer},
 with $D_{a} = \hat{\mathbf{u}}^{\top} \mathbf{H}_{\Psi}(\mathbf{r}) \, \hat{\mathbf{h}}$, 
-where $\mathbf{H}_{\Psi}$ is the Hessian matrix \cite<e.g.,>[p. 158]{kaplan2002} of the 
-function $\Psi$ (equation \ref{eq:Psi}) and $\hat{\mathbf{h}}$ is a constant unit vector not 
-necessarily equal to $\hat{\mathbf{v}}$. From equation \ref{eq:diff-operators-generic}, we can 
+where $\mathbf{H}_{\Psi}$ is the Hessian matrix \citep[e.g.,][p. 158]{kaplan2002} of the 
+function $\Psi$ (Eq. \ref{eq:Psi}) and $\hat{\mathbf{h}}$ is a constant unit vector not 
+necessarily equal to $\hat{\mathbf{v}}$. From Eq. \ref{eq:diff-operators-generic}, we can 
 show that the corresponding Fourier domain operator is given by 
 $\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)$.
-Then, by using the predefined $\alpha_{d}$ and $\alpha_{a}$ in equation \ref{eq:p-Fourier}, we 
+Then, by using the predefined $\alpha_{d}$ and $\alpha_{a}$ in Eq. \ref{eq:p-Fourier}, we 
 obtain the following equivalent layer:
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
@@ -202,12 +202,12 @@ obtain the following equivalent layer:
 	\label{eq:p-Fourier-dipoles}
 \end{equation}
 
-The particular equivalent layer given by equation \ref{eq:p-Fourier-dipoles} represents a 
+The particular equivalent layer given by Eq. \ref{eq:p-Fourier-dipoles} represents a 
 planar layer of dipoles with constant magnetization direction $\hat{\mathbf{h}}$ and was 
 deduced by considering
 that $\hat{\mathbf{u}}$ is a unit vector having the same constant direction of the main 
 geomagnetic field at the study area, i.e., by considering that the observed potential field is 
-the approximated total-field anomaly \cite<e.g.,>[p. 179]{blakely1996}.
+the approximated total-field anomaly \citep[e.g.,][p. 179]{blakely1996}.
 Let us now consider that the observed potential field data is a Cartesian component of the 
 magnetic induction field. In this case, we can simply replace $\hat{\mathbf{u}}$ by the unit 
 vector along the direction of 
@@ -220,29 +220,29 @@ component of the magnetic induction field, then we have
 where $\hat{\mathbf{x}} = (1, 0, 0)^{\top}$. For the cases in which the observed potential field is the $y$ or 
 $z$ component of the magnetic induction field, then we replace $\hat{\mathbf{x}}$ by the 
 unit vector $\hat{\mathbf{y}} = (0, 1, 0)^{\top}$ or $\hat{\mathbf{z}} = (0, 0, 1)^{\top}$,
-respectively. For these three Cartesian components of the magnetic induction field, we conclude from equation 
-\ref{eq:p-Fourier} that the resultant equivalent layer is that defined by equation \ref{eq:p-Fourier-dipoles}.
-It can also be easily verified that the same $p_{\varepsilon}$ given by equation 
+respectively. For these three Cartesian components of the magnetic induction field, we conclude from Eq. 
+\ref{eq:p-Fourier} that the resultant equivalent layer is that defined by Eq. \ref{eq:p-Fourier-dipoles}.
+It can also be easily verified that the same $p_{\varepsilon}$ given by Eq. 
 \ref{eq:p-Fourier-dipoles} can be equally deduced if we consider that the 
 observed potential field is the magnetic scalar potential. 
 In this case, we have $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$ and 
 $\alpha_{a} = \left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)$. 
 
 The main conclusion obtained here is that a planar equivalent layer of dipoles $p_{\varepsilon}$ defined according 
-to equation \ref{eq:p-Fourier-dipoles} simultaneously 
+to Eq. \ref{eq:p-Fourier-dipoles} simultaneously 
 reproduces the magnetic scalar potential and any magnetic induction field component (including the approximated total-field anomaly) 
 due to sources with constant total-magnetization direction defined by $\hat{\mathbf{v}}$, even if the layer has a constant magnetization 
 direction defined by a unit vector $\hat{\mathbf{h}} \ne \hat{\mathbf{v}}$. 
 This theoretical result explains, for example, why we can use a planar equivalent layer of dipoles with arbitrary constant 
 magnetization direction $\hat{\mathbf{h}}$ to compute the magnetic induction field components or the amplitude of the 
 magnetic induction field due to the true sources without presuming any information about the constant direction of their 
-total magnetization \cite<e.g,>[]{li_etal_2021}.
+total magnetization \cite[e.g,][]{li_etal_2021}.
 
 
 \subsection{Computing the RTP by using a dipole layer}
 
 
-According to the pioneer work of \citeA{silva1986}, which is widely followed in applied geophysics, 
+According to the pioneer work of \cite{silva1986}, which is widely followed in applied geophysics, 
 the RTP in the space domain is calculated from total-field anomaly data in two steps.
 The first consists in estimating the magnetic-moment intensity distribution on a planar layer 
 of dipoles (or doublets) with constant magnetization direction equal to that of the true sources.
@@ -250,62 +250,62 @@ The second step consists in computing the $z$-component of the magnetic inductio
 to the estimated layer by setting its magnetization along the vertical direction.
 It is usually verified a posteriori that this computed field approximates the true RTP anomaly.
 
-We call attention to the fact that \citeA{silva1986} cited the work of \citeA{roy1962} to justify that ``the magnetic 
+We call attention to the fact that \cite{silva1986} cited the work of \cite{roy1962} to justify that ``the magnetic 
 field due to arbitrary sources can be exactly fitted by the magnetic field due to a horizontal equivalent
 layer of dipoles''. 
 However, Roy neither discussed the existence of a dipole layer that fits the observed total-field 
 anomaly data nor its use to retrieve the RTP anomaly, but 
 presented a general outline to deduce the solutions of the Dirichlet's and Neumann's problems on a plane 
 located above the sources.
-In other words, the two-step approach proposed by \citeA{silva1986}, which is widely accepted by the scientific community 
+In other words, the two-step approach proposed by \cite{silva1986}, which is widely accepted by the scientific community 
 and we know to be correct from practice 
-\cite<e.g.,>[]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022, piauilino_etal2025}, 
-is an empirical generalization of \citeA{roy1962}. 
+\citep[e.g.,][]{leao-silva_1989, guspi_novara2009, oliveirajr_etal2013, li_etal2014, reis_etal2020, takahashi-etal2022, piauilino_etal2025}, 
+is an empirical generalization of \cite{roy1962}. 
 It is also important to point out that the mathematical equivalence between the space-domain approach to compute the 
 RTP via equivalent-layer technique and the classical approach directly using the Fourier transform of the observed 
-total-field anomaly data \cite<e.g.,>[p. 331]{blakely1996} have never been clearly established in the literature.
+total-field anomaly data \citep[e.g.,][p. 331]{blakely1996} have never been clearly established in the literature.
 Here, we provide a general approach aiming at filling these theoretical gaps.
 
 From a theoretical point of view, the two-step approach to compute the RTP in the space domain 
-consists in first setting a planar layer of dipoles according to equation \ref{eq:p-Fourier-dipoles}, 
+consists in first setting a planar layer of dipoles according to Eq. \ref{eq:p-Fourier-dipoles}, 
 by considering the unit vector $\hat{\mathbf{h}}$ equal to $\hat{\mathbf{v}}$, which defines 
 the constant total-magnetization direction of the true sources.
 In this case, the ratio $\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} = 1$ 
 and we can easily verify that the $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ]$ given by 
-equation \ref{eq:p-Fourier-dipoles} assumes the form of a Neumann's equivalent layer \cite{oliveirajr_etal2026}.
+Eq. \ref{eq:p-Fourier-dipoles} assumes the form of a Neumann's equivalent layer \cite{oliveirajr_etal2026_1}.
 The second step to compute the RTP consists in using the predefined Neumann's layer to compute 
-the transformed potential field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) defined in the 
+the transformed potential field $f_{\varepsilon}$ (Eq. \ref{eq:transformed-field-continuous-layer}) defined in the 
 space domain by using $D_{t} = D_{f}$, with $D_{f} = \nicefrac{\partial^{2}}{\partial z^{2}}$, or in the Fourier domain 
-by using $\alpha_{t} = \alpha_{f}$ (equation \ref{eq:alpha-t-generic}), with 
+by using $\alpha_{t} = \alpha_{f}$ (Eq. \ref{eq:alpha-t-generic}), with 
 $\alpha_{f} = k^{2}$.
-In this case, the transformed field $f_{\varepsilon}$ (equation \ref{eq:transformed-field-continuous-layer}) 
-approximates the potential field $f$ (equation \ref{eq:transformed-field-space}) defined by 
+In this case, the transformed field $f_{\varepsilon}$ (Eq. \ref{eq:transformed-field-continuous-layer}) 
+approximates the potential field $f$ (Eq. \ref{eq:transformed-field-space}) defined by 
 $D_{f} = \nicefrac{\partial^{2}}{\partial z^{2}}$, which represents the RTP anomaly. 
-As we have just shown here, for the first time, the classical approach of \citeA{silva1986} to compute the RTP in the 
+As we have just shown here, for the first time, the classical approach of \cite{silva1986} to compute the RTP in the 
 space domain can be formally explained in terms of a Neumann's equivalent layer. 
 
 We can also investigate the theoretical link between the RTP in the space domain, 
-via equivalent-layer technique, and in the Fourier domain, via classical approach \cite<e.g., >[p. 331]{blakely1996}. 
+via equivalent-layer technique, and in the Fourier domain, via classical approach \cite[e.g.,][p. 331]{blakely1996}. 
 As we have already discussed, the transformed field $f_{\varepsilon}$ computed via \ref{eq:transformed-field-continuous-layer-Fourier} 
 from a previously defined equivalent layer $p_{\varepsilon}$ can also be directly 
-computed from the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) on a horizontal surface
+computed from the observed potential field $d^{o}$ (Eq. \ref{eq:observed-data-space}) on a horizontal surface
 $\mathcal{S}^{\dagger}$ located above the true sources, at a constant vertical coordinate $z^{\dagger}_{0}$.
-To compute the RTP, we set $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ in equation \ref{eq:p-Fourier-dipoles}, so that 
+To compute the RTP, we set $\hat{\mathbf{h}} = \hat{\mathbf{v}}$ in Eq. \ref{eq:p-Fourier-dipoles}, so that 
 we obtain $\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] = k \, \mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right]$.
 If we additionally consider that the surface $\mathcal{S}''$ is located above the sources, at a constant vertical coordinate
 $z''_{0} < z^{t}_{0}$, where $z^{t}_{0}$ defines the top of the true sources, we obtain by
-letting $k_{\varepsilon}$ goes to infinity in equation \ref{eq:potential-U-epsilon-Fourier-layer-1} or 
-by letting $\mu_{\varepsilon}$ goes to zero in equation \ref{eq:potential-U-epsilon-Fourier-layer-2} that 
+letting $k_{\varepsilon}$ goes to infinity in Eq. \ref{eq:potential-U-epsilon-Fourier-layer-1} or 
+by letting $\mu_{\varepsilon}$ goes to zero in Eq. \ref{eq:potential-U-epsilon-Fourier-layer-2} that 
 $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] = \mathcal{F} \left[ U(\mathbf{r}'') \right]$.
 Finally, by noting that the product 
 $\mathcal{F} \left[ U(\mathbf{r}'') \right] \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = 
 \nicefrac{\mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]}{k}$, where 
 $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = \nicefrac{e^{-k \, (z''_{0} - z^{\dagger}_{0})}}{k}$ 
-\cite<e.g.,>[p. 275]{blakely1996}, and that 
+\citep[e.g.,][p. 275]{blakely1996}, and that 
 $\mathcal{F} \left[ d^{o}(\mathbf{r}^{\dagger}) \right] = \alpha_{d} \, \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$,
 where
 $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$,
-we get from equation \ref{eq:transformed-field-continuous-layer-Fourier} that the transformed potential field
+we get from Eq. \ref{eq:transformed-field-continuous-layer-Fourier} that the transformed potential field
 $f_{\varepsilon}$ in the Fourier domain assumes the following form when $\alpha_{f} = k^{2}$:
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
@@ -314,25 +314,25 @@ $f_{\varepsilon}$ in the Fourier domain assumes the following form when $\alpha_
 	\label{eq:transformed-field-continuous-layer-single-step-RTP}
 \end{equation}
 Equation \ref{eq:transformed-field-continuous-layer-single-step-RTP} represents the
-classical approach to compute the RTP in the Fourier domain \cite<e.g.,>[p. 331]{blakely1996}.
+classical approach to compute the RTP in the Fourier domain \citep[e.g.,][p. 331]{blakely1996}.
 We stress two important aspects of this result. The first concerns the theoretical link 
 between the space- and Fourier-domain approaches to compute the RTP. To the authors knowledge, this link has never been fully 
 detailed in the literature.
 The second important aspect of our theoretical approach is that it provides the 
 reason by which the equivalent-layer technique ultimately suffers the same instability as 
 the Fourier-domain RTP operator at low latitudes. In this case, the estimated equivalent layer of dipoles 
-presents striations, as have already been pointed out by \citeA{li_etal2014}. 
+presents striations, as have already been pointed out by \cite{li_etal2014}. 
 In the Fourier domain, these artifacts are directly related to the term 
 $\nicefrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)}$ 
 in equation \ref{eq:p-Fourier-dipoles}. This term produces, in the equivalent layer of dipoles, a 
 numerical instability similar to that caused by the term 
-$\nicefrac{k^{2}}{\left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}$ in equation 
+$\nicefrac{k^{2}}{\left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right) \, \left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}$ in Eq. 
 \ref{eq:transformed-field-continuous-layer-single-step-RTP},
-which is the base of the classical approach to compute the RTP in the Fourier domain \cite<e.g.,>[p. 331]{blakely1996}.
+which is the base of the classical approach to compute the RTP in the Fourier domain \citep[e.g.,][p. 331]{blakely1996}.
 
 \subsection{Generalized equivalent sources}
 
-We get from equation \ref{eq:p-Fourier} that the equivalent layer $p_{\varepsilon}$ obtained by using
+We get from Eq. \ref{eq:p-Fourier} that the equivalent layer $p_{\varepsilon}$ obtained by using
 $\alpha_{a} = 1$ is given by
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
@@ -340,61 +340,61 @@ $\alpha_{a} = 1$ is given by
 	\label{eq:p-Fourier-generalized-eqs}
 \end{equation}
 which approximates the vertical derivative of the observed potential field on the layer plane $\mathcal{S}''$. 
-Such layers produce potential-field transformations (equations \ref{eq:transformed-field-continuous-layer} and 
+Such layers produce potential-field transformations (Eq(s). \ref{eq:transformed-field-continuous-layer} and 
 \ref{eq:transformed-field-continuous-layer-Fourier}) defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{\alpha_{d}}$ 
-(equation \ref{eq:alpha-t-generic}). Besides, they produce a predicted potential field $d_{\varepsilon}$ 
-(equation \ref{eq:predicted-data-continuous-layer}) analogous to the gravitational potential.
-This approach was proposed by \citeA{cordell1992} and recently adapted by 
-\citeA{soler_uieda2021} to perform gravity data processing. 
+(Eq. \ref{eq:alpha-t-generic}). Besides, they produce a predicted potential field $d_{\varepsilon}$ 
+(Eq. \ref{eq:predicted-data-continuous-layer}) analogous to the gravitational potential.
+This approach was proposed by \cite{cordell1992} and recently adapted by 
+\cite{soler_uieda2021} to perform gravity data processing. 
 Those authors considered only the particular case in which the observed potential field $d^{o}$ 
-(equation \ref{eq:observed-data-space}) is gravity disturbance data, i.e., the vertical derivative 
-$\tfrac{\partial}{\partial z} U$ of the potential $U$ (equation \ref{eq:potential-U-space}).
-In this particular case, $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ (equation \ref{eq:diff-operators-generic})
-and equation \ref{eq:p-Fourier} leads to an equivalent layer $p_{\varepsilon}$ that
-(i) approximates the second derivative $\tfrac{\partial^{2}}{\partial z^{2}} U$ of $U$ (equation \ref{eq:potential-U-space}) 
+(Eq. \ref{eq:observed-data-space}) is gravity disturbance data, i.e., the vertical derivative 
+$\tfrac{\partial}{\partial z} U$ of the potential $U$ (Eq. \ref{eq:potential-U-space}).
+In this particular case, $\alpha_{d} \equiv \alpha(1, \hat{\mathbf{z}}) = k$ (Eq. \ref{eq:diff-operators-generic})
+and Eq. \ref{eq:p-Fourier} leads to an equivalent layer $p_{\varepsilon}$ that
+(i) approximates the second derivative $\tfrac{\partial^{2}}{\partial z^{2}} U$ of $U$ (Eq. \ref{eq:potential-U-space}) 
 and
-(ii) results in potential-field transformations defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{k}$ (equation \ref{eq:alpha-t-generic}).
+(ii) results in potential-field transformations defined by $\alpha_{t} = \nicefrac{\alpha_{f}}{k}$ (Eq. \ref{eq:alpha-t-generic}).
 
 \subsection{Alternative approach to compute the RTP}
 
-\citeA{guspi_novara2009} proposed an alternative two-step approach to compute the RTP via equivalent-layer technique. 
-They consider that the observed potential field $d^{o}$ (equation \ref{eq:observed-data-space}) is satisfactorily described 
+\cite{guspi_novara2009} proposed an alternative two-step approach to compute the RTP via equivalent-layer technique. 
+They consider that the observed potential field $d^{o}$ (Eq. \ref{eq:observed-data-space}) is satisfactorily described 
 by the differential operator $D_{d} \equiv D(1, \hat{\mathbf{u}}) \, D(1, \hat{\mathbf{v}})$
-(equation \ref{eq:diff-operators-generic}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
+(Eq. \ref{eq:diff-operators-generic}), where $\hat{\mathbf{u}}$ defines the constant direction of the main geomagnetic
 field at the study area and $\hat{\mathbf{v}}$ the constant total-magnetization direction of the true magnetic sources.
-In this case, we get from equation \ref{eq:diff-operators-generic} that 
+In this case, we get from Eq. \ref{eq:diff-operators-generic} that 
 $D_{d} = \hat{\mathbf{u}}^{\top} \mathbf{H}_{U}(\mathbf{r}) \, \hat{\mathbf{v}}$,
-where $\mathbf{H}_{U}$ is the Hessian matrix \cite<e.g.,>[p. 158]{kaplan2002} of
-the potential $U$ (equation \ref{eq:potential-U-space}), and 
+where $\mathbf{H}_{U}$ is the Hessian matrix \citep[e.g.,][p. 158]{kaplan2002} of
+the potential $U$ (Eq. \ref{eq:potential-U-space}), and 
 $\alpha_{d} = \left(\mathbf{k}^{\top} \hat{\mathbf{u}} \right)\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)$.
 
-The first step of the alternative method proposed by \citeA{guspi_novara2009} consists in obtaining an equivalent layer 
-$p_{\varepsilon}$ (equation \ref{eq:predicted-data-continuous-layer}) by considering that
+The first step of the alternative method proposed by \cite{guspi_novara2009} consists in obtaining an equivalent layer 
+$p_{\varepsilon}$ (Eq. \ref{eq:predicted-data-continuous-layer}) by considering that
 \begin{equation}
 	D_{a}\Psi(\mathbf{r}, \mathbf{r}'') = \tfrac{\left( z''_{0} - z \right)}{2 \, \pi} \, 
 	\ln{\Big[} \left( z''_{0} - z \right) + \| \mathbf{r}'' - \mathbf{r} \| {\Big]} - 
 	\tfrac{\| \mathbf{r}'' - \mathbf{r} \|}{2 \, \pi} \: ,
 	\label{eq:kernel-Fourier-Guspi}
 \end{equation}
-which represents the double integral of the function $\Psi$ (equation \ref{eq:Psi}) along the vertical direction $z$.
+which represents the double integral of the function $\Psi$ (Eq. \ref{eq:Psi}) along the vertical direction $z$.
 In this case, we have that $\alpha_{a} = \nicefrac{(\mathbf{k}^{\top} \hat{\mathbf{u}}) (\mathbf{k}^{\top} \hat{\mathbf{h}})}{k^{2}}$, 
 where the term $\nicefrac{1}{k^{2}}$ represents the double integration along the vertical direction. 
-Besides, equation \ref{eq:p-Fourier} leads to
+Besides, Eq. \ref{eq:p-Fourier} leads to
 \begin{equation}
 	\mathcal{F} [ p_{\varepsilon}(\mathbf{r}'') ] =
 	k^{3} \, \tfrac{\left(\mathbf{k}^{\top} \hat{\mathbf{v}} \right)}{\left(\mathbf{k}^{\top} \hat{\mathbf{h}} \right)} \,
 	\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] \: .
 	\label{eq:p-Fourier-guspi}
 \end{equation}
-The second step of the method proposed by \citeA{guspi_novara2009} consists in approximates the RTP anomaly by
-the transformed potential field $f_{\varepsilon}$ obtained with $D_{t}\Psi = \Psi$ in equation 
-\ref{eq:transformed-field-continuous-layer}, which corresponds to $\alpha_{t} = 1$ (equation \ref{eq:alpha-t-generic}).
+The second step of the method proposed by \cite{guspi_novara2009} consists in approximates the RTP anomaly by
+the transformed potential field $f_{\varepsilon}$ obtained with $D_{t}\Psi = \Psi$ in Eq. 
+\ref{eq:transformed-field-continuous-layer}, which corresponds to $\alpha_{t} = 1$ (Eq. \ref{eq:alpha-t-generic}).
 In this case, by using the identity 
 $\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}'') \right] \mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = 
 \nicefrac{\mathcal{F} \left[ U_{\varepsilon}(\mathbf{r}^{\dagger}) \right]}{k}$, where 
 $\mathcal{F} [ \Psi(\mathbf{r}^{\dagger}, \mathbf{r}'') ] = \nicefrac{e^{-k \, (z''_{0} - z^{\dagger}_{0})}}{k}$ 
-\cite<e.g.,>[p. 275]{blakely1996}, 
-we get from equation \ref{eq:transformed-field-continuous-layer-Fourier}
+\citep[e.g.,][p. 275]{blakely1996}, 
+we get from Eq. \ref{eq:transformed-field-continuous-layer-Fourier}
 that the transformed potential field $f_{\varepsilon}$ assumes the following form in the Fourier domain:
 \begin{equation}
 	\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\dagger}) ] =
@@ -408,5 +408,5 @@ $\mathcal{F} [ f_{\varepsilon}(\mathbf{r}^{\dagger}) ]$ actually approximates th
 (given by $k^{2} \mathcal{F} \left[ U(\mathbf{r}^{\dagger}) \right]$) for the particular case in which 
 $\hat{\mathbf{h}} = \hat{\mathbf{v}}$, i.e., for the case in which the constant magnetization direction of 
 the equivalent layer coincides with that of the true sources.
-We have shown here that the theoretical framework proposed by \citeA{oliveirajr_etal2026} can be used to formally 
-explain the alternative method proposed by \citeA{guspi_novara2009}.
+We have shown here that the theoretical framework proposed by \cite{oliveirajr_etal2026_1} can be used to formally 
+explain the alternative method proposed by \cite{guspi_novara2009}.
