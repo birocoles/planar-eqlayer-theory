@@ -2,8 +2,8 @@
 
 The equivalent-layer technique has long been used in applied geophysics for processing and interpreting potential-field data. 
 It consists of approximating a discrete set of observations by a linear combination of harmonic functions representing 
-the fields of virtual sources (e.g., monopoles, dipoles, prisms). These virtual sources, known as \textit{equivalent sources}, 
-are typically arranged on a surface to form a discrete \textit{equivalent layer}, which is ``equivalent'' in the sense that it 
+the fields of virtual sources (e.g., monopoles, dipoles, prisms). These virtual sources, known as ``equivalent sources'', 
+are typically arranged on a surface to form a discrete ``equivalent layer'', which is ``equivalent'' in the sense that it 
 reproduces the observed potential-field data within an acceptable tolerance. The approach generally involves estimating 
 the physical property of the equivalent sources (e.g., density, mass, magnetic susceptibility, magnetization 
 intensity, or dipole moment) by numerically solving a constrained linear inverse problem.
@@ -12,22 +12,22 @@ Over the years, the technique has been applied to a wide range of data-processin
 interpolation, upward and downward continuation, gradient data processing, merging of multiple data sets, 
 density estimation from gravity data, computation of the magnetic anomaly amplitude, transformation of total-field 
 anomalies into field components, estimation of magnetization directions, and reduction to the pole of magnetic data. 
-A comprehensive review of these developments is given by \citeA{oliveirajr_etal2023}.
+A comprehensive review of these developments is given by \cite{oliveirajr_etal2023}.
 
-Most methods based on the equivalent-layer technique rely on the widely accepted \textit{equivalent-layer principle}, 
+Most methods based on the equivalent-layer technique rely on the widely accepted ``equivalent-layer principle'', 
 which consists of empirical generalizations that justify the existence of layers capable of reproducing observed 
-data and supporting potential-field transformations. In the companion paper, ``Planar equivalent layers for potential 
-fields: 1. Theoretical insights'', we introduced a rigorous theoretical framework that replaces this principle 
-with the \textit{planar equivalent-layer theorem}. This theorem guarantees the existence of continuous planar equivalent 
+data and supporting potential-field transformations. In the companion paper \citep{oliveirajr_etal2026_1}, we introduced 
+a rigorous theoretical framework that replaces this principle 
+with the ``planar equivalent-layer theorem''. This theorem guarantees the existence of continuous planar equivalent 
 layers that reproduce the gravitational and magnetic induction fields of 3D sources, even when the layer 
 intersects them. From this framework, we derived several closed-form expressions for continuous planar layers 
 defined on the same horizontal surface and capable of reproducing a given potential-field data set.
 
 In this second paper, we use the theoretical results from Part 1 to explain several empirical 
 approaches commonly found in the geophysical literature, such as the joint processing of gravity-gradient data 
-\cite<e.g.,>[]{barnes_lumley2011}, the conversion of gravity disturbances into the gravity-gradient tensor 
-\cite<e.g.,>[]{piauilino_etal2019_seg, oliveirajr_etal2023}, and the use of dipole layers for magnetic reduction to the pole 
-\cite<e.g.,>[]{emilia1973, bhattacharyya_chan1977, silva1986, leao-silva_1989, oliveirajr_etal2013, li_etal2014, oliveirajr_etal2015, 
+\cite[e.g.,][]{barnes_lumley2011}, the conversion of gravity disturbances into the gravity-gradient tensor 
+\cite[e.g.,][]{piauilino_etal2019_seg, oliveirajr_etal2023}, and the use of dipole layers for magnetic reduction to the pole 
+\cite[e.g.,][]{emilia1973, bhattacharyya_chan1977, silva1986, leao-silva_1989, oliveirajr_etal2013, li_etal2014, oliveirajr_etal2015, 
 ribeiro_filho_etal2020, reis_etal2020, li-etal2021, takahashi-etal2022, piauilino_etal2025}. 
 Numerical simulations confirm that the discrete equivalent layers commonly estimated in practice 
 closely approximate the closed-form solutions derived in Part 1.
