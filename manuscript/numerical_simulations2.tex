@@ -114,17 +114,19 @@ In both approaches, we obtain a discrete equivalent layer $\mathbf{p}_{\epsilon}
 in the space domain by numerically evaluating the inverse Fourier transform of Eq. \ref{eq:p-Fourier}, 
 using the predefined operators $\alpha_{d}$ and $\alpha_{a}$.
 
-Because the planar equivalent-layer theorem \cite{oliveirajr_etal2026_1} is a nonconstructive 
-existence statement 
-that does not define how to obtain $k_{\varepsilon}$ or $\mu_{\varepsilon}$ (Eq(s). \ref{eq:potential-U-epsilon-Fourier-layer-1} and 
-\ref{eq:potential-U-epsilon-Fourier-layer-2}), we adopt an empirical procedure in our numerical simulations.
-In approaches 2 and 3, we actually obtain sets of tentative discrete equivalent layers $\mathbf{p}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
-for different values of $k_{\varepsilon}$ and $\mu_{\varepsilon}$. 
-The optima $k_{\varepsilon}$ and $\mu_{\varepsilon}$ are chosen as those that have minimum values 
-and produce discrete equivalent layers $\mathbf{p}_{\epsilon}$ that satisfactorily fit the approximated 
-total-field anomaly (Fig. \ref{fig:Figure3}a).
-We present curves of the data fit against $k_{\varepsilon}$ and $\mu_{\varepsilon}$ 
-in the Fig. S1 of the supplementary material.
+Because the planar equivalent-layer theorem \citep{oliveirajr_etal2026_1} is a nonconstructive existence 
+statement that does not define a closed-form expression to obtain $k_{\varepsilon}$ or $\mu_{\varepsilon}$ 
+(Eqs. \ref{eq:potential-U-epsilon-Fourier-layer-1} and \ref{eq:potential-U-epsilon-Fourier-layer-2}), 
+we adopt an empirical procedure in our numerical simulations. In approaches 2 and 3, we obtain sets 
+of tentative discrete equivalent layers $\mathbf{p}_{\epsilon}$ (Definition \ref{def:discrete-eqlayer}) 
+for different candidate values of $k_{\varepsilon}$ and $\mu_{\varepsilon}$. The optimal $k_{\varepsilon}$ 
+and $\mu_{\varepsilon}$ values are chosen as those that minimize the Root Mean Square Error (RMSE) of 
+the data misfit between the observed total-field anomaly $\mathbf{d}^{o}$ (Fig. \ref{fig:Figure3}a) 
+and the predicted anomaly $\mathbf{d}_{\epsilon}$ (Eq. \ref{eq:predicted-data-discrete-layer}). 
+The RMSE is defined by $\sqrt{\nicefrac{\| \mathbf{d}^{o} - \mathbf{d}_{\epsilon}\|^{2}_{2}}{N}}$, 
+where $N$ is the total number of observation points ($N = 132,000$). Figure S1 of the Supplementary 
+Material shows the resulting curves of RMSE plotted against candidate values of 
+$k_{\varepsilon}$ and $\mu_{\varepsilon}$.
 
 
 \subsection{Results}
@@ -135,9 +137,15 @@ Figure \ref{fig:Figure4} shows all estimated equivalent layers obtained in our t
 The first, second and third columns of Fig. \ref{fig:Figure4} contain the results obtained 
 from each numerical test, while the first, second and third rows of Fig. \ref{fig:Figure4} 
 show the results obtained by following approaches 1--3, respectively.
-As we can see in Fig. S2 of the supplementary material, the equivalent layers obtained 
-in each test, by following different approaches, are very similar to each other.
+As shown in Fig. S2 of the supplementary material, the equivalent layers obtained in each test by 
+following the three different approaches exhibit remarkable agreement.
 The differences oscillate around zero and are dominated by short wavelengths.
+To quantify this similarity, we computed the Pearson correlation coefficient ($r$) 
+between the estimated discrete layers shown in Fig. \ref{fig:Figure4}. 
+The results are shown in Table S2 of the supplementary material.
+Across all tests, the correlation coefficients exceed $r > 0.95$, confirming that the discrete layers 
+obtained by applying the approach 1 are quantitatively consistent with those obtained by using approaches 
+2 and 3.
 
 The layers obtained from our first test (Figures \ref{fig:Figure4}a, d and g) are Neumann's 
 equivalent layers \cite{oliveirajr_etal2026_1}, 
@@ -246,13 +254,19 @@ $\alpha_{t}$ associated with the transformed field (Eq. \ref{eq:alpha-t-generic}
 \subsubsection{Remarks on the numerical results}
 
 There are three key aspects of our results that we would like to highlight.
-First, Figures \ref{fig:Figure4} of the present work and Fig. S2 of the supplementary 
+First, Fig. \ref{fig:Figure4} of the present work and Fig. S2 of the supplementary 
 material demonstrate that the theoretical framework proposed by \cite{oliveirajr_etal2026_1} 
 is compatible with the classical approach for estimating equivalent layers in the space 
 domain through the solution of a linear inverse problem.
-In particular, the estimated layers obtained from approaches 2 and 3  -- 
-by numerically evaluating the inverse Fourier transform of Eq. \ref{eq:p-Fourier} --
+In particular, the estimated layers obtained from approaches 2 and 3 
+(by numerically evaluating the inverse Fourier transform of Eq. \ref{eq:p-Fourier}) 
 are closely aligned with those derived from approach 1, which involves solving a linear inverse problem.
+It is important to highlight that our numerical experiments are conducted on a single fixed spatial grid
+of $N = 132,000$ points. Using this setup, we examine the numerical consistency between the estimated discrete 
+layers (Definition \ref{def:discrete-eqlayer}) and their corresponding continuous equivalent layers (Eq. \ref{eq:p-Fourier}).
+Investigating the convergence of discrete layers to their corresponding continuous layers would require
+numerical tests producing a set of discrete layers obtained by using spatial grids with successively 
+shrinking spacings along the $x$ and $y$ directions.
 
 Another important aspect of our results is that all estimated layers (Fig. 
 \ref{fig:Figure4}) produce transformed potential fields $\mathbf{f}_{\epsilon}$ (Eq. 

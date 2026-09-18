@@ -38,10 +38,13 @@ between the observation point $\mathbf{r}$ and a point
 $\mathbf{r}' = (x', y', z')^{\top} \in \overline{\mathcal{V}'}$
 and $\sigma$ is the scalar function representing 
 the density (contrast) or total-magnetization intensity within the sources.
-We consider that $\sigma$ is a piecewise continuous, integrable and bounded function that 
-satisfies some Hölder condition \citep[][p. 152]{kellogg1967} 
-at all points $\mathbf{r}' \in \overline{\mathcal{V}'}$ and is zero at all points 
-$\mathbf{r} \notin \overline{\mathcal{V}'}$.
+We consider that $\sigma$ is 
+(i) $\gamma$-Hölder continuous with exponent $\gamma \in (0, 1]$ 
+\citep[][p. 14]{freeden_gerhards2012} within each regular region $\mathcal{V}'_{\nu}$ up to its corresponding boundary 
+$\partial\mathcal{V}'_{\nu}$ and (ii) admits bounded step discontinuities across the boundaries $\partial\mathcal{V}'_{\nu}$ 
+so that it is zero at all points $\mathbf{r} \notin \overline{\mathcal{V}'}$.
+These conditions on $\sigma$ guarantee that the second partial derivatives of the Newtonian potential $U$ exist and 
+are continuous inside each regular region $\mathcal{V}'_{\nu}$ forming $\overline{\mathcal{V}'}$.
 
 Throughout the text, we use the notation $\mathcal{F} [ \cdot ]$ to define a 
 two-dimensional Fourier transform of a generic scalar function computed on a horizontal plane, with respect to

@@ -173,6 +173,18 @@ pointwise and, consequently, that
 which is also in perfect agreement with the classical solutions of the Dirichlet's and Neumann's
 problems (Eq(s). \ref{eq:U-Dirichlet-Neumann} and \ref{eq:U-Dirichlet-Neumann-Fourier}).
 
+\subsubsection{On the physical interpretation of $U_{\varepsilon}$}
+
+The auxiliary potential $U_{\varepsilon}$ on the surface $\mathcal{S}''$ is defined by Eq. 
+\ref{eq:potential-U-epsilon-Fourier-layer-1}, in terms of a truncating wavenumber $k_{\varepsilon}$,
+or Eq. \ref{eq:potential-U-epsilon-Fourier-layer-2}, in terms of a regularization parameter $\mu_{\varepsilon}$.
+We emphasize that, when $\mathcal{S}''$ is located above the sources ($z''_{0} < z^{t}_{0}$, Fig. \ref{fig:Figure1}),
+$U_{\varepsilon}$ is a smooth approximation of the potential $U$ (Eqs \ref{eq:potential-U-space} and \ref{eq:potential-U-Fourier}) 
+due to the true sources.
+However, when $\mathcal{S}''$ intersects the true sources ($z''_{0} > z^{t}_{0}$, Fig. \ref{fig:Figure1}), 
+$U_{\varepsilon}$ (i) is a fictitious regularized harmonic continuation defined for the purpose of reproducing $U$ above the sources
+and (ii) does not equal the actual non-harmonic Newtonian potential that a sensor would measure inside the sources.
+
 \subsection{Formal existence demonstration of continuous layers}
 
 In this subsection, we formally demonstrate the existence of planar equivalent layers 
@@ -296,6 +308,19 @@ even for the case in which the layer crosses the sources.
 	= 0$ and $p_{\varepsilon}$ yields a predicted field $d_{\varepsilon}$ that exactly reproduces the observed field $d^{o}$ 
 	on $\mathcal{S}^{\dagger}$.
 \end{proof}
+
+\begin{remark}
+	\label{rm:remark0}
+	In Eq. \ref{eq:p-Fourier}, $\alpha_{d}$ and $\alpha_{a}$ are algebraic polynomials of 
+	$\mathbf{k} = ( \mathtt{i} \, k_{x} \, , \, \mathtt{i} \, k_{y} \, , \, k)^{\top}$ (Eq. \ref{eq:diff-operators-generic})
+	representing linear combinations of spatial directional derivatives.
+	When $\alpha_{a} = 0$ at specific wavenumbers $k_{x}$ and $k_{y}$, division by $\alpha_{a}$ introduces division-by-zero 
+	issues. These potential problems are controlled because $\alpha_{a}$ acts on the auxiliary potential 
+	$U_{\varepsilon}$ given by Eq. \ref{eq:potential-U-epsilon-Fourier-layer-1}, for a given truncating wavenumber $k_{\varepsilon}$, 
+	or Eq. \ref{eq:potential-U-epsilon-Fourier-layer-2}, for a given regularization parameter $\mu_{\varepsilon}$. 
+	These truncation/regularization approaches guarantee that the quotient $\tfrac{\alpha_{d}}{\alpha_{a}} \mathcal{F}[U_\epsilon]$ remains 
+	well-defined, square-integrable, and numerically stable.
+\end{remark}
 	
 \begin{remark}
 	\label{rm:remark1}
