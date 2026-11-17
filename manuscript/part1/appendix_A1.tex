@@ -1,0 +1,87 @@
+\section{Some useful upper bounds}
+\label{app:upper-bounds}
+
+Here we define upper bounds for the absolute values
+of $\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
+(Eq(s). \ref{eq:potential-U-Fourier} and \ref{eq:observed-data-Fourier}), 
+i.e., for the amplitude spectra of $U$ and $d^{o}$ 
+(Eq(s). \ref{eq:potential-U-space} and \ref{eq:observed-data-space}). 
+To do this, we have adapted the approach presented by
+\cite{bhattacharyya1967} to define an upper bound for the amplitude spectrum of 
+$\tfrac{\partial}{\partial z} U$. 
+We first stress that 
+$e^{- k \, (z' - z^{\dagger}_{0})} \le e^{- k \, (z^{t}_{0} - z^{\dagger}_{0})}$ because
+$z^{t}_{0} \le z'$, where $z^{t}_{0}$ defines the top of the sources and $z'$ the vertical
+coordinate of a point inside the sources. Using this identity in  
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ (Eq. \ref{eq:potential-U-Fourier}), we obtain
+\begin{equation}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le 2 \pi \kappa 
+	\frac{e^{- k \, \Delta z}}{k}
+	\int\limits_{z^{t}_{0}}^{\infty}
+	\mathcal{F} [ \sigma(\mathbf{r}') ] \:
+	\: dz' \: , \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:potential-U-spectrum-bound1}
+\end{equation}
+This equation is valid because we assume that $\sigma$ (Eq. \ref{eq:potential-U-space}) 
+is an integrable scalar function that is zero at all points $\mathbf{r}' \notin \overline{\mathcal{V}}$, 
+where $\overline{\mathcal{V}}$ has a finite extension. 
+Manipulating $\mathcal{F} [ \sigma(\mathbf{r}') ]$ (Eq. \ref{eq:sigma-Fourier}), 
+we obtain
+\begin{equation}
+	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert \le
+	\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}
+	\vert \sigma(\mathbf{r}') \vert 
+	\: dx'dy'
+	\label{eq:sigma-spectrum-bound}
+\end{equation}
+and, consequently, that
+\begin{equation}
+	2 \pi \kappa \, 
+	\int\limits_{z^{t}_{0}}^{\infty}
+	\vert \mathcal{F} [ \sigma(\mathbf{r}') ] \vert
+	\: dz' \le \Omega \: ,
+	\label{eq:Omega-bound}
+\end{equation}
+where
+\begin{equation}
+	\Omega = 2 \pi \kappa \, \iiint\limits_{\mathcal{V}}
+	\vert \sigma(\mathbf{r}') \vert 
+	\: d\mathcal{V}'
+	\label{eq:Omega}
+\end{equation}
+is a constant depending only on the position and shape of the sources. 
+Then, by combining equations 
+\ref{eq:potential-U-spectrum-bound1}--\ref{eq:Omega},
+we conclude that the amplitude spectrum of 
+$U$ (Eq. \ref{eq:potential-U-space}) on a horizontal plane 
+$z^{\dagger}_{0} < z^{t}_{0}$ located above the sources satisfies 
+\begin{equation}
+	\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert \le
+	\frac{e^{- k \, \Delta z}}{k} \, \Omega \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:potential-U-spectrum-bound}
+\end{equation}
+From the upper bound of $\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$
+(Eq. \ref{eq:potential-U-spectrum-bound}) and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$
+(Eq. \ref{eq:observed-data-Fourier}), we also deduce
+\begin{equation}
+	\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert \le
+	\vert \alpha_{d} \vert \, \Omega \, 
+	\frac{e^{- k \, \Delta z}}{k} \: ,
+	\: \quad \Delta z = z^{t}_{0} - z^{\dagger}_{0} > 0 \: .
+	\label{eq:observed-data-spectrum-bound}
+\end{equation}
+Note that, for the case in which $\alpha_{d} = k$ (Eq. \ref{eq:observed-data-Fourier}), 
+we obtain the same result presented by \cite{bhattacharyya1967} as the upper bound for the 
+amplitude spectrum of $\tfrac{\partial}{\partial z} U$, whereas
+$\alpha_{d} = 1$ leads to the upper bound defined by Eq. \ref{eq:potential-U-spectrum-bound}.
+Equations \ref{eq:potential-U-spectrum-bound} and \ref{eq:observed-data-spectrum-bound} 
+show that the amplitude spectra 
+$\vert \mathcal{F} [ U(\mathbf{r}^{\dagger}) ] \vert$ and 
+$\vert \mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ] \vert$ on a plane $z^{\dagger}_{0} < z^{t}_{0}$ 
+above the sources 
+(i) are finite at all wavenumbers $k = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and (ii) tend
+to zero as $k$ goes to infinite.
+These results confirm the well-known fact that 
+$\mathcal{F} [ U(\mathbf{r}^{\dagger}) ]$ and $\mathcal{F} [ d^{o}(\mathbf{r}^{\dagger}) ]$ 
+(Eq(s). \ref{eq:potential-U-Fourier} and \ref{eq:observed-data-Fourier}) are square integrable.
