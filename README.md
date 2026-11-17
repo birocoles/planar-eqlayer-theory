@@ -1,27 +1,58 @@
-# Potential-field theoretical insights on planar equivalent layers
+# Planar equivalent layers for potential fields
+## Part 1. Theoretical insights
+## Part 2. Geophysical implications and applications
 
 by Vanderlei C. Oliveira Jr<sup>1</sup>, 
 Christian Gerhards<sup>2</sup>, 
 Valéria C. F. Barbosa<sup>1</sup>, 
-André L. A. Reis<sup>1, 3</sup>, 
+André L. A. Reis<sup>1</sup>, 
 Edson F. Luza<sup>1</sup> and 
-Xinpeng Huang<sup>2</sup>
+Xinpeng Huang<sup>2, 3</sup>
 
 
-<sup>1</sup> Observatório Nacional, Rio de Janeiro, Brazil
+<sup>1</sup> Coordenação de Geofı́sica, Observatório Nacional, General José Cristino st., Rio de Janeiro, Brazil
 
-<sup>2</sup> TU Bergakademie Freiberg, Institute of Geophysics and Geoinformatics
+<sup>2</sup> Institute of Geophysics and Geoinformatics, TU Bergakademie Freiberg, Gustav-Zeuner-Str., Freiberg, Germany
 
-<sup>3</sup> Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil
+<sup>3</sup> School of Geosciences and Info-Physics, Central South University, South Lushan Road, Changsha Hunan, P. R. China
 
-![](manuscript/figures/Figure1_1.png)
+![](manuscript/part1/Figure1_1.png)
 
 *2D schematic representation of sources located in subsurface and the geometrical aspects of our work.*
 
 
-## Abstract
+## Abstract -- Part 1
 
-We present a comprehensive theoretical framework for potential-field transformations using planar equivalent layers, a technique empirically developed since the 1960s in applied geophysics. We aim to replace the widely accepted equivalent-layer principle – primarily based on empirical generalizations – with a more rigorous theoretical foundation. We introduce and mathematically prove the *planar equivalent-layer theorem*, which establishes the existence of continuous planar layers that can accurately reproduce potential-field data within a predefined error level, even for layers that cross the true sources. We present closed-form expressions for planar equivalent layers by modifying the solutions of Dirichlet’s and Neumann’s problems and demonstrate that planar equivalent layers are not merely mathematical constructs, but have tangible physical significance related to boundary value problems in potential theory. Using our closed-form expressions, we mathematically show the equivalence between potential-field transformations made via equivalent-layer technique and those commonly derived from the Fourier transform of observed potential-field data. Moreover, we define different classes of equivalent layers and their relationships with the observed potential-field data, true sources and the desired potential-field transformation. Our work advances the understanding of why the equivalent-layer technique has been effectively applied in potential-field transformations.
+A comprehensive theoretical framework is developed for potential-field transformations 
+based on planar equivalent layers, a technique empirically used in applied geophysics since 
+the 1960s. The formulation replaces the widely accepted equivalent-layer principle -- primarily 
+founded on empirical generalizations -- with a rigorous theoretical foundation. The planar 
+equivalent-layer theorem establishes the existence of continuous planar layers capable of 
+reproducing potential-field data exactly when they reside strictly in the source-free region above 
+the sources, or within a predefined error level when they intersect the true sources
+Closed-form expressions for planar equivalent layers are derived 
+by modifying the classical solutions of Dirichlet's and Neumann's problems, revealing that 
+these layers possess tangible physical meaning related to boundary-value problems in potential 
+theory. The theoretical framework also demonstrates the mathematical equivalence between 
+potential-field transformations computed via the equivalent-layer technique and those obtained 
+through Fourier-domain approaches. Distinct classes of equivalent layers are formally defined, 
+together with their relationships to the observed data, true sources, and potential-field 
+transformations. The resulting formulation provides a rigorous explanation for the 
+long-standing success of the equivalent-layer technique in potential-field analysis.
+
+## Abstract -- Part 2
+
+The equivalent-layer technique has been widely applied in geophysics since the 1960s 
+for potential-field transformations as well as for processing and interpreting 
+gravity and magnetic data. Despite its success, the method has traditionally relied 
+on empirical assumptions, with limited attention to its theoretical foundation. In a 
+companion paper, we have established a rigorous theoretical framework for planar equivalent layers. 
+Here, we examine the implications of these theoretical results for the empirical 
+approaches commonly used in the geophysical literature. Through 
+numerical experiments, we demonstrate the numerical consistency and close agreement between the 
+closed-form expressions for planar equivalent layers and the discrete layers obtained 
+by linear inversion of potential-field data. Our results confirm that multiple planar equivalent 
+layers can be employed to achieve the same potential-field transformations.
 
 
 ## Numerical simulations
